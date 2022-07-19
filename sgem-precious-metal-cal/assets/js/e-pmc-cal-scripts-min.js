@@ -6,7 +6,7 @@
  } 
 //}
  setTimeout(runCal, 500);
-
+ 
 function runCal(){ 
    let sgemjs = document.createElement('script');
    sgemjs.setAttribute('src','https://retirementinvestments.github.io/sgem-precious-metal-cal/assets/js/e-pmc-scripts-min-all.js');
