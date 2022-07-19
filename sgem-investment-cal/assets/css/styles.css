@@ -40,8 +40,7 @@
 }
 .sgem-cal-right {
     width: 770px;
-    background-color: #fff;
-    padding: 8px;
+    background-color: #fff; 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
