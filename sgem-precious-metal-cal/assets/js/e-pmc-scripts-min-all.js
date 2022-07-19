@@ -409,7 +409,7 @@ function sgem_ConvertToInternationalCurrencySystemRound(labelValue) {
              localStorage.setItem('pcm_values_intrest', JSON.stringify(pmc_intrest_chart));
              setTimeout(function(){
 				pcm_update_chart();
-			 }, 100);
+			 }, 2000);
    
   }
 
