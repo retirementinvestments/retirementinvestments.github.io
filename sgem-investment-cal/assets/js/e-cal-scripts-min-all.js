@@ -22,7 +22,7 @@ var sgem_main_contents = '<div class="sgem-cal-wrapper">' +
 	'<input type="text"class="inputmove inputnumber" id="sgem_pretax_income" value="60,000" min="0" max="100000" onkeypress="return isNumber(event)" />' +
 	'<span class="sgem-err-msg-income"></span></div>' +
 		'<div class="sgem-form-group sgem-form-flex sgem-currency-holder">' +
-		'<label>Current savings I have <span class="sgem-tooltip tooltip" data-tippy-content="Include your total savings and spouse\'s Income">?</span></label>' +
+		'<label>Current savings I have <span class="sgem-tooltip tooltip" data-tippy-content="Include your total savings">?</span></label>' +
 		'<input type="text" class="inputmove inputnumber"  id="sgem_current_savings" value="30,000" min="0" max="50000000" onkeypress="return isNumber(event)"/>' +
 			'<span class="sgem-err-msg-current"></span></div></div>'+
 	'<div class="sgem-flex-container">'+
