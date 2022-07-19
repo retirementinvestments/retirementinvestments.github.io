@@ -561,7 +561,7 @@ $(function () {
  
 			 setTimeout(function(){
 				 sgem_pmc_calculaterminfazcal();
-			 }, 200); 
+			 }, 500); 
    // Scorlll
 if (window.innerWidth > 1024) { 
   $(function(){
