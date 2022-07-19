@@ -99,6 +99,10 @@ var sgem_pmc_main_contents = '<div class="sgem-pmc-cal-main-id" id="sgem-pmc-cal
 '<div class="sgem-pmc-logo-center">Precious Metals calculator by<a class="sgem-pmc-logo-image" href="https://retirementinvestments.com/" target="_blank" rel="noopener">'+                   
 '<img src="https://retirementinvestments.github.io/sgem-precious-metal-cal/assets/images/retirement-investments-logo.png" class="img-class" alt="Retirement calculator Logo" /></a></div></div></div> </div>';     
 
+$(function () {  
+ $('#sgem-pmc-cal').html(sgem_pmc_main_contents);
+}); 
+ 
  
 function isNumber(evt) {
           evt = (evt) ? evt : window.event;
@@ -404,13 +408,14 @@ function sgem_ConvertToInternationalCurrencySystemRound(labelValue) {
              pcm_update_chart();
   }
 
+ window.onload = function() {
+	sgem_pmc_calculaterminfazcal();
+ }
  
-
 $(function () { 
   //$("body").initComponents();
- $('#sgem-pmc-cal').html(sgem_pmc_main_contents);
  
-  sgem_pmc_calculaterminfazcal();
+ 
   
    // Scorlll
 if (window.innerWidth > 1024) { 
