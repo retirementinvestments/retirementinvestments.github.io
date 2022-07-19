@@ -416,6 +416,11 @@ function sgem_ConvertToInternationalCurrencySystemRound(labelValue) {
 
  //==========================================================================================================================================================
 var myChart = '';
+localStorage.setItem('pcm_values_intrest', '');
+localStorage.setItem('pcm_values_totalcapital', '');
+localStorage.setItem('pcm_label_years', '');
+localStorage.setItem('pcm_y_axis', '');
+
 window.onload = function () { 
 var data_pmc_intrest =  JSON.parse(localStorage.getItem('pcm_values_intrest')),
         data_pmc_totalcapital =  JSON.parse(localStorage.getItem('pcm_values_totalcapital')),
