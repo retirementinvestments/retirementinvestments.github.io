@@ -1,4 +1,4 @@
-  //window.onload = function() {
+ //window.onload = function() {
  if (!window.jQuery) {  
    var sgemj = document.createElement('script');
    sgemj.setAttribute('src','https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js');
@@ -14,6 +14,6 @@ let sgemjs3 = document.createElement('script');
  
 function runCal(){ 
    let sgemjs = document.createElement('script');
-   sgemjs.setAttribute('src','https://retirementinvestments.github.io/sgem-precious-metal-cal/assets/js/e-pmc-scripts-min-all.js?v=2');
+   sgemjs.setAttribute('src','https://messy-saxophone.flywheelsites.com/wp-content/pmc/e-pmc-scripts-min-all.js?v=2');
    document.body.appendChild(sgemjs);
-}  
+} 

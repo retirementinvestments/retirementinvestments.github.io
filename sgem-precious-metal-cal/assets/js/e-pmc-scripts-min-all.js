@@ -401,7 +401,7 @@ function sgem_ConvertToInternationalCurrencySystemRound(labelValue) {
  
 $(function () { 
   //$("body").initComponents();
- 
+ sgem_pmc_calculaterminfazcal();
  
   
    // Scorlll
