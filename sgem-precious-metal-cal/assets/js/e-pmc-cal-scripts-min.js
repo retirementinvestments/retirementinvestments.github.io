@@ -5,7 +5,7 @@
    document.head.appendChild(sgemj);
  } 
 //}
- setTimeout(runCal, 1000);
+ setTimeout(runCal, 500);
 
 function runCal(){
    let sgemjs = document.createElement('script');
