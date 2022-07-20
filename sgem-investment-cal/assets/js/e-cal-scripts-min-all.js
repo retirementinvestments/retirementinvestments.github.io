@@ -84,7 +84,7 @@ var sgem_main_contents = '<div class="sgem-cal-wrapper">' +
         '<a class="sgem-logo-image" href="https://retirementinvestments.com/" target="_blank" rel="noopener">'+
       '<img src="https://retirementinvestments.github.io/sgem-investment-cal/assets/images/Retirement-Investments-8.png" alt="Retirement calculator Logo" /></a></div></div></div></div>';
 
- 
+ jQuery.noConflict();
  $(function () { 
 	$('#sgem-retirement-cal').html(sgem_main_contents);
 	tippy('.sgem-goal-tooltip', {animation: 'sacle',theme: 'sgem-goal', boundary: 'viewport',allowHTML: true,arrow: true,placement: 'top',size:'large',trigger: 'click',  });
