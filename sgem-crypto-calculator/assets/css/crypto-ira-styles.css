@@ -759,9 +759,8 @@
     background: #000;
 }
 .img-class {
-		width:  215px;
-		height:  24px;
-	}
+	width:  215px; 
+}
 
 
   #sgem_crypto_ira_err_age, #sgem_crypto_ira_err_retirement_age , #sgem_crypto_ira_err_annual_contribution, #sgem_crypto_ira_err_annual_return, #sgem_crypto_ira_err_current_savings, #sgem_crypto_ira_err_current_total_allocation, #sgem_crypto_ira_err_current_bitcoin, #sgem_crypto_ira_err_current_ethereum, #sgem_crypto_ira_err_current_other, #sgem_crypto_ira_err_future_total_allocation, #sgem_crypto_ira_err_future_bitcoin, #sgem_crypto_ira_err_future_ethereum, #sgem_crypto_ira_err_future_current_other, #sgem_crypto_ira_err_current_total_allocation_zero, #sgem_crypto_ira_err_future_total_allocation_zero, #sgem_crypto_ira_err_current_combine_total, #sgem_crypto_ira_err_future_combine_total
