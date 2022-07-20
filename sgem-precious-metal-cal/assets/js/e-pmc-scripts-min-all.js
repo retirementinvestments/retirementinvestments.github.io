@@ -87,7 +87,7 @@ var sgem_pmc_main_contents = '<div class="sgem-pmc-cal-main-id" id="sgem-pmc-cal
 '<img src="https://retirementinvestments.github.io/sgem-precious-metal-cal/assets/images/retirement-investments-logo.png" class="img-class" alt="Retirement calculator Logo" /></a></div></div></div> </div>';     
 
 jQuery(document).ready(function($){
- $('#sgem-pmc-cal').html(sgem_pmc_main_contents);
+ jQuery('#sgem-pmc-cal').html(sgem_pmc_main_contents);
  }); 
  
  
@@ -141,43 +141,43 @@ function sgem_ConvertToInternationalCurrencySystemRound(labelValue) {
     var chart_label_year_array = [];
     var y_axis_array = [];
     var y_axis_nan_array = [];
-    var current_age = $('#sgem_pmc_age').val().trim();
-    var retirement_age  = $('#sgem_pmc_retirement_age').val().trim();
+    var current_age = jQuery('#sgem_pmc_age').val().trim();
+    var retirement_age  = jQuery('#sgem_pmc_retirement_age').val().trim();
   
-    var annual_rate_of_return2 = $('#sgem_pmc_annual_return').val().trim();
+    var annual_rate_of_return2 = jQuery('#sgem_pmc_annual_return').val().trim();
     var annual_rate_of_return1 = annual_rate_of_return2.replace('%', "");
     var annual_rate_of_return = parseFloat(annual_rate_of_return1/100);
 
-    var annual_contribution3 = $('#sgem_pmc_annual_contribution').val().trim();
+    var annual_contribution3 = jQuery('#sgem_pmc_annual_contribution').val().trim();
     var annual_contribution2 = annual_contribution3.replace(/\,/g,'');
     var annual_contribution = parseInt(annual_contribution2,10); 
 
-    var current_savings3 = $('#sgem_pmc_current_savings').val().trim();
+    var current_savings3 = jQuery('#sgem_pmc_current_savings').val().trim();
     var current_savings2 = current_savings3.replace(/\,/g,'');
     var current_savings = parseInt(current_savings2,10); 
 
-    var pm_current_allocation2 = $('#sgem_pmc_current_allocation').val().trim();
+    var pm_current_allocation2 = jQuery('#sgem_pmc_current_allocation').val().trim();
     var pm_current_allocation1 = pm_current_allocation2.replace('%', "");
     var pm_current_allocation = parseFloat(pm_current_allocation1/100);
     
-    var gold_current_allocation2 = $('#sgem_pmc_current_gold_allocation').val().trim();
+    var gold_current_allocation2 = jQuery('#sgem_pmc_current_gold_allocation').val().trim();
     var gold_current_allocation1 = gold_current_allocation2.replace('%', "");
     var gold_current_allocation = parseFloat(gold_current_allocation1/100);
 
 
-    var silver_current_allocation2 = $('#sgem_pmc_current_silver_allocation').val().trim();
+    var silver_current_allocation2 = jQuery('#sgem_pmc_current_silver_allocation').val().trim();
     var silver_current_allocation1 = silver_current_allocation2.replace('%', "");
     var silver_current_allocation = parseFloat(silver_current_allocation1/100);
 
-    var pm_future_allocation2 = $('#sgem_pmc_future_allocation').val().trim();
+    var pm_future_allocation2 = jQuery('#sgem_pmc_future_allocation').val().trim();
     var pm_future_allocation1 = pm_future_allocation2.replace('%', "");
     var pm_future_allocation = parseFloat(pm_future_allocation1/100);
 
-    var gold_future_allocation2 = $('#sgem_pmc_future_gold_allocation').val().trim();
+    var gold_future_allocation2 = jQuery('#sgem_pmc_future_gold_allocation').val().trim();
     var gold_future_allocation1 = gold_future_allocation2.replace('%', "");
     var gold_future_allocation = parseFloat(gold_future_allocation1/100);
 
-    var silver_future_allocation2 = $('#sgem_pmc_future_silver_allocation').val().trim();
+    var silver_future_allocation2 = jQuery('#sgem_pmc_future_silver_allocation').val().trim();
     var silver_future_allocation1 = silver_future_allocation2.replace('%', "");
     var silver_future_allocation = parseFloat(silver_future_allocation1/100);
 
@@ -248,11 +248,11 @@ function sgem_ConvertToInternationalCurrencySystemRound(labelValue) {
     
     if (isNaN(value_at_retirement) || value_at_retirement < 1){
 
-          $('#sgem_pmc_value_text').text('00.00'); 
+          jQuery('#sgem_pmc_value_text').text('00.00'); 
 
       }else{
 
-        $('#sgem_pmc_value_text').text('$' + sgem_ConvertToInternationalCurrencySystem(value_at_retirement).replace(/\B(?=(\d{3})+(?!\d))/g, ",")); 
+        jQuery('#sgem_pmc_value_text').text('jQuery' + sgem_ConvertToInternationalCurrencySystem(value_at_retirement).replace(/\B(?=(\d{3})+(?!\d))/g, ",")); 
       }
 
  
@@ -288,7 +288,7 @@ function sgem_ConvertToInternationalCurrencySystemRound(labelValue) {
            }
           localStorage.setItem('pcm_label_years', JSON.stringify(chart_label_year_array));
        //alert(display_years_concat);
-       // $('#sgemyyear').val(display_years_concat);
+       // jQuery('#sgemyyear').val(display_years_concat);
         // window.localStorage.setItem('pmc_label_year', display_years_concat); 
     //  alert('pcm_label_years');
 
@@ -315,7 +315,7 @@ function sgem_ConvertToInternationalCurrencySystemRound(labelValue) {
    
        
       // alert('pcm_values_totalcapital');
-        //$('#sgemyyear').text(years_invested_so_far_array);
+        //jQuery('#sgemyyear').text(years_invested_so_far_array);
   
       //interest
        var total_invested_first_value2 = 1;
