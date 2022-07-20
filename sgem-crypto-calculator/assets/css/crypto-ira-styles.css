@@ -7,11 +7,11 @@
     font-family: 'DM Sans', sans-serif;
 }
  
-.sgem-crypto-ira-cal-main-id {
+.sgem-crypto-ira-cal-main-id, #sgem-crypto-ira-cal {
 	max-width: 1240px;
 	margin: 0 auto;
 	 font-family: 'DM Sans', sans-serif;
-	}
+ }
 
 
 	.sgem-crypto-ira-cal-wrapper * {
@@ -42,7 +42,7 @@
 }
 
 .sgem-crypto-ira-cal-left {
-	width: 470px;
+	width: 480px !important;
 	padding: 32px 20px;
 } 
 .sgem-crypto-ira-cal-right {
@@ -575,44 +575,7 @@
   border-right-color: #fff;
 }
 
-
-
-
-
-/* .sgem-crypto-ira-info-tooltip{
-	border: 1px solid #000;
-	   width: 18px;
-	   height: 18px;
-	   border-radius: 50px;
-	   line-height: 18px;
-	   font-size: 11px;
-	   display: inline-block;
-	   text-align: center;
-	 cursor:pointer;
-   }
-	 .sgem-i-goal-theme {
-		font-family: 'DM Sans', sans-serif;
-	   font-size: 14px;
-	   background-color: rgb(0, 0, 0);
-	   color:#ffffff;
-	   border: 1px solid #b1b3b5;
-	   -webkit-box-shadow: 0 4px 8px 0 rgb(100 102 106 / 15%), 0 8px 16px 0 rgb(100 102 106 / 33%);
-	   box-shadow: 0 4px 8px 0 rgb(100 102 106 / 15%), 0 8px 16px 0 rgb(100 102 106 / 33%);
-	 }
-	 .tippy-tooltip.sgem-i-goal-theme[data-placement^='top'] .tippy-arrow {
-	 border-top-color: #fff;
-   }
-   .tippy-tooltip.sgem-i-goal-theme[data-placement^='bottom'] .tippy-arrow {
-	 border-bottom-color: #fff;
-   }
-   .tippy-tooltip.sgem-i-goal-theme[data-placement^='left'] .tippy-arrow {
-	 border-left-color: #fff;
-   }
-   .tippy-tooltip.sgem-i-goal-theme[data-placement^='right'] .tippy-arrow {
-	 border-right-color: #fff;
-   } */
-
-
+ 
 .sgem-crypto-ira-midtext {
 	font-size: 20px;
 	color:#000;
@@ -684,15 +647,7 @@
     width: 1px !important;
   }
 
-  /* .sgem-crypto-ira-cal-left {
-    height: 700px;
-	overflow-x: hidden;
-	overflow-y: auto;
-	scrollbar-color: #f3f3f3 #f3f3f3;
-}
-  .sgem-crypto-ira-cal-left::-webkit-scrollbar {
-  display: none;
-} */
+ 
   .sgem-crypto-ira-value-label {
     display: flex;
     flex-direction: column;
@@ -762,21 +717,20 @@
 	width:  215px; 
 }
 
-
-  #sgem_crypto_ira_err_age, #sgem_crypto_ira_err_retirement_age , #sgem_crypto_ira_err_annual_contribution, #sgem_crypto_ira_err_annual_return, #sgem_crypto_ira_err_current_savings, #sgem_crypto_ira_err_current_total_allocation, #sgem_crypto_ira_err_current_bitcoin, #sgem_crypto_ira_err_current_ethereum, #sgem_crypto_ira_err_current_other, #sgem_crypto_ira_err_future_total_allocation, #sgem_crypto_ira_err_future_bitcoin, #sgem_crypto_ira_err_future_ethereum, #sgem_crypto_ira_err_future_current_other, #sgem_crypto_ira_err_current_total_allocation_zero, #sgem_crypto_ira_err_future_total_allocation_zero, #sgem_crypto_ira_err_current_combine_total, #sgem_crypto_ira_err_future_combine_total
+ #sgem_crypto_ira_err_age, #sgem_crypto_ira_err_retirement_age , #sgem_crypto_ira_err_annual_contribution, #sgem_crypto_ira_err_annual_return, #sgem_crypto_ira_err_current_savings, #sgem_crypto_ira_err_current_total_allocation, #sgem_crypto_ira_err_current_bitcoin, #sgem_crypto_ira_err_current_ethereum, #sgem_crypto_ira_err_current_other, #sgem_crypto_ira_err_future_total_allocation, #sgem_crypto_ira_err_future_bitcoin, #sgem_crypto_ira_err_future_ethereum, #sgem_crypto_ira_err_future_current_other, #sgem_crypto_ira_err_current_total_allocation_zero, #sgem_crypto_ira_err_future_total_allocation_zero, #sgem_crypto_ira_err_current_combine_total, #sgem_crypto_ira_err_future_combine_total
  {
 	font-weight: 300;
     font-size: 13px;
     color: #ff5964;
-  }
+ }
 
 
 /* ******** ipad ************ */
 @media (max-width:1024px) {
 	.sgem-crypto-ira-logo-wrapper {
-    position: absolute;
-    right: 5px;
-    top: -7px;
+		position: absolute;
+		right: 5px;
+		top: -7px;
 	}
 }
 
@@ -799,9 +753,9 @@
 		padding-right: 0;
 	}
 	.sgem-crypto-ira-precentage-arrow {
-    border-top: solid 12px white;
-    border-left: solid 12px transparent;
-    border-right: solid 12px transparent;
+		border-top: solid 12px white;
+		border-left: solid 12px transparent;
+		border-right: solid 12px transparent;
 	}
 }
  
@@ -891,40 +845,46 @@
 		padding: 0 10px;
 	}
 	.sgem-crypto-ira-tooltip{
-	width: 15px;
-    height: 15px;
-	line-height: 15px;
-    font-size: 11px;
+		width: 15px;
+		height: 15px;
+		line-height: 15px;
+		font-size: 11px;
 	}
 	.sgem-crypto-ira-logo-center {
-    font-size: 15px;
-    flex-direction: column;
-    padding-top: 20px;
+		font-size: 15px;
+		flex-direction: column;
+		padding-top: 20px;
     }
 	.sgem-crypto-ira-logo-image {
-      padding: 0px;
+		padding: 0px;
     }
 	.sgem-crypto-ira-value-text {
 		font-size: 22px;
-    padding-top: 0px;
+		padding-top: 0px;
 	}
 	.sgem-crypto-ira-buttonGet {
 		justify-content: center;
 	}
+	.sgem-crypto-ira-cal-left {
+		width: 100% !important; 
+	}
 }
 @media (max-width: 420px){
 	.sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex.sgem-crypto-ira-currency-holder::after {
-    top: 46px;
+		top: 46px;
 	}
 	.sgem-crypto-ira-tooltip {
-    position: absolute;
-    margin-left: 4px;
+		position: absolute;
+		margin-left: 4px;
 	}
 	.sgem-crypto-ira-tooltip{
-	width: 13px;
-    height: 13px;
-	line-height: 13px;
-    font-size: 10px;
+		width: 13px;
+		height: 13px;
+		line-height: 13px;
+		font-size: 10px;
+	}
+	.sgem-crypto-ira-cal-left {
+		width: 100% !important; 
 	}
 }
 /* Surge end */
