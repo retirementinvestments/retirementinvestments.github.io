@@ -44,7 +44,7 @@ var sgem_pmc_main_contents = '<div class="sgem-pmc-cal-main-id" id="sgem-pmc-cal
 '<input type="text" id="sgem_pmc_retirement_age" value="67" min="0" max="150" onkeypress="return isNumber(event)"/><span class="sgem-pmc-err-msg-rmt"></span></div></div>'+
 '<div class="sgem-pmc-flex-container">'+
 '<div class="sgem-pmc-form-group sgem-pmc-form-flex">'+
-'<label>Annual Return</label>'+
+'<label>Annual Return <span class="sgem-pmc-info-tooltip tooltip" data-tippy-content="Based on historic returns, our estimate for average annual return is 6%. What is your expected earning on investment between now and retirement?">?</span></label>'+
 '<input type="text" class="inputmove inputnumber"  id="sgem_pmc_annual_return" value="6%" min="0" max="100" onkeypress="return isNumber(event)"/>'+
 '<span class="sgem-pmc-err-msg-current"></span></div>'+
 '<div class="sgem-pmc-form-group sgem-pmc-form-flex sgem-pmc-currency-holder">'+
