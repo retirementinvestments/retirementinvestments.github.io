@@ -14,6 +14,6 @@ let sgemcijs3 = document.createElement('script');
   
 function runCal(){ 
    let sgemcijs = document.createElement('script');
-   sgemcijs.setAttribute('src','https://messy-saxophone.flywheelsites.com/wp-content/calculators-html/crypto-demo/e-crypto-ira-all.js?v=2');
+   sgemcijs.setAttribute('src','https://retirementinvestments.github.io/sgem-crypto-calculator/assets/js/e-crypto-ira-all.js?v=2');
    document.body.appendChild(sgemcijs);
 } 
