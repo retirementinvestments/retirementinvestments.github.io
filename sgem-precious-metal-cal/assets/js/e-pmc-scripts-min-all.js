@@ -407,14 +407,14 @@ jQuery(document).ready(function($){
    // Scorlll
 if (window.innerWidth > 1024) { 
   jQuery(document).ready(function($){
-    $('.sgem-pmc-cal-left').slimScroll({
+    jQuery('.sgem-pmc-cal-left').slimScroll({
       height: '700px',
     });
   });
 }
    
- if($('#sgem_pmc_age,#sgem_pmc_retirement_age,#sgem_pmc_annual_return,#sgem_pmc_annual_contribution,#sgem_pmc_current_savings,#sgem_pmc_current_allocation,#sgem_pmc_current_gold_allocation,#sgem_pmc_current_silver_allocation,#sgem_pmc_future_allocation,#sgem_pmc_future_gold_allocation,#sgem_pmc_future_silver_allocation').length > 0) {
-      $('#sgem_pmc_age,#sgem_pmc_retirement_age,#sgem_pmc_annual_return,#sgem_pmc_annual_contribution,#sgem_pmc_current_savings,#sgem_pmc_current_allocation,#sgem_pmc_current_gold_allocation,#sgem_pmc_current_silver_allocation,#sgem_pmc_future_allocation,#sgem_pmc_future_gold_allocation,#sgem_pmc_future_silver_allocation').on('keyup', function () {
+ if(jQuery('#sgem_pmc_age,#sgem_pmc_retirement_age,#sgem_pmc_annual_return,#sgem_pmc_annual_contribution,#sgem_pmc_current_savings,#sgem_pmc_current_allocation,#sgem_pmc_current_gold_allocation,#sgem_pmc_current_silver_allocation,#sgem_pmc_future_allocation,#sgem_pmc_future_gold_allocation,#sgem_pmc_future_silver_allocation').length > 0) {
+      jQuery('#sgem_pmc_age,#sgem_pmc_retirement_age,#sgem_pmc_annual_return,#sgem_pmc_annual_contribution,#sgem_pmc_current_savings,#sgem_pmc_current_allocation,#sgem_pmc_current_gold_allocation,#sgem_pmc_current_silver_allocation,#sgem_pmc_future_allocation,#sgem_pmc_future_gold_allocation,#sgem_pmc_future_silver_allocation').on('keyup', function () {
         sgem_pmc_calculaterminfazcal();
       //pcm_init_chart(); 
 
@@ -435,23 +435,23 @@ if (window.innerWidth > 1024) {
  
     
     // Current age validation
-    $('#sgem_pmc_age').on('keyup', function () {
-       var retirement_age7     = $('#sgem_pmc_retirement_age').val().trim();
+    jQuery('#sgem_pmc_age').on('keyup', function () {
+       var retirement_age7     = jQuery('#sgem_pmc_retirement_age').val().trim();
        var x = parseFloat(retirement_age7);
       var val = this.value;
       var y = parseFloat(val);
       if (isNaN(y) || y.length>2 || y < 0 || y > x){
          
          this.value ='';
-         $('.sgem-pmc-err-msg-age').html('Age cannot be more than 100 and retirement age').fadeIn();  
-          $(this).css({
+         jQuery('.sgem-pmc-err-msg-age').html('Age cannot be more than 100 and retirement age').fadeIn();  
+          jQuery(this).css({
         "border": "1px solid red",
         "background": "#FFCECE" });  
           
 
   }else{
-     $('.sgem-pmc-err-msg-age').html('').fadeOut();  
-    $(this).css({
+     jQuery('.sgem-pmc-err-msg-age').html('').fadeOut();  
+    jQuery(this).css({
         "border": "1px solid #707070",
         "background": "#ffffff"
       }); 
@@ -460,21 +460,21 @@ if (window.innerWidth > 1024) {
 
 
     // Retirement age validation
-    $('#sgem_pmc_retirement_age').on('keyup', function () {
-      var current_age7     = $('#sgem_pmc_age').val().trim();
+    jQuery('#sgem_pmc_retirement_age').on('keyup', function () {
+      var current_age7     = jQuery('#sgem_pmc_age').val().trim();
       var val = this.value;
-      if ($(this).val().length>2 || val < current_age7){    
+      if (jQuery(this).val().length>2 || val < current_age7){    
          this.value ='';
-         $('.sgem-pmc-err-msg-rmt').html('Retirement age should be between your age '+current_age7+' and 100').fadeIn();      
-          $(this).css({
+         jQuery('.sgem-pmc-err-msg-rmt').html('Retirement age should be between your age '+current_age7+' and 100').fadeIn();      
+          jQuery(this).css({
         "border": "1px solid red",
         "background": "#FFCECE"
       }); 
     
        
   }else{
-     $('.sgem-pmc-err-msg-rmt').html('').fadeOut();  
-    $(this).css({
+     jQuery('.sgem-pmc-err-msg-rmt').html('').fadeOut();  
+    jQuery(this).css({
         "border": "1px solid #707070",
         "background": "#ffffff"
       }); 
@@ -484,21 +484,21 @@ if (window.innerWidth > 1024) {
  
 
     // current saving validation
-    $('#sgem_pmc_current_savings').on('keyup', function () {
+    jQuery('#sgem_pmc_current_savings').on('keyup', function () {
       var val = this.value;
       var xc = parseInt(val);
-      if (isNaN(xc) || $(this).val().length>11){
+      if (isNaN(xc) || jQuery(this).val().length>11){
          
          this.value ='';
-         $('.sgem-pmc-err-msg-income').html('Must be at most $900,000,000').fadeIn();  
-          $(this).css({
+         jQuery('.sgem-pmc-err-msg-income').html('Must be at most $900,000,000').fadeIn();  
+          jQuery(this).css({
         "border": "1px solid red",
         "background": "#FFCECE" });  
           
 
   }else{
-     $('.sgem-pmc-err-msg-income').html('').fadeOut();  
-    $(this).css({
+     jQuery('.sgem-pmc-err-msg-income').html('').fadeOut();  
+    jQuery(this).css({
         "border": "1px solid #707070",
         "background": "#ffffff"
       }); 
@@ -506,21 +506,21 @@ if (window.innerWidth > 1024) {
     });
   
    // annual con validation
-    $('#sgem_pmc_annual_contribution').on('keyup', function () {
+    jQuery('#sgem_pmc_annual_contribution').on('keyup', function () {
       var val = this.value;
        var rc = parseInt(val);
-      if (isNaN(rc) || $(this).val().length>11){
+      if (isNaN(rc) || jQuery(this).val().length>11){
          
          this.value ='';
-         $('.sgem-pmc-err-msg-anucon').html('Must be at most $900,000,000').fadeIn();  
-          $(this).css({
+         jQuery('.sgem-pmc-err-msg-anucon').html('Must be at most $900,000,000').fadeIn();  
+          jQuery(this).css({
         "border": "1px solid red",
         "background": "#FFCECE" });  
           
 
   }else{
-     $('.sgem-pmc-err-msg-anucon').html('').fadeOut();  
-    $(this).css({
+     jQuery('.sgem-pmc-err-msg-anucon').html('').fadeOut();  
+    jQuery(this).css({
         "border": "1px solid #707070",
         "background": "#ffffff"
       }); 
@@ -528,21 +528,21 @@ if (window.innerWidth > 1024) {
     });
 
     // annual rate validtion
-    $('#sgem_pmc_annual_return').on('keyup', function () {
+    jQuery('#sgem_pmc_annual_return').on('keyup', function () {
        var val = this.value;
       var w = parseFloat(val);
-      if (isNaN(w) || $(this).val().length>3 || w >= 101){
+      if (isNaN(w) || jQuery(this).val().length>3 || w >= 101){
          
          this.value ='';
-         $('.sgem-pmc-err-msg-current').html('Annual return cannot be more than 100%').fadeIn();  
-          $(this).css({
+         jQuery('.sgem-pmc-err-msg-current').html('Annual return cannot be more than 100%').fadeIn();  
+          jQuery(this).css({
         "border": "1px solid red",
         "background": "#FFCECE" }); 
 
        
   }else{
-     $('.sgem-pmc-err-msg-current').html('').fadeOut();  
-    $(this).css({
+     jQuery('.sgem-pmc-err-msg-current').html('').fadeOut();  
+    jQuery(this).css({
         "border": "1px solid #707070",
         "background": "#ffffff"
       }); 
@@ -550,20 +550,20 @@ if (window.innerWidth > 1024) {
     });
   
    // current total allocation
-    $('#sgem_pmc_current_allocation').on('keyup', function () {
+    jQuery('#sgem_pmc_current_allocation').on('keyup', function () {
       var vala = this.value;
       var g = parseInt(vala);
-      if (isNaN(g) || $(this).val().length>3 || g >= 101){
+      if (isNaN(g) || jQuery(this).val().length>3 || g >= 101){
          this.value ='';
-         $('.sgem-pmc-err-msg-ftallo').html('Total allocation cannot be more than 100%').fadeIn();  
-          $(this).css({
+         jQuery('.sgem-pmc-err-msg-ftallo').html('Total allocation cannot be more than 100%').fadeIn();  
+          jQuery(this).css({
         "border": "1px solid red",
         "background": "#FFCECE" }); 
 
        
   }else{
-     $('.sgem-pmc-err-msg-ftallo').html('').fadeOut();  
-    $(this).css({
+     jQuery('.sgem-pmc-err-msg-ftallo').html('').fadeOut();  
+    jQuery(this).css({
         "border": "1px solid #707070",
         "background": "#ffffff"
       }); 
@@ -571,20 +571,20 @@ if (window.innerWidth > 1024) {
     });
 
      // future total allocation
-    $('#sgem_pmc_future_allocation').on('keyup', function () {
+    jQuery('#sgem_pmc_future_allocation').on('keyup', function () {
       var valu = this.value;
       var h = parseFloat(valu);
-       if (isNaN(h) || $(this).val().length>3 || h >= 101){         
+       if (isNaN(h) || jQuery(this).val().length>3 || h >= 101){         
          this.value ='';
-         $('.sgem-pmc-err-msg-ctallo').html('Total allocation cannot be more than 100%').fadeIn();  
-          $(this).css({
+         jQuery('.sgem-pmc-err-msg-ctallo').html('Total allocation cannot be more than 100%').fadeIn();  
+          jQuery(this).css({
         "border": "1px solid red",
         "background": "#FFCECE" }); 
 
        
   }else{
-     $('.sgem-pmc-err-msg-ctallo').html('').fadeOut();  
-    $(this).css({
+     jQuery('.sgem-pmc-err-msg-ctallo').html('').fadeOut();  
+    jQuery(this).css({
         "border": "1px solid #707070",
         "background": "#ffffff"
       }); 
@@ -592,73 +592,73 @@ if (window.innerWidth > 1024) {
     });
 
    // current total allocation 0 val
-    $('#sgem_pmc_current_allocation').on('keyup', function () {
-       var futureall72     = $('#sgem_pmc_future_allocation').val().trim();
+    jQuery('#sgem_pmc_current_allocation').on('keyup', function () {
+       var futureall72     = jQuery('#sgem_pmc_future_allocation').val().trim();
        var futureall7      = parseFloat(futureall72);
        var val = this.value;
        var j = parseFloat(val);
       //this.value ='';
       if (j==0 && futureall7==0) {
         //this.value ='0';
-           $('.sgem-pmc-err-msg-ftallonew').html('Current and Future Total Allocation both fields cannot be 0').fadeIn(); 
+           jQuery('.sgem-pmc-err-msg-ftallonew').html('Current and Future Total Allocation both fields cannot be 0').fadeIn(); 
        
       }else{
-        $('.sgem-pmc-err-msg-ftallonew').html('').fadeOut(); 
+        jQuery('.sgem-pmc-err-msg-ftallonew').html('').fadeOut(); 
         
       }
       
     });
 
       // future total allocation 0 val
-    $('#sgem_pmc_future_allocation').on('keyup', function () {
-       var currentall72     = $('#sgem_pmc_current_allocation').val().trim();
+    jQuery('#sgem_pmc_future_allocation').on('keyup', function () {
+       var currentall72     = jQuery('#sgem_pmc_current_allocation').val().trim();
        var currentall7      = parseFloat(currentall72);
        var val = this.value;
        var k = parseFloat(val);
        //this.value ='';
       if (currentall7==0 && k==0){
          //this.value ='0'; 
-         $('.sgem-pmc-err-msg-ctallonew').html('Current and Future Total Allocation both fields cannot be 0').fadeIn();  
+         jQuery('.sgem-pmc-err-msg-ctallonew').html('Current and Future Total Allocation both fields cannot be 0').fadeIn();  
     
        
   }else {
-     $('.sgem-pmc-err-msg-ctallonew').html('').fadeOut();  
+     jQuery('.sgem-pmc-err-msg-ctallonew').html('').fadeOut();  
    
   }    
     }); 
 
  // current gold and silver comb
-    $('#sgem_pmc_current_gold_allocation').on('keyup', function () {
-      var current_silver_allocation2 = $('#sgem_pmc_current_silver_allocation').val().trim();
+    jQuery('#sgem_pmc_current_gold_allocation').on('keyup', function () {
+      var current_silver_allocation2 = jQuery('#sgem_pmc_current_silver_allocation').val().trim();
        var current_silver_allocation = parseFloat(current_silver_allocation2);
-       var current_gold_allocation2 = $('#sgem_pmc_current_gold_allocation').val().trim();
+       var current_gold_allocation2 = jQuery('#sgem_pmc_current_gold_allocation').val().trim();
        var current_gold_allocation = parseFloat(current_gold_allocation2);
       //var val = this.value;
       var total = current_gold_allocation + current_silver_allocation;
       if (total!=100){
          
-         $('.sgem-pmc-err-msg-both').html('Both Gold allocation and Silver allocation fields value combined should be 100%').fadeIn();  
+         jQuery('.sgem-pmc-err-msg-both').html('Both Gold allocation and Silver allocation fields value combined should be 100%').fadeIn();  
                
   }else{
-     $('.sgem-pmc-err-msg-both').html('').fadeOut();  
+     jQuery('.sgem-pmc-err-msg-both').html('').fadeOut();  
    
   }    
     });
 
     // current gold and silver comb
-    $('#sgem_pmc_current_silver_allocation').on('keyup', function () {
-      var current_silver_allocation2 = $('#sgem_pmc_current_silver_allocation').val().trim();
+    jQuery('#sgem_pmc_current_silver_allocation').on('keyup', function () {
+      var current_silver_allocation2 = jQuery('#sgem_pmc_current_silver_allocation').val().trim();
        var current_silver_allocation = parseFloat(current_silver_allocation2);
-       var current_gold_allocation2 = $('#sgem_pmc_current_gold_allocation').val().trim();
+       var current_gold_allocation2 = jQuery('#sgem_pmc_current_gold_allocation').val().trim();
        var current_gold_allocation = parseFloat(current_gold_allocation2);
       //var val = this.value;
       var total = current_gold_allocation + current_silver_allocation;
       if (total!=100){
          
-         $('.sgem-pmc-err-msg-both').html('Both Gold allocation and Silver allocation fields value combined should be 100%').fadeIn();  
+         jQuery('.sgem-pmc-err-msg-both').html('Both Gold allocation and Silver allocation fields value combined should be 100%').fadeIn();  
                
   }else{
-     $('.sgem-pmc-err-msg-both').html('').fadeOut();  
+     jQuery('.sgem-pmc-err-msg-both').html('').fadeOut();  
    
   }    
     });
@@ -666,20 +666,20 @@ if (window.innerWidth > 1024) {
     
 
     // current gold allocation 100%
-    $('#sgem_pmc_current_gold_allocation').on('keyup', function () {
+    jQuery('#sgem_pmc_current_gold_allocation').on('keyup', function () {
       var val = this.value;
       var a = parseFloat(val);
-       if (isNaN(a) || $(this).val().length>3 || a >= 101){
+       if (isNaN(a) || jQuery(this).val().length>3 || a >= 101){
         this.value ='';    
-         $('.sgem-pmc-err-msg-death').html('This cannot be more than 100%').fadeIn();  
-          $(this).css({
+         jQuery('.sgem-pmc-err-msg-death').html('This cannot be more than 100%').fadeIn();  
+          jQuery(this).css({
         "border": "1px solid red",
         "background": "#FFCECE" }); 
 
                
   }else{
-     $('.sgem-pmc-err-msg-death').html('').fadeOut(); 
-     $(this).css({
+     jQuery('.sgem-pmc-err-msg-death').html('').fadeOut(); 
+     jQuery(this).css({
         "border": "1px solid #707070",
         "background": "#ffffff"
       });  
@@ -688,20 +688,20 @@ if (window.innerWidth > 1024) {
     });
 
      // current silver allocation 100%
-    $('#sgem_pmc_current_silver_allocation').on('keyup', function () {
+    jQuery('#sgem_pmc_current_silver_allocation').on('keyup', function () {
       var val = this.value;
       var q = parseFloat(val);
-       if (isNaN(q) || $(this).val().length>3 || q >= 101){
+       if (isNaN(q) || jQuery(this).val().length>3 || q >= 101){
         this.value ='';    
-         $('.sgem-pmc-err-msg-per').html('This cannot be more than 100%').fadeIn(); 
-          $(this).css({
+         jQuery('.sgem-pmc-err-msg-per').html('This cannot be more than 100%').fadeIn(); 
+          jQuery(this).css({
         "border": "1px solid red",
         "background": "#FFCECE" }); 
  
                
   }else{
-     $('.sgem-pmc-err-msg-per').html('').fadeOut();  
-     $(this).css({
+     jQuery('.sgem-pmc-err-msg-per').html('').fadeOut();  
+     jQuery(this).css({
         "border": "1px solid #707070",
         "background": "#ffffff"
       }); 
@@ -712,56 +712,56 @@ if (window.innerWidth > 1024) {
 
 
  // future gold and silver comb
-    $('#sgem_pmc_future_gold_allocation').on('keyup', function () {
-      var future_silver_allocation2 = $('#sgem_pmc_future_silver_allocation').val().trim();
+    jQuery('#sgem_pmc_future_gold_allocation').on('keyup', function () {
+      var future_silver_allocation2 = jQuery('#sgem_pmc_future_silver_allocation').val().trim();
        var future_silver_allocation = parseFloat(future_silver_allocation2);
-       var future_gold_allocation2 = $('#sgem_pmc_future_gold_allocation').val().trim();
+       var future_gold_allocation2 = jQuery('#sgem_pmc_future_gold_allocation').val().trim();
        var future_gold_allocation = parseFloat(future_gold_allocation2);
       //var val = this.value;
       var total = future_gold_allocation + future_silver_allocation;
       if (total!=100){
          
-         $('.sgem-pmc-err-msg-c-both').html('Both Gold allocation and Silver allocation fields value combined should be 100%').fadeIn();  
+         jQuery('.sgem-pmc-err-msg-c-both').html('Both Gold allocation and Silver allocation fields value combined should be 100%').fadeIn();  
                
   }else{
-     $('.sgem-pmc-err-msg-c-both').html('').fadeOut();  
+     jQuery('.sgem-pmc-err-msg-c-both').html('').fadeOut();  
    
   }    
     });
 
     // future gold and silver comb
-    $('#sgem_pmc_future_silver_allocation').on('keyup', function () {
-      var future_silver_allocation2 = $('#sgem_pmc_future_silver_allocation').val().trim();
+    jQuery('#sgem_pmc_future_silver_allocation').on('keyup', function () {
+      var future_silver_allocation2 = jQuery('#sgem_pmc_future_silver_allocation').val().trim();
        var future_silver_allocation = parseFloat(future_silver_allocation2);
-       var future_gold_allocation2 = $('#sgem_pmc_future_gold_allocation').val().trim();
+       var future_gold_allocation2 = jQuery('#sgem_pmc_future_gold_allocation').val().trim();
        var future_gold_allocation = parseFloat(future_gold_allocation2);
       //var val = this.value;
       var total = future_gold_allocation + future_silver_allocation;
       if (total!=100){
          
-         $('.sgem-pmc-err-msg-c-both').html('Both Gold allocation and Silver allocation fields value combined should be 100%').fadeIn();  
+         jQuery('.sgem-pmc-err-msg-c-both').html('Both Gold allocation and Silver allocation fields value combined should be 100%').fadeIn();  
                
   }else{
-     $('.sgem-pmc-err-msg-c-both').html('').fadeOut();  
+     jQuery('.sgem-pmc-err-msg-c-both').html('').fadeOut();  
    
   }    
     });
 
     // future gold allocation 100%
-    $('#sgem_pmc_future_gold_allocation').on('keyup', function () {
+    jQuery('#sgem_pmc_future_gold_allocation').on('keyup', function () {
       var val = this.value;
       var t = parseFloat(val);
-       if (isNaN(t) || $(this).val().length>3 || t >= 101){
+       if (isNaN(t) || jQuery(this).val().length>3 || t >= 101){
         this.value ='';    
-         $('.sgem-pmc-err-msg-f-death').html('This cannot be more than 100%').fadeIn();  
-          $(this).css({
+         jQuery('.sgem-pmc-err-msg-f-death').html('This cannot be more than 100%').fadeIn();  
+          jQuery(this).css({
         "border": "1px solid red",
         "background": "#FFCECE" }); 
 
                
   }else{
-     $('.sgem-pmc-err-msg-f-death').html('').fadeOut(); 
-     $(this).css({
+     jQuery('.sgem-pmc-err-msg-f-death').html('').fadeOut(); 
+     jQuery(this).css({
         "border": "1px solid #707070",
         "background": "#ffffff"
       });  
@@ -770,20 +770,20 @@ if (window.innerWidth > 1024) {
     });
 
      // future silver allocation 100%
-    $('#sgem_pmc_future_silver_allocation').on('keyup', function () {
+    jQuery('#sgem_pmc_future_silver_allocation').on('keyup', function () {
       var val = this.value;
       var u = parseFloat(val);
-       if (isNaN(u) || $(this).val().length>3 || u >= 101){
+       if (isNaN(u) || jQuery(this).val().length>3 || u >= 101){
         this.value ='';    
-         $('.sgem-pmc-err-msg-f-per').html('This cannot be more than 100%').fadeIn(); 
-          $(this).css({
+         jQuery('.sgem-pmc-err-msg-f-per').html('This cannot be more than 100%').fadeIn(); 
+          jQuery(this).css({
         "border": "1px solid red",
         "background": "#FFCECE" }); 
  
                
   }else{
-     $('.sgem-pmc-err-msg-f-per').html('').fadeOut();  
-     $(this).css({
+     jQuery('.sgem-pmc-err-msg-f-per').html('').fadeOut();  
+     jQuery(this).css({
         "border": "1px solid #707070",
         "background": "#ffffff"
       }); 
@@ -791,8 +791,8 @@ if (window.innerWidth > 1024) {
   }    
     });
    
-$('#sgem_pmc_annual_return,#sgem_pmc_current_allocation,#sgem_pmc_current_gold_allocation,#sgem_pmc_current_silver_allocation,#sgem_pmc_future_allocation,#sgem_pmc_future_gold_allocation,#sgem_pmc_future_silver_allocation').on('keyup', function() {
-            $(this).val(function(i, v) {
+jQuery('#sgem_pmc_annual_return,#sgem_pmc_current_allocation,#sgem_pmc_current_gold_allocation,#sgem_pmc_current_silver_allocation,#sgem_pmc_future_allocation,#sgem_pmc_future_gold_allocation,#sgem_pmc_future_silver_allocation').on('keyup', function() {
+            jQuery(this).val(function(i, v) {
              return v.replace('%','') + '%';  });
     }); 
    
