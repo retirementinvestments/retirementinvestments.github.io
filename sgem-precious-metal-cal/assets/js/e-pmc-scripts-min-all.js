@@ -399,14 +399,14 @@ function sgem_ConvertToInternationalCurrencySystemRound(labelValue) {
 	sgem_pmc_calculaterminfazcal();
  }
  
-$(function () { 
+jQuery(document).ready(function($){
   //$("body").initComponents();
  sgem_pmc_calculaterminfazcal();
  
   
    // Scorlll
 if (window.innerWidth > 1024) { 
-  $(function(){
+  jQuery(document).ready(function($){
     $('.sgem-pmc-cal-left').slimScroll({
       height: '700px',
     });
