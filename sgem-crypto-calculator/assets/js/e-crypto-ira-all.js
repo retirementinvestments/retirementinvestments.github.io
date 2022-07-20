@@ -37,9 +37,154 @@ var sgem_crypto_main_content = '<div class="sgem-crypto-ira-cal-main-id"><div cl
 '<div class="sgem-crypto-ira-logo-center">Crypto IRA calculator by <a class="sgem-crypto-ira-logo-image" href="https://retirementinvestments.com/" target="_blank" rel="noopener"><img src="https://retirementinvestments.github.io/sgem-crypto-calculator/assets/images/retirement-investments-logo.png" class="img-class" alt="Retirement calculator Logo" /></a></div></div></div></div>'; 
 
   
-jQuery(document).ready(function($){
- $('#sgem-crypto-ira-cal').html(sgem_crypto_main_content);
+jQuery.noConflict($);
+jQuery(document).ready(function($){ 
+ 
+ 
 }); 
+
+document.getElementById('sgem-crypto-ira-cal').innerHTML = sgem_crypto_main_content;
+ 
+ localStorage.setItem('crypto_values_intrest','0');
+localStorage.setItem('crypto_values_totalcapital','0');
+localStorage.setItem('crypto_label_years','0');
+localStorage.setItem('crypto_y_axis','0');
+
+
+ 
+ 
+ var data_crypto_intrest =  JSON.parse(localStorage.getItem('crypto_values_intrest')),
+        data_crypto_totalcapital =  JSON.parse(localStorage.getItem('crypto_values_totalcapital')),
+        data_crypto_labels =  JSON.parse(localStorage.getItem('crypto_label_years')),
+        data_crypto_yaxis =  JSON.parse(localStorage.getItem('crypto_y_axis'));
+        
+
+   var ctx = document.getElementById("myChart").getContext("2d");
+
+
+var data = {
+  labels: data_crypto_labels,
+  datasets: [{ //[0]
+  label: 'Contribution',
+  backgroundColor: "#1569B0",
+    labels:  ['Total Capital invested'],
+  data: data_crypto_totalcapital,
+  },  { // [1]
+  label: 'Investment return',
+  backgroundColor: "#FEB929",
+  labels:  ['Total Interest accumulated'],
+  data: data_crypto_intrest,
+  }],
+  };
+
+var config = {
+    type: 'bar',
+    data,
+    options: {
+      
+      local:'en-US',
+      responsive: true, 
+      interaction: {
+            mode:'index'
+    },
+      scales: {
+        x: {
+          ticks: {
+            color: '#000',
+            maxTicksLimit: 3,
+            maxRotation: 0,
+            lineWidth: 2,
+          font: {
+            size: 14
+          },
+        },
+          grid: {
+                display: false
+             },
+              stacked: true,
+             },
+        
+        y: {
+          min:0,
+          max: 4000000,
+          grid: {
+              borderDash: [4],
+              color: "#A3A3A3"
+          },
+          stacked: true,
+          ticks:{
+            color: '#000',
+            callback: (value, index, values) => { 
+        return sgem_crypto_ConvertToInternationalCurrencySystem(value);
+          return new Intl.NumberFormat('en-US', {
+          style: 'currency',
+                currency: 'USD',
+                maximumSignificantDigits: 3
+              }). format(value);    
+        //console.log(value);
+            },
+            font: {
+              size: 13,
+              family: "'DM Sans'",
+            } 
+          },
+          beginAtZero: false           
+        }    
+      },
+      plugins: {
+        legend: {
+          display: false    
+        },
+        tooltip: {
+          backgroundColor: 'white',
+          yAlign: 'bottom',
+          borderColor: 'hsl(210, 3%, 70%)',
+          borderWidth: 1,
+          usePointStyle: true,
+          bodyFont: {
+            size: 14,
+            family: "'DM Sans'",
+          },
+          titleFont: {
+              size: 14,
+              family: "'DM Sans'"
+          },
+          bodySpacing: 1,
+          titleColor: '#757575',
+          boxWidth: 0,
+          boxHeight: 30,
+          callbacks: {
+            labelTextColor: function(context){
+              return myChart.data.datasets.borderColor;
+            }, 
+            label: function(context) {
+              return context.dataset.labels + ': ' + sgem_crypto_ConvertToInternationalCurrencySystem(context.dataset.data[context.dataIndex])
+            },
+            labelPointStyle: function(context) {
+              return {
+                  pointStyle: 'triangle',
+                  rotation: 0
+              };
+          }
+          } 
+        }
+      }
+    }
+  };
+  
+  var myChart = new Chart(ctx, config); 
+  
+
+  document.getElementById('sgem_crypto_ira_contribution').style.backgroundColor = myChart.data.datasets[0].backgroundColor;
+  document.getElementById('sgem_crypto_ira_investment').style.backgroundColor = myChart.data.datasets[1].backgroundColor;
+  document.getElementById('sgem_crypto_ira_contribution_te').innerText = myChart.data.datasets[0].label;
+  document.getElementById('sgem_crypto_ira_investment_te').innerText = myChart.data.datasets[1].label;
+ 
+ //console.log('init');
+
+//****************************************************************
+ 
+ 
  
  
 function isNumber(evt) {
@@ -89,8 +234,23 @@ function sgem_crypto_ConvertToInternationalCurrencySystemRound(labelValue) {
     : Math.floor(Number(labelValue));
 }
   
+ window.onload = function() {
+	sgem_crypto_calculatermin();
+ }
+ 
+ 
 
- function sgem_crypto_calculatermin() {
+ 
+ 
+
+
+
+
+
+ 
+jQuery(document).ready(function($){
+
+function sgem_crypto_calculatermin() {
     
     var crypto_intrest_chart = [];
     var years_invested_so_far_array = [];
@@ -397,28 +557,14 @@ function sgem_crypto_ConvertToInternationalCurrencySystemRound(labelValue) {
              crypto_update_chart();
   }
 
- 
- 
+sgem_crypto_calculatermin();
 
-
-
-
- window.onload = function() {
-	sgem_crypto_calculatermin();
- }
- 
-jQuery(document).ready(function($){
-  //$("body").initComponents();
- sgem_crypto_calculatermin();
- 
   
    // Scorlll
-if (window.innerWidth > 1024) { 
-  jQuery(document).ready(function($){
+if (window.innerWidth > 1024) {  
     $('.sgem-crypto-ira-cal-left').slimScroll({
       height: '700px',
-    });
-  });
+    }); 
 }
    
  if($('#sgem_crypto_ira_age,#sgem_crypto_ira_retirement_age,#sgem_crypto_ira_annual_return,#sgem_crypto_ira_annual_contribution,#sgem_crypto_ira_current_savings,#sgem_crypto_ira_current_allocation,#sgem_crypto_ira_bitcoin,#sgem_crypto_ira_ethereum,#sgem_crypto_ira_other_crypto,#sgem_crypto_ira_future_allocation,#sgem_crypto_ira_future_bitcoin,#sgem_crypto_ira_future_ethereum,#sgem_crypto_ira_future_other_crypto').length > 0) {
@@ -821,139 +967,7 @@ $('#sgem_crypto_ira_annual_return,#sgem_crypto_ira_current_allocation,#sgem_cryp
 
 //****************************************************************
   
- 
- var data_crypto_intrest =  JSON.parse(localStorage.getItem('crypto_values_intrest')),
-        data_crypto_totalcapital =  JSON.parse(localStorage.getItem('crypto_values_totalcapital')),
-        data_crypto_labels =  JSON.parse(localStorage.getItem('crypto_label_years')),
-        data_crypto_yaxis =  JSON.parse(localStorage.getItem('crypto_y_axis'));
-        
 
-   var ctx = document.getElementById("myChart").getContext("2d");
-
-
-var data = {
-  labels: data_crypto_labels,
-  datasets: [{ //[0]
-  label: 'Contribution',
-  backgroundColor: "#1569B0",
-    labels:  ['Total Capital invested'],
-  data: data_crypto_totalcapital,
-  },  { // [1]
-  label: 'Investment return',
-  backgroundColor: "#FEB929",
-  labels:  ['Total Interest accumulated'],
-  data: data_crypto_intrest,
-  }],
-  };
-
-var config = {
-    type: 'bar',
-    data,
-    options: {
-      
-      local:'en-US',
-      responsive: true, 
-      interaction: {
-            mode:'index'
-    },
-      scales: {
-        x: {
-          ticks: {
-            color: '#000',
-            maxTicksLimit: 3,
-            maxRotation: 0,
-            lineWidth: 2,
-          font: {
-            size: 14
-          },
-        },
-          grid: {
-                display: false
-             },
-              stacked: true,
-             },
-        
-        y: {
-          min:0,
-          max: 4000000,
-          grid: {
-              borderDash: [4],
-              color: "#A3A3A3"
-          },
-          stacked: true,
-          ticks:{
-            color: '#000',
-            callback: (value, index, values) => { 
-        return sgem_crypto_ConvertToInternationalCurrencySystem(value);
-          return new Intl.NumberFormat('en-US', {
-          style: 'currency',
-                currency: 'USD',
-                maximumSignificantDigits: 3
-              }). format(value);    
-        //console.log(value);
-            },
-            font: {
-              size: 13,
-              family: "'DM Sans'",
-            } 
-          },
-          beginAtZero: false           
-        }    
-      },
-      plugins: {
-        legend: {
-          display: false    
-        },
-        tooltip: {
-          backgroundColor: 'white',
-          yAlign: 'bottom',
-          borderColor: 'hsl(210, 3%, 70%)',
-          borderWidth: 1,
-          usePointStyle: true,
-          bodyFont: {
-            size: 14,
-            family: "'DM Sans'",
-          },
-          titleFont: {
-              size: 14,
-              family: "'DM Sans'"
-          },
-          bodySpacing: 1,
-          titleColor: '#757575',
-          boxWidth: 0,
-          boxHeight: 30,
-          callbacks: {
-            labelTextColor: function(context){
-              return myChart.data.datasets.borderColor;
-            }, 
-            label: function(context) {
-              return context.dataset.labels + ': ' + sgem_crypto_ConvertToInternationalCurrencySystem(context.dataset.data[context.dataIndex])
-            },
-            labelPointStyle: function(context) {
-              return {
-                  pointStyle: 'triangle',
-                  rotation: 0
-              };
-          }
-          } 
-        }
-      }
-    }
-  };
-  
-  var myChart = new Chart(ctx, config); 
-  
-
-  document.getElementById('sgem_crypto_ira_contribution').style.backgroundColor = myChart.data.datasets[0].backgroundColor;
-  document.getElementById('sgem_crypto_ira_investment').style.backgroundColor = myChart.data.datasets[1].backgroundColor;
-  document.getElementById('sgem_crypto_ira_contribution_te').innerText = myChart.data.datasets[0].label;
-  document.getElementById('sgem_crypto_ira_investment_te').innerText = myChart.data.datasets[1].label;
- 
- //console.log('init');
-
-//****************************************************************
- 
- 
   
 function crypto_update_chart(){
   //console.log('pcm_update_chart');
