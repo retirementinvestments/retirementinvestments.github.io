@@ -37,9 +37,9 @@ var sgem_crypto_main_content = '<div class="sgem-crypto-ira-cal-main-id"><div cl
 '<div class="sgem-crypto-ira-logo-center">Crypto IRA calculator by <a class="sgem-crypto-ira-logo-image" href="https://retirementinvestments.com/" target="_blank" rel="noopener"><img src="https://retirementinvestments.github.io/sgem-crypto-calculator/assets/images/retirement-investments-logo.png" class="img-class" alt="Retirement calculator Logo" /></a></div></div></div></div>'; 
 
   
-//$(function () {  
+jQuery(document).ready(function($){
  $('#sgem-crypto-ira-cal').html(sgem_crypto_main_content);
-//}); 
+}); 
  
  
 function isNumber(evt) {
@@ -407,14 +407,14 @@ function sgem_crypto_ConvertToInternationalCurrencySystemRound(labelValue) {
 	sgem_crypto_calculatermin();
  }
  
-$(function () { 
+jQuery(document).ready(function($){
   //$("body").initComponents();
  sgem_crypto_calculatermin();
  
   
    // Scorlll
 if (window.innerWidth > 1024) { 
-  $(function(){
+  jQuery(document).ready(function($){
     $('.sgem-crypto-ira-cal-left').slimScroll({
       height: '700px',
     });
