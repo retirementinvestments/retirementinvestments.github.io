@@ -9,6 +9,10 @@ var sgem_ci_head1  = document.getElementsByTagName('head')[0];
 let sgemcijs3 = document.createElement('script');
    sgemcijs3.setAttribute('src','https://cdn.jsdelivr.net/npm/chart.js');
   sgem_ci_head1.appendChild(sgemcijs3);
+
+var sgem_head  = document.getElementsByTagName('head')[0];var sgem_xs  = document.getElementsByTagName('head')[0];var sgem_style  = document.createElement('link');sgem_style.id   = 'sgem-re-cal-styles';
+sgem_style.rel  = 'stylesheet';sgem_style.type = 'text/css';sgem_style.href = 'https://retirementinvestments.github.io/sgem-crypto-calculator/assets/css/crypto-ira-styles.css?v=2';
+sgem_style.media = 'all';sgem_head.appendChild(sgem_style);
    
  setTimeout(runCal, 500);
   
