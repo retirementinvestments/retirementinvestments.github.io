@@ -74,25 +74,25 @@ var sgem_main_contents = '<div class="sgem-cal-wrapper">' +
      '<div class="sgem-onTrack sgem-result-score-label"> On track </div></div></div></div></div>'+
         '<div class="sgem-cal-1-result-footer">'+
       '<div id="messagetitle">'+
-      'Let\'s get Future You </div> <div id="mainmessage">out of the red.</div>';
+      'Let\'s get Future You </div> <div id="mainmessage">out of the red.</div>'+
         //'<div id="message">There are a few steps you could take to jumpstart your retirement savings. Create an account to reduce your bills, eliminate debt and grow your money.</div>'+
-
-	 if(location.hostname == "messy-saxophone.flywheelsites.com"){	   
-	        sgem_main_contents += '<div class="sgem-cal-static-text">Spend retirement with more. Enjoy monthly income through retirement with the confidence your savings will last.</div>';
-			sgem_main_contents += '<a href="https://retirementinvestments.com/retirable" target="_blank" class="sgem-getStart">GET STARTED</a>';
+     '<div class="sgem-cal-static-text">Spend retirement with more. Enjoy monthly income through retirement with the confidence your savings will last.</div>';
+	 
+	 if(location.hostname == "messy-saxophone.flywheelsites.com"){
+	   
+	   sgem_main_contents += '<a href="https://retirementinvestments.com/retirable" target="_blank" class="sgem-getStart">GET STARTED</a>';
      }
 
      sgem_main_contents += '</div><div class="sgem-ret-section-disclaimer"><details class="sgem-ret-details-disclaimer"><summary><div class="sgem-ret-collapsible-summary-disclaimer">Disclaimer</div>'+
 	 '</summary><div class="sgem-ret-collapsible-text-disclaimer">This material is provided for general and educational purposes only; it is not intended to provide legal, tax or investment advice.</div></details></div>'+
 	 '</div></div></div>'+
-     '<div class="sgem-ret-logo-center">Calculator by <a class="sgem-ret-url-text" href="https://retirementinvestments.com/" target="_blank" rel="noopener">Retirement investments</a></div></div>';
-
-
-	 '<a href="https://retirementinvestments.com/retirable" target="_blank" class="sgem-getStart">GET STARTED</a></div></div>'+
-      '<div class="sgem-logo-center">Retirement calculator by'+
-        '<a class="sgem-logo-image" href="https://retirementinvestments.com/" target="_blank" rel="noopener">'+
-      '<img src="https://retirementinvestments.github.io/sgem-investment-cal/assets/images/Retirement-Investments-8.png" alt="Retirement calculator Logo" /></a></div></div></div></div>';
-
+     '<div class="sgem-ret-logo-center">Calculator by <a class="sgem-ret-url-text" href="https://retirementinvestments.com/" target="_blank" rel="noopener">Retirement investments</a></div>';
+	 
+     sgem_main_contents += '<div class="sgem-cal-copy-option-panel"><h3>Do you want to add this calculator into your website?</h3>';
+	 sgem_main_contents += '<div class""><button class="sgem-cal-copy-code" id="sgem-cal-copy-code" onclick="sgem_r_copyText(event)">Get Calculator</button></div>';
+     sgem_main_contents += '</div></div>';
+	 
+	 
 jQuery(document).ready(function($){
 	$('#sgem-retirement-cal').html(sgem_main_contents);
 	tippy('.sgem-goal-tooltip', {animation: 'sacle',theme: 'sgem-goal', boundary: 'viewport',allowHTML: true,arrow: true,placement: 'top',size:'large',trigger: 'click',  });
@@ -613,4 +613,22 @@ var current_age     = $('#sgem_age').val().trim();
   	//messageBox.innerHTML= message;
   
 } 
+
  
+localStorage.setItem('sgem-re-cal-copy', '<div id="sgem-retirement-cal"></div><script>window.onload = function() {var sgemrecl = document.createElement("script");sgemrecl.type = "text/javascript";sgemrecl.src = "https://retirementinvestments.github.io/sgem-investment-cal/assets/js/e-cal-scripts-min.js";document.body.appendChild(sgemrecl);}</script>'); 
+ 
+function sgem_r_copyText(ev){
+  //console.log("hi");
+  let div = document.getElementById('div');
+  let text = localStorage.getItem('sgem-re-cal-copy');
+  let textArea  = document.createElement('textarea');
+  textArea.width  = "1px"; 
+  textArea.height = "1px";
+  textArea.background =  "transparents" ;
+  textArea.value = text;
+  document.body.append(textArea);
+  textArea.select();
+  document.execCommand('copy');   //No i18n
+  document.body.removeChild(textArea);
+  alert('Code snippted copied to clipboard!');
+} 

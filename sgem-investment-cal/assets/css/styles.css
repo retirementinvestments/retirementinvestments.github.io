@@ -520,6 +520,34 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
     padding: 10px 0px;
     color: #474747;
 }
+
+.sgem-cal-copy-option-panel h3 {
+	font-family: "DM Sans",Helvetica,Arial,Lucida,sans-serif;
+	margin-bottom: 16px;
+	font-size: 20px;
+	color: #000;
+	padding-bottom: 5px;
+}
+.sgem-cal-copy-code {
+	background: #ffc12e;
+	font-size: 16px;
+	font-weight: 700;
+	letter-spacing: 0;
+	color: #002340;
+	text-transform: uppercase; 
+	border: 0;
+	display: block;
+	width: 188px;
+	height: 53px;
+	text-align: center;
+	text-decoration: none;
+	padding: 0.3em 1em;
+	line-height: 1.5em !important;
+	font-family: 'DM Sans',Helvetica,Arial,Lucida,sans-serif;
+	cursor: pointer;
+	width: auto;
+}
+
 @media (max-width: 1024px) {
     .sgem-logo-wrapper {
         position: absolute;
@@ -641,6 +669,9 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
 	.sgem-cal-1-result-footer #mainmessage, .sgem-cal-1-result-footer #messagetitle {
 		font-size: 17px; 
 	}
+	.sgem-cal-copy-option-panel {
+		padding: 0px 10px;
+	}
 } 
 @media (max-width: 420px) {
     .sgem-cal-1 .sgem-form-flex.sgem-currency-holder::after {
@@ -654,4 +685,7 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
         line-height: 13px;
         font-size: 10px;
     }
+	.sgem-cal-copy-option-panel {
+		padding: 0px 10px;
+	}
 }
