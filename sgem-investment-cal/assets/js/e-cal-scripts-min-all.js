@@ -74,12 +74,12 @@ var sgem_main_contents = '<div class="sgem-cal-wrapper">' +
      '<div class="sgem-onTrack sgem-result-score-label"> On track </div></div></div></div></div>'+
         '<div class="sgem-cal-1-result-footer">'+
       '<div id="messagetitle">'+
-      'Let\'s get Future You </div> <div id="mainmessage">out of the red.</div>'+
+      'Let\'s get Future You </div> <div id="mainmessage">out of the red.</div>';
         //'<div id="message">There are a few steps you could take to jumpstart your retirement savings. Create an account to reduce your bills, eliminate debt and grow your money.</div>'+
-     '<div class="sgem-cal-static-text">Spend retirement with more. Enjoy monthly income through retirement with the confidence your savings will last.</div>';
-	 
+
 	 if(location.hostname == "messy-saxophone.flywheelsites.com"){	   
-	   sgem_main_contents += '<a href="https://retirementinvestments.com/retirable" target="_blank" class="sgem-getStart">GET STARTED</a>';
+	        sgem_main_contents += '<div class="sgem-cal-static-text">Spend retirement with more. Enjoy monthly income through retirement with the confidence your savings will last.</div>';
+			sgem_main_contents += '<a href="https://retirementinvestments.com/retirable" target="_blank" class="sgem-getStart">GET STARTED</a>';
      }
 
      sgem_main_contents += '</div><div class="sgem-ret-section-disclaimer"><details class="sgem-ret-details-disclaimer"><summary><div class="sgem-ret-collapsible-summary-disclaimer">Disclaimer</div>'+
