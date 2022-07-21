@@ -583,7 +583,7 @@ function sgem_pmc_calculaterminfazcal() {
    // Scorlll
 if (window.innerWidth > 1024) {  
     $('.sgem-pmc-cal-left').slimScroll({
-      height: '700px',
+      height: '750px',
     }); 
 }
    
