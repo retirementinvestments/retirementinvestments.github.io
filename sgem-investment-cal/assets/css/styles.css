@@ -547,7 +547,9 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
 	cursor: pointer;
 	width: auto;
 }
-
+.sgem-cal-copy-option-panel {
+	margin-top: 25px;
+}
 @media (max-width: 1024px) {
     .sgem-logo-wrapper {
         position: absolute;
