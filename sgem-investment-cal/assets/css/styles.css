@@ -501,7 +501,7 @@ details.sgem-ret-details-disclaimer > summary::after {
     height: 24px;
     display: inline-block;
     background-repeat: no-repeat;
-    background-position: center -1px;
+    background-position: center -2px;
     background-size: 25px;
     background-image: url(../images/caret-down-filled.svg);
     margin-top: 5px;
