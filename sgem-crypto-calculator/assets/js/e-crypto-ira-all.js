@@ -585,7 +585,7 @@ sgem_crypto_calculatermin();
    // Scorlll
 if (window.innerWidth > 1024) {  
     $('.sgem-crypto-ira-cal-left').slimScroll({
-      height: '750px',
+      height: '650px',
     }); 
 }
    
