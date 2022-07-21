@@ -80,11 +80,33 @@ var sgem_pmc_main_contents = '<div class="sgem-pmc-cal-main-id" id="sgem-pmc-cal
 '<div class="sgem-pmc-legendbox"><div class="sgem-pmc-legend-item"> <button id="sgem_pmc_contribution" onClick="toggleData(0)" class="sgem-pmc-contribution"></button>'+              
 '<div id="sgem_pmc_contribution_te" onClick="toggleData(0)" class="sgem-pmc-contribution-te"></div></div><div class="sgem-pmc-legend-item">'+         
 '<button id="sgem_pmc_investment" onClick="toggleData(1)" class="sgem-pmc-investment"></button><div id="sgem_pmc_investment_te" onClick="toggleData(1)" class="sgem-pmc-investment-te"></div></div></div></div>'+                  
-'<div class="sgem-pmc-chartCard"><div class="chartBox"><canvas id="myChart"></canvas></div></div>'+                   
-'<div class="sgem-pmc-cal-1-result-footer"><div class="sgem-pmc-content">Get the free gold IRA kit Americans are using to protect their retirement savings</div><div class="sgem-pmc-buttonGet">'+   
-'<a href="https://retirementinvestments.com/goldco/" class="sgem-pmc-getStart">Request Your Free Kit</a></div></div></div>'+                    
-'<div class="sgem-pmc-logo-center">Precious Metals calculator by<a class="sgem-pmc-logo-image" href="https://retirementinvestments.com/" target="_blank" rel="noopener">'+                   
-'<img src="https://retirementinvestments.github.io/sgem-precious-metal-cal/assets/images/retirement-investments-logo.png" class="img-class" alt="Retirement calculator Logo" /></a></div></div></div> </div>';     
+'<div class="sgem-pmc-chartCard"><div class="chartBox"><canvas id="myChart"></canvas></div></div>';
+                  
+sgem_pmc_main_contents += '<div class="sgem-pmc-cal-1-result-footer">';
+
+sgem_pmc_main_contents += '<div class="sgem-pmc-content">Get the free gold IRA kit Americans are using to protect their retirement savings</div>';
+sgem_pmc_main_contents += '<div class="sgem-pmc-buttonGet">';   
+sgem_pmc_main_contents += '<a href="https://retirementinvestments.com/goldco/" class="sgem-pmc-getStart">Request Your Free Kit</a>';
+sgem_pmc_main_contents += '</div>';
+sgem_pmc_main_contents += '</div>';
+
+sgem_pmc_main_contents += '<div class="sgem-pmc-section-disclaimer"><details class="sgem-pmc-details-disclaimer"><summary><div class="sgem-pmc-collapsible-summary-disclaimer">Disclaimer</div></summary><div class="sgem-pmc-collapsible-text-disclaimer">This material is provided for general and educational purposes only; it is not intended to provide legal, tax or investment advice.</div></details></div>';
+
+  
+sgem_pmc_main_contents += '</div>'; 
+sgem_pmc_main_contents += '</div>';
+sgem_pmc_main_contents += '</div>'; 
+
+sgem_pmc_main_contents += '<div class="sgem-pmc-logo-center">Calculator by <a class="sgem-pmc-url-text" href="https://retirementinvestments.com/" target="_blank" rel="noopener">Retirement investments</a></div>';
+	
+
+sgem_pmc_main_contents += '<div class="sgem-pmc-copy-option-panel">';
+sgem_pmc_main_contents += '<h3>Do you want to add this calculator into your website?</h3>';
+sgem_pmc_main_contents += '<div class="sgem-pmc-copy-code-wrap"><button class="sgem-pmc-copy-code" id="sgem-pmc-copy-code" onclick="sgem_pcm_copyText(event)">Get Calculator</button></div>';
+sgem_pmc_main_contents += '</div>';
+
+sgem_pmc_main_contents += '</div>';  
+
 
 jQuery.noConflict($);
 jQuery(document).ready(function($){ 
@@ -989,6 +1011,26 @@ function toggleData(value){
     myChart.show(value);
   } 
 } 
+
+
+
+localStorage.setItem('sgem-pmc-cal-copy', '<div id="sgem-pmc-cal"></div><script>window.onload = function() {var sgempmccl = document.createElement("script");sgempmccl.type = "text/javascript";sgempmccl.src = "https://retirementinvestments.github.io/sgem-precious-metal-cal/assets/js/e-pmc-cal-scripts-min.js";document.body.appendChild(sgempmccl);}</script>'); 
+ 
+function sgem_pcm_copyText(ev){
+  //console.log("hi");
+  let div = document.getElementById('div');
+  let text = localStorage.getItem('sgem-pmc-cal-copy');
+  let textArea  = document.createElement('textarea');
+  textArea.width  = "1px"; 
+  textArea.height = "1px";
+  textArea.background =  "transparents" ;
+  textArea.value = text;
+  document.body.append(textArea);
+  textArea.select();
+  document.execCommand('copy');   //No i18n
+  document.body.removeChild(textArea);
+  alert('Code snippted copied to clipboard!');
+}
 
 
 window.addEventListener('load', function() {
