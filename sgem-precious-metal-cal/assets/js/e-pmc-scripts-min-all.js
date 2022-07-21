@@ -107,12 +107,12 @@ sgem_pmc_main_contents += '</div>';
 
 sgem_pmc_main_contents += '</div>';  
 
-
+/*
 jQuery.noConflict($);
 jQuery(document).ready(function($){ 
  
  
-}); 
+}); */
 
   	document.getElementById('sgem-pmc-cal').innerHTML = sgem_pmc_main_contents;
  
