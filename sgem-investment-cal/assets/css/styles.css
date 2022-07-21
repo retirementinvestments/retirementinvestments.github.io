@@ -501,7 +501,7 @@ details.sgem-ret-details-disclaimer > summary::after {
     height: 24px;
     display: inline-block;
     background-repeat: no-repeat;
-    background-position: center -2px;
+    background-position: center -1px;
     background-size: 25px;
     background-image: url(../images/caret-down-filled.svg);
     margin-top: 5px;
@@ -510,10 +510,11 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
     -moz-transform: rotate(-180deg);
     -webkit-transform: rotate(-180deg);
     transform: rotate(-180deg);
-    background-position: center 2px;
+    background-position: center 1px;
 }
 .sgem-ret-collapsible-text-disclaimer {
     font-weight: 400;
+	line-height: 18px;
     font-size: 14px;
     font-family: 'DM Sans',Helvetica,Arial,Lucida,sans-serif;
     padding: 10px 0px;
