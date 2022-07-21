@@ -752,6 +752,7 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
 	font-size: 20px;
 	color: #000;
 	padding-bottom: 5px;
+	font-weight: 500;
 }
 .sgem-pmc-copy-code {
 	background: #ffc12e;
