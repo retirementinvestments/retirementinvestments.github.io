@@ -292,6 +292,7 @@
 .sgem-cal-1-result-footer .sgem-getStart {
     background: #ffc12e;
     margin-top: 32px;
+	margin-bottom: 40px;
 }
 .sgem-cal-1 .sgem-cal-btn {
     background: #4bcc8c;
@@ -478,10 +479,7 @@
 .sgem-ret-url-text {
     text-decoration: none;
     color: rgb(21, 105, 176);
-}
-.sgem-ret-section-disclaimer {
-    padding-top: 40px;
-}
+} 
 .sgem-ret-details-disclaimer summary {
     display: flex !important;
     flex-direction: row;
