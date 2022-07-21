@@ -639,7 +639,7 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
         padding: 0;
     }
 	.sgem-cal-1-result-footer #mainmessage, .sgem-cal-1-result-footer #messagetitle {
-		font-size: 20px; 
+		font-size: 17px; 
 	}
 } 
 @media (max-width: 420px) {
