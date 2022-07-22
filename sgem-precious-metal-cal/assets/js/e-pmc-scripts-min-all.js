@@ -97,7 +97,7 @@ sgem_pmc_main_contents += '</div>';
 sgem_pmc_main_contents += '</div>';
 sgem_pmc_main_contents += '</div>'; 
 
-sgem_pmc_main_contents += '<div class="sgem-pmc-logo-center">Calculator by <a class="sgem-pmc-url-text" href="https://retirementinvestments.com/" target="_blank" rel="noopener">Retirement investments</a></div>';
+sgem_pmc_main_contents += '<div class="sgem-pmc-logo-center"><a class="sgem-pmc-url-text" href="https://retirementinvestments.com/goldco/" target="_blank" rel="noopener">Precious Metals IRA Calculator</a> by Retirement investments</div>';
 	
 
 sgem_pmc_main_contents += '<div class="sgem-pmc-copy-option-panel">';

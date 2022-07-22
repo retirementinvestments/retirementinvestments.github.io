@@ -49,7 +49,7 @@ sgem_crypto_main_content += '</div>';
 sgem_crypto_main_content += '</div>';
 sgem_crypto_main_content += '</div>';
 
-sgem_crypto_main_content += '<div class="sgem-crypto-ira-logo-center">Calculator by <a class="sgem-crypto-ira-url-text" href="https://retirementinvestments.com/" target="_blank" rel="noopener">Retirement investments</a></div>';
+sgem_crypto_main_content += '<div class="sgem-crypto-ira-logo-center"><a class="sgem-crypto-ira-url-text" href="https://retirementinvestments.com/bitcoinira" target="_blank" rel="noopener">Crypto IRA Calculator by</a> Retirement investments</div>';
 
 sgem_crypto_main_content += '<div class="sgem-crypto-ira-copy-option-panel">';
 sgem_crypto_main_content += '<h3>Do you want to add this calculator into your website?</h3>';

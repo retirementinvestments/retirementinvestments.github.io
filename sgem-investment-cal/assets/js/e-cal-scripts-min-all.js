@@ -85,7 +85,7 @@ var sgem_main_contents = '<div class="sgem-cal-wrapper">' +
      sgem_main_contents += '</div><div class="sgem-ret-section-disclaimer"><details class="sgem-ret-details-disclaimer"><summary><div class="sgem-ret-collapsible-summary-disclaimer">Disclaimer</div>'+
 	 '</summary><div class="sgem-ret-collapsible-text-disclaimer">This material is provided for general and educational purposes only; it is not intended to provide legal, tax or investment advice.</div></details></div>'+
 	 '</div></div></div>'+
-     '<div class="sgem-ret-logo-center">Calculator by <a class="sgem-ret-url-text" href="https://retirementinvestments.com/" target="_blank" rel="noopener">Retirement investments</a></div>';
+     '<div class="sgem-ret-logo-center"><a class="sgem-ret-url-text" href="https://retirementinvestments.com/retirable" target="_blank" rel="noopener">Retirement Calcultor Calculator by</a> Retirement investments</div>';
 	 
      sgem_main_contents += '<div class="sgem-cal-copy-option-panel"><h3>Do you want to add this calculator into your website?</h3>';
 	 sgem_main_contents += '<div class="sgem-cal-copy-code-wrap"><button class="sgem-cal-copy-code" id="sgem-cal-copy-code" onclick="sgem_r_copyText(event)">Get Calculator</button></div>';
