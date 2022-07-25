@@ -6,12 +6,12 @@ var sgem_head = document.getElementsByTagName("head")[0],
     sgem_xs = document.getElementsByTagName("head")[0],
     sgem_style = document.createElement("link");
 	
-let b = document.createElement("script");
+/*let b = document.createElement("script");
     b.setAttribute("src", "https://s3-us-west-2.amazonaws.com/s.cdpn.io/338422/ResizeSensor.js"), document.body.appendChild(b);
 
 let c = document.createElement("script");
     c.setAttribute("src", "https://s3-us-west-2.amazonaws.com/s.cdpn.io/338422/ElementQueries.js"), document.body.appendChild(c);
-
+*/
 		
 function runCal() {
     let a = document.createElement("script");
