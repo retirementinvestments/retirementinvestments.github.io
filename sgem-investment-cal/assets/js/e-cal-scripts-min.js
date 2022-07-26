@@ -23,6 +23,6 @@ function runCal() {
     (sgem_style.href = "https://retirementinvestments.github.io/sgem-investment-cal/assets/css/styles.min.css"),
     (sgem_style.media = "all"),
     sgem_head.appendChild(sgem_style),
-    setTimeout(runCal, 1e3);
+    setTimeout(runCal, 1000);
 	
 	
