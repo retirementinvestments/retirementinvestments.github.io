@@ -311,12 +311,20 @@ jQuery(document).ready(function($){
 		  .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 	  });
 	});	*/
-window.addEventListener('load', function () {
+ var a = document.createElement("script");
+ a.type = "text/javascript";
+ a.src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/338422/ResizeSensor.js";
+ document.body.appendChild(a);
+ 
+  var s = document.createElement("script");
+ s.type = "text/javascript";
+ s.src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/338422/ElementQueries.js";
+ document.body.appendChild(s);
+ 
   setTimeout(function(){ 
 		ElementQueries.listen();
 		ElementQueries.init();
-	}, 1000);
-})	
+ 	}, 1000);
 	
 	
  
