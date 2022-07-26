@@ -311,11 +311,13 @@ jQuery(document).ready(function($){
 		  .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 	  });
 	});	*/
-	
-	setTimeout(function(){ 
+window.addEventListener('load', function () {
+  setTimeout(function(){ 
 		ElementQueries.listen();
 		ElementQueries.init();
 	}, 1000);
+})	
+	
 	
  
 
