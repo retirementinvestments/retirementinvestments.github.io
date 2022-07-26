@@ -13,7 +13,7 @@ let c = document.createElement("script");
     c.setAttribute("src", "https://s3-us-west-2.amazonaws.com/s.cdpn.io/338422/ElementQueries.js"), document.body.appendChild(c);
 
  
-setTimeout(runCal, 500);
+setTimeout(runCal, 1000);
  
 function runCal() {
     let a = document.createElement("script");
