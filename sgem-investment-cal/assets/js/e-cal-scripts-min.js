@@ -11,7 +11,7 @@ setTimeout(runCal, 1000);
  
 function runCal() {
     let a = document.createElement("script");
-    //a.setAttribute("src", "https://retirementinvestments.github.io/sgem-investment-cal/assets/js/e-cal-scripts-min-all.js"), document.body.appendChild(a); 
+    a.setAttribute("src", "https://retirementinvestments.github.io/sgem-investment-cal/assets/js/e-cal-scripts-min-all.js"), document.body.appendChild(a); 
 }
 
 	
