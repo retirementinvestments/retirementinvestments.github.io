@@ -312,8 +312,13 @@ jQuery(document).ready(function($){
 	  });
 	});	*/
 	
- ElementQueries.listen();
- ElementQueries.init();
+	setTimeout(function(){ 
+		ElementQueries.listen();
+		ElementQueries.init();
+	}, 1000);
+	
+ 
+
 	
 }); // DOCUMENT.READY END
 
