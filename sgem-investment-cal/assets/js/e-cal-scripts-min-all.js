@@ -324,7 +324,7 @@ jQuery(document).ready(function($){
   setTimeout(function(){ 
 		ElementQueries.listen();
 		ElementQueries.init();
- 	}, 1000);
+ 	}, 3000);
 	
 	
  
