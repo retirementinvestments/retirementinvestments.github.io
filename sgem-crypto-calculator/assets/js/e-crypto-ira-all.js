@@ -137,12 +137,12 @@ var config = {
           ticks:{
             color: '#000',
             callback: (value, index, values) => { 
-        return sgem_crypto_ConvertToInternationalCurrencySystem(value);
-          return new Intl.NumberFormat('en-US', {
+        return sgem_crypto_ConvertToInternationalCurrencySystemRound(value);
+          /*return new Intl.NumberFormat('en-US', {
           style: 'currency',
                 currency: 'USD',
                 maximumSignificantDigits: 3
-              }). format(value);    
+              }). format(value);    */
         //console.log(value);
             },
             font: {
@@ -180,7 +180,7 @@ var config = {
               return myChart.data.datasets.borderColor;
             }, 
             label: function(context) {
-              return context.dataset.labels + ': ' + sgem_crypto_ConvertToInternationalCurrencySystem(context.dataset.data[context.dataIndex])
+              return context.dataset.labels + ': ' + sgem_crypto_ConvertToInternationalCurrencySystemLabel(context.dataset.data[context.dataIndex])
             },
             labelPointStyle: function(context) {
               return {
@@ -238,16 +238,35 @@ function sgem_crypto_ConvertToInternationalCurrencySystem (labelValue) {
 
 }
 
+function sgem_crypto_ConvertToInternationalCurrencySystemLabel(labelValue) {
+
+    // Nine Zeroes for Billions
+    return Math.abs(Number(labelValue)) >= 1.0e+9
+
+    ? (Math.abs(Number(labelValue)) / 1.0e+9).toFixed() + "B"
+    // Six Zeroes for Millions 
+    : Math.abs(Number(labelValue)) >= 1.0e+6
+
+    ? (Math.abs(Number(labelValue)) / 1.0e+6).toFixed() + "M"
+    // Three Zeroes for Thousands
+    : Math.abs(Number(labelValue)) >= 1.0e+3
+
+    ? (Math.abs(Number(labelValue)) / 1.0e+3).toFixed() + "K"
+
+    : Math.abs(Number(labelValue));
+
+}
+
 function sgem_crypto_ConvertToInternationalCurrencySystemRound(labelValue) {
   
     // Nine Zeroes for Billions
     return Math.floor(Number(labelValue)) >= 1.0e+9
 
-    ? (Math.floor(Number(labelValue)) / 1.0e+9).toFixed() + "B"
+    ? (Math.floor(Number(labelValue)) / 1.0e+9).toFixed(1) + "B"
     // Six Zeroes for Millions 
     : Math.floor(Number(labelValue)) >= 1.0e+6
 
-    ? (Math.floor(Number(labelValue)) / 1.0e+6).toFixed() + "M"
+    ? (Math.floor(Number(labelValue)) / 1.0e+6).toFixed(1) + "M"
     // Three Zeroes for Thousands
     : Math.floor(Number(labelValue)) >= 1.0e+3
 
