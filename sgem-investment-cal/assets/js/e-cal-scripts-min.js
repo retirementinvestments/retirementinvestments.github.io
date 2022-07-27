@@ -11,7 +11,7 @@ sgem_style.rel  = 'stylesheet';sgem_style.type = 'text/css';sgem_style.href = 'h
 sgem_style.media = 'all';sgem_head.appendChild(sgem_style);
  
 //}
- setTimeout(runCal, 5000);
+ setTimeout(runCal, 1000);
 
 function runCal(){
    let sgemjs = document.createElement('script');
