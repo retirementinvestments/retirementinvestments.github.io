@@ -188,7 +188,7 @@ var config = {
           ticks:{
             color: '#000',
             callback: (value, index, values) => { 
-				return sgem_ConvertToInternationalCurrencySystem(value);
+				return sgem_pmc_ConvertToInternationalCurrencySystemRound(value);
 				return new Intl.NumberFormat('en-US', {
 				style: 'currency',
 					currency: 'USD',
@@ -231,7 +231,7 @@ var config = {
               return myChart.data.datasets.borderColor;
             }, 
             label: function(context) {
-              return context.dataset.labels + ': ' + sgem_ConvertToInternationalCurrencySystem(context.dataset.data[context.dataIndex])
+              return context.dataset.labels + ': ' + sgem_pmc_ConvertToInternationalCurrencySystemLabel(context.dataset.data[context.dataIndex])
             },
             labelPointStyle: function(context) {
               return {
@@ -267,41 +267,45 @@ function isNumber(evt) {
               return false;
           }
           return true;
-  }
+}
     
-function sgem_ConvertToInternationalCurrencySystem (labelValue) {
+function sgem_pmc_ConvertToInternationalCurrencySystemLabel(labelValue) {
 
     // Nine Zeroes for Billions
     return Math.abs(Number(labelValue)) >= 1.0e+9
 
-    ? (Math.abs(Number(labelValue)) / 1.0e+9).toFixed(2) + "B"
+    ? (Math.abs(Number(labelValue)) / 1.0e+9).toFixed() + "B"
     // Six Zeroes for Millions 
     : Math.abs(Number(labelValue)) >= 1.0e+6
 
-    ? (Math.abs(Number(labelValue)) / 1.0e+6).toFixed(2) + "M"
+    ? (Math.abs(Number(labelValue)) / 1.0e+6).toFixed() + "M"
     // Three Zeroes for Thousands
     : Math.abs(Number(labelValue)) >= 1.0e+3
 
-    ? (Math.abs(Number(labelValue)) / 1.0e+3).toFixed(2) + "K"
+    ? (Math.abs(Number(labelValue)) / 1.0e+3).toFixed() + "K"
 
     : Math.abs(Number(labelValue));
 
 }
 
-
-
-function sgem_ConvertToInternationalCurrencySystemRound(labelValue) {
  
-        // Nine Zeroes for Billions
+function sgem_pmc_ConvertToInternationalCurrencySystemRound(labelValue) {
+
+    // Nine Zeroes for Billions
     return Math.abs(Number(labelValue)) >= 1.0e+9
-        ? Math.round(Math.abs(Number(labelValue)) / 1.0e+9 ) + " B"
-        // Six Zeroes for Millions
-        : Math.abs(Number(labelValue)) >= 1.0e+6
-            ? Math.round(Math.abs(Number(labelValue)) / 1.0e+6 ) + " M"
-            // Three Zeroes for Thousands
-            : Math.abs(Number(labelValue)) >= 1.0e+3
-                ? Math.round(Math.abs(Number(labelValue)) / 1.0e+3 ) + " K"
-                : Math.abs(Number(labelValue)); 
+
+    ? (Math.abs(Number(labelValue)) / 1.0e+9).toFixed(1) + "B"
+    // Six Zeroes for Millions 
+    : Math.abs(Number(labelValue)) >= 1.0e+6
+
+    ? (Math.abs(Number(labelValue)) / 1.0e+6).toFixed(1) + "M"
+    // Three Zeroes for Thousands
+    : Math.abs(Number(labelValue)) >= 1.0e+3
+
+    ? (Math.abs(Number(labelValue)) / 1.0e+3).toFixed() + "K"
+
+    : Math.abs(Number(labelValue));
+
 }
  
 

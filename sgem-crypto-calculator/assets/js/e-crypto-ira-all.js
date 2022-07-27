@@ -138,11 +138,11 @@ var config = {
             color: '#000',
             callback: (value, index, values) => { 
         return sgem_crypto_ConvertToInternationalCurrencySystemRound(value);
-          /*return new Intl.NumberFormat('en-US', {
+          return new Intl.NumberFormat('en-US', {
           style: 'currency',
                 currency: 'USD',
                 maximumSignificantDigits: 3
-              }). format(value);    */
+              }). format(value);   
         //console.log(value);
             },
             font: {
