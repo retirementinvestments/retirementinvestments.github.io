@@ -87,9 +87,17 @@ var sgem_main_contents = '<div class="sgem-cal-wrapper">' +
 	 '</div></div></div>'+
      '<div class="sgem-ret-logo-center"><a class="sgem-ret-url-text" href="https://retirementinvestments.com/retirement/retirement-calculator/" target="_blank" rel="noopener">Retirement Calculator by</a> Retirement investments</div>';
 	 
-     sgem_main_contents += '<div class="sgem-cal-copy-option-panel"><h3>Do you want to add this calculator into your website?</h3>';
-	 sgem_main_contents += '<div class="sgem-cal-copy-code-wrap"><button class="sgem-cal-copy-code" id="sgem-cal-copy-code" onclick="sgem_r_copyText(event)">Get Calculator</button></div>';
-     sgem_main_contents += '</div></div>';
+     if(location.hostname == "messy-saxophone.flywheelsites.com" || location.hostname == "retirementinvestments.com"){
+		 sgem_main_contents += '<div class="sgem-cal-copy-option-panel">';
+			sgem_main_contents += '<h3>Do you want to add this calculator into your website?</h3>';
+			sgem_main_contents += '<div class="sgem-cal-copy-code-wrap">';
+				sgem_main_contents += '<button class="sgem-cal-copy-code" id="sgem-cal-copy-code" onclick="sgem_r_copyText(event)">Get Calculator</button>';
+			sgem_main_contents += '</div>';
+		 sgem_main_contents += '</div>';
+	 }
+	 
+	 
+	 sgem_main_contents += '</div>';
 	 
 	 
 jQuery(document).ready(function($){
