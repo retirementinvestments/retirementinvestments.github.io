@@ -34,6 +34,7 @@
   @element .sgem-pmc-cal-wrapper and (max-width: 1024px) {
     :self .sgem-pmc-cal-left .sgem-pmc-flex-container .sgem-pmc-full-flex {
       flex-direction: column;
+      padding-right: 25px;
     } 
   } 
   @element .sgem-pmc-cal-wrapper and (max-width: 780px) {
