@@ -231,7 +231,7 @@ var config = {
               return myChart.data.datasets.borderColor;
             }, 
             label: function(context) {
-              return context.dataset.labels + ': ' + sgem_pmc_ConvertToInternationalCurrencySystemLabel(context.dataset.data[context.dataIndex])
+              return context.dataset.labels + ': ' + sgem_pmc_ConvertToInternationalCurrencySystemRound(context.dataset.data[context.dataIndex])
             },
             labelPointStyle: function(context) {
               return {

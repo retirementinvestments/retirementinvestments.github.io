@@ -180,7 +180,7 @@ var config = {
               return myChart.data.datasets.borderColor;
             }, 
             label: function(context) {
-              return context.dataset.labels + ': ' + sgem_crypto_ConvertToInternationalCurrencySystemLabel(context.dataset.data[context.dataIndex])
+              return context.dataset.labels + ': ' + sgem_crypto_ConvertToInternationalCurrencySystemRound(context.dataset.data[context.dataIndex])
             },
             labelPointStyle: function(context) {
               return {
