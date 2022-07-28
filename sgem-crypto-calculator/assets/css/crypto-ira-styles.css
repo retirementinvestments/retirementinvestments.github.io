@@ -785,6 +785,37 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
 .sgem-crypto-ira-copy-option-panel {
 	margin-top: 25px;
 }
+
+@media (max-width:1220px) {
+    .sgem-crypto-ira-cal-1-result-wrapper {
+        padding: 12px;
+        width: 700px;
+    }
+
+}
+@media (max-width:1170px) {
+    .sgem-crypto-ira-cal-1-result-wrapper {
+        padding: 12px;
+        width: 660px;
+    }
+
+}
+@media (max-width:1145px) {
+    .sgem-crypto-ira-cal-1-result-wrapper {
+        padding: 12px;
+        width: 650px;
+    }
+
+}
+
+@media (max-width:1121px) {
+    .sgem-crypto-ira-cal-1-result-wrapper {
+        padding: 12px;
+        width: 640px;
+    }
+
+}
+
 /* ******** ipad ************ */
 @media (max-width:1024px) {
 	.sgem-crypto-ira-logo-wrapper {
@@ -997,5 +1028,5 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
       flex-direction: column;
     } 
   }
-	
+ 
 	/* *************** */
