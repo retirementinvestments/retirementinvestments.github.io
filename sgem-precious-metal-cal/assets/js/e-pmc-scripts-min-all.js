@@ -84,10 +84,13 @@ var sgem_pmc_main_contents = '<div class="sgem-pmc-cal-main-id" id="sgem-pmc-cal
                   
 sgem_pmc_main_contents += '<div class="sgem-pmc-cal-1-result-footer">';
 
-sgem_pmc_main_contents += '<div class="sgem-pmc-content">Get the free gold IRA kit Americans are using to protect their retirement savings</div>';
-sgem_pmc_main_contents += '<div class="sgem-pmc-buttonGet">';   
-sgem_pmc_main_contents += '<a href="https://retirementinvestments.com/goldco/" class="sgem-pmc-getStart">Request Your Free Kit</a>';
-sgem_pmc_main_contents += '</div>';
+if(location.hostname == "messy-saxophone.flywheelsites.com" || location.hostname == "retirementinvestments.com"){
+	sgem_pmc_main_contents += '<div class="sgem-pmc-content">Get the free gold IRA kit Americans are using to protect their retirement savings</div>';
+	sgem_pmc_main_contents += '<div class="sgem-pmc-buttonGet">';   
+	sgem_pmc_main_contents += '<a href="https://retirementinvestments.com/goldco/" class="sgem-pmc-getStart">Request Your Free Kit</a>';
+	sgem_pmc_main_contents += '</div>';
+} 
+
 sgem_pmc_main_contents += '</div>';
 
 sgem_pmc_main_contents += '<div class="sgem-pmc-section-disclaimer"><details class="sgem-pmc-details-disclaimer"><summary><div class="sgem-pmc-collapsible-summary-disclaimer">Disclaimer</div></summary><div class="sgem-pmc-collapsible-text-disclaimer">This material is provided for general and educational purposes only; it is not intended to provide legal, tax or investment advice.</div></details></div>';

@@ -49,12 +49,16 @@ sgem_crypto_main_content += '</div>';
 sgem_crypto_main_content += '</div>';
 sgem_crypto_main_content += '</div>';
 
-sgem_crypto_main_content += '<div class="sgem-crypto-ira-logo-center"><a class="sgem-crypto-ira-url-text" href="https://retirementinvestments.com/crypto/crypto-ira-calculator/" target="_blank" rel="noopener">Crypto IRA Calculator by</a> Retirement investments</div>';
+if( location.hostname != "messy-saxophone.flywheelsites.com" || location.hostname != "retirementinvestments.com"){
+	sgem_crypto_main_content += '<div class="sgem-crypto-ira-logo-center"><a class="sgem-crypto-ira-url-text" href="https://retirementinvestments.com/crypto/crypto-ira-calculator/" target="_blank" rel="noopener">Crypto IRA Calculator by</a> Retirement investments</div>';
+}
 
-sgem_crypto_main_content += '<div class="sgem-crypto-ira-copy-option-panel">';
-sgem_crypto_main_content += '<h3>Do you want to add this calculator into your website?</h3>';
-sgem_crypto_main_content += '<div class="sgem-crypto-ira-copy-code-wrap"><button class="sgem-crypto-ira-copy-code" id="sgem-crypto-ira-copy-code" onclick="sgem_crypto_ira_copyText(event)">Get Calculator</button></div>';
-sgem_crypto_main_content += '</div>';
+if(location.hostname == "messy-saxophone.flywheelsites.com" || location.hostname == "retirementinvestments.com"){
+	sgem_crypto_main_content += '<div class="sgem-crypto-ira-copy-option-panel">';
+	sgem_crypto_main_content += '<h3>Do you want to add this calculator into your website?</h3>';
+	sgem_crypto_main_content += '<div class="sgem-crypto-ira-copy-code-wrap"><button class="sgem-crypto-ira-copy-code" id="sgem-crypto-ira-copy-code" onclick="sgem_crypto_ira_copyText(event)">Get Calculator</button></div>';
+	sgem_crypto_main_content += '</div>';
+}
 
 sgem_crypto_main_content += '</div>'; 
 
