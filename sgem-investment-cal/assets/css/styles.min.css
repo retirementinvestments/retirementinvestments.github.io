@@ -34,4 +34,52 @@
     flex-direction: column;
 }
 
-
+/* new eqcss */
+@element .sgem-cal-wrapper and (max-width: 1024px) {
+      :self {
+        flex-direction: column !important;
+      } 
+    } 
+    @element .sgem-cal-wrapper and (max-width: 1024px)  {
+      :self .sgem-cal-left {
+        width: 100%;
+        padding-top: 32px;
+        padding-right: 0px;
+        padding-left: 18px;
+        padding-bottom: 32px;
+      } 
+    } 
+    @element .sgem-cal-wrapper and (max-width: 1024px) {
+      :self .sgem-cal-right {
+        width: 100%;
+      } 
+    } 
+    @element .sgem-cal-wrapper and (max-width: 1024px) {
+      :self .sgem-cal-left .sgem-cal-1 input[type="text"] {
+        width: 100%;
+      } 
+    } 
+    @element .sgem-cal-wrapper and (max-width: 1024px) {
+      :self .sgem-cal-right .sgem-cal-1-result-wrapper {
+        padding: 26px;
+      } 
+    } 
+    @element .sgem-cal-wrapper and (max-width: 1024px) {
+      :self .sgem-cal-left .sgem-flex-container .sgem-full-flex {
+        flex-direction: column;
+      } 
+    } 
+    @element .sgem-cal-wrapper and (max-width: 780px) {
+      :self .sgem-cal-left {
+        width: 100%;
+        padding-right: 12px;
+        padding-left: 12px;
+      } 
+    } 
+    @element .sgem-cal-wrapper and (max-width: 780px) {
+      :self .sgem-cal-right .sgem-column2 {
+        flex-direction: column;
+      } 
+    }
+	
+	/* *************** */
