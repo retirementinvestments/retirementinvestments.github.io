@@ -86,11 +86,13 @@ var sgem_main_contents = '<div class="sgem-cal-wrapper">' +
 	 '</summary><div class="sgem-ret-collapsible-text-disclaimer">This material is provided for general and educational purposes only; it is not intended to provide legal, tax or investment advice.</div></details></div>'+
 	 '</div></div></div>';
 	 
+	 if( location.hostname != "messy-saxophone.flywheelsites.com" || location.hostname != "retirementinvestments.com"){
+		sgem_main_contents += '<div class="sgem-ret-logo-center"><a class="sgem-ret-url-text" href="https://retirementinvestments.com/retirement/retirement-calculator/" target="_blank" rel="noopener">Retirement Calculator by</a> Retirement investments</div>';
+	 }
+	 
      
      if(location.hostname == "messy-saxophone.flywheelsites.com" || location.hostname == "retirementinvestments.com"){
-		 
-		 sgem_main_contents += '<div class="sgem-ret-logo-center"><a class="sgem-ret-url-text" href="https://retirementinvestments.com/retirement/retirement-calculator/" target="_blank" rel="noopener">Retirement Calculator by</a> Retirement investments</div>';
-	 
+ 
 		 sgem_main_contents += '<div class="sgem-cal-copy-option-panel">';
 			sgem_main_contents += '<h3>Do you want to add this calculator into your website?</h3>';
 			sgem_main_contents += '<div class="sgem-cal-copy-code-wrap">';
