@@ -24,7 +24,7 @@
 	flex-direction: row;
 	flex-wrap: nowrap;
 	padding: 8px 8px;
-	padding-left: 0px;
+	/*padding-left: 0px;*/
 	background-color: #f3f3f3;
 }
  .sgem-crypto-ira-logo-center {
@@ -951,50 +951,51 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
 
 /* new eqcss */
 @element .sgem-crypto-ira-cal-wrapper and (max-width: 1024px) {
-    :self {
-      flex-direction: column;
-    } 
-  } 
-  @element .sgem-crypto-ira-cal-wrapper and (max-width: 1024px)  {
-    :self .sgem-crypto-ira-cal-left {
-      width: 100%;
-      padding-top: 32px;
-      padding-right: 0px;
-      padding-left: 18px;
-      padding-bottom: 32px;
-    } 
-  } 
-  @element .sgem-crypto-ira-cal-wrapper and (max-width: 1024px) {
-    :self .sgem-crypto-ira-cal-right {
-      width: 100%;
-    } 
-  } 
-  @element .sgem-crypto-ira-cal-wrapper and (max-width: 1024px) {
-    :self .sgem-crypto-ira-cal-left .sgem-crypto-ira-cal-1 input[type="text"] {
-      width: 100%;
-    } 
-  } 
-  @element .sgem-crypto-ira-cal-wrapper and (max-width: 1024px) {
-    :self .sgem-crypto-ira-cal-right .sgem-crypto-ira-cal-1-result-wrapper {
-      padding: 26px;
-    } 
-  } 
-  @element .sgem-crypto-ira-cal-wrapper and (max-width: 1024px) {
-    :self .sgem-crypto-ira-cal-left .sgem-crypto-ira-flex-container .sgem-crypto-ira-full-flex {
-      flex-direction: column;
-    } 
-  } 
-  @element .sgem-crypto-ira-cal-wrapper and (max-width: 780px) {
-    :self .sgem-crypto-ira-cal-left {
-      width: 100%;
-      padding-right: 12px;
-      padding-left: 12px;
-    } 
-  } 
-  @element .sgem-crypto-ira-cal-wrapper and (max-width: 780px) {
-    :self .sgem-crypto-ira-cal-right .sgem-crypto-ira-column2 {
-      flex-direction: column;
-    } 
-  }
+          :self {
+            flex-direction: column;
+          } 
+        } 
+        @element .sgem-crypto-ira-cal-wrapper and (max-width: 1024px)  {
+          :self .sgem-crypto-ira-cal-left {
+            width: 100%;
+            padding-top: 32px;
+            padding-right: 0px;
+            padding-left: 18px;
+            padding-bottom: 32px;
+          } 
+        } 
+        @element .sgem-crypto-ira-cal-wrapper and (max-width: 1024px) {
+          :self .sgem-crypto-ira-cal-right {
+            width: 100%;
+          } 
+        } 
+        @element .sgem-crypto-ira-cal-wrapper and (max-width: 1024px) {
+          :self .sgem-crypto-ira-cal-left .sgem-crypto-ira-cal-1 input[type="text"] {
+            width: 100%;
+          } 
+        } 
+        @element .sgem-crypto-ira-cal-wrapper and (max-width: 1024px) {
+          :self .sgem-crypto-ira-cal-right .sgem-crypto-ira-cal-1-result-wrapper {
+            padding: 26px;
+          } 
+        } 
+        @element .sgem-crypto-ira-cal-wrapper and (max-width: 1024px) {
+          :self .sgem-crypto-ira-cal-left .sgem-crypto-ira-flex-container .sgem-crypto-ira-full-flex {
+            flex-direction: column;
+            padding-right: 25px;
+          } 
+        } 
+        @element .sgem-crypto-ira-cal-wrapper and (max-width: 780px) {
+          :self .sgem-crypto-ira-cal-left {
+            width: 100%;
+            padding-right: 12px;
+            padding-left: 12px;
+          } 
+        } 
+        @element .sgem-crypto-ira-cal-wrapper and (max-width: 780px) {
+          :self .sgem-crypto-ira-cal-right .sgem-crypto-ira-column2 {
+            flex-direction: column;
+          } 
+        }
 	
 	/* *************** */
