@@ -606,11 +606,19 @@ sgem_crypto_calculatermin();
 
   
    // Scorlll
-if (window.innerWidth > 1024) {  
+/*if (window.innerWidth > 1024) {  
     $('.sgem-crypto-ira-cal-left').slimScroll({
       height: '650px',
     }); 
+}*/
+if (window.innerWidth > 1220) { 
+  $(function(){
+    $('.sgem-crypto-ira-cal-left').slimScroll({
+      height: '700px',
+    });
+  });
 }
+
    
  if($('#sgem_crypto_ira_age,#sgem_crypto_ira_retirement_age,#sgem_crypto_ira_annual_return,#sgem_crypto_ira_annual_contribution,#sgem_crypto_ira_current_savings,#sgem_crypto_ira_current_allocation,#sgem_crypto_ira_bitcoin,#sgem_crypto_ira_ethereum,#sgem_crypto_ira_other_crypto,#sgem_crypto_ira_future_allocation,#sgem_crypto_ira_future_bitcoin,#sgem_crypto_ira_future_ethereum,#sgem_crypto_ira_future_other_crypto').length > 0) {
       $('#sgem_crypto_ira_age,#sgem_crypto_ira_retirement_age,#sgem_crypto_ira_annual_return,#sgem_crypto_ira_annual_contribution,#sgem_crypto_ira_current_savings,#sgem_crypto_ira_current_allocation,#sgem_crypto_ira_bitcoin,#sgem_crypto_ira_ethereum,#sgem_crypto_ira_other_crypto,#sgem_crypto_ira_future_allocation,#sgem_crypto_ira_future_bitcoin,#sgem_crypto_ira_future_ethereum,#sgem_crypto_ira_future_other_crypto').on('keyup', function () {
