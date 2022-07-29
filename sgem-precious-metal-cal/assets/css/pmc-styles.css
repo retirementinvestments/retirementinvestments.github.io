@@ -762,6 +762,27 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
         border-right: 12px solid transparent;
     }
 }
+
+
+@media (max-width: 768px) {
+	.sgem-pmc-cal-1-result-wrapper { 
+		width: 100%;
+	}
+	.sgem-pmc-copy-option-panel {
+		padding: 0px 25px;
+	}
+	.sgem-pmc-cal-left { 
+		padding: 30px 0px 30px 25px !important;
+	}
+	.sgem-pmc-cal-1 .sgem-pmc-flex-container .sgem-pmc-full-flex { 
+		padding-right: 15px !important;
+	}
+	.sgem-pmc-cal-1 .sgem-pmc-flex-container .sgem-pmc-form-flex { 
+		padding-right: 15px !important;
+	}
+}
+
+
 @media (max-width: 480px) {
     .sgem-pmc-copy-option-panel {
         padding: 0px 25px;
@@ -951,3 +972,5 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
   }
 	
 	/* *************** */
+	
+	
