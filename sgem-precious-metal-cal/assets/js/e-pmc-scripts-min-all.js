@@ -100,7 +100,7 @@ sgem_pmc_main_contents += '</div>';
 sgem_pmc_main_contents += '</div>';
 sgem_pmc_main_contents += '</div>'; 
 
-if( location.hostname != "messy-saxophone.flywheelsites.com" || location.hostname != "retirementinvestments.com"){
+if( (location.hostname != "messy-saxophone.flywheelsites.com") || (location.hostname != "retirementinvestments.com") ){
 	sgem_pmc_main_contents += '<div class="sgem-pmc-logo-center"><a class="sgem-pmc-url-text" href="https://retirementinvestments.com/precious-metals/precious-metals-ira-calculator/" target="_blank" rel="noopener">Precious Metals IRA Calculator&nbsp</a>by Retirement investments</div>';
 }	
 
