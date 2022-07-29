@@ -748,14 +748,16 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
     }
     .sgem-pmc-cal-left {
         width: 100%;
-        padding: 30px 0px 30px 15px !important;
+        padding: 15px 0px 30px 15px !important;
     }
     .sgem-pmc-cal-1 input[type="text"],
     .sgem-pmc-cal-right {
         width: 100%;
-    }
-    .sgem-pmc-cal-1 .sgem-pmc-flex-container .sgem-pmc-form-flex:last-child {
+    } 
+	.sgem-pmc-cal-1 .sgem-pmc-flex-container .sgem-pmc-form-flex:last-child {
         /*padding-right:0*/
+        font-size: 15px;
+        line-height: 22px;
     }
     .sgem-pmc-precentage-arrow {
         border-top: 12px solid #fff;
@@ -763,16 +765,27 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
         border-right: 12px solid transparent;
     }
 	.sgem-pmc-cal-1 .sgem-pmc-form-group label {
-		font-size: 13px; 
+		font-size: 14px; 
 	}
 	.sgem-pmc-cal-1 .sgem-pmc-flex-container .sgem-pmc-form-flex { 
 		padding-right: 15px;
-	}
+		padding-bottom: 15px;
+	} 
 	.sgem-pmc-midtext {
 		font-size: 17px; 
 	}
 	.sgem-pmc-copy-option-panel { 
 		padding: 15px;
+	}
+	.sgem-pmc-collapsible-summary-title { 
+		margin-block-start: 10px;
+		margin-block-end: 10px;
+	}
+	.sgem-pmc-cal-1-result-wrapper { 
+        width: 570px;
+    }
+	.sgem-pmc-cal-1 details.sgem-pmc-input-more-details { 
+		margin-right: 15px;
 	}
 }
 
@@ -801,6 +814,9 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
 	}
 	.sgem-pmc-cal-1 .sgem-pmc-flex-container .sgem-pmc-form-flex { 
 		padding-right: 15px !important;
+	}
+	.sgem-pmc-cal-1 details.sgem-pmc-input-more-details { 
+		margin-right: 15px;
 	}
 }
 
