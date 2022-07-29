@@ -927,12 +927,12 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
 
  
  /* new eqcss */
-@element .sgem-pmc-cal-wrapper and (max-width: 1100px) {
+@element .sgem-pmc-cal-wrapper and (max-width: 940px) {
     :self {
       flex-direction: column;
     } 
   } 
-  @element .sgem-pmc-cal-wrapper and (max-width: 1100px)  {
+  @element .sgem-pmc-cal-wrapper and (max-width: 940px)  {
     :self .sgem-pmc-cal-left {
       width: 100%;
       padding-top: 32px;
@@ -941,22 +941,22 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
       padding-bottom: 32px;
     } 
   } 
-  @element .sgem-pmc-cal-wrapper and (max-width: 1100px) {
+  @element .sgem-pmc-cal-wrapper and (max-width: 940px) {
     :self .sgem-pmc-cal-right {
       width: 100%;
     } 
   } 
-  @element .sgem-pmc-cal-wrapper and (max-width: 1100px) {
+  @element .sgem-pmc-cal-wrapper and (max-width: 940px) {
     :self .sgem-pmc-cal-left .sgem-pmc-cal-1 input[type="text"] {
       width: 100%;
     } 
   } 
-  @element .sgem-pmc-cal-wrapper and (max-width: 1100px) {
+  @element .sgem-pmc-cal-wrapper and (max-width: 940px) {
     :self .sgem-pmc-cal-right .sgem-pmc-cal-1-result-wrapper {
       padding: 26px;
     } 
   } 
-  @element .sgem-pmc-cal-wrapper and (max-width: 1100px) {
+  @element .sgem-pmc-cal-wrapper and (max-width: 940px) {
     :self .sgem-pmc-cal-left .sgem-pmc-flex-container .sgem-pmc-full-flex {
       flex-direction: column;
       padding-right: 25px;
