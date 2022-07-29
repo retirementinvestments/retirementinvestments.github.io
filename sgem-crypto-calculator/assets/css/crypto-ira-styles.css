@@ -824,7 +824,12 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
 		top: -7px;
 	}
 }
-
+@media (max-width: 1100px) {
+    .sgem-crypto-ira-cal-1-result-wrapper {
+        width: auto !important;
+    }
+}
+	
 @media (max-width:1100px) {
 	.sgem-crypto-ira-cal-wrapper {
 		flex-direction: column;
