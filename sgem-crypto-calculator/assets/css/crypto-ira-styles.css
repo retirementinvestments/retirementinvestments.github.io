@@ -1,285 +1,300 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=DM+Serif+Display&display=swap');
 .tooltipster-fall,.tooltipster-grow.tooltipster-show{-webkit-transition-timing-function:cubic-bezier(.175,.885,.32,1);-moz-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);-ms-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);-o-transition-timing-function:cubic-bezier(.175,.885,.32,1.15)}.tooltipster-base{display:flex;pointer-events:none;position:absolute}.tooltipster-box{flex:1 1 auto}.tooltipster-content{box-sizing:border-box;max-height:100%;max-width:100%;overflow:auto}.tooltipster-ruler{bottom:0;left:0;overflow:hidden;position:fixed;right:0;top:0;visibility:hidden}.tooltipster-fade{opacity:0;-webkit-transition-property:opacity;-moz-transition-property:opacity;-o-transition-property:opacity;-ms-transition-property:opacity;transition-property:opacity}.tooltipster-fade.tooltipster-show{opacity:1}.tooltipster-grow{-webkit-transform:scale(0,0);-moz-transform:scale(0,0);-o-transform:scale(0,0);-ms-transform:scale(0,0);transform:scale(0,0);-webkit-transition-property:-webkit-transform;-moz-transition-property:-moz-transform;-o-transition-property:-o-transform;-ms-transition-property:-ms-transform;transition-property:transform;-webkit-backface-visibility:hidden}.tooltipster-grow.tooltipster-show{-webkit-transform:scale(1,1);-moz-transform:scale(1,1);-o-transform:scale(1,1);-ms-transform:scale(1,1);transform:scale(1,1);-webkit-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);transition-timing-function:cubic-bezier(.175,.885,.32,1.15)}.tooltipster-swing{opacity:0;-webkit-transform:rotateZ(4deg);-moz-transform:rotateZ(4deg);-o-transform:rotateZ(4deg);-ms-transform:rotateZ(4deg);transform:rotateZ(4deg);-webkit-transition-property:-webkit-transform,opacity;-moz-transition-property:-moz-transform;-o-transition-property:-o-transform;-ms-transition-property:-ms-transform;transition-property:transform}.tooltipster-swing.tooltipster-show{opacity:1;-webkit-transform:rotateZ(0);-moz-transform:rotateZ(0);-o-transform:rotateZ(0);-ms-transform:rotateZ(0);transform:rotateZ(0);-webkit-transition-timing-function:cubic-bezier(.23,.635,.495,1);-webkit-transition-timing-function:cubic-bezier(.23,.635,.495,2.4);-moz-transition-timing-function:cubic-bezier(.23,.635,.495,2.4);-ms-transition-timing-function:cubic-bezier(.23,.635,.495,2.4);-o-transition-timing-function:cubic-bezier(.23,.635,.495,2.4);transition-timing-function:cubic-bezier(.23,.635,.495,2.4)}.tooltipster-fall{-webkit-transition-property:top;-moz-transition-property:top;-o-transition-property:top;-ms-transition-property:top;transition-property:top;-webkit-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);transition-timing-function:cubic-bezier(.175,.885,.32,1.15)}.tooltipster-fall.tooltipster-initial{top:0!important}.tooltipster-fall.tooltipster-dying{-webkit-transition-property:all;-moz-transition-property:all;-o-transition-property:all;-ms-transition-property:all;transition-property:all;top:0!important;opacity:0}.tooltipster-slide{-webkit-transition-property:left;-moz-transition-property:left;-o-transition-property:left;-ms-transition-property:left;transition-property:left;-webkit-transition-timing-function:cubic-bezier(.175,.885,.32,1);-webkit-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);-moz-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);-ms-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);-o-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);transition-timing-function:cubic-bezier(.175,.885,.32,1.15)}.tooltipster-slide.tooltipster-initial{left:-40px!important}.tooltipster-slide.tooltipster-dying{-webkit-transition-property:all;-moz-transition-property:all;-o-transition-property:all;-ms-transition-property:all;transition-property:all;left:0!important;opacity:0}@keyframes tooltipster-fading{0%{opacity:0}100%{opacity:1}}.tooltipster-update-fade{animation:tooltipster-fading .4s}@keyframes tooltipster-rotating{25%{transform:rotate(-2deg)}75%{transform:rotate(2deg)}100%{transform:rotate(0)}}.tooltipster-update-rotate{animation:tooltipster-rotating .6s}@keyframes tooltipster-scaling{50%{transform:scale(1.1)}100%{transform:scale(1)}}.tooltipster-update-scale{animation:tooltipster-scaling .6s}.tooltipster-sidetip .tooltipster-box{background:#565656;border:2px solid #000;border-radius:4px}.tooltipster-sidetip.tooltipster-bottom .tooltipster-box{margin-top:8px}.tooltipster-sidetip.tooltipster-left .tooltipster-box{margin-right:8px}.tooltipster-sidetip.tooltipster-right .tooltipster-box{margin-left:8px}.tooltipster-sidetip.tooltipster-top .tooltipster-box{margin-bottom:8px}.tooltipster-sidetip .tooltipster-content{color:#fff;line-height:18px;padding:6px 14px}.tooltipster-sidetip .tooltipster-arrow{overflow:hidden;position:absolute}.tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow{height:10px;margin-left:-10px;top:0;width:20px}.tooltipster-sidetip.tooltipster-left .tooltipster-arrow{height:20px;margin-top:-10px;right:0;top:0;width:10px}.tooltipster-sidetip.tooltipster-right .tooltipster-arrow{height:20px;margin-top:-10px;left:0;top:0;width:10px}.tooltipster-sidetip.tooltipster-top .tooltipster-arrow{bottom:0;height:10px;margin-left:-10px;width:20px}.tooltipster-sidetip .tooltipster-arrow-background,.tooltipster-sidetip .tooltipster-arrow-border{height:0;position:absolute;width:0}.tooltipster-sidetip .tooltipster-arrow-background{border:10px solid transparent}.tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow-background{border-bottom-color:#565656;left:0;top:3px}.tooltipster-sidetip.tooltipster-left .tooltipster-arrow-background{border-left-color:#565656;left:-3px;top:0}.tooltipster-sidetip.tooltipster-right .tooltipster-arrow-background{border-right-color:#565656;left:3px;top:0}.tooltipster-sidetip.tooltipster-top .tooltipster-arrow-background{border-top-color:#565656;left:0;top:-3px}.tooltipster-sidetip .tooltipster-arrow-border{border:10px solid transparent;left:0;top:0}.tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow-border{border-bottom-color:#000}.tooltipster-sidetip.tooltipster-left .tooltipster-arrow-border{border-left-color:#000}.tooltipster-sidetip.tooltipster-right .tooltipster-arrow-border{border-right-color:#000}.tooltipster-sidetip.tooltipster-top .tooltipster-arrow-border{border-top-color:#000}.tooltipster-sidetip .tooltipster-arrow-uncropped{position:relative}.tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow-uncropped{top:-10px}.tooltipster-sidetip.tooltipster-right .tooltipster-arrow-uncropped{left:-10px}
 
-.sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-group label, .sgem-crypto-ira-cal-1 input[type="text"], .sgem-crypto-ira-cal-1-result .sgem-crypto-ira-result-panel-header, .sgem-crypto-ira-percentage-note, [data-tippy-root], .sgem-crypto-ira-cal-1 summary {
-    font-family: 'DM Sans', sans-serif;
+#mainmessage,
+#messagetitle {
+    font-size: 24px;
+    display: inline-block;
 }
- 
-.sgem-crypto-ira-cal-main-id, #sgem-crypto-ira-cal {
-	max-width: 1240px;
-	margin: 0 auto;
-	 font-family: 'DM Sans', sans-serif;
- }
-
-
-	.sgem-crypto-ira-cal-wrapper * {
-		-webkit-box-sizing: border-box;
-		box-sizing: border-box;
-	}
-
+.sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-group label,
+.sgem-crypto-ira-cal-1 input[type="text"],
+.sgem-crypto-ira-cal-1 summary,
+.sgem-crypto-ira-cal-1-result .sgem-crypto-ira-result-panel-header,
+.sgem-crypto-ira-percentage-note,
+[data-tippy-root] {
+    font-family: "DM Sans", sans-serif;
+}
+.sgem-crypto-ira-err-msg-anucon,
+.sgem-crypto-ira-err-msg-both,
+.sgem-crypto-ira-err-msg-c-both,
+.sgem-crypto-ira-err-msg-ctallo,
+.sgem-crypto-ira-err-msg-ctallonew,
+.sgem-crypto-ira-err-msg-current,
+.sgem-crypto-ira-err-msg-death,
+.sgem-crypto-ira-err-msg-f-death,
+.sgem-crypto-ira-err-msg-f-per,
+.sgem-crypto-ira-err-msg-ftallo,
+.sgem-crypto-ira-err-msg-ftallonew,
+.sgem-crypto-ira-err-msg-income,
+.sgem-crypto-ira-err-msg-per {
+    color: #ff5964;
+    font-weight: 300;
+    font-size: 13px;
+}
+#sgem-crypto-ira-cal,
+.sgem-crypto-ira-cal-main-id {
+    max-width: 1240px;
+    margin: 0 auto;
+    font-family: "DM SANS";
+}
+.sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-group label,
+.sgem-crypto-ira-cal-1-result-footer,
+.sgem-crypto-ira-cal-1-result-header,
+.sgem-crypto-ira-collapsible-summary-title {
+    font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
+}
+.sgem-crypto-ira-cal-wrapper * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
 .sgem-crypto-ira-cal-wrapper {
-	position: relative;
-	display: flex;
-	width: 100%;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	padding: 8px 8px;
-	/*padding-left: 0px;*/
-	background-color: #f3f3f3;
-}
- .sgem-crypto-ira-logo-center {
+    position: relative;
     display: flex;
-    align-content: center;   
-    align-items: center;
-    font-size: 16px;
-	padding-right: 5px;
-  }
-.sgem-crypto-ira-logo-image {
-	padding-top: 5px;
-	padding-right: 5px;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 8px 8px 8px 0;
+    background-color: #f3f3f3;
 }
-
+.sgem-crypto-ira-logo-center {
+    display: flex;
+    align-content: center;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 5px;
+}
+.sgem-crypto-ira-logo-image {
+    padding-top: 5px;
+    padding-right: 5px;
+}
 .sgem-crypto-ira-cal-left {
-	width: 470px;
-	padding: 32px 20px;
-} 
+    width: 470px;
+    padding: 32px 20px;
+}
 .sgem-crypto-ira-cal-right {
-	width: 770px;
-	background-color: #FFFFFF;
-	display: flex;
-  	flex-direction: column;
+    width: 770px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
 }
 .sgem-crypto-ira-cal-1-result-wrapper {
-	padding: 32px 40px;
-	position: relative;
+    padding: 32px 40px;
+    position: relative;
 }
 .sgem-crypto-ira-cal-1 .sgem-crypto-ira-flex-container {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	width: 100%;
-	position: relative;
-	justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    position: relative;
+    justify-content: space-between;
 }
 .sgem-crypto-ira-cal-1 .sgem-crypto-ira-flex-container .sgem-crypto-ira-form-flex {
-	display: flex;
-	flex-direction: column;
-	flex-basis: 100%;
-	padding-bottom: 28px;
-	position: relative;
-	padding-right: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    padding-bottom: 28px;
+    position: relative;
+    padding-right: 24px;
 }
 .sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-group {
-    margin: 0px !important;
-    padding: 0px;
+    margin: 0 !important;
+    padding: 0;
 }
 .sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-group label {
-	font-size: 16px;
-	font-weight: normal;
-	color: #000;
-	font-family: 'DM Sans',Helvetica,Arial,Lucida,sans-serif;
-	margin-bottom: 8px; 
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+    margin-bottom: 8px;
 }
 .sgem-crypto-ira-cal-1 input[type="text"] {
-	font-size: 16px;
-	height: 55px;
-	padding: 17px 16px;
-	width: 200px;
-	color: #002340;
-	border:  1px solid #bbb;
+    font-size: 16px;
+    height: 55px;
+    padding: 17px 16px;
+    width: 200px;
+    color: #002340;
+    border: 1px solid #bbb;
 }
-
-.sgem-crypto-ira-cal-1 input[type="text"]:focus{
-	outline: none !important;
+.sgem-crypto-ira-cal-1 input[type="text"]:focus {
+    outline: 0 !important;
     border: 1px solid #2d3940;
 }
-
 .sgem-crypto-ira-cal-1 .sgem-crypto-ira-group-option-l {
-    padding-left: 0px !important;
+    padding-left: 0 !important;
 }
 .sgem-crypto-ira-cal-1 .sgem-crypto-ira-group-option-r {
-    padding-right: 0px !important;
+    padding-right: 0 !important;
 }
-.sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex .sgem-crypto-ira-current-allocation{
-	width: 424px;
-}
-.sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex .sgem-crypto-ira-future-allocation{
-	width: 424px;
-}
-.sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex .sgem-crypto-ira-my-life-expectancy{
-	width: auto;
+.sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex .sgem-crypto-ira-current-allocation,
+.sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex .sgem-crypto-ira-future-allocation,
+.sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex .sgem-crypto-ira-my-life-expectancy {
+    width: 424px;
 }
 .sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex.sgem-crypto-ira-years-holder::before {
-	content: 'Years';
-	position: absolute;
-	right: 36px;
-	top: 48px;
-	display: block;
-	color: #A3A3A3;
-	font-weight: 400;
-	font-size: 16px;
+    content: "Years";
+    position: absolute;
+    right: 36px;
+    top: 48px;
+    display: block;
+    color: #a3a3a3;
+    font-weight: 400;
+    font-size: 16px;
 }
-
 .sgem-crypto-ira-collapsible-summary-title {
-	font-family: 'DM Sans',Helvetica,Arial,Lucida,sans-serif;
-	font-size: 20px;
-	color: #000000;
-	font-weight: 500;
-	margin-block-start: 20px;
+    font-size: 20px;
+    color: #000;
+    font-weight: 500;
+    margin-block-start: 20px;
     margin-block-end: 20px;
 }
 .sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex.sgem-crypto-ira-currency-holder::after {
-	content: '$';
-	position: absolute;
-	left: 16px;
-	top: 48px;
-	display: block; 
-	color: #A3A3A3;
-	font-weight: 400;
-	font-size: 16px;
+    content: "$";
+    position: absolute;
+    left: 16px;
+    top: 48px;
+    display: block;
+    color: #a3a3a3;
+    font-weight: 400;
+    font-size: 16px;
 }
 .sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex.sgem-crypto-ira-currency-holder input[type="text"] {
-	padding-left: 33px;
+    padding-left: 33px;
 }
- 
 .sgem-crypto-ira-cal-1 details.sgem-crypto-ira-input-more-details {
-	border-top: 1px solid #BEBEBE;
-	display: block;
-	margin-top: 12px;
+    border-top: 1px solid #bebebe;
+    display: block;
+    margin-top: 12px;
 }
 .sgem-crypto-ira-cal-1 summary {
-	display: flex !important;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-	margin-top: 5px;
-	margin-bottom: 20px;
-	cursor:pointer;
+    display: flex !important;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    cursor: pointer;
 }
 .sgem-crypto-ira-cal-1 h3.collapsible-summary-title {
-	font-size: 20px;
-	color: #000000;
-	padding-bottom: 0;
+    font-size: 20px;
+    color: #000;
+    padding-bottom: 0;
 }
-.sgem-crypto-ira-cal-1 details.sgem-crypto-ira-input-more-details > summary::marker, 
-.sgem-crypto-ira-cal-1 details.sgem-crypto-ira-input-more-details > summary::-webkit-details-marker {
-   display: none;
+.sgem-crypto-ira-cal-1 details.sgem-crypto-ira-input-more-details > summary::-webkit-details-marker,
+.sgem-crypto-ira-cal-1 details.sgem-crypto-ira-input-more-details > summary::marker {
+    display: none;
 }
 .sgem-crypto-ira-cal-1 details.sgem-crypto-ira-input-more-details > summary::-moz-list-bullet {
-    list-style-type: none;
     list-style: none;
     display: none;
 }
 .sgem-crypto-ira-cal-1 details.sgem-crypto-ira-input-more-details > summary::after {
-	content: ' ';
-	width: 25px;
-	height: 24px;
-	display: inline-block; 
-	background-repeat: no-repeat;
-	background-position: center -5px;
-	background-size: 25px; 
-	background-image: url('../images/drop-down-arrow-crypto-ira.svg');
+    content: " ";
+    width: 25px;
+    height: 24px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center -5px;
+    background-size: 25px;
+    background-image: url("../images/caret-down-filled.svg");
 }
 .sgem-crypto-ira-cal-1 details[open] > summary::after {
-	-moz-transform: rotate(-180deg);
-	-webkit-transform: rotate(-180deg);
-	transform: rotate(-180deg);
-	background-position: center 5px; 
+    -moz-transform: rotate(-180deg);
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+    background-position: center 5px;
 }
 .sgem-crypto-ira-cal-1-result-header {
-	font-family: 'DM Sans',Helvetica,Arial,Lucida,sans-serif;
-	font-size: 20px;
-	color: #000000;
-	margin-bottom: 16px;
-	display: flex;
+    font-size: 20px;
+    color: #000;
+    margin-bottom: 16px;
+    display: flex;
     justify-content: space-between;
     align-items: flex-start;
 }
-.sgem-crypto-ira-cal-1-result-wrapper .sgem-crypto-ira-column2 {
-	width: 400px;
-}
 .sgem-crypto-ira-cal-1-result-wrapper .sgem-crypto-ira-flex-container .sgem-crypto-ira-form-flex {
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	flex-basis: 100%;
-	flex: 1;
-	flex: 1 0 40%;
-	padding-bottom: 40px;
-}  
-.sgem-crypto-ira-cal-1-result-wrapper .sgem-crypto-ira-result-label {
-	text-align: left;
-	font-size: 42px;
-	font-family: 'DM Serif Display', serif;
-	letter-spacing: 0px;
-	color: #002340; 
-	line-height: 58px; 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+    flex: 1 0 40%;
+    padding-bottom: 40px;
 }
-.sgem-crypto-ira-cal-1-result-wrapper .sgem-crypto-ira-column2 { 
-	display: flex;
-	flex-wrap: wrap;
-} 
+.sgem-crypto-ira-cal-1-result-wrapper .sgem-crypto-ira-result-label {
+    text-align: left;
+    font-size: 42px;
+    font-family: "DM Serif Display", serif;
+    letter-spacing: 0;
+    color: #002340;
+    line-height: 58px;
+}
+.sgem-crypto-ira-cal-1-result-wrapper .sgem-crypto-ira-column2 {
+    width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+}
 .sgem-crypto-ira-cal-1-result-wrapper .sgem-crypto-ira-result-value {
-	font-size: 16px;
-	text-align: left;
-	line-height: 21px;
-	letter-spacing: 0px;
-	color: #1A1A1A; 
-	font-weight: 300;
-} 
+    font-size: 16px;
+    text-align: left;
+    line-height: 21px;
+    letter-spacing: 0;
+    color: #1a1a1a;
+    font-weight: 300;
+}
 .sgem-crypto-ira-logo-wrapper {
-	position: absolute;
-	right: 5px;
-	top: 5px; 
+    position: absolute;
+    right: 5px;
+    top: 5px;
 }
 .sgem-crypto-ira-cal-1-result .sgem-crypto-ira-result-panel {
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-	-moz-box-shadow: 0px 5px 20px #0000001A;
-	-webkit-box-shadow: 0px 5px 20px #0000001A;
-	-o-box-shadow: 0px 5px 20px #0000001A;
-	box-shadow: 0px 5px 20px #0000001A;
-	opacity: 1;
-    padding-top:24px;
+    background: no-repeat padding-box #fff;
+    -moz-box-shadow: 0 5px 20px #0000001a;
+    -webkit-box-shadow: 0 5px 20px #0000001a;
+    -o-box-shadow: 0 5px 20px #0000001a;
+    box-shadow: 0 5px 20px #0000001a;
+    opacity: 1;
+    padding-top: 24px;
 }
 .sgem-crypto-ira-cal-1-result .sgem-crypto-ira-result-panel-header {
     text-align: center;
     font-size: 20px;
     font-weight: 500;
     line-height: 45px;
-    letter-spacing: 0px;
-    color: #000000;
-    text-transform: uppercase; 
- }
+    letter-spacing: 0;
+    color: #000;
+    text-transform: uppercase;
+}
 .sgem-crypto-ira-cal-1-result .sgem-crypto-ira-result-panel-goal {
-	text-align: center;
-	font-size: 32px;
-	font-weight: 400;
-	font-family: 'DM Serif Display', serif;
-	line-height: 36px;
-	letter-spacing: 0px;
-	color: #002340;
-	padding-top: 16px;
-	padding-bottom: 24px;
-	position: relative;
-	min-height: 80px;
-	width: 100%;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 400;
+    font-family: "DM Serif Display", serif;
+    line-height: 36px;
+    letter-spacing: 0;
+    color: #002340;
+    padding-top: 16px;
+    padding-bottom: 24px;
+    position: relative;
+    min-height: 80px;
+    width: 100%;
 }
 .sgem-crypto-ira-cal-1-result .sgem-crypto-ira-flex-container-2 {
-	display: flex;
-	flex-wrap: wrap;
-	width: 100%;
-	margin-bottom: 32px;
-	position: relative;
-	overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 32px;
+    position: relative;
+    overflow: hidden;
 }
-.sgem-crypto-ira-cal-1-result .sgem-crypto-ira-flex-container-2 .sgem-crypto-ira-form-flex-2 {
+.sgem-crypto-ira-cal-1-result .sgem-crypto-ira-flex-container-2 .sgem-crypto-ira-form-flex-2,
+.sgem-crypto-ira-value-label {
     display: flex;
     flex-direction: column;
 }
 .sgem-crypto-ira-cal-1-result .sgem-crypto-ira-result-score-label {
-	border: 1px solid rgba(0,1,255,0);
-	font-size: 16px;
+    border: 1px solid rgba(0, 1, 255, 0);
+    font-size: 16px;
     color: #012341;
     font-family: DM Sans;
     font-weight: 400;
@@ -288,358 +303,276 @@
     align-items: center;
     justify-content: center;
 }
-.sgem-crypto-ira-cal-1-result .sgem-crypto-ira-needAtt {    
-    background-color: #FF5964;    
+.sgem-crypto-ira-cal-1 .sgem-crypto-ira-cal-btn,
+.sgem-crypto-ira-cal-1-result-footer .sgem-crypto-ira-getStart {
+    font-size: 16px;
+    font-weight: 700;
+    color: #002340;
+    opacity: 1;
+    border: 0;
+    padding: 16px 42px;
+    cursor: pointer;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    text-align: center;
+}
+.sgem-crypto-ira-cal-1-result .sgem-crypto-ira-needAtt {
+    background-color: #ff5964;
 }
 .sgem-crypto-ira-cal-1-result .sgem-crypto-ira-onWay {
-    background-color: #FFC12E;
+    background-color: #ffc12e;
 }
 .sgem-crypto-ira-cal-1-result .sgem-crypto-ira-getClose {
-    background-color: #1E96FC;
+    background-color: #1e96fc;
 }
 .sgem-crypto-ira-cal-1-result .sgem-crypto-ira-onTrack {
-    background-color: #4BCC8C;
+    background-color: #4bcc8c;
 }
 .sgem-crypto-ira-cal-1-result-footer {
-	font-family: 'DM Sans',Helvetica,Arial,Lucida,sans-serif;
-	font-size: 16px !important;
-	color: #474747;
-	font-weight: 300; 
+    font-size: 16px !important;
+    color: #474747;
+    font-weight: 300;
 }
-.sgem-crypto-ira-buttonGet{
-	margin-top: 40px;
+.sgem-crypto-ira-buttonGet {
+    margin-top: 40px;
     display: flex;
 }
 .sgem-crypto-ira-cal-1-result-footer .sgem-crypto-ira-getStart {
-	text-align: center;
-	font-size: 16px;
-	font-weight: bold;
-	letter-spacing: 0px;
-	color: #002340;
-	text-transform: uppercase;
-	background: #FFC12E;
-	opacity: 1;
-	border: 0px;
-	padding: 16px 42px;
-	text-decoration: none;
-	cursor:pointer;
+    background: #ffc12e;
+    text-decoration: none;
 }
 .sgem-crypto-ira-cal-1-result-footer .sgem-crypto-ira-getStart:hover {
-	background-color: #ffd061;
+    background-color: #ffd061;
 }
 .sgem-crypto-ira-cal-1 .sgem-crypto-ira-cal-btn {
-	text-align: center;
-	font-size: 16px;
-	font-weight: bold;
-	letter-spacing: 0px;
-	color: #002340;
-	text-transform: uppercase;
-	background: #4BCC8C;
-	opacity: 1;
-	border: 0px;
-	padding: 16px 42px;
-	display: block;
-	width: 188px;
-	height: 53px;
-	margin-top: 50px;
-	cursor:pointer;
+    background: #4bcc8c;
+    display: block;
+    width: 188px;
+    height: 53px;
+    margin-top: 50px;
 }
 .sgem-crypto-ira-result-goal-text {
-	position: relative; 
-	width: 100%;
-	-webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    transition: all 1s ease; 
+    position: relative;
+    width: 100%;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
 }
- 
 .sgem-crypto-ira-err-msg {
-	color: #ff5964;
-	font-weight: 300;
-	font-size: 12px;
-	display: none;
-	line-height: 15px;
+    color: #ff5964;
+    font-weight: 300;
+    font-size: 12px;
+    display: none;
+    line-height: 15px;
 }
-/* Chrome, Safari, Edge, Opera for input type numbers (if exist) to remove up down arrows */
-.sgem-crypto-ira-cal-wrapper input::-webkit-outer-spin-button,
-.sgem-crypto-ira-cal-wrapper input::-webkit-inner-spin-button {
+.sgem-crypto-ira-cal-wrapper input::-webkit-inner-spin-button,
+.sgem-crypto-ira-cal-wrapper input::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
-/* Firefox */
-.sgem-crypto-ira-cal-wrapper input[type=number] {
-   -moz-appearance: textfield;
+.sgem-crypto-ira-cal-wrapper input[type="number"] {
+    -moz-appearance: textfield;
 }
-
 .sgem-crypto-ira-percentage-note {
     font-size: 13px;
     font-weight: 400;
-    color: #000; 
+    color: #000;
     margin-top: 4px;
 }
-[data-tippy-root] {
-	max-width: 250px;
-	-moz-box-shadow: 0 4px 8px 0 rgba(100,102,106,.15),0 8px 16px 0 rgba(100,102,106,.33);
-	-webkit-box-shadow: 0 4px 8px 0 rgba(100,102,106,.15),0 8px 16px 0 rgba(100,102,106,.33);
-	box-shadow: 0 4px 8px 0 rgba(100,102,106,.15),0 8px 16px 0 rgba(100,102,106,.33);
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	-o-border-radius: 10px;
-	border-radius: 10px;
-}
-.sgem-crypto-info-tooltip {
-	border: 1px solid #000;
-	width: 18px;
-	height: 18px;
-	border-radius: 50px;
-	line-height: 18px;
-	font-size: 11px;
-	display: inline-block;
-	text-align: center;
-	cursor: pointer !important;
-	font-family: 'DM Sans',Helvetica,Arial,Lucida,sans-serif;
-}
-
+.sgem-crypto-ira-info-tooltip,
 .tippy-popper {
-	font-family: 'DM Sans',Helvetica,Arial,Lucida,sans-serif;
-	font-size: 11px;
-	max-width: 250px;
+    font-size: 11px;
+    font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
 }
-
+[data-tippy-root] {
+    max-width: 250px;
+    -moz-box-shadow: 0 4px 8px 0 rgba(100, 102, 106, 0.15), 0 8px 16px 0 rgba(100, 102, 106, 0.33);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(100, 102, 106, 0.15), 0 8px 16px 0 rgba(100, 102, 106, 0.33);
+    box-shadow: 0 4px 8px 0 rgba(100, 102, 106, 0.15), 0 8px 16px 0 rgba(100, 102, 106, 0.33);
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+}
+.sgem-crypto-ira-info-tooltip {
+    border: 1px solid #000;
+    width: 18px;
+    height: 18px;
+    border-radius: 50px;
+    line-height: 18px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer !important;
+}
+.sgem-crypto-ira-err-msg-age,
+.sgem-crypto-ira-err-msg-rmt {
+    display: none;
+}
+.tippy-popper {
+    max-width: 250px;
+}
+.sgem-crypto-ira-common-err-msg,
+.sgem-crypto-ira-err-msg-age,
+.sgem-crypto-ira-err-msg-rmt {
+    color: #ff5964;
+    font-weight: 300;
+    font-size: 13px;
+}
 .sgem-crypto-ira-precentage-arrow {
-	position: absolute; 
-	border-top: solid 15px white;
-	border-left: solid 15px transparent;
-	border-right: solid 15px transparent;
-	content: '';
-	width: 0;
-	height: 0;
-	left: 29.8154%;
-	margin-left: -15px;
-	-webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    transition: all 1s ease; 
+    position: absolute;
+    border-top: 15px solid #fff;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    content: "";
+    width: 0;
+    height: 0;
+    left: 29.8154%;
+    margin-left: -15px;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
 }
-  .sgem-crypto-ira-err-msg-rmt {
-    color: #ff5964;
-    font-weight: 300;
-    font-size: 13px;
-    display: none;
-} 
-
- .sgem-crypto-ira-form-flex-needAtt {
-    width:38%;
+.sgem-crypto-ira-form-flex-needAtt {
+    width: 38%;
     flex-basis: 38%;
-  }
-  .sgem-crypto-ira-form-flex-onWay {
-    width:27%;
+}
+.sgem-crypto-ira-form-flex-onWay {
+    width: 27%;
     flex-basis: 27%;
-  }
-  .sgem-crypto-ira-form-flex-getClose {
-    width:20%;
+}
+.sgem-crypto-ira-form-flex-getClose {
+    width: 20%;
     flex-basis: 20%;
-  }
-  .sgem-crypto-ira-form-flex-onTrack {
-    width:15%;
+}
+.sgem-crypto-ira-form-flex-onTrack {
+    width: 15%;
     flex-basis: 15%;
-  }
-
-
+}
 .sgem-crypto-ira-common-err-msg {
-	color: #ff5964;
-	font-weight: 300;
-	font-size: 13px;
-	line-height: 17px;
+    line-height: 17px;
 }
-
-  .sgem-crypto-ira-err-msg-rmt {
-    color: #ff5964;
-    font-weight: 300;
-    font-size: 13px;
- 
-}
-.sgem-crypto-ira-err-msg-age {
-    color: #ff5964;
-    font-weight: 300;
-    font-size: 13px;
-    display: none;
-}
-.sgem-crypto-ira-err-msg-per{
-    color: #ff5964;
-    font-weight: 300;
-    font-size: 13px;  
-}
-.sgem-crypto-ira-err-msg-death{
-    color: #ff5964;
-    font-weight: 300;
-    font-size: 13px;  
-}
-.sgem-crypto-ira-err-msg-income{
-    color: #ff5964;
-    font-weight: 300;
-    font-size: 13px;  
-}
-.sgem-crypto-ira-err-msg-current{
-    color: #ff5964;
-    font-weight: 300;
-    font-size: 13px;  
-}
-
-/* Message Title*/
-  
-  #messagetitle{
-    font-size: 24px;
+#messagetitle {
     font-weight: 500;
     color: #000;
-    font-family: 'DM Sans',Helvetica,Arial,Lucida,sans-serif;
+    font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
     margin-bottom: 16px;
-    display: inline-block;
-  }
-
-	#mainmessage {
-    font-size: 24px;
-    font-weight: 500;
-    font-family: 'DM Sans',Helvetica,Arial,Lucida,sans-serif;
-    margin-bottom: 16px;
-    color:#FF5964;
-    display: inline-block;
-  }
-
-/* tippytheme box*/
-.sgem-crypto-ira-goal-tooltip{
-  text-align:center;
-  cursor:pointer;
 }
-  .tippy-box[data-theme~="sgem-crypto-ira-goal"] {
+#mainmessage {
+    font-weight: 500;
+    font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
+    margin-bottom: 16px;
+    color: #ff5964;
+}
+.sgem-crypto-ira-goal-tooltip {
+    text-align: center;
+    cursor: pointer;
+}
+.tippy-box[data-theme~="sgem-crypto-ira-goal"] {
     font-size: 20px;
     background-color: #fff;
-    color:#000;
+    color: #000;
     border: 1px solid #b1b3b5;
     padding: 0.5rem 1rem;
     -webkit-box-shadow: 0 4px 8px 0 rgb(100 102 106 / 15%), 0 8px 16px 0 rgb(100 102 106 / 33%);
     box-shadow: 0 4px 8px 0 rgb(100 102 106 / 15%), 0 8px 16px 0 rgb(100 102 106 / 33%);
-  }
-
+}
 .sgem-crypto-ira-goal-tooltip-range-to-NeedAtt {
-  color:#FF5964;
-  font-size: 15px;
+    color: #ff5964;
+    font-size: 15px;
 }
 .sgem-crypto-ira-goal-tooltip-range-to-onWay {
-  color:#FFC12E;
-  font-size: 15px;
+    color: #ffc12e;
+    font-size: 15px;
 }
 .sgem-crypto-ira-goal-tooltip-range-to-getClose {
-  color:#1E96FC;
-  font-size: 15px;
+    color: #1e96fc;
+    font-size: 15px;
 }
 .sgem-crypto-ira-goal-tooltip-range-to-onTrack {
-  color:#4BCC8C;
-  font-size: 15px;
+    color: #4bcc8c;
+    font-size: 15px;
 }
-  
-.tippy-box[data-theme~="sgem-crypto-ira-goal"][data-placement^='top'] > .tippy-arrow::before {
-  border-top-color: #fff;
+.tippy-box[data-theme~="sgem-crypto-ira-goal"][data-placement^="top"] > .tippy-arrow::before {
+    border-top-color: #fff;
 }
-.tippy-box[data-theme~="sgem-crypto-ira-goal"][data-placement^='bottom'] > .tippy-arrow::before {
-  border-bottom-color: #fff;
+.tippy-box[data-theme~="sgem-crypto-ira-goal"][data-placement^="bottom"] > .tippy-arrow::before {
+    border-bottom-color: #fff;
 }
-.tippy-box[data-theme~="sgem-crypto-ira-goal"][data-placement^='left'] > .tippy-arrow::before {
-  border-left-color: #fff;
+.tippy-box[data-theme~="sgem-crypto-ira-goal"][data-placement^="left"] > .tippy-arrow::before {
+    border-left-color: #fff;
 }
-.tippy-box[data-theme~="sgem-crypto-ira-goal"][data-placement^='right'] > .tippy-arrow::before {
-  border-right-color: #fff;
+.tippy-box[data-theme~="sgem-crypto-ira-goal"][data-placement^="right"] > .tippy-arrow::before {
+    border-right-color: #fff;
 }
-
- 
 .sgem-crypto-ira-midtext {
-	font-size: 20px;
-	color:#000;
-	font-weight: 500;
-	font-family: 'DM Sans',Helvetica,Arial,Lucida,sans-serif;
+    font-size: 20px;
+    color: #000;
+    font-weight: 500;
+    font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
 }
-
-
-  /*****New Switch****/
-  .sgem-crypto-ira-cal-wrapper .sgem-crypto-ira-cal-1 .sgem-crypto-switchit {
-	display: flex;
-	flex-direction: row;
+.sgem-crypto-ira-cal-wrapper .sgem-crypto-ira-cal-1 .sgem-crypto-ira-switchit {
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
     padding-right: 6px;
 }
-
-
-/* Right Section */
 .sgem-crypto-ira-value-text {
-	font-size: 32px;
-	padding-top: 16px;
-	padding-bottom: 30px;
-	
-		color: #002340;
-	font-family:DM Serif Display;
+    font-size: 32px;
+    padding-top: 16px;
+    padding-bottom: 30px;
+    color: #002340;
+    font-family: DM Serif Display;
+}
+.sgem-crypto-ira-collapsible-summary-disclaimer,
+.sgem-crypto-ira-collapsible-text-disclaimer,
+.sgem-crypto-ira-copy-code,
+.sgem-crypto-ira-logo-center {
+    font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
 }
 .sgem-crypto-ira-chartCard {
-	padding-bottom: 40px; 
+    padding-bottom: 40px;
 }
-
- .sgem-crypto-ira-legendbox {
+.sgem-crypto-ira-legendbox {
     width: auto;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-content: flex-end;
     font-size: 14px;
-  }
-  .sgem-crypto-ira-legend-item {
+}
+.sgem-crypto-ira-legend-item {
     display: flex;
-    cursor:pointer;
+    cursor: pointer;
     align-items: center;
-	padding-bottom: 8px;
-  }
-  .sgem-crypto-ira-contribution {
-    border:0px;
-    padding: 0px;
+    padding-bottom: 8px;
+}
+.sgem-crypto-ira-contribution,
+.sgem-crypto-ira-investment,
+.sgem-crypto-ira-tax-savings {
+    border: 0;
+    padding: 0;
     width: 18px;
     height: 18px;
-    margin-right:16px;
-  }
-  .sgem-crypto-ira-tax-savings {
-    border:0px;
-    padding: 0px;
-    width: 18px;
-    height: 18px;
-    margin-right:16px;
-  }
-  .sgem-crypto-ira-investment {
-    border:0px;
-    padding: 0px;
-    width: 18px;
-    height: 18px;
-    margin-right:16px;
-  }
-
-   .slimScrollBar {
-	background: rgb(243, 243, 243) !important;
+    margin-right: 16px;
+}
+.slimScrollBar {
+    background: #f3f3f3 !important;
     width: 1px !important;
-  }
-
- 
-  .sgem-crypto-ira-value-label {
-    display: flex;
-    flex-direction: column;
-  }
-  .sgem-crypto-ira-staticvalue-text {
+}
+.sgem-crypto-ira-staticvalue-text {
     font-size: 16px;
-	font-weight: 500;
-  }
-  .sgem-crypto-ira-cal-1 .sgem-crypto-ira-flex-container .sgem-crypto-ira-switchbox {
+    font-weight: 500;
+}
+.sgem-crypto-ira-cal-1 .sgem-crypto-ira-flex-container .sgem-crypto-ira-switchbox {
     flex-direction: row;
     justify-content: space-between;
-    align-items:center;
-    padding-right:6px;
-  }
-  .sgem-crypto-ira-switch {
-   display: inline-block;
+    align-items: center;
+    padding-right: 6px;
+}
+.sgem-crypto-ira-switch {
+    display: inline-block;
     cursor: pointer;
     height: 20px;
     width: 50px;
@@ -651,8 +584,8 @@
 .sgem-crypto-ira-switch::before {
     font-size: 18px;
     color: #fff;
-    box-shadow: 0 0 1px 1px #ffffff;   
-    content:'';
+    box-shadow: 0 0 1px 1px #fff;
+    content: "";
     display: block;
     position: absolute;
     background: #b9babb;
@@ -660,59 +593,47 @@
     border-radius: 1px;
     height: 25px;
     top: -5px;
-    left: 0px;
+    left: 0;
     text-align: center;
 }
 .sgem-crypto-ira-switch::after {
-   content:'';
-   display: block;
-   position: absolute;
-   background: #FFF;
-   border-radius: 2px;
-   height: 21px;
-   width: 22px;
-   top: -3px;
-   left: 1px;
-   box-shadow: 0 0.1em 0.3em rgba(0,0,0,0.3);
-   transition: all 300ms;
+    content: "";
+    display: block;
+    position: absolute;
+    background: #fff;
+    border-radius: 2px;
+    height: 21px;
+    width: 22px;
+    top: -3px;
+    left: 1px;
+    box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
 }
 .sgem-crypto-ira-switch:checked::after {
-   left: 26px; 
+    left: 26px;
 }
-.sgem-crypto-ira-round.sgem-crypto-ira-switch::after, .sgem-crypto-ira-round.sgem-crypto-ira-switch::before {
-      border-radius: 20px;
+.sgem-crypto-ira-round.sgem-crypto-ira-switch::after,
+.sgem-crypto-ira-round.sgem-crypto-ira-switch::before {
+    border-radius: 20px;
 }
-  .sgem-crypto-ira-cal-1 .sgem-crypto-ira-flex-container .sgem-crypto-ira-full-flex {
+.sgem-crypto-ira-cal-1 .sgem-crypto-ira-flex-container .sgem-crypto-ira-full-flex {
     padding-right: 0px;
-  }
-    
+}
 .tooltipDesign {
     background: #000;
 }
-.img-class {
-	width:  215px; 
-}
-
- #sgem_crypto_ira_err_age, #sgem_crypto_ira_err_retirement_age , #sgem_crypto_ira_err_annual_contribution, #sgem_crypto_ira_err_annual_return, #sgem_crypto_ira_err_current_savings, #sgem_crypto_ira_err_current_total_allocation, #sgem_crypto_ira_err_current_bitcoin, #sgem_crypto_ira_err_current_ethereum, #sgem_crypto_ira_err_current_other, #sgem_crypto_ira_err_future_total_allocation, #sgem_crypto_ira_err_future_bitcoin, #sgem_crypto_ira_err_future_ethereum, #sgem_crypto_ira_err_future_current_other, #sgem_crypto_ira_err_current_total_allocation_zero, #sgem_crypto_ira_err_future_total_allocation_zero, #sgem_crypto_ira_err_current_combine_total, #sgem_crypto_ira_err_future_combine_total
- {
-	font-weight: 300;
-    font-size: 13px;
-    color: #ff5964;
- }
-
 .sgem-crypto-ira-logo-center {
     display: flex;
     align-content: center;
     justify-content: center;
     align-items: center;
-    font-size: 13px; 
+    font-size: 13px;
     padding-top: 5px;
-    font-family: 'DM Sans',Helvetica,Arial,Lucida,sans-serif;
 }
 .sgem-crypto-ira-url-text {
     text-decoration: none;
-    color: rgb(21, 105, 176);
-	font-weight: bold;
+    color: #1569b0;
+    font-weight: bold;
 }
 .sgem-crypto-ira-section-disclaimer {
     padding-top: 40px;
@@ -726,12 +647,11 @@
 .sgem-crypto-ira-collapsible-summary-disclaimer {
     font-weight: 500;
     font-size: 16px;
-    font-family: 'DM Sans',Helvetica,Arial,Lucida,sans-serif;
     cursor: pointer;
     color: #474747;
 }
 details.sgem-crypto-ira-details-disclaimer > summary::after {
-    content: ' ';
+    content: " ";
     width: 25px;
     height: 24px;
     display: inline-block;
@@ -749,45 +669,42 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
 }
 .sgem-crypto-ira-collapsible-text-disclaimer {
     font-weight: 400;
-	line-height: 18px;
+    line-height: 18px;
     font-size: 14px;
-    font-family: 'DM Sans',Helvetica,Arial,Lucida,sans-serif;
-    padding: 10px 0px;
+    padding: 10px 0;
     color: #474747;
 }
-
 .sgem-crypto-ira-copy-option-panel h3 {
-	font-family: "DM Sans",Helvetica,Arial,Lucida,sans-serif;
-	margin-bottom: 16px;
-	font-size: 20px;
-	color: #000;
-	padding-bottom: 5px;
-	font-weight: 500;
+    font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
+    margin-bottom: 16px;
+    font-size: 20px;
+    color: #000;
+    padding-bottom: 5px;
+    font-weight: 500;
 }
 .sgem-crypto-ira-copy-code {
-	background: #ffc12e;
-	font-size: 16px;
-	font-weight: 700;
-	letter-spacing: 0;
-	color: #002340;
-	text-transform: uppercase; 
-	border: 0;
-	display: block;
-	width: 188px;
-	height: 53px;
-	text-align: center;
-	text-decoration: none;
-	padding: 0.3em 1em;
-	line-height: 1.5em !important;
-	font-family: 'DM Sans',Helvetica,Arial,Lucida,sans-serif;
-	cursor: pointer;
-	width: auto;
+    background: #ffc12e;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0;
+    color: #002340;
+    text-transform: uppercase;
+    border: 0;
+    display: block;
+    height: 53px;
+    text-align: center;
+    text-decoration: none;
+    padding: 0.3em 1em;
+    line-height: 1.5em !important;
+    cursor: pointer;
+    width: auto;
 }
 .sgem-crypto-ira-copy-option-panel {
-	margin-top: 25px;
+    margin-top: 25px;
 }
 
-@media (max-width:1220px) {
+
+ @media (max-width:1220px) {
     .sgem-crypto-ira-cal-1-result-wrapper {
         padding: 12px;
         width: 700px;
@@ -816,185 +733,220 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
     }
 
 }
-
-/* ******** ipad ************ */
-@media (max-width:1024px) {
-	.sgem-crypto-ira-logo-wrapper {
-		position: absolute;
-		right: 5px;
-		top: -7px;
-	}
-}
-@media (max-width: 1100px) {
-    .sgem-crypto-ira-cal-1-result-wrapper {
-        width: auto !important;
+ 
+@media (max-width: 1024px) {
+    .sgem-crypto-ira-logo-wrapper {
+        position: absolute;
+        right: 5px;
+        top: -7px;
     }
 }
-	
-@media (max-width:1100px) {
-	.sgem-crypto-ira-cal-wrapper {
-		flex-direction: column;
-		width: auto;
-	}
-	.sgem-crypto-ira-cal-left {
-		width: 100%;
-		padding: 30px 8px;
-	}
-	.sgem-crypto-ira-cal-right {
-		width: 100%;
-	}	
-	.sgem-crypto-ira-cal-1 input[type="text"] {
-		width: 100%;
-	} 
-	.sgem-crypto-ira-cal-1 .sgem-crypto-ira-flex-container .sgem-crypto-ira-form-flex:last-child {
-		/*padding-right: 0;*/
-	}
-	.sgem-crypto-ira-precentage-arrow {
-		border-top: solid 12px white;
-		border-left: solid 12px transparent;
-		border-right: solid 12px transparent;
-	}
-}
- 
-/* ******** mobile ************ */
-@media (max-width: 480px) {
-	.sgem-crypto-ira-cal-left, .sgem-crypto-ira-cal-right {
-		width: 100%;
-	}	
-	.sgem-crypto-ira-cal-left .sgem-crypto-ira-cal-1 input[type="text"] {
-		width: 100%;
-	}	
-	.sgem-crypto-ira-cal-wrapper {
-		flex-direction: column;
-	}
-	.sgem-crypto-ira-cal-1-result-wrapper .sgem-crypto-ira-column2 {
-		width: 100%;
-	}
-	.sgem-crypto-ira-cal-1-result-wrapper {
-		padding: 12px;
-	}	
-	.sgem-crypto-ira-cal-1-result-wrapper .sgem-crypto-ira-flex-container .sgem-crypto-ira-form-flex {
-		padding-bottom: 32px;
-	}	
+@media (min-width:900px) and (max-width:1120px) {
+/*@media (max-width: 1100px) {*/
+    .sgem-crypto-ira-cal-wrapper {
+        flex-direction: row !important;
+        width: auto;
+    }
+    .sgem-crypto-ira-cal-left {
+        width: 100%;
+        padding: 30px 0px 30px 15px !important;
+    }
+    .sgem-crypto-ira-cal-1 input[type="text"],
+    .sgem-crypto-ira-cal-right {
+        width: 100%;
+    }
+    .sgem-crypto-ira-cal-1 .sgem-crypto-ira-flex-container .sgem-crypto-ira-form-flex:last-child {
+        /*padding-right:0*/
+    }
+    .sgem-crypto-ira-precentage-arrow {
+        border-top: 12px solid #fff;
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent;
+    }
 	.sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-group label {
-		line-height: 15px;
-		display: block;
-		min-height: 30px; 
-		font-size: 14px; 
-		margin-bottom: 0;
-	}
-	.sgem-crypto-ira-cal-1 .sgem-crypto-ira-flex-container .sgem-crypto-ira-form-flex:last-child {
-		/*padding-right: 0;*/
-	}
-	.sgem-crypto-ira-cal-1-result-wrapper .sgem-crypto-ira-result-label { 
-		font-size: 32px; 
-		line-height: 44px;
-	}
-	.sgem-crypto-ira-cal-1-result .sgem-crypto-ira-result-panel-header { 
-		font-size: 14px; 
-	}
-	.sgem-crypto-ira-cal-1-result-header {
-		font-size: 15px;
-		font-family: 'DM Sans',Helvetica,Arial,Lucida,sans-serif;
-	}
-	.sgem-crypto-ira-cal-1-result .sgem-crypto-ira-result-panel-goal {
-		font-size: 30px;
-	}
-	.sgem-crypto-ira-cal-1 .sgem-crypto-ira-cal-btn {
-		margin-bottom: 40px;
-		margin-top: 10px;
-	}	
-	.sgem-crypto-ira-logo-wrapper {
-		position: relative;
-		top: unset;
-		right: unset;
-		margin-left: -3px;
-		margin-top: -10px;
-		margin-bottom: 16px;
-	}
-	.sgem-crypto-ira-logo-wrapper img {
-		height: 25px;
+		font-size: 13px; 
 	}
 	.sgem-crypto-ira-cal-1 .sgem-crypto-ira-flex-container .sgem-crypto-ira-form-flex { 
-		padding-right: 12px;
+		padding-right: 15px;
 	}
-	.sgem-crypto-ira-tooltip {
-		position: absolute;
-		margin-left: 8px;
+	.sgem-crypto-ira-midtext {
+		font-size: 17px; 
 	}
-	.sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex.sgem-crypto-ira-currency-holder::after { 
-		top: 54px;
+	.sgem-crypto-ira-copy-option-panel { 
+		padding: 15px;
 	}
-	.sgem-crypto-ira-percentage-note {
-		line-height: 14px;
+}
+
+
+@media (max-width: 768px) {
+	.sgem-crypto-ira-cal-wrapper { 
+		padding: 8px 8px 8px 8px; 
 	}
-	.sgem-crypto-ira-cal-1-result .sgem-crypto-ira-flex-container-2 .sgem-crypto-ira-form-flex-2 {
-		text-align: center;
+	.sgem-crypto-ira-cal-1-result-wrapper { 
+		width: 100%;
 	}
-	.sgem-crypto-ira-precentage-arrow {
-    	border-top: solid 8px white;
-    	border-left: solid 8px transparent;
-    	border-right: solid 8px transparent;
+	.sgem-crypto-ira-copy-option-panel {
+		padding: 0px 25px;
+	}
+	.sgem-crypto-ira-cal-left { 
+		padding: 30px 0px 30px 25px !important;
+	}
+	.sgem-crypto-ira-cal-1 .sgem-crypto-ira-flex-container .sgem-crypto-ira-full-flex { 
+		padding-right: 15px !important;
+	}
+	.sgem-crypto-ira-cal-1 .sgem-crypto-ira-flex-container .sgem-crypto-ira-form-flex { 
+		padding-right: 15px !important;
+	}
+}
+
+
+@media (max-width: 480px) {
+    .sgem-crypto-ira-copy-option-panel {
+        padding: 0px 25px;
     }
-	.sgem-crypto-ira-cal-1-result .sgem-crypto-ira-result-score-label { 
-		font-size: 13px; 
-		line-height: 14px;
-		padding: 0 10px;
-	}
-	.sgem-crypto-ira-tooltip{
-		width: 15px;
-		height: 15px;
-		line-height: 15px;
-		font-size: 11px;
-	}
-	.sgem-crypto-ira-logo-center {
-		font-size: 15px;
-		flex-direction: column;
-		padding-top: 20px;
+    .sgem-crypto-ira-cal-1-result-wrapper .sgem-crypto-ira-column2,
+    .sgem-crypto-ira-cal-left,
+    .sgem-crypto-ira-cal-left .sgem-crypto-ira-cal-1 input[type="text"],
+    .sgem-crypto-ira-cal-right {
+        width: 100%;
     }
-	.sgem-crypto-ira-logo-image {
-		padding: 0px;
+    .sgem-crypto-ira-cal-wrapper {
+        flex-direction: column;
     }
-	.sgem-crypto-ira-value-text {
-		font-size: 22px;
-		padding-top: 0px;
+	.sgem-crypto-ira-cal-1-result-wrapper {
+		padding: 12px;
+		width: 100%;
 	}
+    .sgem-crypto-ira-cal-1-result-wrapper .sgem-crypto-ira-flex-container .sgem-crypto-ira-form-flex {
+        padding-bottom: 32px;
+    }
+    .sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-group label {
+        line-height: 15px;
+        display: block;
+        min-height: 30px;
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+    .sgem-crypto-ira-cal-1 .sgem-crypto-ira-flex-container .sgem-crypto-ira-form-flex:last-child {
+        /*padding-right:0*/
+    }
+    .sgem-crypto-ira-cal-1-result-wrapper .sgem-crypto-ira-result-label {
+        font-size: 32px;
+        line-height: 44px;
+    }
+    .sgem-crypto-ira-cal-1-result .sgem-crypto-ira-result-panel-header,
+    .sgem-crypto-ira-staticvalue-text {
+        font-size: 14px;
+    }
+    .sgem-crypto-ira-cal-1-result-header {
+        font-size: 15px;
+        font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
+    }
+    .sgem-crypto-ira-cal-1-result .sgem-crypto-ira-result-panel-goal {
+        font-size: 30px;
+    }
+    .sgem-crypto-ira-cal-1 .sgem-crypto-ira-cal-btn {
+        margin-bottom: 40px;
+        margin-top: 10px;
+    }
+    .sgem-crypto-ira-logo-wrapper {
+        position: relative;
+        top: unset;
+        right: unset;
+        margin-left: -3px;
+        margin-top: -10px;
+        margin-bottom: 16px;
+    }
+    .sgem-crypto-ira-logo-wrapper img {
+        height: 25px;
+    }
+    .sgem-crypto-ira-cal-1 .sgem-crypto-ira-flex-container .sgem-crypto-ira-form-flex {
+        padding-right: 12px;
+    }
+    .sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex.sgem-crypto-ira-currency-holder::after {
+        top: 54px;
+    }
+    .sgem-crypto-ira-percentage-note {
+        line-height: 14px;
+    }
+    .sgem-crypto-ira-legend-item {
+        font-size: 12px;
+    }
+    .sgem-crypto-ira-cal-1-result .sgem-crypto-ira-flex-container-2 .sgem-crypto-ira-form-flex-2 {
+        text-align: center;
+    }
+    .sgem-crypto-ira-precentage-arrow {
+        border-top: 8px solid #fff;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+    }
+    .sgem-crypto-ira-cal-1-result .sgem-crypto-ira-result-score-label {
+        font-size: 13px;
+        line-height: 14px;
+        padding: 0 10px;
+    }
+    .sgem-crypto-ira-tooltip {
+        position: absolute;
+        margin-left: 8px;
+        width: 15px;
+        height: 15px;
+        line-height: 15px;
+        font-size: 11px;
+    }
+    .sgem-crypto-ira-logo-center {
+        font-size: 15px;
+        flex-direction: column;
+        padding-top: 20px;
+    }
+    .sgem-crypto-ira-logo-image {
+        padding: 0;
+    }
+    .sgem-crypto-ira-value-text {
+        font-size: 22px;
+        padding-top: 0;
+    }
 	.sgem-crypto-ira-buttonGet {
-		justify-content: center;
+		justify-content: flex-start;
 	}
-	.sgem-crypto-ira-cal-left {
-		width: 100% !important; 
+    .sgem-crypto-ira-cal-left {
+        width: 100% !important;
+    }
+    .sgem-cal-copy-option-panel {
+        padding: 0 10px;
+    }
+	
+    .sgem-crypto-ira-cal-1 .sgem-crypto-ira-flex-container .sgem-crypto-ira-form-flex:last-child {
+		padding-right: 5px !important;
 	}
-	.sgem-crypto-copy-option-panel {padding: 0px 25px;}
 }
-@media (max-width: 420px){
-	.sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex.sgem-crypto-ira-currency-holder::after {
-		top: 46px;
-	}
-	.sgem-crypto-ira-tooltip {
-		position: absolute;
-		margin-left: 4px;
-	}
-	.sgem-crypto-ira-tooltip{
-		width: 13px;
-		height: 13px;
-		line-height: 13px;
-		font-size: 10px;
-	}
-	.sgem-crypto-ira-cal-left {
-		width: 100% !important; 
-	}
-	.sgem-crypto-copy-option-panel {padding: 0px 25px;}
+@media (max-width: 420px) {
+    .sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex.sgem-crypto-ira-currency-holder::after {
+        top: 46px;
+    }
+    .sgem-crypto-ira-tooltip {
+        position: absolute;
+        margin-left: 4px;
+        width: 13px;
+        height: 13px;
+        line-height: 13px;
+        font-size: 10px;
+    }
+    .sgem-crypto-ira-cal-left {
+        width: 100% !important;
+    }
+    .sgem-cal-copy-option-panel {
+        padding: 0 10px;
+    }
 }
 
-
-/* new eqcss */
-@element .sgem-crypto-ira-cal-wrapper and (max-width: 1100px) {
+ 
+ /* new eqcss */
+@element .sgem-crypto-ira-cal-wrapper and (max-width: 940px) {
     :self {
       flex-direction: column;
     } 
   } 
-  @element .sgem-crypto-ira-cal-wrapper and (max-width: 1100px)  {
+  @element .sgem-crypto-ira-cal-wrapper and (max-width: 940px)  {
     :self .sgem-crypto-ira-cal-left {
       width: 100%;
       padding-top: 32px;
@@ -1003,22 +955,22 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
       padding-bottom: 32px;
     } 
   } 
-  @element .sgem-crypto-ira-cal-wrapper and (max-width: 1100px) {
+  @element .sgem-crypto-ira-cal-wrapper and (max-width: 940px) {
     :self .sgem-crypto-ira-cal-right {
       width: 100%;
     } 
   } 
-  @element .sgem-crypto-ira-cal-wrapper and (max-width: 1100px) {
+  @element .sgem-crypto-ira-cal-wrapper and (max-width: 940px) {
     :self .sgem-crypto-ira-cal-left .sgem-crypto-ira-cal-1 input[type="text"] {
       width: 100%;
     } 
   } 
-  @element .sgem-crypto-ira-cal-wrapper and (max-width: 1100px) {
+  @element .sgem-crypto-ira-cal-wrapper and (max-width: 940px) {
     :self .sgem-crypto-ira-cal-right .sgem-crypto-ira-cal-1-result-wrapper {
       padding: 26px;
     } 
   } 
-  @element .sgem-crypto-ira-cal-wrapper and (max-width: 1100px) {
+  @element .sgem-crypto-ira-cal-wrapper and (max-width: 940px) {
     :self .sgem-crypto-ira-cal-left .sgem-crypto-ira-flex-container .sgem-crypto-ira-full-flex {
       flex-direction: column;
       padding-right: 25px;
@@ -1026,7 +978,7 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
   } 
   @element .sgem-crypto-ira-cal-wrapper and (max-width: 780px) {
     :self .sgem-crypto-ira-cal-left {
-      width: 100%;
+      width: 100%;  
       padding-left: 12px;
     } 
   } 
@@ -1035,5 +987,5 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
       flex-direction: column;
     } 
   }
- 
+	
 	/* *************** */
