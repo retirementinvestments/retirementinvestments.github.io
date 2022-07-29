@@ -771,6 +771,9 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
 	.sgem-pmc-midtext {
 		font-size: 17px; 
 	}
+	.sgem-pmc-copy-option-panel { 
+		padding: 15px;
+	}
 }
 
 
