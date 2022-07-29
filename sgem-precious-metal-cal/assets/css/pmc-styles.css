@@ -765,6 +765,9 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
 
 
 @media (max-width: 768px) {
+	.sgem-pmc-cal-wrapper { 
+		padding: 8px 8px 8px 8px; 
+	}
 	.sgem-pmc-cal-1-result-wrapper { 
 		width: 100%;
 	}
