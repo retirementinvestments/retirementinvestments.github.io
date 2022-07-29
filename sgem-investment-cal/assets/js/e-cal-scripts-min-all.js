@@ -88,9 +88,7 @@ var sgem_main_contents = '<div class="sgem-cal-wrapper">' +
 	 
 	 if( (location.hostname != "messy-saxophone.flywheelsites.com") || (location.hostname != "retirementinvestments.com") ){
 		sgem_main_contents += '<div class="sgem-ret-logo-center"><a class="sgem-ret-url-text" href="https://retirementinvestments.com/retirement/retirement-calculator/" target="_blank" rel="noopener">Retirement Calculator&nbsp</a>by Retirement investments</div>';
-	 } else {
-		sgem_main_contents += 'ext'; 
-	 }
+	 }  
 	 
      
      if(location.hostname == "messy-saxophone.flywheelsites.com" || location.hostname == "retirementinvestments.com"){
@@ -111,6 +109,12 @@ jQuery(document).ready(function($){
 	$('#sgem-retirement-cal').html(sgem_main_contents);
 	tippy('.sgem-goal-tooltip', {animation: 'sacle',theme: 'sgem-goal', boundary: 'viewport',allowHTML: true,arrow: true,placement: 'top',size:'large',trigger: 'click',  });
     tippy('.sgem-tooltip', {animation: 'sacle',theme: 'light-border', boundary: 'viewport',allowHTML: true,arrow: true,placement: 'top',size:'large',trigger: 'click',  });
+
+
+if( (location.hostname != "messy-saxophone.flywheelsites.com") || (location.hostname != "retirementinvestments.com") ){
+	$('.sgem-ret-logo-center').hide(); 	
+}
+
 
 ///===================================================	
   if($('#sgem_pretax_income').length > 0) {
