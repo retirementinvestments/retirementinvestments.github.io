@@ -822,6 +822,15 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
 	}
 }
 
+@media (min-width:500px) and (max-width:600px) {
+	.sgem-pmc-cal-left { 
+		padding-left: 30px !important; 
+	}
+	.sgem-pmc-cal-wrapper {
+		padding: 8px 8px 8px 8px;
+	}
+}
+
 
 @media (max-width: 480px) {
     .sgem-pmc-copy-option-panel {
