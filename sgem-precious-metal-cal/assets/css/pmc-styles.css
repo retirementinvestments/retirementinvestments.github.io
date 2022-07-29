@@ -758,6 +758,7 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
         /*padding-right:0*/
         font-size: 15px;
         line-height: 22px;
+		padding-right:15px !important;
     }
     .sgem-pmc-precentage-arrow {
         border-top: 12px solid #fff;
