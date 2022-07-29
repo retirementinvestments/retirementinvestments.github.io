@@ -756,8 +756,7 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
     } 
 	.sgem-pmc-cal-1 .sgem-pmc-flex-container .sgem-pmc-form-flex:last-child {
         /*padding-right:0*/
-        font-size: 15px;
-        line-height: 22px;
+        font-size: 15px; 
 		padding-right:15px !important;
     }
     .sgem-pmc-precentage-arrow {
