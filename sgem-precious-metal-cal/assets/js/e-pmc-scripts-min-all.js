@@ -1022,6 +1022,12 @@ $('#sgem_pmc_annual_return,#sgem_pmc_current_allocation,#sgem_pmc_current_gold_a
       });
      
      //pcm_init_chart();
+
+	if($('#sgem-pmc-cal').width() < 600) {
+		$('.sgem-pmc-cal-left').css('padding-left','30px');
+		$('.sgem-pmc-cal-wrapper').css('padding-left','8px');
+	} 
+
 $(window).on('resize', function(){
 	if($('#sgem-pmc-cal').width() < 600) {
 		$('.sgem-pmc-cal-left').css('padding-left','30px');
