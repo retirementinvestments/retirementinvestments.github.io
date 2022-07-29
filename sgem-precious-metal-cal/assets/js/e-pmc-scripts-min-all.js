@@ -346,6 +346,15 @@ function sgem_pmc_ConvertToInternationalCurrencySystemRound(labelValue) {
  
 jQuery(document).ready(function($){
 
+if( location.hostname == "messy-saxophone.flywheelsites.com") {
+	$('.sgem-pmc-logo-center').hide(); 
+} else if(location.hostname == "retirementinvestments.com"){
+	$('.sgem-pmc-logo-center').hide(); 	
+} else {
+	$('.sgem-pmc-logo-center').show(); 	
+}
+
+
 	
 function sgem_pmc_calculaterminfazcal() {
     

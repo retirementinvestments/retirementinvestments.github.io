@@ -295,6 +295,17 @@ function sgem_crypto_ConvertToInternationalCurrencySystemRound(labelValue) {
  
 jQuery(document).ready(function($){
 
+
+if( location.hostname == "messy-saxophone.flywheelsites.com") {
+	$('.sgem-crypto-ira-logo-center').hide(); 
+} else if(location.hostname == "retirementinvestments.com"){
+	$('.sgem-crypto-ira-logo-center').hide(); 	
+} else {
+	$('.sgem-crypto-ira-logo-center').show(); 	
+}
+
+
+
 function sgem_crypto_calculatermin() {
     
     var crypto_intrest_chart = [];
