@@ -965,6 +965,7 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
 	.sgem-crypto-ira-cal-left {
 		width: 100% !important; 
 	}
+	.sgem-crypto-copy-option-panel {padding: 0px 25px;}
 }
 @media (max-width: 420px){
 	.sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex.sgem-crypto-ira-currency-holder::after {
@@ -983,6 +984,7 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
 	.sgem-crypto-ira-cal-left {
 		width: 100% !important; 
 	}
+	.sgem-crypto-copy-option-panel {padding: 0px 25px;}
 }
 
 

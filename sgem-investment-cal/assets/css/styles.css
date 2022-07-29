@@ -673,6 +673,7 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
 	.sgem-cal-copy-option-panel {
 		padding: 0px 10px;
 	}
+	.sgem-crypto-copy-option-panel {padding: 0px 25px;}
 } 
 @media (max-width: 420px) {
     .sgem-cal-1 .sgem-form-flex.sgem-currency-holder::after {
@@ -689,6 +690,7 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
 	.sgem-cal-copy-option-panel {
 		padding: 0px 10px;
 	}
+	.sgem-crypto-copy-option-panel {padding: 0px 25px;}
 }
 
 .sgem-cal-wrapper[max-width~="1024px"] {
