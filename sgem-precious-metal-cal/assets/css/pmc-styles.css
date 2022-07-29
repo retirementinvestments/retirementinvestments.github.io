@@ -775,9 +775,10 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
     .sgem-pmc-cal-wrapper {
         flex-direction: column;
     }
-    .sgem-pmc-cal-1-result-wrapper {
-        padding: 12px;
-    }
+	.sgem-pmc-cal-1-result-wrapper {
+		padding: 12px;
+		width: 100%;
+	}
     .sgem-pmc-cal-1-result-wrapper .sgem-pmc-flex-container .sgem-pmc-form-flex {
         padding-bottom: 32px;
     }
@@ -866,9 +867,9 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
         font-size: 22px;
         padding-top: 0;
     }
-    .sgem-pmc-buttonGet {
-        justify-content: center;
-    }
+	.sgem-pmc-buttonGet {
+		justify-content: flex-start;
+	}
     .sgem-pmc-cal-left {
         width: 100% !important;
     }
