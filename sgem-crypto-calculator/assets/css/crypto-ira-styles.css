@@ -632,8 +632,7 @@
 }
 .sgem-crypto-ira-url-text {
     text-decoration: none;
-    color: #1569b0;
-    font-weight: bold;
+    color: #1569b0; 
 }
 .sgem-crypto-ira-section-disclaimer {
     padding-top: 40px;

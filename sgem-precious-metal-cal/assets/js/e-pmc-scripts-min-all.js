@@ -623,7 +623,8 @@ function sgem_pmc_calculaterminfazcal() {
  
   
    // Scorlll
-if (window.innerWidth > 1024) {  
+//if (window.innerWidth > 1024) { 
+if ($('#sgem-pmc-cal').width() > 940) {  
     $('.sgem-pmc-cal-left').slimScroll({
       height: '750px',
     }); 

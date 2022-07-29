@@ -478,8 +478,7 @@
 }
 .sgem-ret-url-text {
     text-decoration: none;
-    color: rgb(21, 105, 176);
-	font-weight: bold;
+    color: rgb(21, 105, 176); 
 } 
 .sgem-ret-details-disclaimer summary {
     display: flex !important;
