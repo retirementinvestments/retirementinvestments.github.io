@@ -787,6 +787,9 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
 	.sgem-pmc-cal-1 details.sgem-pmc-input-more-details { 
 		margin-right: 15px;
 	}
+	.sgem-pmc-cal-1 .sgem-pmc-input-more-details .sgem-pmc-flex-container .sgem-pmc-form-flex:last-child { 
+		padding-right: 0px !important;
+	}
 }
 
 
