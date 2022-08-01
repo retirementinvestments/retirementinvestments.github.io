@@ -967,16 +967,22 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
       width: 100%;
     } 
   } 
-  @element .sgem-crypto-ira-cal-wrapper and (min-width:900px) and (max-width:1120px)  {
+  @element .sgem-crypto-ira-cal-wrapper and (min-width:700px) and (max-width:1024px)  {
     :self .sgem-crypto-ira-cal-1 .sgem-crypto-ira-flex-container {
         flex-direction: column;
     } 
   } 
-  @element .sgem-crypto-ira-cal-wrapper and (min-width:900px) and (max-width:1120px)  {
+  @element .sgem-crypto-ira-cal-wrapper and (min-width:700px) and (max-width:1024px)  {
     :self .sgem-crypto-ira-cal-1 input[type="text"] {
         width: 100%;
     } 
   } 
+  @element .sgem-crypto-ira-cal-wrapper and (min-width:700px) and (max-width:1024px)  {
+    :self .sgem-crypto-ira-cal-1 .sgem-crypto-ira-flex-container .sgem-crypto-ira-form-flex {
+        padding-right: 25px;
+    } 
+  }
+  
   @element .sgem-crypto-ira-cal-wrapper and (max-width: 940px) {
     :self .sgem-crypto-ira-cal-left .sgem-crypto-ira-cal-1 input[type="text"] {
       width: 100%;
