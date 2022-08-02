@@ -828,6 +828,9 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
 	.sgem-crypto-ira-cal-1-result-wrapper { 
 		width: 100%;
 	}
+    .sgem-crypto-ira-cal-1 input[type="text"] {
+        width: 100%;
+    }
 	.sgem-crypto-ira-copy-option-panel {
 		padding: 0px 25px;
 	}
