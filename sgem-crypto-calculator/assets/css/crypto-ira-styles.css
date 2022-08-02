@@ -984,11 +984,6 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
 
  
  /* new eqcss */
-@element .sgem-crypto-ira-cal-wrapper and (min-width:700px) and (max-width:1024px) {
-    :self {
-      flex-direction: column;
-    } 
-  } 
   @element .sgem-crypto-ira-cal-wrapper and (min-width:700px) and (max-width:1024px)  {
     :self .sgem-crypto-ira-cal-left {
       width: 100%;
