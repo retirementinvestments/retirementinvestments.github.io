@@ -631,7 +631,8 @@
 }
 .sgem-pmc-url-text {
     text-decoration: none;
-    color: #1569b0; 
+    color: #1569b0;
+    font-weight: bold;
 }
 .sgem-pmc-section-disclaimer {
     padding-top: 40px;
@@ -704,21 +705,18 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
 
  @media (max-width:1220px) {
     .sgem-pmc-cal-1-result-wrapper {
-        padding: 12px;
         width: 700px;
     }
 
 }
 @media (max-width:1170px) {
     .sgem-pmc-cal-1-result-wrapper {
-        padding: 12px;
         width: 660px;
     }
 
 }
 @media (max-width:1145px) {
     .sgem-pmc-cal-1-result-wrapper {
-        padding: 12px;
         width: 650px;
     }
 
@@ -726,12 +724,55 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
 
 @media (max-width:1121px) {
     .sgem-pmc-cal-1-result-wrapper {
-        padding: 12px;
         width: 640px;
     }
-
+    .sgem-pmc-cal-1 .sgem-pmc-form-flex .sgem-pmc-current-allocation, .sgem-pmc-cal-1 .sgem-pmc-form-flex .sgem-pmc-future-allocation, .sgem-pmc-cal-1 .sgem-pmc-form-flex .sgem-pmc-my-life-expectancy
+    {
+        width:auto;
+    }
 }
- 
+@media (max-width:970px) {
+    .sgem-pmc-cal-1-result-wrapper {
+        width: 625px;
+    }
+}
+@media (max-width:940px) {
+    .sgem-pmc-cal-1-result-wrapper {
+        width: 600px;
+    }
+}
+@media (max-width:900px) {
+    .sgem-pmc-cal-1-result-wrapper {
+        width: 575px;
+    }
+}
+@media (max-width:860px) {
+    .sgem-pmc-cal-1-result-wrapper {
+        width: 550px;
+    }
+}
+@media (max-width:820px) {
+    .sgem-pmc-cal-1-result-wrapper {
+        width: 515px;
+    }
+}
+@media (max-width:780px) {
+    .sgem-pmc-cal-1-result-wrapper {
+        width: 495px;
+    }
+}
+@media (max-width:740px) {
+    .sgem-pmc-cal-1-result-wrapper {
+        width: 445px;
+    }
+}
+@media (max-width:700px) {
+    .sgem-pmc-cal-1-result-wrapper {
+        width: 415px;
+    }
+}
+
+
 @media (max-width: 1024px) {
     .sgem-pmc-logo-wrapper {
         position: absolute;
@@ -739,7 +780,7 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
         top: -7px;
     }
 }
-@media (min-width:900px) and (max-width:1120px) {
+@media (min-width:700px) and (max-width:1024px) {
 /*@media (max-width: 1100px) {*/
     .sgem-pmc-cal-wrapper {
         flex-direction: row !important;
@@ -747,16 +788,15 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
     }
     .sgem-pmc-cal-left {
         width: 100%;
-        padding: 15px 0px 30px 15px !important;
+        padding: 30px 0px 30px 15px !important;
     }
     .sgem-pmc-cal-1 input[type="text"],
     .sgem-pmc-cal-right {
         width: 100%;
-    } 
-	.sgem-pmc-cal-1 .sgem-pmc-flex-container .sgem-pmc-form-flex:last-child {
+    }
+    
+    .sgem-pmc-cal-1 .sgem-pmc-flex-container .sgem-pmc-form-flex:last-child {
         /*padding-right:0*/
-        font-size: 15px; 
-		padding-right:15px !important;
     }
     .sgem-pmc-precentage-arrow {
         border-top: 12px solid #fff;
@@ -768,61 +808,45 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
 	}
 	.sgem-pmc-cal-1 .sgem-pmc-flex-container .sgem-pmc-form-flex { 
 		padding-right: 15px;
-		padding-bottom: 15px;
-	} 
+	}
 	.sgem-pmc-midtext {
 		font-size: 17px; 
 	}
 	.sgem-pmc-copy-option-panel { 
 		padding: 15px;
 	}
-	.sgem-pmc-collapsible-summary-title { 
-		margin-block-start: 10px;
-		margin-block-end: 10px;
-	}
-	.sgem-pmc-cal-1-result-wrapper { 
-        width: 570px;
-    }
-	.sgem-pmc-cal-1 details.sgem-pmc-input-more-details { 
-		margin-right: 15px;
-	}
-	.sgem-pmc-cal-1 .sgem-pmc-input-more-details .sgem-pmc-flex-container .sgem-pmc-form-flex:last-child { 
-		padding-right: 0px !important;
-	}
 }
 
 
-@media (min-width:769px) and (max-width:900px) {	
-	.sgem-pmc-cal-1 .sgem-pmc-form-group label {
-		font-size: 11px; 
-	}
-}
-
-@media (max-width: 768px) {
+@media (max-width: 700px) {
 	.sgem-pmc-cal-wrapper { 
 		padding: 8px 8px 8px 8px; 
+        flex-direction: column;
 	}
 	.sgem-pmc-cal-1-result-wrapper { 
 		width: 100%;
 	}
+    .sgem-pmc-cal-1 input[type="text"] {
+        width: 100%;
+    }
 	.sgem-pmc-copy-option-panel {
 		padding: 0px 25px;
 	}
 	.sgem-pmc-cal-left { 
 		padding: 30px 0px 30px 25px !important;
+        width: 100%;
 	}
+    .sgem-pmc-cal-right {
+        width: 100%;
+    }
 	.sgem-pmc-cal-1 .sgem-pmc-flex-container .sgem-pmc-full-flex { 
 		padding-right: 15px !important;
 	}
 	.sgem-pmc-cal-1 .sgem-pmc-flex-container .sgem-pmc-form-flex { 
 		padding-right: 15px !important;
 	}
-	.sgem-pmc-cal-1 details.sgem-pmc-input-more-details { 
-		margin-right: 15px;
-	}
 }
 
- 
 
 @media (max-width: 480px) {
     .sgem-pmc-copy-option-panel {
@@ -887,9 +911,9 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
     .sgem-pmc-cal-1 .sgem-pmc-flex-container .sgem-pmc-form-flex {
         padding-right: 12px;
     }
-	.sgem-pmc-cal-1 .sgem-pmc-form-flex.sgem-pmc-currency-holder::after {
-		top: 47px;
-	}
+    .sgem-pmc-cal-1 .sgem-pmc-form-flex.sgem-pmc-currency-holder::after {
+        top: 54px;
+    }
     .sgem-pmc-percentage-note {
         line-height: 14px;
     }
@@ -932,22 +956,15 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
 	.sgem-pmc-buttonGet {
 		justify-content: flex-start;
 	}
-	.sgem-pmc-cal-left {
-		width: 100% !important;
-		padding: 30px 0px 30px 5px !important;
-	}
+    .sgem-pmc-cal-left {
+        width: 100% !important;
+    }
     .sgem-cal-copy-option-panel {
         padding: 0 10px;
     }
 	
     .sgem-pmc-cal-1 .sgem-pmc-flex-container .sgem-pmc-form-flex:last-child {
 		padding-right: 5px !important;
-	}
-	.sgem-pmc-cal-1 details.sgem-pmc-input-more-details {
-		margin-right: 5px;
-	}
-	.sgem-pmc-cal-1 .sgem-pmc-input-more-details .sgem-pmc-flex-container .sgem-pmc-form-flex:last-child {
-		padding-right: 0px !important;
 	}
 }
 @media (max-width: 420px) {
@@ -972,12 +989,7 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
 
  
  /* new eqcss */
-@element .sgem-pmc-cal-wrapper and (max-width: 940px) {
-    :self {
-      flex-direction: column;
-    } 
-  } 
-  @element .sgem-pmc-cal-wrapper and (max-width: 940px)  {
+  @element .sgem-pmc-cal-wrapper and (min-width:700px) and (max-width:1024px)  {
     :self .sgem-pmc-cal-left {
       width: 100%;
       padding-top: 32px;
@@ -986,34 +998,44 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
       padding-bottom: 32px;
     } 
   } 
-  @element .sgem-pmc-cal-wrapper and (max-width: 940px) {
+  @element .sgem-pmc-cal-wrapper and (min-width:700px) and (max-width:1024px) {
     :self .sgem-pmc-cal-right {
       width: 100%;
     } 
   } 
-  @element .sgem-pmc-cal-wrapper and (max-width: 940px) {
-    :self .sgem-pmc-cal-left .sgem-pmc-cal-1 input[type="text"] {
-      width: 100%;
+  @element .sgem-pmc-cal-wrapper and (min-width:700px) and (max-width:1024px)  {
+    :self .sgem-pmc-cal-1 .sgem-pmc-flex-container {
+        flex-direction: column;
     } 
   } 
-  @element .sgem-pmc-cal-wrapper and (max-width: 940px) {
+  @element .sgem-pmc-cal-wrapper and (min-width:700px) and (max-width:1024px)  {
+    :self .sgem-pmc-cal-1 input[type="text"] {
+        width: 100%;
+    } 
+  } 
+  @element .sgem-pmc-cal-wrapper and (min-width:700px) and (max-width:1024px)  {
+    :self .sgem-pmc-cal-1 .sgem-pmc-flex-container .sgem-pmc-form-flex {
+        padding-right: 25px;
+    } 
+  }
+  @element .sgem-pmc-cal-wrapper and (min-width:700px) and (max-width:1024px) {
     :self .sgem-pmc-cal-right .sgem-pmc-cal-1-result-wrapper {
       padding: 26px;
     } 
   } 
-  @element .sgem-pmc-cal-wrapper and (max-width: 940px) {
+  @element .sgem-pmc-cal-wrapper and (min-width:700px) and (max-width:1024px) {
     :self .sgem-pmc-cal-left .sgem-pmc-flex-container .sgem-pmc-full-flex {
       flex-direction: column;
       padding-right: 25px;
     } 
   } 
-  @element .sgem-pmc-cal-wrapper and (max-width: 780px) {
+  @element .sgem-pmc-cal-wrapper and (min-width:700px) and (max-width:1024px) {
     :self .sgem-pmc-cal-left {
       width: 100%;  
       padding-left: 12px;
     } 
   } 
-  @element .sgem-pmc-cal-wrapper and (max-width: 780px) {
+  @element .sgem-pmc-cal-wrapper and (min-width:700px) and (max-width:1024px) {
     :self .sgem-pmc-cal-right .sgem-pmc-column2 {
       flex-direction: column;
     } 
