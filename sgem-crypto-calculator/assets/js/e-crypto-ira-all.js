@@ -629,7 +629,7 @@ sgem_crypto_calculatermin();
     });
   });
 }*/
-if ($('#sgem-crypto-cal').width() > 940) { 
+if ($('#sgem-crypto-cal').width() > 700) { 
   $(function(){
     $('.sgem-crypto-ira-cal-left').slimScroll({
       height: '700px',
