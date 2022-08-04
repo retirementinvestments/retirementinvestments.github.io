@@ -584,6 +584,59 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
 
 /* end */
 
+/* js css */
+.sgem-reti-cal-width-add {
+	display: block;
+}
+.sgem-reti-cal-width-add .sgem-cal-left {
+	width: 100%;
+}
+.sgem-reti-cal-width-add .sgem-cal-right {
+	width: 100%;
+}
+.sgem-cal-wrapper input[type="text"].sgem-reti-cal-max-width-style {
+	width: 100%;
+}
+.sgem-cal-wrapper .sgem-cal-1 .sgem-flex-container .sgem-reti-cal-max-width-style-right {
+	padding-right: 4px;
+}
+.sgem-cal-wrapper .sgem-cal-1 .sgem-reti-cal-max-width-style-add {
+	width: 100%;
+}
+
+.sgem-cal-left-add-class {
+	width: 30%;
+}
+.sgem-cal-right-add-class {
+	width: 70%;
+}
+
+.sgem-cal-left-add-class .sgem-cal-1 .sgem-flex-container {
+	display: block;
+}
+.sgem-cal-left-add-class .sgem-cal-1 .sgem-flex-container .sgem-form-flex {
+	padding-right: 0;
+}
+.sgem-cal-left-add-class {
+	height: 740px;
+    overflow: hidden;
+    overflow-y: scroll;
+	scrollbar-width: 0;
+}
+.sgem-reti-cal-scroll-height {
+	height: auto;
+}
+.sgem-cal-left-add-class::-webkit-scrollbar {
+    width: 0px;
+}
+.sgem-cal-left-add-class .sgem-cal-1 input[type="text"] {
+	width: 96%;
+}
+.sgem-cal-left-add-class .sgem-cal-1 input[type="text"].sgem-reti-cal-input-width-mobile {
+	width: 100%;
+}
+/* end */
+
 @media (max-width: 1024px) {
     .sgem-logo-wrapper {
         position: absolute;
@@ -610,7 +663,7 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
 
     .sgem-cal-1 input[type="text"]
     {
-        width: 100%;
+        width: 100% !important;
     }
     .sgem-cal-1 .sgem-flex-container {
         display: block;
@@ -630,6 +683,7 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
         height: 700px;
         overflow: hidden;
         overflow-y: scroll;
+		scrollbar-width: 0;
     }
     .sgem-retirement-cal .sgem-cal-left .sgem-cal-1::-webkit-scrollbar {
         width: 0px;
@@ -641,6 +695,21 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
     }
 }
 @media (max-width: 700px) {
+	.sgem-reti-cal-width-add .sgem-cal-left {
+		height: auto;
+		overflow: hidden;
+		overflow-y: unset;
+		scrollbar-width: 0;
+	}
+	.sgem-cal-left-add-class {
+		height: auto;
+		overflow: hidden;
+		overflow-y: unset;
+		scrollbar-width: 0;
+	}
+	.sgem-cal-1 input[type="text"] {
+		width: 100% !important;
+	}
     .sgem-retirement-cal .sgem-cal-left .sgem-cal-1 {
         height: auto;
         overflow: hidden;
@@ -823,6 +892,7 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
 .sgem-cal-wrapper[max-width~="780px"] .sgem-cal-right .sgem-column2 {
     flex-direction: column;
 }
+
 
 /* new eqcss */
 @element .sgem-cal-wrapper and (max-width: 1024px) {
