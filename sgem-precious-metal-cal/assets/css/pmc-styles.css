@@ -1,52 +1,53 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=DM+Serif+Display&display=swap');.tooltipster-fall,.tooltipster-grow.tooltipster-show{-webkit-transition-timing-function:cubic-bezier(.175,.885,.32,1);-moz-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);-ms-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);-o-transition-timing-function:cubic-bezier(.175,.885,.32,1.15)}.tooltipster-base{display:flex;pointer-events:none;position:absolute}.tooltipster-box{flex:1 1 auto}.tooltipster-content{box-sizing:border-box;max-height:100%;max-width:100%;overflow:auto}.tooltipster-ruler{bottom:0;left:0;overflow:hidden;position:fixed;right:0;top:0;visibility:hidden}.tooltipster-fade{opacity:0;-webkit-transition-property:opacity;-moz-transition-property:opacity;-o-transition-property:opacity;-ms-transition-property:opacity;transition-property:opacity}.tooltipster-fade.tooltipster-show{opacity:1}.tooltipster-grow{-webkit-transform:scale(0,0);-moz-transform:scale(0,0);-o-transform:scale(0,0);-ms-transform:scale(0,0);transform:scale(0,0);-webkit-transition-property:-webkit-transform;-moz-transition-property:-moz-transform;-o-transition-property:-o-transform;-ms-transition-property:-ms-transform;transition-property:transform;-webkit-backface-visibility:hidden}.tooltipster-grow.tooltipster-show{-webkit-transform:scale(1,1);-moz-transform:scale(1,1);-o-transform:scale(1,1);-ms-transform:scale(1,1);transform:scale(1,1);-webkit-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);transition-timing-function:cubic-bezier(.175,.885,.32,1.15)}.tooltipster-swing{opacity:0;-webkit-transform:rotateZ(4deg);-moz-transform:rotateZ(4deg);-o-transform:rotateZ(4deg);-ms-transform:rotateZ(4deg);transform:rotateZ(4deg);-webkit-transition-property:-webkit-transform,opacity;-moz-transition-property:-moz-transform;-o-transition-property:-o-transform;-ms-transition-property:-ms-transform;transition-property:transform}.tooltipster-swing.tooltipster-show{opacity:1;-webkit-transform:rotateZ(0);-moz-transform:rotateZ(0);-o-transform:rotateZ(0);-ms-transform:rotateZ(0);transform:rotateZ(0);-webkit-transition-timing-function:cubic-bezier(.23,.635,.495,1);-webkit-transition-timing-function:cubic-bezier(.23,.635,.495,2.4);-moz-transition-timing-function:cubic-bezier(.23,.635,.495,2.4);-ms-transition-timing-function:cubic-bezier(.23,.635,.495,2.4);-o-transition-timing-function:cubic-bezier(.23,.635,.495,2.4);transition-timing-function:cubic-bezier(.23,.635,.495,2.4)}.tooltipster-fall{-webkit-transition-property:top;-moz-transition-property:top;-o-transition-property:top;-ms-transition-property:top;transition-property:top;-webkit-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);transition-timing-function:cubic-bezier(.175,.885,.32,1.15)}.tooltipster-fall.tooltipster-initial{top:0!important}.tooltipster-fall.tooltipster-dying{-webkit-transition-property:all;-moz-transition-property:all;-o-transition-property:all;-ms-transition-property:all;transition-property:all;top:0!important;opacity:0}.tooltipster-slide{-webkit-transition-property:left;-moz-transition-property:left;-o-transition-property:left;-ms-transition-property:left;transition-property:left;-webkit-transition-timing-function:cubic-bezier(.175,.885,.32,1);-webkit-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);-moz-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);-ms-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);-o-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);transition-timing-function:cubic-bezier(.175,.885,.32,1.15)}.tooltipster-slide.tooltipster-initial{left:-40px!important}.tooltipster-slide.tooltipster-dying{-webkit-transition-property:all;-moz-transition-property:all;-o-transition-property:all;-ms-transition-property:all;transition-property:all;left:0!important;opacity:0}@keyframes tooltipster-fading{0%{opacity:0}100%{opacity:1}}.tooltipster-update-fade{animation:tooltipster-fading .4s}@keyframes tooltipster-rotating{25%{transform:rotate(-2deg)}75%{transform:rotate(2deg)}100%{transform:rotate(0)}}.tooltipster-update-rotate{animation:tooltipster-rotating .6s}@keyframes tooltipster-scaling{50%{transform:scale(1.1)}100%{transform:scale(1)}}.tooltipster-update-scale{animation:tooltipster-scaling .6s}.tooltipster-sidetip .tooltipster-box{background:#565656;border:2px solid #000;border-radius:4px}.tooltipster-sidetip.tooltipster-bottom .tooltipster-box{margin-top:8px}.tooltipster-sidetip.tooltipster-left .tooltipster-box{margin-right:8px}.tooltipster-sidetip.tooltipster-right .tooltipster-box{margin-left:8px}.tooltipster-sidetip.tooltipster-top .tooltipster-box{margin-bottom:8px}.tooltipster-sidetip .tooltipster-content{color:#fff;line-height:18px;padding:6px 14px}.tooltipster-sidetip .tooltipster-arrow{overflow:hidden;position:absolute}.tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow{height:10px;margin-left:-10px;top:0;width:20px}.tooltipster-sidetip.tooltipster-left .tooltipster-arrow{height:20px;margin-top:-10px;right:0;top:0;width:10px}.tooltipster-sidetip.tooltipster-right .tooltipster-arrow{height:20px;margin-top:-10px;left:0;top:0;width:10px}.tooltipster-sidetip.tooltipster-top .tooltipster-arrow{bottom:0;height:10px;margin-left:-10px;width:20px}.tooltipster-sidetip .tooltipster-arrow-background,.tooltipster-sidetip .tooltipster-arrow-border{height:0;position:absolute;width:0}.tooltipster-sidetip .tooltipster-arrow-background{border:10px solid transparent}.tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow-background{border-bottom-color:#565656;left:0;top:3px}.tooltipster-sidetip.tooltipster-left .tooltipster-arrow-background{border-left-color:#565656;left:-3px;top:0}.tooltipster-sidetip.tooltipster-right .tooltipster-arrow-background{border-right-color:#565656;left:3px;top:0}.tooltipster-sidetip.tooltipster-top .tooltipster-arrow-background{border-top-color:#565656;left:0;top:-3px}.tooltipster-sidetip .tooltipster-arrow-border{border:10px solid transparent;left:0;top:0}.tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow-border{border-bottom-color:#000}.tooltipster-sidetip.tooltipster-left .tooltipster-arrow-border{border-left-color:#000}.tooltipster-sidetip.tooltipster-right .tooltipster-arrow-border{border-right-color:#000}.tooltipster-sidetip.tooltipster-top .tooltipster-arrow-border{border-top-color:#000}.tooltipster-sidetip .tooltipster-arrow-uncropped{position:relative}.tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow-uncropped{top:-10px}.tooltipster-sidetip.tooltipster-right .tooltipster-arrow-uncropped{left:-10px}
-
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=DM+Serif+Display&display=swap');
+.tooltipster-fall,.tooltipster-grow.tooltipster-show{-webkit-transition-timing-function:cubic-bezier(.175,.885,.32,1);-moz-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);-ms-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);-o-transition-timing-function:cubic-bezier(.175,.885,.32,1.15)}.tooltipster-base{display:flex;pointer-events:none;position:absolute}.tooltipster-box{flex:1 1 auto}.tooltipster-content{box-sizing:border-box;max-height:100%;max-width:100%;overflow:auto}.tooltipster-ruler{bottom:0;left:0;overflow:hidden;position:fixed;right:0;top:0;visibility:hidden}.tooltipster-fade{opacity:0;-webkit-transition-property:opacity;-moz-transition-property:opacity;-o-transition-property:opacity;-ms-transition-property:opacity;transition-property:opacity}.tooltipster-fade.tooltipster-show{opacity:1}.tooltipster-grow{-webkit-transform:scale(0,0);-moz-transform:scale(0,0);-o-transform:scale(0,0);-ms-transform:scale(0,0);transform:scale(0,0);-webkit-transition-property:-webkit-transform;-moz-transition-property:-moz-transform;-o-transition-property:-o-transform;-ms-transition-property:-ms-transform;transition-property:transform;-webkit-backface-visibility:hidden}.tooltipster-grow.tooltipster-show{-webkit-transform:scale(1,1);-moz-transform:scale(1,1);-o-transform:scale(1,1);-ms-transform:scale(1,1);transform:scale(1,1);-webkit-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);transition-timing-function:cubic-bezier(.175,.885,.32,1.15)}.tooltipster-swing{opacity:0;-webkit-transform:rotateZ(4deg);-moz-transform:rotateZ(4deg);-o-transform:rotateZ(4deg);-ms-transform:rotateZ(4deg);transform:rotateZ(4deg);-webkit-transition-property:-webkit-transform,opacity;-moz-transition-property:-moz-transform;-o-transition-property:-o-transform;-ms-transition-property:-ms-transform;transition-property:transform}.tooltipster-swing.tooltipster-show{opacity:1;-webkit-transform:rotateZ(0);-moz-transform:rotateZ(0);-o-transform:rotateZ(0);-ms-transform:rotateZ(0);transform:rotateZ(0);-webkit-transition-timing-function:cubic-bezier(.23,.635,.495,1);-webkit-transition-timing-function:cubic-bezier(.23,.635,.495,2.4);-moz-transition-timing-function:cubic-bezier(.23,.635,.495,2.4);-ms-transition-timing-function:cubic-bezier(.23,.635,.495,2.4);-o-transition-timing-function:cubic-bezier(.23,.635,.495,2.4);transition-timing-function:cubic-bezier(.23,.635,.495,2.4)}.tooltipster-fall{-webkit-transition-property:top;-moz-transition-property:top;-o-transition-property:top;-ms-transition-property:top;transition-property:top;-webkit-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);transition-timing-function:cubic-bezier(.175,.885,.32,1.15)}.tooltipster-fall.tooltipster-initial{top:0!important}.tooltipster-fall.tooltipster-dying{-webkit-transition-property:all;-moz-transition-property:all;-o-transition-property:all;-ms-transition-property:all;transition-property:all;top:0!important;opacity:0}.tooltipster-slide{-webkit-transition-property:left;-moz-transition-property:left;-o-transition-property:left;-ms-transition-property:left;transition-property:left;-webkit-transition-timing-function:cubic-bezier(.175,.885,.32,1);-webkit-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);-moz-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);-ms-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);-o-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);transition-timing-function:cubic-bezier(.175,.885,.32,1.15)}.tooltipster-slide.tooltipster-initial{left:-40px!important}.tooltipster-slide.tooltipster-dying{-webkit-transition-property:all;-moz-transition-property:all;-o-transition-property:all;-ms-transition-property:all;transition-property:all;left:0!important;opacity:0}@keyframes tooltipster-fading{0%{opacity:0}100%{opacity:1}}.tooltipster-update-fade{animation:tooltipster-fading .4s}@keyframes tooltipster-rotating{25%{transform:rotate(-2deg)}75%{transform:rotate(2deg)}100%{transform:rotate(0)}}.tooltipster-update-rotate{animation:tooltipster-rotating .6s}@keyframes tooltipster-scaling{50%{transform:scale(1.1)}100%{transform:scale(1)}}.tooltipster-update-scale{animation:tooltipster-scaling .6s}.tooltipster-sidetip .tooltipster-box{background:#565656;border:2px solid #000;border-radius:4px}.tooltipster-sidetip.tooltipster-bottom .tooltipster-box{margin-top:8px}.tooltipster-sidetip.tooltipster-left .tooltipster-box{margin-right:8px}.tooltipster-sidetip.tooltipster-right .tooltipster-box{margin-left:8px}.tooltipster-sidetip.tooltipster-top .tooltipster-box{margin-bottom:8px}.tooltipster-sidetip .tooltipster-content{color:#fff;line-height:18px;padding:6px 14px}.tooltipster-sidetip .tooltipster-arrow{overflow:hidden;position:absolute}.tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow{height:10px;margin-left:-10px;top:0;width:20px}.tooltipster-sidetip.tooltipster-left .tooltipster-arrow{height:20px;margin-top:-10px;right:0;top:0;width:10px}.tooltipster-sidetip.tooltipster-right .tooltipster-arrow{height:20px;margin-top:-10px;left:0;top:0;width:10px}.tooltipster-sidetip.tooltipster-top .tooltipster-arrow{bottom:0;height:10px;margin-left:-10px;width:20px}.tooltipster-sidetip .tooltipster-arrow-background,.tooltipster-sidetip .tooltipster-arrow-border{height:0;position:absolute;width:0}.tooltipster-sidetip .tooltipster-arrow-background{border:10px solid transparent}.tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow-background{border-bottom-color:#565656;left:0;top:3px}.tooltipster-sidetip.tooltipster-left .tooltipster-arrow-background{border-left-color:#565656;left:-3px;top:0}.tooltipster-sidetip.tooltipster-right .tooltipster-arrow-background{border-right-color:#565656;left:3px;top:0}.tooltipster-sidetip.tooltipster-top .tooltipster-arrow-background{border-top-color:#565656;left:0;top:-3px}.tooltipster-sidetip .tooltipster-arrow-border{border:10px solid transparent;left:0;top:0}.tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow-border{border-bottom-color:#000}.tooltipster-sidetip.tooltipster-left .tooltipster-arrow-border{border-left-color:#000}.tooltipster-sidetip.tooltipster-right .tooltipster-arrow-border{border-right-color:#000}.tooltipster-sidetip.tooltipster-top .tooltipster-arrow-border{border-top-color:#000}.tooltipster-sidetip .tooltipster-arrow-uncropped{position:relative}.tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow-uncropped{top:-10px}.tooltipster-sidetip.tooltipster-right .tooltipster-arrow-uncropped{left:-10px}
+ 
 #mainmessage,
 #messagetitle {
     font-size: 24px;
     display: inline-block;
 }
-.sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-group label,
-.sgem-crypto-ira-cal-1 input[type="text"],
-.sgem-crypto-ira-cal-1 summary,
-.sgem-crypto-ira-cal-1-result .sgem-crypto-ira-result-panel-header,
-.sgem-crypto-ira-percentage-note,
+.sgem-pmc-cal-1 .sgem-pmc-form-group label,
+.sgem-pmc-cal-1 input[type="text"],
+.sgem-pmc-cal-1 summary,
+.sgem-pmc-cal-1-result .sgem-pmc-result-panel-header,
+.sgem-pmc-percentage-note,
 [data-tippy-root] {
     font-family: "DM Sans", sans-serif;
 }
-.sgem-crypto-ira-err-msg-anucon,
-.sgem-crypto-ira-err-msg-both,
-.sgem-crypto-ira-err-msg-c-both,
-.sgem-crypto-ira-err-msg-ctallo,
-.sgem-crypto-ira-err-msg-ctallonew,
-.sgem-crypto-ira-err-msg-current,
-.sgem-crypto-ira-err-msg-death,
-.sgem-crypto-ira-err-msg-f-death,
-.sgem-crypto-ira-err-msg-f-per,
-.sgem-crypto-ira-err-msg-ftallo,
-.sgem-crypto-ira-err-msg-ftallonew,
-.sgem-crypto-ira-err-msg-income,
-.sgem-crypto-ira-err-msg-per {
+.sgem-pmc-err-msg-anucon,
+.sgem-pmc-err-msg-both,
+.sgem-pmc-err-msg-c-both,
+.sgem-pmc-err-msg-ctallo,
+.sgem-pmc-err-msg-ctallonew,
+.sgem-pmc-err-msg-current,
+.sgem-pmc-err-msg-death,
+.sgem-pmc-err-msg-f-death,
+.sgem-pmc-err-msg-f-per,
+.sgem-pmc-err-msg-ftallo,
+.sgem-pmc-err-msg-ftallonew,
+.sgem-pmc-err-msg-income,
+.sgem-pmc-err-msg-per {
     color: #ff5964;
     font-weight: 300;
     font-size: 13px;
 }
-#sgem-crypto-ira-cal,
-.sgem-crypto-ira-cal-main-id {
+#sgem-pmc-cal,
+.sgem-pmc-cal-main-id {
     max-width: 1240px;
     margin: 0 auto;
     font-family: "DM SANS";
 }
-.sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-group label,
-.sgem-crypto-ira-cal-1-result-footer,
-.sgem-crypto-ira-cal-1-result-header,
-.sgem-crypto-ira-collapsible-summary-title {
+.sgem-pmc-cal-1 .sgem-pmc-form-group label,
+.sgem-pmc-cal-1-result-footer,
+.sgem-pmc-cal-1-result-header,
+.sgem-pmc-collapsible-summary-title {
     font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
 }
-.sgem-crypto-ira-cal-wrapper * {
+.sgem-pmc-cal-wrapper * {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
-.sgem-crypto-ira-cal-wrapper {
+.sgem-pmc-cal-wrapper {
     position: relative;
     display: flex;
     width: 100%;
@@ -55,47 +56,33 @@
     padding: 8px 8px 8px 0;
     background-color: #f3f3f3;
 }
-.sgem-crypto-ira-logo-center {
+.sgem-pmc-logo-center {
     display: flex;
     align-content: center;
     justify-content: flex-end;
     align-items: center;
     padding-right: 5px;
 }
-.sgem-crypto-ira-logo-image {
+.sgem-pmc-logo-image {
     padding-top: 5px;
     padding-right: 5px;
 }
-.sgem-crypto-ira-cal-left {
+.sgem-pmc-cal-left {
     width: 470px;
     padding: 32px 20px;
-    overflow-y: overlay;
-    height: 700px;
 }
-/* Chrome, Safari */
-::-webkit-scrollbar {
-width: 15px;
-height: 15px;
-}
-::-webkit-scrollbar-track-piece  {
-background-color: #f3f3f3;
-}
-::-webkit-scrollbar-thumb:vertical {
-height: 1px;
-background-color: #f3f3f3;
-}
-.sgem-crypto-ira-cal-right {
-    width: auto;
+.sgem-pmc-cal-right {
+    width: 770px;
     background-color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-.sgem-crypto-ira-cal-1-result-wrapper {
+.sgem-pmc-cal-1-result-wrapper {
     padding: 32px 40px;
     position: relative;
 }
-.sgem-crypto-ira-cal-1 .sgem-crypto-ira-flex-container {
+.sgem-pmc-cal-1 .sgem-pmc-flex-container {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -103,7 +90,7 @@ background-color: #f3f3f3;
     position: relative;
     justify-content: space-between;
 }
-.sgem-crypto-ira-cal-1 .sgem-crypto-ira-flex-container .sgem-crypto-ira-form-flex {
+.sgem-pmc-cal-1 .sgem-pmc-flex-container .sgem-pmc-form-flex {
     display: flex;
     flex-direction: column;
     flex-basis: 100%;
@@ -111,17 +98,17 @@ background-color: #f3f3f3;
     position: relative;
     padding-right: 24px;
 }
-.sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-group {
+.sgem-pmc-cal-1 .sgem-pmc-form-group {
     margin: 0 !important;
     padding: 0;
 }
-.sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-group label {
+.sgem-pmc-cal-1 .sgem-pmc-form-group label {
     font-size: 16px;
     font-weight: 400;
     color: #000;
     margin-bottom: 8px;
 }
-.sgem-crypto-ira-cal-1 input[type="text"] {
+.sgem-pmc-cal-1 input[type="text"] {
     font-size: 16px;
     height: 55px;
     padding: 17px 16px;
@@ -129,22 +116,22 @@ background-color: #f3f3f3;
     color: #002340;
     border: 1px solid #bbb;
 }
-.sgem-crypto-ira-cal-1 input[type="text"]:focus {
+.sgem-pmc-cal-1 input[type="text"]:focus {
     outline: 0 !important;
     border: 1px solid #2d3940;
 }
-.sgem-crypto-ira-cal-1 .sgem-crypto-ira-group-option-l {
+.sgem-pmc-cal-1 .sgem-pmc-group-option-l {
     padding-left: 0 !important;
 }
-.sgem-crypto-ira-cal-1 .sgem-crypto-ira-group-option-r {
+.sgem-pmc-cal-1 .sgem-pmc-group-option-r {
     padding-right: 0 !important;
 }
-.sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex .sgem-crypto-ira-current-allocation,
-.sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex .sgem-crypto-ira-future-allocation,
-.sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex .sgem-crypto-ira-my-life-expectancy {
+.sgem-pmc-cal-1 .sgem-pmc-form-flex .sgem-pmc-current-allocation,
+.sgem-pmc-cal-1 .sgem-pmc-form-flex .sgem-pmc-future-allocation,
+.sgem-pmc-cal-1 .sgem-pmc-form-flex .sgem-pmc-my-life-expectancy {
     width: 424px;
 }
-.sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex.sgem-crypto-ira-years-holder::before {
+.sgem-pmc-cal-1 .sgem-pmc-form-flex.sgem-pmc-years-holder::before {
     content: "Years";
     position: absolute;
     right: 36px;
@@ -154,14 +141,14 @@ background-color: #f3f3f3;
     font-weight: 400;
     font-size: 16px;
 }
-.sgem-crypto-ira-collapsible-summary-title {
+.sgem-pmc-collapsible-summary-title {
     font-size: 20px;
     color: #000;
     font-weight: 500;
     margin-block-start: 20px;
     margin-block-end: 20px;
 }
-.sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex.sgem-crypto-ira-currency-holder::after {
+.sgem-pmc-cal-1 .sgem-pmc-form-flex.sgem-pmc-currency-holder::after {
     content: "$";
     position: absolute;
     left: 16px;
@@ -171,15 +158,15 @@ background-color: #f3f3f3;
     font-weight: 400;
     font-size: 16px;
 }
-.sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex.sgem-crypto-ira-currency-holder input[type="text"] {
+.sgem-pmc-cal-1 .sgem-pmc-form-flex.sgem-pmc-currency-holder input[type="text"] {
     padding-left: 33px;
 }
-.sgem-crypto-ira-cal-1 details.sgem-crypto-ira-input-more-details {
+.sgem-pmc-cal-1 details.sgem-pmc-input-more-details {
     border-top: 1px solid #bebebe;
     display: block;
     margin-top: 12px;
 }
-.sgem-crypto-ira-cal-1 summary {
+.sgem-pmc-cal-1 summary {
     display: flex !important;
     flex-direction: row;
     justify-content: space-between;
@@ -188,20 +175,20 @@ background-color: #f3f3f3;
     margin-bottom: 20px;
     cursor: pointer;
 }
-.sgem-crypto-ira-cal-1 h3.collapsible-summary-title {
+.sgem-pmc-cal-1 h3.collapsible-summary-title {
     font-size: 20px;
     color: #000;
     padding-bottom: 0;
 }
-.sgem-crypto-ira-cal-1 details.sgem-crypto-ira-input-more-details > summary::-webkit-details-marker,
-.sgem-crypto-ira-cal-1 details.sgem-crypto-ira-input-more-details > summary::marker {
+.sgem-pmc-cal-1 details.sgem-pmc-input-more-details > summary::-webkit-details-marker,
+.sgem-pmc-cal-1 details.sgem-pmc-input-more-details > summary::marker {
     display: none;
 }
-.sgem-crypto-ira-cal-1 details.sgem-crypto-ira-input-more-details > summary::-moz-list-bullet {
+.sgem-pmc-cal-1 details.sgem-pmc-input-more-details > summary::-moz-list-bullet {
     list-style: none;
     display: none;
 }
-.sgem-crypto-ira-cal-1 details.sgem-crypto-ira-input-more-details > summary::after {
+.sgem-pmc-cal-1 details.sgem-pmc-input-more-details > summary::after {
     content: " ";
     width: 25px;
     height: 24px;
@@ -211,13 +198,13 @@ background-color: #f3f3f3;
     background-size: 25px;
     background-image: url("../images/caret-down-filled.svg");
 }
-.sgem-crypto-ira-cal-1 details[open] > summary::after {
+.sgem-pmc-cal-1 details[open] > summary::after {
     -moz-transform: rotate(-180deg);
     -webkit-transform: rotate(-180deg);
     transform: rotate(-180deg);
     background-position: center 5px;
 }
-.sgem-crypto-ira-cal-1-result-header {
+.sgem-pmc-cal-1-result-header {
     font-size: 20px;
     color: #000;
     margin-bottom: 16px;
@@ -225,7 +212,7 @@ background-color: #f3f3f3;
     justify-content: space-between;
     align-items: flex-start;
 }
-.sgem-crypto-ira-cal-1-result-wrapper .sgem-crypto-ira-flex-container .sgem-crypto-ira-form-flex {
+.sgem-pmc-cal-1-result-wrapper .sgem-pmc-flex-container .sgem-pmc-form-flex {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -234,7 +221,7 @@ background-color: #f3f3f3;
     flex: 1 0 40%;
     padding-bottom: 40px;
 }
-.sgem-crypto-ira-cal-1-result-wrapper .sgem-crypto-ira-result-label {
+.sgem-pmc-cal-1-result-wrapper .sgem-pmc-result-label {
     text-align: left;
     font-size: 42px;
     font-family: "DM Serif Display", serif;
@@ -242,12 +229,12 @@ background-color: #f3f3f3;
     color: #002340;
     line-height: 58px;
 }
-.sgem-crypto-ira-cal-1-result-wrapper .sgem-crypto-ira-column2 {
+.sgem-pmc-cal-1-result-wrapper .sgem-pmc-column2 {
     width: 400px;
     display: flex;
     flex-wrap: wrap;
 }
-.sgem-crypto-ira-cal-1-result-wrapper .sgem-crypto-ira-result-value {
+.sgem-pmc-cal-1-result-wrapper .sgem-pmc-result-value {
     font-size: 16px;
     text-align: left;
     line-height: 21px;
@@ -255,12 +242,12 @@ background-color: #f3f3f3;
     color: #1a1a1a;
     font-weight: 300;
 }
-.sgem-crypto-ira-logo-wrapper {
+.sgem-pmc-logo-wrapper {
     position: absolute;
     right: 5px;
     top: 5px;
 }
-.sgem-crypto-ira-cal-1-result .sgem-crypto-ira-result-panel {
+.sgem-pmc-cal-1-result .sgem-pmc-result-panel {
     background: no-repeat padding-box #fff;
     -moz-box-shadow: 0 5px 20px #0000001a;
     -webkit-box-shadow: 0 5px 20px #0000001a;
@@ -269,7 +256,7 @@ background-color: #f3f3f3;
     opacity: 1;
     padding-top: 24px;
 }
-.sgem-crypto-ira-cal-1-result .sgem-crypto-ira-result-panel-header {
+.sgem-pmc-cal-1-result .sgem-pmc-result-panel-header {
     text-align: center;
     font-size: 20px;
     font-weight: 500;
@@ -278,7 +265,7 @@ background-color: #f3f3f3;
     color: #000;
     text-transform: uppercase;
 }
-.sgem-crypto-ira-cal-1-result .sgem-crypto-ira-result-panel-goal {
+.sgem-pmc-cal-1-result .sgem-pmc-result-panel-goal {
     text-align: center;
     font-size: 32px;
     font-weight: 400;
@@ -292,7 +279,7 @@ background-color: #f3f3f3;
     min-height: 80px;
     width: 100%;
 }
-.sgem-crypto-ira-cal-1-result .sgem-crypto-ira-flex-container-2 {
+.sgem-pmc-cal-1-result .sgem-pmc-flex-container-2 {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
@@ -300,12 +287,12 @@ background-color: #f3f3f3;
     position: relative;
     overflow: hidden;
 }
-.sgem-crypto-ira-cal-1-result .sgem-crypto-ira-flex-container-2 .sgem-crypto-ira-form-flex-2,
-.sgem-crypto-ira-value-label {
+.sgem-pmc-cal-1-result .sgem-pmc-flex-container-2 .sgem-pmc-form-flex-2,
+.sgem-pmc-value-label {
     display: flex;
     flex-direction: column;
 }
-.sgem-crypto-ira-cal-1-result .sgem-crypto-ira-result-score-label {
+.sgem-pmc-cal-1-result .sgem-pmc-result-score-label {
     border: 1px solid rgba(0, 1, 255, 0);
     font-size: 16px;
     color: #012341;
@@ -316,8 +303,8 @@ background-color: #f3f3f3;
     align-items: center;
     justify-content: center;
 }
-.sgem-crypto-ira-cal-1 .sgem-crypto-ira-cal-btn,
-.sgem-crypto-ira-cal-1-result-footer .sgem-crypto-ira-getStart {
+.sgem-pmc-cal-1 .sgem-pmc-cal-btn,
+.sgem-pmc-cal-1-result-footer .sgem-pmc-getStart {
     font-size: 16px;
     font-weight: 700;
     color: #002340;
@@ -329,42 +316,42 @@ background-color: #f3f3f3;
     text-transform: uppercase;
     text-align: center;
 }
-.sgem-crypto-ira-cal-1-result .sgem-crypto-ira-needAtt {
+.sgem-pmc-cal-1-result .sgem-pmc-needAtt {
     background-color: #ff5964;
 }
-.sgem-crypto-ira-cal-1-result .sgem-crypto-ira-onWay {
+.sgem-pmc-cal-1-result .sgem-pmc-onWay {
     background-color: #ffc12e;
 }
-.sgem-crypto-ira-cal-1-result .sgem-crypto-ira-getClose {
+.sgem-pmc-cal-1-result .sgem-pmc-getClose {
     background-color: #1e96fc;
 }
-.sgem-crypto-ira-cal-1-result .sgem-crypto-ira-onTrack {
+.sgem-pmc-cal-1-result .sgem-pmc-onTrack {
     background-color: #4bcc8c;
 }
-.sgem-crypto-ira-cal-1-result-footer {
+.sgem-pmc-cal-1-result-footer {
     font-size: 16px !important;
     color: #474747;
     font-weight: 300;
 }
-.sgem-crypto-ira-buttonGet {
+.sgem-pmc-buttonGet {
     margin-top: 40px;
     display: flex;
 }
-.sgem-crypto-ira-cal-1-result-footer .sgem-crypto-ira-getStart {
+.sgem-pmc-cal-1-result-footer .sgem-pmc-getStart {
     background: #ffc12e;
     text-decoration: none;
 }
-.sgem-crypto-ira-cal-1-result-footer .sgem-crypto-ira-getStart:hover {
+.sgem-pmc-cal-1-result-footer .sgem-pmc-getStart:hover {
     background-color: #ffd061;
 }
-.sgem-crypto-ira-cal-1 .sgem-crypto-ira-cal-btn {
+.sgem-pmc-cal-1 .sgem-pmc-cal-btn {
     background: #4bcc8c;
     display: block;
     width: 188px;
     height: 53px;
     margin-top: 50px;
 }
-.sgem-crypto-ira-result-goal-text {
+.sgem-pmc-result-goal-text {
     position: relative;
     width: 100%;
     -webkit-transition: 1s;
@@ -372,28 +359,28 @@ background-color: #f3f3f3;
     -o-transition: 1s;
     transition: 1s;
 }
-.sgem-crypto-ira-err-msg {
+.sgem-pmc-err-msg {
     color: #ff5964;
     font-weight: 300;
     font-size: 12px;
     display: none;
     line-height: 15px;
 }
-.sgem-crypto-ira-cal-wrapper input::-webkit-inner-spin-button,
-.sgem-crypto-ira-cal-wrapper input::-webkit-outer-spin-button {
+.sgem-pmc-cal-wrapper input::-webkit-inner-spin-button,
+.sgem-pmc-cal-wrapper input::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
-.sgem-crypto-ira-cal-wrapper input[type="number"] {
+.sgem-pmc-cal-wrapper input[type="number"] {
     -moz-appearance: textfield;
 }
-.sgem-crypto-ira-percentage-note {
+.sgem-pmc-percentage-note {
     font-size: 13px;
     font-weight: 400;
     color: #000;
     margin-top: 4px;
 }
-.sgem-crypto-ira-info-tooltip,
+.sgem-pmc-info-tooltip,
 .tippy-popper {
     font-size: 11px;
     font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
@@ -408,7 +395,7 @@ background-color: #f3f3f3;
     -o-border-radius: 10px;
     border-radius: 10px;
 }
-.sgem-crypto-ira-info-tooltip {
+.sgem-pmc-info-tooltip {
     border: 1px solid #000;
     width: 18px;
     height: 18px;
@@ -418,21 +405,21 @@ background-color: #f3f3f3;
     text-align: center;
     cursor: pointer !important;
 }
-.sgem-crypto-ira-err-msg-age,
-.sgem-crypto-ira-err-msg-rmt {
+.sgem-pmc-err-msg-age,
+.sgem-pmc-err-msg-rmt {
     display: none;
 }
 .tippy-popper {
     max-width: 250px;
 }
-.sgem-crypto-ira-common-err-msg,
-.sgem-crypto-ira-err-msg-age,
-.sgem-crypto-ira-err-msg-rmt {
+.sgem-pmc-common-err-msg,
+.sgem-pmc-err-msg-age,
+.sgem-pmc-err-msg-rmt {
     color: #ff5964;
     font-weight: 300;
     font-size: 13px;
 }
-.sgem-crypto-ira-precentage-arrow {
+.sgem-pmc-precentage-arrow {
     position: absolute;
     border-top: 15px solid #fff;
     border-left: 15px solid transparent;
@@ -447,23 +434,23 @@ background-color: #f3f3f3;
     -o-transition: 1s;
     transition: 1s;
 }
-.sgem-crypto-ira-form-flex-needAtt {
+.sgem-pmc-form-flex-needAtt {
     width: 38%;
     flex-basis: 38%;
 }
-.sgem-crypto-ira-form-flex-onWay {
+.sgem-pmc-form-flex-onWay {
     width: 27%;
     flex-basis: 27%;
 }
-.sgem-crypto-ira-form-flex-getClose {
+.sgem-pmc-form-flex-getClose {
     width: 20%;
     flex-basis: 20%;
 }
-.sgem-crypto-ira-form-flex-onTrack {
+.sgem-pmc-form-flex-onTrack {
     width: 15%;
     flex-basis: 15%;
 }
-.sgem-crypto-ira-common-err-msg {
+.sgem-pmc-common-err-msg {
     line-height: 17px;
 }
 #messagetitle {
@@ -478,11 +465,11 @@ background-color: #f3f3f3;
     margin-bottom: 16px;
     color: #ff5964;
 }
-.sgem-crypto-ira-goal-tooltip {
+.sgem-pmc-goal-tooltip {
     text-align: center;
     cursor: pointer;
 }
-.tippy-box[data-theme~="sgem-crypto-ira-goal"] {
+.tippy-box[data-theme~="sgem-pmc-goal"] {
     font-size: 20px;
     background-color: #fff;
     color: #000;
@@ -491,63 +478,63 @@ background-color: #f3f3f3;
     -webkit-box-shadow: 0 4px 8px 0 rgb(100 102 106 / 15%), 0 8px 16px 0 rgb(100 102 106 / 33%);
     box-shadow: 0 4px 8px 0 rgb(100 102 106 / 15%), 0 8px 16px 0 rgb(100 102 106 / 33%);
 }
-.sgem-crypto-ira-goal-tooltip-range-to-NeedAtt {
+.sgem-pmc-goal-tooltip-range-to-NeedAtt {
     color: #ff5964;
     font-size: 15px;
 }
-.sgem-crypto-ira-goal-tooltip-range-to-onWay {
+.sgem-pmc-goal-tooltip-range-to-onWay {
     color: #ffc12e;
     font-size: 15px;
 }
-.sgem-crypto-ira-goal-tooltip-range-to-getClose {
+.sgem-pmc-goal-tooltip-range-to-getClose {
     color: #1e96fc;
     font-size: 15px;
 }
-.sgem-crypto-ira-goal-tooltip-range-to-onTrack {
+.sgem-pmc-goal-tooltip-range-to-onTrack {
     color: #4bcc8c;
     font-size: 15px;
 }
-.tippy-box[data-theme~="sgem-crypto-ira-goal"][data-placement^="top"] > .tippy-arrow::before {
+.tippy-box[data-theme~="sgem-pmc-goal"][data-placement^="top"] > .tippy-arrow::before {
     border-top-color: #fff;
 }
-.tippy-box[data-theme~="sgem-crypto-ira-goal"][data-placement^="bottom"] > .tippy-arrow::before {
+.tippy-box[data-theme~="sgem-pmc-goal"][data-placement^="bottom"] > .tippy-arrow::before {
     border-bottom-color: #fff;
 }
-.tippy-box[data-theme~="sgem-crypto-ira-goal"][data-placement^="left"] > .tippy-arrow::before {
+.tippy-box[data-theme~="sgem-pmc-goal"][data-placement^="left"] > .tippy-arrow::before {
     border-left-color: #fff;
 }
-.tippy-box[data-theme~="sgem-crypto-ira-goal"][data-placement^="right"] > .tippy-arrow::before {
+.tippy-box[data-theme~="sgem-pmc-goal"][data-placement^="right"] > .tippy-arrow::before {
     border-right-color: #fff;
 }
-.sgem-crypto-ira-midtext {
+.sgem-pmc-midtext {
     font-size: 20px;
     color: #000;
     font-weight: 500;
     font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
 }
-.sgem-crypto-ira-cal-wrapper .sgem-crypto-ira-cal-1 .sgem-crypto-ira-switchit {
+.sgem-pmc-cal-wrapper .sgem-pmc-cal-1 .sgem-pmc-switchit {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding-right: 6px;
 }
-.sgem-crypto-ira-value-text {
+.sgem-pmc-value-text {
     font-size: 32px;
     padding-top: 16px;
     padding-bottom: 30px;
     color: #002340;
     font-family: DM Serif Display;
 }
-.sgem-crypto-ira-collapsible-summary-disclaimer,
-.sgem-crypto-ira-collapsible-text-disclaimer,
-.sgem-crypto-ira-copy-code,
-.sgem-crypto-ira-logo-center {
+.sgem-pmc-collapsible-summary-disclaimer,
+.sgem-pmc-collapsible-text-disclaimer,
+.sgem-pmc-copy-code,
+.sgem-pmc-logo-center {
     font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
 }
-.sgem-crypto-ira-chartCard {
+.sgem-pmc-chartCard {
     padding-bottom: 40px;
 }
-.sgem-crypto-ira-legendbox {
+.sgem-pmc-legendbox {
     width: auto;
     display: flex;
     flex-direction: column;
@@ -555,15 +542,15 @@ background-color: #f3f3f3;
     align-content: flex-end;
     font-size: 14px;
 }
-.sgem-crypto-ira-legend-item {
+.sgem-pmc-legend-item {
     display: flex;
     cursor: pointer;
     align-items: center;
     padding-bottom: 8px;
 }
-.sgem-crypto-ira-contribution,
-.sgem-crypto-ira-investment,
-.sgem-crypto-ira-tax-savings {
+.sgem-pmc-contribution,
+.sgem-pmc-investment,
+.sgem-pmc-tax-savings {
     border: 0;
     padding: 0;
     width: 18px;
@@ -574,27 +561,27 @@ background-color: #f3f3f3;
     background: #f3f3f3 !important;
     width: 1px !important;
 }
-.sgem-crypto-ira-staticvalue-text {
+.sgem-pmc-staticvalue-text {
     font-size: 16px;
     font-weight: 500;
 }
-.sgem-crypto-ira-cal-1 .sgem-crypto-ira-flex-container .sgem-crypto-ira-switchbox {
+.sgem-pmc-cal-1 .sgem-pmc-flex-container .sgem-pmc-switchbox {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding-right: 6px;
 }
-.sgem-crypto-ira-switch {
+.sgem-pmc-switch {
     display: inline-block;
     cursor: pointer;
     height: 20px;
     width: 50px;
     position: relative;
 }
-.sgem-crypto-ira-switch:checked::before {
+.sgem-pmc-switch:checked::before {
     background: #0ab534;
 }
-.sgem-crypto-ira-switch::before {
+.sgem-pmc-switch::before {
     font-size: 18px;
     color: #fff;
     box-shadow: 0 0 1px 1px #fff;
@@ -609,7 +596,7 @@ background-color: #f3f3f3;
     left: 0;
     text-align: center;
 }
-.sgem-crypto-ira-switch::after {
+.sgem-pmc-switch::after {
     content: "";
     display: block;
     position: absolute;
@@ -622,20 +609,20 @@ background-color: #f3f3f3;
     box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.3);
     transition: 0.3s;
 }
-.sgem-crypto-ira-switch:checked::after {
+.sgem-pmc-switch:checked::after {
     left: 26px;
 }
-.sgem-crypto-ira-round.sgem-crypto-ira-switch::after,
-.sgem-crypto-ira-round.sgem-crypto-ira-switch::before {
+.sgem-pmc-round.sgem-pmc-switch::after,
+.sgem-pmc-round.sgem-pmc-switch::before {
     border-radius: 20px;
 }
-.sgem-crypto-ira-cal-1 .sgem-crypto-ira-flex-container .sgem-crypto-ira-full-flex {
+.sgem-pmc-cal-1 .sgem-pmc-flex-container .sgem-pmc-full-flex {
     padding-right: 0px;
 }
 .tooltipDesign {
     background: #000;
 }
-.sgem-crypto-ira-logo-center {
+.sgem-pmc-logo-center {
     display: flex;
     align-content: center;
     justify-content: center;
@@ -643,27 +630,27 @@ background-color: #f3f3f3;
     font-size: 13px;
     padding-top: 5px;
 }
-.sgem-crypto-ira-url-text {
+.sgem-pmc-url-text {
     text-decoration: none;
     color: #1569b0;
     font-weight: bold;
 }
-.sgem-crypto-ira-section-disclaimer {
+.sgem-pmc-section-disclaimer {
     padding-top: 40px;
 }
-.sgem-crypto-ira-details-disclaimer summary {
+.sgem-pmc-details-disclaimer summary {
     display: flex !important;
     flex-direction: row;
     align-items: center;
     cursor: pointer;
 }
-.sgem-crypto-ira-collapsible-summary-disclaimer {
+.sgem-pmc-collapsible-summary-disclaimer {
     font-weight: 500;
     font-size: 16px;
     cursor: pointer;
     color: #474747;
 }
-details.sgem-crypto-ira-details-disclaimer > summary::after {
+details.sgem-pmc-details-disclaimer > summary::after {
     content: " ";
     width: 25px;
     height: 24px;
@@ -674,20 +661,20 @@ details.sgem-crypto-ira-details-disclaimer > summary::after {
     background-image: url(../images/caret-down-filled.svg);
     margin-top: 5px;
 }
-details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
+details.sgem-pmc-details-disclaimer[open] > summary::after {
     -moz-transform: rotate(-180deg);
     -webkit-transform: rotate(-180deg);
     transform: rotate(-180deg);
     background-position: center 1px;
 }
-.sgem-crypto-ira-collapsible-text-disclaimer {
+.sgem-pmc-collapsible-text-disclaimer {
     font-weight: 400;
     line-height: 18px;
     font-size: 14px;
     padding: 10px 0;
     color: #474747;
 }
-.sgem-crypto-ira-copy-option-panel h3 {
+.sgem-pmc-copy-option-panel h3 {
     font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
     margin-bottom: 16px;
     font-size: 20px;
@@ -695,7 +682,7 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
     padding-bottom: 5px;
     font-weight: 500;
 }
-.sgem-crypto-ira-copy-code {
+.sgem-pmc-copy-code {
     background: #ffc12e;
     font-size: 16px;
     font-weight: 700;
@@ -712,112 +699,112 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
     cursor: pointer;
     width: auto;
 }
-.sgem-crypto-ira-copy-option-panel {
+.sgem-pmc-copy-option-panel {
     margin-top: 25px;
 }
 
 
  @media (max-width:1220px) {
-    .sgem-crypto-ira-cal-1-result-wrapper {
+    .sgem-pmc-cal-1-result-wrapper {
         width: 700px;
     }
 
 }
 @media (max-width:1170px) {
-    .sgem-crypto-ira-cal-1-result-wrapper {
+    .sgem-pmc-cal-1-result-wrapper {
         width: 680px;
     }
 
 }
 @media (max-width:1145px) {
-    .sgem-crypto-ira-cal-1-result-wrapper {
+    .sgem-pmc-cal-1-result-wrapper {
         width: 660px;
     }
 
 }
 
 @media (max-width:1121px) {
-    .sgem-crypto-ira-cal-1-result-wrapper {
+    .sgem-pmc-cal-1-result-wrapper {
         width: 640px;
     }
-    .sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex .sgem-crypto-ira-current-allocation, .sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex .sgem-crypto-ira-future-allocation, .sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex .sgem-crypto-ira-my-life-expectancy {
+    .sgem-pmc-cal-1 .sgem-pmc-form-flex .sgem-pmc-current-allocation, .sgem-pmc-cal-1 .sgem-pmc-form-flex .sgem-pmc-future-allocation, .sgem-pmc-cal-1 .sgem-pmc-form-flex .sgem-pmc-my-life-expectancy {
         width:auto;
     }
 }
 @media (max-width:1110px) {
-    .sgem-crypto-ira-cal-1-result-wrapper {
+    .sgem-pmc-cal-1-result-wrapper {
         width: 620px;
     }
 
 }
 @media (max-width:1100px) {
-    .sgem-crypto-ira-cal-1-result-wrapper {
+    .sgem-pmc-cal-1-result-wrapper {
         width: 600px;
     }
 
 }
 @media (max-width:1080px) {
-    .sgem-crypto-ira-cal-1-result-wrapper {
+    .sgem-pmc-cal-1-result-wrapper {
         width: 580px;
     }
 
 }
 @media (max-width:1060px) {
-    .sgem-crypto-ira-cal-1-result-wrapper {
+    .sgem-pmc-cal-1-result-wrapper {
         width: 560px;
     }
 
 }
 @media (max-width:1040px) {
-    .sgem-crypto-ira-cal-1-result-wrapper {
+    .sgem-pmc-cal-1-result-wrapper {
         width: 540px;
     }
 
 }
 @media (max-width:970px) {
-    .sgem-crypto-ira-cal-1-result-wrapper {
+    .sgem-pmc-cal-1-result-wrapper {
         width: 625px;
     }
 }
 @media (max-width:940px) {
-    .sgem-crypto-ira-cal-1-result-wrapper {
+    .sgem-pmc-cal-1-result-wrapper {
         width: 600px;
     }
 }
 @media (max-width:900px) {
-    .sgem-crypto-ira-cal-1-result-wrapper {
+    .sgem-pmc-cal-1-result-wrapper {
         width: 575px;
     }
 }
 @media (max-width:860px) {
-    .sgem-crypto-ira-cal-1-result-wrapper {
+    .sgem-pmc-cal-1-result-wrapper {
         width: 550px;
     }
 }
 @media (max-width:820px) {
-    .sgem-crypto-ira-cal-1-result-wrapper {
+    .sgem-pmc-cal-1-result-wrapper {
         width: 515px;
     }
 }
 @media (max-width:780px) {
-    .sgem-crypto-ira-cal-1-result-wrapper {
+    .sgem-pmc-cal-1-result-wrapper {
         width: 495px;
     }
 }
 @media (max-width:740px) {
-    .sgem-crypto-ira-cal-1-result-wrapper {
+    .sgem-pmc-cal-1-result-wrapper {
         width: 445px;
     }
 }
 @media (max-width:700px) {
-    .sgem-crypto-ira-cal-1-result-wrapper {
+    .sgem-pmc-cal-1-result-wrapper {
         width: 415px;
     }
 }
 
 
 @media (max-width: 1024px) {
-    .sgem-crypto-ira-logo-wrapper {
+    .sgem-pmc-logo-wrapper {
         position: absolute;
         right: 5px;
         top: -7px;
@@ -825,125 +812,122 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
 }
 @media (min-width:700px) and (max-width:1024px) {
 /*@media (max-width: 1100px) {*/
-    .sgem-crypto-ira-cal-wrapper {
+    .sgem-pmc-cal-wrapper {
         flex-direction: row !important;
         width: auto;
     }
-    .sgem-crypto-ira-cal-left {
+    .sgem-pmc-cal-left {
         width: 100%;
-        padding: 30px 0px 30px 15px;
-        overflow: none;
+        padding: 30px 0px 30px 15px !important;
     }
-    .sgem-crypto-ira-cal-1 input[type="text"],
-    .sgem-crypto-ira-cal-right {
+    .sgem-pmc-cal-1 input[type="text"],
+    .sgem-pmc-cal-right {
         width: 100%;
     }
     
-    .sgem-crypto-ira-cal-1 .sgem-crypto-ira-flex-container .sgem-crypto-ira-form-flex:last-child {
+    .sgem-pmc-cal-1 .sgem-pmc-flex-container .sgem-pmc-form-flex:last-child {
         /*padding-right:0*/
     }
-    .sgem-crypto-ira-precentage-arrow {
+    .sgem-pmc-precentage-arrow {
         border-top: 12px solid #fff;
         border-left: 12px solid transparent;
         border-right: 12px solid transparent;
     }
-    .sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-group label {
-        font-size: 14px; 
-    }
-    .sgem-crypto-ira-cal-1 .sgem-crypto-ira-flex-container .sgem-crypto-ira-form-flex { 
-        padding-right: 15px;
-    }
-    .sgem-crypto-ira-midtext {
-        font-size: 17px; 
-    }
-    .sgem-crypto-ira-copy-option-panel { 
-        padding: 15px;
-    }
+	.sgem-pmc-cal-1 .sgem-pmc-form-group label {
+		font-size: 14px; 
+	}
+	.sgem-pmc-cal-1 .sgem-pmc-flex-container .sgem-pmc-form-flex { 
+		padding-right: 15px;
+	}
+	.sgem-pmc-midtext {
+		font-size: 17px; 
+	}
+	.sgem-pmc-copy-option-panel { 
+		padding: 15px;
+	}
 }
 
 
 @media (max-width: 700px) {
-    .sgem-crypto-ira-cal-wrapper { 
-        padding: 8px 8px 8px 8px; 
+	.sgem-pmc-cal-wrapper { 
+		padding: 8px 8px 8px 8px; 
         flex-direction: column;
-    }
-    .sgem-crypto-ira-cal-1-result-wrapper { 
+	}
+	.sgem-pmc-cal-1-result-wrapper { 
+		width: 100%;
+	}
+    .sgem-pmc-cal-1 input[type="text"] {
         width: 100%;
     }
-    .sgem-crypto-ira-cal-1 input[type="text"] {
+	.sgem-pmc-copy-option-panel {
+		padding: 0px 25px;
+	}
+	.sgem-pmc-cal-left { 
+		padding: 30px 0px 30px 25px !important;
+        width: 100%;
+	}
+    .sgem-pmc-cal-right {
         width: 100%;
     }
-    .sgem-crypto-ira-copy-option-panel {
-        padding: 0px 25px;
-    }
-    .sgem-crypto-ira-cal-left { 
-        padding: 30px 0px 30px 25px;
-        width: 100%;
-        overflow: unset;
-        height: auto;
-    }
-    .sgem-crypto-ira-cal-right {
-        width: 100%;
-    }
-    .sgem-crypto-ira-cal-1 .sgem-crypto-ira-flex-container .sgem-crypto-ira-full-flex { 
-        padding-right: 15px !important;
-    }
-    .sgem-crypto-ira-cal-1 .sgem-crypto-ira-flex-container .sgem-crypto-ira-form-flex { 
-        padding-right: 15px !important;
-    }
+	.sgem-pmc-cal-1 .sgem-pmc-flex-container .sgem-pmc-full-flex { 
+		padding-right: 15px !important;
+	}
+	.sgem-pmc-cal-1 .sgem-pmc-flex-container .sgem-pmc-form-flex { 
+		padding-right: 15px !important;
+	}
 }
 
 
 @media (max-width: 480px) {
-    .sgem-crypto-ira-copy-option-panel {
+    .sgem-pmc-copy-option-panel {
         padding: 0px 25px;
     }
-    .sgem-crypto-ira-cal-1-result-wrapper .sgem-crypto-ira-column2,
-    .sgem-crypto-ira-cal-left,
-    .sgem-crypto-ira-cal-left .sgem-crypto-ira-cal-1 input[type="text"],
-    .sgem-crypto-ira-cal-right {
+    .sgem-pmc-cal-1-result-wrapper .sgem-pmc-column2,
+    .sgem-pmc-cal-left,
+    .sgem-pmc-cal-left .sgem-pmc-cal-1 input[type="text"],
+    .sgem-pmc-cal-right {
         width: 100%;
     }
-    .sgem-crypto-ira-cal-wrapper {
+    .sgem-pmc-cal-wrapper {
         flex-direction: column;
     }
-    .sgem-crypto-ira-cal-1-result-wrapper {
-        padding: 12px;
-        width: 100%;
-    }
-    .sgem-crypto-ira-cal-1-result-wrapper .sgem-crypto-ira-flex-container .sgem-crypto-ira-form-flex {
+	.sgem-pmc-cal-1-result-wrapper {
+		padding: 12px;
+		width: 100%;
+	}
+    .sgem-pmc-cal-1-result-wrapper .sgem-pmc-flex-container .sgem-pmc-form-flex {
         padding-bottom: 32px;
     }
-    .sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-group label {
+    .sgem-pmc-cal-1 .sgem-pmc-form-group label {
         line-height: 15px;
         display: block;
         min-height: 30px;
         font-size: 14px;
         margin-bottom: 0;
     }
-    .sgem-crypto-ira-cal-1 .sgem-crypto-ira-flex-container .sgem-crypto-ira-form-flex:last-child {
+    .sgem-pmc-cal-1 .sgem-pmc-flex-container .sgem-pmc-form-flex:last-child {
         /*padding-right:0*/
     }
-    .sgem-crypto-ira-cal-1-result-wrapper .sgem-crypto-ira-result-label {
+    .sgem-pmc-cal-1-result-wrapper .sgem-pmc-result-label {
         font-size: 32px;
         line-height: 44px;
     }
-    .sgem-crypto-ira-cal-1-result .sgem-crypto-ira-result-panel-header,
-    .sgem-crypto-ira-staticvalue-text {
+    .sgem-pmc-cal-1-result .sgem-pmc-result-panel-header,
+    .sgem-pmc-staticvalue-text {
         font-size: 14px;
     }
-    .sgem-crypto-ira-cal-1-result-header {
+    .sgem-pmc-cal-1-result-header {
         font-size: 15px;
         font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
     }
-    .sgem-crypto-ira-cal-1-result .sgem-crypto-ira-result-panel-goal {
+    .sgem-pmc-cal-1-result .sgem-pmc-result-panel-goal {
         font-size: 30px;
     }
-    .sgem-crypto-ira-cal-1 .sgem-crypto-ira-cal-btn {
+    .sgem-pmc-cal-1 .sgem-pmc-cal-btn {
         margin-bottom: 40px;
         margin-top: 10px;
     }
-    .sgem-crypto-ira-logo-wrapper {
+    .sgem-pmc-logo-wrapper {
         position: relative;
         top: unset;
         right: unset;
@@ -951,35 +935,35 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
         margin-top: -10px;
         margin-bottom: 16px;
     }
-    .sgem-crypto-ira-logo-wrapper img {
+    .sgem-pmc-logo-wrapper img {
         height: 25px;
     }
-    .sgem-crypto-ira-cal-1 .sgem-crypto-ira-flex-container .sgem-crypto-ira-form-flex {
+    .sgem-pmc-cal-1 .sgem-pmc-flex-container .sgem-pmc-form-flex {
         padding-right: 12px;
     }
-    .sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex.sgem-crypto-ira-currency-holder::after {
+    .sgem-pmc-cal-1 .sgem-pmc-form-flex.sgem-pmc-currency-holder::after {
         top: 54px;
     }
-    .sgem-crypto-ira-percentage-note {
+    .sgem-pmc-percentage-note {
         line-height: 14px;
     }
-    .sgem-crypto-ira-legend-item {
+    .sgem-pmc-legend-item {
         font-size: 12px;
     }
-    .sgem-crypto-ira-cal-1-result .sgem-crypto-ira-flex-container-2 .sgem-crypto-ira-form-flex-2 {
+    .sgem-pmc-cal-1-result .sgem-pmc-flex-container-2 .sgem-pmc-form-flex-2 {
         text-align: center;
     }
-    .sgem-crypto-ira-precentage-arrow {
+    .sgem-pmc-precentage-arrow {
         border-top: 8px solid #fff;
         border-left: 8px solid transparent;
         border-right: 8px solid transparent;
     }
-    .sgem-crypto-ira-cal-1-result .sgem-crypto-ira-result-score-label {
+    .sgem-pmc-cal-1-result .sgem-pmc-result-score-label {
         font-size: 13px;
         line-height: 14px;
         padding: 0 10px;
     }
-    .sgem-crypto-ira-tooltip {
+    .sgem-pmc-tooltip {
         position: absolute;
         margin-left: 8px;
         width: 15px;
@@ -987,37 +971,37 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
         line-height: 15px;
         font-size: 11px;
     }
-    .sgem-crypto-ira-logo-center {
+    .sgem-pmc-logo-center {
         font-size: 15px;
         flex-direction: column;
         padding-top: 20px;
     }
-    .sgem-crypto-ira-logo-image {
+    .sgem-pmc-logo-image {
         padding: 0;
     }
-    .sgem-crypto-ira-value-text {
+    .sgem-pmc-value-text {
         font-size: 22px;
         padding-top: 0;
     }
-    .sgem-crypto-ira-buttonGet {
-        justify-content: flex-start;
-    }
-    .sgem-crypto-ira-cal-left {
+	.sgem-pmc-buttonGet {
+		justify-content: flex-start;
+	}
+    .sgem-pmc-cal-left {
         width: 100% !important;
     }
     .sgem-cal-copy-option-panel {
         padding: 0 10px;
     }
-    
-    .sgem-crypto-ira-cal-1 .sgem-crypto-ira-flex-container .sgem-crypto-ira-form-flex:last-child {
-        padding-right: 5px;
-    }
+	
+    .sgem-pmc-cal-1 .sgem-pmc-flex-container .sgem-pmc-form-flex:last-child {
+		padding-right: 5px !important;
+	}
 }
 @media (max-width: 420px) {
-    .sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex.sgem-crypto-ira-currency-holder::after {
+    .sgem-pmc-cal-1 .sgem-pmc-form-flex.sgem-pmc-currency-holder::after {
         top: 46px;
     }
-    .sgem-crypto-ira-tooltip {
+    .sgem-pmc-tooltip {
         position: absolute;
         margin-left: 4px;
         width: 13px;
@@ -1025,7 +1009,7 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
         line-height: 13px;
         font-size: 10px;
     }
-    .sgem-crypto-ira-cal-left {
+    .sgem-pmc-cal-left {
         width: 100% !important;
     }
     .sgem-cal-copy-option-panel {
@@ -1033,72 +1017,58 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
     }
 }
 
-
-
+ 
  /* new eqcss */
-
-    @element .sgem-crypto-ira-cal-wrapper and (max-width: 1024px)  {
-      :self .sgem-crypto-ira-cal-left {
-        width: 100%;
-        padding-top: 32px;
-        padding-right: 0px;
-        padding-left: 18px;
-        padding-bottom: 32px;
-      } 
+  @element .sgem-pmc-cal-wrapper and (min-width:700px) and (max-width:1024px)  {
+    :self .sgem-pmc-cal-left {
+      width: 100%;
+      padding-top: 32px;
+      padding-right: 0px;
+      padding-left: 18px;
+      padding-bottom: 32px;
     } 
-
-
-
-    
-    @element .sgem-crypto-ira-cal-wrapper and (max-width: 1024px) {
-      :self .sgem-crypto-ira-flex-container {
+  } 
+  @element .sgem-pmc-cal-wrapper and (min-width:700px) and (max-width:1024px) {
+    :self .sgem-pmc-cal-right {
+      width: 100%;
+    } 
+  } 
+  @element .sgem-pmc-cal-wrapper and (min-width:700px) and (max-width:1024px)  {
+    :self .sgem-pmc-cal-1 .sgem-pmc-flex-container {
         flex-direction: column;
-      } 
     } 
-
-    @element .sgem-crypto-ira-cal-wrapper and (max-width: 1024px) {
-      :self .sgem-crypto-ira-full-flex {
-    padding-right: 24px;
-}
-    } 
-    @element .sgem-crypto-ira-cal-wrapper and (max-width: 1024px) {
-      :self .sgem-crypto-ira-cal-right {
+  } 
+  @element .sgem-pmc-cal-wrapper and (min-width:700px) and (max-width:1024px)  {
+    :self .sgem-pmc-cal-1 input[type="text"] {
         width: 100%;
-      } 
     } 
-    @element .sgem-crypto-ira-cal-wrapper and (max-width: 1024px) {
-      :self .sgem-crypto-ira-cal-left .sgem-crypto-ira-cal-1 input[type="text"] {
-        width: 100%;
-      } 
+  } 
+  @element .sgem-pmc-cal-wrapper and (min-width:700px) and (max-width:1024px)  {
+    :self .sgem-pmc-cal-1 .sgem-pmc-flex-container .sgem-pmc-form-flex {
+        padding-right: 25px;
     } 
-    @element .sgem-crypto-ira-cal-wrapper and (max-width: 1024px) {
-      :self .sgem-crypto-ira-cal-right .sgem-crypto-ira-cal-1-result-wrapper {
-        padding: 26px;
-      } 
+  }
+  @element .sgem-pmc-cal-wrapper and (min-width:700px) and (max-width:1024px) {
+    :self .sgem-pmc-cal-right .sgem-pmc-cal-1-result-wrapper {
+      padding: 26px;
     } 
-    @element .sgem-crypto-ira-cal-wrapper and (max-width: 1024px) {
-      :self .sgem-crypto-ira-cal-left .sgem-flex-container .sgem-full-flex {
-        flex-direction: column;
-      } 
+  } 
+  @element .sgem-pmc-cal-wrapper and (min-width:700px) and (max-width:1024px) {
+    :self .sgem-pmc-cal-left .sgem-pmc-flex-container .sgem-pmc-full-flex {
+      flex-direction: column;
+      padding-right: 25px;
     } 
-    @element .sgem-crypto-ira-cal-wrapper and (max-width: 780px) {
-      :self .sgem-crypto-ira-cal-left {
-        width: 100%;
-        padding-right: 12px;
-        padding-left: 12px;
-      } 
+  } 
+  @element .sgem-pmc-cal-wrapper and (min-width:700px) and (max-width:1024px) {
+    :self .sgem-pmc-cal-left {
+      width: 100%;  
+      padding-left: 12px;
     } 
-    @element .sgem-crypto-ira-cal-wrapper and (max-width: 780px) {
-      :self .sgem-crypto-ira-cal-right .sgem-column2 {
-        flex-direction: column;
-      } 
-    }
-     @element .sgem-crypto-ira-cal-wrapper and (max-width: 695px) {
-      :self .sgem-crypto-ira-cal-left {
-        padding-right: 3px;
-        padding-left: 12px;
-      } 
+  } 
+  @element .sgem-pmc-cal-wrapper and (min-width:700px) and (max-width:1024px) {
+    :self .sgem-pmc-cal-right .sgem-pmc-column2 {
+      flex-direction: column;
     } 
-    /* *************** */
+  }
 	
-	
+	/* *************** */
