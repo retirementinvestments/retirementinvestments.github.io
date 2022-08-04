@@ -892,6 +892,7 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
     .sgem-crypto-ira-cal-1 .sgem-crypto-ira-flex-container .sgem-crypto-ira-form-flex { 
         padding-right: 15px !important;
     }
+    
 }
 
 
@@ -958,6 +959,7 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
     .sgem-crypto-ira-cal-1 .sgem-crypto-ira-flex-container .sgem-crypto-ira-form-flex {
         padding-right: 12px;
     }
+    
     .sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex.sgem-crypto-ira-currency-holder::after {
         top: 54px;
     }
@@ -1048,7 +1050,7 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
       } 
     } 
 
-
+  
 
     
     @element .sgem-crypto-ira-cal-wrapper and (max-width: 1024px) {
@@ -1084,7 +1086,7 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
     } 
     @element .sgem-crypto-ira-cal-wrapper and (max-width: 780px) {
       :self .sgem-crypto-ira-cal-left {
-        width: 100%;
+        width: 400px;
         padding-right: 12px;
         padding-left: 12px;
       } 
@@ -1100,4 +1102,15 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
         padding-left: 12px;
       } 
     } 
+
+    @element .sgem-crypto-ira-cal-wrapper and (max-width: 695px) {
+        :self .sgem-crypto-ira-full-flex {
+          padding-right: 24px;
+        } 
+      } 
+
+      
+
+
+   
     /* *************** */
