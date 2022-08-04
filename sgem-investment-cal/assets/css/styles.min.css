@@ -641,6 +641,9 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
 .sgem-cal-left.sgem-cal-left-add-class .sgem-cal-1 .sgem-form-group label {
 	font-size: 13px;
 }
+.sgem-cal-left .sgem-collapsible-summary-title {
+	margin: 0;
+}
 /* end */
 
 @media (max-width: 1024px) {
