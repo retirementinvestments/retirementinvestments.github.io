@@ -635,6 +635,12 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
 .sgem-cal-left-add-class .sgem-cal-1 input[type="text"].sgem-reti-cal-input-width-mobile {
 	width: 100%;
 }
+.sgem-cal-left-add-class .sgem-cal-left {
+	padding: 10px;
+}
+.sgem-cal-left-add-class .sgem-cal-left .sgem-cal-1 .sgem-form-group label {
+	font-size: 13px;
+}
 /* end */
 
 @media (max-width: 1024px) {
@@ -689,12 +695,13 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
         width: 0px;
     }
 }
-@media (min-width:700px) and (max-width:800px) {
+@media (min-width:650px) and (max-width:800px) {
     .sgem-retirement-cal .sgem-cal-1 .sgem-form-group label {
         font-size: 12px;
     }
 }
 @media (max-width: 650px) {
+	
 	.sgem-reti-cal-width-add .sgem-cal-left {
 		height: auto;
 		overflow: hidden;
