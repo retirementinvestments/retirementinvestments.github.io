@@ -360,6 +360,13 @@ if( location.hostname == "messy-saxophone.flywheelsites.com") {
 	    $('.sgem-cal-right').removeClass('sgem-cal-right-add-class');
 		}
 		
+
+	
+	
+ 
+	
+}); // DOCUMENT.READY END
+
 	
 	$(window).on('resize', function() {
 
@@ -388,13 +395,6 @@ if( location.hostname == "messy-saxophone.flywheelsites.com") {
 	    $('.sgem-cal-right').removeClass('sgem-cal-right-add-class');
 		}
 	}).trigger('resize');
-	
-	
- 
-	
-}); // DOCUMENT.READY END
-
-
 
 //jQuery('sgem-result-goal-text').addClass('pos-2').removeClass('pos-4');
 /*$(window).load(function () {
