@@ -338,7 +338,7 @@ if( location.hostname == "messy-saxophone.flywheelsites.com") {
 	
 	
 		
-		if ($('.sgem-retirement-cal').width() < 700) {
+		if ($('#sgem-retirement-cal').width() < 700) {
 	      $('.sgem-cal-wrapper').addClass('sgem-reti-cal-width-add');
 	    	$('.sgem-reti-cal-input-width').addClass('sgem-reti-cal-max-width-style-add');
 	    	$('.sgem-cal-left').addClass('sgem-cal-left-add-class').addClass('sgem-reti-cal-scroll-height');
@@ -351,7 +351,7 @@ if( location.hostname == "messy-saxophone.flywheelsites.com") {
 	    $('.sgem-reti-cal-input-width').removeClass('sgem-reti-cal-input-width-mobile');
 		}
 
-		if ($('.sgem-retirement-cal').width() < 960) {
+		if ($('#sgem-retirement-cal').width() < 960) {
 	    	$('.sgem-cal-left').addClass('sgem-cal-left-add-class');
 	    	$('.sgem-cal-right').addClass('sgem-cal-right-add-class');
 	  }
@@ -688,7 +688,7 @@ function sgem_r_copyText(ev){
  	
 	jQuery(window).on('resize', function() {
 
-		if (jQuery('.sgem-retirement-cal').width() < 700) {
+		if (jQuery('#sgem-retirement-cal').width() < 700) {
 	      jQuery('.sgem-cal-wrapper').addClass('sgem-reti-cal-width-add');
 	    	jQuery('.sgem-reti-cal-input-width').addClass('sgem-reti-cal-max-width-style-add');
 	    	jQuery('.sgem-cal-left').addClass('sgem-cal-left-add-class').addClass('sgem-reti-cal-scroll-height');
@@ -704,7 +704,7 @@ function sgem_r_copyText(ev){
 
 	jQuery(window).on('resize', function() {
 
-		if (jQuery('.sgem-retirement-cal').width() < 960) {
+		if (jQuery('#sgem-retirement-cal').width() < 960) {
 	    	jQuery('.sgem-cal-left').addClass('sgem-cal-left-add-class');
 	    	jQuery('.sgem-cal-right').addClass('sgem-cal-right-add-class');
 	    }
