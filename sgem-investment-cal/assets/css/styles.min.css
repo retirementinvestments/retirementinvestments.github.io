@@ -691,10 +691,10 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
 }
 @media (min-width:700px) and (max-width:800px) {
     .sgem-retirement-cal .sgem-cal-1 .sgem-form-group label {
-        font-size: 13px;
+        font-size: 12px;
     }
 }
-@media (max-width: 700px) {
+@media (max-width: 650px) {
 	.sgem-reti-cal-width-add .sgem-cal-left {
 		height: auto;
 		overflow: hidden;
