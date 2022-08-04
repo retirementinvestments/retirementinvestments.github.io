@@ -336,7 +336,7 @@ if( location.hostname == "messy-saxophone.flywheelsites.com") {
 	  });
 	});	*/
 	
-	
+ //*********************************************	
 		
 		if ($('#sgem-retirement-cal').width() < 700) {
 	      $('.sgem-cal-wrapper').addClass('sgem-reti-cal-width-add');
@@ -361,9 +361,36 @@ if( location.hostname == "messy-saxophone.flywheelsites.com") {
 		}
 		
 
+	 	
+	$(window).on('resize', function() {
+
+		if ($('#sgem-retirement-cal').width() < 700) {
+	      $('.sgem-cal-wrapper').addClass('sgem-reti-cal-width-add');
+	    	$('.sgem-reti-cal-input-width').addClass('sgem-reti-cal-max-width-style-add');
+	    	$('.sgem-cal-left').addClass('sgem-cal-left-add-class').addClass('sgem-reti-cal-scroll-height');
+	    	$('.sgem-reti-cal-input-width').addClass('sgem-reti-cal-input-width-mobile');
+	  }
+		else {
+		$('.sgem-cal-wrapper').removeClass('sgem-reti-cal-width-add');
+	    $('.sgem-reti-cal-input-width').removeClass('sgem-reti-cal-max-width-style-add');
+	    $('.sgem-cal-left').removeClass('sgem-cal-left-add-class').removeClass('sgem-reti-cal-scroll-height');
+	    $('.sgem-reti-cal-input-width').removeClass('sgem-reti-cal-input-width-mobile');
+		}
+	}).trigger('resize');
+
+	$(window).on('resize', function() {
+
+		if ($('#sgem-retirement-cal').width() < 960) {
+	    	$('.sgem-cal-left').addClass('sgem-cal-left-add-class');
+	    	$('.sgem-cal-right').addClass('sgem-cal-right-add-class');
+	    }
+		else {
+	    $('.sgem-cal-left').removeClass('sgem-cal-left-add-class');
+	    $('.sgem-cal-right').removeClass('sgem-cal-right-add-class');
+		}
+	}).trigger('resize');
 	
-	
- 
+ //*********************************************
 	
 }); // DOCUMENT.READY END
 
@@ -681,35 +708,4 @@ function sgem_r_copyText(ev){
   document.execCommand('copy');   //No i18n
   document.body.removeChild(textArea);
   alert('Code snippted copied to clipboard!');
-} 
-
- 
- 
- 	
-	jQuery(window).on('resize', function() {
-
-		if (jQuery('#sgem-retirement-cal').width() < 700) {
-	      jQuery('.sgem-cal-wrapper').addClass('sgem-reti-cal-width-add');
-	    	jQuery('.sgem-reti-cal-input-width').addClass('sgem-reti-cal-max-width-style-add');
-	    	jQuery('.sgem-cal-left').addClass('sgem-cal-left-add-class').addClass('sgem-reti-cal-scroll-height');
-	    	jQuery('.sgem-reti-cal-input-width').addClass('sgem-reti-cal-input-width-mobile');
-	  }
-		else {
-		jQuery('.sgem-cal-wrapper').removeClass('sgem-reti-cal-width-add');
-	    jQuery('.sgem-reti-cal-input-width').removeClass('sgem-reti-cal-max-width-style-add');
-	    jQuery('.sgem-cal-left').removeClass('sgem-cal-left-add-class').removeClass('sgem-reti-cal-scroll-height');
-	    jQuery('.sgem-reti-cal-input-width').removeClass('sgem-reti-cal-input-width-mobile');
-		}
-	}).trigger('resize');
-
-	jQuery(window).on('resize', function() {
-
-		if (jQuery('#sgem-retirement-cal').width() < 960) {
-	    	jQuery('.sgem-cal-left').addClass('sgem-cal-left-add-class');
-	    	jQuery('.sgem-cal-right').addClass('sgem-cal-right-add-class');
-	    }
-		else {
-	    jQuery('.sgem-cal-left').removeClass('sgem-cal-left-add-class');
-	    jQuery('.sgem-cal-right').removeClass('sgem-cal-right-add-class');
-		}
-	}).trigger('resize');
+}  
