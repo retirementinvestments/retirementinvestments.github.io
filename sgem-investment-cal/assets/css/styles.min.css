@@ -635,10 +635,10 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
 .sgem-cal-left-add-class .sgem-cal-1 input[type="text"].sgem-reti-cal-input-width-mobile {
 	width: 100%;
 }
-.sgem-cal-left-add-class .sgem-cal-left {
+.sgem-cal-left.sgem-cal-left-add-class {
 	padding: 10px;
 }
-.sgem-cal-left-add-class .sgem-cal-left .sgem-cal-1 .sgem-form-group label {
+.sgem-cal-left.sgem-cal-left-add-class .sgem-cal-1 .sgem-form-group label {
 	font-size: 13px;
 }
 /* end */
