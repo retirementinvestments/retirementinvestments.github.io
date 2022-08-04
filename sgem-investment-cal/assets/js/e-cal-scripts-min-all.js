@@ -702,7 +702,7 @@ function sgem_r_copyText(ev){
 		}
 	}).trigger('resize');
 
-	$(window).on('resize', function() {
+	jQuery(window).on('resize', function() {
 
 		if (jQuery('.sgem-retirement-cal').width() < 960) {
 	    	jQuery('.sgem-cal-left').addClass('sgem-cal-left-add-class');
