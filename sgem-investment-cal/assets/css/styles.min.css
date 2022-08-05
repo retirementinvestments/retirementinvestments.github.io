@@ -631,7 +631,7 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
 }
 .sgem-cal-left-add-class .sgem-cal-1 input[type="text"] {
 	width: 96%;
-	font-size: 0.9em;
+	font-size: 0.8em;
 	height: 45px;
 	padding: 10px 16px;
 }
@@ -642,7 +642,7 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
 	padding: 10px;
 }
 .sgem-cal-left.sgem-cal-left-add-class .sgem-cal-1 .sgem-form-group label {
-	font-size: 1em;
+	font-size: 0.8em;
 }
 .sgem-cal-left .sgem-collapsible-summary-title {
 	margin: 0;
