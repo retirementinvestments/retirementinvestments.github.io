@@ -809,14 +809,7 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
         right: 5px;
         top: -7px;
     }
-    .sgem-pmc-cal-left {
-        width: 33%;
-    }
-    .sgem-pmc-cal-right {
-        width: 67%;
-    }
 }
-
 @media (min-width:700px) and (max-width:1024px) {
 /*@media (max-width: 1100px) {*/
     .sgem-pmc-cal-wrapper {
