@@ -647,9 +647,7 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
 .sgem-cal-left-add-class .sgem-collapsible-summary-title {
     	font-size: 1.25em;
 }
-.sgem-cal-left-add-class .sgem-cal-1 .sgem-form-flex.sgem-currency-holder::after {
-	top: 44px;
-}
+
 
 .sgem-cal-right-add-class .sgem-cal-1-result-wrapper .sgem-result-label {
 	font-size: 2em;
@@ -690,6 +688,9 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
     overflow: hidden;
     overflow-y: unset;
     scrollbar-width: 0;
+}
+.sgem-cal-wrapper-add-mobile .sgem-cal-left-add-class .sgem-cal-1 .sgem-form-flex.sgem-currency-holder::after {
+	top: 47px;
 }
 
 /* end */
