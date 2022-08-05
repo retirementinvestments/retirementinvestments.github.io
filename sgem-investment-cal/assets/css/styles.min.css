@@ -839,7 +839,7 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
         font-size: 14px;
         margin-bottom: 0;
     }
-    .sgem-cal-1 .sgem-flex-container .sgem-form-flex:last-child {
+    .sgem-cal-wrapper-add-mobile .sgem-cal-1 .sgem-flex-container .sgem-form-flex:last-child {
         padding-right: 0;
     }
     .sgem-cal-1-result-wrapper .sgem-result-label {
