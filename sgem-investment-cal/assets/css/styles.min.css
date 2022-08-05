@@ -604,10 +604,10 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
 }
 
 .sgem-cal-left-add-class {
-	width: 30%;
+	width: 33%;
 }
 .sgem-cal-right-add-class {
-	width: 70%;
+	width: 67%;
 }
 
 .sgem-cal-left-add-class .sgem-cal-1 .sgem-flex-container {
@@ -672,6 +672,10 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
 }
 .sgem-cal-right-add-class .sgem-cal-1-result-wrapper .sgem-result-value {
 	font-size: 0.875em;
+}
+.sgem-cal-right-add-class .sgem-cal-1-result .sgem-result-score-label {
+    font-size: 0.8em;
+    line-height: 1em;
 }
 
 /* below 550px (wrapper width)*/
