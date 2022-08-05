@@ -405,7 +405,6 @@
 }
 #mainmessage {
     color: #ff5964;
-    padding-left: 10px;
 }
 .sgem-goal-tooltip {
     text-align: center;
@@ -635,6 +634,44 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
 .sgem-cal-left-add-class .sgem-cal-1 input[type="text"].sgem-reti-cal-input-width-mobile {
 	width: 100%;
 }
+.sgem-cal-left.sgem-cal-left-add-class {
+	padding: 10px;
+}
+.sgem-cal-left.sgem-cal-left-add-class .sgem-cal-1 .sgem-form-group label {
+	font-size: 0.8em;
+}
+.sgem-cal-left .sgem-collapsible-summary-title {
+	margin: 0;
+}
+.sgem-cal-left-add-class .sgem-collapsible-summary-title {
+    	font-size: 1.25em;
+}
+.sgem-cal-left-add-class .sgem-cal-1 .sgem-form-flex.sgem-currency-holder::after {
+	top: 44px;
+}
+
+.sgem-cal-right-add-class .sgem-cal-1-result-wrapper .sgem-result-label {
+	font-size: 2em;
+}
+.sgem-cal-right-add-class .sgem-cal-1-result-header {
+    	font-size: 0.875em;
+}
+.sgem-cal-right-add-class .sgem-cal-1-result .sgem-result-panel-header {
+	font-size: 0.875em;
+}
+.sgem-cal-right-add-class .sgem-cal-1-result .sgem-result-panel-goal {
+	font-size: 1.875em;
+}
+.sgem-cal-right-add-class .sgem-cal-1-result .sgem-result-score-label {
+	font-size: 0.875em;
+}
+.sgem-cal-right-add-class #mainmessage, .sgem-cal-right-add-class #messagetitle {
+    	font-size: 1.25em;
+    	font-weight: 500;
+}
+.sgem-cal-right-add-class .sgem-cal-1-result-wrapper .sgem-result-value {
+	font-size: 0.875em;
+}
 /* end */
 
 @media (max-width: 1024px) {
@@ -689,12 +726,13 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
         width: 0px;
     }
 }
-@media (min-width:700px) and (max-width:800px) {
+@media (min-width:650px) and (max-width:800px) {
     .sgem-retirement-cal .sgem-cal-1 .sgem-form-group label {
         font-size: 12px;
     }
 }
 @media (max-width: 650px) {
+	
 	.sgem-reti-cal-width-add .sgem-cal-left {
 		height: auto;
 		overflow: hidden;
