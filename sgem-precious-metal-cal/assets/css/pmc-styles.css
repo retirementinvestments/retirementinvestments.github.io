@@ -717,7 +717,7 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
         top: -7px;
     }
 }
-@media (min-width:700px) and (max-width:1200px) {
+@media (min-width:650px) and (max-width:1200px) {
 /*@media (max-width: 1100px) {*/
     .sgem-pmc-cal-wrapper {
         flex-direction: row !important;
@@ -755,7 +755,7 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
 }
 
 
-@media (max-width: 700px) {
+@media (max-width: 650px) {
     .sgem-pmc-cal-wrapper { 
         padding: 8px 8px 8px 8px; 
         flex-direction: column;
