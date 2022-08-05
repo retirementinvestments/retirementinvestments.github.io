@@ -666,8 +666,11 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
 	font-size: 14px;
 }
 .sgem-cal-right-add-class #mainmessage, .sgem-cal-right-add-class #messagetitle {
-    font-size: 20px;
-    font-weight: 500;
+    	font-size: 20px;
+    	font-weight: 500;
+}
+.sgem-cal-right-add-class .sgem-cal-1-result-wrapper .sgem-result-value {
+	font-size: 14px;
 }
 /* end */
 
