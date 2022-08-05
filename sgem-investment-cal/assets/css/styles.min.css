@@ -812,6 +812,9 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
         position: relative;
         padding-right: 24px;
     }
+    .sgem-cal-wrapper-add-mobile .sgem-cal-1 .sgem-flex-container .sgem-form-flex:last-child {
+        padding-right: 0;
+    }
 }
 @media (max-width: 480px) {
     .sgem-crypto-copy-option-panel {
