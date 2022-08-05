@@ -644,33 +644,33 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
 	margin: 0;
 }
 .sgem-cal-left-add-class .sgem-collapsible-summary-title {
-    	font-size: 20px;
+    	font-size: 1.25em;
 }
 .sgem-cal-left-add-class .sgem-cal-1 .sgem-form-flex.sgem-currency-holder::after {
-	top: 43px;
+	top: 2.6875em;
 }
 
 .sgem-cal-right-add-class .sgem-cal-1-result-wrapper .sgem-result-label {
-	font-size: 32px;
+	font-size: 2em;
 }
 .sgem-cal-right-add-class .sgem-cal-1-result-header {
-    	font-size: 14px;
+    	font-size: 0.875em;
 }
 .sgem-cal-right-add-class .sgem-cal-1-result .sgem-result-panel-header {
-	font-size: 14px;
+	font-size: 0.875em;
 }
 .sgem-cal-right-add-class .sgem-cal-1-result .sgem-result-panel-goal {
-	font-size: 30px;
+	font-size: 1.875em;
 }
 .sgem-cal-right-add-class .sgem-cal-1-result .sgem-result-score-label {
-	font-size: 14px;
+	font-size: 0.875em;
 }
 .sgem-cal-right-add-class #mainmessage, .sgem-cal-right-add-class #messagetitle {
-    	font-size: 20px;
+    	font-size: 1.25em;
     	font-weight: 500;
 }
 .sgem-cal-right-add-class .sgem-cal-1-result-wrapper .sgem-result-value {
-	font-size: 14px;
+	font-size: 0.875em;
 }
 /* end */
 
