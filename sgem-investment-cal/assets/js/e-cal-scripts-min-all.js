@@ -34,7 +34,7 @@ var sgem_main_contents = '<div class="sgem-cal-wrapper">' +
 '<h3 class="sgem-collapsible-summary-title">Optional</h3></div></summary>'+
 '<div class="collapsible-content">'+
 	'<div class="sgem-flex-container">'+
-	'<div class="sgem-form-group sgem-form-flex sgem-currency-holder sgem-reti-cal-max-width-style-right">'+
+	'<div class="sgem-form-group sgem-form-flex sgem-currency-holder ">'+
 	'<label>Monthly spending <span class="sgem-tooltip tooltip" data-tippy-content="Living on 70% of current income (savings, investments, social security, pension) would be the rule of thumb">?</span></label>'+
 	'<input type="text" id="sgem_monthly_spending" class="inputnumber sgem-reti-cal-input-width" value="2,550" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
 '<span class="sgem-percentage-note">70% of pre-retirement income</span></div>'+
