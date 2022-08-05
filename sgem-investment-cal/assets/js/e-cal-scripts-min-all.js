@@ -387,7 +387,7 @@ if( location.hostname == "messy-saxophone.flywheelsites.com") {
 
 	$(window).on('resize', function() {
 
-		if ($('#sgem-retirement-cal').width() < 960) {
+		if ($('#sgem-retirement-cal').width() < 1024) {
 	    	$('.sgem-cal-left').addClass('sgem-cal-left-add-class');
 	    	$('.sgem-cal-right').addClass('sgem-cal-right-add-class');
 	    }
