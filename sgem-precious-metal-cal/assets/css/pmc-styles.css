@@ -727,11 +727,13 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
         width: 33%;
         padding: 30px 0px 30px 15px !important;
     }
-    .sgem-pmc-cal-1 input[type="text"],
     .sgem-pmc-cal-right {
+        width: 67%;
+    }
+    .sgem-pmc-cal-1 input[type="text"] {
         width: 100%;
     }
-
+    
     .sgem-pmc-cal-wrapper .sgem-pmc-cal-1 {
         height: 675px;
         overflow: hidden;
