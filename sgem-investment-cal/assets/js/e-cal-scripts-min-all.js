@@ -25,7 +25,7 @@ var sgem_main_contents = '<div class="sgem-cal-wrapper">' +
 		'<input type="text" class="inputmove inputnumber sgem-reti-cal-input-width"  id="sgem_current_savings" value="30,000" min="0" max="50000000" onkeypress="return isNumber(event)"/>' +
 			'<span class="sgem-err-msg-current"></span></div></div>'+
 	'<div class="sgem-flex-container">'+
-	'<div class="sgem-form-group sgem-form-flex sgem-currency-holder">'+
+	'<div class="sgem-form-group sgem-form-flex sgem-currency-holder sgem-reti-cal-max-width-style-right">'+
 	'<label>Every month I save <span class="sgem-tooltip tooltip" data-tippy-content="This is the amount invested each month. We recommend to start investing 10% of your paycheck and gradually build it to 15% or more. Include the amount your employee matches, if any.">?</span></label>'+
 	'<input type="text" class="inputmove inputnumber sgem-reti-cal-input-width"  id="sgem_monthly_saving" value="500" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
 	'<span class="sgem-percentage-note">10% of my monthly income</span></div>'+
