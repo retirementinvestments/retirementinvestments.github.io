@@ -643,6 +643,29 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
 .sgem-cal-left .sgem-collapsible-summary-title {
 	margin: 0;
 }
+sgem-cal-left-add-class .sgem-cal-left .sgem-collapsible-summary-title {
+    font-size: 20px;
+}
+
+.sgem-cal-right-add-class .sgem-cal-1-result-wrapper .sgem-result-label {
+	font-size: 32px;
+}
+.sgem-cal-right-add-class .sgem-cal-1-result-header {
+    	font-size: 14px;
+}
+.sgem-cal-right-add-class .sgem-cal-1-result .sgem-result-panel-header {
+	font-size: 14px;
+}
+.sgem-cal-right-add-class .sgem-cal-1-result .sgem-result-panel-goal {
+	font-size: 30px;
+}
+.sgem-cal-right-add-class .sgem-cal-1-result .sgem-result-score-label {
+	font-size: 14px;
+}
+.sgem-cal-right-add-class #mainmessage, .sgem-cal-right-add-class #messagetitle {
+    font-size: 20px;
+    font-weight: 500;
+}
 /* end */
 
 @media (max-width: 1024px) {
