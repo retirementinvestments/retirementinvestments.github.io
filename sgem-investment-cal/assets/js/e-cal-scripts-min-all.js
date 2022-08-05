@@ -352,7 +352,7 @@ if( location.hostname == "messy-saxophone.flywheelsites.com") {
 	    $('.sgem-reti-cal-input-width').removeClass('sgem-reti-cal-input-width-mobile');
 		}
 
-		if ($('#sgem-retirement-cal').width() < 960) {
+		if ($('#sgem-retirement-cal').width() < 1024) {
 	    	$('.sgem-cal-left').addClass('sgem-cal-left-add-class');
 	    	$('.sgem-cal-right').addClass('sgem-cal-right-add-class');
 	  }
@@ -361,6 +361,12 @@ if( location.hostname == "messy-saxophone.flywheelsites.com") {
 	    $('.sgem-cal-right').removeClass('sgem-cal-right-add-class');
 		}
 		
+		if ($('#sgem-retirement-cal').width() < 515px) {
+	    		$('.sgem-cal-wrapper').addClass('sgem-cal-wrapper-add-mobile');
+	  	}
+		else {
+	    		$('.sgem-cal-wrapper').removeClass('sgem-cal-wrapper-add-mobile');
+		}
 
 	 	
 	$(window).on('resize', function() {
