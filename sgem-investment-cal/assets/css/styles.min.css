@@ -674,7 +674,7 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
 }
 
 /* below 550px (wrapper width)*/
-.sgem-cal-wrapper-add-mobile .sgem-cal-1 .sgem-form-group label {
+.sgem-cal-wrapper-add-mobile .sgem-cal-left.sgem-cal-left-add-class .sgem-cal-1 .sgem-form-group label {
     font-size: 16px;
 }
 
