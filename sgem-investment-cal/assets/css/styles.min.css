@@ -706,6 +706,9 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
 .sgem-cal-wrapper-add-mobile .sgem-cal-left-add-class .sgem-cal-1 .sgem-flex-container .sgem-form-flex {
     padding-right: 16px;
 }
+.sgem-cal-wrapper-add-mobile .sgem-cal-left-add-class .sgem-cal-1 .sgem-flex-container .sgem-form-flex.sgem-reti-cal-max-width-style-right {
+    padding-right: 0;
+}
 .sgem-cal-wrapper-add-mobile .sgem-cal-left-add-class .sgem-cal-1 .sgem-flex-container {
     display: flex;
 }
