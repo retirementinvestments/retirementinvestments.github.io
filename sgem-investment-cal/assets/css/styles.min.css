@@ -643,7 +643,7 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
 .sgem-cal-left .sgem-collapsible-summary-title {
 	margin: 0;
 }
-sgem-cal-left-add-class .sgem-cal-left .sgem-collapsible-summary-title {
+sgem-cal-left-add-class .sgem-collapsible-summary-title {
     font-size: 20px;
 }
 
