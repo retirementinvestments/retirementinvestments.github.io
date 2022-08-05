@@ -648,7 +648,7 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
 	margin: 0;
 }
 .sgem-cal-left-add-class .sgem-collapsible-summary-title {
-    	font-size: 1.25em;
+    	font-size: 1em;
 }
 .sgem-cal-left-add-class .sgem-cal-1 .sgem-form-flex.sgem-years-holder::before {
 	top: 40px;
