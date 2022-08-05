@@ -647,7 +647,7 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
     	font-size: 1.25em;
 }
 .sgem-cal-left-add-class .sgem-cal-1 .sgem-form-flex.sgem-currency-holder::after {
-	top: 2.6875em;
+	top: 44px;
 }
 
 .sgem-cal-right-add-class .sgem-cal-1-result-wrapper .sgem-result-label {
