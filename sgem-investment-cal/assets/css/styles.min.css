@@ -651,12 +651,12 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
     	font-size: 1.25em;
 }
 .sgem-cal-left-add-class .sgem-cal-1 .sgem-form-flex.sgem-years-holder::before {
-	top: 43px;
-	font-size: 0.9em;
+	top: 40px;
+	font-size: 0.8em;
 }
 .sgem-cal-left-add-class .sgem-cal-1 .sgem-form-flex.sgem-currency-holder::after {
-	top: 42px;
-	font-size: 0.9em;
+	top: 40px;
+    	font-size: 0.8em;
 }
 
 .sgem-cal-right-add-class .sgem-cal-1-result-wrapper .sgem-result-label {
