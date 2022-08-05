@@ -663,10 +663,10 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
 	font-size: 2em;
 }
 .sgem-cal-right-add-class .sgem-cal-1-result-header {
-    	font-size: 1em;
+    	font-size: 0.875em;
 }
 .sgem-cal-right-add-class .sgem-cal-1-result .sgem-result-panel-header {
-	font-size: 1em;
+	font-size: 0.875em;
 }
 .sgem-cal-right-add-class .sgem-cal-1-result .sgem-result-panel-goal {
 	font-size: 1.875em;
