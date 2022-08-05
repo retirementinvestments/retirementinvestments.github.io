@@ -672,6 +672,12 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
 .sgem-cal-right-add-class .sgem-cal-1-result-wrapper .sgem-result-value {
 	font-size: 0.875em;
 }
+
+/* below 550px (wrapper width)*/
+.sgem-cal-wrapper-add-mobile .sgem-cal-1 .sgem-form-group label {
+    font-size: 16px;
+}
+
 /* end */
 
 @media (max-width: 1024px) {
