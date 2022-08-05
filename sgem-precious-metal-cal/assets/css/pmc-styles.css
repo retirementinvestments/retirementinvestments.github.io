@@ -729,7 +729,17 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
     }
     .sgem-pmc-cal-1 input[type="text"],
     .sgem-pmc-cal-right {
-        width: 67%;
+        width: 100%;
+    }
+
+    .sgem-pmc-cal-wrapper .sgem-pmc-cal-1 {
+        height: 675px;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+
+    .sgem-pmc-cal-1 .sgem-pmc-flex-container {
+        display: block;
     }
     
     .sgem-pmc-cal-1 .sgem-pmc-flex-container .sgem-pmc-form-flex:last-child {
