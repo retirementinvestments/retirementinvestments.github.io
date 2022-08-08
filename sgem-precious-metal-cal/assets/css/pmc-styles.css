@@ -703,6 +703,23 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
     margin-top: 25px;
 }
 
+/* add class styles */
+.sgem-pmc-cal-wrapper .sgem-pmc-cal-left-add-class {
+    width: 33%;
+}
+.sgem-pmc-cal-wrapper .sgem-pmc-cal-right-add-class {
+    width: 67%;
+}
+.sgem-pmc-cal-wrapper .sgem-pmc-cal-left-add-class .sgem-pmc-cal-1 .sgem-pmc-flex-container {
+    display: block;
+}
+.sgem-pmc-cal-wrapper .sgem-pmc-cal-left-add-class .sgem-pmc-cal-1 input[type="text"] {
+    width: 100%;
+}
+.sgem-pmc-cal-wrapper .sgem-pmc-cal-left-add-class .sgem-pmc-cal-1 .sgem-pmc-flex-container .sgem-pmc-form-flex {
+    padding-right: 0;
+}
+/* end */
 
 @media (max-width:1121px) {
     .sgem-pmc-cal-1 .sgem-pmc-form-flex .sgem-pmc-current-allocation, .sgem-pmc-cal-1 .sgem-pmc-form-flex .sgem-pmc-future-allocation, .sgem-pmc-cal-1 .sgem-pmc-form-flex .sgem-pmc-my-life-expectancy {
