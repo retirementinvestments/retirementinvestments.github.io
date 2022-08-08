@@ -839,6 +839,9 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
 
 
 @media (max-width: 480px) {
+    .sgem-pmc-cal-wrapper-add-mobile .sgem-pmc-cal-left-add-class {
+        padding: 0 0 0 4px;
+    }
     .sgem-pmc-copy-option-panel {
         padding: 0px 25px;
     }
