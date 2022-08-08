@@ -725,7 +725,10 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
     overflow-y: scroll;
 }
 .sgem-pmc-cal-1::-webkit-scrollbar {
-  width: 0px;
+    width: 0px;
+}
+.sgem-pmc-cal-left-add-class .sgem-pmc-cal-1 .sgem-pmc-form-flex .sgem-pmc-future-allocation {
+    width: 100%;
 }
 
 /* js add mobile */
