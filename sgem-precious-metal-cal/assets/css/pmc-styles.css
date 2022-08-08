@@ -772,6 +772,9 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
 .sgem-pmc-cal-wrapper.sgem-pmc-cal-wrapper-add-mobile .sgem-pmc-cal-left-add-class .sgem-pmc-cal-1 .sgem-pmc-flex-container .sgem-pmc-form-flex {
     padding-right: 15px;
 }
+.sgem-pmc-cal-wrapper-add-mobile .sgem-pmc-legendbox {
+    width: 210px;
+}
 /* end */
 
 @media (max-width:1121px) {
