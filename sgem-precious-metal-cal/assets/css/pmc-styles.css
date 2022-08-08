@@ -745,7 +745,11 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
     display: flex;
 }
 .sgem-pmc-cal-wrapper.sgem-pmc-cal-wrapper-add-mobile {
-     display: block;
+    display: block;
+    padding: 8px;
+}
+.sgem-pmc-cal-wrapper.sgem-pmc-cal-wrapper-add-mobile .sgem-pmc-cal-left-add-class .sgem-pmc-cal-1 .sgem-pmc-flex-container .sgem-pmc-form-flex {
+    padding-right: 15px;
 }
 /* end */
 
