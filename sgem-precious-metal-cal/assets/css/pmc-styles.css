@@ -867,6 +867,9 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
 
 
 @media (max-width: 480px) {
+    .sgem-pmc-cal-right-add-class .sgem-pmc-staticvalue-text {
+        margin-bottom: 10px;
+    }
     .sgem-pmc-cal-wrapper-add-mobile .sgem-pmc-cal-left-add-class {
         padding: 0 0 0 4px;
     }
