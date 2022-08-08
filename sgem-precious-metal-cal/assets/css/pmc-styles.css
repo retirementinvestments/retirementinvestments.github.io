@@ -761,6 +761,10 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
     top: 44px;
 }
 
+.sgem-pmc-cal-right-add-class .sgem-pmc-legendbox {
+    width: 200px;
+}
+
 /* js add mobile */
 .sgem-pmc-cal-wrapper-add-mobile .sgem-pmc-cal-left-add-class {
     width: 100%;
