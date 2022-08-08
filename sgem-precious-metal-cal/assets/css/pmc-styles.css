@@ -753,6 +753,9 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
 {
     font-size: 0.8em;
 }
+.sgem-pmc-cal-left-add-class .sgem-pmc-cal-1 .sgem-pmc-form-flex.sgem-pmc-currency-holder::after {
+    top: 46px;
+}
 
 /* js add mobile */
 .sgem-pmc-cal-wrapper-add-mobile .sgem-pmc-cal-left-add-class {
