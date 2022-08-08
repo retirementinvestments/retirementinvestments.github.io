@@ -822,7 +822,7 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
         padding: 0px 25px;
     }
     .sgem-pmc-cal-left { 
-        padding: 30px 0px 30px 25px !important;
+        padding: 30px 0px 30px 25px;
         width: 100%;
     }
     .sgem-pmc-cal-right {
