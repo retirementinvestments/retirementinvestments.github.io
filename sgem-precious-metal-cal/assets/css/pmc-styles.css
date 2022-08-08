@@ -779,7 +779,7 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
 }
 .sgem-pmc-cal-wrapper.sgem-pmc-cal-wrapper-add-mobile {
     display: block;
-    padding: 18px 14px 8px;
+    padding: 18px 3px;
 }
 .sgem-pmc-cal-wrapper.sgem-pmc-cal-wrapper-add-mobile .sgem-pmc-cal-left-add-class .sgem-pmc-cal-1 .sgem-pmc-flex-container .sgem-pmc-form-flex {
     padding-right: 15px;
