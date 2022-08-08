@@ -1006,7 +1006,7 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
         padding-right: 5px !important;
     }
 }
-@media (max-width: 480px) {
+@media (max-width: 420px) {
     .sgem-pmc-cal-1 .sgem-pmc-form-flex.sgem-pmc-currency-holder::after {
         top: 46px;
     }
@@ -1027,6 +1027,11 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
     .sgem-pmc-legendbox {
         top: 340px;
     } 
+}
+@media (max-width: 350px) {
+    .sgem-pmc-legendbox {
+        top: 302px;
+    }
 }
 
  
