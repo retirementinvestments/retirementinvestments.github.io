@@ -876,6 +876,8 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
         position: absolute;
         top: 307px;
         left: 13px;
+        align-items: flex-start;
+        align-content: flex-start;
     }
     .sgem-pmc-chartCard {
         padding-bottom: 140px;
