@@ -633,7 +633,7 @@
 .sgem-pmc-url-text {
     text-decoration: none;
     color: #1569b0;
-    font-weight: bold;
+    font-weight: unset;
 }
 .sgem-pmc-section-disclaimer {
     padding-top: 40px;
@@ -716,6 +716,7 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
 .sgem-pmc-cal-wrapper .sgem-pmc-cal-left-add-class .sgem-pmc-cal-1 input[type="text"] {
     width: 100%;
     font-size: 0.8em;
+    height: 45px;
 }
 .sgem-pmc-cal-left-add-class .sgem-pmc-cal-1 .sgem-pmc-form-group label {
     font-size: 0.8em;
@@ -753,8 +754,11 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
 {
     font-size: 0.8em;
 }
+.sgem-pmc-cal-left-add-class .sgem-pmc-cal-1 .sgem-pmc-form-flex.sgem-pmc-years-holder::before {
+    top: 44px;
+}
 .sgem-pmc-cal-left-add-class .sgem-pmc-cal-1 .sgem-pmc-form-flex.sgem-pmc-currency-holder::after {
-    top: 46px;
+    top: 44px;
 }
 
 /* js add mobile */
@@ -775,7 +779,7 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
 }
 .sgem-pmc-cal-wrapper.sgem-pmc-cal-wrapper-add-mobile {
     display: block;
-    padding: 8px;
+    padding: 18px 14px 8px;
 }
 .sgem-pmc-cal-wrapper.sgem-pmc-cal-wrapper-add-mobile .sgem-pmc-cal-left-add-class .sgem-pmc-cal-1 .sgem-pmc-flex-container .sgem-pmc-form-flex {
     padding-right: 15px;
