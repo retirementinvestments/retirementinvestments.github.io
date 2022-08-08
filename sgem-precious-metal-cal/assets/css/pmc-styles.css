@@ -742,7 +742,6 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
     }
     .sgem-pmc-cal-left {
         width: 33%;
-        padding: 30px 0px 30px 15px !important;
     }
     .sgem-pmc-cal-right {
         width: 67%;
