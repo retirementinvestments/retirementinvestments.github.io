@@ -1025,7 +1025,7 @@ $('#sgem_pmc_annual_return,#sgem_pmc_current_allocation,#sgem_pmc_current_gold_a
             $('.sgem-pmc-cal-right').removeClass('sgem-pmc-cal-right-add-class');
         }
 
-        if ($('.sgem-pmc-cal-main-id').width() < 550) {
+        if ($('.sgem-pmc-cal-main-id').width() < 650) {
             $('.sgem-pmc-cal-wrapper').addClass('sgem-pmc-cal-wrapper-add-mobile');
         }
         else {
@@ -1044,7 +1044,7 @@ $('#sgem_pmc_annual_return,#sgem_pmc_current_allocation,#sgem_pmc_current_gold_a
         }).trigger('resize');
 
         $(window).on('resize', function() {
-           if ($('.sgem-pmc-cal-main-id').width() < 550) {
+           if ($('.sgem-pmc-cal-main-id').width() < 650) {
 		    $('.sgem-pmc-cal-wrapper').addClass('sgem-pmc-cal-wrapper-add-mobile');
 	   }
 	   else {
