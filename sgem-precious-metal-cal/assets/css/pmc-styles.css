@@ -874,7 +874,7 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
         width: auto;
         display: flex;
         position: absolute;
-        top: 307px;
+        top: 345px;
         left: 13px;
         align-items: flex-start;
         align-content: flex-start;
@@ -1006,7 +1006,7 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
         padding-right: 5px !important;
     }
 }
-@media (max-width: 420px) {
+@media (max-width: 480px) {
     .sgem-pmc-cal-1 .sgem-pmc-form-flex.sgem-pmc-currency-holder::after {
         top: 46px;
     }
@@ -1024,6 +1024,9 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
     .sgem-cal-copy-option-panel {
         padding: 0 10px;
     }
+    .sgem-pmc-legendbox {
+        top: 340px;
+    } 
 }
 
  
