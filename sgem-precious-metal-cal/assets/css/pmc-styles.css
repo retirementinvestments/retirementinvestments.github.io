@@ -717,7 +717,7 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
     width: 100%;
     font-size: 0.8em;
 }
-.sgem-pmc-cal-1 .sgem-pmc-form-group label {
+.sgem-pmc-cal-left-add-class .sgem-pmc-cal-1 .sgem-pmc-form-group label {
     font-size: 0.8em;
 }
 .sgem-pmc-cal-wrapper .sgem-pmc-cal-left-add-class .sgem-pmc-cal-1 .sgem-pmc-flex-container .sgem-pmc-form-flex {
