@@ -738,6 +738,16 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
 .sgem-pmc-cal-left-add-class .sgem-pmc-collapsible-summary-title {
     font-size: 1em;
 }
+.sgem-pmc-cal-left-add-class .sgem-pmc-midtext {
+    font-size: 1em;
+}
+
+.sgem-pmc-cal-right-add-class .sgem-pmc-staticvalue-text {
+    font-size: 0.875em;
+}
+.sgem-pmc-cal-right-add-class .sgem-pmc-value-text {
+    font-size: 2em;
+}
 
 /* js add mobile */
 .sgem-pmc-cal-wrapper-add-mobile .sgem-pmc-cal-left-add-class {
