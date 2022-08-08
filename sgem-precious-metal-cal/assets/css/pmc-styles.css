@@ -867,6 +867,16 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
 
 
 @media (max-width: 480px) {
+    .sgem-pmc-legendbox {
+        width: auto;
+        display: flex;
+        position: absolute;
+        top: 307px;
+        left: 13px;
+    }
+    .sgem-pmc-chartCard {
+        padding-bottom: 140px;
+    }
     .sgem-pmc-cal-right-add-class .sgem-pmc-staticvalue-text {
         margin-bottom: 10px;
     }
