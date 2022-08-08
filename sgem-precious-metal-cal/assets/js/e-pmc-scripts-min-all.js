@@ -1017,39 +1017,39 @@ $('#sgem_pmc_annual_return,#sgem_pmc_current_allocation,#sgem_pmc_current_gold_a
      //pcm_init_chart();
 
         if ($('.sgem-pmc-cal-wrapper').width() < 1024) {
-            $('.sgem-pmc-cal-left').addClass('sgem-cal-left-add-class');
-            $('.sgem-crypto-ira-cal-right ').addClass('sgem-cal-right-add-class');
+            $('.sgem-pmc-cal-left').addClass('sgem-pmc-cal-left-add-class');
+            $('.sgem-pmc-cal-right').addClass('sgem-pmc-cal-right-add-class');
         }
         else {
-            $('.sgem-crypto-ira-cal-left').removeClass('sgem-cal-left-add-class');
-            $('.sgem-crypto-ira-cal-right ').removeClass('sgem-cal-right-add-class');
+            $('.sgem-pmc-cal-left').removeClass('sgem-pmc-cal-left-add-class');
+            $('.sgem-pmc-cal-right').removeClass('sgem-pmc-cal-right-add-class');
         }
 
-        if ($('#sgem-retirement-cal').width() < 550) {
-            $('.sgem-cal-wrapper').addClass('sgem-cal-wrapper-add-mobile');
+        if ($('.sgem-pmc-cal-main-id').width() < 550) {
+            $('.sgem-pmc-cal-wrapper').addClass('sgem-pmc-cal-wrapper-add-mobile');
         }
         else {
-            $('.sgem-cal-wrapper').removeClass('sgem-cal-wrapper-add-mobile');
+            $('.sgem-pmc-cal-wrapper').removeClass('sgem-pmc-cal-wrapper-add-mobile');
         }
 
         $(window).on('resize', function() {
-            if ($('.sgem-crypto-ira-cal-wrapper').width() < 1024) {
-                $('.sgem-crypto-ira-cal-left').addClass('sgem-cal-left-add-class');
-                $('.sgem-crypto-ira-cal-right ').addClass('sgem-cal-right-add-class');
-            }
-            else {
-                $('.sgem-crypto-ira-cal-left').removeClass('sgem-cal-left-add-class');
-                $('.sgem-crypto-ira-cal-right ').removeClass('sgem-cal-right-add-class');
-            }
+            if ($('.sgem-pmc-cal-wrapper').width() < 1024) {
+		    $('.sgem-pmc-cal-left').addClass('sgem-pmc-cal-left-add-class');
+		    $('.sgem-pmc-cal-right').addClass('sgem-pmc-cal-right-add-class');
+	    }
+	    else {
+		    $('.sgem-pmc-cal-left').removeClass('sgem-pmc-cal-left-add-class');
+		    $('.sgem-pmc-cal-right').removeClass('sgem-pmc-cal-right-add-class');
+	    }
         }).trigger('resize');
 
-            $(window).on('resize', function() {
-                if ($('.sgem-crypto-ira-cal-wrapper').width() < 550) {
-                   $('.sgem-crypto-ira-cal-wrapper').addClass('sgem-cal-wrapper-add-mobile');
-                }
-            else {
-                   $('.sgem-crypto-ira-cal-wrapper').removeClass('sgem-cal-wrapper-add-mobile');
-            }
+        $(window).on('resize', function() {
+           if ($('.sgem-pmc-cal-main-id').width() < 550) {
+		    $('.sgem-pmc-cal-wrapper').addClass('sgem-pmc-cal-wrapper-add-mobile');
+	   }
+	   else {
+		    $('.sgem-pmc-cal-wrapper').removeClass('sgem-pmc-cal-wrapper-add-mobile');
+	   }
         }).trigger('resize');
 
 
