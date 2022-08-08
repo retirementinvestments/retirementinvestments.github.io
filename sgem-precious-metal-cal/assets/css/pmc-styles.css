@@ -724,6 +724,9 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
     overflow: hidden;
     overflow-y: scroll;
 }
+.sgem-pmc-cal-1::-webkit-scrollbar {
+  width: 0px;
+}
 /* end */
 
 @media (max-width:1121px) {
