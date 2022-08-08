@@ -804,7 +804,7 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
         font-size: 14px; 
     }
     .sgem-pmc-cal-1 .sgem-pmc-flex-container .sgem-pmc-form-flex { 
-        padding-right: 15px;
+        padding-right: 0px;
     }
     .sgem-pmc-midtext {
         font-size: 17px; 
