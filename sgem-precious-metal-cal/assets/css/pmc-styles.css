@@ -735,6 +735,10 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
     width: 100%;
 }
 
+.sgem-pmc-cal-left-add-class .sgem-pmc-collapsible-summary-title {
+    font-size: 1em;
+}
+
 /* js add mobile */
 .sgem-pmc-cal-wrapper-add-mobile .sgem-pmc-cal-left-add-class {
     width: 100%;
