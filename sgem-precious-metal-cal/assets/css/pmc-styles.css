@@ -764,7 +764,7 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
 /* js add mobile */
 .sgem-pmc-cal-wrapper-add-mobile .sgem-pmc-cal-left-add-class {
     width: 100%;
-    padding: 0 0 0 15px;
+    padding: 0 0 0 10px;
 }
 .sgem-pmc-cal-wrapper-add-mobile .sgem-pmc-cal-right-add-class {
     width: 100%;
@@ -779,10 +779,10 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
 }
 .sgem-pmc-cal-wrapper.sgem-pmc-cal-wrapper-add-mobile {
     display: block;
-    padding: 18px 3px;
+    padding: 18px 8px 8px;
 }
 .sgem-pmc-cal-wrapper.sgem-pmc-cal-wrapper-add-mobile .sgem-pmc-cal-left-add-class .sgem-pmc-cal-1 .sgem-pmc-flex-container .sgem-pmc-form-flex {
-    padding-right: 15px;
+    padding-right: 10px;
 }
 .sgem-pmc-cal-wrapper-add-mobile .sgem-pmc-legendbox {
     width: 210px;
