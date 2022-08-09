@@ -933,7 +933,7 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
        width: 100%;
    }
    .sgem-crypto-ira-cal-1 .sgem-crypto-ira-flex-container .sgem-crypto-ira-full-flex { 
-       padding-right: 15px !important;
+       padding-right: 15px;
    }
    .sgem-crypto-ira-cal-1 .sgem-crypto-ira-flex-container .sgem-crypto-ira-form-flex { 
        padding-right: 15px;
