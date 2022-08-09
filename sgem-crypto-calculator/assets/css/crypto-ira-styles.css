@@ -743,6 +743,11 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
    .sgem-crypto-ira-cal-left .sgem-crypto-ira-cal-1 .sgem-crypto-ira-flex-container {
          display: block;
    }
+   .sgem-crypto-ira-cal-left-add-class .sgem-crypto-ira-cal-1 {
+         height: 700px;
+         overflow: hidden;
+         overflow-y: scroll;
+   }
    
    .sgem-crypto-ira-cal-wrapper {
        flex-direction: row !important;
@@ -780,7 +785,7 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
 }
 
 
-@media (max-width: 700px) {
+@media (max-width: 650px) {
    .sgem-crypto-ira-cal-wrapper { 
        padding: 8px 8px 8px 8px; 
        flex-direction: column;
@@ -795,7 +800,7 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
        padding: 0px 25px;
    }
    .sgem-crypto-ira-cal-left { 
-       padding: 30px 0px 30px 25px;
+       padding: 30px 0px 30px 15px;
        width: 100%;
        overflow: unset;
        height: auto;
