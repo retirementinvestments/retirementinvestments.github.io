@@ -818,7 +818,6 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
     width: 210px;
 }
 .sgem-crypto-ira-wrapper-add-mobile .sgem-crypto-ira-cal-left.sgem-crypto-ira-cal-left-add-class {
-    padding: 20px 20px;
     height: auto;
     overflow: hidden;
     overflow-y: unset;
