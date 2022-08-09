@@ -721,6 +721,102 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
     width: 0px;
 }
 
+/* add class styles */
+.sgem-crypto-ira-cal-wrapper .sgem-crypto-ira-cal-left-add-class {
+    width: 33%;
+}
+.sgem-crypto-ira-cal-wrapper .sgem-crypto-ira-cal-right-add-class {
+    width: 67%;
+}
+.sgem-crypto-ira-cal-wrapper .sgem-crypto-ira-cal-left-add-class .sgem-crypto-ira-cal-1 .sgem-crypto-ira-flex-container {
+    display: block;
+}
+.sgem-crypto-ira-cal-wrapper .sgem-crypto-ira-cal-left-add-class .sgem-crypto-ira-cal-1 input[type="text"] {
+    width: 100%;
+    font-size: 0.8em;
+    height: 45px;
+}
+.sgem-crypto-ira-cal-left-add-class .sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-group label {
+    font-size: 0.8em;
+}
+.sgem-crypto-ira-cal-wrapper .sgem-crypto-ira-cal-left-add-class .sgem-crypto-ira-cal-1 .sgem-crypto-ira-flex-container .sgem-crypto-ira-form-flex {
+    padding-right: 0;
+}
+.sgem-crypto-ira-cal-wrapper .sgem-crypto-ira-cal-left-add-class .sgem-crypto-ira-cal-1 {
+    height: 700px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.sgem-crypto-ira-cal-1::-webkit-scrollbar {
+    width: 0px;
+}
+.sgem-crypto-ira-cal-left-add-class .sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex .sgem-crypto-ira-future-allocation {
+    width: 100%;
+}
+
+.sgem-crypto-ira-cal-left-add-class .sgem-crypto-ira-collapsible-summary-title {
+    font-size: 0.9em;
+}
+.sgem-crypto-ira-cal-left-add-class .sgem-crypto-ira-midtext {
+    font-size: 0.8em;
+}
+
+.sgem-crypto-ira-cal-right-add-class .sgem-crypto-ira-staticvalue-text {
+    font-size: 0.875em;
+}
+.sgem-crypto-ira-cal-right-add-class .sgem-crypto-ira-value-text {
+    font-size: 2em;
+}
+.sgem-crypto-ira-cal-left-add-class .sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex.sgem-crypto-ira-currency-holder::after,
+.sgem-crypto-ira-cal-left-add-class .sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex.sgem-crypto-ira-years-holder::before
+{
+    font-size: 0.8em;
+}
+.sgem-crypto-ira-cal-left-add-class .sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex.sgem-crypto-ira-years-holder::before {
+    top: 44px;
+}
+.sgem-crypto-ira-cal-left-add-class .sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex.sgem-crypto-ira-currency-holder::after {
+    top: 44px;
+}
+.sgem-crypto-ira-cal-left.sgem-crypto-ira-cal-left-add-class {
+    padding: 20px 20px;
+}
+.sgem-crypto-ira-cal-right-add-class .sgem-crypto-ira-cal-1-result-wrapper {
+    padding: 20px 20px;
+}
+
+.sgem-crypto-ira-cal-right-add-class .sgem-crypto-ira-legendbox {
+    width: 200px;
+}
+
+/* js add mobile */
+.sgem-crypto-ira-cal-wrapper-add-mobile .sgem-crypto-ira-cal-left-add-class {
+    width: 100%;
+    padding: 0 0 0 10px;
+}
+.sgem-crypto-ira-cal-wrapper-add-mobile .sgem-crypto-ira-cal-right-add-class {
+    width: 100%;
+}
+.sgem-crypto-ira-cal-wrapper-add-mobile .sgem-crypto-ira-cal-left-add-class .sgem-crypto-ira-cal-1 {
+    height: auto;
+    overflow: hidden;
+    overflow-y: unset;
+}
+.sgem-crypto-ira-cal-wrapper-add-mobile .sgem-crypto-ira-cal-left-add-class .sgem-crypto-ira-cal-1 .sgem-crypto-ira-flex-container {
+    display: flex;
+}
+.sgem-crypto-ira-cal-wrapper.sgem-crypto-ira-cal-wrapper-add-mobile {
+    display: block;
+    padding: 18px 8px 8px;
+}
+.sgem-crypto-ira-cal-wrapper.sgem-crypto-ira-cal-wrapper-add-mobile .sgem-crypto-ira-cal-left-add-class .sgem-crypto-ira-cal-1 .sgem-crypto-ira-flex-container .sgem-crypto-ira-form-flex {
+    padding-right: 10px;
+}
+.sgem-crypto-ira-cal-wrapper-add-mobile .sgem-crypto-ira-legendbox {
+    width: 210px;
+}
+/* end */
+
 @media (max-width:1121px) {
    .sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex .sgem-crypto-ira-current-allocation, .sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex .sgem-crypto-ira-future-allocation, .sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex .sgem-crypto-ira-my-life-expectancy {
        width:auto;
