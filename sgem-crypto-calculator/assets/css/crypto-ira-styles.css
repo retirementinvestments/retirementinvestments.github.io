@@ -70,9 +70,9 @@
 .sgem-crypto-ira-cal-left {
    width: 470px;
    padding: 32px 20px;
-/*    overflow: hidden;
+   overflow: hidden;
    overflow-y: scroll;
-   height: 700px; */
+   height: 700px;
 }
 /* Chrome, Safari */
 ::-webkit-scrollbar {
