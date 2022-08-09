@@ -788,10 +788,10 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
     font-size: 0.8em;
 }
 .sgem-crypto-ira-cal-left-add-class .sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex.sgem-crypto-ira-years-holder::before {
-    top: 44px;
+    top: 41px;
 }
 .sgem-crypto-ira-cal-left-add-class .sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex.sgem-crypto-ira-currency-holder::after {
-    top: 44px;
+    top: 42px;
 }
 .sgem-crypto-ira-cal-left.sgem-crypto-ira-cal-left-add-class {
     padding: 20px 20px;
