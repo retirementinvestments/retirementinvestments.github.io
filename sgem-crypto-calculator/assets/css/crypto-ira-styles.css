@@ -723,6 +723,17 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
     width: 0px;
 }
 
+.sgem-crypto-info-tooltip {
+    border: 1px solid #000;
+    width: 18px;
+    height: 18px;
+    border-radius: 50px;
+    line-height: 18px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer !important;
+}
+
 /* add class styles */
 .sgem-crypto-ira-cal-wrapper .sgem-crypto-ira-cal-left-add-class {
     width: 33%;
