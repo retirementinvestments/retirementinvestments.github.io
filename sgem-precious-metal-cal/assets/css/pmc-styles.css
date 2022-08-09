@@ -759,7 +759,7 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
     top: 42px;
 }
 .sgem-pmc-cal-left-add-class .sgem-pmc-cal-1 .sgem-pmc-form-flex.sgem-pmc-currency-holder::after {
-    top: 42px;
+    top: 41px;
 }
 .sgem-pmc-cal-left.sgem-pmc-cal-left-add-class {
     padding: 20px 20px;
