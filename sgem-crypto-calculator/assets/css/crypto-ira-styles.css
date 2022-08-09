@@ -792,29 +792,29 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
 }
 
 /* js add mobile */
-.sgem-crypto-ira-cal-wrapper-add-mobile .sgem-crypto-ira-cal-left-add-class {
+.sgem-crypto-ira-wrapper-add-mobile .sgem-crypto-ira-cal-left-add-class {
     width: 100%;
     padding: 0 0 0 10px;
 }
-.sgem-crypto-ira-cal-wrapper-add-mobile .sgem-crypto-ira-cal-right-add-class {
+.sgem-crypto-ira-wrapper-add-mobile .sgem-crypto-ira-cal-right-add-class {
     width: 100%;
 }
-.sgem-crypto-ira-cal-wrapper-add-mobile .sgem-crypto-ira-cal-left-add-class .sgem-crypto-ira-cal-1 {
+.sgem-crypto-ira-wrapper-add-mobile .sgem-crypto-ira-cal-left-add-class .sgem-crypto-ira-cal-1 {
     height: auto;
     overflow: hidden;
     overflow-y: unset;
 }
-.sgem-crypto-ira-cal-wrapper-add-mobile .sgem-crypto-ira-cal-left-add-class .sgem-crypto-ira-cal-1 .sgem-crypto-ira-flex-container {
+.sgem-crypto-ira-wrapper-add-mobile .sgem-crypto-ira-cal-left-add-class .sgem-crypto-ira-cal-1 .sgem-crypto-ira-flex-container {
     display: flex;
 }
-.sgem-crypto-ira-cal-wrapper.sgem-crypto-ira-cal-wrapper-add-mobile {
+.sgem-crypto-ira-cal-wrapper.sgem-crypto-ira-wrapper-add-mobile {
     display: block;
     padding: 18px 8px 8px;
 }
-.sgem-crypto-ira-cal-wrapper.sgem-crypto-ira-cal-wrapper-add-mobile .sgem-crypto-ira-cal-left-add-class .sgem-crypto-ira-cal-1 .sgem-crypto-ira-flex-container .sgem-crypto-ira-form-flex {
+.sgem-crypto-ira-cal-wrapper.sgem-crypto-ira-wrapper-add-mobile .sgem-crypto-ira-cal-left-add-class .sgem-crypto-ira-cal-1 .sgem-crypto-ira-flex-container .sgem-crypto-ira-form-flex {
     padding-right: 10px;
 }
-.sgem-crypto-ira-cal-wrapper-add-mobile .sgem-crypto-ira-legendbox {
+.sgem-crypto-ira-wrapper-add-mobile .sgem-crypto-ira-legendbox {
     width: 210px;
 }
 /* end */
