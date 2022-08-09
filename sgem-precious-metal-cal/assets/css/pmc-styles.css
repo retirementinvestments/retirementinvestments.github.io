@@ -704,6 +704,12 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
     margin-top: 25px;
 }
 
+.sgem-pmc-cal-left .sgem-pmc-cal-1 {
+    height: 740px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
 /* add class styles */
 .sgem-pmc-cal-wrapper .sgem-pmc-cal-left-add-class {
     width: 33%;
