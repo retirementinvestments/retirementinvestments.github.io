@@ -1035,17 +1035,17 @@ $('#sgem_crypto_ira_annual_return,#sgem_crypto_ira_current_allocation,#sgem_cryp
 
 
 
-	if($('#sgem-crypto-ira-cal').width() < 600) {
-		$('.sgem-crypto-ira-cal-left').css('padding-left','30px');
-		$('.sgem-crypto-ira-cal-wrapper').css('padding-left','8px');
-	} 
+// 	if($('#sgem-crypto-ira-cal').width() < 600) {
+// 		$('.sgem-crypto-ira-cal-left').css('padding-left','30px');
+// 		$('.sgem-crypto-ira-cal-wrapper').css('padding-left','8px');
+// 	} 
 
-	$(window).on('resize', function(){
-		if($('#sgem-crypto-ira-cal').width() < 600) {
-			$('.sgem-crypto-ira-cal-left').css('padding-left','30px');
-			$('.sgem-crypto-ira-cal-wrapper').css('padding-left','8px');
-		} 
-	});
+// 	$(window).on('resize', function(){
+// 		if($('#sgem-crypto-ira-cal').width() < 600) {
+// 			$('.sgem-crypto-ira-cal-left').css('padding-left','30px');
+// 			$('.sgem-crypto-ira-cal-wrapper').css('padding-left','8px');
+// 		} 
+// 	});
 
 
 	//*******************************************************
