@@ -737,10 +737,10 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
 }
 
 .sgem-pmc-cal-left-add-class .sgem-pmc-collapsible-summary-title {
-    font-size: 1em;
+    font-size: 0.9em;
 }
 .sgem-pmc-cal-left-add-class .sgem-pmc-midtext {
-    font-size: 1em;
+    font-size: 0.8em;
 }
 
 .sgem-pmc-cal-right-add-class .sgem-pmc-staticvalue-text {
@@ -759,6 +759,12 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
 }
 .sgem-pmc-cal-left-add-class .sgem-pmc-cal-1 .sgem-pmc-form-flex.sgem-pmc-currency-holder::after {
     top: 44px;
+}
+.sgem-pmc-cal-left.sgem-pmc-cal-left-add-class {
+    padding: 20px 20px;
+}
+.sgem-pmc-cal-right-add-class .sgem-pmc-cal-1-result-wrapper {
+    padding: 20px 20px;
 }
 
 .sgem-pmc-cal-right-add-class .sgem-pmc-legendbox {
