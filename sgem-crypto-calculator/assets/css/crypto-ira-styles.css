@@ -830,7 +830,7 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
        top: -7px;
    }
 }
-@media (min-width:650px) and (max-width:1200px) {
+@media (min-width:650px) and (max-width:1250px) {
 /*@media (max-width: 1100px) {*/
    
    .sgem-crypto-ira-cal-left {
