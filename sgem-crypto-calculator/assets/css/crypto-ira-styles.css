@@ -1051,6 +1051,12 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
    .sgem-crypto-ira-cal-1 .sgem-crypto-ira-flex-container .sgem-crypto-ira-form-flex:last-child {
        padding-right: 5px;
    }
+   .sgem-crypto-ira-legend-item {
+       padding-bottom: 0;
+   }
+   .sgem-crypto-ira-legendbox {
+        align-content: flex-start;
+   }
 }
 @media (max-width: 420px) {
    .sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex.sgem-crypto-ira-currency-holder::after {
