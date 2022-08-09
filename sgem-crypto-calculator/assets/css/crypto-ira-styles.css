@@ -732,6 +732,7 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
     display: inline-block;
     text-align: center;
     cursor: pointer !important;
+    font-size: 11px;
 }
 
 /* add class styles */
