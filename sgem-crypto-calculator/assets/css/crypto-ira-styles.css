@@ -790,7 +790,7 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
 /* js add mobile */
 .sgem-crypto-ira-wrapper-add-mobile .sgem-crypto-ira-cal-left-add-class {
     width: 100%;
-    padding: 0 0 0 10px;
+    padding: 0 0 0 15px;
 }
 .sgem-crypto-ira-wrapper-add-mobile .sgem-crypto-ira-cal-right-add-class {
     width: 100%;
