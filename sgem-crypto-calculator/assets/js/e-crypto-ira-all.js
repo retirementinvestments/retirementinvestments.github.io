@@ -1048,6 +1048,45 @@ $('#sgem_crypto_ira_annual_return,#sgem_crypto_ira_current_allocation,#sgem_cryp
 	});
 
 
+	//*******************************************************
+
+        if ($('.sgem-crypto-ira-cal-wrapper').width() < 1024) {
+            $('.sgem-crypto-ira-cal-left').addClass('sgem-crypto-ira-cal-left-add-class');
+            $('.sgem-crypto-ira-cal-right').addClass('sgem-crypto-ira-cal-right-add-class');
+        }
+        else {
+            $('.sgem-crypto-ira-cal-left').removeClass('sgem-crypto-ira-cal-left-add-class');
+            $('.sgem-crypto-ira-cal-right').removeClass('sgem-crypto-ira-cal-right-add-class');
+        }
+
+        if ($('.sgem-crypto-ira-main-id').width() < 650) {
+            $('.sgem-crypto-ira-cal-wrapper').addClass('sgem-crypto-ira-wrapper-add-mobile');
+        }
+        else {
+            $('.sgem-crypto-ira-cal-wrapper').removeClass('sgem-crypto-ira-wrapper-add-mobile');
+        }
+
+        $(window).on('resize', function() {
+            if ($('.sgem-crypto-ira-cal-wrapper').width() < 1024) {
+            $('.sgem-crypto-ira-cal-left').addClass('sgem-crypto-ira-cal-left-add-class');
+            $('.sgem-crypto-ira-cal-right').addClass('sgem-crypto-ira-cal-right-add-class');
+        }
+        else {
+            $('.sgem-crypto-ira-cal-left').removeClass('sgem-crypto-ira-cal-left-add-class');
+            $('.sgem-crypto-ira-cal-right').removeClass('sgem-crypto-ira-cal-right-add-class');
+        }
+        }).trigger('resize');
+
+        $(window).on('resize', function() {
+           if ($('.sgem-crypto-ira-main-id').width() < 650) {
+            $('.sgem-crypto-ira-cal-wrapper').addClass('sgem-crypto-ira-wrapper-add-mobile');
+       }
+       else {
+            $('.sgem-crypto-ira-cal-wrapper').removeClass('sgem-crypto-ira-wrapper-add-mobile');
+       }
+        }).trigger('resize');
+    
+ //*********************************************
 
   
   }); // DOCUMENT.READY END
