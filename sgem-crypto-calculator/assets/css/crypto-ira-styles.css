@@ -718,104 +718,11 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
 }
 
 
-@media (max-width:1220px) {
-   .sgem-crypto-ira-cal-1-result-wrapper {
-       width: 700px;
-   }
-
-}
-@media (max-width:1170px) {
-   .sgem-crypto-ira-cal-1-result-wrapper {
-       width: 680px;
-   }
-
-}
-@media (max-width:1145px) {
-   .sgem-crypto-ira-cal-1-result-wrapper {
-       width: 660px;
-   }
-
-}
-
 @media (max-width:1121px) {
-   .sgem-crypto-ira-cal-1-result-wrapper {
-       width: 640px;
-   }
    .sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex .sgem-crypto-ira-current-allocation, .sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex .sgem-crypto-ira-future-allocation, .sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex .sgem-crypto-ira-my-life-expectancy {
        width:auto;
    }
 }
-@media (max-width:1110px) {
-   .sgem-crypto-ira-cal-1-result-wrapper {
-       width: 620px;
-   }
-
-}
-@media (max-width:1100px) {
-   .sgem-crypto-ira-cal-1-result-wrapper {
-       width: 600px;
-   }
-
-}
-@media (max-width:1080px) {
-   .sgem-crypto-ira-cal-1-result-wrapper {
-       width: 580px;
-   }
-
-}
-@media (max-width:1060px) {
-   .sgem-crypto-ira-cal-1-result-wrapper {
-       width: 560px;
-   }
-
-}
-@media (max-width:1040px) {
-   .sgem-crypto-ira-cal-1-result-wrapper {
-       width: 540px;
-   }
-
-}
-@media (max-width:970px) {
-   .sgem-crypto-ira-cal-1-result-wrapper {
-       width: 625px;
-   }
-}
-@media (max-width:940px) {
-   .sgem-crypto-ira-cal-1-result-wrapper {
-       width: 600px;
-   }
-}
-@media (max-width:900px) {
-   .sgem-crypto-ira-cal-1-result-wrapper {
-       width: 575px;
-   }
-}
-@media (max-width:860px) {
-   .sgem-crypto-ira-cal-1-result-wrapper {
-       width: 550px;
-   }
-}
-@media (max-width:820px) {
-   .sgem-crypto-ira-cal-1-result-wrapper {
-       width: 515px;
-   }
-}
-@media (max-width:780px) {
-   .sgem-crypto-ira-cal-1-result-wrapper {
-       width: 495px;
-   }
-}
-@media (max-width:740px) {
-   .sgem-crypto-ira-cal-1-result-wrapper {
-       width: 445px;
-   }
-}
-@media (max-width:700px) {
-   .sgem-crypto-ira-cal-1-result-wrapper {
-       width: 415px;
-   }
-}
-
 
 @media (max-width: 1024px) {
    .sgem-crypto-ira-logo-wrapper {
