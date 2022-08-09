@@ -194,7 +194,7 @@
     height: 24px;
     display: inline-block;
     background-repeat: no-repeat;
-    background-position: center -5px;
+    background-position: center 0px;
     background-size: 25px;
     background-image: url("../images/caret-down-filled.svg");
 }
@@ -756,10 +756,10 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
     font-size: 0.8em;
 }
 .sgem-pmc-cal-left-add-class .sgem-pmc-cal-1 .sgem-pmc-form-flex.sgem-pmc-years-holder::before {
-    top: 44px;
+    top: 42px;
 }
 .sgem-pmc-cal-left-add-class .sgem-pmc-cal-1 .sgem-pmc-form-flex.sgem-pmc-currency-holder::after {
-    top: 44px;
+    top: 42px;
 }
 .sgem-pmc-cal-left.sgem-pmc-cal-left-add-class {
     padding: 20px 20px;
@@ -773,6 +773,14 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
 }
 
 /* js add mobile */
+.sgem-pmc-cal-wrapper-add-mobile .sgem-pmc-info-tooltip {
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+}
+.sgem-pmc-cal-wrapper-add-mobile .sgem-pmc-legend-item {
+    padding-bottom: 0;
+}
 .sgem-pmc-cal-wrapper-add-mobile .sgem-pmc-cal-left-add-class {
     width: 100%;
     padding: 0 0 0 10px;
@@ -1027,6 +1035,9 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
     
     .sgem-pmc-cal-1 .sgem-pmc-flex-container .sgem-pmc-form-flex:last-child {
         padding-right: 5px !important;
+    }
+    .sgem-pmc-legendbox {
+        left: 22px;
     }
 }
 @media (max-width: 420px) {
