@@ -72,7 +72,7 @@
    padding: 32px 20px;
    overflow: hidden;
    overflow-y: scroll;
-   height: 770px;
+   height: 790px;
 }
 /* Chrome, Safari */
 ::-webkit-scrollbar {
@@ -209,7 +209,7 @@ background-color: #f3f3f3;
    height: 24px;
    display: inline-block;
    background-repeat: no-repeat;
-   background-position: center 0px;
+   background-position: center -3px;
    background-size: 25px;
    background-image: url("../images/caret-down-filled.svg");
 }
@@ -217,7 +217,7 @@ background-color: #f3f3f3;
    -moz-transform: rotate(-180deg);
    -webkit-transform: rotate(-180deg);
    transform: rotate(-180deg);
-   background-position: center 0px;
+   background-position: center 3px;
 }
 .sgem-crypto-ira-cal-1-result-header {
    font-size: 20px;
