@@ -53,7 +53,7 @@ var sgem_pmc_main_contents = '<div class="sgem-pmc-cal-main-id" id="sgem-pmc-cal
 '<div class="sgem-pmc-flex-container">'+
 '<div class="sgem-pmc-form-group sgem-pmc-form-flex sgem-pmc-currency-holder"><label>Current savings </label>'+
 '<input type="text"class="inputmove inputnumber" id="sgem_pmc_current_savings" value="30,000" min="0" max="10000000" onkeypress="return isNumber(event)" /> <span class="sgem-pmc-err-msg-income"></span>'+
-'</div><div class="sgem-pmc-form-group sgem-pmc-form-flex"></div></div>'+
+'</div></div>'+
 '<details class="sgem-pmc-input-more-details" open><summary><div><h3 class="sgem-pmc-collapsible-summary-title">Advanced</h3> </div></summary>'+
 '<div class="collapsible-content"><div class="sgem-pmc-flex-container"><div class="sgem-pmc-form-group sgem-pmc-form-flex sgem-pmc-midtext">Percentage of current savings allocated for precious metal investments</div></div>'+                   
 '<span class="sgem-pmc-err-msg-ftallonew"></span><div class="sgem-pmc-flex-container"><div class="sgem-pmc-form-group sgem-pmc-form-flex sgem-pmc-full-flex">'+                
