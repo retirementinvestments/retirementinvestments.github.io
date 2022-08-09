@@ -717,6 +717,9 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
    margin-top: 25px;
 }
 
+.sgem-crypto-ira-cal-1::-webkit-scrollbar {
+    width: 0px;
+}
 
 @media (max-width:1121px) {
    .sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex .sgem-crypto-ira-current-allocation, .sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex .sgem-crypto-ira-future-allocation, .sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex .sgem-crypto-ira-my-life-expectancy {
