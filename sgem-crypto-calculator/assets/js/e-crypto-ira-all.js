@@ -1059,7 +1059,7 @@ $('#sgem_crypto_ira_annual_return,#sgem_crypto_ira_current_allocation,#sgem_cryp
             $('.sgem-crypto-ira-cal-right').removeClass('sgem-crypto-ira-cal-right-add-class');
         }
 
-        if ($('.sgem-crypto-ira-main-id').width() < 650) {
+        if ($('.sgem-crypto-ira-cal-main-id').width() < 650) {
             $('.sgem-crypto-ira-cal-wrapper').addClass('sgem-crypto-ira-wrapper-add-mobile');
         }
         else {
@@ -1078,7 +1078,7 @@ $('#sgem_crypto_ira_annual_return,#sgem_crypto_ira_current_allocation,#sgem_cryp
         }).trigger('resize');
 
         $(window).on('resize', function() {
-           if ($('.sgem-crypto-ira-main-id').width() < 650) {
+           if ($('.sgem-crypto-ira-cal-main-id').width() < 650) {
             $('.sgem-crypto-ira-cal-wrapper').addClass('sgem-crypto-ira-wrapper-add-mobile');
        }
        else {
