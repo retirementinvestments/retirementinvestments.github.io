@@ -194,7 +194,7 @@
     height: 24px;
     display: inline-block;
     background-repeat: no-repeat;
-    background-position: center 0px;
+    background-position: center -3px;
     background-size: 25px;
     background-image: url("../images/caret-down-filled.svg");
 }
@@ -202,7 +202,7 @@
     -moz-transform: rotate(-180deg);
     -webkit-transform: rotate(-180deg);
     transform: rotate(-180deg);
-    background-position: center 0px;
+    background-position: center 3px;
 }
 .sgem-pmc-cal-1-result-header {
     font-size: 20px;
