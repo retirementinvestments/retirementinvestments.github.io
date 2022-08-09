@@ -842,6 +842,9 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
    
    .sgem-crypto-ira-cal-left {
          width: 33%;
+         height: 700px;
+         overflow: hidden;
+         overflow-y: scroll;
    }
    .sgem-crypto-ira-cal-right {
          width: 67%;
