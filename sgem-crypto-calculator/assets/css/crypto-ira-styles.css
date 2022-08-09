@@ -926,6 +926,14 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
 
 
 @media (max-width: 480px) {
+   .sgem-crypto-ira-chartCard {
+       padding-bottom: 115px;
+   }
+   .sgem-crypto-ira-legendbox {
+      position: absolute;
+      top: 285px;
+   }
+   
    .sgem-crypto-ira-copy-option-panel {
        padding: 0px 25px;
    }
@@ -1063,7 +1071,12 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
        padding: 0 10px;
    }
 }
-
+@media (max-width: 400px) {
+   .sgem-crypto-ira-legendbox {
+      position: absolute;
+      top: 308px;
+   }
+}
 
 
 /* new eqcss */
