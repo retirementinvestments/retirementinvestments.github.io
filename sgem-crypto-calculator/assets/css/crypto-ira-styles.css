@@ -749,7 +749,7 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
     overflow: hidden;
     overflow-y: scroll;
 }
-.sgem-crypto-ira-form.sgem-crypto-ira-cal-1::-webkit-scrollbar {
+..sgem-crypto-ira-cal-left::-webkit-scrollbar {
     width: 0px !important;
 }
 .sgem-crypto-ira-cal-left-add-class .sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex .sgem-crypto-ira-future-allocation {
