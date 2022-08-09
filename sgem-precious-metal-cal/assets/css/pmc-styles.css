@@ -743,6 +743,11 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
 .sgem-pmc-cal-left-add-class .sgem-pmc-midtext {
     font-size: 0.8em;
 }
+.sgem-pmc-cal-left-add-class .sgem-pmc-info-tooltip {
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+}
 
 .sgem-pmc-cal-right-add-class .sgem-pmc-staticvalue-text {
     font-size: 0.875em;
