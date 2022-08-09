@@ -863,7 +863,7 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
        padding: 30px 0px 30px 15px;
        overflow: none;
    }
-   .sgem-crypto-ira-cal-1 input[type="text"] {
+   .sgem-crypto-ira-cal-wrapper .sgem-crypto-ira-cal-1 .sgem-crypto-ira-form-flex .sgem-crypto-ira-cal-1 input[type="text"] {
        width: 100%;
    }
    
