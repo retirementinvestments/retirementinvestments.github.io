@@ -778,9 +778,6 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
     height: 15px;
     line-height: 15px;
 }
-.sgem-pmc-cal-wrapper-add-mobile .sgem-pmc-legend-item {
-    padding-bottom: 0;
-}
 .sgem-pmc-cal-wrapper-add-mobile .sgem-pmc-cal-left-add-class {
     width: 100%;
     padding: 0 0 0 10px;
@@ -909,6 +906,9 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
         left: 13px;
         align-items: flex-start;
         align-content: flex-start;
+    }
+    .sgem-pmc-legend-item {
+        padding-bottom: 0;
     }
     .sgem-pmc-chartCard {
         padding-bottom: 140px;
