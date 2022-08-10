@@ -735,6 +735,12 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
     font-size: 11px;
 }
 
+.sgem-crypto-ira-form-flex span {
+    color: #ff5964;
+    font-weight: 300;
+    font-size: 13px;
+}
+
 /* add class styles */
 .sgem-crypto-ira-cal-left-add-class .sgem-crypto-info-tooltip {
     width: 15px;
