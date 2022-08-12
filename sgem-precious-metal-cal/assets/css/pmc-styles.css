@@ -520,7 +520,7 @@
     padding-right: 6px;
 }
 .sgem-pmc-value-text {
-    font-size: 32px;
+    font-size: 42px;
     padding-top: 16px;
     padding-bottom: 30px;
     color: #002340;
@@ -565,7 +565,7 @@
     width: 1px !important;
 }
 .sgem-pmc-staticvalue-text {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 500;
 }
 .sgem-pmc-cal-1 .sgem-pmc-flex-container .sgem-pmc-switchbox {
