@@ -29,3 +29,145 @@ function(a){a.stopPropagation();a.preventDefault();return!1});m.hover(function()
 x();"bottom"===a.start?(c.css({top:b.outerHeight()-c.outerHeight()}),n(0,!0)):"top"!==a.start&&(n(e(a.start).position().top,null,!0),a.alwaysVisible||c.hide());window.addEventListener?(this.addEventListener("DOMMouseScroll",v,!1),this.addEventListener("mousewheel",v,!1)):document.attachEvent("onmousewheel",v)}});return this}});e.fn.extend({slimscroll:e.fn.slimScroll})})(jQuery);
 
 
+var sgem_pmc_main_contents = '<div class="sgem-roth-ira-cal-main-id">'+
+   '<div class="sgem-roth-ira-cal-wrapper">'+
+      '<div class="sgem-roth-ira-cal-left">'+
+         '<div class="sgem-roth-ira-form sgem-roth-ira-cal-1">'+
+            '<div class="sgem-roth-ira-flex-container">'+
+               '<div class="sgem-roth-ira-form-group sgem-roth-ira-form-flex sgem-roth-ira-years-holder">'+
+                  '<label>Current age</label>'+
+                  '<input type="text" id="sgem_roth_ira_age" value="35" min="0" max="150" onkeypress="return isNumber(event)"/>'+
+                  '<span class="sgem_roth_ira_err_style sgem_roth_ira_err_age" ></span> '+  
+               '</div>'+
+               '<div class="sgem-roth-ira-form-group sgem-roth-ira-form-flex sgem-roth-ira-years-holder">'+
+                  '<label>Retirement age</label>'+
+                  '<input type="text" id="sgem_roth_ira_retirement_age" value="67" min="0" max="150" onkeypress="return isNumber(event)"/>   '+   
+                  '<span class="sgem_roth_ira_err_style sgem_roth_ira_err_retirement_age"></span>'+
+               '</div>'+
+            '</div>'+
+            '<div class="sgem-roth-ira-flex-container">'+
+               '<div class="sgem-roth-ira-form-group sgem-roth-ira-form-flex sgem-roth-ira-currency-holder">'+
+                  '<label>Modified Adjusted Gross Income (MAGI) <span class="sgem-roth-ira-tooltip tooltip" data-tippy-content="A limit would be imposed on maximum individual income based on the individual’s tax filing status">?</span></label> '+
+                  '<input type="text"class="inputmove inputnumber sgem-roth-ira-basic-full-width" id="sgem_roth_ira_income_before_taxes" value="45,000" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
+                  '<span class="sgem_roth_ira_err_style" id="sgem_roth_ira_err_my_income_before_taxes"></span>'+
+               '</div>'+
+            '</div>'+
+            '<div class="sgem-roth-ira-flex-container">'+
+               '<div class="sgem-roth-ira-form-group sgem-roth-ira-form-flex sgem-roth-ira-currency-holder">'+
+                  '<label>Current balance </label>'+
+                  '<input type="text" class="inputmove inputnumber"  id="sgem_roth_ira_current_balance" value="30,000" min="0" max="50000000" onkeypress="return isNumber(event)"/>'+
+                  '<span class="sgem_roth_ira_err_style" id="sgem_roth_ira_err_current_roth_ira_balance"></span>'+
+               '</div>'+
+               '<div class="sgem-roth-ira-form-group sgem-roth-ira-form-flex">'+
+                  '<label for="filing-status">Filing status </label>  '+
+                  '<select id="sgem_roth_ira_filing_status" class="sgem-roth-ira-drop-selection" name="filing-status" onkeypress="return isNumber(event)">'+
+                    '<option value="0">Select</option>'+
+                     '<option value="1">Single / head of household</option>'+
+                     '<option value="2">married, filing jointly</option>'+
+                     '<option value="3">married, filing separately</option>'+
+                  '</select>'+
+                 '<span class="sgem_roth_ira_err_style" id="sgem_roth_ira_err_filling"></span>'+
+               '</div>'+
+               
+            '</div>'+
+            '<details class="sgem-roth-ira-input-more-details" open>'+
+               '<summary>'+
+                  '<div>'+
+                     '<h3 class="sgem-roth-ira-collapsible-summary-title">Basic</h3>'+
+                  '</div>'+
+               '</summary>'+
+               '<div class="collapsible-content">'+
+                  '<div class="sgem-roth-ira-flex-container">'+
+                     '<div class="sgem-roth-ira-form-group sgem-roth-ira-form-flex sgem-roth-ira-currency-holder">'+
+                        '<label>Annual contribution <span class="sgem-roth-ira-tooltip tooltip" data-tippy-content="You can contribute upto $6,000 in 2022">?</span></label> '+
+                        '<input type="text" class="sgem-roth-ira-basic-full-width" id="sgem_roth_ira_annual_contribution" class="inputnumber" value="6,000" min="0" max="50000000" onkeypress="return isNumber(event)"/>'+
+                        '<span class="sgem_roth_ira_err_style" id="sgem_roth_ira_err_annual"></span>'+
+                     '</div>'+
+                  '</div>'+
+                  '<div class="sgem-roth-ira-flex-container">'+
+                     '<div class="sgem-roth-ira-form-group sgem-roth-ira-form-flex">'+
+                        '<label>Expected rate of return <span class="sgem-roth-ira-tooltip tooltip" data-tippy-content="Expected Average annual rturn from your annual IRA investments.">?</span></label>'+
+                        '<input type="text" class="sgem-roth-ira-basic-full-width" id="sgem_roth_ira_rate_of_return" class="inputnumber" value="6%" min="0" max="100" onkeypress="return isNumber(event)"/>'+
+                        '<span class="sgem_roth_ira_err_style" id="sgem_roth_ira_err_rate_of_return"></span>'+
+                     '</div>'+
+                  '</div>'+
+               '</div>'+
+            '</details>'+
+            '<details class="sgem-roth-ira-input-more-details" open>'+
+               '<summary>'+
+                  '<div>'+
+                     '<h3 class="sgem-roth-ira-collapsible-summary-title">Advanced</h3>'+
+                  '</div>'+
+               '</summary>'+
+               '<div class="collapsible-content">'+
+                  '<div class="sgem-roth-ira-flex-container">'+
+                     '<div class="sgem-roth-ira-form-group sgem-roth-ira-form-flex sgem-roth-ira-currency-holder">'+
+                        '<label>Catch-up contribution <span class="sgem-roth-ira-tooltip tooltip" data-tippy-content="You get an additional catch-up contribution of up to $1,000 per year, if you are 50 or older">?</span></label>'+
+                        '<input type="text" id="sgem_roth_ira_catchup_contribution" class="inputnumber sgem-roth-ira-basic-full-width" value="1,000" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
+                        '<span class="sgem_roth_ira_err_style" id="sgem_roth_ira_err_catchup_contribution"></span>'+
+                     '</div>'+
+                  '</div>'+
+               '</div>'+
+            '</details>'+
+            '<span class="sgem-roth-ira-err-msg"></span>'+
+         '</div>'+
+      '</div>'+
+      '<div class="sgem-roth-ira-cal-right">'+
+         '<div class="sgem-roth-ira-cal-1-result-wrapper">'+
+            '<div class="sgem-roth-ira-cal-1-result-header">'+
+                '<div class="sgem-roth-ira-header-title-box">'+
+                  '<span class="sgem-roth-ira-balance-retirement sgem-roth-ira-for-mob">ROTH IRA BALANCE AT RETIREMENT </span>'+
+                  '<span id="sgem_roth_ira_balance_text" class="sgem-roth-ira-balance-text">$2M</span> <span class="sgem-roth-ira-balance-retirement sgem-roth-ira-for-desk">ROTH IRA BALANCE AT RETIREMENT </span>'+
+                '</div>'+
+               '<div class="sgem-roth-ira-legendbox">'+
+                  '<div class="sgem-roth-ira-legend-item">'+
+                     '<button id="sgem_roth_ira_contribution" onClick="toggleData(0)" class="sgem-roth-ira-contribution"></button> '+
+                     '<div id="sgem_roth_ira_contribution_te" onClick="toggleData(0)" class="sgem-roth-ira-contribution-te"></div>'+
+                  '</div>'+
+                  '<div class="sgem-roth-ira-legend-item">'+
+                     '<button id="sgem_roth_ira_tax_savings" onClick="toggleData(1)" class="sgem-roth-ira-tax-savings"></button>'+
+                     '<div id="sgem_roth_ira_tax_savings_te" onClick="toggleData(1)" class="sgem-roth-ira-tax-savings-te"></div>'+
+                  '</div>'+
+               '</div>'+
+            '</div>'+
+            '<div class="sgem-roth-ira-chartCard">'+
+               '<div class="chartBox">'+
+                  '<canvas id="myChart"></canvas>'+
+               '</div>'+
+            '</div>'+
+            '<div class="sgem-roth-ira-flex-container sgem-roth-ira-column2">'+
+               '<div class="sgem-roth-ira-form-group sgem-roth-ira-form-flex">'+
+                  '<span class="futuretext sgem-result-value">YOU WILL NEED</span> '+
+                  '<div id="futureV" class="sgem-roth-ira-result-label">$<span id="sgem_you_will_need">6,650/mo</span>'+
+                  '</div>'+
+                  '<span class="futuretext sgem-roth-ira-result-value">in retirement</span>'+
+               '</div>'+
+               '<div class="sgem-roth-ira-form-group sgem-roth-ira-form-flex ">'+
+                  '<span class="futuretext2 sgem-result-value">IRA CONTRIBUTION</span>'+
+                  '<div id="futureV2" class="sgem-roth-ira-result-label">$<span id="sgem_you_ira_ira_contribution">262K</span>'+
+                  '</div>'+
+                  '<span class="futuretext2 sgem-roth-ira-result-value"></span>'+
+               '</div>'+
+            '</div>'+
+            '<div class="sgem-roth-ira-cal-1-result-footer">'+
+               '<div class="sgem-roth-ira-content">A Roth IRA is a great way to save for retirement beyond the 401(k). It allows tax-free growth on your investment if you make less than $139K ($206K if you file jointly). Grow your money tax-free today!</div>'+
+               '<div class="sgem-roth-ira-buttonGet">'+
+                  '<a href="https://retirementinvestments.com/bettermentroth" class="sgem-roth-ira-getStart">GET STARTED'+
+                  '</a>'+
+               '</div>'+
+            '</div>'+
+            '<details class="sgem-roth-ira-details-disclaimer" >'+
+              '<summary>'+
+                '<div class="sgem-roth-ira-collapsible-summary-disclaimer">'+
+                  '<span class="sgem-roth-ira-disclaimer">Disclaimer</span>'+
+                '</div>'+
+              '</summary>'+
+              '<div class="sgem-roth-ira-collapsible-text-disclaimer">This material is provided for general and educational purposes only; it is not intended to provide legal, tax or investment advice.'+
+              '</div>'+
+            '</details>'+
+         '</div>'+
+      '</div>'+
+   '</div>'+
+'</div>'+
+
+sgem_pmc_main_contents += '</div>'; 
