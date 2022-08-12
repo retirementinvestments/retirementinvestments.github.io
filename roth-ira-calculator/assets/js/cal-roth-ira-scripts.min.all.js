@@ -170,7 +170,7 @@ var sgem_pmc_main_contents = '<div class="sgem-roth-ira-cal-main-id">'+
    '</div>'+
 '</div>'+
 
-sgem_pmc_main_contents += '</div>'; 
+sgem_pmc_main_contents += '</div>';
 
 
 var data_ira_yaxis =  JSON.parse(localStorage.getItem('ira_y_axis')),
