@@ -915,6 +915,10 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
     .sgem-pmc-cal-1 .sgem-pmc-flex-container .sgem-pmc-form-flex { 
         padding-right: 15px !important;
     }
+    .sgem-pmc-cal-wrapper-add-mobile .sgem-pmc-value-label {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
 
 
