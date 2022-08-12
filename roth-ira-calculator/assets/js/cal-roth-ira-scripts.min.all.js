@@ -896,13 +896,11 @@ $('#sgem_roth_ira_rate_of_return').on('keyup', function() {
 * Tool Tip
 */
 
-tippy('[data-tippy-content]', {  
-        arrow: true, 
-        theme: 'light-border',
-        trigger: 'click',
-      }); 
-
-
+tippy('.sgem-roth-ira-tooltip', {  
+	arrow: true, 
+	theme: 'light-border',
+	trigger: 'click',
+ });  
 // 
 
 function roth_update_chart(){
