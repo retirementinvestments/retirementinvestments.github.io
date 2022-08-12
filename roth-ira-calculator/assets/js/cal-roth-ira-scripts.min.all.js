@@ -899,7 +899,7 @@ $('#sgem_roth_ira_rate_of_return').on('keyup', function() {
 tippy('.sgem-roth-ira-tooltip', {  
 	arrow: true, 
 	theme: 'light-border',
-	trigger: 'click',
+	trigger: 'click',boundary: 'viewport',
  });  
 // 
 
