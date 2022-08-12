@@ -183,7 +183,7 @@
 	background-repeat: no-repeat;
 	background-position: center -5px;
 	background-size: 25px;
-	background-image: url('/wp-content/plugins/sgem-roth-ira-calculator/assets/images/drop-down-arrow-roth-ira.svg');
+	background-image: url('../images/caret-down-filled.svg');
 }
 .sgem-roth-ira-cal-1 details[open] > summary::after {
 	-moz-transform: rotate(-180deg);
@@ -199,7 +199,7 @@
     background-repeat: no-repeat;
     background-position: center -2px;
     background-size: 25px;
-    background-image: url(../images/drop-down-arrow-roth-ira.svg);
+    background-image: url('../images/caret-down-filled.svg');
     margin-top: 5px;
 }
 .sgem-roth-ira-cal-main-id details.sgem-roth-ira-details-disclaimer[open] > summary::after {
