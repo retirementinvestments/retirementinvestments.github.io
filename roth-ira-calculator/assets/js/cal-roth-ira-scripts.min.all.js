@@ -29,7 +29,7 @@ function(a){a.stopPropagation();a.preventDefault();return!1});m.hover(function()
 x();"bottom"===a.start?(c.css({top:b.outerHeight()-c.outerHeight()}),n(0,!0)):"top"!==a.start&&(n(e(a.start).position().top,null,!0),a.alwaysVisible||c.hide());window.addEventListener?(this.addEventListener("DOMMouseScroll",v,!1),this.addEventListener("mousewheel",v,!1)):document.attachEvent("onmousewheel",v)}});return this}});e.fn.extend({slimscroll:e.fn.slimScroll})})(jQuery);
 
 
-var sgem_pmc_main_contents = '<div class="sgem-roth-ira-cal-main-id">'+
+var sgem_roth_ira_main_contents = '<div class="sgem-roth-ira-cal-main-id">'+
    '<div class="sgem-roth-ira-cal-wrapper">'+
       '<div class="sgem-roth-ira-cal-left">'+
          '<div class="sgem-roth-ira-form sgem-roth-ira-cal-1">'+
@@ -170,7 +170,7 @@ var sgem_pmc_main_contents = '<div class="sgem-roth-ira-cal-main-id">'+
    '</div>'+
 '</div>'+
 
-sgem_pmc_main_contents += '</div>';
+sgem_roth_ira_main_contents += '</div>';
 
 
 var data_ira_yaxis =  JSON.parse(localStorage.getItem('ira_y_axis')),
