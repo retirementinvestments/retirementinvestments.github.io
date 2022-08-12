@@ -223,7 +223,7 @@ background-color: #f3f3f3;
    font-size: 20px;
    color: #000;
    margin-bottom: 16px;
-   display: flex;
+   display: block;
    justify-content: space-between;
    align-items: flex-start;
 }
@@ -535,7 +535,7 @@ background-color: #f3f3f3;
    padding-right: 6px;
 }
 .sgem-crypto-ira-value-text {
-   font-size: 32px;
+   font-size: 42px;
    padding-top: 16px;
    padding-bottom: 30px;
    color: #002340;
@@ -551,18 +551,20 @@ background-color: #f3f3f3;
    padding-bottom: 40px;
 }
 .sgem-crypto-ira-legendbox {
-   width: auto;
-   display: flex;
-   flex-direction: column;
-   flex-wrap: wrap;
-   align-content: flex-end;
-   font-size: 14px;
+    width: auto;
+    display: flex;
+    flex-direction: revert;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    font-size: 14px;
+    padding-left: 50px;
 }
 .sgem-crypto-ira-legend-item {
    display: flex;
    cursor: pointer;
    align-items: center;
    padding-bottom: 8px;
+   padding-right: 20px;
 }
 .sgem-crypto-ira-contribution,
 .sgem-crypto-ira-investment,
@@ -578,7 +580,7 @@ background-color: #f3f3f3;
    width: 1px !important;
 }
 .sgem-crypto-ira-staticvalue-text {
-   font-size: 16px;
+   font-size: 20px;
    font-weight: 500;
 }
 .sgem-crypto-ira-cal-1 .sgem-crypto-ira-flex-container .sgem-crypto-ira-switchbox {
@@ -742,6 +744,11 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
 }
 .sgem-crypto-ira-form-flex .sgem-crypto-info-tooltip {
     color: #000;
+}
+
+/* new title style */
+.sgem-crypto-ira-value-label {
+    align-items: center;
 }
 
 /* add class styles */
