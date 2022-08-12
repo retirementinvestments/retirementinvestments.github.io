@@ -176,8 +176,7 @@ var sgem_roth_ira_main_contents = '<div class="sgem-roth-ira-cal-main-id">'+
   '<div class="sgem-roth-ira-copy-code-wrap">'+
     '<button class="sgem-roth-ira-copy-code" id="sgem-roth-ira-copy-code" onclick="sgem_roth_ira_copyText(event)">Get Calculator</button>'+
   '</div>'+
-'</div>'+
-sgem_roth_ira_main_contents += '</div>';
+'</div></div>';
 
  document.getElementById('sgem-roth-ira-cal').innerHTML = sgem_roth_ira_main_contents;
  
