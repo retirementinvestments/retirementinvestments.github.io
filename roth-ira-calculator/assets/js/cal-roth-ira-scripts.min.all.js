@@ -373,7 +373,7 @@ function sgem_rothira_ConvertToInternationalCurrencySystemRound(labelValue) {
 
 }
 
-function sgem_pmc_ConvertToInternationalCurrencySystem(labelValue) {
+function sgem_roth_ira_ConvertToInternationalCurrencySystem(labelValue) {
 
     // Nine Zeroes for Billions
     return Math.abs(Number(labelValue)) >= 1.0e+9
@@ -453,7 +453,7 @@ if (isNaN(monthly_retirement_spending) || monthly_retirement_spending < 1){
 
       }else{
 
-        $('#sgem_you_will_need').text(sgem_pmc_ConvertToInternationalCurrencySystem(monthly_retirement_spending)+'/mo'); 
+        $('#sgem_you_will_need').text(sgem_roth_ira_ConvertToInternationalCurrencySystem(monthly_retirement_spending)+'/mo'); 
       }
 
 //Total Contribution
@@ -471,7 +471,7 @@ if (isNaN(total_contribution) || total_contribution < 1){
 
       }else{
 
-        $('#sgem_you_ira_ira_contribution').text(sgem_pmc_ConvertToInternationalCurrencySystem(total_contribution)); 
+        $('#sgem_you_ira_ira_contribution').text(sgem_roth_ira_ConvertToInternationalCurrencySystem(total_contribution)); 
       }
 
 //Value at Retirement
@@ -502,7 +502,7 @@ if (isNaN(value_at_retirement) || value_at_retirement < 1){
 
       }else{
 
-        $('#sgem_roth_ira_balance_text').text('$' + sgem_pmc_ConvertToInternationalCurrencySystem(value_at_retirement)); 
+        $('#sgem_roth_ira_balance_text').text('$' + sgem_roth_ira_ConvertToInternationalCurrencySystem(value_at_retirement)); 
       }
 
 //console.log(value_at_retirement);
