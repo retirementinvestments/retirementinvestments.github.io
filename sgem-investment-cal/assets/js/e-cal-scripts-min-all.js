@@ -25,16 +25,16 @@ var sgem_main_contents = '<div class="sgem-cal-wrapper">' +
 		'<input type="text" class="inputmove inputnumber sgem-reti-cal-input-width"  id="sgem_current_savings" value="30,000" min="0" max="50000000" onkeypress="return isNumber(event)"/>' +
 			'<span class="sgem-err-msg-current"></span></div></div>'+
 	'<div class="sgem-flex-container">'+
-	'<div class="sgem-form-group sgem-form-flex sgem-currency-holder">'+
+	'<div class="sgem-form-group sgem-form-flex sgem-currency-holder sgem-reti-cal-max-width-style-right">'+
 	'<label>Every month I save <span class="sgem-tooltip tooltip" data-tippy-content="This is the amount invested each month. We recommend to start investing 10% of your paycheck and gradually build it to 15% or more. Include the amount your employee matches, if any.">?</span></label>'+
 	'<input type="text" class="inputmove inputnumber sgem-reti-cal-input-width"  id="sgem_monthly_saving" value="500" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
 	'<span class="sgem-percentage-note">10% of my monthly income</span></div>'+
-	'<div class="sgem-form-group sgem-form-flex"> </div></div>'+
+	'</div>'+
 '<details class="sgem-input-more-details"><summary><div>'+
 '<h3 class="sgem-collapsible-summary-title">Optional</h3></div></summary>'+
 '<div class="collapsible-content">'+
 	'<div class="sgem-flex-container">'+
-	'<div class="sgem-form-group sgem-form-flex sgem-currency-holder">'+
+	'<div class="sgem-form-group sgem-form-flex sgem-currency-holder ">'+
 	'<label>Monthly spending <span class="sgem-tooltip tooltip" data-tippy-content="Living on 70% of current income (savings, investments, social security, pension) would be the rule of thumb">?</span></label>'+
 	'<input type="text" id="sgem_monthly_spending" class="inputnumber sgem-reti-cal-input-width" value="2,550" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
 '<span class="sgem-percentage-note">70% of pre-retirement income</span></div>'+
@@ -340,27 +340,33 @@ if( location.hostname == "messy-saxophone.flywheelsites.com") {
  //*********************************************	
 		
 		if ($('#sgem-retirement-cal').width() < 650) {
-	      $('.sgem-cal-wrapper').addClass('sgem-reti-cal-width-add');
-	    	$('.sgem-reti-cal-input-width').addClass('sgem-reti-cal-max-width-style-add');
-	    	$('.sgem-cal-left').addClass('sgem-cal-left-add-class').addClass('sgem-reti-cal-scroll-height');
-	    	$('.sgem-reti-cal-input-width').addClass('sgem-reti-cal-input-width-mobile');
-	  }
+	      		$('.sgem-cal-wrapper').addClass('sgem-reti-cal-width-add');
+	    		$('.sgem-reti-cal-input-width').addClass('sgem-reti-cal-max-width-style-add');
+	    		$('.sgem-cal-left').addClass('sgem-cal-left-add-class').addClass('sgem-reti-cal-scroll-height');
+	    		$('.sgem-reti-cal-input-width').addClass('sgem-reti-cal-input-width-mobile');
+	  	}
 		else {
 			$('.sgem-cal-wrapper').removeClass('sgem-reti-cal-width-add');
-	    $('.sgem-reti-cal-input-width').removeClass('sgem-reti-cal-max-width-style-add');
-	    $('.sgem-cal-left').removeClass('sgem-cal-left-add-class').removeClass('sgem-reti-cal-scroll-height');
-	    $('.sgem-reti-cal-input-width').removeClass('sgem-reti-cal-input-width-mobile');
+		    	$('.sgem-reti-cal-input-width').removeClass('sgem-reti-cal-max-width-style-add');
+		    	$('.sgem-cal-left').removeClass('sgem-cal-left-add-class').removeClass('sgem-reti-cal-scroll-height');
+		    	$('.sgem-reti-cal-input-width').removeClass('sgem-reti-cal-input-width-mobile');
 		}
 
-		if ($('#sgem-retirement-cal').width() < 960) {
-	    	$('.sgem-cal-left').addClass('sgem-cal-left-add-class');
-	    	$('.sgem-cal-right').addClass('sgem-cal-right-add-class');
-	  }
+		if ($('#sgem-retirement-cal').width() < 1024) {
+			$('.sgem-cal-left').addClass('sgem-cal-left-add-class');
+			$('.sgem-cal-right').addClass('sgem-cal-right-add-class');
+		}
 		else {
-	    $('.sgem-cal-left').removeClass('sgem-cal-left-add-class');
-	    $('.sgem-cal-right').removeClass('sgem-cal-right-add-class');
+		    	$('.sgem-cal-left').removeClass('sgem-cal-left-add-class');
+		    	$('.sgem-cal-right').removeClass('sgem-cal-right-add-class');
 		}
 		
+		if ($('#sgem-retirement-cal').width() < 640) {
+	    		$('.sgem-cal-wrapper').addClass('sgem-cal-wrapper-add-mobile');
+	  	}
+		else {
+	    		$('.sgem-cal-wrapper').removeClass('sgem-cal-wrapper-add-mobile');
+		}
 
 	 	
 	$(window).on('resize', function() {
@@ -381,13 +387,22 @@ if( location.hostname == "messy-saxophone.flywheelsites.com") {
 
 	$(window).on('resize', function() {
 
-		if ($('#sgem-retirement-cal').width() < 960) {
+		if ($('#sgem-retirement-cal').width() < 1024) {
 	    	$('.sgem-cal-left').addClass('sgem-cal-left-add-class');
 	    	$('.sgem-cal-right').addClass('sgem-cal-right-add-class');
 	    }
 		else {
 	    $('.sgem-cal-left').removeClass('sgem-cal-left-add-class');
 	    $('.sgem-cal-right').removeClass('sgem-cal-right-add-class');
+		}
+	}).trigger('resize');
+	
+	$(window).on('resize', function() {
+		if ($('#sgem-retirement-cal').width() < 640) {
+	    		$('.sgem-cal-wrapper').addClass('sgem-cal-wrapper-add-mobile');
+	  	}
+		else {
+	    		$('.sgem-cal-wrapper').removeClass('sgem-cal-wrapper-add-mobile');
 		}
 	}).trigger('resize');
 	

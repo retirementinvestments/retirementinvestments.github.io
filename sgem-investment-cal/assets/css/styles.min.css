@@ -549,6 +549,7 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
 }
 .sgem-cal-copy-option-panel {
     margin-top: 25px;
+    padding: 15px;
 }
 
 /* styles get cal section */
@@ -604,10 +605,10 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
 }
 
 .sgem-cal-left-add-class {
-	width: 30%;
+	width: 33%;
 }
 .sgem-cal-right-add-class {
-	width: 70%;
+	width: 67%;
 }
 
 .sgem-cal-left-add-class .sgem-cal-1 .sgem-flex-container {
@@ -630,6 +631,9 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
 }
 .sgem-cal-left-add-class .sgem-cal-1 input[type="text"] {
 	width: 96%;
+	font-size: 0.8em;
+	height: 45px;
+	padding: 10px 16px;
 }
 .sgem-cal-left-add-class .sgem-cal-1 input[type="text"].sgem-reti-cal-input-width-mobile {
 	width: 100%;
@@ -644,10 +648,15 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
 	margin: 0;
 }
 .sgem-cal-left-add-class .sgem-collapsible-summary-title {
-    	font-size: 1.25em;
+    	font-size: 1em;
+}
+.sgem-cal-left-add-class .sgem-cal-1 .sgem-form-flex.sgem-years-holder::before {
+	top: 40px;
+	font-size: 0.8em;
 }
 .sgem-cal-left-add-class .sgem-cal-1 .sgem-form-flex.sgem-currency-holder::after {
-	top: 44px;
+	top: 40px;
+    	font-size: 0.8em;
 }
 
 .sgem-cal-right-add-class .sgem-cal-1-result-wrapper .sgem-result-label {
@@ -670,8 +679,40 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
     	font-weight: 500;
 }
 .sgem-cal-right-add-class .sgem-cal-1-result-wrapper .sgem-result-value {
-	font-size: 0.875em;
+	font-size: 0.9em;
 }
+.sgem-cal-right-add-class .sgem-cal-1-result .sgem-result-score-label {
+    font-size: 0.8em;
+    line-height: 1em;
+}
+
+/* below 550px (wrapper width)*/
+.sgem-cal-wrapper-add-mobile .sgem-cal-left.sgem-cal-left-add-class .sgem-cal-1 .sgem-form-group label {
+    	font-size: 0.8em;
+}
+.sgem-cal-wrapper-add-mobile .sgem-cal-left-add-class .sgem-cal-1 input[type="text"] {
+	font-size: 0.8em;
+}
+.sgem-cal-left.sgem-reti-cal-scroll-height .sgem-cal-1 {
+    height: auto;
+    overflow: hidden;
+    overflow-y: unset;
+    scrollbar-width: 0;
+}
+.sgem-cal-wrapper-add-mobile .sgem-cal-left-add-class .sgem-cal-1 .sgem-form-flex.sgem-currency-holder::after {
+	top: 43px;
+}
+
+.sgem-cal-wrapper-add-mobile .sgem-cal-left-add-class .sgem-cal-1 .sgem-flex-container .sgem-form-flex {
+    padding-right: 16px;
+}
+.sgem-cal-wrapper-add-mobile .sgem-cal-left-add-class .sgem-cal-1 .sgem-flex-container .sgem-form-flex.sgem-reti-cal-max-width-style-right {
+    padding-right: 0;
+}
+.sgem-cal-wrapper-add-mobile .sgem-cal-left-add-class .sgem-cal-1 .sgem-flex-container {
+    display: flex;
+}
+
 /* end */
 
 @media (max-width: 1024px) {
@@ -700,7 +741,7 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
 
     .sgem-cal-1 input[type="text"]
     {
-        width: 100% !important;
+        width: 100%;
     }
     .sgem-cal-1 .sgem-flex-container {
         display: block;
@@ -774,6 +815,9 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
         position: relative;
         padding-right: 24px;
     }
+    .sgem-cal-wrapper-add-mobile .sgem-cal-1 .sgem-flex-container .sgem-form-flex:last-child {
+        padding-right: 0;
+    }
 }
 @media (max-width: 480px) {
     .sgem-crypto-copy-option-panel {
@@ -801,7 +845,7 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
         font-size: 14px;
         margin-bottom: 0;
     }
-    .sgem-cal-1 .sgem-flex-container .sgem-form-flex:last-child {
+    .sgem-cal-wrapper-add-mobile .sgem-cal-1 .sgem-flex-container .sgem-form-flex:last-child {
         padding-right: 0;
     }
     .sgem-cal-1-result-wrapper .sgem-result-label {
