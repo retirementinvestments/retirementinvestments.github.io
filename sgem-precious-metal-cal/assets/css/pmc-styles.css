@@ -536,13 +536,14 @@
     padding-bottom: 40px;
 }
 .sgem-pmc-legendbox {
-    width: auto;
+    width: 100%;
     display: inline-flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-content: flex-end;
     font-size: 14px;
-    padding-left: 50px;
+    padding-left: 0;
+    justify-content: center;
 }
 .sgem-pmc-legend-item {
     display: flex;
