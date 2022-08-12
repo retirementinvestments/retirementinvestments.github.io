@@ -68,7 +68,6 @@ var sgem_roth_ira_main_contents = '<div class="sgem-roth-ira-cal-main-id">'+
                   '</select>'+
                  '<span class="sgem_roth_ira_err_style" id="sgem_roth_ira_err_filling"></span>'+
                '</div>'+
-               
             '</div>'+
             '<details class="sgem-roth-ira-input-more-details" open>'+
                '<summary>'+
@@ -169,18 +168,15 @@ var sgem_roth_ira_main_contents = '<div class="sgem-roth-ira-cal-main-id">'+
       '</div>'+
    '</div>'+
 '</div>'+
-
 '<div class="sgem-roth-ira-logo-center">'+
    '<a class="sgem-roth-ira-url-text" href="https://retirementinvestments.com/retirement/roth-ira-calculator/" target="_blank" rel="noopener">Roth IRA Calculator </a>by Retirement investments'+
 '</div>'+
-
 '<div class="sgem-roth-ira-copy-option-panel">'+
   '<h3>Do you want to add this calculator into your website?</h3>'+
   '<div class="sgem-roth-ira-copy-code-wrap">'+
     '<button class="sgem-roth-ira-copy-code" id="sgem-roth-ira-copy-code" onclick="sgem_roth_ira_copyText(event)">Get Calculator</button>'+
   '</div>'+
 '</div>'+
-
 sgem_roth_ira_main_contents += '</div>';
 
  document.getElementById('sgem-roth-ira-cal').innerHTML = sgem_roth_ira_main_contents;
