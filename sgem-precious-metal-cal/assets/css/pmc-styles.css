@@ -919,6 +919,11 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
         flex-direction: column;
         align-items: flex-start;
     }
+    .sgem-pmc-cal-wrapper-add-mobile .sgem-pmc-legendbox {
+         width: 100%;
+         padding: 0;
+         display: block;
+     }
 }
 
 
