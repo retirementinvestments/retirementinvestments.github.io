@@ -542,13 +542,14 @@
     flex-wrap: wrap;
     align-content: flex-end;
     font-size: 14px;
+    padding-left: 50px;
 }
 .sgem-pmc-legend-item {
     display: flex;
     cursor: pointer;
     align-items: center;
     padding-bottom: 8px;
-    padding-right: 15px;
+    padding-right: 20px;
 }
 .sgem-pmc-contribution,
 .sgem-pmc-investment,
