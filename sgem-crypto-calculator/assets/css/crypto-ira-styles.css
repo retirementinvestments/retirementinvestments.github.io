@@ -821,7 +821,7 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
 }
 
 .sgem-crypto-ira-cal-right-add-class .sgem-crypto-ira-legendbox {
-    width: 200px;
+    width: 100%;
 }
 
 /* js add mobile */
@@ -848,7 +848,8 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
     padding-right: 10px;
 }
 .sgem-crypto-ira-wrapper-add-mobile .sgem-crypto-ira-legendbox {
-    width: 210px;
+    width: 100%;
+    padding: 0;
 }
 .sgem-crypto-ira-wrapper-add-mobile .sgem-crypto-ira-cal-left.sgem-crypto-ira-cal-left-add-class {
     height: auto;
