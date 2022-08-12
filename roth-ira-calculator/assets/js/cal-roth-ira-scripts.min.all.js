@@ -172,7 +172,9 @@ var sgem_roth_ira_main_contents = '<div class="sgem-roth-ira-cal-main-id">'+
 
 sgem_roth_ira_main_contents += '</div>';
 
-
+ document.getElementById('sgem-roth-ira-cal').innerHTML = sgem_roth_ira_main_contents;
+ 
+ 
 var data_ira_yaxis =  JSON.parse(localStorage.getItem('ira_y_axis')),
         data_ira_labelx =  JSON.parse(localStorage.getItem('rothira_label_years')),
         data_ira_valueatretirement =  JSON.parse(localStorage.getItem('rothira_valueatretirement')),
@@ -917,11 +919,37 @@ function roth_update_chart(){
 
 
 function toggleData(value){
-const visibilityData = myChart.isDatasetVisible(0);
-if (visibilityData === true ){
-  myChart.hide(value);
+	const visibilityData = myChart.isDatasetVisible(0);
+	if (visibilityData === true ){
+	  myChart.hide(value);
+	}
+	 if (visibilityData === false ){
+	  myChart.show(value);
+	} 
 }
- if (visibilityData === false ){
-  myChart.show(value);
-} 
+
+localStorage.setItem('sgem-roth-ira-cal-copy', '<div id="sgem-roth-ira-cal"></div><script>window.onload = function() {var sgemrothiracl = document.createElement("script");sgemrothiracl.type = "text/javascript";sgemrothiracl.src = "https://retirementinvestments.github.io/roth-ira-calculator/assets/js/cal-roth-ira-scripts.min.js";document.body.appendChild(sgemrothiracl);}</script>'); 
+ 
+function sgem_pcm_copyText(ev){
+  //console.log("hi");
+  let div = document.getElementById('div');
+  let text = localStorage.getItem('sgem-roth-ira-cal-copy');
+  let textArea  = document.createElement('textarea');
+  textArea.width  = "1px"; 
+  textArea.height = "1px";
+  textArea.background =  "transparents" ;
+  textArea.value = text;
+  document.body.append(textArea);
+  textArea.select();
+  document.execCommand('copy');   //No i18n
+  document.body.removeChild(textArea);
+  alert('Code snippted copied to clipboard!');
 }
+
+
+window.addEventListener('load', function() {
+	 
+	let sgemjsx = document.createElement('script');
+	   sgemjsx.setAttribute('src','https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js');
+	   document.body.appendChild(sgemjsx);
+});
