@@ -936,7 +936,7 @@ function toggleData(value){
 
 localStorage.setItem('sgem-roth-ira-cal-copy', '<div id="sgem-roth-ira-cal"></div><script>window.onload = function() {var sgemrothiracl = document.createElement("script");sgemrothiracl.type = "text/javascript";sgemrothiracl.src = "https://retirementinvestments.github.io/roth-ira-calculator/assets/js/cal-roth-ira-scripts.min.js";document.body.appendChild(sgemrothiracl);}</script>'); 
  
-function sgem_pcm_copyText(ev){
+function sgem_roth_ira_copyText(ev){
   //console.log("hi");
   let div = document.getElementById('div');
   let text = localStorage.getItem('sgem-roth-ira-cal-copy');
