@@ -768,6 +768,7 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
 }
 .sgem-pmc-cal-right-add-class .sgem-pmc-value-text {
     font-size: 2em;
+    padding-top: 0;
 }
 .sgem-pmc-cal-left-add-class .sgem-pmc-cal-1 .sgem-pmc-form-flex.sgem-pmc-currency-holder::after,
 .sgem-pmc-cal-left-add-class .sgem-pmc-cal-1 .sgem-pmc-form-flex.sgem-pmc-years-holder::before
