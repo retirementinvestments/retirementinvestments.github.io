@@ -300,10 +300,10 @@ return new Intl.NumberFormat('en-US', {style: 'currency',
           labelTextColor: function(context){
             return myChart.data.datasets.borderColor;
           },
-          beforeLabel: (tooltipItems) => {
-            console.log(tooltipItems);
-            return 'Age: ' + myChart.config.data.datasets[0].target[tooltipItems.dataIndex];
-          }, 
+          // beforeLabel: (tooltipItems) => {
+          //   console.log(tooltipItems);
+          //   return 'Age: ' + myChart.config.data.datasets[0].target[tooltipItems.dataIndex];
+          // }, 
           label: function(context) {
             return context.dataset.labels + ': ' + sgem_rothira_ConvertToInternationalCurrencySystemRoundtooltip(context.dataset.data[context.dataIndex])
           },
