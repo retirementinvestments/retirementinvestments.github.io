@@ -115,8 +115,8 @@ var sgem_roth_ira_main_contents = '<div class="sgem-roth-ira-cal-main-id">'+
          '<div class="sgem-roth-ira-cal-1-result-wrapper">'+
             '<div class="sgem-roth-ira-cal-1-result-header">'+
                 '<div class="sgem-roth-ira-header-title-box">'+
-                  '<span class="sgem-roth-ira-balance-retirement sgem-roth-ira-for-mob">ROTH IRA BALANCE AT RETIREMENT </span>'+
-                  '<span id="sgem_roth_ira_balance_text" class="sgem-roth-ira-balance-text">$2M</span> <span class="sgem-roth-ira-balance-retirement sgem-roth-ira-for-desk">ROTH IRA BALANCE AT RETIREMENT </span>'+
+                  '<span class="sgem-roth-ira-balance-retirement sgem-roth-ira-for-desk">ROTH IRA BALANCE AT RETIREMENT </span>'+
+                  '<span id="sgem_roth_ira_balance_text" class="sgem-roth-ira-balance-text">$2M</span> '+
                 '</div>'+
                '<div class="sgem-roth-ira-legendbox">'+
                   '<div class="sgem-roth-ira-legend-item">'+
