@@ -804,11 +804,11 @@
 		width: auto;
 	}
 	.sgem-roth-ira-cal-left {
-		width: 30%;
+		width: 33%;
 		padding-right: 30px;
 	}
 	.sgem-roth-ira-cal-right {
-		width: 70%;
+		width: 67%;
 	}	
 	.sgem-roth-ira-cal-1 input[type="text"] {
 		width: 100%;
@@ -873,7 +873,7 @@
 
 /* break point */
 @media (max-width: 650px) {
-	/* styles fore below 700px */
+	/* styles fore below 650px */
 	.sgem-roth-ira-cal-main-id .sgem-roth-ira-cal-1 .sgem-roth-ira-flex-container {
 		display: block;
 	}
@@ -908,6 +908,22 @@
 	}
 	.sgem-roth-ira-cal-main-id .sgem-roth-ira-cal-left .sgem-roth-ira-form {
 	    height: auto;
+	}
+
+	.sgem-roth-ira-cal-wrapper {
+		display: block;
+	}
+	.sgem-roth-ira-cal-left {
+	    width: 100%;
+	    padding-right: 0px;
+	}
+	.sgem-roth-ira-cal-main-id .sgem-roth-ira-cal-left .sgem-roth-ira-form {
+	    height: auto;
+	    overflow: hidden;
+	    overflow-y: unset;
+	}
+	.sgem-roth-ira-cal-right {
+	    width: 100%;
 	}
 }
  
