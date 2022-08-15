@@ -855,6 +855,10 @@
     overflow: hidden;
     overflow-y: unset;
 }
+.sgem-roth-ira-wrapper-add-mobile .sgem-roth-ira-cal-left-add-class {
+    padding: 12px;
+    padding-right: 12px;
+}
 
 /* end */
 
