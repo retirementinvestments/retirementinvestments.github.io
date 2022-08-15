@@ -841,6 +841,7 @@
 	    padding: 15px;
 	}
 
+	/* fonts styles for below 650px; */
 	.sgem-roth-ira-cal-1 .sgem-roth-ira-form-group label {
 		font-size: 0.8em;
 	}
@@ -855,6 +856,17 @@
 	}
 	.sgem-roth-ira-cal-1 .sgem-roth-ira-form-flex.sgem-roth-ira-years-holder::before {
 		font-size: 0.8em;
+	}
+	.sgem-roth-ira-tooltip {
+		width: 15px;
+    	height: 15px;
+    	line-height: 15px;
+	}
+	.sgem-roth-ira-cal-1 .sgem-roth-ira-form-flex.sgem-roth-ira-currency-holder::after {
+		font-size: 0.8em;
+	}
+	.sgem-roth-ira-cal-1-result-wrapper .sgem-roth-ira-result-label {
+		font-size: 2em;
 	}
 }
 
