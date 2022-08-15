@@ -816,6 +816,15 @@
 .sgem-roth-ira-cal-left-add-class .sgem-roth-ira-cal-1 .sgem-roth-ira-flex-container .sgem-roth-ira-form-flex {
 	padding-right: 0;
 }
+.sgem-roth-ira-cal-left-add-class .sgem-roth-ira-cal-1 .sgem-roth-ira-flex-container {
+    display: block;
+}
+.sgem-roth-ira-cal-left-add-class .sgem-roth-ira-cal-1 .sgem-roth-ira-form-flex.sgem-roth-ira-years-holder::before {
+	font-size: 0.8em;
+}
+.sgem-roth-ira-cal-left-add-class .sgem-roth-ira-cal-1 .sgem-roth-ira-form-flex.sgem-roth-ira-currency-holder::after {
+	font-size: 0.8em;
+}
 
 /* end */
 
