@@ -787,6 +787,26 @@
 	color: #002340;
 }
 
+/* max width css (add class js) */
+
+.sgem-roth-ira-cal-wrapper .sgem-roth-ira-cal-left-add-class {
+	padding: 12px;
+    padding-right: 20px;
+}
+.sgem-roth-ira-cal-right-add-class .sgem-roth-ira-cal-1-result-wrapper {
+    padding: 20px 20px;
+    position: relative;
+}
+.sgem-roth-ira-cal-left-add-class .sgem-roth-ira-cal-1 .sgem-roth-ira-form-group label {
+	font-size: 0.8em;
+}
+.sgem-roth-ira-cal-left-add-class .sgem-roth-ira-cal-1 input[type="text"] {
+	font-size: 0.8em;
+	height: 45px;
+}
+
+/* end */
+
 @media (max-width:1200px) {
 	.sgem-roth-ira-cal-main-id .sgem-roth-ira-legendbox {
 		width: 100%;
@@ -848,6 +868,7 @@
 	}
 	.sgem-roth-ira-cal-1 input[type="text"] {
 		font-size: 0.8em;
+		height: 45px;
 	}
 	.sgem-roth-ira-balance-text {
 		font-size: 0.875em;
@@ -872,6 +893,7 @@
 	.sgem-roth-ira-cal-1-result-header {
 		text-align: center;
 	}
+	/* end */
 }
 
 /* ******** ipad ************ */
