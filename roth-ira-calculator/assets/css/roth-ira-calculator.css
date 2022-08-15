@@ -232,9 +232,10 @@
 	font-size: 20px;
 	color: #000000;
 	margin-bottom: 32px;
-	  display: flex;
+	display: block;
     justify-content: space-between;
     align-items: flex-end;
+    text-align: center;
 }
 .sgem-roth-ira-cal-1-result-wrapper .sgem-roth-ira-column2 {
 	width: 480px;
