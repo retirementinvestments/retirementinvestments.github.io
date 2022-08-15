@@ -313,10 +313,10 @@ return new Intl.NumberFormat('en-US', {style: 'currency',
           labelTextColor: function(context){
             return myChart.data.datasets.borderColor;
           },
-           beforeLabel: (tooltipItems) => {
+          /* beforeLabel: (tooltipItems) => {
              console.log(tooltipItems);
              return 'Age: ' + myChart.config.data.datasets[0].target[tooltipItems.dataIndex];
-           },  
+           }, */ 
 		 /* afterLabel: function(tooltipItem, data) {
 			  var dataset = data['datasets'][0];
 			  var percent = Math.round((dataset['data'][tooltipItem['index']] / dataset["_meta"][0]['total']) * 100)
@@ -945,7 +945,7 @@ function roth_update_chart(){
 
   myChart.config.data.datasets[0].target = JSON.parse(localStorage.getItem('rothira_c_age'));
 
-  myChart.options.tooltip.context[0].dataIndex = JSON.parse(localStorage.getItem('rothira_c_age'));
+  //myChart.options.tooltip.context[0].dataIndex = JSON.parse(localStorage.getItem('rothira_c_age'));
   
   myChart.update();  
 
