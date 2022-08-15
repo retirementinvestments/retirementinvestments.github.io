@@ -837,6 +837,10 @@
     overflow: hidden;
     overflow-y: scroll;
 }
+.sgem-roth-ira-cal-left-add-class .sgem-roth-ira-collapsible-summary-title {
+	font-size: 0.9em;
+	padding: 0;
+}
 .sgem-roth-ira-cal-1::-webkit-scrollbar {
     width: 0px;
 }
@@ -950,6 +954,10 @@
 	}
 	.sgem-roth-ira-cal-1-result-header {
 		text-align: center;
+	}
+	.sgem-roth-ira-collapsible-summary-title {
+		font-size: 0.9em;
+		padding: 0;
 	}
 	/* end */
 }
