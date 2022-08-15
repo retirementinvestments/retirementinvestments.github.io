@@ -87,13 +87,17 @@
 	font-family: 'DM Sans',Helvetica,Arial,Lucida,sans-serif;
 	margin-bottom: 8px; 
 }
-.sgem-roth-ira-cal-1 input[type="text"] {
+.sgem-roth-ira-cal-main-id .sgem-roth-ira-cal-1 input[type="text"] {
 	font-size: 16px;
 	height: 55px;
 	padding: 17px 16px;
 	width: 200px;
 	color: #002340;
 	border:  1px solid #bbb;
+	background: #ffffff;
+}
+.sgem-roth-ira-cal-main-id .sgem-roth-ira-cal-left select {
+	background: #fff;
 }
 .sgem-roth-ira-cal-left .sgem-roth-ira-cal-1 .sgem-roth-ira-basic-full-width {
 	width: 424px;
