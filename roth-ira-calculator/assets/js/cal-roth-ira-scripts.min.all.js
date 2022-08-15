@@ -404,7 +404,18 @@ function sgem_roth_ira_ConvertToInternationalCurrencySystem(labelValue) {
   sgem_roth_ira_calmin();
  }
  
-
+jQuery(document).ready(function($){
+/*
+if( location.hostname == "messy-saxophone.flywheelsites.com") {
+	$('.sgem-pmc-logo-center').hide(); 
+} else if(location.hostname == "retirementinvestments.com"){
+	$('.sgem-pmc-logo-center').hide(); 	
+} else {
+	$('.sgem-pmc-logo-center').show(); 	
+}
+*/	
+	
+	
 function sgem_roth_ira_calmin() {
 
 var each_year_valueatretirement_array=[];
@@ -903,6 +914,11 @@ tippy('.sgem-roth-ira-tooltip', {
  });  
 // 
 
+}); // DOCUMENT.READY END
+  
+  
+  
+  
 function roth_update_chart(){
   //console.log('pcm_update_chart');
   myChart.data.datasets[0].data = JSON.parse(localStorage.getItem('rothira_tcontribution'));
