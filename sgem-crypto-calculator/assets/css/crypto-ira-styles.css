@@ -130,6 +130,7 @@ background-color: #f3f3f3;
    width: 200px;
    color: #002340;
    border: 1px solid #bbb;
+   background: #fff;
 }
 .sgem-crypto-ira-cal-1 input[type="text"]:focus {
    outline: 0 !important;
