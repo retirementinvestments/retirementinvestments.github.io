@@ -832,6 +832,14 @@
 	height: 45px;
 	width: 100%;
 }
+.sgem-roth-ira-cal-left-add-class .sgem-roth-ira-cal-1 {
+	height: 840px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.sgem-roth-ira-cal-1::-webkit-scrollbar {
+    width: 0px;
+}
 
 /* end */
 
