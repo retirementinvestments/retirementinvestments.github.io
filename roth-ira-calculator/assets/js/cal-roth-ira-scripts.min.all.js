@@ -648,7 +648,10 @@ while(current_age<retirement_age){
 }
 
 localStorage.setItem('rothira_c_age', JSON.stringify(each_year_age_array));
-roth_update_chart();
+//roth_update_chart();
+
+sgem_roth_ira_calmin();
+
 //console.log(each_year_age_array);
 //console.log(each_year_valueatretirement_array);
 //console.log(each_year_iracon_array);
