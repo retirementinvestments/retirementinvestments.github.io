@@ -869,7 +869,7 @@
 		font-size: 2em;
 	}
 	.sgem-roth-ira-cal-1-result-header {
-		text-align: left;
+		text-align: center;
 	}
 }
 
@@ -1100,6 +1100,9 @@
          .sgem-roth-ira-cal-main-id .sgem-roth-ira-cal-left {
                   padding: 0px 4px;
          }
+    .sgem-roth-ira-cal-1-result-header {
+	    text-align: left;
+	}
 }
 @media (max-width: 420px){
 	.sgem-roth-ira-cal-1 .sgem-roth-ira-form-flex.sgem-roth-ira-currency-holder::after {
