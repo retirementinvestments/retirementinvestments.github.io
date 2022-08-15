@@ -327,10 +327,7 @@ return new Intl.NumberFormat('en-US', {style: 'currency',
 };
 
 // render init block
-const myChart = new Chart(
-  document.getElementById('myChart'),
-  config
-); 
+const myChart = new Chart( ctx, config); 
 
 document.getElementById('sgem_roth_ira_contribution').style.backgroundColor = myChart.data.datasets[0].backgroundColor;
 document.getElementById('sgem_roth_ira_tax_savings').style.backgroundColor = myChart.data.datasets[1].backgroundColor;
