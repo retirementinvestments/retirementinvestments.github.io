@@ -648,17 +648,13 @@ while(current_age<retirement_age){
 }
 
 localStorage.setItem('rothira_c_age', JSON.stringify(each_year_age_array));
-//roth_update_chart();
-
-sgem_roth_ira_calmin();
-
+roth_update_chart();
 //console.log(each_year_age_array);
 //console.log(each_year_valueatretirement_array);
-//console.log(each_year_iracon_array);
-
-
+//console.log(each_year_iracon_array); 
 }
 
+sgem_roth_ira_calmin();
 
 if($('#sgem_roth_ira_age,#sgem_roth_ira_retirement_age,#sgem_roth_ira_income_before_taxes,#sgem_roth_ira_current_balance,#sgem_roth_ira_annual_contribution,#sgem_roth_ira_rate_of_return,#sgem_roth_ira_catchup_contribution').length > 0) {
       $('#sgem_roth_ira_age,#sgem_roth_ira_retirement_age,#sgem_roth_ira_income_before_taxes,#sgem_roth_ira_current_balance,#sgem_roth_ira_annual_contribution,#sgem_roth_ira_rate_of_return,#sgem_roth_ira_catchup_contribution').on('keyup', function () {
