@@ -840,6 +840,22 @@
 	    margin-top: 25px;
 	    padding: 15px;
 	}
+
+	.sgem-roth-ira-cal-1 .sgem-roth-ira-form-group label {
+		font-size: 0.8em;
+	}
+	.sgem-roth-ira-cal-1 input[type="text"] {
+		font-size: 0.8em;
+	}
+	.sgem-roth-ira-balance-text {
+		font-size: 0.875em;
+	}
+	.sgem-roth-ira-balance-text {
+	    font-size: 2em;
+	}
+	.sgem-roth-ira-cal-1 .sgem-roth-ira-form-flex.sgem-roth-ira-years-holder::before {
+		font-size: 0.8em;
+	}
 }
 
 /* ******** ipad ************ */
