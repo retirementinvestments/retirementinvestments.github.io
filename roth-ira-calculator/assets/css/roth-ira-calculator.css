@@ -570,6 +570,7 @@
 	font-family: 'DM Serif Display', serif;
     margin-right: 0;
     display: block;
+    padding-top: 10px;
 }
 .sgem-roth-ira-balance-text span {
 	font-size: 20px;
