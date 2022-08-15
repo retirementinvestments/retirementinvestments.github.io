@@ -157,7 +157,7 @@ var sgem_roth_ira_main_contents = '<div class="sgem-roth-ira-cal-main-id">'+
 			if(location.hostname == "messy-saxophone.flywheelsites.com" || location.hostname == "retirementinvestments.com"){
 				sgem_roth_ira_main_contents += '<div class="sgem-roth-ira-content">A Roth IRA is a great way to save for retirement beyond the 401(k). It allows tax-free growth on your investment if you make less than $139K ($206K if you file jointly). Grow your money tax-free today!</div>';
 				sgem_roth_ira_main_contents += '<div class="sgem-roth-ira-buttonGet">';   
-				sgem_roth_ira_main_contents += '<a href="https://retirementinvestments.com/bettermentroth" class="sgem-pmc-getStart">GET STARTED</a>';
+				sgem_roth_ira_main_contents += '<a href="https://retirementinvestments.com/bettermentroth" class="sgem-roth-ira-getStart">GET STARTED</a>';
 				sgem_roth_ira_main_contents += '</div>';
 			}
 
@@ -172,7 +172,7 @@ var sgem_roth_ira_main_contents = '<div class="sgem-roth-ira-cal-main-id">'+
 			sgem_roth_ira_main_contents += '</div>'; 
 
 			if( (location.hostname != "messy-saxophone.flywheelsites.com") || (location.hostname != "retirementinvestments.com") ){
-				sgem_roth_ira_main_contents += '<div class="sgem-roth-ira-logo-center"><a class="sgem-pmc-url-text" href="https://retirementinvestments.com/precious-metals/precious-metals-ira-calculator/" target="_blank" rel="noopener">Precious Metals IRA Calculator&nbsp</a>by Retirement investments</div>';
+				sgem_roth_ira_main_contents += '<div class="sgem-roth-ira-logo-center"><a class="sgem-roth-ira-url-text" href="https://retirementinvestments.com/precious-metals/precious-metals-ira-calculator/" target="_blank" rel="noopener">Precious Metals IRA Calculator&nbsp</a>by Retirement investments</div>';
 			}	
 
 			if(location.hostname == "messy-saxophone.flywheelsites.com" || location.hostname == "retirementinvestments.com"){
@@ -415,15 +415,15 @@ function sgem_roth_ira_ConvertToInternationalCurrencySystem(labelValue) {
  }
  
 jQuery(document).ready(function($){
-/*
+ 
 if( location.hostname == "messy-saxophone.flywheelsites.com") {
-	$('.sgem-pmc-logo-center').hide(); 
+	$('.sgem-roth-ira-logo-center').hide(); 
 } else if(location.hostname == "retirementinvestments.com"){
-	$('.sgem-pmc-logo-center').hide(); 	
+	$('.sgem-roth-ira-logo-center').hide(); 	
 } else {
-	$('.sgem-pmc-logo-center').show(); 	
+	$('.sgem-roth-ira-logo-center').show(); 	
 }
-*/	
+ 	
 	
 	
 function sgem_roth_ira_calmin() {
