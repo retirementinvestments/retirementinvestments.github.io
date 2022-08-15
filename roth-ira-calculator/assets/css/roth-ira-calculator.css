@@ -863,6 +863,12 @@
     padding: 12px;
     padding-right: 12px;
 }
+.sgem-roth-ira-wrapper-add-mobile .sgem-roth-ira-balance-text {
+	font-size: 2em;
+}
+.sgem-roth-ira-wrapper-add-mobile .sgem-roth-ira-balance-retirement.sgem-roth-ira-for-desk {
+    font-size: 0.875em;
+}
 
 /* end */
 
