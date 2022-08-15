@@ -901,7 +901,7 @@
 	.sgem-roth-ira-cal-right {
 		width: 67%;
 	}	
-	.sgem-roth-ira-cal-1 input[type="text"] {
+	.sgem-roth-ira-cal-main-id .sgem-roth-ira-cal-1 input[type="text"] {
 		width: 100%;
 	} 
 	.sgem-roth-ira-cal-1 .sgem-roth-ira-flex-container .sgem-roth-ira-form-flex:last-child {
