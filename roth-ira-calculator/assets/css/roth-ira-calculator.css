@@ -200,7 +200,7 @@
     background-position: center 0px;
     background-size: 25px;
     background-image: url(../images/drop-down-arrow-roth-ira.svg);
-    margin-top: 5px;
+    margin-top: 0;
 }
 .sgem-roth-ira-cal-main-id details.sgem-roth-ira-details-disclaimer[open] > summary::after {
     -moz-transform: rotate(-180deg);
