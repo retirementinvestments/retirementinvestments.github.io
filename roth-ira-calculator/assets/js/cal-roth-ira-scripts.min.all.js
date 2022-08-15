@@ -316,7 +316,12 @@ return new Intl.NumberFormat('en-US', {style: 'currency',
            beforeLabel: (tooltipItems) => {
              console.log(tooltipItems);
              return 'Age: ' + myChart.config.data.datasets[0].target[tooltipItems.dataIndex];
-           }, 
+           },  
+		 /* afterLabel: function(tooltipItem, data) {
+			  var dataset = data['datasets'][0];
+			  var percent = Math.round((dataset['data'][tooltipItem['index']] / dataset["_meta"][0]['total']) * 100)
+			  return '(' + percent + '%)';
+			}*/ 
           label: function(context) {
             return context.dataset.labels + ': ' + sgem_rothira_ConvertToInternationalCurrencySystemRoundtooltip(context.dataset.data[context.dataIndex])
           },
