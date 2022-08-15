@@ -115,6 +115,7 @@
     width: 200px;
     color: #002340;
     border: 1px solid #bbb;
+    background: #fff;
 }
 .sgem-pmc-cal-1 input[type="text"]:focus {
     outline: 0 !important;
