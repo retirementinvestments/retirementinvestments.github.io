@@ -840,6 +840,21 @@
 .sgem-roth-ira-cal-1::-webkit-scrollbar {
     width: 0px;
 }
+/* add js mobile css */
+.sgem-roth-ira-wrapper-add-mobile .sgem-roth-ira-cal-left.sgem-roth-ira-cal-left-add-class {
+    width: 100%;
+}
+.sgem-roth-ira-wrapper-add-mobile .sgem-roth-ira-cal-right {
+    width: 100%;
+}
+.sgem-roth-ira-cal-wrapper.sgem-roth-ira-wrapper-add-mobile {
+	display: block;
+}
+.sgem-roth-ira-wrapper-add-mobile .sgem-roth-ira-cal-left-add-class .sgem-roth-ira-cal-1 {
+    height: auto;
+    overflow: hidden;
+    overflow-y: unset;
+}
 
 /* end */
 
