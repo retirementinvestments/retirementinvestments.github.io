@@ -917,6 +917,12 @@ $('#sgem_roth_ira_rate_of_return').on('keyup', function() {
             
     }); 
 
+
+// 
+
+}); // DOCUMENT.READY END
+  
+  
 /**
 * Tool Tip
 */
@@ -925,13 +931,7 @@ tippy('.sgem-roth-ira-tooltip', {
 	arrow: true, 
 	theme: 'light-border',
 	trigger: 'click',boundary: 'viewport',
- });  
-// 
-
-}); // DOCUMENT.READY END
-  
-  
-  
+ });    
   
 function roth_update_chart(){
   //console.log('pcm_update_chart');
