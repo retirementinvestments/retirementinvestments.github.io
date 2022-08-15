@@ -232,7 +232,7 @@
 	font-size: 20px;
 	color: #000000;
 	margin-bottom: 32px;
-	  display: flex;
+	display: block;
     justify-content: space-between;
     align-items: flex-end;
 }
@@ -567,7 +567,8 @@
 .sgem-roth-ira-balance-text {
 	font-size: 42px;
 	font-family: 'DM Serif Display', serif;
-    margin-right: 16px;
+    margin-right: 0;
+    display: block;
 }
 .sgem-roth-ira-balance-text span {
 	font-size: 20px;
@@ -578,18 +579,21 @@
 }
 
  .sgem-roth-ira-legendbox {
-    width: auto;
-    display: flex;
-    flex-direction: column;
+	width: 100%;
+    display: inline-flex;
+    flex-direction: revert;
     flex-wrap: wrap;
-    align-content: flex-end;
+    align-content: center;
     font-size: 14px;
+    justify-content: center;
+    margin-top: 22px;
   }
   .sgem-roth-ira-legend-item {
     display: flex;
     cursor:pointer;
     align-items: center;
     height: 18px;
+    margin-right: 20px;
   }
   .sgem-roth-ira-legend-item:nth-child(1) {
 	  margin-bottom: 8px;
@@ -779,6 +783,8 @@
 }
 .sgem-roth-ira-cal-main-id .sgem-roth-ira-header-title-box {
 	color: #002340;
+	display: block;
+    text-align: center;
 }
 
 @media (max-width:1200px) {
