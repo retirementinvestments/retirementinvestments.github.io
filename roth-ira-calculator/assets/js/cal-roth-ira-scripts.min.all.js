@@ -181,6 +181,13 @@ var sgem_roth_ira_main_contents = '<div class="sgem-roth-ira-cal-main-id">'+
  document.getElementById('sgem-roth-ira-cal').innerHTML = sgem_roth_ira_main_contents;
  
  
+localStorage.setItem('ira_y_axis','0');
+localStorage.setItem('rothira_label_years','0');
+localStorage.setItem('rothira_valueatretirement','0');
+localStorage.setItem('rothira_tcontribution','0'); 
+localStorage.setItem('rothira_c_age','0');  
+ 
+ 
 var data_ira_yaxis =  JSON.parse(localStorage.getItem('ira_y_axis')),
         data_ira_labelx =  JSON.parse(localStorage.getItem('rothira_label_years')),
         data_ira_valueatretirement =  JSON.parse(localStorage.getItem('rothira_valueatretirement')),
