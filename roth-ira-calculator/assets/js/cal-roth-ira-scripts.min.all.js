@@ -204,7 +204,19 @@ var data_ira_yaxis =  JSON.parse(localStorage.getItem('ira_y_axis')),
 
  var data = {
   labels: data_ira_labelx,
-  datasets: [{ //[0]
+  datasets: [
+{ // [0]
+  label: 'Age',
+  backgroundColor: "#000000",
+  labels:  ['Age'],
+  data: data_ira_c_age,
+  fill: true,
+  tension: 0.5,
+  borderWidth: 1,
+   pointRadius: 0,
+    pointHitRadius: 20,
+},
+{ //[1]
   label: 'IRA Contribution',
   backgroundColor: "#1569B0",
   labels:  ['IRA Contribution'],
@@ -214,7 +226,7 @@ var data_ira_yaxis =  JSON.parse(localStorage.getItem('ira_y_axis')),
   borderWidth: 1,
    pointRadius: 0,
     pointHitRadius: 20,
-}, { // [1]
+}, { // [2]
   label: 'ROTH IRA Balance',
   backgroundColor: "#42C581",
   labels:  ['ROTH IRA Balance'],
@@ -935,15 +947,17 @@ tippy('.sgem-roth-ira-tooltip', {
   
 function roth_update_chart(){
   //console.log('pcm_update_chart');
-  myChart.data.datasets[0].data = JSON.parse(localStorage.getItem('rothira_tcontribution'));
+  myChart.data.datasets[1].data = JSON.parse(localStorage.getItem('rothira_tcontribution'));
   
   myChart.data.labels = JSON.parse(localStorage.getItem('rothira_label_years'));
 
   myChart.options.scales.y.max = JSON.parse(localStorage.getItem('ira_y_axis'));
   
-  myChart.data.datasets[1].data = JSON.parse(localStorage.getItem('rothira_valueatretirement')); 
+  myChart.data.datasets[2].data = JSON.parse(localStorage.getItem('rothira_valueatretirement')); 
 
-  myChart.config.data.datasets[0].target = JSON.parse(localStorage.getItem('rothira_c_age'));
+  myChart.data.datasets[0].data = JSON.parse(localStorage.getItem('rothira_c_age'));
+
+  // myChart.config.data.datasets[0].target = JSON.parse(localStorage.getItem('rothira_c_age'));
 
   //myChart.options.tooltip.context[0].dataIndex = JSON.parse(localStorage.getItem('rothira_c_age'));
   
