@@ -892,6 +892,12 @@ details summary::-webkit-details-marker {
 .sgem-roth-ira-wrapper-add-mobile .sgem-roth-ira-copy-option-panel {
 	padding: 0 25px;
 }
+.sgem-roth-ira-wrapper-add-mobile .sgem-roth-ira-collapsible-summary-disclaimer {
+	font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    color: #474747;
+}
 
 /* end */
 
