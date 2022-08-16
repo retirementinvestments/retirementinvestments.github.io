@@ -720,6 +720,11 @@ details.sgem-pmc-details-disclaimer[open] > summary::after {
     align-items: center;
 }
 
+/* remove marker */
+details summary::-webkit-details-marker {
+  display:none !important;
+}
+
 /* add class styles */
 .sgem-pmc-cal-wrapper .sgem-pmc-cal-left-add-class {
     width: 33%;
