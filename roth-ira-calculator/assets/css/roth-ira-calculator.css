@@ -794,6 +794,11 @@
 	color: #002340;
 }
 
+/* remove marker */
+details summary::-webkit-details-marker {
+  display:none !important;
+}
+
 /* max width css (add class js) */
 .sgem-roth-ira-cal-left.sgem-roth-ira-cal-left-add-class {
 	width: 33%;
