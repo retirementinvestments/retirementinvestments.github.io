@@ -85,7 +85,7 @@ var sgem_roth_ira_main_contents = '<div class="sgem-roth-ira-cal-main-id">'+
                   '</div>'+
                   '<div class="sgem-roth-ira-flex-container">'+
                      '<div class="sgem-roth-ira-form-group sgem-roth-ira-form-flex">'+
-                        '<label>Expected rate of return <span class="sgem-roth-ira-tooltip tooltip" data-tippy-content="Expected Average annual rturn from your annual IRA investments.">?</span></label>'+
+                        '<label>Expected rate of return <span class="sgem-roth-ira-tooltip tooltip" data-tippy-content="Expected Average annual return from your annual IRA investments.">?</span></label>'+
                         '<input type="text" class="sgem-roth-ira-basic-full-width" id="sgem_roth_ira_rate_of_return" class="inputnumber" value="6%" min="0" max="100" onkeypress="return isNumber(event)"/>'+
                         '<span class="sgem_roth_ira_err_style" id="sgem_roth_ira_err_rate_of_return"></span>'+
                      '</div>'+
