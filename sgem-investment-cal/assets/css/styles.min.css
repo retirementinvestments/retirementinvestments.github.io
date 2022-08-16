@@ -585,6 +585,11 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
 
 /* end */
 
+/* remove marker */
+details summary::-webkit-details-marker {
+  display:none !important;
+}
+
 /* js css */
 .sgem-reti-cal-width-add {
 	display: block;
