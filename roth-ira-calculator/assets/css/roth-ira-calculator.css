@@ -846,13 +846,18 @@ details summary::-webkit-details-marker {
 	padding: 14px 12px;
 }
 .sgem-roth-ira-cal-left-add-class .sgem-roth-ira-cal-1 {
-	height: 840px;
+	height: 785px;
     overflow: hidden;
     overflow-y: scroll;
 }
 .sgem-roth-ira-cal-left-add-class .sgem-roth-ira-collapsible-summary-title {
 	font-size: 0.9em;
 	padding: 0;
+}
+.sgem-roth-ira-cal-left-add-class .sgem-roth-ira-tooltip {
+  	width: 15px;
+    height: 15px; 
+    line-height: 15px; 
 }
 .sgem-roth-ira-cal-1::-webkit-scrollbar {
     width: 0px;
