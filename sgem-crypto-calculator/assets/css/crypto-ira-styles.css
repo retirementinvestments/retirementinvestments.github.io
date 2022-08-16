@@ -753,6 +753,11 @@ details.sgem-crypto-ira-details-disclaimer[open] > summary::after {
     align-items: center;
 }
 
+/* remove marker */
+details summary::-webkit-details-marker {
+  display:none !important;
+}
+
 /* add class styles */
 .sgem-crypto-ira-cal-left-add-class .sgem-crypto-info-tooltip {
     width: 15px;
