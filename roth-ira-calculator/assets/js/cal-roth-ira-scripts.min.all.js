@@ -755,21 +755,46 @@ if($('#sgem_roth_ira_age,#sgem_roth_ira_retirement_age,#sgem_roth_ira_income_bef
   }   
     });
 
-    //magi
+//magi
     $('#sgem_roth_ira_income_before_taxes').on('keyup', function () {
-      var vmagiv3     = $('#sgem_roth_ira_income_before_taxes').val().trim();
-      var vmagiv2 = vmagiv3.replace(/\,/g,'');
-      var vmagiv = parseInt(vmagiv2,10); 
-      if (isNaN(vmagiv) || vmagiv>300000){
-         
-         this.value ='';
-         $('#sgem_roth_ira_err_my_income_before_taxes').html('This cannot be empty or must be $300,000 at most to eligible').fadeIn();  
-          $(this).css({
+     var rvcc3     = $('#sgem_roth_ira_income_before_taxes').val().trim();
+      var rvcc2 = rvcc3.replace(/\,/g,'');
+      var rvcc = parseInt(rvcc2,10); 
+      var tis = $('#sgem_roth_ira_filing_status').val();
+      if (rvcc>144000 && tis=='1'){
+          
+         //this.value ='';
+         $('#sgem_roth_ira_err_my_income_before_taxes').html('MAGI should less than $144,000 to be eligible to contribute to the ROTH IRA').fadeIn();   
+          $('#sgem_roth_ira_income_before_taxes').css({
         "border": "1px solid red",
         "background": "#FFCECE" });  
           
 
-  }else{
+  }else if(tis=='2' && rvcc>214000){
+
+       
+       $('#sgem_roth_ira_err_my_income_before_taxes').html('MAGI should less than $214,000 to be eligible to contribute to the ROTH IRA').fadeIn();   
+          $('#sgem_roth_ira_income_before_taxes').css({
+        "border": "1px solid red",
+        "background": "#FFCECE" }); 
+
+
+  }else if(tis=='3' && rvcc>10000){
+
+      $('#sgem_roth_ira_err_my_income_before_taxes').html('MAGI should less than $10,000 to be eligible to contribute to the ROTH IRA').fadeIn();   
+          $('#sgem_roth_ira_income_before_taxes').css({
+        "border": "1px solid red",
+        "background": "#FFCECE" }); 
+
+  }else if($(this).val().length>7){
+ 
+ this.value ='';
+ $('#sgem_roth_ira_income_before_taxes').css({
+        "border": "1px solid red",
+        "background": "#FFCECE" }); 
+  
+  }
+  else{
      $('#sgem_roth_ira_err_my_income_before_taxes').html('').fadeOut();  
     $(this).css({
         "border": "1px solid #707070",
@@ -777,6 +802,7 @@ if($('#sgem_roth_ira_age,#sgem_roth_ira_retirement_age,#sgem_roth_ira_income_bef
       }); 
   }    
     });
+
 
 
     // current balance
@@ -878,7 +904,7 @@ if($('#sgem_roth_ira_age,#sgem_roth_ira_retirement_age,#sgem_roth_ira_income_bef
       if (rvcc>144000 && tis=='1'){
           
          //this.value ='';
-         $('#sgem_roth_ira_err_my_income_before_taxes').html('MAGI should less than $144,000 to be eligible for this.').fadeIn();   
+         $('#sgem_roth_ira_err_my_income_before_taxes').html('MAGI should less than $144,000 to be eligible to contribute to the ROTH IRA').fadeIn();   
           $('#sgem_roth_ira_income_before_taxes').css({
         "border": "1px solid red",
         "background": "#FFCECE" });  
@@ -887,15 +913,15 @@ if($('#sgem_roth_ira_age,#sgem_roth_ira_retirement_age,#sgem_roth_ira_income_bef
   }else if(tis=='2' && rvcc>214000){
 
        
-       $('#sgem_roth_ira_err_my_income_before_taxes').html('MAGI should less than $214,000 to be eligible for this.').fadeIn();   
+       $('#sgem_roth_ira_err_my_income_before_taxes').html('MAGI should less than $214,000 to be eligible to contribute to the ROTH IRA').fadeIn();   
           $('#sgem_roth_ira_income_before_taxes').css({
         "border": "1px solid red",
         "background": "#FFCECE" }); 
 
 
-  }else if(tis=='3' && rvcc>214000){
+  }else if(tis=='3' && rvcc>10000){
 
-      $('#sgem_roth_ira_err_my_income_before_taxes').html('MAGI should less than $214,000 to be eligible for this.').fadeIn();   
+      $('#sgem_roth_ira_err_my_income_before_taxes').html('MAGI should less than $10,000 to be eligible to contribute to the ROTH IRA').fadeIn();   
           $('#sgem_roth_ira_income_before_taxes').css({
         "border": "1px solid red",
         "background": "#FFCECE" }); 
