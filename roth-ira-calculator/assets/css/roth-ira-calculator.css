@@ -882,6 +882,16 @@ details summary::-webkit-details-marker {
 .sgem-roth-ira-wrapper-add-mobile .sgem-roth-ira-balance-retirement.sgem-roth-ira-for-desk {
     font-size: 0.875em;
 }
+.sgem-roth-ira-wrapper-add-mobile .sgem-roth-ira-details-disclaimer .sgem-roth-ira-collapsible-text-disclaimer {
+	font-weight: 400;
+	line-height: 18px;
+	font-size: 14px;
+	padding: 0;
+	color: #474747;
+}
+.sgem-roth-ira-wrapper-add-mobile .sgem-roth-ira-copy-option-panel {
+	padding: 0 25px;
+}
 
 /* end */
 
@@ -1065,6 +1075,13 @@ details summary::-webkit-details-marker {
  
 /* ******** mobile ************ */
 @media (max-width: 480px) {
+	.sgem-roth-ira-details-disclaimer .sgem-roth-ira-collapsible-text-disclaimer {
+		font-weight: 400;
+	    line-height: 18px;
+	    font-size: 14px;
+	    padding: 0;
+	    color: #474747;
+	}
 	/* chart css for mobile */
 	.sgem-roth-ira-cal-main-id .sgem-roth-ira-balance-text {
 		font-size: 32px;
