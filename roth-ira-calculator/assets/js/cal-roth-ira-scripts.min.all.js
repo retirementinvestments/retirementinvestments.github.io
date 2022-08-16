@@ -172,7 +172,7 @@ var sgem_roth_ira_main_contents = '<div class="sgem-roth-ira-cal-main-id">'+
 			sgem_roth_ira_main_contents += '</div>'; 
 
 			if( (location.hostname != "messy-saxophone.flywheelsites.com") || (location.hostname != "retirementinvestments.com") ){
-				sgem_roth_ira_main_contents += '<div class="sgem-roth-ira-logo-center"><a class="sgem-roth-ira-url-text" href="https://retirementinvestments.com/precious-metals/precious-metals-ira-calculator/" target="_blank" rel="noopener">Precious Metals IRA Calculator&nbsp</a>by Retirement investments</div>';
+				sgem_roth_ira_main_contents += '<div class="sgem-roth-ira-logo-center"><a class="sgem-roth-ira-url-text" href="https://retirementinvestments.com/precious-metals/precious-metals-ira-calculator/" target="_blank" rel="noopener">Roth IRA Calculator&nbsp</a>by Retirement investments</div>';
 			}	
 
 			if(location.hostname == "messy-saxophone.flywheelsites.com" || location.hostname == "retirementinvestments.com"){
