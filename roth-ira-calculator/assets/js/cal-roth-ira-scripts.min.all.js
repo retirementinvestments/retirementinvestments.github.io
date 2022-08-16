@@ -954,8 +954,8 @@ function roth_update_chart(){
   myChart.options.scales.y.max = JSON.parse(localStorage.getItem('ira_y_axis'));
   
   myChart.data.datasets[2].data = JSON.parse(localStorage.getItem('rothira_valueatretirement')); 
-
-  myChart.data.datasets[0].data = JSON.parse(localStorage.getItem('rothira_c_age'));
+  
+  myChart.data.datasets[0].data = JSON.parse(localStorage.getItem('rothira_c_age')); 
 
   // myChart.config.data.datasets[0].target = JSON.parse(localStorage.getItem('rothira_c_age'));
 
