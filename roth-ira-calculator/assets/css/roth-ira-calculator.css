@@ -206,6 +206,9 @@
     background-image: url(../images/drop-down-arrow-roth-ira.svg);
     margin-top: 0;
 }
+.sgem-roth-ira-cal-main-id details.sgem-roth-ira-details-disclaimer > summary::before {
+	content: none;
+}
 .sgem-roth-ira-cal-main-id details.sgem-roth-ira-details-disclaimer[open] > summary::after {
     -moz-transform: rotate(-180deg);
     -webkit-transform: rotate(-180deg);
