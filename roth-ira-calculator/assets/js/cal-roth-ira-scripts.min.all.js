@@ -973,13 +973,13 @@ tippy('.sgem-roth-ira-tooltip', {
   
 function roth_update_chart(){
   //console.log('pcm_update_chart');
-  myChart.data.datasets[1].data = JSON.parse(localStorage.getItem('rothira_tcontribution'));
+  myChart.data.datasets[0].data = JSON.parse(localStorage.getItem('rothira_tcontribution'));
   
   myChart.data.labels = JSON.parse(localStorage.getItem('rothira_label_years'));
 
   myChart.options.scales.y.max = JSON.parse(localStorage.getItem('ira_y_axis'));
   
-  myChart.data.datasets[2].data = JSON.parse(localStorage.getItem('rothira_valueatretirement')); 
+  myChart.data.datasets[1].data = JSON.parse(localStorage.getItem('rothira_valueatretirement')); 
   
   myChart.data.datasets[0].data = JSON.parse(localStorage.getItem('rothira_c_age')); 
 
