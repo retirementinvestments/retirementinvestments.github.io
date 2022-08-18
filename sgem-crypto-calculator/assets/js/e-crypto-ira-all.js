@@ -1113,7 +1113,7 @@ function crypto_update_chart(){
 
  
 function toggleData(value){
-  const visibilityData = myChart.isDatasetVisible(0);
+  const visibilityData = myChart.isDatasetVisible(value);
   if (visibilityData === true ){
     myChart.hide(value);
   }
