@@ -178,7 +178,7 @@ var config = {
           bodySpacing: 1,
           titleColor: '#757575',
           boxWidth: 0,
-          boxHeight: 30,
+          boxHeight: 20,
           callbacks: {
             labelTextColor: function(context){
               return myChart.data.datasets.borderColor;
