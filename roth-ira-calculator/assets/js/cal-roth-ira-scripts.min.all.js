@@ -120,12 +120,12 @@ var sgem_roth_ira_main_contents = '<div class="sgem-roth-ira-cal-main-id">'+
                 '</div>'+
                '<div class="sgem-roth-ira-legendbox">'+
                   '<div class="sgem-roth-ira-legend-item">'+
-                     '<button id="sgem_roth_ira_contribution" onClick="toggleData(0)" class="sgem-roth-ira-contribution"></button> '+
-                     '<div id="sgem_roth_ira_contribution_te" onClick="toggleData(0)" class="sgem-roth-ira-contribution-te"></div>'+
+                     '<button id="sgem_roth_ira_contribution" onClick="toggleData(1)" class="sgem-roth-ira-contribution"></button> '+
+                     '<div id="sgem_roth_ira_contribution_te" onClick="toggleData(1)" class="sgem-roth-ira-contribution-te"></div>'+
                   '</div>'+
                   '<div class="sgem-roth-ira-legend-item">'+
-                     '<button id="sgem_roth_ira_tax_savings" onClick="toggleData(1)" class="sgem-roth-ira-tax-savings"></button>'+
-                     '<div id="sgem_roth_ira_tax_savings_te" onClick="toggleData(1)" class="sgem-roth-ira-tax-savings-te"></div>'+
+                     '<button id="sgem_roth_ira_tax_savings" onClick="toggleData(2)" class="sgem-roth-ira-tax-savings"></button>'+
+                     '<div id="sgem_roth_ira_tax_savings_te" onClick="toggleData(2)" class="sgem-roth-ira-tax-savings-te"></div>'+
                   '</div>'+
                '</div>'+
             '</div>'+
