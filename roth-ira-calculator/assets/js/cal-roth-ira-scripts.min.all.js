@@ -318,7 +318,7 @@ return new Intl.NumberFormat('en-US', {style: 'currency',
         },
         bodySpacing: 1,
         titleColor: '#757575',
-        titleSpacing: 13,
+        titleSpacing: 0,
         boxWidth: 0,
         boxHeight: 20,
         callbacks: {
