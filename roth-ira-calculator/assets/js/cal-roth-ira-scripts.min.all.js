@@ -320,7 +320,7 @@ return new Intl.NumberFormat('en-US', {style: 'currency',
         titleColor: '#757575',
         titleSpacing: 13,
         boxWidth: 0,
-        boxHeight: 30,
+        boxHeight: 20,
         callbacks: {
           labelTextColor: function(context){
             return myChart.data.datasets.borderColor;
