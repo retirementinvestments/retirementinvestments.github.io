@@ -452,6 +452,8 @@ var annual_rate_of_return1 = annual_rate_of_return2.replace('%', "");
 var annual_rate_of_return = parseFloat(annual_rate_of_return1/100);
 
 var current_age = $('#sgem_roth_ira_age').val().trim();
+var current_age2 = current_age - 1;
+
 var retirement_age = $('#sgem_roth_ira_retirement_age').val().trim();
 
 var magi3 = $('#sgem_roth_ira_income_before_taxes').val().trim();
@@ -474,8 +476,8 @@ var inflation = 0.03;
 var income_tax = 0.27;
 var income_used_during_retirement = 0.70;
 var no_of_contribution_years = retirement_age - current_age;
-var counting_fifty_years= 49-current_age;
-var counting_fifty_years2= 49-current_age;
+var counting_fifty_years= 50-current_age;
+var counting_fifty_years2= 50-current_age;
 
 
 //Monthly retirement spending
@@ -660,9 +662,9 @@ localStorage.setItem('rothira_tcontribution', JSON.stringify(each_year_iracon_ar
 
 var each_year_age ="";
 
-while(current_age<retirement_age){
-  each_year_age += current_age++;
-  each_year_age_array.push(current_age);
+while(current_age2<retirement_age){
+  each_year_age += current_age2++;
+  each_year_age_array.push(current_age2);
 }
 
 localStorage.setItem('rothira_c_age', JSON.stringify(each_year_age_array));
