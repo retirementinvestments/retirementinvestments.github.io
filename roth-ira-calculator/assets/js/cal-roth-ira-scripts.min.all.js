@@ -574,7 +574,7 @@ if (isNaN(value_at_retirement) || value_at_retirement < 1){
 //Chart x values
 
            var r_current_year2 = new Date().getFullYear();
-           var r_current_year = r_current_year2+1;
+           var r_current_year = r_current_year2;
            var r_endyear = r_current_year+no_of_contribution_years;
     
            var r_display_years_concat = "";
