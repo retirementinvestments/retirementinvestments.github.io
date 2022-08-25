@@ -51,7 +51,7 @@ var sgem_pmc_main_contents = '<div class="sgem-pmc-cal-main-id" id="sgem-pmc-cal
 '<label>Annual contribution </label> <input type="text" class="inputmove inputnumber"  id="sgem_pmc_annual_contribution" value="6,000" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
 '<span class="sgem-pmc-err-msg-anucon"></span> </div> </div>'+
 '<div class="sgem-pmc-flex-container">'+
-'<div class="sgem-pmc-form-group sgem-pmc-form-flex sgem-pmc-currency-holder"><label>Current savings </label>'+
+'<div class="sgem-pmc-form-group sgem-pmc-form-flex sgem-pmc-currency-holder"><label>Current savings <span class="sgem-crypto-info-tooltip tooltip" data-tippy-content="Total savings in your IRA , 401(k), or other retirement account">?</span></label>'+
 '<input type="text"class="inputmove inputnumber" id="sgem_pmc_current_savings" value="30,000" min="0" max="10000000" onkeypress="return isNumber(event)" /> <span class="sgem-pmc-err-msg-income"></span>'+
 '</div></div>'+
 '<details class="sgem-pmc-input-more-details" open><summary><div><h3 class="sgem-pmc-collapsible-summary-title">Advanced</h3> </div></summary>'+
