@@ -191,10 +191,10 @@ if( (location.hostname != "messy-saxophone.flywheelsites.com") || (location.host
 }
 
 if(location.hostname == "messy-saxophone.flywheelsites.com" || location.hostname == "retirementinvestments.com"){
-    sgem_crypto_main_content += '<div class="sgem-401k-copy-option-panel">';
-    sgem_crypto_main_content += '<h3>Do you want to add this calculator into your website?</h3>';
-    sgem_crypto_main_content += '<div class="sgem-401k-copy-code-wrap"><button class="sgem-401k-copy-code" id="sgem-401k-copy-code" onclick="sgem_401k_copyText(event)">Get Calculator</button></div>';
-    sgem_crypto_main_content += '</div>';
+    sgem_401k_main_contents += '<div class="sgem-401k-copy-option-panel">';
+    sgem_401k_main_contents += '<h3>Do you want to add this calculator into your website?</h3>';
+    sgem_401k_main_contents += '<div class="sgem-401k-copy-code-wrap"><button class="sgem-401k-copy-code" id="sgem-401k-copy-code" onclick="sgem_401k_copyText(event)">Get Calculator</button></div>';
+    sgem_401k_main_contents += '</div>';
 }
 
 sgem_401k_main_contents += '</div>';  
