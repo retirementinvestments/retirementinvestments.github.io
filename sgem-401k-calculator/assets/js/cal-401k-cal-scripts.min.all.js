@@ -190,6 +190,13 @@ if( (location.hostname != "messy-saxophone.flywheelsites.com") || (location.host
     sgem_401k_main_contents += '<div class="sgem-401k-logo-center"><a class="sgem-401k-url-text" href="https://retirementinvestments.com/retirement/401k-calculator" target="_blank" rel="noopener">401(k) Calculator  </a>by Retirement investments</div>';
 }
 
+if(location.hostname == "messy-saxophone.flywheelsites.com" || location.hostname == "retirementinvestments.com"){
+    sgem_crypto_main_content += '<div class="sgem-401k-copy-option-panel">';
+    sgem_crypto_main_content += '<h3>Do you want to add this calculator into your website?</h3>';
+    sgem_crypto_main_content += '<div class="sgem-401k-copy-code-wrap"><button class="sgem-401k-copy-code" id="sgem-401k-copy-code" onclick="sgem_401k_copyText(event)">Get Calculator</button></div>';
+    sgem_crypto_main_content += '</div>';
+}
+
 sgem_401k_main_contents += '</div>';  
 
 document.getElementById('sgem-401k-cal').innerHTML = sgem_401k_main_contents;
