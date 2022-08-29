@@ -106,7 +106,7 @@ var sgem_401k_main_contents = '<div class="sgem-401k-cal-main-id">'+
                '<div class="collapsible-content">'+
                   '<div class="sgem-401k-flex-container">'+
                      '<div class="sgem-401k-form-group sgem-401k-form-flex sgem-401k-currency-holder">'+
-                        '<label>Annual catch-up contribution <span class="sgem-401k-tooltip tooltip" data-tippy-content="If you re 50 or older, you can contribute an extra $6,500 to your 401(k)">?</span></label>'+
+                        '<label>Annual catch-up contribution <span class="sgem-401k-tooltip tooltip" data-tippy-content="If you\'re 50 or older, you can contribute an extra $6,500 to your 401(k)">?</span></label>'+
                         '<input type="text" id="sgem_401k_annual_catchup_contribution" class="inputnumber sgem_401k_full_width_field" value="0" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
                         '<span class="sgem_401k_err_msg" id="sgem_401k_err_annual_catchup_contribution"></span>'+ 
                      '</div>'+
@@ -170,12 +170,16 @@ var sgem_401k_main_contents = '<div class="sgem-401k-cal-main-id">'+
                   '<span class="futuretext3 sgem-401k-result-text-down">in retirement</span>'+
                '</div>'+
             '</div>'+
-            '<div class="sgem-401k-cal-1-result-footer">'+
-               '<div class="sgem-401k-content">Get a comprehensive wealth management for your 401(k) account that includes rebalancing and tracking all your transactions. </div>'+
-               '<div class="sgem-401k-buttonGet">'+
-                  '<a href="https://retirementinvestments.com/401kcalculator" class="sgem-401k-getStart">GET STARTED</a>'+
-               '</div>'+
-            '</div>'+
+
+            if(location.hostname == "messy-saxophone.flywheelsites.com" || location.hostname == "retirementinvestments.com"){
+                sgem_401k_main_contents += '<div class="sgem-401k-cal-1-result-footer">';
+                sgem_401k_main_contents += '<div class="sgem-401k-content">Get a comprehensive wealth management for your 401(k) account that includes rebalancing and tracking all your transactions. </div>';
+                sgem_401k_main_contents += '<div class="sgem-401k-buttonGet">';
+                sgem_401k_main_contents += '<a href="https://retirementinvestments.com/401kcalculator" class="sgem-401k-getStart">GET STARTED</a>'
+                sgem_401k_main_contents += '</div>';
+                sgem_401k_main_contents += '</div>'; // footer end
+            }
+
             '<div class="sgem-401k-section-disclaimer">'+
                '<details class="sgem-401k-details-disclaimer">'+
                   '<summary>'+
