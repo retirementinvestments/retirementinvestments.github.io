@@ -195,225 +195,254 @@ var sgem_roth_ira_main_contents = '<div class="sgem-401k-cal-main-id">'+
 
 sgem_401k_main_contents += '</div>';  
 
-document.getElementById('sgem-roth-ira-cal').innerHTML = sgem_roth_ira_main_contents;
+document.getElementById('sgem-401k-cal').innerHTML = sgem_401k_main_contents;
  
-localStorage.setItem('ira_y_axis','0');
-localStorage.setItem('rothira_label_years','0');
-localStorage.setItem('rothira_valueatretirement','0');
-localStorage.setItem('rothira_tcontribution','0'); 
-localStorage.setItem('rothira_c_age','0');  
- 
- 
-var data_ira_yaxis =  JSON.parse(localStorage.getItem('ira_y_axis')),
-        data_ira_labelx =  JSON.parse(localStorage.getItem('rothira_label_years')),
-        data_ira_valueatretirement =  JSON.parse(localStorage.getItem('rothira_valueatretirement')),
-        data_ira_totalcon =  JSON.parse(localStorage.getItem('rothira_tcontribution')),
-        data_ira_c_age =  JSON.parse(localStorage.getItem('rothira_c_age'));
+ // setup 
+ var data_401_years =  JSON.parse(localStorage.getItem('401k_chart_years')),
+        data_401_age =  JSON.parse(localStorage.getItem('401k_chart_age')),
+        data_401_individual_contribution =  JSON.parse(localStorage.getItem('401k_chart_individual_contribution')),
+        data_401_employer_match =  JSON.parse(localStorage.getItem('401k_chart_employer_match')),
+        data_401_catchup_con =  JSON.parse(localStorage.getItem('401k_chart_catchup_con')),
+        data_401_intrest_com =  JSON.parse(localStorage.getItem('401k_chart_intrest_com')),
+        data_401_y_max =  JSON.parse(localStorage.getItem('401k_chart_y_max'));
 
  var ctx = document.getElementById("myChart").getContext("2d");
 
- var data = {
-  labels: data_ira_labelx,
-  datasets: [
-{ // [0]
-  label: 'Age',
-  backgroundColor: "#000000",
-  labels:  ['Age'],
-  data: data_ira_c_age,
-  fill: true,
-  tension: 0.5,
-  borderWidth: 1,
-   pointRadius: 0,
-    pointHitRadius: 20,
-},
-{ //[1]
-  label: 'IRA Contribution',
-  backgroundColor: "#1569B0",
-  labels:  ['IRA Contribution'],
-  data: data_ira_totalcon,
-  fill: true,
-  tension: 0.5,
-  borderWidth: 1,
-   pointRadius: 0,
-    pointHitRadius: 20,
-}, { // [2]
-  label: 'ROTH IRA Balance',
-  backgroundColor: "#42C581",
-  labels:  ['ROTH IRA Balance'],
-  data: data_ira_valueatretirement,
-  fill: true,
-  tension: 0.5,
-  borderWidth: 1,
-   pointRadius: 0,
-    pointHitRadius: 20,
-},],
-};
-
-// config 
-const config = {
-  type: 'line',
-  data,
-  options: {
-    
-    local:'en-US',
-    responsive: true, 
-    interaction: {
-          mode:'index'
+  var data = {
+    labels: data_401_years,
+    datasets: [
+  { //[0]
+    label: 'Age',
+    backgroundColor: "#000",
+    labels:  ['Age'],
+    data: data_401_age,
   },
-    scales: {
-      x: {
-        ticks: {
-          color: '#000',
-          maxTicksLimit: 3,
-          maxRotation: 0,
-          lineWidth: 2,
-        font: {
-          size: 14
-        },
-      },
-        grid: {
-              display: false
-           },
-            stacked: true,
-           },
+  { //[1]
+    label: 'Individual contribution',
+    backgroundColor: "#1569B0",
+    labels:  ['Individual contribution'],
+    data: data_401_individual_contribution,
+  }, { // [2]
+    label: 'Catch up',
+    backgroundColor: "#FEB929",
+    labels:  ['Catch up'],
+    data: data_401_catchup_con,
+  }, { // [3]
+    label: 'Employer match',
+    backgroundColor: "#42C581",
+    labels:  ['Employer match'],
+    data: data_401_employer_match,
+  },{ // [4]
+    label: 'Interest accumulated',
+    backgroundColor: "#FF824A",
+    labels:  ['Interest accumulated'],
+    data: data_401_intrest_com,
+  }
+],
+  };
+
+  // config 
+  const config = {
+    type: 'bar',
+    data,
+    options: {
       
-      y: {
-        min:0,
-        max: 1000000,
-        grid: {
+      local:'en-US',
+      responsive: true, 
+      interaction: {
+            mode:'index'
+    },
+      scales: {
+        x: {
+          ticks: {
+            color: '#000',
+            maxTicksLimit: 3,
+            maxRotation: 0,
+            lineWidth: 2,
+          font: {
+            size: 14
+          },
+        },
+          grid: {
+                display: false
+             },
+              stacked: true,
+             },
+        
+        y: {
+          min:0,
+          max: 3200000,
+          grid: {
             borderDash: [4],
             color: "#A3A3A3"
-        },
-        stacked: true,
-        ticks:{
-          color: '#000',
-          callback: (value, index, values) => { 
-            return sgem_rothira_ConvertToInternationalCurrencySystemRound(value);
-return new Intl.NumberFormat('en-US', {style: 'currency',
-     currency: 'USD',
-     maximumSignificantDigits: 3
-                                                        } ). format(value);            
           },
-          font: {
-            size: 13,
-            family: "'DM Sans'",
-          }
-        },
-        beginAtZero: false           
-      }    
-    },
-    plugins: {
-      legend: {
-        display: false    
+          stacked: true,
+          ticks:{
+            color: '#000',
+            callback: (value, index, values) => { 
+                return sgem_401_ConvertToInternationalCurrencySystemRound(value);
+  return new Intl.NumberFormat('en-US', {style: 'currency',
+       currency: 'USD',
+       maximumSignificantDigits: 3
+                                                          } ). format(value);            
+            },
+            font: {
+              size: 13,
+              family: "'DM Sans'",
+            }
+          },
+          beginAtZero: false           
+        }    
       },
-      tooltip: {
-        backgroundColor: 'white',
-        yAlign: 'bottom',
-        borderColor: 'hsl(210, 3%, 70%)',
-        borderWidth: 1,
-        usePointStyle: true,
-        bodyFont: {
-          size: 14,
-          family: "'DM Sans'",
+      plugins: {
+        legend: {
+          display: false    
         },
-        titleFont: {
-            family: "'DM Sans'",
-            color: "#000",
+        tooltip: {
+          backgroundColor: 'white',
+          yAlign: 'bottom',
+          borderColor: 'hsl(210, 3%, 70%)',
+          borderWidth: 1,
+          usePointStyle: true,
+          bodyFont: {
             size: 14,
-        },
-        bodySpacing: 1,
-        titleColor: '#757575',
-        titleSpacing: 0,
-        boxWidth: 0,
-        boxHeight: 20,
-        callbacks: {
-          labelTextColor: function(context){
-            return myChart.data.datasets.borderColor;
+            family: "'DM Sans'",
           },
-          /* beforeLabel: (tooltipItems) => {
-             console.log(tooltipItems);
-             return 'Age: ' + myChart.config.data.datasets[0].target[tooltipItems.dataIndex];
-           }, */ 
-		 /* afterLabel: function(tooltipItem, data) {
-			  var dataset = data['datasets'][0];
-			  var percent = Math.round((dataset['data'][tooltipItem['index']] / dataset["_meta"][0]['total']) * 100)
-			  return '(' + percent + '%)';
-			}*/ 
-          label: function(context) {
-            return context.dataset.labels + ': ' + sgem_rothira_ConvertToInternationalCurrencySystemRoundtooltip(context.dataset.data[context.dataIndex])
+          titleFont: {
+              size: 14,
+              family: "'DM Sans'"
           },
-          labelPointStyle: function(context) {
-            return {
-                pointStyle: 'triangle',
-                rotation: 0
-            };
+          bodySpacing: 1,
+          titleColor: '#757575',
+          boxWidth: 0,
+          boxHeight: 20,
+          callbacks: {
+            labelTextColor: function(context){
+              return myChart.data.datasets.borderColor;
+            }, 
+            label: function(context) {
+              return context.dataset.labels + ': ' + sgem_401_ConvertToInternationalCurrencySystemRoundtooltip(context.dataset.data[context.dataIndex])
+            },
+            labelPointStyle: function(context) {
+              return {
+                  pointStyle: 'triangle',
+                  rotation: 0
+              };
+          }
+          } 
         }
-        } 
       }
     }
-  }
-};
+  };
 
-// render init block
-const myChart = new Chart( ctx, config); 
+  // render init block
+  const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  ); 
 
-document.getElementById('sgem_roth_ira_contribution').style.backgroundColor = myChart.data.datasets[1].backgroundColor;
-document.getElementById('sgem_roth_ira_tax_savings').style.backgroundColor = myChart.data.datasets[2].backgroundColor;
-document.getElementById('sgem_roth_ira_contribution_te').innerText = myChart.data.datasets[1].label;
-document.getElementById('sgem_roth_ira_tax_savings_te').innerText = myChart.data.datasets[2].label;
-
+document.getElementById('sgem_401k_contribution').style.backgroundColor = myChart.data.datasets[1].backgroundColor;
+ document.getElementById('sgem_401k_catchup').style.backgroundColor = myChart.data.datasets[2].backgroundColor;
+ document.getElementById('sgem_401k_emp_match').style.backgroundColor = myChart.data.datasets[3].backgroundColor;
+document.getElementById('sgem_401k_interest_accu').style.backgroundColor = myChart.data.datasets[4].backgroundColor;
+document.getElementById('sgem_401k_contribution_te').innerText = myChart.data.datasets[1].label;
+ document.getElementById('sgem_401k_catchup_te').innerText = myChart.data.datasets[2].label;
+ document.getElementById('sgem_401k_emp_match_te').innerText = myChart.data.datasets[3].label;
+document.getElementById('sgem_401k_interest_accu_te').innerText = myChart.data.datasets[4].label;
 
 // 
 
+window.onload = function() {
+  sgem_401k_calculationmin();
+ }
+
+/* Plus and mius Function */
+
+$(document).ready(function() {
+  $('.sgem-401k-minus').click(function () {
+    var $input = $(this).parent().find('input');
+    var count = parseInt($input.val()) - 1;
+    count = count < 1 ? 1 : count;
+    $input.val(count);
+    $input.change();
+    return false;
+  });
+  $('.sgem-401k-plus').click(function () {
+    var $input = $(this).parent().find('input');
+    $input.val(parseInt($input.val()) + 1);
+    $input.change();
+    return false;
+  });
+});
+
+  
+/* Tippy Tool */
+     
+tippy('[data-tippy-content]', {  
+      arrow: true, 
+      theme: 'light-border',
+       trigger: 'click',
+}); 
+
+
+ 
+/*
+Call : <input type="text" onkeypress="return isNumber(event)" />
+*/
 function isNumber(evt) {
-          evt = (evt) ? evt : window.event;
-          var charCode = (evt.which) ? evt.which : evt.keyCode;
-          if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-          //if (charCode == 31 && charCode > 32 && (charCode < 48 || charCode > 57)) { // for decimal
-              return false;
-          }
-          return true;
+  evt = (evt) ? evt : window.event;
+  var charCode = (evt.which) ? evt.which : evt.keyCode;
+  if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+    //if (charCode == 31 && charCode > 32 && (charCode < 48 || charCode > 57)) { // for decimal
+    return false;
+  }
+  return true;
 }
 
-function sgem_rothira_ConvertToInternationalCurrencySystemRoundtooltip(labelValue) {
+jQuery(document).ready(function($){
 
-    // Nine Zeroes for Billions
-    return Math.abs(Number(labelValue)) >= 1.0e+9
+  //*******************************************************
 
-    ? (Math.abs(Number(labelValue)) / 1.0e+9).toFixed(1) + "B"
-    // Six Zeroes for Millions 
-    : Math.abs(Number(labelValue)) >= 1.0e+6
+        if ($('.sgem-401k-cal-wrapper').width() < 1024) {
+            $('.sgem-401k-cal-left').addClass('sgem-401k-cal-left-add-class');
+            $('.sgem-401k-cal-right').addClass('sgem-401k-cal-right-add-class');
+        }
+        else {
+            $('.sgem-401k-cal-left').removeClass('sgem-401k-cal-left-add-class');
+            $('.sgem-401k-cal-right').removeClass('sgem-401k-cal-right-add-class');
+        }
 
-    ? (Math.abs(Number(labelValue)) / 1.0e+6).toFixed(1) + "M"
-    // Three Zeroes for Thousands
-    : Math.abs(Number(labelValue)) >= 1.0e+3
+        if ($('.sgem-401k-cal-main-id').width() < 650) {
+            $('.sgem-401k-cal-wrapper').addClass('sgem-401k-wrapper-add-mobile');
+        }
+        else {
+            $('.sgem-401k-cal-wrapper').removeClass('sgem-401k-wrapper-add-mobile');
+        }
 
-    ? (Math.abs(Number(labelValue)) / 1.0e+3).toFixed(1) + "K"
+        $(window).on('resize', function() {
+        if ($('.sgem-401k-cal-wrapper').width() < 1024) {
+            $('.sgem-401k-cal-left').addClass('sgem-401k-cal-left-add-class');
+            $('.sgem-401k-cal-right').addClass('sgem-401k-cal-right-add-class');
+        }
+        else {
+            $('.sgem-401k-cal-left').removeClass('sgem-401k-cal-left-add-class');
+            $('.sgem-401k-cal-right').removeClass('sgem-401k-cal-right-add-class');
+        }
+        }).trigger('resize');
 
-    : Math.abs(Number(labelValue));
+        $(window).on('resize', function() {
+           if ($('.sgem-401k-cal-main-id').width() < 650) {
+                $('.sgem-401k-cal-wrapper').addClass('sgem-401k-wrapper-add-mobile');
+           }
+           else {
+                $('.sgem-401k-cal-wrapper').removeClass('sgem-401k-wrapper-add-mobile');
+           }
+        }).trigger('resize');
+});
+    
+ //*********************************************
 
-}
-
-function sgem_rothira_ConvertToInternationalCurrencySystemRound(labelValue) {
-
-    // Nine Zeroes for Billions
-    return Math.abs(Number(labelValue)) >= 1.0e+9
-
-    ? (Math.abs(Number(labelValue)) / 1.0e+9).toFixed(1) + "B"
-    // Six Zeroes for Millions 
-    : Math.abs(Number(labelValue)) >= 1.0e+6
-
-    ? (Math.abs(Number(labelValue)) / 1.0e+6).toFixed(1) + "M"
-    // Three Zeroes for Thousands
-    : Math.abs(Number(labelValue)) >= 1.0e+3
-
-    ? (Math.abs(Number(labelValue)) / 1.0e+3).toFixed() + "K"
-
-    : Math.abs(Number(labelValue));
-
-}
-
-function sgem_roth_ira_ConvertToInternationalCurrencySystem(labelValue) {
+ function sgem_401_ConvertToInternationalCurrencySystem(labelValue) {
 
     // Nine Zeroes for Billions
     return Math.abs(Number(labelValue)) >= 1.0e+9
@@ -432,263 +461,548 @@ function sgem_roth_ira_ConvertToInternationalCurrencySystem(labelValue) {
 
 }
 
- window.onload = function() {
-  sgem_roth_ira_calmin();
- }
- 
-jQuery(document).ready(function($){
- 
-if( location.hostname == "messy-saxophone.flywheelsites.com") {
-	$('.sgem-roth-ira-logo-center').hide(); 
-} else if(location.hostname == "retirementinvestments.com"){
-	$('.sgem-roth-ira-logo-center').hide(); 	
-} else {
-	$('.sgem-roth-ira-logo-center').show(); 	
+function sgem_401_ConvertToInternationalCurrencySystemRoundtooltip(labelValue) {
+
+    // Nine Zeroes for Billions
+    return Math.abs(Number(labelValue)) >= 1.0e+9
+
+    ? (Math.abs(Number(labelValue)) / 1.0e+9).toFixed(1) + "B"
+    // Six Zeroes for Millions 
+    : Math.abs(Number(labelValue)) >= 1.0e+6
+
+    ? (Math.abs(Number(labelValue)) / 1.0e+6).toFixed(1) + "M"
+    // Three Zeroes for Thousands
+    : Math.abs(Number(labelValue)) >= 1.0e+3
+
+    ? (Math.abs(Number(labelValue)) / 1.0e+3).toFixed(1) + "K"
+
+    : Math.abs(Number(labelValue));
+
 }
- 	
-	
-	
-function sgem_roth_ira_calmin() {
 
-var each_year_valueatretirement_array=[];
-var each_year_age_array=[];
-var each_year_iracon_array=[];
-var r_chart_label_year_array=[];
-var ira_y_axis_nan_array=[];
-var ira_y_axis_array=[];
+function sgem_401_ConvertToInternationalCurrencySystemRound(labelValue) {
 
-var annual_rate_of_return2 = $('#sgem_roth_ira_rate_of_return').val().trim();
-var annual_rate_of_return1 = annual_rate_of_return2.replace('%', "");
-var annual_rate_of_return = parseFloat(annual_rate_of_return1/100);
+    // Nine Zeroes for Billions
+    return Math.abs(Number(labelValue)) >= 1.0e+9
 
-var current_age = $('#sgem_roth_ira_age').val().trim();
-var retirement_age = $('#sgem_roth_ira_retirement_age').val().trim();
+    ? (Math.abs(Number(labelValue)) / 1.0e+9).toFixed(1) + "B"
+    // Six Zeroes for Millions 
+    : Math.abs(Number(labelValue)) >= 1.0e+6
 
-var magi3 = $('#sgem_roth_ira_income_before_taxes').val().trim();
-var magi2 = magi3.replace(/\,/g,'');
-var magi = parseInt(magi2,10);
+    ? (Math.abs(Number(labelValue)) / 1.0e+6).toFixed(1) + "M"
+    // Three Zeroes for Thousands
+    : Math.abs(Number(labelValue)) >= 1.0e+3
 
-var starting_balance3 = $('#sgem_roth_ira_current_balance').val().trim();
-var starting_balance2 = starting_balance3.replace(/\,/g,'');
-var starting_balance = parseInt(starting_balance2,10);
+    ? (Math.abs(Number(labelValue)) / 1.0e+3).toFixed() + "K"
 
-var annual_roth_contribution3 = $('#sgem_roth_ira_annual_contribution').val().trim();
-var annual_roth_contribution2 = annual_roth_contribution3.replace(/\,/g,'');
-var annual_roth_contribution = parseInt(annual_roth_contribution2,10);
+    : Math.abs(Number(labelValue));
 
-var catchup_contribution3 = $('#sgem_roth_ira_catchup_contribution').val().trim();
-var catchup_contribution2 = catchup_contribution3.replace(/\,/g,'');
-var catchup_contribution = parseInt(catchup_contribution2,10);
+}
 
-var inflation = 0.03;
-var income_tax = 0.27;
-var income_used_during_retirement = 0.70;
-var no_of_contribution_years = retirement_age - current_age;
-var counting_fifty_years= 49-current_age;
-var counting_fifty_years2= 49-current_age;
 
+
+function sgem_401k_calculationmin() {
+
+
+var chart401_label_year_array = [];
+var each401_year_age_array = [];
+var each401_individual_contribution_array = [];
+var each401_year_employee_match_array = [];
+var each401_year_catchup_array = [];
+var each401_year_total_contribution_array = [];
+var each401_interest_component_array = [];
+var each401_interest_component_array_final = [];
+var y401_axis_max_array = [];
+var y401_axis_max_array_nan = [];
+
+var current_age = $('#sgem_401k_age').val().trim();
+
+var curent_age_chart = current_age - 1;
+
+var retirement_age = $('#sgem_401k_retirement_age').val().trim();
+
+var years_to_retirement = retirement_age - current_age;
+
+var rate_of_return1 = $('#sgem_401k_rate_of_return').val().trim();
+var rate_of_return2 = rate_of_return1.replace('%', "");
+var rate_of_return = parseFloat(rate_of_return2/100);
+
+var current_annual_income1 = $('#sgem_401k_income_before_taxes').val().trim();
+var current_annual_income2 = current_annual_income1.replace(/\,/g,'');
+var current_annual_income = parseInt(current_annual_income2,10); 
+
+var current_saving_in_account1 = $('#sgem_401k_current_balance').val().trim();
+var current_saving_in_account2 = current_saving_in_account1.replace(/\,/g,'');
+var current_saving_in_account = parseInt(current_saving_in_account2,10); 
+ 
+var annual_catchup_con_ifany1 = $('#sgem_401k_annual_catchup_contribution').val().trim();
+var annual_catchup_con_ifany2 = annual_catchup_con_ifany1.replace(/\,/g,'');
+var annual_catchup_con_ifany = parseInt(annual_catchup_con_ifany2,10); //after 50 years can contribute extra 6500
+
+var limit_on_matching_contribution1 = $('#sgem_401k_limit_on_matching').val().trim();
+var limit_on_matching_contribution2 = limit_on_matching_contribution1.replace('%', "");
+var limit_on_matching_contribution = parseFloat(limit_on_matching_contribution2/100);
+
+var employer_match1 = $('#sgem_401k_employer_match').val().trim();
+var employer_match2 = employer_match1.replace('%', "");
+var employer_match = parseFloat(employer_match2/100);
+
+var inflation = 3 / 100; //def
+
+var growth_rate1 = $('#sgem_401k_growth_rate').val().trim();
+var growth_rate2 = growth_rate1.replace('%', "");
+var growth_rate = parseFloat(growth_rate2/100);
+
+var income_tax = 27 / 100; //def
+
+var percentage_of_income_during_retirement = 70 / 100; //def
+var k_counting_fifty_years= 50-current_age;
+var k_counting_fifty_years2= 50-current_age;
+
+var t_annual_employee_contribution_atstart1 = $('#sgem_401k_annual_contributions').val().trim();
+var t_annual_employee_contribution_atstart2 = t_annual_employee_contribution_atstart1.replace(/\,/g,'');
+var t_annual_employee_contribution_atstart = parseInt(t_annual_employee_contribution_atstart2,10);//maiximum is 20500
+
+//Traditional 401k
+var t_annual_catchup_con_ifany = annual_catchup_con_ifany;
+var t_annual_employer_match_atstart = (current_annual_income * limit_on_matching_contribution) * employer_match;
+var t_totalannual_contribution = t_annual_employee_contribution_atstart + t_annual_employer_match_atstart;
+var t_total_annual_contribution_with_catchup = t_totalannual_contribution + t_annual_catchup_con_ifany;
+
+var annual_contribution_as_pct = t_annual_employee_contribution_atstart / current_annual_income;
+
+//Validation for Maximum Total Annual contribution
+
+if (t_totalannual_contribution > 61000){
+
+  $('#sgem_401k_err_annualmax').html('Calculation is exceeding the maximum Total Annual contribution value, please adjust your <b>Income before taxes,Employer match</b> or <b>Limit on matching contributions</b> in order to fix this').fadeIn();  
+  $('#sgem_401k_income_before_taxes,#sgem_401k_employer_match,#sgem_401k_limit_on_matching').css({
+        "border": "1px solid red",
+        "background": "#FFCECE" });
+
+}else{
+
+     $('#sgem_401k_err_annualmax').html('').fadeOut();
+
+    $('#sgem_401k_income_before_taxes,#sgem_401k_employer_match,#sgem_401k_limit_on_matching').css({
+        "border": "1px solid #707070",
+        "background": "#ffffff"
+      }); 
+   
+}
+
+//Validation for Maximum Total Annual contribution with catchup
+
+if (t_total_annual_contribution_with_catchup > 67500) {
+
+  $('#sgem_401k_err_annualmax_withcatchup').html('Calculation is exceeding the maximum Total Annual contribution with catchup value, please adjust your <b>Income before taxes,Employer match,Limit on matching contributions</b> or <b>Annual catch-up contribution</b> in order to fix this').fadeIn();  
+  $('#sgem_401k_income_before_taxes,#sgem_401k_employer_match,#sgem_401k_limit_on_matching,#sgem_401k_annual_catchup_contribution').css({
+        "border": "1px solid red",
+        "background": "#FFCECE" });
+
+}else {
+
+     $('#sgem_401k_err_annualmax_withcatchup').html('').fadeOut();
+
+    $('#sgem_401k_income_before_taxes,#sgem_401k_employer_match,#sgem_401k_limit_on_matching,#sgem_401k_annual_catchup_contribution').css({
+        "border": "1px solid #707070",
+        "background": "#ffffff"
+      }); 
+}
+
+
+//----------------------------------------------------------
 
 //Monthly retirement spending
 
-var monthly_retirement_spending1= magi/12;
-//var monthly_retirement_spending2= 1-income_tax;
-var monthly_retirement_spending3= income_used_during_retirement;
-var monthly_retirement_spending4= 1+inflation;
-let monthly_retirement_spending5= Math.pow(monthly_retirement_spending4, no_of_contribution_years);
-var monthly_retirement_spending= (monthly_retirement_spending1*monthly_retirement_spending3*monthly_retirement_spending5).toFixed();
+var monthly_retirement_spending1 = current_annual_income / 12;
+var monthly_retirement_spending2 = 1 - income_tax;
+var monthly_retirement_spending3 = 1 + inflation;
+let monthly_retirement_spending4 = Math.pow(monthly_retirement_spending3, years_to_retirement);
+var monthly_retirement_spending = (monthly_retirement_spending1 * monthly_retirement_spending2 * percentage_of_income_during_retirement * monthly_retirement_spending4).toFixed();
 //console.log(monthly_retirement_spending);
 
-if (isNaN(monthly_retirement_spending) || monthly_retirement_spending < 1){
+      if (isNaN(monthly_retirement_spending) || monthly_retirement_spending < 1){
 
-          $('#sgem_you_will_need').text('00.00'); 
-
-      }else{
-
-        $('#sgem_you_will_need').text(sgem_roth_ira_ConvertToInternationalCurrencySystem(monthly_retirement_spending)+'/mo'); 
-      }
-
-//Total Contribution
-
-var total_contribution1 = annual_roth_contribution*no_of_contribution_years;
-
-var total_contribution2= retirement_age-50;
-var total_contribution3= catchup_contribution*total_contribution2;
-var total_contribution=(total_contribution1+total_contribution3).toFixed(2);
-//console.log(total_contribution);
-
-if (isNaN(total_contribution) || total_contribution < 1){
-
-          $('#sgem_you_ira_ira_contribution').text('00.00'); 
+          $('#sgem_you_will_have').text('00.00'); 
 
       }else{
 
-        $('#sgem_you_ira_ira_contribution').text(sgem_roth_ira_ConvertToInternationalCurrencySystem(total_contribution)); 
+        $('#sgem_you_will_have').text(sgem_401_ConvertToInternationalCurrencySystem(monthly_retirement_spending)+'/mo'); 
       }
 
-//Value at Retirement
 
-var value_at_retirement1 = 1+annual_rate_of_return;
-let value_at_retirement2 = Math.pow(value_at_retirement1, no_of_contribution_years);
-var value_at_retirement3 = (starting_balance*value_at_retirement2).toFixed(2);
+//----------------------------------------------------------
 
-var value_at_retirement100 = 1+annual_rate_of_return;
-let value_at_retirement4= Math.pow(value_at_retirement100, no_of_contribution_years);
-var value_at_retirement40=value_at_retirement4-1;
-var value_at_retirement5= value_at_retirement40/annual_rate_of_return;
-var value_at_retirement6= value_at_retirement5*value_at_retirement100;
-var value_at_retirement61= (annual_roth_contribution*value_at_retirement6).toFixed(2);
+//Total individual contribution including catchup
 
-var value_at_retirement101 = 1+annual_rate_of_return;
-let value_at_retirement7= Math.pow(value_at_retirement101, retirement_age-50);
-var value_at_retirement8= value_at_retirement7-1;
-var value_at_retirement9=value_at_retirement8/annual_rate_of_return;
-var value_at_retirement10=value_at_retirement9*value_at_retirement101;
-var value_at_retirement12= catchup_contribution*value_at_retirement10;
+if (growth_rate > 0) {
 
-var value_at_retirement= (parseFloat(value_at_retirement3)+parseFloat(value_at_retirement61)+parseFloat(value_at_retirement12)).toFixed(2);
+    var total_individual_contribution1 = 1 + growth_rate;
+    let total_individual_contribution2 = Math.pow(total_individual_contribution1, years_to_retirement);
+    var total_individual_contribution21 = total_individual_contribution2 - 1;
+    var total_individual_contribution22 = total_individual_contribution21 / growth_rate;
+    var total_individual_contribution3 = t_annual_employee_contribution_atstart * total_individual_contribution22;
 
-if (isNaN(value_at_retirement) || value_at_retirement < 1){
+    var total_individual_contribution16 = retirement_age - 50;
+    var total_individual_contribution17 = t_annual_catchup_con_ifany * total_individual_contribution16;
 
-          $('#sgem_roth_ira_balance_text').text('00.00'); 
+    var total_individual_contribution = (total_individual_contribution3 + total_individual_contribution17).toFixed(2);
+
+} else {
+
+    var total_individual_contribution5 = t_annual_employee_contribution_atstart * years_to_retirement;
+
+    var total_individual_contribution6 = retirement_age - 50;
+    var total_individual_contribution7 = t_annual_catchup_con_ifany * total_individual_contribution6;
+
+    var total_individual_contribution = (total_individual_contribution5 + total_individual_contribution7).toFixed(2);
+
+}
+//console.log(total_individual_contribution);
+
+      if (isNaN(total_individual_contribution) || total_individual_contribution < 1){
+
+          $('#sgem_total_individual_con').text('00.00'); 
 
       }else{
 
-        $('#sgem_roth_ira_balance_text').text('$' + sgem_roth_ira_ConvertToInternationalCurrencySystem(value_at_retirement)); 
+        $('#sgem_total_individual_con').text(sgem_401_ConvertToInternationalCurrencySystem(total_individual_contribution)); 
       }
 
-//console.log(value_at_retirement);
+//----------------------------------------------------------
+
+//Total Employer Contribution
+
+if (growth_rate > 0) {
+
+    var total_employer_contribution1 = 1 + growth_rate;
+    let total_employer_contribution2 = Math.pow(total_employer_contribution1, years_to_retirement);
+    var total_employer_contribution3 = total_employer_contribution2 - 1;
+    var total_employer_contribution4 = total_employer_contribution3 / growth_rate;
+    var total_employer_contribution = (t_annual_employer_match_atstart * total_employer_contribution4).toFixed(2);
+
+} else {
+
+    var total_employer_contribution = t_annual_employer_match_atstart * years_to_retirement;
+
+}
+//console.log(total_employer_contribution);
+
+      if (isNaN(total_employer_contribution) || total_employer_contribution < 1){
+
+          $('#sgem_total_employer_con').text('00.00'); 
+
+      }else{
+
+        $('#sgem_total_employer_con').text(sgem_401_ConvertToInternationalCurrencySystem(total_employer_contribution)); 
+      }
+
+//----------------------------------------------------------
+
+//Total Value at Retirement, with growth
+
+var total_value_at_retirement_w_growth1 = 1 + rate_of_return;
+let total_value_at_retirement_w_growth2 = Math.pow(total_value_at_retirement_w_growth1, years_to_retirement);
+var total_value_at_retirement_w_growth3 = current_saving_in_account * total_value_at_retirement_w_growth2;
+
+var total_value_at_retirement_w_growth4 = 1 + rate_of_return;
+let total_value_at_retirement_w_growth5 = Math.pow(total_value_at_retirement_w_growth4, years_to_retirement);
+var total_value_at_retirement_w_growth6 = 1 + growth_rate;
+let total_value_at_retirement_w_growth7 = Math.pow(total_value_at_retirement_w_growth6, years_to_retirement);
+var total_value_at_retirement_w_growth8 = total_value_at_retirement_w_growth5 - total_value_at_retirement_w_growth7;
+var total_value_at_retirement_w_growth9 = rate_of_return - growth_rate;
+var total_value_at_retirement_w_growth10 = total_value_at_retirement_w_growth8 / total_value_at_retirement_w_growth9;
+var total_value_at_retirement_w_growth11 = t_totalannual_contribution * total_value_at_retirement_w_growth10;
+
+var total_value_at_retirement_w_growth12 = 1 + rate_of_return;
+var total_value_at_retirement_w_growth13 = retirement_age - 50;
+let total_value_at_retirement_w_growth14 = Math.pow(total_value_at_retirement_w_growth12, total_value_at_retirement_w_growth13);
+var total_value_at_retirement_w_growth15 = 1 + growth_rate;
+var total_value_at_retirement_w_growth16 = retirement_age - 50;
+let total_value_at_retirement_w_growth17 = Math.pow(total_value_at_retirement_w_growth15, total_value_at_retirement_w_growth16);
+var total_value_at_retirement_w_growth18 = total_value_at_retirement_w_growth14 - total_value_at_retirement_w_growth17;
+var total_value_at_retirement_w_growth19 = rate_of_return - growth_rate;
+var total_value_at_retirement_w_growth20 = total_value_at_retirement_w_growth18 / total_value_at_retirement_w_growth19;
+var total_value_at_retirement_w_growth21 = t_annual_catchup_con_ifany * total_value_at_retirement_w_growth20;
+
+var total_value_at_retirement_w_growth = (total_value_at_retirement_w_growth3 + total_value_at_retirement_w_growth11 + total_value_at_retirement_w_growth21).toFixed(2);
+
+//console.log(total_value_at_retirement_w_growth);
+
+      if (isNaN(total_value_at_retirement_w_growth) || total_value_at_retirement_w_growth < 1){
+
+          $('#sgem_401k_price_text').text('00.00'); 
+
+      }else{
+
+        $('#sgem_401k_price_text').text(sgem_401_ConvertToInternationalCurrencySystem(total_value_at_retirement_w_growth)); 
+      }
 
 
-//Chart Value generation
+//----------------------------------------------------------
 
-//Chart y values
-//y axis value
-    var ira_y_axis_for_nan = 1000000;
-    var ira_y_axis_value2 = value_at_retirement;
-    var ira_y_axis_value = (parseFloat(ira_y_axis_value2)+parseFloat(total_contribution)).toFixed();
-    ira_y_axis_nan_array.push(ira_y_axis_for_nan);
-    ira_y_axis_array.push(ira_y_axis_value);
+// Chart Values --------------------------------------------
 
-    if (isNaN(value_at_retirement)) {
-      
-      localStorage.setItem('ira_y_axis', JSON.stringify(ira_y_axis_nan_array));
+//chart year label
 
-    }else {
+var current_year = new Date().getFullYear();
+var endyear = current_year + years_to_retirement;
 
-       localStorage.setItem('ira_y_axis', JSON.stringify(ira_y_axis_array));
+var display_years_concat = "";
+while (current_year < endyear) {
+    var eachyear = current_year++;
+    display_years_concat += eachyear + ',';
+    chart401_label_year_array.push(eachyear);
+}
+
+//console.log(chart401_label_year_array);
+localStorage.setItem('401k_chart_years', JSON.stringify(chart401_label_year_array));
+
+//----------------------------------------------------------
+
+//Age for chart
+
+var each401_year_age = "";
+
+while (curent_age_chart < retirement_age) {
+    each401_year_age += curent_age_chart++;
+    each401_year_age_array.push(curent_age_chart);
+}
+
+//console.log(each401_year_age_array);
+localStorage.setItem('401k_chart_age', JSON.stringify(each401_year_age_array));
+
+
+//----------------------------------------------------------
+
+//Individual Contribution 
+
+var year_first_value = 1;
+var each401_year_individual_con = "";
+
+if (growth_rate > 0) {
+
+    while (year_first_value <= years_to_retirement) {
+
+        var k_individual_contribution1 = 1 + growth_rate;
+        let k_individual_contribution2 = Math.pow(k_individual_contribution1, year_first_value++);
+        var k_individual_contribution3 = k_individual_contribution2 - 1;
+        var k_individual_contribution4 = k_individual_contribution3 / growth_rate;
+        var k_individual_contribution5 = t_annual_employee_contribution_atstart * k_individual_contribution4;
+        var k_individual_contribution = (current_saving_in_account + k_individual_contribution5).toFixed(2);
+
+        each401_year_individual_con += k_individual_contribution + ',';
+        each401_individual_contribution_array.push(k_individual_contribution);
+
     }
-   
 
-//Chart x values
 
-           var r_current_year2 = new Date().getFullYear();
-           var r_current_year = r_current_year2+1;
-           var r_endyear = r_current_year+no_of_contribution_years;
+} else {
+
+    while (year_first_value <= years_to_retirement) {
+
+        var k_individual_contribution6 = t_annual_employee_contribution_atstart * year_first_value++;
+        var k_individual_contribution = (current_saving_in_account + k_individual_contribution6).toFixed(2);
+
+        each401_year_individual_con += k_individual_contribution + ',';
+        each401_individual_contribution_array.push(k_individual_contribution);
+
+    }
+}
+
+//console.log(each401_individual_contribution_array);
+localStorage.setItem('401k_chart_individual_contribution', JSON.stringify(each401_individual_contribution_array));
+
+//----------------------------------------------------------
+
+//Employer Match
+
+var year_first_value_em = 1;
+var each401_year_em = "";
+
+if (growth_rate > 0) {
+
+    while (year_first_value_em <= years_to_retirement) {
+
+        var k_employer_match1 = 1 + growth_rate;
+        let k_employer_match2 = Math.pow(k_employer_match1, year_first_value_em++);
+        var k_employer_match3 = k_employer_match2 - 1;
+        var k_employer_match4 = k_employer_match3 / growth_rate;
+        var k_employer_match = (t_annual_employer_match_atstart * k_employer_match4).toFixed(2);
+
+        each401_year_em += k_employer_match + ',';
+        each401_year_employee_match_array.push(k_employer_match);
+
+    }
+
+} else {
+
+   while (year_first_value_em <= years_to_retirement) {
     
-           var r_display_years_concat = "";
-          while(r_current_year <= r_endyear){
-                var r_displayyears = r_current_year++;
-                r_display_years_concat += r_displayyears+',';
-                r_chart_label_year_array.push(r_displayyears);
-           }
-          localStorage.setItem('rothira_label_years', JSON.stringify(r_chart_label_year_array));
-//console.log(r_chart_label_year_array);
+    var k_employer_match5 = t_annual_employer_match_atstart * year_first_value_em++;
+    var k_employer_match6 = k_employer_match5.toFixed(2);
+
+    each401_year_em += k_employer_match6 + ',';
+    each401_year_employee_match_array.push(k_employer_match6);
+
+   }
+
+}
+
+//console.log(each401_year_employee_match_array);
+localStorage.setItem('401k_chart_employer_match', JSON.stringify(each401_year_employee_match_array));
 
 
+//----------------------------------------------------------
 
-//Chart x values IRA Balance
+//Catchup contribution 
 
- var year_first_value = 1;
-  var year_first_value2 = 1;
- var each_year_valueatretirement ="";
+var year_first_value_cc = 1;
+var each401_year_cc = "";
+//each401_year_xx = "";
+//var catchup_con_age = current_age - 1;
+var newage_cur50 = 50;
 
- while (year_first_value <= no_of_contribution_years,year_first_value2 <= no_of_contribution_years) {
+while (year_first_value_cc <= years_to_retirement) {
 
+    var k_catchup_contribution1 = 0 * year_first_value_cc++;
+    var k_catchup_contribution = k_catchup_contribution1;
+ 
+  
+    //each401_year_xx += k_catchup_contribution4 + ',';
 
- //Value at Retirement each year with loop
-
-var g_value_at_retirement1 = 1+annual_rate_of_return;
-let g_value_at_retirement2 = Math.pow(g_value_at_retirement1, year_first_value++);
-var g_value_at_retirement3 = (starting_balance*g_value_at_retirement2).toFixed();
-
-var g_value_at_retirement100 = 1+annual_rate_of_return;
-let g_value_at_retirement4= Math.pow(g_value_at_retirement100, year_first_value2++);
-var g_value_at_retirement40=g_value_at_retirement4-1;
-var g_value_at_retirement5= g_value_at_retirement40/annual_rate_of_return;
-var g_value_at_retirement6= g_value_at_retirement5*g_value_at_retirement100;
-var g_value_at_retirement61= (annual_roth_contribution*g_value_at_retirement6).toFixed();
-
-//Adding this part of the formula from current age is 50=<
-
-var g_value_at_retirement101 = 1+annual_rate_of_return;
-let g_value_at_retirement7= Math.pow(g_value_at_retirement101, retirement_age-50);
-var g_value_at_retirement8= g_value_at_retirement7-1;
-var g_value_at_retirement9=g_value_at_retirement8/annual_rate_of_return;
-var g_value_at_retirement10=g_value_at_retirement9*g_value_at_retirement101;
-var g_value_at_retirement12= (catchup_contribution*g_value_at_retirement10).toFixed();
-
-var g_value_at_retirement= parseFloat(g_value_at_retirement3)+parseFloat(g_value_at_retirement61);
-          
-          each_year_valueatretirement += g_value_at_retirement+',';
-          each_year_valueatretirement_array.push(g_value_at_retirement);
-        }
-
-
- //Chart x values ira contribution
-
-var c_year_first_value = 1;
-var each_year_iracontribution ="";
-
- while (c_year_first_value <= no_of_contribution_years) {
-
-var g_total_contribution1 = annual_roth_contribution*c_year_first_value++;
-
-//Adding this part of the formula from current age is 50=<
-var g_total_contribution2= retirement_age-50;
-var g_total_contribution3= catchup_contribution*g_total_contribution2;
-var g_total_contribution=g_total_contribution1;
-
- each_year_iracontribution += g_total_contribution+',';
- each_year_iracon_array.push(g_total_contribution);
+    each401_year_cc += k_catchup_contribution + ',';
+    each401_year_catchup_array.push(k_catchup_contribution);
+    //console.log(k_catchup_contribution4);
 
 }
 
 //After current age is =<50 adding last part of the formula to the array list
 
-while (counting_fifty_years <= no_of_contribution_years,counting_fifty_years2 <= no_of_contribution_years){
+while (newage_cur50 <= retirement_age){
+  // formula to add after 50 years
+    var k_catchup_contribution2 = newage_cur50++ - 50;
+    var k_catchup_contribution3 = k_catchup_contribution2 + 1 ;
+    var k_catchup_contribution4 = t_annual_catchup_con_ifany * k_catchup_contribution3;
 
-each_year_valueatretirement_array[counting_fifty_years++] += parseFloat(g_value_at_retirement12);
-each_year_iracon_array[counting_fifty_years2++] += g_total_contribution3;
+    each401_year_catchup_array[k_counting_fifty_years++] += k_catchup_contribution4;
 
 }
 
-localStorage.setItem('rothira_valueatretirement', JSON.stringify(each_year_valueatretirement_array));
-localStorage.setItem('rothira_tcontribution', JSON.stringify(each_year_iracon_array));
-         
+//console.log(each401_year_catchup_array);
+localStorage.setItem('401k_chart_catchup_con', JSON.stringify(each401_year_catchup_array));
 
-//Age for chart
 
-var each_year_age ="";
+//----------------------------------------------------------
 
-while(current_age<retirement_age){
-  each_year_age += current_age++;
-  each_year_age_array.push(current_age);
+// Total Balance
+
+var first_year_tb = 1;
+var first_year_tb2 = 1;
+var first_year_tb3 = 1;
+var tb_total_balance = "";
+
+while(first_year_tb <= years_to_retirement,first_year_tb2 <= years_to_retirement,first_year_tb3 <= years_to_retirement){
+
+var total_balance1 = 1 + rate_of_return;
+let total_balance2 = Math.pow(total_balance1, first_year_tb++);
+var total_balance3 = current_saving_in_account * total_balance2;
+
+var total_balance4 = 1 + rate_of_return;
+let total_balance5 = Math.pow(total_balance4, first_year_tb2++);
+var total_balance6 = 1 + growth_rate;
+let total_balance7 = Math.pow(total_balance6, first_year_tb3++);
+var total_balance8 = total_balance5 - total_balance7;
+var total_balance9 = rate_of_return - growth_rate;
+var total_balance10 = total_balance8 / total_balance9;
+var total_balance11 = t_totalannual_contribution * total_balance10;
+
+var total_balance12 = total_balance3 + total_balance11;
+
+tb_total_balance += total_balance12 + ',';
+each401_year_total_contribution_array.push(total_balance12);
+
 }
 
-localStorage.setItem('rothira_c_age', JSON.stringify(each_year_age_array));
-roth_update_chart();
-//console.log(each_year_age_array);
-//console.log(each_year_valueatretirement_array);
-//console.log(each_year_iracon_array); 
+var newage2_cur50 = 50;
+var newage3_cur50 = 50;
+
+while (newage2_cur50 <= retirement_age,newage3_cur50 <= retirement_age){
+
+var total_balance13 = 1 + rate_of_return;
+var total_balance14 = newage2_cur50++ - 50;
+var total_balance15 = total_balance14 + 1;
+let total_balance16 = Math.pow(total_balance13, total_balance15);
+
+var total_balance17 = 1 + growth_rate;
+var total_balance18 = newage3_cur50++ - 50;
+var total_balance19 = total_balance18 + 1;
+let total_balance20 = Math.pow(total_balance17, total_balance19);
+
+var total_balance21 = total_balance16 - total_balance20;
+var total_balance22 = rate_of_return - growth_rate;
+
+var total_balance23 = total_balance21 / total_balance22;
+var total_balance24 = t_annual_catchup_con_ifany * total_balance23;
+
+each401_year_total_contribution_array[k_counting_fifty_years2++] += total_balance24;
+
+}
+//console.log(each401_year_total_contribution_array);
+
+//----------------------------------------------------------
+
+//Y Axis maximum
+var y_axis_max = each401_year_total_contribution_array[each401_year_total_contribution_array.length - 2] + each401_year_catchup_array[each401_year_catchup_array.length - 2];
+var y_axis_max_nan = 1000000;
+y401_axis_max_array_nan.push(y_axis_max_nan.toFixed(2));
+y401_axis_max_array.push(y_axis_max.toFixed(2));
+
+
+    if (isNaN(y_axis_max)) {
+      
+      localStorage.setItem('401k_chart_y_max', JSON.stringify(y401_axis_max_array_nan));
+
+    }else {
+
+      localStorage.setItem('401k_chart_y_max', JSON.stringify(y401_axis_max_array));
+    }
+
+
+//----------------------------------------------------------
+
+//Interest Component
+
+var arrayLength = each401_individual_contribution_array.length;
+
+for (var i = 0; i < arrayLength; i++){
+
+     var finalanswer = parseFloat(each401_individual_contribution_array[i]) + parseFloat(each401_year_employee_match_array[i]);
+     each401_interest_component_array.push(finalanswer.toFixed(2));  
+
+      var intrest_component = parseFloat(each401_year_total_contribution_array[i]) - parseFloat(each401_interest_component_array[i]);
+     each401_interest_component_array_final.push(intrest_component.toFixed(2));
+ 
 }
 
-sgem_roth_ira_calmin();
 
-if($('#sgem_roth_ira_age,#sgem_roth_ira_retirement_age,#sgem_roth_ira_income_before_taxes,#sgem_roth_ira_current_balance,#sgem_roth_ira_annual_contribution,#sgem_roth_ira_rate_of_return,#sgem_roth_ira_catchup_contribution').length > 0) {
-      $('#sgem_roth_ira_age,#sgem_roth_ira_retirement_age,#sgem_roth_ira_income_before_taxes,#sgem_roth_ira_current_balance,#sgem_roth_ira_annual_contribution,#sgem_roth_ira_rate_of_return,#sgem_roth_ira_catchup_contribution').on('keyup', function () {
-        sgem_roth_ira_calmin();
+//console.log(each401_interest_component_array_final);
+localStorage.setItem('401k_chart_intrest_com', JSON.stringify(each401_interest_component_array_final));
+
+
+//----------------------------------------------------------
+
+k401_update_chart();
+
+}
+
+if($('#sgem_401k_age,#sgem_401k_retirement_age,#sgem_401k_income_before_taxes,#sgem_401k_current_balance,#sgem_401k_annual_contributions,#sgem_401k_employer_match,#sgem_401k_limit_on_matching,#sgem_401k_rate_of_return,#sgem_401k_annual_catchup_contribution,#sgem_401k_growth_rate').length > 0) {
+      $('#sgem_401k_age,#sgem_401k_retirement_age,#sgem_401k_income_before_taxes,#sgem_401k_current_balance,#sgem_401k_annual_contributions,#sgem_401k_employer_match,#sgem_401k_limit_on_matching,#sgem_401k_rate_of_return,#sgem_401k_annual_catchup_contribution,#sgem_401k_growth_rate').on('keyup', function () {
+        sgem_401k_calculationmin();
       //pcm_init_chart(); 
 
+     
         // Keep only digits and decimal points:
       this.value=this.value.replace(/[^\d.]/g, "")
       // Remove duplicated decimal point, if one exists:
@@ -701,35 +1015,36 @@ if($('#sgem_roth_ira_age,#sgem_roth_ira_retirement_age,#sgem_roth_ira_income_bef
       });
  }
 
- if($('#sgem_roth_ira_age,#sgem_roth_ira_retirement_age,#sgem_roth_ira_income_before_taxes,#sgem_roth_ira_current_balance,#sgem_roth_ira_annual_contribution,#sgem_roth_ira_rate_of_return').length > 0) {
-      $('#sgem_roth_ira_age,#sgem_roth_ira_retirement_age,#sgem_roth_ira_income_before_taxes,#sgem_roth_ira_current_balance,#sgem_roth_ira_annual_contribution,#sgem_roth_ira_rate_of_return').on('keyup', function () {
-
+//keyup for zero on front validation
+ if($('#sgem_401k_age,#sgem_401k_retirement_age,#sgem_401k_income_before_taxes,#sgem_401k_current_balance,#sgem_401k_annual_contributions,#sgem_401k_employer_match,#sgem_401k_limit_on_matching,#sgem_401k_rate_of_return,#sgem_401k_growth_rate').length > 0) {
+      $('#sgem_401k_age,#sgem_401k_retirement_age,#sgem_401k_income_before_taxes,#sgem_401k_current_balance,#sgem_401k_annual_contributions,#sgem_401k_employer_match,#sgem_401k_limit_on_matching,#sgem_401k_rate_of_return,#sgem_401k_growth_rate').on('keyup', function () {
+      
        // Removing front zero
       this.value=this.value.replace(/^0+/, '');
 
       });
  }
- 
 
-//validation start
+//----------------------------------------------------
+//Validations
 
-  // Current age validation
-    $('#sgem_roth_ira_age').on('keyup', function () {
-       var retirement_age7     = $('#sgem_roth_ira_retirement_age').val().trim();
+ // Current age validation
+    $('#sgem_401k_age').on('keyup', function () {
+       var retirement_age7     = $('#sgem_401k_retirement_age').val().trim();
        var x = parseFloat(retirement_age7);
       var val = this.value;
       var y = parseFloat(val);
       if (isNaN(y) || y.length>2 || y < 0 || y > x){
          
          this.value ='';
-         $('.sgem_roth_ira_err_age').html('Age cannot be more than 100 and retirement age').fadeIn();  
+         $('#sgem_401k_err_my_age').html('Age cannot be more than 100 and retirement age').fadeIn();  
           $(this).css({
         "border": "1px solid red",
         "background": "#FFCECE" });  
           
 
   }else{
-     $('.sgem_roth_ira_err_age').html('').fadeOut();  
+     $('#sgem_401k_err_my_age').html('').fadeOut();  
     $(this).css({
         "border": "1px solid #707070",
         "background": "#ffffff"
@@ -739,12 +1054,12 @@ if($('#sgem_roth_ira_age,#sgem_roth_ira_retirement_age,#sgem_roth_ira_income_bef
 
 
     // Retirement age validation
-    $('#sgem_roth_ira_retirement_age').on('keyup', function () {
-      var current_age7     = $('#sgem_roth_ira_age').val().trim();
+    $('#sgem_401k_retirement_age').on('keyup', function () {
+      var current_age7     = $('#sgem_401k_age').val().trim();
       var val = this.value;
       if ($(this).val().length>2 || val < current_age7){    
          this.value ='';
-         $('.sgem_roth_ira_err_retirement_age').html('Retirement age should be between your age '+current_age7+' and 100').fadeIn();      
+         $('#sgem_401k_err_rmt').html('Retirement age should be between your age '+current_age7+' and 100').fadeIn();      
           $(this).css({
         "border": "1px solid red",
         "background": "#FFCECE"
@@ -752,7 +1067,7 @@ if($('#sgem_roth_ira_age,#sgem_roth_ira_retirement_age,#sgem_roth_ira_income_bef
     
        
   }else{
-     $('.sgem_roth_ira_err_retirement_age').html('').fadeOut();  
+     $('#sgem_401k_err_rmt').html('').fadeOut();  
     $(this).css({
         "border": "1px solid #707070",
         "background": "#ffffff"
@@ -760,71 +1075,21 @@ if($('#sgem_roth_ira_age,#sgem_roth_ira_retirement_age,#sgem_roth_ira_income_bef
   }   
     });
 
-//magi
-    $('#sgem_roth_ira_income_before_taxes').on('keyup', function () {
-     var rvcc3     = $('#sgem_roth_ira_income_before_taxes').val().trim();
-      var rvcc2 = rvcc3.replace(/\,/g,'');
-      var rvcc = parseInt(rvcc2,10); 
-      var tis = $('#sgem_roth_ira_filing_status').val();
-      if (rvcc>144000 && tis=='1'){
-          
-         //this.value ='';
-         $('#sgem_roth_ira_err_my_income_before_taxes').html('MAGI should less than $144,000 to be eligible to contribute to the ROTH IRA').fadeIn();   
-          $('#sgem_roth_ira_income_before_taxes').css({
-        "border": "1px solid red",
-        "background": "#FFCECE" });  
-          
-
-  }else if(tis=='2' && rvcc>214000){
-
-       
-       $('#sgem_roth_ira_err_my_income_before_taxes').html('MAGI should less than $214,000 to be eligible to contribute to the ROTH IRA').fadeIn();   
-          $('#sgem_roth_ira_income_before_taxes').css({
-        "border": "1px solid red",
-        "background": "#FFCECE" }); 
-
-
-  }else if(tis=='3' && rvcc>10000){
-
-      $('#sgem_roth_ira_err_my_income_before_taxes').html('MAGI should less than $10,000 to be eligible to contribute to the ROTH IRA').fadeIn();   
-          $('#sgem_roth_ira_income_before_taxes').css({
-        "border": "1px solid red",
-        "background": "#FFCECE" }); 
-
-  }else if($(this).val().length>7){
- 
- this.value ='';
- $('#sgem_roth_ira_income_before_taxes').css({
-        "border": "1px solid red",
-        "background": "#FFCECE" }); 
-  
-  }
-  else{
-     $('#sgem_roth_ira_err_my_income_before_taxes').html('').fadeOut();  
-    $(this).css({
-        "border": "1px solid #707070",
-        "background": "#ffffff"
-      }); 
-  }    
-    });
-
-
-
-    // current balance
-    $('#sgem_roth_ira_current_balance').on('keyup', function () {
+ // income before taxes
+    $('#sgem_401k_income_before_taxes').on('keyup', function () {
       var val = this.value;
       var xc = parseInt(val);
       if (isNaN(xc) || $(this).val().length>11){
          
          this.value ='';
-         $('#sgem_roth_ira_err_current_roth_ira_balance').html('This cannot be empty or more than $900,000,000').fadeIn();  
+         $('#sgem_401k_err_income_before_taxes').html('This cannot be empty or more than $900,000,000').fadeIn();  
           $(this).css({
         "border": "1px solid red",
         "background": "#FFCECE" });  
           
 
   }else{
-     $('#sgem_roth_ira_err_current_roth_ira_balance').html('').fadeOut();  
+     $('#sgem_401k_err_income_before_taxes').html('').fadeOut();  
     $(this).css({
         "border": "1px solid #707070",
         "background": "#ffffff"
@@ -832,22 +1097,22 @@ if($('#sgem_roth_ira_age,#sgem_roth_ira_retirement_age,#sgem_roth_ira_income_bef
   }    
     });
 
-//Annual contribution
-    $('#sgem_roth_ira_annual_contribution').on('keyup', function () {
-      var vac3     = $('#sgem_roth_ira_annual_contribution').val().trim();
-      var vac2 = vac3.replace(/\,/g,'');
-      var vac = parseInt(vac2,10); 
-      if (isNaN(vac) || vac>6000){
+
+ // current balance
+    $('#sgem_401k_current_balance').on('keyup', function () {
+      var val = this.value;
+      var xcx = parseInt(val);
+      if (isNaN(xcx) || $(this).val().length>11){
          
          this.value ='';
-         $('#sgem_roth_ira_err_annual').html('This cannot be empty or more than $6,000').fadeIn();  
+         $('#sgem_401k_err_current_balance').html('This cannot be empty or more than $900,000,000').fadeIn();  
           $(this).css({
         "border": "1px solid red",
         "background": "#FFCECE" });  
           
 
   }else{
-     $('#sgem_roth_ira_err_annual').html('').fadeOut();  
+     $('#sgem_401k_err_current_balance').html('').fadeOut();  
     $(this).css({
         "border": "1px solid #707070",
         "background": "#ffffff"
@@ -855,21 +1120,44 @@ if($('#sgem_roth_ira_age,#sgem_roth_ira_retirement_age,#sgem_roth_ira_income_bef
   }    
     });
 
-    //Expected rate of return
-    $('#sgem_roth_ira_rate_of_return').on('keyup', function () {
-      var vrr2     = $('#sgem_roth_ira_rate_of_return').val().trim();
+    //Annual contribution
+    $('#sgem_401k_annual_contributions').on('keyup', function () {
+      var vac3     = $('#sgem_401k_annual_contributions').val().trim();
+      var vac2 = vac3.replace(/\,/g,'');
+      var vac = parseInt(vac2,10); 
+      if (isNaN(vac) || vac>20500){
+         
+         this.value ='';
+         $('#sgem_401k_err_annual_contributions').html('This cannot be empty or more than $20,500').fadeIn();  
+          $(this).css({
+        "border": "1px solid red",
+        "background": "#FFCECE" });  
+          
+
+  }else{
+     $('#sgem_401k_err_annual_contributions').html('').fadeOut();  
+    $(this).css({
+        "border": "1px solid #707070",
+        "background": "#ffffff"
+      }); 
+  }    
+    });
+
+ //Employer match
+    $('#sgem_401k_employer_match').on('keyup', function () {
+      var vrr2     = $('#sgem_401k_employer_match').val().trim();
       var vrr = vrr2.replace('%', "");
       if (isNaN(vrr) || vrr>100){
          
          this.value ='';
-         $('#sgem_roth_ira_err_rate_of_return').html('This cannot be empty or more than 100%').fadeIn();  
+         $('#sgem_401k_err_employer_match').html('This cannot be empty or more than 100%').fadeIn();  
           $(this).css({
         "border": "1px solid red",
         "background": "#FFCECE" });  
           
 
   }else{
-     $('#sgem_roth_ira_err_rate_of_return').html('').fadeOut();  
+     $('#sgem_401k_err_employer_match').html('').fadeOut();  
     $(this).css({
         "border": "1px solid #707070",
         "background": "#ffffff"
@@ -877,22 +1165,21 @@ if($('#sgem_roth_ira_age,#sgem_roth_ira_retirement_age,#sgem_roth_ira_income_bef
   }    
     });
 
-    //catch up contribution
-    $('#sgem_roth_ira_catchup_contribution').on('keyup', function () {
-      var vcc3     = $('#sgem_roth_ira_catchup_contribution').val().trim();
-      var vcc2 = vcc3.replace(/\,/g,'');
-      var vcc = parseInt(vcc2,10); 
-      if (isNaN(vcc) || vcc>1000 || vcc<=-1){
-          
+     //limit on matching con
+    $('#sgem_401k_limit_on_matching').on('keyup', function () {
+      var vrr2     = $('#sgem_401k_limit_on_matching').val().trim();
+      var vrr = vrr2.replace('%', "");
+      if (isNaN(vrr) || vrr>100){
+         
          this.value ='';
-         $('#sgem_roth_ira_err_catchup_contribution').html('This cannot be more than $1,000').fadeIn();  
+         $('#sgem_401k_err_limit_on_matching').html('This cannot be empty or more than 100%').fadeIn();  
           $(this).css({
         "border": "1px solid red",
         "background": "#FFCECE" });  
           
 
   }else{
-     $('#sgem_roth_ira_err_catchup_contribution').html('').fadeOut();  
+     $('#sgem_401k_err_limit_on_matching').html('').fadeOut();  
     $(this).css({
         "border": "1px solid #707070",
         "background": "#ffffff"
@@ -900,39 +1187,21 @@ if($('#sgem_roth_ira_age,#sgem_roth_ira_retirement_age,#sgem_roth_ira_income_bef
   }    
     });
 
-     //Filing status
-    $('#sgem_roth_ira_filing_status').on('change' , function () {
-      var rvcc3     = $('#sgem_roth_ira_income_before_taxes').val().trim();
-      var rvcc2 = rvcc3.replace(/\,/g,'');
-      var rvcc = parseInt(rvcc2,10); 
-      var tis = this.value
-      if (rvcc>144000 && tis=='1'){
-          
-         //this.value ='';
-         $('#sgem_roth_ira_err_my_income_before_taxes').html('MAGI should less than $144,000 to be eligible to contribute to the ROTH IRA').fadeIn();   
-          $('#sgem_roth_ira_income_before_taxes').css({
+     //Employer match
+    $('#sgem_401k_rate_of_return').on('keyup', function () {
+      var vrr2     = $('#sgem_401k_rate_of_return').val().trim();
+      var vrr = vrr2.replace('%', "");
+      if (isNaN(vrr) || vrr>100){
+         
+         this.value ='';
+         $('#sgem_401k_err_rate_of_return').html('This cannot be empty or more than 100%').fadeIn();  
+          $(this).css({
         "border": "1px solid red",
         "background": "#FFCECE" });  
           
 
-  }else if(tis=='2' && rvcc>214000){
-
-       
-       $('#sgem_roth_ira_err_my_income_before_taxes').html('MAGI should less than $214,000 to be eligible to contribute to the ROTH IRA').fadeIn();   
-          $('#sgem_roth_ira_income_before_taxes').css({
-        "border": "1px solid red",
-        "background": "#FFCECE" }); 
-
-
-  }else if(tis=='3' && rvcc>10000){
-
-      $('#sgem_roth_ira_err_my_income_before_taxes').html('MAGI should less than $10,000 to be eligible to contribute to the ROTH IRA').fadeIn();   
-          $('#sgem_roth_ira_income_before_taxes').css({
-        "border": "1px solid red",
-        "background": "#FFCECE" }); 
-
   }else{
-     $('#sgem_roth_ira_err_filling').html('').fadeOut();  
+     $('#sgem_401k_err_rate_of_return').html('').fadeOut();  
     $(this).css({
         "border": "1px solid #707070",
         "background": "#ffffff"
@@ -940,18 +1209,62 @@ if($('#sgem_roth_ira_age,#sgem_roth_ira_retirement_age,#sgem_roth_ira_income_bef
   }    
     });
 
-//validation end
+     //Annual catch-up contribution 
+    $('#sgem_401k_annual_catchup_contribution').on('keyup', function () {
+      var vac3     = $('#sgem_401k_annual_catchup_contribution').val().trim();
+      var vac2 = vac3.replace(/\,/g,'');
+      var vac = parseInt(vac2,10); 
+      if (isNaN(vac) || vac>6500){
+         
+         this.value ='';
+         $('#sgem_401k_err_annual_catchup_contribution').html('This cannot be empty or more than $6,500').fadeIn();  
+          $(this).css({
+        "border": "1px solid red",
+        "background": "#FFCECE" });  
+          
 
+  }else{
+     $('#sgem_401k_err_annual_catchup_contribution').html('').fadeOut();  
+    $(this).css({
+        "border": "1px solid #707070",
+        "background": "#ffffff"
+      }); 
+  }    
+    });
 
-// % field % add
+     //Growth rate
+    $('#sgem_401k_growth_rate').on('keyup', function () {
+      var vrr2     = $('#sgem_401k_growth_rate').val().trim();
+      var vrr = vrr2.replace('%', "");
+      if (isNaN(vrr) || vrr>100){
+         
+         this.value ='';
+         $('#sgem_401k_err_growth_rate').html('This cannot be empty or more than 100%').fadeIn();  
+          $(this).css({
+        "border": "1px solid red",
+        "background": "#FFCECE" });  
+          
 
-$('#sgem_roth_ira_rate_of_return').on('keyup', function() {
+  }else{
+     $('#sgem_401k_err_growth_rate').html('').fadeOut();  
+    $(this).css({
+        "border": "1px solid #707070",
+        "background": "#ffffff"
+      }); 
+  }    
+    });
+
+ //------------------------------
+
+ // % fields validation %
+
+ $('#sgem_401k_employer_match').on('keyup', function() {
   if ($(this).val()==''){
   
       $(this).css({
         "border": "1px solid red",
         "background": "#FFCECE" });
-         $('#sgem_roth_ira_err_rate_of_return').html('This cannot be empty or more than 100%').fadeIn(); 
+         $('#sgem_401k_err_employer_match').html('This cannot be empty or more than 100%').fadeIn(); 
 
   }else{
     $(this).val(function(i, v) {
@@ -960,116 +1273,69 @@ $('#sgem_roth_ira_rate_of_return').on('keyup', function() {
             
     }); 
 
+  $('#sgem_401k_limit_on_matching').on('keyup', function() {
+  if ($(this).val()==''){
+  
+      $(this).css({
+        "border": "1px solid red",
+        "background": "#FFCECE" });
+         $('#sgem_401k_err_limit_on_matching').html('This cannot be empty or more than 100%').fadeIn(); 
 
-// 
+  }else{
+    $(this).val(function(i, v) {
+             return v.replace('%','') + '%';  });
+  }
+            
+    }); 
 
-}); // DOCUMENT.READY END
+   $('#sgem_401k_rate_of_return').on('keyup', function() {
+  if ($(this).val()==''){
   
-  
-/**
-* Tool Tip
-*/
+      $(this).css({
+        "border": "1px solid red",
+        "background": "#FFCECE" });
+         $('#sgem_401k_err_rate_of_return').html('This cannot be empty or more than 100%').fadeIn(); 
 
-tippy('.sgem-roth-ira-tooltip', {  
-	arrow: true, 
-	theme: 'light-border',
-	trigger: 'click',boundary: 'viewport',
- });    
-  
-function roth_update_chart(){
-  //console.log('pcm_update_chart');
-  myChart.data.datasets[1].data = JSON.parse(localStorage.getItem('rothira_tcontribution'));
-  
-  myChart.data.labels = JSON.parse(localStorage.getItem('rothira_label_years'));
+  }else{
+    $(this).val(function(i, v) {
+             return v.replace('%','') + '%';  });
+  }
+            
+    }); 
 
-  myChart.options.scales.y.max = JSON.parse(localStorage.getItem('ira_y_axis'));
+    $('#sgem_401k_growth_rate').on('keyup', function() {
+  if ($(this).val()==''){
   
-  myChart.data.datasets[2].data = JSON.parse(localStorage.getItem('rothira_valueatretirement')); 
-  
-  myChart.data.datasets[0].data = JSON.parse(localStorage.getItem('rothira_c_age')); 
+      $(this).css({
+        "border": "1px solid red",
+        "background": "#FFCECE" });
+         $('#sgem_401k_err_growth_rate').html('This cannot be empty or more than 100%').fadeIn(); 
 
-  // myChart.config.data.datasets[0].target = JSON.parse(localStorage.getItem('rothira_c_age'));
+  }else{
+    $(this).val(function(i, v) {
+             return v.replace('%','') + '%';  });
+  }
+            
+}); 
 
-  //myChart.options.tooltip.context[0].dataIndex = JSON.parse(localStorage.getItem('rothira_c_age'));
+function k401_update_chart(){
+
   
+  myChart.data.labels = JSON.parse(localStorage.getItem('401k_chart_years'));
+
+  myChart.options.scales.y.max = JSON.parse(localStorage.getItem('401k_chart_y_max'));
+
+  myChart.data.datasets[0].data = JSON.parse(localStorage.getItem('401k_chart_age')); 
+
+  myChart.data.datasets[1].data = JSON.parse(localStorage.getItem('401k_chart_individual_contribution'));
+  
+  myChart.data.datasets[2].data = JSON.parse(localStorage.getItem('401k_chart_catchup_con'));
+
+  myChart.data.datasets[3].data = JSON.parse(localStorage.getItem('401k_chart_employer_match')); 
+
+  myChart.data.datasets[4].data = JSON.parse(localStorage.getItem('401k_chart_intrest_com'));  
+ 
+
   myChart.update();  
 
 }
-
-
-function toggleData(value){
-	const visibilityData = myChart.isDatasetVisible(value);
-	if (visibilityData === true ){
-	  myChart.hide(value);
-	}
-	 if (visibilityData === false ){
-	  myChart.show(value);
-	} 
-}
-
-localStorage.setItem('sgem-roth-ira-cal-copy', '<div id="sgem-roth-ira-cal"></div><script>window.onload = function() {var sgemrothiracl = document.createElement("script");sgemrothiracl.type = "text/javascript";sgemrothiracl.src = "https://retirementinvestments.github.io/roth-ira-calculator/assets/js/cal-roth-ira-scripts.min.js";document.body.appendChild(sgemrothiracl);}</script>'); 
- 
-function sgem_roth_ira_copyText(ev){
-  //console.log("hi");
-  let div = document.getElementById('div');
-  let text = localStorage.getItem('sgem-roth-ira-cal-copy');
-  let textArea  = document.createElement('textarea');
-  textArea.width  = "1px"; 
-  textArea.height = "1px";
-  textArea.background =  "transparents" ;
-  textArea.value = text;
-  document.body.append(textArea);
-  textArea.select();
-  document.execCommand('copy');   //No i18n
-  document.body.removeChild(textArea);
-  alert('Code snippted copied to clipboard!');
-}
-
-
-window.addEventListener('load', function() {
-	 
-	let sgemjsx = document.createElement('script');
-	   sgemjsx.setAttribute('src','https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js');
-	   document.body.appendChild(sgemjsx);
-});
-
-jQuery(document).ready(function($){
-
-//*******************************************************
-
-        if ($('.sgem-roth-ira-cal-wrapper').width() < 1024) {
-            $('.sgem-roth-ira-cal-left').addClass('sgem-roth-ira-cal-left-add-class');
-            $('.sgem-roth-ira-cal-right').addClass('sgem-roth-ira-cal-right-add-class');
-        }
-        else {
-            $('.sgem-roth-ira-cal-left').removeClass('sgem-roth-ira-cal-left-add-class');
-            $('.sgem-roth-ira-cal-right').removeClass('sgem-roth-ira-cal-right-add-class');
-        }
-
-        if ($('.sgem-roth-ira-cal-main-id').width() < 650) {
-            $('.sgem-roth-ira-cal-wrapper').addClass('sgem-roth-ira-wrapper-add-mobile');
-        }
-        else {
-            $('.sgem-roth-ira-cal-wrapper').removeClass('sgem-roth-ira-wrapper-add-mobile');
-        }
-
-        $(window).on('resize', function() {
-            if ($('.sgem-roth-ira-cal-wrapper').width() < 1024) {
-            $('.sgem-roth-ira-cal-left').addClass('sgem-roth-ira-cal-left-add-class');
-            $('.sgem-roth-ira-cal-right').addClass('sgem-roth-ira-cal-right-add-class');
-        }
-        else {
-            $('.sgem-roth-ira-cal-left').removeClass('sgem-roth-ira-cal-left-add-class');
-            $('.sgem-roth-ira-cal-right').removeClass('sgem-roth-ira-cal-right-add-class');
-        }
-        }).trigger('resize');
-
-        $(window).on('resize', function() {
-           if ($('.sgem-roth-ira-cal-main-id').width() < 650) {
-            $('.sgem-roth-ira-cal-wrapper').addClass('sgem-roth-ira-wrapper-add-mobile');
-       }
-       else {
-            $('.sgem-roth-ira-cal-wrapper').removeClass('sgem-roth-ira-wrapper-add-mobile');
-       }
-    }).trigger('resize');
-}); 
