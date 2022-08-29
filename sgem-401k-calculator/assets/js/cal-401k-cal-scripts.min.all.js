@@ -170,7 +170,7 @@ var sgem_401k_main_contents = '<div class="sgem-401k-cal-main-id">'+
                   '<span class="futuretext3 sgem-401k-result-text-down">in retirement</span>'+
                '</div>'+
             '</div>'+
-if(location.hostname == "messy-saxophone.flywheelsites.com" || location.hostname == "retirementinvestments.com"){
+if((location.hostname == "messy-saxophone.flywheelsites.com") || (location.hostname == "retirementinvestments.com")){
     sgem_401k_main_contents += '<div class="sgem-401k-cal-1-result-footer">';
     sgem_401k_main_contents += '<div class="sgem-401k-content">Get a comprehensive wealth management for your 401(k) account that includes rebalancing and tracking all your transactions. </div>';
     sgem_401k_main_contents += '<div class="sgem-401k-buttonGet">';
