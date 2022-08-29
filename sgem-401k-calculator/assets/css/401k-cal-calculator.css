@@ -561,6 +561,7 @@ details.sgem-401k-details-disclaimer[open] > summary::after {
 }
 .sgem-401k-copy-option-panel {
     margin-top: 25px;
+    padding: 20px;
 }
 .sgem-401k-copy-code {
     background: #ffc12e;
