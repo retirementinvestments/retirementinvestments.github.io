@@ -171,31 +171,24 @@ var sgem_401k_main_contents = '<div class="sgem-401k-cal-main-id">'+
                '</div>'+
             '</div>'+
 
-            if(location.hostname == "messy-saxophone.flywheelsites.com" || location.hostname == "retirementinvestments.com"){
-                sgem_401k_main_contents += '<div class="sgem-401k-cal-1-result-footer">';
-                sgem_401k_main_contents += '<div class="sgem-401k-content">Get a comprehensive wealth management for your 401(k) account that includes rebalancing and tracking all your transactions. </div>';
-                sgem_401k_main_contents += '<div class="sgem-401k-buttonGet">';
-                sgem_401k_main_contents += '<a href="https://retirementinvestments.com/401kcalculator" class="sgem-401k-getStart">GET STARTED</a>'
-                sgem_401k_main_contents += '</div>';
-                sgem_401k_main_contents += '</div>'; // footer end
-            }
+if(location.hostname == "messy-saxophone.flywheelsites.com" || location.hostname == "retirementinvestments.com"){
+    sgem_401k_main_contents += '<div class="sgem-401k-cal-1-result-footer">';
+    sgem_401k_main_contents += '<div class="sgem-401k-content">Get a comprehensive wealth management for your 401(k) account that includes rebalancing and tracking all your transactions. </div>';
+    sgem_401k_main_contents += '<div class="sgem-401k-buttonGet">';
+    sgem_401k_main_contents += '<a href="https://retirementinvestments.com/401kcalculator" class="sgem-401k-getStart">GET STARTED</a>'
+    sgem_401k_main_contents += '</div>';
+    sgem_401k_main_contents += '</div>'; // footer end
+}
 
-            '<div class="sgem-401k-section-disclaimer">'+
-               '<details class="sgem-401k-details-disclaimer">'+
-                  '<summary>'+
-                     '<div class="sgem-401k-collapsible-summary-disclaimer">Disclaimer'+
-                     '</div>'+
-                  '</summary>'+
-                  '<div class="sgem-401k-collapsible-text-disclaimer">'+
-                     'This material is provided for general and educational purposes only; it is not intended to provide legal, tax or investment advice.'+
-                  '</div>'+
-               '</details>'+
-            '</div>'+
-         '</div>'+
-      '</div>'+
-   '</div>'+
-   '<div class="sgem-401k-logo-center"><a class="sgem-401k-url-text" href="https://retirementinvestments.com/retirement/401k-calculator" target="_blank" rel="noopener">401(k) Calculator  </a>by Retirement investments'+
-   '</div>'+
+sgem_401k_main_contents += '<div class="sgem-401k-section-disclaimer"><details class="sgem-401k-details-disclaimer"><summary><div class="sgem-401k-collapsible-summary-disclaimer">Disclaimer</div></summary><div class="sgem-401k-collapsible-text-disclaimer">This material is provided for general and educational purposes only; it is not intended to provide legal, tax or investment advice.</div></details></div>';
+
+sgem_401k_main_contents += '</div>'; 
+sgem_401k_main_contents += '</div>';
+sgem_401k_main_contents += '</div>';
+
+if( (location.hostname != "messy-saxophone.flywheelsites.com") || (location.hostname != "retirementinvestments.com") ){
+    sgem_401k_main_contents += '<div class="sgem-401k-logo-center"><a class="sgem-401k-url-text" href="https://retirementinvestments.com/retirement/401k-calculator" target="_blank" rel="noopener">401(k) Calculator  </a>by Retirement investments</div>';
+}
 
 sgem_401k_main_contents += '</div>';  
 
