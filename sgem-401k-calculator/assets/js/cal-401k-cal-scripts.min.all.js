@@ -170,7 +170,6 @@ var sgem_401k_main_contents = '<div class="sgem-401k-cal-main-id">'+
                   '<span class="futuretext3 sgem-401k-result-text-down">in retirement</span>'+
                '</div>'+
             '</div>'+
-
 if(location.hostname == "messy-saxophone.flywheelsites.com" || location.hostname == "retirementinvestments.com"){
     sgem_401k_main_contents += '<div class="sgem-401k-cal-1-result-footer">';
     sgem_401k_main_contents += '<div class="sgem-401k-content">Get a comprehensive wealth management for your 401(k) account that includes rebalancing and tracking all your transactions. </div>';
@@ -196,7 +195,6 @@ if(location.hostname == "messy-saxophone.flywheelsites.com" || location.hostname
     sgem_401k_main_contents += '<div class="sgem-401k-copy-code-wrap"><button class="sgem-401k-copy-code" id="sgem-401k-copy-code" onclick="sgem_401k_copyText(event)">Get Calculator</button></div>';
     sgem_401k_main_contents += '</div>';
 }
-
 sgem_401k_main_contents += '</div>';  
 
 document.getElementById('sgem-401k-cal').innerHTML = sgem_401k_main_contents;
