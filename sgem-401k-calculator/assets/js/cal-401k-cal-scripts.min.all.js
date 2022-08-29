@@ -352,6 +352,16 @@ document.getElementById('sgem_401k_contribution_te').innerText = myChart.data.da
  document.getElementById('sgem_401k_emp_match_te').innerText = myChart.data.datasets[3].label;
 document.getElementById('sgem_401k_interest_accu_te').innerText = myChart.data.datasets[4].label;
 
+function toggleData(value){
+  const visibilityData = myChart.isDatasetVisible(value);
+  if (visibilityData === true ){
+    myChart.hide(value);
+  }
+   if (visibilityData === false ){
+    myChart.show(value);
+  } 
+}
+
 // 
 
 window.onload = function() {
