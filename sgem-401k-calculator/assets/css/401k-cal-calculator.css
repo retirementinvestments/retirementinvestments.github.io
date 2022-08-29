@@ -540,6 +540,37 @@ details.sgem-401k-details-disclaimer[open] > summary::after {
 	width: 424px;
 }
 
+/* copy section bottom */
+.sgem-401k-copy-option-panel h3 {
+    font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
+    margin-bottom: 16px;
+    font-size: 20px;
+    color: #000;
+    padding-bottom: 5px;
+    font-weight: 500;
+}
+.sgem-401k-copy-option-panel {
+    margin-top: 25px;
+}
+.sgem-401k-copy-code {
+    background: #ffc12e;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0;
+    color: #002340;
+    text-transform: uppercase;
+    border: 0;
+    display: block;
+    height: 53px;
+    text-align: center;
+    text-decoration: none;
+    padding: 0.3em 1em;
+    line-height: 1.5em !important;
+    cursor: pointer;
+    width: auto;
+}
+/* end */
+
 /* add class css */
 .sgem-401k-cal-left.sgem-401k-cal-left-add-class {
 	width: 33%;
