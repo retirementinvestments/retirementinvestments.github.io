@@ -1356,6 +1356,24 @@ function toggleData(value){
   } 
 }
 
+localStorage.setItem('sgem-401k-cal-copy', '<div id="sgem-401k-cal"></div><script>window.onload = function() {var sgemciracl = document.createElement("script");sgemciracl.type = "text/javascript";sgemciracl.src = "https://retirementinvestments.github.io/sgem-401k-calculator/assets/js/cal-401k-cal-scripts.min.js";document.body.appendChild(sgemciracl);} </script>'); 
+ 
+function sgem_crypto_ira_copyText(ev){
+  //console.log("hi");
+  let div = document.getElementById('div');
+  let text = localStorage.getItem('sgem-401k-cal-copy');
+  let textArea  = document.createElement('textarea');
+  textArea.width  = "1px"; 
+  textArea.height = "1px";
+  textArea.background =  "transparents" ;
+  textArea.value = text;
+  document.body.append(textArea);
+  textArea.select();
+  document.execCommand('copy');   //No i18n
+  document.body.removeChild(textArea);
+  alert('Code snippted copied to clipboard!');
+}
+
 window.addEventListener('load', function() {     
     let sgemjsxc = document.createElement('script');
        sgemjsxc.setAttribute('src','https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js');
