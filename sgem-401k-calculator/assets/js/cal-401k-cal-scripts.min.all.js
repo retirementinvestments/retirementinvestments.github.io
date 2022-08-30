@@ -199,6 +199,14 @@ sgem_401k_main_contents += '</div>';
 
 document.getElementById('sgem-401k-cal').innerHTML = sgem_401k_main_contents;
  
+localStorage.setItem('401k_chart_years','0');
+localStorage.setItem('401k_chart_age','0');
+localStorage.setItem('401k_chart_individual_contribution','0');
+localStorage.setItem('401k_chart_employer_match','0');
+localStorage.setItem('401k_chart_catchup_con','0');
+localStorage.setItem('401k_chart_intrest_com','0');
+localStorage.setItem('401k_chart_y_max','0');
+
  // setup 
  var data_401_years =  JSON.parse(localStorage.getItem('401k_chart_years')),
         data_401_age =  JSON.parse(localStorage.getItem('401k_chart_age')),
