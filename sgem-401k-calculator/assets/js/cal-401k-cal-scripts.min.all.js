@@ -427,7 +427,7 @@ jQuery(document).ready(function($){
                 $('.sgem-401k-cal-wrapper').removeClass('sgem-401k-wrapper-add-mobile');
            }
         }).trigger('resize');
-});
+
     
  //*********************************************
 
@@ -1307,6 +1307,8 @@ if($('#sgem_401k_age,#sgem_401k_retirement_age,#sgem_401k_income_before_taxes,#s
              return v.replace('%','') + '%';  });
   }
             
+}); 
+
 }); 
 
 function k401_update_chart(){
