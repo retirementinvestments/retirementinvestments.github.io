@@ -1358,7 +1358,7 @@ function toggleData(value){
 
 localStorage.setItem('sgem-401k-cal-copy', '<div id="sgem-401k-cal"></div><script>window.onload = function() {var sgemciracl = document.createElement("script");sgemciracl.type = "text/javascript";sgemciracl.src = "https://retirementinvestments.github.io/sgem-401k-calculator/assets/js/cal-401k-cal-scripts.min.js";document.body.appendChild(sgemciracl);} </script>'); 
  
-function sgem_crypto_ira_copyText(ev){
+function sgem_401k_copyText(ev){
   //console.log("hi");
   let div = document.getElementById('div');
   let text = localStorage.getItem('sgem-401k-cal-copy');
