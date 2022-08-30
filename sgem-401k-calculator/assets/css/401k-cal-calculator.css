@@ -596,7 +596,7 @@ details.sgem-401k-details-disclaimer[open] > summary::after {
     width: 100%;
 }
 .sgem-401k-cal-left-add-class .sgem-401k-cal-1 .sgem-401k-flex-container .sgem-401k-form-flex {
-	padding-right: 4px;
+	padding-right: 8px;
 }
 .sgem-401k-cal-left-add-class .sgem-401k-cal-1 .sgem-401k-form-group label {
 	font-size: 0.8em;
@@ -622,6 +622,10 @@ details.sgem-401k-details-disclaimer[open] > summary::after {
 	font-size: 0.8em;
 	top: 42px;
 }
+.sgem-401k-cal-left-add-class.sgem-401k-cal-left {
+	height: 728px;
+	padding: 12px;;
+}
 
 .sgem-401k-cal-right-add-class .sgem-401k-cal-1-result-wrapper {
     padding: 20px 20px;
@@ -632,10 +636,6 @@ details.sgem-401k-details-disclaimer[open] > summary::after {
 }
 .sgem-401k-cal-right-add-class .sgem-401k-cal-1-result-wrapper .sgem-401k-result-label-below {
 	font-size: 2em;
-}
-.sgem-401k-cal-right-add-class.sgem-401k-cal-left {
-	height: 728px;
-	padding: 12px 12px 12px 12px;
 }
 
 /* add mobile */
