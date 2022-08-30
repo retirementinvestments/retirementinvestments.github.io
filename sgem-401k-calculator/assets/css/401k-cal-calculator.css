@@ -596,13 +596,14 @@ details.sgem-401k-details-disclaimer[open] > summary::after {
     width: 100%;
 }
 .sgem-401k-cal-left-add-class .sgem-401k-cal-1 .sgem-401k-flex-container .sgem-401k-form-flex {
-	padding-right: 12px;
+	padding-right: 8px;
 }
 .sgem-401k-cal-left-add-class .sgem-401k-cal-1 .sgem-401k-form-group label {
 	font-size: 0.8em;
 }
 .sgem-401k-cal-left-add-class .sgem-401k-cal-1 input[type="text"] {
 	font-size: 0.8em;
+	width: 100%;
 }
 .sgem-401k-cal-left-add-class .sgem-401k-cal-1 .sgem-401k-form-flex.sgem-401k-years-holder::before {
 	font-size: 0.8em;
@@ -670,6 +671,9 @@ details.sgem-401k-details-disclaimer[open] > summary::after {
     height: auto;
     overflow: hidden;
     overflow-y: unset;
+}
+.sgem-401k-wrapper-add-mobile .sgem-401k-cal-left-add-class .sgem-401k-cal-1 .sgem-401k-flex-container .sgem-401k-form-flex {
+	padding-right: 8px;
 }
 /* end */
 
