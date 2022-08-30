@@ -1007,6 +1007,8 @@ k401_update_chart();
 
 }
 
+sgem_401k_calculationmin();
+
 if($('#sgem_401k_age,#sgem_401k_retirement_age,#sgem_401k_income_before_taxes,#sgem_401k_current_balance,#sgem_401k_annual_contributions,#sgem_401k_employer_match,#sgem_401k_limit_on_matching,#sgem_401k_rate_of_return,#sgem_401k_annual_catchup_contribution,#sgem_401k_growth_rate').length > 0) {
       $('#sgem_401k_age,#sgem_401k_retirement_age,#sgem_401k_income_before_taxes,#sgem_401k_current_balance,#sgem_401k_annual_contributions,#sgem_401k_employer_match,#sgem_401k_limit_on_matching,#sgem_401k_rate_of_return,#sgem_401k_annual_catchup_contribution,#sgem_401k_growth_rate').on('keyup', function () {
         sgem_401k_calculationmin();
@@ -1356,7 +1358,7 @@ function toggleData(value){
   } 
 }
 
-localStorage.setItem('sgem-401k-cal-copy', '<div id="sgem-401k-cal"></div><script>window.onload = function() {var sgemciracl = document.createElement("script");sgemciracl.type = "text/javascript";sgemciracl.src = "https://retirementinvestments.github.io/sgem-401k-calculator/assets/js/cal-401k-cal-scripts.min.js";document.body.appendChild(sgemciracl);} </script>'); 
+localStorage.setItem('sgem-401k-cal-copy', '<div id="sgem-401k-cal"></div><script>window.onload = function() {var sgem401kcal = document.createElement("script");sgem401kcal.type = "text/javascript";sgem401kcal.src = "https://retirementinvestments.github.io/sgem-401k-calculator/assets/js/cal-401k-cal-scripts.min.js";document.body.appendChild(sgem401kcal);} </script>'); 
  
 function sgem_401k_copyText(ev){
   //console.log("hi");
