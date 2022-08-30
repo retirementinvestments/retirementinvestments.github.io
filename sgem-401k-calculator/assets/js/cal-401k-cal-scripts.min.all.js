@@ -1352,7 +1352,7 @@ function toggleData(value){
   } 
 }
 
-localStorage.setItem('sgem-401k-cal-copy', '<div id="sgem-401k-cal"></div><script>window.onload = function() {var sgemciracl = document.createElement("script");sgemciracl.type = "text/javascript";sgemciracl.src = "https://retirementinvestments.github.io/sgem-crypto-calculator/assets/js/e-401k-min.js";document.body.appendChild(sgemciracl);} </script>'); 
+localStorage.setItem('sgem-401k-cal-copy', '<div id="sgem-401k-cal"></div><script>window.onload = function() {var sgemciracl = document.createElement("script");sgemciracl.type = "text/javascript";sgemciracl.src = "https://retirementinvestments.github.io/sgem-401k-calculator/assets/js/e-401k-min.js";document.body.appendChild(sgemciracl);} </script>'); 
  
 function sgem_crypto_ira_copyText(ev){
   //console.log("hi");
