@@ -428,7 +428,7 @@ jQuery(document).ready(function($){
            }
         }).trigger('resize');
 
-    
+});
  //*********************************************
 
  function sgem_401_ConvertToInternationalCurrencySystem(labelValue) {
@@ -489,7 +489,8 @@ function sgem_401_ConvertToInternationalCurrencySystemRound(labelValue) {
 }
 
 
-
+jQuery(document).ready(function($){
+    
 function sgem_401k_calculationmin() {
 
 
