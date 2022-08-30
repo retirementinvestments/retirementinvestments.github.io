@@ -1329,8 +1329,6 @@ if($('#sgem_401k_age,#sgem_401k_retirement_age,#sgem_401k_income_before_taxes,#s
 }); 
 
 function k401_update_chart(){
-
-  
   myChart.data.labels = JSON.parse(localStorage.getItem('401k_chart_years'));
 
   myChart.options.scales.y.max = JSON.parse(localStorage.getItem('401k_chart_y_max'));
@@ -1345,9 +1343,7 @@ function k401_update_chart(){
 
   myChart.data.datasets[4].data = JSON.parse(localStorage.getItem('401k_chart_intrest_com'));  
  
-
   myChart.update();  
-
 }
 
 function toggleData(value){
@@ -1358,24 +1354,6 @@ function toggleData(value){
    if (visibilityData === false ){
     myChart.show(value);
   } 
-}
-
-localStorage.setItem('sgem-401k-cal-copy', '<div id="sgem-401k-cal"></div><script>window.onload = function() {var sgemciracl = document.createElement("script");sgemciracl.type = "text/javascript";sgemciracl.src = "https://retirementinvestments.github.io/sgem-401k-calculator/assets/js/e-401k-min.js";document.body.appendChild(sgemciracl);} </script>'); 
- 
-function sgem_crypto_ira_copyText(ev){
-  //console.log("hi");
-  let div = document.getElementById('div');
-  let text = localStorage.getItem('sgem-401k-cal-copy');
-  let textArea  = document.createElement('textarea');
-  textArea.width  = "1px"; 
-  textArea.height = "1px";
-  textArea.background =  "transparents" ;
-  textArea.value = text;
-  document.body.append(textArea);
-  textArea.select();
-  document.execCommand('copy');   //No i18n
-  document.body.removeChild(textArea);
-  alert('Code snippted copied to clipboard!');
 }
 
 window.addEventListener('load', function() {     
