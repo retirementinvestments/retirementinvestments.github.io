@@ -54,7 +54,7 @@ var sgem_401k_main_contents = '<div class="sgem-401k-cal-main-id">'+
                '<div class="sgem-401k-form-group sgem-401k-form-flex sgem-401k-currency-holder">'+
                   '<label>Current balance <span class="sgem-401k-tooltip tooltip" data-tippy-content="Current balance in 401K savings account">?</span></label>'+
                   '<input type="text" class="inputmove inputnumber"  id="sgem_401k_current_balance" value="30,000" min="0" max="50000000" onkeypress="return isNumber(event)"/>'+
-                  '<span class="sgem_401k_err_msg" id="sgem_401k_err_current_balance"></span>   '+
+                  '<span class="sgem_401k_err_msg" id="sgem_401k_err_current_balance"></span>'+
                '</div>'+
             '</div>'+
             '<span class="sgem_401k_err_msg" id="sgem_401k_err_annualmax"></span><br>'+
