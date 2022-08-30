@@ -364,28 +364,8 @@ document.getElementById('sgem_401k_interest_accu_te').innerText = myChart.data.d
 
 window.onload = function() {
   sgem_401k_calculationmin();
- }
+}
 
-/* Plus and mius Function */
-
-$(document).ready(function() {
-  $('.sgem-401k-minus').click(function () {
-    var $input = $(this).parent().find('input');
-    var count = parseInt($input.val()) - 1;
-    count = count < 1 ? 1 : count;
-    $input.val(count);
-    $input.change();
-    return false;
-  });
-  $('.sgem-401k-plus').click(function () {
-    var $input = $(this).parent().find('input');
-    $input.val(parseInt($input.val()) + 1);
-    $input.change();
-    return false;
-  });
-});
-
-  
 /* Tippy Tool */
      
 tippy('[data-tippy-content]', {  
