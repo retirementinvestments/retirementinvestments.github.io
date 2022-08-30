@@ -368,7 +368,7 @@ window.onload = function() {
 
 /* Plus and mius Function */
 
-$(document).ready(function() {
+jQuery(document).ready(function() {
   $('.sgem-401k-minus').click(function () {
     var $input = $(this).parent().find('input');
     var count = parseInt($input.val()) - 1;
