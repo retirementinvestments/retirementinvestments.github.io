@@ -38,11 +38,11 @@
     font-size: 13px;
 	padding-top: 5px;
   }
-.sgem-401k-url-text {
+.sgem-401k-cal-main-id .sgem-401k-logo-center .sgem-401k-url-text {
 	text-decoration: none;
 	color: rgb(21, 105, 176);
 }
-.sgem-401k-url-text:hover {
+.sgem-401k-cal-main-id .sgem-401k-logo-center .sgem-401k-url-text:hover {
 	text-decoration: none;
 	color: #002340;
 }
