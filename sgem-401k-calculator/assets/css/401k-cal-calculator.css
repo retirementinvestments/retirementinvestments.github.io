@@ -101,7 +101,7 @@
 	padding: 17px 16px;
 	width: 200px;
 	color: #002340;
-	border:  1px solid #bbb;
+	border:  1px solid #7F7F7F;
 	background: #fff;
 }
 .sgem-401k-cal-1 input[type="text"]:focus{
@@ -635,6 +635,8 @@ details.sgem-401k-details-disclaimer[open] > summary::after {
 .sgem-401k-cal-right-add-class .sgem-401k-catchup,
 .sgem-401k-cal-right-add-class .sgem-401k-contribution {
 	margin-right: 10px;
+	height: 15px;
+    width: 15px;
 }
 .sgem-401k-cal-right-add-class .sgem-401k-form-flex-section-three {
     margin-top: 30px;
