@@ -627,6 +627,19 @@ details.sgem-401k-details-disclaimer[open] > summary::after {
 	padding: 12px;;
 }
 
+.sgem-401k-cal-right-add-class .sgem-401k-legendbox {
+    font-size: 0.6em;
+}
+.sgem-401k-cal-right-add-class .sgem-401k-interest-accu,
+.sgem-401k-cal-right-add-class .sgem-401k-emp-match,
+.sgem-401k-cal-right-add-class .sgem-401k-catchup,
+.sgem-401k-cal-right-add-class .sgem-401k-contribution {
+	margin-right: 10px;
+}
+.sgem-401k-cal-right-add-class .sgem-401k-form-flex-section-three {
+    margin-top: 30px;
+}
+
 .sgem-401k-cal-right-add-class .sgem-401k-cal-1-result-wrapper {
     padding: 20px 20px;
     position: relative;
