@@ -65,7 +65,7 @@ var sgem_401k_main_contents = '<div class="sgem-401k-cal-main-id">'+
                      '<h3 class="sgem-401k-collapsible-summary-title">Basic</h3>'+
                   '</div>'+
                '</summary>'+
-               '<div class="collapsible-content">'+
+               '<div class="collapsible-content sgem-401k-col-row-collaps">'+
                   '<div class="sgem-401k-flex-container">'+
                      '<div class="sgem-401k-form-group sgem-401k-form-flex sgem-401k-currency-holder">'+
                         '<label>Annual contribution <span class="sgem-401k-tooltip tooltip" data-tippy-content="The maximum annual contribution is $20,500">?</span></label>'+  
@@ -102,7 +102,7 @@ var sgem_401k_main_contents = '<div class="sgem-401k-cal-main-id">'+
                      '<h3 class="sgem-401k-collapsible-summary-title">Advanced</h3>'+
                   '</div>'+
                '</summary>'+
-               '<div class="collapsible-content">'+
+               '<div class="collapsible-content sgem-401k-col-row-collaps">'+
                   '<div class="sgem-401k-flex-container">'+
                      '<div class="sgem-401k-form-group sgem-401k-form-flex sgem-401k-currency-holder">'+
                         '<label>Annual catch-up contribution <span class="sgem-401k-tooltip tooltip" data-tippy-content="If you\'re 50 or older, you can contribute an extra $6,500 to your 401(k)">?</span></label>'+
