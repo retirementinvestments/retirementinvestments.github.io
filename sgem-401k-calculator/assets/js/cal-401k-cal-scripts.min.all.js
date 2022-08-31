@@ -57,7 +57,7 @@ var sgem_401k_main_contents = '<div class="sgem-401k-cal-main-id">'+
                   '<span class="sgem_401k_err_msg" id="sgem_401k_err_current_balance"></span>'+
                '</div>'+
             '</div>'+
-            '<span class="sgem_401k_err_msg" id="sgem_401k_err_annualmax"></span><br>'+
+            '<span class="sgem_401k_err_msg" id="sgem_401k_err_annualmax"></span>'+
             '<span class="sgem_401k_err_msg" id="sgem_401k_err_annualmax_withcatchup"></span>'+
             '<details class="sgem-401k-input-more-details" open>'+
                '<summary>'+
