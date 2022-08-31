@@ -548,6 +548,7 @@ details.sgem-401k-details-disclaimer[open] > summary::after {
 	font-weight: 300;
     font-size: 13px;
     color: #ff5964;
+    display: block;
 }
 
 /* copy section bottom */
