@@ -185,7 +185,7 @@ sgem_401k_main_contents += '</div>';
 sgem_401k_main_contents += '</div>';
 
 if( (location.hostname != "messy-saxophone.flywheelsites.com") || (location.hostname != "retirementinvestments.com") ){
-    sgem_401k_main_contents += '<div class="sgem-401k-logo-center"><a class="sgem-401k-url-text" href="https://retirementinvestments.com/retirement/401k-calculator" target="_blank" rel="noopener">401(k) Calculator  </a> by Retirement investments</div>';
+    sgem_401k_main_contents += '<div class="sgem-401k-logo-center"><a class="sgem-401k-url-text" href="https://retirementinvestments.com/retirement/401k-calculator" target="_blank" rel="noopener">401(k) Calculator  </a>&nbsp;by Retirement investments</div>';
 }
 
 if(location.hostname == "messy-saxophone.flywheelsites.com" || location.hostname == "retirementinvestments.com"){
