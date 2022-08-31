@@ -626,6 +626,13 @@ details.sgem-401k-details-disclaimer[open] > summary::after {
 	height: 728px;
 	padding: 12px;;
 }
+.sgem-401k-wrapper-add-mobile .sgem-401k-col-row-collaps {
+	display: block;
+    column-count: 2;
+    margin: 0;
+    padding: 0;
+    column-gap: 0;
+}
 
 .sgem-401k-cal-right-add-class .sgem-401k-legendbox {
     font-size: 0.6em;
