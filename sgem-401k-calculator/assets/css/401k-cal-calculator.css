@@ -814,6 +814,9 @@ details.sgem-401k-details-disclaimer[open] > summary::after {
 }
 /* ******** mobile ************ */
 @media (max-width: 480px) {
+	.sgem-401k-cal-right-add-class .sgem-401k-form-flex-section-three {
+	  	margin-top: 0;
+	}
 	.sgem-401k-wrapper-add-mobile .sgem-401k-cal-left-add-class .sgem-401k-cal-1 .sgem-401k-flex-container .sgem-401k-form-flex {
 	    padding-right: 10px;
 	}
