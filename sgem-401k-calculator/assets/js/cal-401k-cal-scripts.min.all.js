@@ -390,6 +390,14 @@ function isNumber(evt) {
 
 jQuery(document).ready(function($){
 
+    if( location.hostname == "messy-saxophone.flywheelsites.com") {
+        $('.sgem-401k-logo-center').hide(); 
+    } else if(location.hostname == "retirementinvestments.com"){
+        $('.sgem-401k-logo-center').hide();  
+    } else {
+        $('.sgem-401k-logo-center').show();  
+    }
+
   //*******************************************************
 
         if ($('.sgem-401k-cal-wrapper').width() < 1024) {
