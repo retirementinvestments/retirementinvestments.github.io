@@ -80,7 +80,7 @@ var sgem_main_contents = '<div class="sgem-cal-wrapper">' +
      
 	 if(location.hostname == "messy-saxophone.flywheelsites.com" || location.hostname == "retirementinvestments.com"){
 	   sgem_main_contents += '<div class="sgem-cal-static-text">Spend retirement with more. Enjoy monthly income through retirement with the confidence your savings will last.</div>';
-	   sgem_main_contents += '<a href="https://retirementinvestments.com/retirable" target="_blank" class="sgem-getStart">GET STARTED</a>';
+	   sgem_main_contents += '<a href="https://retirementinvestments.com/retirementcalculator" target="_blank" class="sgem-getStart">GET STARTED</a>';
      }
 
      sgem_main_contents += '</div><div class="sgem-ret-section-disclaimer"><details class="sgem-ret-details-disclaimer"><summary><div class="sgem-ret-collapsible-summary-disclaimer">Disclaimer</div>'+
