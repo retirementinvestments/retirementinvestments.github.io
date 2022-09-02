@@ -157,7 +157,7 @@ var sgem_roth_ira_main_contents = '<div class="sgem-roth-ira-cal-main-id">'+
 			if(location.hostname == "messy-saxophone.flywheelsites.com" || location.hostname == "retirementinvestments.com"){
 				sgem_roth_ira_main_contents += '<div class="sgem-roth-ira-content">A Roth IRA is a great way to save for retirement beyond the 401(k). It allows tax-free growth on your investment if you make less than $139K ($206K if you file jointly). Grow your money tax-free today!</div>';
 				sgem_roth_ira_main_contents += '<div class="sgem-roth-ira-buttonGet">';   
-				sgem_roth_ira_main_contents += '<a href="https://retirementinvestments.com/rothcalculator" class="sgem-roth-ira-getStart">GET STARTED</a>';
+				sgem_roth_ira_main_contents += '<a href="https://retirementinvestments.com/rothcalculator" target="_blank" class="sgem-roth-ira-getStart">GET STARTED</a>';
 				sgem_roth_ira_main_contents += '</div>';
 			}
 

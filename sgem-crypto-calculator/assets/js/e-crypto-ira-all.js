@@ -36,7 +36,7 @@ if(location.hostname == "messy-saxophone.flywheelsites.com" || location.hostname
 	sgem_crypto_main_content += '<div class="sgem-crypto-ira-cal-1-result-footer">';
 	sgem_crypto_main_content += '<div class="sgem-crypto-ira-content">Create an account in just 3 minutes to start investing in Bitcoin and crypto inside of your IRA.</div>';
 	sgem_crypto_main_content += '<div class="sgem-crypto-ira-buttonGet">';
-	sgem_crypto_main_content += '<a href="https://retirementinvestments.com/cryptocalculator" class="sgem-crypto-ira-getStart">Get Started (It\'s Free)</a>';
+	sgem_crypto_main_content += '<a href="https://retirementinvestments.com/cryptocalculator" target="_blank" class="sgem-crypto-ira-getStart">Get Started (It\'s Free)</a>';
 	sgem_crypto_main_content += '</div>';
 	sgem_crypto_main_content += '</div>'; // footer end
 }
