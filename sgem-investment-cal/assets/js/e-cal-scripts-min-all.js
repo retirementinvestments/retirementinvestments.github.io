@@ -605,7 +605,7 @@ var current_age     = $('#sgem_age').val().trim();
 
       }else{
 
-            $('#sgem_you_will_need').text(numberWithCommas(you_will_need));
+            $('#sgem_you_will_need').text(decimalTwoPoints(you_will_need).replace(/\B(?=(\d{3})+(?!\d))/g, ","));
       }
   
       if (isNaN(percentage_result)){
