@@ -425,6 +425,12 @@ function sgem_roth_ira_ConvertToInternationalCurrencySystem(labelValue) {
  window.onload = function() {
   sgem_roth_ira_calmin();
  }
+
+// decimal points
+function decimalTwoPoints(x) {
+  return Number.parseFloat(x).toFixed(2);
+}
+// end
  
 jQuery(document).ready(function($){
  
@@ -545,7 +551,7 @@ if (isNaN(value_at_retirement) || value_at_retirement < 1){
 
       }else{
 
-        $('#sgem_roth_ira_balance_text').text('$' + sgem_roth_ira_ConvertToInternationalCurrencySystem(value_at_retirement)); 
+        $('#sgem_roth_ira_balance_text').text('$' + decimalTwoPoints(value_at_retirement).replace(/\B(?=(\d{3})+(?!\d))/g, ","));
       }
 
 //console.log(value_at_retirement);
