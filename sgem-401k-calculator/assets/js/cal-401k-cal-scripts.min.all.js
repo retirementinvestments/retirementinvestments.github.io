@@ -496,6 +496,11 @@ function sgem_401_ConvertToInternationalCurrencySystemRound(labelValue) {
 
 }
 
+// decimal points
+function decimalTwoPoints(x) {
+  return Number.parseFloat(x).toFixed(2);
+}
+// end
 
 jQuery(document).ready(function($){
     
@@ -734,7 +739,7 @@ var total_value_at_retirement_w_growth = (total_value_at_retirement_w_growth3 + 
 
       }else{
 
-        $('#sgem_401k_price_text').text(sgem_401_ConvertToInternationalCurrencySystem(total_value_at_retirement_w_growth)); 
+        $('#sgem_401k_price_text').text(decimalTwoPoints(total_value_at_retirement_w_growth).replace(/\B(?=(\d{3})+(?!\d))/g, ","));
       }
 
 
