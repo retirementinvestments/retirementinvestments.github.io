@@ -177,7 +177,7 @@
     line-height: 58px;
 }
 .sgem-cal-1-result-wrapper .sgem-column2 {
-    width: 400px;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
 }
