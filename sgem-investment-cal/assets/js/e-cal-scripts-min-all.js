@@ -440,6 +440,8 @@ function isNumber(evt) {
         return true;
 }
 
+isNumber();
+
 // sumith
 function sgem_ConvertToInternationalCurrencySystem (labelValue) {
 
