@@ -431,10 +431,7 @@ if( location.hostname == "messy-saxophone.flywheelsites.com") {
 
 // comma separate values
 function numberWithCommas(num) {
-  // return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-
-  var Mynumber = parseFloat(num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')).toFixed(4);
-  return Mynumber;
+  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
 // end
 
