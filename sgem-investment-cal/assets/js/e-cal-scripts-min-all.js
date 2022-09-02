@@ -430,17 +430,20 @@ if( location.hostname == "messy-saxophone.flywheelsites.com") {
 });*/
 
 
-function isNumber(evt) {
-        evt = (evt) ? evt : window.event;
-        var charCode = (evt.which) ? evt.which : evt.keyCode;
-		if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-	    //if (charCode == 31 && charCode > 32 && (charCode < 48 || charCode > 57)) { // for decimal
-			return false;
-		}
-        return true;
+// function isNumber(evt) {
+//         evt = (evt) ? evt : window.event;
+//         var charCode = (evt.which) ? evt.which : evt.keyCode;
+// 		if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+// 	    //if (charCode == 31 && charCode > 32 && (charCode < 48 || charCode > 57)) { // for decimal
+// 			return false;
+// 		}
+//         return true;
+// }
+
+function isNumber() {
+
 }
 
-isNumber();
 
 // sumith
 function sgem_ConvertToInternationalCurrencySystem (labelValue) {
