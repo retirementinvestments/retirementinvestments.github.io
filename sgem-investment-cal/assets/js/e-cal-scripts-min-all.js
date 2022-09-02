@@ -431,11 +431,8 @@ if( location.hostname == "messy-saxophone.flywheelsites.com") {
 
 // comma separate values
 function numberWithCommas(num) {
-  // return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-  return Number.parseFloat(num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')).toFixed(2);
-
-  // var Mynumber = parseFloat(num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')).toFixed(2);
-  // return Mynumber;
+  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  // return Number.parseFloat(num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')).toFixed(2);
 }
 function financial(x) {
   return Number.parseFloat(x).toFixed(2);
@@ -603,7 +600,7 @@ var current_age     = $('#sgem_age').val().trim();
 
       }else{
 
-        $('#sgem_you_will_have').text(numberWithCommas(you_will_have));
+      $('#sgem_you_will_have').text(numberWithCommas(you_will_have));
         console.log(financial(you_will_have));
       }
 
