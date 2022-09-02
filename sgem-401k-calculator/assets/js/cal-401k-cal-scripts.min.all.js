@@ -173,7 +173,7 @@ if(location.hostname == "messy-saxophone.flywheelsites.com" || location.hostname
     sgem_401k_main_contents += '<div class="sgem-401k-cal-1-result-footer">';
     sgem_401k_main_contents += '<div class="sgem-401k-content">Get a comprehensive wealth management for your 401(k) account that includes rebalancing and tracking all your transactions. </div>';
     sgem_401k_main_contents += '<div class="sgem-401k-buttonGet">';
-    sgem_401k_main_contents += '<a href="https://retirementinvestments.com/401kcalculator" class="sgem-401k-getStart">GET STARTED</a>'
+    sgem_401k_main_contents += '<a href="https://retirementinvestments.com/401kcalculator" target="_blank" class="sgem-401k-getStart">GET STARTED</a>'
     sgem_401k_main_contents += '</div>';
     sgem_401k_main_contents += '</div>'; // footer end
 }
