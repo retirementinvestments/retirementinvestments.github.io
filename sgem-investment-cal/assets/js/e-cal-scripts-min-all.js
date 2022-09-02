@@ -55,8 +55,8 @@ var sgem_main_contents = '<div class="sgem-cal-wrapper">' +
 	'<div class="sgem-cal-1-result-wrapper">'+
         '<div class="sgem-cal-1-result-header"> HOW MUCH WILL YOU NEED TO RETIRE AT <span id="sgem_age_text">67</span>? </div>'+
         '<div class="sgem-flex-container sgem-column2">'+
-          '<div class="sgem-form-group sgem-form-flex"> <div id="futureV" class="sgem-result-label">$<span id="sgem_you_will_have">0.87M</span></div> <span class="futuretext sgem-result-value">You will have about</span></div>'+
-  '<div class="sgem-form-group sgem-form-flex "> <div id="futureV2" class="sgem-result-label">$<span id="sgem_you_will_need">1.12M</span></div> <span class="futuretext2 sgem-result-value">You will need about</span></div></div>'+
+          '<div class="sgem-form-group sgem-form-flex"> <div id="futureV" class="sgem-result-label">$<span id="sgem_you_will_have">878,928.51</span></div> <span class="futuretext sgem-result-value">You will have about</span></div>'+
+  '<div class="sgem-form-group sgem-form-flex "> <div id="futureV2" class="sgem-result-label">$<span id="sgem_you_will_need">1,730,000.00</span></div> <span class="futuretext2 sgem-result-value">You will need about</span></div></div>'+
 '<div class="sgem-cal-1-result">'+
   '<div class="sgem-result-panel">'+
     '<div class="sgem-result-panel-header"> RETIREMENT SAVINGS SCORE </div>'+
