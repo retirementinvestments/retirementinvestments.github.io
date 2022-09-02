@@ -429,7 +429,11 @@ if( location.hostname == "messy-saxophone.flywheelsites.com") {
 		});
 });*/
 
-
+// comma separate values
+function numberWithCommas(num) {
+  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+// end
 
 function isNumber(evt) {
         evt = (evt) ? evt : window.event;
@@ -592,7 +596,7 @@ var current_age     = $('#sgem_age').val().trim();
 
       }else{
 
-        $('#sgem_you_will_have').text(sgem_ConvertToInternationalCurrencySystem(you_will_have));
+        $('#sgem_you_will_have').text(numberWithCommas(you_will_have));
       }
 
       if (isNaN(you_will_need)){
@@ -601,7 +605,7 @@ var current_age     = $('#sgem_age').val().trim();
 
       }else{
 
-            $('#sgem_you_will_need').text(sgem_ConvertToInternationalCurrencySystem(you_will_need));
+            $('#sgem_you_will_need').text(numberWithCommas(you_will_need));
       }
   
       if (isNaN(percentage_result)){
