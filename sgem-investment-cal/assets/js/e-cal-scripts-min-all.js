@@ -429,11 +429,6 @@ if( location.hostname == "messy-saxophone.flywheelsites.com") {
 		});
 });*/
 
-// decimal points
-function decimalTwoPoints(x) {
-  return Number.parseFloat(x).toFixed(2);
-}
-// end
 
 function isNumber(evt) {
         evt = (evt) ? evt : window.event;
@@ -489,6 +484,12 @@ function sgem_show_valueonfield(){
       }
     
 }
+
+// decimal points
+function decimalTwoPoints(x) {
+  return Number.parseFloat(x).toFixed(2);
+}
+// end
 
 // sumith
 function sgem_calculate_live(e) {
