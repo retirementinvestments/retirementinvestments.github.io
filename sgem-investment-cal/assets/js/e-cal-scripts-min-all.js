@@ -440,7 +440,7 @@ if( location.hostname == "messy-saxophone.flywheelsites.com") {
 //         return true;
 // }
 
-function isNumber() {
+function isNumber(event) {
 
 }
 
