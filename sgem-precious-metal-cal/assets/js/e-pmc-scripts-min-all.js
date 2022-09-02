@@ -338,7 +338,11 @@ function sgem_pmc_ConvertToInternationalCurrencySystemRound(labelValue) {
 }
  
 
- 
+// decimal points
+function decimalTwoPoints(x) {
+  return Number.parseFloat(x).toFixed(2);
+}
+// end
  
  window.onload = function() {
 	sgem_pmc_calculaterminfazcal();
@@ -354,7 +358,10 @@ if( location.hostname == "messy-saxophone.flywheelsites.com") {
 	$('.sgem-pmc-logo-center').show(); 	
 }
 
-
+// comma separate values
+function numberWithCommas(num) {
+  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
 	
 function sgem_pmc_calculaterminfazcal() {
     
@@ -474,7 +481,7 @@ function sgem_pmc_calculaterminfazcal() {
 
       }else{
 
-        $('#sgem_pmc_value_text').text('$' + sgem_pmc_ConvertToInternationalCurrencySystem(value_at_retirement).replace(/\B(?=(\d{3})+(?!\d))/g, ",")); 
+        $('#sgem_pmc_value_text').text('$' + decimalTwoPoints(value_at_retirement).replace(/\B(?=(\d{3})+(?!\d))/g, ",")); 
       }
 
   
