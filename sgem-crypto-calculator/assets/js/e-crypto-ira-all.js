@@ -284,7 +284,11 @@ function sgem_crypto_ConvertToInternationalCurrencySystemRound(labelValue) {
  }
  
  
-
+// decimal points
+function decimalTwoPoints(x) {
+  return Number.parseFloat(x).toFixed(2);
+}
+// end
  
  
 
@@ -453,7 +457,7 @@ function sgem_crypto_calculatermin() {
 
       }else{
 
-        $('#sgem_crypto_ira_value_text').text('$' + sgem_crypto_ConvertToInternationalCurrencySystem(crypto_value_at_retirement).replace(/\B(?=(\d{3})+(?!\d))/g, ",")); 
+        $('#sgem_crypto_ira_value_text').text('$' + decimalTwoPoints(crypto_value_at_retirement).replace(/\B(?=(\d{3})+(?!\d))/g, ",")); 
       }
 
  
