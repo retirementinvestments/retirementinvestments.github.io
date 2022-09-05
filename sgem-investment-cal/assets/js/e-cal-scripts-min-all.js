@@ -13,21 +13,21 @@ var sgem_main_contents = '<div class="sgem-cal-wrapper">' +
 	'<span class="sgem-err-msg-age"></span></div>' +
 	'<div class="sgem-form-group sgem-form-flex sgem-years-holder sgem-reti-cal-max-width-style-right">' +
 	'<label>Retirement age</label>' +
-	'<input type="text" class="sgem-reti-cal-input-width" id="sgem_retirement_age" value="67" min="0" max="150" onkeypress="return isNumber(event)"/>' +
+	'<input type="text" class="sgem-reti-cal-input-width" id="sgem_retirement_age" value="67" min="0" max="150" />' +
 	'<span class="sgem-err-msg-rmt"></span></div></div>' +
 	'<div class="sgem-flex-container">' +
 	'<div class="sgem-form-group sgem-form-flex sgem-currency-holder">' +
 	'<label>My Pre-tax income is</label>' +
-	'<input type="text"class="inputmove inputnumber sgem-reti-cal-input-width" id="sgem_pretax_income" value="60,000" min="0" max="100000" onkeypress="return isNumber(event)" />' +
+	'<input type="text"class="inputmove inputnumber sgem-reti-cal-input-width" id="sgem_pretax_income" value="60,000" min="0" max="100000"  />' +
 	'<span class="sgem-err-msg-income"></span></div>' +
 		'<div class="sgem-form-group sgem-form-flex sgem-currency-holder sgem-reti-cal-max-width-style-right">' +
 		'<label>Current savings I have <span class="sgem-tooltip tooltip" data-tippy-content="Include your total savings">?</span></label>' +
-		'<input type="text" class="inputmove inputnumber sgem-reti-cal-input-width"  id="sgem_current_savings" value="30,000" min="0" max="50000000" onkeypress="return isNumber(event)"/>' +
+		'<input type="text" class="inputmove inputnumber sgem-reti-cal-input-width"  id="sgem_current_savings" value="30,000" min="0" max="50000000" />' +
 			'<span class="sgem-err-msg-current"></span></div></div>'+
 	'<div class="sgem-flex-container">'+
 	'<div class="sgem-form-group sgem-form-flex sgem-currency-holder sgem-reti-cal-max-width-style-right">'+
 	'<label>Every month I save <span class="sgem-tooltip tooltip" data-tippy-content="This is the amount invested each month. We recommend to start investing 10% of your paycheck and gradually build it to 15% or more. Include the amount your employee matches, if any.">?</span></label>'+
-	'<input type="text" class="inputmove inputnumber sgem-reti-cal-input-width"  id="sgem_monthly_saving" value="500" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
+	'<input type="text" class="inputmove inputnumber sgem-reti-cal-input-width"  id="sgem_monthly_saving" value="500" min="0" max="100000" />'+
 	'<span class="sgem-percentage-note">10% of my monthly income</span></div>'+
 	'</div>'+
 '<details class="sgem-input-more-details"><summary><div>'+
@@ -36,19 +36,19 @@ var sgem_main_contents = '<div class="sgem-cal-wrapper">' +
 	'<div class="sgem-flex-container">'+
 	'<div class="sgem-form-group sgem-form-flex sgem-currency-holder ">'+
 	'<label>Monthly spending <span class="sgem-tooltip tooltip" data-tippy-content="Living on 70% of current income (savings, investments, social security, pension) would be the rule of thumb">?</span></label>'+
-	'<input type="text" id="sgem_monthly_spending" class="inputnumber sgem-reti-cal-input-width" value="2,550" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
+	'<input type="text" id="sgem_monthly_spending" class="inputnumber sgem-reti-cal-input-width" value="2,550" min="0" max="100000" />'+
 '<span class="sgem-percentage-note">70% of pre-retirement income</span></div>'+
 	'<div class="sgem-form-group sgem-form-flex sgem-currency-holder sgem-reti-cal-max-width-style-right">'+
 	'<label>Other expected income <span class="sgem-tooltip tooltip" data-tippy-content="Include any other expected retirement income such as social security, pension etc">?</span></label>'+
-'<input type="text" id="sgem_other_expected_income" class="inputnumber sgem-reti-cal-input-width" value="0" min="0" max="100000" onkeypress="return isNumber(event)"/></div></div>'+
+'<input type="text" id="sgem_other_expected_income" class="inputnumber sgem-reti-cal-input-width" value="0" min="0" max="100000" /></div></div>'+
 	'<div class="sgem-flex-container">'+
 	' <div class="sgem-form-group sgem-form-flex">'+
 	'<label>Life expectancy <span class="sgem-tooltip tooltip" data-tippy-content="It would be wise to plan for a long retirement since people are living longer and healthier due to advancement in medicine and technology.">?</span></label>'+
-	'<input type="text" id="sgem_life_expectancy" class="inputnumber sgem-reti-cal-input-width" value="95" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
+	'<input type="text" id="sgem_life_expectancy" class="inputnumber sgem-reti-cal-input-width" value="95" min="0" max="100000" />'+
 	'<span class="sgem-err-msg-death"></span></div>'+
       '<div class="sgem-form-group sgem-form-flex sgem-reti-cal-max-width-style-right">'+
       '<label>Investment rate of return <span class="sgem-tooltip tooltip" data-tippy-content="Based on historic returns, our estimate for average annual return is 6%. What is your expected earning on investment between now and retirement?">?</span></label>'+
-          '<input type="text" id="sgem_inv_rate" class="inputnumber sgem-reti-cal-input-width" value="6" min="0" max="50" onkeypress="return isNumber(event)"/>'+
+          '<input type="text" id="sgem_inv_rate" class="inputnumber sgem-reti-cal-input-width" value="6" min="0" max="50" />'+
           '<span class="sgem-err-msg-per"></span></div></div></div></details>'+
           ' <span class="sgem-err-msg"></span></div></div>'+
          '<div class="sgem-cal-right">'+
