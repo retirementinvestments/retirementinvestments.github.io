@@ -551,7 +551,7 @@ if (isNaN(value_at_retirement) || value_at_retirement < 1){
 
       }else{
 
-        $('#sgem_roth_ira_balance_text').text('$' + decimalTwoPoints(value_at_retirement).replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+        $('#sgem_roth_ira_balance_text').text('$' + sgem_roth_ira_ConvertToInternationalCurrencySystem(value_at_retirement));
       }
 
 //console.log(value_at_retirement);
