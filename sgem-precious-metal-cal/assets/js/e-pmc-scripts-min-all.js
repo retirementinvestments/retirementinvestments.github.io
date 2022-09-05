@@ -481,7 +481,7 @@ function sgem_pmc_calculaterminfazcal() {
 
       }else{
 
-        $('#sgem_pmc_value_text').text('$' + decimalTwoPoints(value_at_retirement).replace(/\B(?=(\d{3})+(?!\d))/g, ",")); 
+        $('#sgem_pmc_value_text').text('$' + sgem_pmc_ConvertToInternationalCurrencySystem(value_at_retirement).replace(/\B(?=(\d{3})+(?!\d))/g, ",")); 
       }
 
   
