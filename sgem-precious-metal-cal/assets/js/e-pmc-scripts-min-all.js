@@ -84,7 +84,7 @@ var sgem_pmc_main_contents = '<div class="sgem-pmc-cal-main-id" id="sgem-pmc-cal
                   
 sgem_pmc_main_contents += '<div class="sgem-pmc-cal-1-result-footer">';
 
-if(location.hostname == "messy-saxophone.flywheelsites.com" || location.hostname == "retirementinvestments.com"){
+if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com"){
 	sgem_pmc_main_contents += '<div class="sgem-pmc-content">Get the free gold IRA kit Americans are using to protect their retirement savings</div>';
 	sgem_pmc_main_contents += '<div class="sgem-pmc-buttonGet">';   
 	sgem_pmc_main_contents += '<a href="https://retirementinvestments.com/preciousmetalscalculator" target="_blank" class="sgem-pmc-getStart">Request Your Free Kit</a>';
@@ -100,11 +100,11 @@ sgem_pmc_main_contents += '</div>';
 sgem_pmc_main_contents += '</div>';
 sgem_pmc_main_contents += '</div>'; 
 
-if( (location.hostname != "messy-saxophone.flywheelsites.com") || (location.hostname != "retirementinvestments.com") ){
+if( (location.hostname != "calculatorstg.wpengine.com") || (location.hostname != "retirementinvestments.com") ){
 	sgem_pmc_main_contents += '<div class="sgem-pmc-logo-center"><a class="sgem-pmc-url-text" href="https://retirementinvestments.com/precious-metals/precious-metals-ira-calculator/" target="_blank" rel="noopener">Precious Metals IRA Calculator&nbsp</a>by Retirement investments</div>';
 }	
 
-if(location.hostname == "messy-saxophone.flywheelsites.com" || location.hostname == "retirementinvestments.com"){
+if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com"){
 	sgem_pmc_main_contents += '<div class="sgem-pmc-copy-option-panel">';
 	sgem_pmc_main_contents += '<h3>Do you want to add this calculator into your website?</h3>';
 	sgem_pmc_main_contents += '<div class="sgem-pmc-copy-code-wrap"><button class="sgem-pmc-copy-code" id="sgem-pmc-copy-code" onclick="sgem_pcm_copyText(event)">Get Calculator</button></div>';
@@ -350,7 +350,7 @@ function decimalTwoPoints(x) {
  
 jQuery(document).ready(function($){
 
-if( location.hostname == "messy-saxophone.flywheelsites.com") {
+if( location.hostname == "calculatorstg.wpengine.com") {
 	$('.sgem-pmc-logo-center').hide(); 
 } else if(location.hostname == "retirementinvestments.com"){
 	$('.sgem-pmc-logo-center').hide(); 	
