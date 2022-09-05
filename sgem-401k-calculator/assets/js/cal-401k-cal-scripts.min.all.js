@@ -631,7 +631,7 @@ var monthly_retirement_spending = (monthly_retirement_spending1 * monthly_retire
 
       }else{
 
-        $('#sgem_you_will_have').text(sgem_401_ConvertToInternationalCurrencySystem(monthly_retirement_spending)+'/mo'); 
+        $('#sgem_you_will_have').text(decimalTwoPoints(monthly_retirement_spending)+'/mo'); 
       }
 
 
@@ -670,7 +670,7 @@ if (growth_rate > 0) {
 
       }else{
 
-        $('#sgem_total_individual_con').text(sgem_401_ConvertToInternationalCurrencySystem(total_individual_contribution)); 
+        $('#sgem_total_individual_con').text(decimalTwoPoints(total_individual_contribution)); 
       }
 
 //----------------------------------------------------------
@@ -698,7 +698,7 @@ if (growth_rate > 0) {
 
       }else{
 
-        $('#sgem_total_employer_con').text(sgem_401_ConvertToInternationalCurrencySystem(total_employer_contribution)); 
+        $('#sgem_total_employer_con').text(decimalTwoPoints(total_employer_contribution)); 
       }
 
 //----------------------------------------------------------
