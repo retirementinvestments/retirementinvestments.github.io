@@ -227,7 +227,7 @@
 }
 .sgem-401k-cal-1-result-wrapper .sgem-401k-result-label-below {
     text-align: left;
-    font-size: 32px;
+    font-size: 28px;
     font-family: 'DM Serif Display', serif;
     letter-spacing: 0px;
     color: #002340;
@@ -239,6 +239,7 @@
 	flex-wrap: wrap;
 	justify-content: space-between;
 	padding-bottom: 20px;
+	align-items: baseline;
 }
 .sgem-401k-cal-1-result-wrapper .sgem-401k-result-text-up {
 	font-size: 16px;
@@ -657,7 +658,7 @@ details.sgem-401k-details-disclaimer[open] > summary::after {
 	font-size: 2em;
 }
 .sgem-401k-cal-right-add-class .sgem-401k-cal-1-result-wrapper .sgem-401k-result-label-below {
-	font-size: 2em;
+	font-size: 1.9em;
 }
 
 /* add mobile */
