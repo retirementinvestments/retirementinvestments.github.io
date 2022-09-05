@@ -502,7 +502,7 @@ if (isNaN(monthly_retirement_spending) || monthly_retirement_spending < 1){
 
       }else{
 
-        $('#sgem_you_will_need').text(decimalTwoPoints(monthly_retirement_spending)+'/mo'); 
+        $('#sgem_you_will_need').text(decimalTwoPoints(monthly_retirement_spending).replace(/\B(?=(\d{3})+(?!\d))/g, ",")+'/mo'); 
       }
 
 //Total Contribution
