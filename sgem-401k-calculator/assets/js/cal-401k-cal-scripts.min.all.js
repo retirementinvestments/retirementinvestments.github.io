@@ -169,7 +169,7 @@ var sgem_401k_main_contents = '<div class="sgem-401k-cal-main-id">'+
                   '<span class="futuretext3 sgem-401k-result-text-down">in retirement</span>'+
                '</div>'+
             '</div>';
-if(location.hostname == "messy-saxophone.flywheelsites.com" || location.hostname == "retirementinvestments.com"){
+if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com"){
     sgem_401k_main_contents += '<div class="sgem-401k-cal-1-result-footer">';
     sgem_401k_main_contents += '<div class="sgem-401k-content">Get a comprehensive wealth management for your 401(k) account that includes rebalancing and tracking all your transactions. </div>';
     sgem_401k_main_contents += '<div class="sgem-401k-buttonGet">';
@@ -184,11 +184,11 @@ sgem_401k_main_contents += '</div>';
 sgem_401k_main_contents += '</div>';
 sgem_401k_main_contents += '</div>';
 
-if( (location.hostname != "messy-saxophone.flywheelsites.com") || (location.hostname != "retirementinvestments.com") ){
+if( (location.hostname != "calculatorstg.wpengine.com") || (location.hostname != "retirementinvestments.com") ){
     sgem_401k_main_contents += '<div class="sgem-401k-logo-center"><a class="sgem-401k-url-text" href="https://retirementinvestments.com/retirement/401k-calculator" target="_blank" rel="noopener">401(k) Calculator  </a>&nbsp;by Retirement investments</div>';
 }
 
-if(location.hostname == "messy-saxophone.flywheelsites.com" || location.hostname == "retirementinvestments.com"){
+if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com"){
     sgem_401k_main_contents += '<div class="sgem-401k-copy-option-panel">';
     sgem_401k_main_contents += '<h3>Do you want to add this calculator into your website?</h3>';
     sgem_401k_main_contents += '<div class="sgem-401k-copy-code-wrap"><button class="sgem-401k-copy-code" id="sgem-401k-copy-code" onclick="sgem_401k_copyText(event)">Get Calculator</button></div>';
@@ -390,7 +390,7 @@ function isNumber(evt) {
 
 jQuery(document).ready(function($){
 
-    if( location.hostname == "messy-saxophone.flywheelsites.com") {
+    if( location.hostname == "calculatorstg.wpengine.com") {
         $('.sgem-401k-logo-center').hide(); 
     } else if(location.hostname == "retirementinvestments.com"){
         $('.sgem-401k-logo-center').hide();  
