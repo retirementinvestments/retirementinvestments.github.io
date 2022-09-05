@@ -9,7 +9,7 @@ var sgem_main_contents = '<div class="sgem-cal-wrapper">' +
 	'<div class="sgem-flex-container">' +
 	'<div class="sgem-form-group sgem-form-flex sgem-years-holder">' +
 	'<label>My age is</label>' +
-	'<input type="text" class="sgem-reti-cal-input-width" id="sgem_age" value="35" min="0" max="150" onkeypress="return isNumber(event)"/>' +
+	'<input type="text" class="sgem-reti-cal-input-width" id="sgem_age" value="35" min="0" max="150" />' +
 	'<span class="sgem-err-msg-age"></span></div>' +
 	'<div class="sgem-form-group sgem-form-flex sgem-years-holder sgem-reti-cal-max-width-style-right">' +
 	'<label>Retirement age</label>' +
