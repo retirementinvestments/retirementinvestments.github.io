@@ -598,7 +598,7 @@ var current_age     = $('#sgem_age').val().trim();
       
       if (isNaN(you_will_have)){
 
-          $('#sgem_you_will_have').text('00.00'); 
+          $('#sgem_you_will_have').text('00.00M'); 
 
       }else{
 
@@ -607,7 +607,7 @@ var current_age     = $('#sgem_age').val().trim();
 
       if (isNaN(you_will_need)){
 
-          $('#sgem_you_will_need').text('00.00'); 
+          $('#sgem_you_will_need').text('00.00M'); 
 
       }else{
 
