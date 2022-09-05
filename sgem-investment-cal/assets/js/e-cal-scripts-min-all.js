@@ -78,7 +78,7 @@ var sgem_main_contents = '<div class="sgem-cal-wrapper">' +
       'Let\'s get Future You </div> <div id="mainmessage">out of the red.</div>';
         //'<div id="message">There are a few steps you could take to jumpstart your retirement savings. Create an account to reduce your bills, eliminate debt and grow your money.</div>'+
      
-	 if(location.hostname == "messy-saxophone.flywheelsites.com" || location.hostname == "retirementinvestments.com"){
+	 if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com"){
 	   sgem_main_contents += '<div class="sgem-cal-static-text">Spend retirement with more. Enjoy monthly income through retirement with the confidence your savings will last.</div>';
 	   sgem_main_contents += '<a href="https://retirementinvestments.com/retirementcalculator" target="_blank" class="sgem-getStart">GET STARTED</a>';
      }
@@ -87,12 +87,12 @@ var sgem_main_contents = '<div class="sgem-cal-wrapper">' +
 	 '</summary><div class="sgem-ret-collapsible-text-disclaimer">This material is provided for general and educational purposes only; it is not intended to provide legal, tax or investment advice.</div></details></div>'+
 	 '</div></div></div>';
 	 
-	 if( (location.hostname != "messy-saxophone.flywheelsites.com") || (location.hostname != "retirementinvestments.com") ){
+	 if( (location.hostname != "calculatorstg.wpengine.com") || (location.hostname != "retirementinvestments.com") ){
 		sgem_main_contents += '<div class="sgem-ret-logo-center"><a class="sgem-ret-url-text" href="https://retirementinvestments.com/retirement/retirement-calculator/" target="_blank" rel="noopener">Retirement Calculator&nbsp</a>by Retirement investments</div>';
 	 }  
 	 
      
-     if(location.hostname == "messy-saxophone.flywheelsites.com" || location.hostname == "retirementinvestments.com"){
+     if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com"){
  
 		 sgem_main_contents += '<div class="sgem-cal-copy-option-panel">';
 			sgem_main_contents += '<h3>Do you want to add this calculator into your website?</h3>';
@@ -112,7 +112,7 @@ jQuery(document).ready(function($){
     tippy('.sgem-tooltip', {animation: 'sacle',theme: 'light-border', boundary: 'viewport',allowHTML: true,arrow: true,placement: 'top',size:'large',trigger: 'click',  });
 
 
-if( location.hostname == "messy-saxophone.flywheelsites.com") {
+if( location.hostname == "calculatorstg.wpengine.com") {
 	$('.sgem-ret-logo-center').hide(); 
 } else if(location.hostname == "retirementinvestments.com"){
 	$('.sgem-ret-logo-center').hide(); 	
