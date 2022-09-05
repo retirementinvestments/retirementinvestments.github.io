@@ -602,7 +602,7 @@ var current_age     = $('#sgem_age').val().trim();
 
       }else{
 
-      $('#sgem_you_will_have').text(decimalTwoPoints(you_will_have).replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+      $('#sgem_you_will_have').text(sgem_ConvertToInternationalCurrencySystem(you_will_have));
       }
 
       if (isNaN(you_will_need)){
@@ -611,7 +611,7 @@ var current_age     = $('#sgem_age').val().trim();
 
       }else{
 
-            $('#sgem_you_will_need').text(decimalTwoPoints(you_will_need).replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+            $('#sgem_you_will_need').text(sgem_ConvertToInternationalCurrencySystem(you_will_need));
       }
   
       if (isNaN(percentage_result)){
