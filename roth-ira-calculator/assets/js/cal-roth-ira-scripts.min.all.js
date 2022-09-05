@@ -502,7 +502,7 @@ if (isNaN(monthly_retirement_spending) || monthly_retirement_spending < 1){
 
       }else{
 
-        $('#sgem_you_will_need').text(sgem_roth_ira_ConvertToInternationalCurrencySystem(monthly_retirement_spending)+'/mo'); 
+        $('#sgem_you_will_need').text(decimalTwoPoints(monthly_retirement_spending)+'/mo'); 
       }
 
 //Total Contribution
@@ -520,7 +520,7 @@ if (isNaN(total_contribution) || total_contribution < 1){
 
       }else{
 
-        $('#sgem_you_ira_ira_contribution').text(sgem_roth_ira_ConvertToInternationalCurrencySystem(total_contribution)); 
+        $('#sgem_you_ira_ira_contribution').text(decimalTwoPoints(total_contribution).replace(/\B(?=(\d{3})+(?!\d))/g, ","));
       }
 
 //Value at Retirement
