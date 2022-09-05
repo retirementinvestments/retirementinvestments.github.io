@@ -739,7 +739,7 @@ var total_value_at_retirement_w_growth = (total_value_at_retirement_w_growth3 + 
 
       }else{
 
-        $('#sgem_401k_price_text').text(decimalTwoPoints(total_value_at_retirement_w_growth).replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+        $('#sgem_401k_price_text').text(sgem_401_ConvertToInternationalCurrencySystem(total_value_at_retirement_w_growth));
       }
 
 
