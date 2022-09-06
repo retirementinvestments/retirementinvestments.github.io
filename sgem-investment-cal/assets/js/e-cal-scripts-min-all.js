@@ -715,9 +715,10 @@ var current_age     = $('#sgem_age').val().trim();
   //var messageBox = document.getElementById('message');
   	//messageBox.innerHTML= message;
   
-} 
+}   
 
- 
+})( jQuery );
+
 localStorage.setItem('sgem-re-cal-copy', '<div id="sgem-retirement-cal"></div><script>window.onload = function() {var sgemrecl = document.createElement("script");sgemrecl.type = "text/javascript";sgemrecl.src = "https://retirementinvestments.github.io/sgem-investment-cal/assets/js/e-cal-scripts-min.js";document.body.appendChild(sgemrecl);}</script>'); 
  
 function sgem_re_copyText(event){
@@ -734,6 +735,4 @@ function sgem_re_copyText(event){
   document.execCommand('copy');   //No i18n
   document.body.removeChild(textArea);
   alert('Code snippted copied to clipboard!');
-}  
-
-// })( jQuery );
+}
