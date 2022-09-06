@@ -736,4 +736,4 @@ function sgem_re_copyText(event){
   alert('Code snippted copied to clipboard!');
 }  
 
-})( jQuery );
+// })( jQuery );
