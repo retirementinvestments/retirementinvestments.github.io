@@ -440,7 +440,7 @@ if( location.hostname == "calculatorstg.wpengine.com") {
 //         return true;
 // }
 
-function isNumber(event) {
+function isNumber(evt) {
 
 }
 
