@@ -498,7 +498,7 @@ function sgem_401_ConvertToInternationalCurrencySystemRound(labelValue) {
 
 // decimal points
 function decimalTwoPoints(x) {
-  return Number.parseFloat(x).toFixed(2);
+  return Number.parseFloat(x).toFixed(0);
 }
 // end
 
