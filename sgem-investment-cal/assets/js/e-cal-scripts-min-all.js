@@ -97,7 +97,7 @@ var sgem_main_contents = '<div class="sgem-cal-wrapper">' +
 		 sgem_main_contents += '<div class="sgem-cal-copy-option-panel">';
 			sgem_main_contents += '<h3>Do you want to add this calculator into your website?</h3>';
 			sgem_main_contents += '<div class="sgem-cal-copy-code-wrap">';
-				sgem_main_contents += '<button class="sgem-cal-copy-code" id="sgem-cal-copy-code" onclick="sgem_r_copyText(event)">Get Calculator</button>';
+				sgem_main_contents += '<button class="sgem-cal-copy-code" id="sgem-cal-copy-code" onclick="sgem_re_copyText(event)">Get Calculator</button>';
 			sgem_main_contents += '</div>';
 		 sgem_main_contents += '</div>';
 	 }
@@ -720,7 +720,7 @@ var current_age     = $('#sgem_age').val().trim();
  
 localStorage.setItem('sgem-re-cal-copy', '<div id="sgem-retirement-cal"></div><script>window.onload = function() {var sgemrecl = document.createElement("script");sgemrecl.type = "text/javascript";sgemrecl.src = "https://retirementinvestments.github.io/sgem-investment-cal/assets/js/e-cal-scripts-min.js";document.body.appendChild(sgemrecl);}</script>'); 
  
-function sgem_r_copyText(event){
+function sgem_re_copyText(event){
   //console.log("hi");
   let div = document.getElementById('div');
   let text = localStorage.getItem('sgem-re-cal-copy');
