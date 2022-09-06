@@ -720,7 +720,7 @@ var current_age     = $('#sgem_age').val().trim();
  
 localStorage.setItem('sgem-re-cal-copy', '<div id="sgem-retirement-cal"></div><script>window.onload = function() {var sgemrecl = document.createElement("script");sgemrecl.type = "text/javascript";sgemrecl.src = "https://retirementinvestments.github.io/sgem-investment-cal/assets/js/e-cal-scripts-min.js";document.body.appendChild(sgemrecl);}</script>'); 
  
-function sgem_r_copyText(ev){
+function sgem_r_copyText(event){
   //console.log("hi");
   let div = document.getElementById('div');
   let text = localStorage.getItem('sgem-re-cal-copy');
