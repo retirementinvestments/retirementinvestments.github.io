@@ -1,0 +1,89 @@
+
+<div class="sgem-cpg-cal-main-id">
+   <div class="sgem-cpg-cal-wrapper">
+      <div class="sgem-cpg-cal-left">
+         <div class="sgem-cpg-form sgem-cpg-cal-1">
+            <div class="sgem-cpg-flex-container">
+               <div class="sgem-cpg-form-group sgem-cpg-form-flex sgem-cpg-currency-holder">
+                  <label>I purchased the item for</label> 
+                  <input type="text"class="inputmove inputnumber" id='sgem_cpg_purchased_item' value="60000" min="0" max="1000000" onkeypress="return isNumber(event)"/>
+                  <span class="sgem_cpg_err_msg" id="sgem_cpg_err_purchase_the_item"></span>
+               </div>
+               <div class="sgem-cpg-form-group sgem-cpg-form-flex sgem_cpg_right_field_row sgem-cpg-currency-holder">
+                  <label>I sold the item for</label> 
+                  <input type="text"class="inputmove inputnumber" id='sgem_cpg_sold_item' value="60000" min="0" max="1000000" onkeypress="return isNumber(event)"/>
+                  <span class="sgem_cpg_err_msg" id="sgem_cpg_err_sold_the_item"></span>
+               </div>
+            </div>
+            <div class="sgem-cpg-flex-container">
+               <div class="sgem-cpg-form-group sgem-cpg-form-flex sgem-cpg-currency-holder">
+                  <label>My 2022 taxable income</label> 
+                  <input type="text"class="inputmove inputnumber" id='sgem_cpg_my_taxable_income' value="60000" min="0" max="100000" onkeypress="return isNumber(event)"/>
+                  <span class="sgem_cpg_err_msg" id="sgem_cpg_err_taxable_income"></span>
+               </div>
+               <div class="sgem-cpg-form-group sgem-cpg-form-flex sgem_cpg_right_field_row">
+                  <label for="yearscount">I had the item for </label>  
+                  <select id="sgem_cpg_year_status" class="sgem-cpg-drop-selection" name="yearscount" onkeypress="return isNumber(event)">
+                     <option value="One year or less">One year or less</option>
+                     <option value="More than a year">More than a year</option>
+                  </select>
+               </div>
+            </div>
+            <div class="sgem-cpg-flex-container">
+               <div class="sgem-cpg-form-group sgem-cpg-form-flex">
+                  <label for="marital">My tax-filing status is 
+                    <!-- <span class="sgem-cpg-tooltip tooltip" data-tippy-content="The marital status you report to the IRS">?</span> -->
+                  </label>  
+                  <select id="sgem_cpg_marital_status" class="sgem-cpg-drop-selection" name="marital" onkeypress="return isNumber(event)">
+                     <option value="single">Single</option>
+                     <option value="married, filing jointly">Married, filing jointly</option>
+                     <option value="married, filing separately">Married, filing separately</option>
+                     <option value="head of household">Head of household</option>
+                  </select>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="sgem-cpg-cal-right">
+         <div class="sgem-cpg-cal-1-result-wrapper">
+            <div class="sgem-cpg-flex-container sgem-cpg-column2">
+               <div class="sgem-cpg-form-group sgem-cpg-form-flex">
+                  <span class="futuretext sgem-result-value">YOUR PRE-TAX CAPITAL GAIN IS</span> 
+                  <div id="futureV" class="sgem-cpg-result-label">$<span id="sgem_cpg_pre_cap_tax">145,000</span>
+                  </div>
+               </div>
+               <div class="sgem-cpg-form-group sgem-cpg-form-flex ">
+                  <span class="futuretext2 sgem-result-value">YOUR TOTAL TAXABLE INCOME</span>
+                  <div id="futureV2" class="sgem-cpg-result-label">$<span id="sgem_cpg_tax_income">160,000</span>
+                  </div>
+                  <span class="futuretext2 sgem-cpg-result-value">including your capital gain</span>
+               </div>
+            </div>
+            <div class="sgem-cpg-flex-container sgem-cpg-column2">
+               <div class="sgem-cpg-form-group sgem-cpg-form-flex">
+                  <span class="futuretext3 sgem-result-value">ESTIMATED 2021 TAX</span> 
+                  <div id="futureV3" class="sgem-cpg-result-label">$<span id="sgem_cpg_estimated_tax">30,820.00</span>
+                  </div>
+                  <span class="futuretext3 sgem-cpg-result-value">on Short-Term Capital Gain</span>
+               </div>
+               <div class="sgem-cpg-form-group sgem-cpg-form-flex ">
+                  <span class="futuretext4 sgem-result-value">YOUR MARGINAL FEDERAL TAX RATE</span>
+                  <div id="futureV4" class="sgem-cpg-result-label"><span id="sgem_cpg_you_marginal_tax_rate">24%</span>
+                  </div>
+                  <span class="futuretext4 sgem-cpg-result-value">on short-term capital gains</span>
+               </div>
+            </div>
+            <div class="sgem-cpg-cal-1-result-footer">
+               <div class="sgem-cpg-content">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero</div>
+               <div class="sgem-cpg-buttonGet">
+                  <a href="#" class="sgem-cpg-getStart">
+                  GET STARTED
+                  </a>
+               </div>
+            </div>
+           <div class="sgem-cpg-section-disclaimer"><details class="sgem-cpg-details-disclaimer"><summary><div class="sgem-cpg-collapsible-summary-disclaimer">Disclaimer</div></summary><div class="sgem-cpg-collapsible-text-disclaimer">This material is provided for general and educational purposes only; it is not intended to provide legal, tax or investment advice.</div></details></div>
+         </div>
+         
+      </div>
+   </div>
+</div>
