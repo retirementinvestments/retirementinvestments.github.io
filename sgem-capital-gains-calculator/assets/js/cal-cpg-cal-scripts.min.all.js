@@ -29,171 +29,94 @@ function(a){a.stopPropagation();a.preventDefault();return!1});m.hover(function()
 x();"bottom"===a.start?(c.css({top:b.outerHeight()-c.outerHeight()}),n(0,!0)):"top"!==a.start&&(n(e(a.start).position().top,null,!0),a.alwaysVisible||c.hide());window.addEventListener?(this.addEventListener("DOMMouseScroll",v,!1),this.addEventListener("mousewheel",v,!1)):document.attachEvent("onmousewheel",v)}});return this}});e.fn.extend({slimscroll:e.fn.slimScroll})})(jQuery);
 
 
-var sgem_401k_main_contents = '<div class="sgem-401k-cal-main-id">'+
-   '<div class="sgem-401k-cal-wrapper">'+
-      '<div class="sgem-401k-cal-left">'+
-         '<div class="sgem-401k-form sgem-401k-cal-1">'+
-            '<div class="sgem-401k-flex-container">'+
-               '<div class="sgem-401k-form-group sgem-401k-form-flex sgem-401k-years-holder">'+
-                  '<label>Current age</label>'+
-                  '<input type="text" id="sgem_401k_age" value="35" min="0" max="150" onkeypress="return isNumber(event)"/>'+
-                  '<span class="sgem_401k_err_msg" id="sgem_401k_err_my_age"></span>'+ 
+var sgem_401k_main_contents = '<div class="sgem-cpg-cal-main-id">'+
+   '<div class="sgem-cpg-cal-wrapper">'+
+      '<div class="sgem-cpg-cal-left">'+
+         '<div class="sgem-cpg-form sgem-cpg-cal-1">'+
+            '<div class="sgem-cpg-flex-container">'+
+               '<div class="sgem-cpg-form-group sgem-cpg-form-flex sgem-cpg-currency-holder">'+
+                  '<label>I purchased the item for</label> '+
+                  '<input type="text"class="inputmove inputnumber" id="sgem_cpg_purchased_item" value="60000" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
+                  '<span class="sgem_cpg_err_msg" id="sgem_cpg_err_purchase_the_item"></span>'+
                '</div>'+
-               '<div class="sgem-401k-form-group sgem-401k-form-flex sgem-401k-years-holder">'+
-                  '<label>Retirement age</label>'+
-                  '<input type="text" id="sgem_401k_retirement_age" value="67" min="0" max="150" onkeypress="return isNumber(event)"/>'+      
-                  '<span class="sgem_401k_err_msg" id="sgem_401k_err_rmt"></span> '+
-               '</div>'+
-            '</div>'+
-            '<div class="sgem-401k-flex-container">'+
-               '<div class="sgem-401k-form-group sgem-401k-form-flex sgem-401k-currency-holder">'+
-                  '<label>Income before taxes</label> '+
-                  '<input type="text"class="inputmove inputnumber" id="sgem_401k_income_before_taxes" value="60,000" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
-                  '<span class="sgem_401k_err_msg" id="sgem_401k_err_income_before_taxes"></span> '+
-               '</div>'+
-               '<div class="sgem-401k-form-group sgem-401k-form-flex sgem-401k-currency-holder">'+
-                  '<label>Current balance <span class="sgem-401k-tooltip tooltip" data-tippy-content="Current balance in 401K savings account">?</span></label>'+
-                  '<input type="text" class="inputmove inputnumber"  id="sgem_401k_current_balance" value="30,000" min="0" max="50000000" onkeypress="return isNumber(event)"/>'+
-                  '<span class="sgem_401k_err_msg" id="sgem_401k_err_current_balance"></span>'+
+               '<div class="sgem-cpg-form-group sgem-cpg-form-flex sgem_cpg_right_field_row sgem-cpg-currency-holder">'+
+                  '<label>I sold the item for</label> '+
+                  '<input type="text"class="inputmove inputnumber" id="sgem_cpg_sold_item" value="60000" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
+                  '<span class="sgem_cpg_err_msg" id="sgem_cpg_err_sold_the_item"></span>'+
                '</div>'+
             '</div>'+
-            '<span class="sgem_401k_err_msg" id="sgem_401k_err_annualmax"></span>'+
-            '<span class="sgem_401k_err_msg" id="sgem_401k_err_annualmax_withcatchup"></span>'+
-            '<details class="sgem-401k-input-more-details" open>'+
-               '<summary>'+
-                  '<div>'+
-                     '<h3 class="sgem-401k-collapsible-summary-title">Basic</h3>'+
-                  '</div>'+
-               '</summary>'+
-               '<div class="collapsible-content sgem-401k-col-row-collaps">'+
-                  '<div class="sgem-401k-flex-container">'+
-                     '<div class="sgem-401k-form-group sgem-401k-form-flex sgem-401k-currency-holder">'+
-                        '<label>Annual contribution <span class="sgem-401k-tooltip tooltip" data-tippy-content="The maximum annual contribution is $20,500">?</span></label>'+  
-                        '<input type="text" id="sgem_401k_annual_contributions" class="inputnumber sgem_401k_full_width_field" value="6,000" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
-                        '<span class="sgem_401k_err_msg" id="sgem_401k_err_annual_contributions"></span>'+   
-                     '</div>'+
-                  '</div>'+
-                  '<div class="sgem-401k-flex-container">'+
-                     '<div class="sgem-401k-form-group sgem-401k-form-flex">'+
-                        '<label>Employer match <span class="sgem-401k-tooltip tooltip" data-tippy-content="Percentage of your contributions that your employer matches">?</span></label>'+  
-                        '<input type="text" id="sgem_401k_employer_match" class="inputnumber sgem_401k_full_width_field" value="100%" min="0" max="100" onkeypress="return isNumber(event)"/>'+
-                        '<span class="sgem_401k_err_msg" id="sgem_401k_err_employer_match"></span>'+   
-                     '</div>'+
-                  '</div>'+
-                  '<div class="sgem-401k-flex-container">'+
-                     '<div class="sgem-401k-form-group sgem-401k-form-flex">'+
-                        '<label>Limit on matching contributions <span class="sgem-401k-tooltip tooltip" data-tippy-content="Maximum percentage of your salary that your employer will match. The usual range is between 3%-6%.">?</span></label>'+ 
-                        '<input type="text" id="sgem_401k_limit_on_matching" class="inputnumber sgem_401k_full_width_field" value="2%" min="0" max="100" onkeypress="return isNumber(event)"/>'+
-                        '<span class="sgem_401k_err_msg" id="sgem_401k_err_limit_on_matching"></span>'+ 
-                     '</div>'+
-                  '</div>'+
-                  '<div class="sgem-401k-flex-container">'+
-                     '<div class="sgem-401k-form-group sgem-401k-form-flex">'+
-                        '<label>Rate of return <span class="sgem-401k-tooltip tooltip" data-tippy-content="The average annual return you expect from your 401(k) investments each year.">?</span></label>'+
-                        '<input type="text" id="sgem_401k_rate_of_return" class="inputnumber sgem_401k_full_width_field" value="6%" min="0" max="100" onkeypress="return isNumber(event)"/>'+
-                        '<span class="sgem_401k_err_msg" id="sgem_401k_err_rate_of_return"></span>'+ 
-                     '</div>'+
-                  '</div>'+
+            '<div class="sgem-cpg-flex-container">'+
+               '<div class="sgem-cpg-form-group sgem-cpg-form-flex sgem-cpg-currency-holder">'+
+                  '<label>My 2022 taxable income</label> '+
+                  '<input type="text"class="inputmove inputnumber" id="sgem_cpg_my_taxable_income" value="60000" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
+                  '<span class="sgem_cpg_err_msg" id="sgem_cpg_err_taxable_income"></span>'+
                '</div>'+
-            '</details>'+
-            '<details class="sgem-401k-input-more-details" open>'+
-               '<summary>'+
-                  '<div>'+
-                     '<h3 class="sgem-401k-collapsible-summary-title">Advanced</h3>'+
-                  '</div>'+
-               '</summary>'+
-               '<div class="collapsible-content sgem-401k-col-row-collaps">'+
-                  '<div class="sgem-401k-flex-container">'+
-                     '<div class="sgem-401k-form-group sgem-401k-form-flex sgem-401k-currency-holder">'+
-                        '<label>Annual catch-up contribution <span class="sgem-401k-tooltip tooltip" data-tippy-content="If you\'re 50 or older, you can contribute an extra $6,500 to your 401(k)">?</span></label>'+
-                        '<input type="text" id="sgem_401k_annual_catchup_contribution" class="inputnumber sgem_401k_full_width_field" value="0" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
-                        '<span class="sgem_401k_err_msg" id="sgem_401k_err_annual_catchup_contribution"></span>'+ 
-                     '</div>'+
-                  '</div>'+
-                  '<div class="sgem-401k-flex-container">'+
-                     '<div class="sgem-401k-form-group sgem-401k-form-flex">'+
-                        '<label>Growth rate <span class="sgem-401k-tooltip tooltip" data-tippy-content="Percentage by which you expect your annual income to grow annually">?</span></label>'+
-                        '<input type="text" id="sgem_401k_growth_rate" class="inputnumber sgem_401k_full_width_field" value="2%" min="0" max="100" onkeypress="return isNumber(event)"/>'+
-                        '<span class="sgem_401k_err_msg" id="sgem_401k_err_growth_rate"></span>'+ 
-                     '</div>'+
-                  '</div>'+
+               '<div class="sgem-cpg-form-group sgem-cpg-form-flex sgem_cpg_right_field_row">'+
+                  '<label for="yearscount">I had the item for </label>  '+
+                  '<select id="sgem_cpg_year_status" class="sgem-cpg-drop-selection" name="yearscount" onkeypress="return isNumber(event)">'+
+                     '<option value="One year or less">One year or less</option>'+
+                     '<option value="More than a year">More than a year</option>'+
+                  '</select>'+
                '</div>'+
-            '</details>'+
+            '</div>'+
+            '<div class="sgem-cpg-flex-container">'+
+               '<div class="sgem-cpg-form-group sgem-cpg-form-flex">'+
+                  '<label for="marital">My tax-filing status is '+
+                    '<!-- <span class="sgem-cpg-tooltip tooltip" data-tippy-content="The marital status you report to the IRS">?</span> -->'+
+                  '</label>  '+
+                  '<select id="sgem_cpg_marital_status" class="sgem-cpg-drop-selection" name="marital" onkeypress="return isNumber(event)">'+
+                     '<option value="single">Single</option>'+
+                     '<option value="married, filing jointly">Married, filing jointly</option>'+
+                     '<option value="married, filing separately">Married, filing separately</option>'+
+                     '<option value="head of household">Head of household</option>'+
+                  '</select>'+
+               '</div>'+
+            '</div>'+
          '</div>'+
       '</div>'+
-      '<div class="sgem-401k-cal-right">'+
-         '<div class="sgem-401k-cal-1-result-wrapper">'+
-            '<div class="sgem-401k-cal-1-result-header">'+
-               '<div><span>401(K) BALANCE AT RETIREMENT </span><span id="sgem_401k_price_text" class="sgem-401k-price-text">$2M</span> </div>'+
-               '<div class="sgem-401k-legendbox">'+
-                  '<div class="sgem-401k-legend-item">'+
-                     '<button id="sgem_401k_contribution" onClick="toggleData(1)" class="sgem-401k-contribution"></button> '+
-                     '<div id="sgem_401k_contribution_te" onClick="toggleData(1)" class="sgem-401k-contribution-te"></div>'+
+      '<div class="sgem-cpg-cal-right">'+
+         '<div class="sgem-cpg-cal-1-result-wrapper">'+
+            '<div class="sgem-cpg-flex-container sgem-cpg-column2">'+
+               '<div class="sgem-cpg-form-group sgem-cpg-form-flex">'+
+                  '<span class="futuretext sgem-result-value">YOUR PRE-TAX CAPITAL GAIN IS</span> '+
+                  '<div id="futureV" class="sgem-cpg-result-label">$<span id="sgem_cpg_pre_cap_tax">145,000</span>'+
                   '</div>'+
-                  '<div class="sgem-401k-legend-item">'+
-                     '<button id="sgem_401k_catchup" onClick="toggleData(2)" class="sgem-401k-catchup"></button>'+
-                     '<div id="sgem_401k_catchup_te" onClick="toggleData(2)" class="sgem-401k-catchup-te"></div>'+
+               '</div>'+
+               '<div class="sgem-cpg-form-group sgem-cpg-form-flex ">'+
+                  '<span class="futuretext2 sgem-result-value">YOUR TOTAL TAXABLE INCOME</span>'+
+                  '<div id="futureV2" class="sgem-cpg-result-label">$<span id="sgem_cpg_tax_income">160,000</span>'+
                   '</div>'+
-                  '<div class="sgem-401k-legend-item">'+
-                     '<button id="sgem_401k_emp_match" onClick="toggleData(3)" class="sgem-401k-emp-match"></button>'+
-                     '<div id="sgem_401k_emp_match_te" onClick="toggleData(3)" class="sgem-401k-emp-match-te"></div>'+
-                 '</div>'+
-                  '<div class="sgem-401k-legend-item">'+
-                     '<button id="sgem_401k_interest_accu" onClick="toggleData(4)" class="sgem-401k-interest-accu"></button>'+
-                     '<div id="sgem_401k_interest_accu_te" onClick="toggleData(4)" class="sgem-401k-interest-accu-te"></div>'+
-                  '</div>'+
+                  '<span class="futuretext2 sgem-cpg-result-value">including your capital gain</span>'+
                '</div>'+
             '</div>'+
-            '<div class="sgem-401k-chartCard">'+
-               '<div class="chartBox">'+
-                  '<canvas id="myChart"></canvas>'+
+            '<div class="sgem-cpg-flex-container sgem-cpg-column2">'+
+               '<div class="sgem-cpg-form-group sgem-cpg-form-flex">'+
+                  '<span class="futuretext3 sgem-result-value">ESTIMATED 2021 TAX</span> '+
+                  '<div id="futureV3" class="sgem-cpg-result-label">$<span id="sgem_cpg_estimated_tax">30,820.00</span>'+
+                  '</div>'+
+                  '<span class="futuretext3 sgem-cpg-result-value">on Short-Term Capital Gain</span>'+
+               '</div>'+
+               '<div class="sgem-cpg-form-group sgem-cpg-form-flex ">'+
+                  '<span class="futuretext4 sgem-result-value">YOUR MARGINAL FEDERAL TAX RATE</span>'+
+                  '<div id="futureV4" class="sgem-cpg-result-label"><span id="sgem_cpg_you_marginal_tax_rate">24%</span>'+
+                  '</div>'+
+                  '<span class="futuretext4 sgem-cpg-result-value">on short-term capital gains</span>'+
                '</div>'+
             '</div>'+
-            '<div class="sgem-401k-flex-container sgem-401k-column2">'+
-               '<div class="sgem-401k-form-group sgem-401k-form-flex-section-one">'+
-                  '<span class="futuretext sgem-401k-result-text-up">You will need about</span> '+
-                  '<div id="futureV" class="sgem-401k-result-label-below">$<span id="sgem_you_will_have">6,650/mo</span>'+
-                  '</div>'+
-                  '<span class="futuretext sgem-401k-result-text-down">in retirement</span>'+
+            '<div class="sgem-cpg-cal-1-result-footer">'+
+               '<div class="sgem-cpg-content">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero</div>'+
+               '<div class="sgem-cpg-buttonGet">'+
+                  '<a href="#" class="sgem-cpg-getStart">'+
+                  'GET STARTED'+
+                  '</a>'+
                '</div>'+
-               '<div class="sgem-401k-form-group sgem-401k-form-flex-section-two">'+
-                  '<span class="futuretext2 sgem-401k-result-text-up">Total individual contributions</span>'+
-                  '<div id="futureV2" class="sgem-401k-result-label-below">$<span id="sgem_total_individual_con">12,458</span>'+
-                  '</div>'+
-                  '<span class="futuretext2 sgem-401k-result-text-down">at retirement</span>'+
-               '</div>'+
-               '<div class="sgem-401k-form-group sgem-401k-form-flex-section-three">'+
-                  '<span class="futuretext2 sgem-401k-result-text-up">Total employer contributions</span>'+
-                  '<div id="futureV3" class="sgem-401k-result-label-below">$<span id="sgem_total_employer_con">24,258</span>'+
-                  '</div>'+
-                  '<span class="futuretext3 sgem-401k-result-text-down">in retirement</span>'+
-               '</div>'+
-            '</div>';
-if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com"){
-    sgem_401k_main_contents += '<div class="sgem-401k-cal-1-result-footer">';
-    sgem_401k_main_contents += '<div class="sgem-401k-content">Get a comprehensive wealth management for your 401(k) account that includes rebalancing and tracking all your transactions. </div>';
-    sgem_401k_main_contents += '<div class="sgem-401k-buttonGet">';
-    sgem_401k_main_contents += '<a href="https://retirementinvestments.com/401kcalculator" target="_blank" class="sgem-401k-getStart">GET STARTED</a>'
-    sgem_401k_main_contents += '</div>';
-    sgem_401k_main_contents += '</div>'; // footer end
-}
+            '</div>'+
+           '<div class="sgem-cpg-section-disclaimer"><details class="sgem-cpg-details-disclaimer"><summary><div class="sgem-cpg-collapsible-summary-disclaimer">Disclaimer</div></summary><div class="sgem-cpg-collapsible-text-disclaimer">This material is provided for general and educational purposes only; it is not intended to provide legal, tax or investment advice.</div></details></div>'+
+         '</div>'+
+      '</div>'+
+   '</div>'+
+'</div>'+
 
-sgem_401k_main_contents += '<div class="sgem-401k-section-disclaimer"><details class="sgem-401k-details-disclaimer"><summary><div class="sgem-401k-collapsible-summary-disclaimer">Disclaimer</div></summary><div class="sgem-401k-collapsible-text-disclaimer">This material is provided for general and educational purposes only; it is not intended to provide legal, tax or investment advice.</div></details></div>';
-
-sgem_401k_main_contents += '</div>'; 
-sgem_401k_main_contents += '</div>';
-sgem_401k_main_contents += '</div>';
-
-if( (location.hostname != "calculatorstg.wpengine.com") || (location.hostname != "retirementinvestments.com") ){
-    sgem_401k_main_contents += '<div class="sgem-401k-logo-center"><a class="sgem-401k-url-text" href="https://retirementinvestments.com/retirement/401k-calculator" target="_blank" rel="noopener">401(k) Calculator  </a>&nbsp;by Retirement investments</div>';
-}
-
-if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com"){
-    sgem_401k_main_contents += '<div class="sgem-401k-copy-option-panel">';
-    sgem_401k_main_contents += '<h3>Do you want to add this calculator into your website?</h3>';
-    sgem_401k_main_contents += '<div class="sgem-401k-copy-code-wrap"><button class="sgem-401k-copy-code" id="sgem-401k-copy-code" onclick="sgem_401k_copyText(event)">Get Calculator</button></div>';
-    sgem_401k_main_contents += '</div>';
-}
 sgem_401k_main_contents += '</div>';  
 
 document.getElementById('sgem-401k-cal').innerHTML = sgem_401k_main_contents;
