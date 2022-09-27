@@ -270,40 +270,40 @@ var sgem_401k_main_contents = '<div class="sgem-hmhcia-cal-main-id">'+
       '<button id="sgem_hmhcia_insurance" class="sgem-hmhcia-insurance"></button><div id="sgem_hmhcia_insurance_te" class="sgem-hmhcia-insurance-te"></div>'+
       '<span class="sgem_hmhcia_side_total_lbl">$<span id="sgem_hmhcia_insurance_value"></span></span>'+
       '</div>'+
-      <div class="sgem-hmhcia-legend-item" id="hidemeon">
-      <button id="sgem_hmhcia_property" class="sgem-hmhcia-property"></button>
-      <div id="sgem_hmhcia_property_te" class="sgem-hmhcia-property-te"></div>
-      <span class="sgem_hmhcia_side_total_lbl">$<span id="sgem_hmhcia_property_value"></span></span>
-      </div>
-      <div class="sgem-hmhcia-legend-item" id="hidemeon2">
-      <button id="sgem_hmhcia_pmi" class="sgem-hmhcia-pmi"></button><div id="sgem_hmhcia_pmi_te" class="sgem-hmhcia-pmi-te"></div>
-      <span class="sgem_hmhcia_side_total_lbl">$<span id="sgem_hmhcia_pmi_value"></span></span>
-      </div>
-      <div class="sgem-hmhcia-legend-item">
-      <button id="sgem_hmhcia_hoe" class="sgem-hmhcia-hoe"></button><div id="sgem_hmhcia_hoe_te" class="sgem-hmhcia-hoe-te"></div>
-      <span class="sgem_hmhcia_side_total_lbl">$<span id="sgem_hmhcia_hoe_value"></span></span>
-      </div>
-      <div class="sgem-hmhcia-legend-total-section"> 
-      <span class="sgem-hmhcia-label-legend-item">Total monthly payment</span><span class="sgem-hmhcia-price-legend-item">$1,837</span>
-      </div>
-      </div>
-      </div>
-      </div>
-      </section>
-      </div>
-      <div class="sgem-hmhcia-cal-1-result-footer">
-      <div class="sgem-hmhcia-content">The right mortgage can save you thousands. Confirm your affordability with our recommended lender.</div>
-      <div class="sgem-hmhcia-buttonGet">
-      <a href="https://retirementinvestments.com/affordabilitycalculator" target="_blank" class="sgem-hmhcia-getStart" rel="noopener">
-      GET STARTED
-      </a>
-      </div>
-      </div>
-      <div class="sgem-hmhcia-section-disclaimer"><details class="sgem-hmhcia-details-disclaimer"><summary><div class="sgem-hmhcia-collapsible-summary-disclaimer">Disclaimer</div></summary><div class="sgem-hmhcia-collapsible-text-disclaimer">This material is provided for general and educational purposes only; it is not intended to provide legal, tax or investment advice.</div></details></div>
-      </div>
-      </div>
-   </div>
-</div>';
+      '<div class="sgem-hmhcia-legend-item" id="hidemeon">'+
+      '<button id="sgem_hmhcia_property" class="sgem-hmhcia-property"></button>'+
+      '<div id="sgem_hmhcia_property_te" class="sgem-hmhcia-property-te"></div>'+
+      '<span class="sgem_hmhcia_side_total_lbl">$<span id="sgem_hmhcia_property_value"></span></span>'+
+      '</div>'+
+      '<div class="sgem-hmhcia-legend-item" id="hidemeon2">'+
+      '<button id="sgem_hmhcia_pmi" class="sgem-hmhcia-pmi"></button><div id="sgem_hmhcia_pmi_te" class="sgem-hmhcia-pmi-te"></div>'+
+      '<span class="sgem_hmhcia_side_total_lbl">$<span id="sgem_hmhcia_pmi_value"></span></span>'+
+      '</div>'+
+      '<div class="sgem-hmhcia-legend-item">'+
+      '<button id="sgem_hmhcia_hoe" class="sgem-hmhcia-hoe"></button><div id="sgem_hmhcia_hoe_te" class="sgem-hmhcia-hoe-te"></div>'+
+      '<span class="sgem_hmhcia_side_total_lbl">$<span id="sgem_hmhcia_hoe_value"></span></span>'+
+      '</div>'+
+      '<div class="sgem-hmhcia-legend-total-section">'+ 
+      '<span class="sgem-hmhcia-label-legend-item">Total monthly payment</span><span class="sgem-hmhcia-price-legend-item">$1,837</span>'+
+      '</div>'+
+      '</div>'+
+      '</div>'+
+      '</div>'+
+      '</section>'+
+      '</div>'+
+      '<div class="sgem-hmhcia-cal-1-result-footer">'+
+      '<div class="sgem-hmhcia-content">The right mortgage can save you thousands. Confirm your affordability with our recommended lender.</div>'+
+      '<div class="sgem-hmhcia-buttonGet">'+
+      '<a href="https://retirementinvestments.com/affordabilitycalculator" target="_blank" class="sgem-hmhcia-getStart" rel="noopener">'+
+      'GET STARTED'+
+      '</a>'+
+      '</div>'+
+      '</div>'+
+      '<div class="sgem-hmhcia-section-disclaimer"><details class="sgem-hmhcia-details-disclaimer"><summary><div class="sgem-hmhcia-collapsible-summary-disclaimer">Disclaimer</div></summary><div class="sgem-hmhcia-collapsible-text-disclaimer">This material is provided for general and educational purposes only; it is not intended to provide legal, tax or investment advice.</div></details></div>'+
+      '</div>'+
+      '</div>'+
+   '</div>'+
+'</div>';
 
 sgem_401k_main_contents += '</div>';  
 
