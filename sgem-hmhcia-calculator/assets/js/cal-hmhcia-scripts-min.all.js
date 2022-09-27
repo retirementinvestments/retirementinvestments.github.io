@@ -26,146 +26,284 @@ function(a){a.stopPropagation();a.preventDefault();return!1});m.hover(function()
 x();"bottom"===a.start?(c.css({top:b.outerHeight()-c.outerHeight()}),n(0,!0)):"top"!==a.start&&(n(e(a.start).position().top,null,!0),a.alwaysVisible||c.hide());window.addEventListener?(this.addEventListener("DOMMouseScroll",v,!1),this.addEventListener("mousewheel",v,!1)):document.attachEvent("onmousewheel",v)}});return this}});e.fn.extend({slimscroll:e.fn.slimScroll})})(jQuery);
 
 
-var sgem_401k_main_contents = '<div class="sgem-401k-cal-main-id">'+
-   '<div class="sgem-401k-cal-wrapper">'+
-      '<div class="sgem-401k-cal-left">'+
-         '<div class="sgem-401k-form sgem-401k-cal-1">'+
-            '<div class="sgem-401k-flex-container">'+
-               '<div class="sgem-401k-form-group sgem-401k-form-flex sgem-401k-years-holder">'+
-                  '<label>Current age</label>'+
-                  '<input type="text" id="sgem_401k_age" value="35" min="0" max="150" onkeypress="return isNumber(event)"/>'+
-                  '<span class="sgem_401k_err_msg" id="sgem_401k_err_my_age"></span>'+ 
-               '</div>'+
-               '<div class="sgem-401k-form-group sgem-401k-form-flex sgem-401k-years-holder">'+
-                  '<label>Retirement age</label>'+
-                  '<input type="text" id="sgem_401k_retirement_age" value="67" min="0" max="150" onkeypress="return isNumber(event)"/>'+      
-                  '<span class="sgem_401k_err_msg" id="sgem_401k_err_rmt"></span> '+
-               '</div>'+
-            '</div>'+
-            '<div class="sgem-401k-flex-container">'+
-               '<div class="sgem-401k-form-group sgem-401k-form-flex sgem-401k-currency-holder">'+
-                  '<label>Income before taxes</label> '+
-                  '<input type="text"class="inputmove inputnumber" id="sgem_401k_income_before_taxes" value="60,000" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
-                  '<span class="sgem_401k_err_msg" id="sgem_401k_err_income_before_taxes"></span> '+
-               '</div>'+
-               '<div class="sgem-401k-form-group sgem-401k-form-flex sgem-401k-currency-holder">'+
-                  '<label>Current balance <span class="sgem-401k-tooltip tooltip" data-tippy-content="Current balance in 401K savings account">?</span></label>'+
-                  '<input type="text" class="inputmove inputnumber"  id="sgem_401k_current_balance" value="30,000" min="0" max="50000000" onkeypress="return isNumber(event)"/>'+
-                  '<span class="sgem_401k_err_msg" id="sgem_401k_err_current_balance"></span>'+
-               '</div>'+
-            '</div>'+
-            '<span class="sgem_401k_err_msg" id="sgem_401k_err_annualmax"></span>'+
-            '<span class="sgem_401k_err_msg" id="sgem_401k_err_annualmax_withcatchup"></span>'+
-            '<details class="sgem-401k-input-more-details" open>'+
-               '<summary>'+
-                  '<div>'+
-                     '<h3 class="sgem-401k-collapsible-summary-title">Basic</h3>'+
-                  '</div>'+
-               '</summary>'+
-               '<div class="collapsible-content sgem-401k-col-row-collaps">'+
-                  '<div class="sgem-401k-flex-container">'+
-                     '<div class="sgem-401k-form-group sgem-401k-form-flex sgem-401k-currency-holder">'+
-                        '<label>Annual contribution <span class="sgem-401k-tooltip tooltip" data-tippy-content="The maximum annual contribution is $20,500">?</span></label>'+  
-                        '<input type="text" id="sgem_401k_annual_contributions" class="inputnumber sgem_401k_full_width_field" value="6,000" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
-                        '<span class="sgem_401k_err_msg" id="sgem_401k_err_annual_contributions"></span>'+   
+var sgem_401k_main_contents = '<div class="sgem-hmhcia-cal-main-id">'+
+   '<div class="sgem-hmhcia-cal-wrapper">'+
+      '<div class="sgem-hmhcia-cal-left">'+
+         '<div class="sgem-hmhcia-cal-tabs">'+
+            '<h4>Calculate by</h4>'+
+            '<form>'+
+               '<input id="sgem-hmhcia-cal-tab1" type="radio" name="sgem-hmhcia-calculate-by" class="sgem-hmhcia-calculate-by" value="income" checked onclick="radiochange()"/>'+
+               '<span class="sgem-hmhcia-form-checkbox-style-tic1"></span>'+
+               '<label class="sgem-hmhcia-label-tabs-check" for="sgem-hmhcia-cal-tab1">Income</label>'+
+               '<input id="sgem-hmhcia-cal-tab2" type="radio" name="sgem-hmhcia-calculate-by" class="sgem-hmhcia-calculate-by" value="payment" onclick="radiochange()"/>'+
+               '<span class="sgem-hmhcia-form-checkbox-style-tic2"></span>'+
+               '<label class="sgem-hmhcia-label-tabs-check" for="sgem-hmhcia-cal-tab2">Payment</label>'+
+               '<section id="sgem-hmhcia-cal-content1">'+
+                  '<div class="sgem-hmhcia-form sgem-hmhcia-cal-1">'+
+                     '<div class="sgem-hmhcia-flex-container">'+
+                        '<div class="sgem-hmhcia-form-group sgem-hmhcia-form-flex sgem-hmhcia-currency-holder">'+
+                           '<label>Annual income'+
+                           '<span class="sgem-hmhcia-info-tooltip tooltip" data-tippy-content="Your total pre tax annual earnings, for you and your co-borrower. Annual income includes your salary and any additional incomes such as commissions, bonuses, tips, investment income, and pension.">?</span>
+                           '</label>'+
+                           '<input type="text" class="inputmove inputnumber"  id="sgem_hmhcia_annual_income" value="100,000" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
+                           '<span class="sgem_hmhcia_err_msg" id="sgem_hmhcia_err_annual_income"></span>   '+
+                        '</div>'+
+                        '<div class="sgem-hmhcia-form-group sgem-hmhcia-form-flex sgem-hmhcia-currency-holder">'+
+                           '<label>Monthly debts'+
+                           '<span class="sgem-hmhcia-info-tooltip tooltip" data-tippy-content="Recurring monthly expenses like car payments, credit card payments, student loans or other personal loans.">?</span>'+
+                           '</label> '+
+                           '<input type="text" id="sgem_hmhcia_monthly_debts" class="inputnumber" value="1,000" min="0" max="100" onkeypress="return isNumber(event)"/>'+
+                           '<span class="sgem_hmhcia_err_msg" id="sgem_hmhcia_err_monthly_debts"></span>'+   
+                        '</div>'+
                      '</div>'+
-                  '</div>'+
-                  '<div class="sgem-401k-flex-container">'+
-                     '<div class="sgem-401k-form-group sgem-401k-form-flex">'+
-                        '<label>Employer match <span class="sgem-401k-tooltip tooltip" data-tippy-content="Percentage of your contributions that your employer matches">?</span></label>'+  
-                        '<input type="text" id="sgem_401k_employer_match" class="inputnumber sgem_401k_full_width_field" value="100%" min="0" max="100" onkeypress="return isNumber(event)"/>'+
-                        '<span class="sgem_401k_err_msg" id="sgem_401k_err_employer_match"></span>'+   
+                     '<div class="sgem-hmhcia-flex-container">'+
+                        '<div class="sgem-hmhcia-form-group sgem-hmhcia-form-flex sgem-hmhcia-currency-holder">'+
+                           '<label>Down payment'+
+                           '<span class="sgem-hmhcia-info-tooltip tooltip" data-tippy-content="The amount of money you spend upfront to purchase a home. Please refer to any laws on the minimum requirement in your locality.">?</span>'+
+                           '</label> '+
+                           '<input type="text"class="inputmove inputnumber" id="sgem_hmhcia_income_down_payment" value="20,000" min="0" max="30" onkeypress="return isNumber(event)" />'+
+                           '<span class="sgem_hmhcia_err_msg" id="sgem_hmhcia_income_down_payment_msg"></span>'+     
+                        '</div>'+
                      '</div>'+
+                     '<details class="sgem-hmhcia-input-more-details" open>'+
+                        '<summary>'+
+                           '<div>'+
+                              '<h3 class="sgem-hmhcia-collapsible-summary-title">Advanced</h3>'+
+                           '</div>'+
+                        '</summary>'+
+                        '<div class="collapsible-content">'+
+                           '<div class="sgem-hmhcia-flex-container">'+
+                              '<div class="sgem-hmhcia-form-group sgem-hmhcia-form-flex sgem-hmhcia-precentage-holder">'+
+                                 '<label>Debt-to-income'+
+                                 '<span class="sgem-hmhcia-info-tooltip tooltip" data-tippy-content="Debt-to-income ratio is obtained by dividing the total of your monthly debt payments by your gross monthly income, which is shown as a percentage. Enter the percentage of your income you are comfortable spending on monthly debts.">?</span>
+                                 '</label>'+
+                                 '<input oninput="rangeInput.value=amount.value" type="text" class="inputmove inputnumber" id="sgem_hmhcia_rent_payment" value="36" min="0" max="100" name="amount" for="rangeInput" oninput="amount.value=rangeInput.value" onkeypress="return isNumber(event)"/>
+                                 '<span class="sgem_hmhcia_err_msg" id="sgem_hmhcia_err_rent_payment_afford"></span>'+   
+                              '</div>'+
+                              '<div class="sgem-hmhcia-form-group sgem-hmhcia-form-flex sgem-hmhcia-precentage-holder">'+
+                                 '<label>Interest rate'+
+                                 '<span class="sgem-hmhcia-info-tooltip tooltip" data-tippy-content="The rate charged by the lender from the borrower.">?</span>'+
+                                 '</label> '+
+                                 '<input type="text" id="sgem_hmhcia_interest_rate" class="inputnumber" value="10%" min="0" max="100" onkeypress="return isNumber(event)"/>'+
+                                 '<span class="sgem_hmhcia_err_msg" id="sgem_hmhcia_err_interest_rate"></span>'+   
+                              '</div>'+
+                           '</div>'+
+                           '<div class="sgem-hmhcia-flex-container">'+
+                              '<div class="sgem-hmhcia-form-group sgem-hmhcia-form-flex sgem-hmhcia-months-holder">'+
+                                 '<label>Loan term'+
+                                 '<span class="sgem-hmhcia-info-tooltip tooltip" data-tippy-content="The amount of time the lender gives you to repay your mortgage.">?</span>'+
+                                 '</label> '+
+                                 '<input type="text"class="inputmove inputnumber" id="sgem_hmhcia_loan_term" value="360" min="0" max="30" onkeypress="return isNumber(event)" />'+
+                                 '<span class="sgem_hmhcia_err_msg" id="sgem_hmhcia_err_loan_term"></span>'+     
+                              '</div>'+
+                           '</div>'+
+                           '<div class="sgem-hmhcia-flex-container">'+
+                              '<div class="sgem-hmhcia-form-group sgem-hmhcia-form-flex sgem-hmhcia-form-checkbox">'+
+                                 '<label>Include taxes/ins'+
+                                 '<span class="sgem-hmhcia-info-tooltip tooltip" data-tippy-content="Include property taxes, homeowners insurance, private mortgage insurance, and homeowners association dues.">?</span>'+
+                                 '<input name="sgem-hmhcia-include-tax" id="sgem_hmhcia_include_tax" type="checkbox" checked="checked">'+
+                                 '<span class="sgem-hmhcia-form-checkbox-style"></span>'+
+                                 '</label>'+
+                              '</div>'+
+                           '</div>'+
+                           '<div class="sgem-hmhcia-flex-container">'+
+                              '<div class="sgem-hmhcia-form-group sgem-hmhcia-form-flex sgem-hmhcia-precentage-holder">'+
+                                 '<label>Property tax'+
+                                 '<span class="sgem-hmhcia-info-tooltip tooltip" data-tippy-content="Enter the Property Tax applicable to the locality you’re planning on purchasing from.">?</span>'+
+                                 '</label>'+
+                                 '<input type="text" class="inputmove inputnumber"  id="sgem_hmhcia_prop_tax_" value="1.20%" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
+                                 '<span class="sgem_hmhcia_err_msg" id="sgem_hmhcia_err__prop_tax_"></span>'+   
+                              '</div>'+
+                              '<div class="sgem-hmhcia-form-group sgem-hmhcia-form-flex sgem-hmhcia-year-holder">'+
+                                 '<label>Home insurance'+
+                                 '<span class="sgem-hmhcia-info-tooltip tooltip" data-tippy-content="Enter the annual cost of your expected home insurance, if known.">?</span>'+
+                                 '</label> '+
+                                 '<input type="text" id="sgem_hmhcia_home_insurance" class="inputnumber" value="800" min="0" max="100" onkeypress="return isNumber(event)"/>'+
+                                 '<span class="sgem_hmhcia_err_msg" id="sgem_hmhcia_err_home_insurance"></span>'+   
+                              '</div>'+
+                           '</div>'+
+                           '<div class="sgem-hmhcia-flex-container">'+
+                              '<div class="sgem-hmhcia-form-group sgem-hmhcia-form-flex sgem-hmhcia-form-group-after-style sgem-hmhcia-precentage-holder">'+
+                                 '<label>Private Mortgage Insurance'+
+                                 '<span class="sgem-hmhcia-info-tooltip tooltip" data-tippy-content="If PMI is applicable, the calculator would consider a fee of 0.6% of the loan balance per year. If the percentage expected is known, please update this field.">?</span>'+
+                                 '</label>'+
+                                 '<input type="text" class="inputmove inputnumber"  id="sgem_hmhcia_private_mortgage_insurance" value="0.60%" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
+                                 '<span class="sgem_hmhcia_err_msg" id="sgem_hmhcia_err_private_mortgage_insurance"></span>'+   
+                              '</div>'+
+                              '<div class="sgem-hmhcia-form-group sgem-hmhcia-form-group-after-style sgem-hmhcia-form-flex sgem-hmhcia-month-holder">'+
+                                 '<label>Homeowners association dues'+
+                                 '<span class="sgem-hmhcia-info-tooltip tooltip" data-tippy-content="Enter the monthly fee to be paid to HOA, if known.">?</span>'+
+                                 '</label> '+
+                                 '<input type="text" id="sgem_hmhcia_ahomeowners_association_dues" class="inputnumber" value="0" min="0" max="100" onkeypress="return isNumber(event)"/>'+
+                                 '<span class="sgem_hmhcia_err_msg" id="sgem_hmhcia_err_ahomeowners_association_dues"></span>'+   
+                              '</div>'+
+                           '</div>'+
+                        '</div>'+
+                     '</details>'+
                   '</div>'+
-                  '<div class="sgem-401k-flex-container">'+
-                     '<div class="sgem-401k-form-group sgem-401k-form-flex">'+
-                        '<label>Limit on matching contributions <span class="sgem-401k-tooltip tooltip" data-tippy-content="Maximum percentage of your salary that your employer will match. The usual range is between 3%-6%.">?</span></label>'+ 
-                        '<input type="text" id="sgem_401k_limit_on_matching" class="inputnumber sgem_401k_full_width_field" value="2%" min="0" max="100" onkeypress="return isNumber(event)"/>'+
-                        '<span class="sgem_401k_err_msg" id="sgem_401k_err_limit_on_matching"></span>'+ 
+               '</section>'+
+               '<section id="sgem-hmhcia-cal-content2">'+
+                  '<div class="sgem-hmhcia-form sgem-hmhcia-cal-1">'+
+                     '<div class="sgem-hmhcia-flex-container">'+
+                        '<div class="sgem-hmhcia-form-group sgem-hmhcia-form-flex sgem-hmhcia-currency-holder">'+
+                           '<label>Maximum payment'+
+                           '</label>'+
+                           '<input type="text" class="inputmove inputnumber"  id="sgem_hmhcia_interest_maximum_payment" value="2000" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
+                           '<span class="sgem_hmhcia_err_msg" id="sgem_hmhcia_err_rent_interest_maximum_payment"></span>'+   
+                        '</div>'+
+                        '<div class="sgem-hmhcia-form-group sgem-hmhcia-form-flex sgem-hmhcia-currency-holder">'+
+                           '<label>Down payment'+
+                           '<span class="sgem-hmhcia-info-tooltip tooltip" data-tippy-content="The amount of money you spend upfront to purchase a home. Please refer to any laws on the minimum requirement in your locality.">?</span>'+
+                           '</label> '+
+                           '<input type="text" id="sgem_hmhcia_down_payment_pay" class="inputnumber" value="20000" min="0" max="100" onkeypress="return isNumber(event)"/>'+
+                           '<span class="sgem_hmhcia_err_msg" id="sgem_hmhcia_err_down_payment_pay"></span>'+   
+                        '</div>'+
                      '</div>'+
+                     '<details class="sgem-hmhcia-input-more-details" open>'+
+                        '<summary>'+
+                           '<div>'+
+                              '<h3 class="sgem-hmhcia-collapsible-summary-title">Advanced</h3>'+
+                           '</div>'+
+                        '</summary>'+
+                        '<div class="collapsible-content">'+
+                           '<div class="sgem-hmhcia-flex-container">'+
+                              '<div class="sgem-hmhcia-form-group sgem-hmhcia-form-flex sgem-hmhcia-precentage-holder">'+
+                                 '<label>Interest rate'+
+                                 '<span class="sgem-hmhcia-info-tooltip tooltip" data-tippy-content="The rate charged by the lender from the borrower.">?</span>'+
+                                 '</label>'+
+                                 '<input type="text" class="inputmove inputnumber"  id='sgem_hmhcia_interest_rate_payment' value="10%" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
+                                 '<span class="sgem_hmhcia_err_msg" id="sgem_hmhcia_err_rent_interest_rate_payment"></span>'+   
+                              '</div>'+
+                              '<div class="sgem-hmhcia-form-group sgem-hmhcia-form-flex sgem-hmhcia-months-holder">'+
+                                 '<label>Loan term'+
+                                 '<span class="sgem-hmhcia-info-tooltip tooltip" data-tippy-content="The amount of time the lender gives you to repay your mortgage.">?</span>'+
+                                 '</label> '+
+                                 '<input type="text" id='sgem_hmhcia_p_loan_turm' class="inputnumber" value="360" min="0" max="100" onkeypress="return isNumber(event)"/>'+
+                                 '<span class="sgem_hmhcia_err_msg" id="sgem_hmhcia_err_expected_mortgage"></span>'+   
+                              '</div>'+
+                           '</div>'+
+                           '<div class="sgem-hmhcia-flex-container">'+
+                              '<div class="sgem-hmhcia-form-group sgem-hmhcia-form-flex sgem-hmhcia-form-checkbox">'+
+                                 '<label>Include taxes/ins'+
+                                 '<span class="sgem-hmhcia-info-tooltip tooltip" data-tippy-content="Include property taxes, homeowners insurance, private mortgage insurance, and homeowners association dues.">?</span>'+
+                                 '<input name="sgem-hmhcia-payment-include-tax" id="sgem_hmhcia_payment_include_tax" type="checkbox" checked="checked">'+
+                                 '<span class="sgem-hmhcia-form-checkbox-style"></span>'+
+                                 '</label>'+
+                                 '<div class="sgem-hmhcia-form-label-content">'+
+                                    'Note: You may have additional monthly charges for Property Tax and PMI, if applicable'+
+                                 '</div>'+
+                              '</div>'+
+                           '</div>'+
+                           '<div class="sgem-hmhcia-flex-container">'+
+                              '<div class="sgem-hmhcia-form-group sgem-hmhcia-form-flex sgem-hmhcia-year-holder">'+
+                                 '<label>Home insurance'+
+                                 '<span class="sgem-hmhcia-info-tooltip tooltip" data-tippy-content="Enter the annual cost of your expected home insurance, if known.">?</span>'+
+                                 '</label>'+
+                                 '<input type="text" class="inputmove inputnumber"  id="sgem_hmhcia_home_insurance_payment" value="800" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
+                                 '<span class="sgem_hmhcia_err_msg" id="sgem_hmhcia_err_home_insurance_payment"></span>'+   
+                              '</div>'+
+                              '<div class="sgem-hmhcia-form-group sgem-hmhcia-form-flex sgem-hmhcia-month-holder">'+
+                                 '<label>HOA dues'+
+                                 '<span class="sgem-hmhcia-info-tooltip tooltip" data-tippy-content="Enter the monthly fee to be paid to HOA, if known.">?</span>'+
+                                 '</label> '+
+                                 '<input type="text" id="sgem_hmhcia_hoa_dues" class="inputnumber" value="0" min="0" max="100" onkeypress="return isNumber(event)"/>'+
+                                 '<span class="sgem_hmhcia_err_msg" id="sgem_hmhcia_err_hoa_dues"></span>'+   
+                              '</div>'+
+                           '</div>'+
+                        '</div>'+
+                     '</details>'+
                   '</div>'+
-                  '<div class="sgem-401k-flex-container">'+
-                     '<div class="sgem-401k-form-group sgem-401k-form-flex">'+
-                        '<label>Rate of return <span class="sgem-401k-tooltip tooltip" data-tippy-content="The average annual return you expect from your 401(k) investments each year.">?</span></label>'+
-                        '<input type="text" id="sgem_401k_rate_of_return" class="inputnumber sgem_401k_full_width_field" value="6%" min="0" max="100" onkeypress="return isNumber(event)"/>'+
-                        '<span class="sgem_401k_err_msg" id="sgem_401k_err_rate_of_return"></span>'+ 
-                     '</div>'+
-                  '</div>'+
-               '</div>'+
-            '</details>'+
-            '<details class="sgem-401k-input-more-details" open>'+
-               '<summary>'+
-                  '<div>'+
-                     '<h3 class="sgem-401k-collapsible-summary-title">Advanced</h3>'+
-                  '</div>'+
-               '</summary>'+
-               '<div class="collapsible-content sgem-401k-col-row-collaps">'+
-                  '<div class="sgem-401k-flex-container">'+
-                     '<div class="sgem-401k-form-group sgem-401k-form-flex sgem-401k-currency-holder">'+
-                        '<label>Annual catch-up contribution <span class="sgem-401k-tooltip tooltip" data-tippy-content="If you\'re 50 or older, you can contribute an extra $6,500 to your 401(k)">?</span></label>'+
-                        '<input type="text" id="sgem_401k_annual_catchup_contribution" class="inputnumber sgem_401k_full_width_field" value="0" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
-                        '<span class="sgem_401k_err_msg" id="sgem_401k_err_annual_catchup_contribution"></span>'+ 
-                     '</div>'+
-                  '</div>'+
-                  '<div class="sgem-401k-flex-container">'+
-                     '<div class="sgem-401k-form-group sgem-401k-form-flex">'+
-                        '<label>Growth rate <span class="sgem-401k-tooltip tooltip" data-tippy-content="Percentage by which you expect your annual income to grow annually">?</span></label>'+
-                        '<input type="text" id="sgem_401k_growth_rate" class="inputnumber sgem_401k_full_width_field" value="2%" min="0" max="100" onkeypress="return isNumber(event)"/>'+
-                        '<span class="sgem_401k_err_msg" id="sgem_401k_err_growth_rate"></span>'+ 
-                     '</div>'+
-                  '</div>'+
-               '</div>'+
-            '</details>'+
+               '</section>'+
          '</div>'+
       '</div>'+
-      '<div class="sgem-401k-cal-right">'+
-         '<div class="sgem-401k-cal-1-result-wrapper">'+
-            '<div class="sgem-401k-cal-1-result-header">'+
-               '<div><span>401(K) BALANCE AT RETIREMENT </span><span id="sgem_401k_price_text" class="sgem-401k-price-text">$2M</span> </div>'+
-               '<div class="sgem-401k-legendbox">'+
-                  '<div class="sgem-401k-legend-item">'+
-                     '<button id="sgem_401k_contribution" onClick="toggleData(1)" class="sgem-401k-contribution"></button> '+
-                     '<div id="sgem_401k_contribution_te" onClick="toggleData(1)" class="sgem-401k-contribution-te"></div>'+
-                  '</div>'+
-                  '<div class="sgem-401k-legend-item">'+
-                     '<button id="sgem_401k_catchup" onClick="toggleData(2)" class="sgem-401k-catchup"></button>'+
-                     '<div id="sgem_401k_catchup_te" onClick="toggleData(2)" class="sgem-401k-catchup-te"></div>'+
-                  '</div>'+
-                  '<div class="sgem-401k-legend-item">'+
-                     '<button id="sgem_401k_emp_match" onClick="toggleData(3)" class="sgem-401k-emp-match"></button>'+
-                     '<div id="sgem_401k_emp_match_te" onClick="toggleData(3)" class="sgem-401k-emp-match-te"></div>'+
-                 '</div>'+
-                  '<div class="sgem-401k-legend-item">'+
-                     '<button id="sgem_401k_interest_accu" onClick="toggleData(4)" class="sgem-401k-interest-accu"></button>'+
-                     '<div id="sgem_401k_interest_accu_te" onClick="toggleData(4)" class="sgem-401k-interest-accu-te"></div>'+
-                  '</div>'+
-               '</div>'+
-            '</div>'+
-            '<div class="sgem-401k-chartCard">'+
-               '<div class="chartBox">'+
-                  '<canvas id="myChart"></canvas>'+
-               '</div>'+
-            '</div>'+
-            '<div class="sgem-401k-flex-container sgem-401k-column2">'+
-               '<div class="sgem-401k-form-group sgem-401k-form-flex-section-one">'+
-                  '<span class="futuretext sgem-401k-result-text-up">You will need about</span> '+
-                  '<div id="futureV" class="sgem-401k-result-label-below">$<span id="sgem_you_will_have">6,650/mo</span>'+
-                  '</div>'+
-                  '<span class="futuretext sgem-401k-result-text-down">in retirement</span>'+
-               '</div>'+
-               '<div class="sgem-401k-form-group sgem-401k-form-flex-section-two">'+
-                  '<span class="futuretext2 sgem-401k-result-text-up">Total individual contributions</span>'+
-                  '<div id="futureV2" class="sgem-401k-result-label-below">$<span id="sgem_total_individual_con">12,458</span>'+
-                  '</div>'+
-                  '<span class="futuretext2 sgem-401k-result-text-down">at retirement</span>'+
-               '</div>'+
-               '<div class="sgem-401k-form-group sgem-401k-form-flex-section-three">'+
-                  '<span class="futuretext2 sgem-401k-result-text-up">Total employer contributions</span>'+
-                  '<div id="futureV3" class="sgem-401k-result-label-below">$<span id="sgem_total_employer_con">24,258</span>'+
-                  '</div>'+
-                  '<span class="futuretext3 sgem-401k-result-text-down">in retirement</span>'+
-               '</div>'+
-            '</div>';
+      '<div class="sgem-hmhcia-cal-right">'+
+      '<div class="sgem-hmhcia-cal-1-result-wrapper">'+
+      '<div class="sgem-hmhcia-cal-tabs sgem-hmhcia-cal-right-tabs-top">'+
+      '<input id="sgem-hmhcia-cal-tab3" type="radio" name="sgem-hmhcia-tabs-right" checked>'+
+      '<label class="sgem-hmhcia-label-tabs-check-right1" for="sgem-hmhcia-cal-tab3">HOME PRICE</label>'+
+      '<input id="sgem-hmhcia-cal-tab4" type="radio" name="sgem-hmhcia-tabs-right">'+
+      '<label class="sgem-hmhcia-label-tabs-check-right2" for="sgem-hmhcia-cal-tab4">PAYMENT</label>'+
+      '<span class="sgem-hmhcia-hr-border-for-tabs"></span>'+
+      '<section id="sgem-hmhcia-cal-content3">'+
+      '<div class="sgem-hmhcia-cal-1-result-header">'+
+      '<div class="sgem-hmhcia-value-label">'+
+      '<span class="sgem-hmhcia-staticvalue-text">YOU CAN AFFORD A HOUSE UP TO</span>'+
+      '<span id="sgem_hmhcia_total_text" class="sgem-hmhcia-total-text">$252,112</span>'+
+      '<div class="sgem-hmhcia-content">Based on your information, you should be able to afford a house around this price.</div>'+
+      '</div>'+
+      '</div>'+
+      '<div class="sgem-hmhcia-slider-section">'+
+      '<div class="sgem-hmhcia-img-piggy">'+
+      '<img id="sgem-hmhcia-image-pig" src="/wp-content/plugins/HMHCIA-Calculator/assets/images/hmhcia-piggy-bank.svg" width="80px" height="80px" />'+
+      '</div>'+
+      '<div class="sgem-hmhcia-img-house">'+
+      '<img id="sgem-hmhcia-image-house" src="/wp-content/plugins/HMHCIA-Calculator/assets/images/hmhcia-house.svg" width="70px" height="70px" />'+
+      '</div>'+
+      '<div class="sgem-hmhcia-slider-range-input">'+
+      '<div class="sgem-hmhcia-input-range-custom-section">'+
+      '<input id="sgem-hmhcia-ranger" class="sgem-hmhcia-range" type="range" name="rangeInput" min="0" max="43" value="30" oninput="amount.value=rangeInput.value"/>'+
+      '</div>'+
+      '</form>'+
+      '</div>'+
+      '</div>'+
+      '</section>'+
+      '<section id="sgem-hmhcia-cal-content4">'+
+      '<div class="sgem-hmhcia-cal-1-result-header">'+
+      '<div class="sgem-hmhcia-value-label">'+
+      '<span class="sgem-hmhcia-staticvalue-text">MONTHLY PAYMENT BREAKDOWN</span>'+
+      '</div>'+
+      '</div>'+
+      '<div class="sgem-hmhcia-chart-section-wrapper">'+
+      '<div class="sgem-hmhcia-chartCard">'+
+      '<div class="chartBox">'+
+      '<canvas id="myChart"></canvas>'+
+      '</div>'+
+      '</div>'+
+      '<div class="sgem-hmhcia-chart-legend-total">'+ 
+      '<div class="sgem-hmhcia-legendbox">'+
+      '<div class="sgem-hmhcia-legend-item">'+ 
+      '<button id="sgem_hmhcia_principle_interest" class="sgem-hmhcia-principle-interest"></button> '+
+      '<div id="sgem_hmhcia_principle_interest_te" class="sgem-hmhcia-principle-interest-te"></div>'+
+      '<span class="sgem_hmhcia_side_total_lbl">$<span id="sgem_hmhcia_interest_value"></span></span>'+
+      '</div>'+
+      '<div class="sgem-hmhcia-legend-item">'+
+      '<button id="sgem_hmhcia_insurance" class="sgem-hmhcia-insurance"></button><div id="sgem_hmhcia_insurance_te" class="sgem-hmhcia-insurance-te"></div>'+
+      '<span class="sgem_hmhcia_side_total_lbl">$<span id="sgem_hmhcia_insurance_value"></span></span>'+
+      '</div>'+
+      <div class="sgem-hmhcia-legend-item" id="hidemeon">
+      <button id="sgem_hmhcia_property" class="sgem-hmhcia-property"></button>
+      <div id="sgem_hmhcia_property_te" class="sgem-hmhcia-property-te"></div>
+      <span class="sgem_hmhcia_side_total_lbl">$<span id="sgem_hmhcia_property_value"></span></span>
+      </div>
+      <div class="sgem-hmhcia-legend-item" id="hidemeon2">
+      <button id="sgem_hmhcia_pmi" class="sgem-hmhcia-pmi"></button><div id="sgem_hmhcia_pmi_te" class="sgem-hmhcia-pmi-te"></div>
+      <span class="sgem_hmhcia_side_total_lbl">$<span id="sgem_hmhcia_pmi_value"></span></span>
+      </div>
+      <div class="sgem-hmhcia-legend-item">
+      <button id="sgem_hmhcia_hoe" class="sgem-hmhcia-hoe"></button><div id="sgem_hmhcia_hoe_te" class="sgem-hmhcia-hoe-te"></div>
+      <span class="sgem_hmhcia_side_total_lbl">$<span id="sgem_hmhcia_hoe_value"></span></span>
+      </div>
+      <div class="sgem-hmhcia-legend-total-section"> 
+      <span class="sgem-hmhcia-label-legend-item">Total monthly payment</span><span class="sgem-hmhcia-price-legend-item">$1,837</span>
+      </div>
+      </div>
+      </div>
+      </div>
+      </section>
+      </div>
+      <div class="sgem-hmhcia-cal-1-result-footer">
+      <div class="sgem-hmhcia-content">The right mortgage can save you thousands. Confirm your affordability with our recommended lender.</div>
+      <div class="sgem-hmhcia-buttonGet">
+      <a href="https://retirementinvestments.com/affordabilitycalculator" target="_blank" class="sgem-hmhcia-getStart" rel="noopener">
+      GET STARTED
+      </a>
+      </div>
+      </div>
+      <div class="sgem-hmhcia-section-disclaimer"><details class="sgem-hmhcia-details-disclaimer"><summary><div class="sgem-hmhcia-collapsible-summary-disclaimer">Disclaimer</div></summary><div class="sgem-hmhcia-collapsible-text-disclaimer">This material is provided for general and educational purposes only; it is not intended to provide legal, tax or investment advice.</div></details></div>
+      </div>
+      </div>
+   </div>
+</div>';
 
 sgem_401k_main_contents += '</div>';  
 
