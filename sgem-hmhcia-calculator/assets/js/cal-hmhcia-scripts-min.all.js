@@ -26,7 +26,7 @@ function(a){a.stopPropagation();a.preventDefault();return!1});m.hover(function()
 x();"bottom"===a.start?(c.css({top:b.outerHeight()-c.outerHeight()}),n(0,!0)):"top"!==a.start&&(n(e(a.start).position().top,null,!0),a.alwaysVisible||c.hide());window.addEventListener?(this.addEventListener("DOMMouseScroll",v,!1),this.addEventListener("mousewheel",v,!1)):document.attachEvent("onmousewheel",v)}});return this}});e.fn.extend({slimscroll:e.fn.slimScroll})})(jQuery);
 
 
-var sgem_401k_main_contents = '<div class="sgem-hmhcia-cal-main-id">'+
+var sgem_hmhcia_main_contents = '<div class="sgem-hmhcia-cal-main-id">'+
    '<div class="sgem-hmhcia-cal-wrapper">'+
       '<div class="sgem-hmhcia-cal-left">'+
          '<div class="sgem-hmhcia-cal-tabs">'+
@@ -171,14 +171,14 @@ var sgem_401k_main_contents = '<div class="sgem-hmhcia-cal-main-id">'+
                                  '<label>Interest rate'+
                                  '<span class="sgem-hmhcia-info-tooltip tooltip" data-tippy-content="The rate charged by the lender from the borrower.">?</span>'+
                                  '</label>'+
-                                 '<input type="text" class="inputmove inputnumber"  id='sgem_hmhcia_interest_rate_payment' value="10%" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
+                                 '<input type="text" class="inputmove inputnumber"  id="sgem_hmhcia_interest_rate_payment" value="10%" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
                                  '<span class="sgem_hmhcia_err_msg" id="sgem_hmhcia_err_rent_interest_rate_payment"></span>'+   
                               '</div>'+
                               '<div class="sgem-hmhcia-form-group sgem-hmhcia-form-flex sgem-hmhcia-months-holder">'+
                                  '<label>Loan term'+
                                  '<span class="sgem-hmhcia-info-tooltip tooltip" data-tippy-content="The amount of time the lender gives you to repay your mortgage.">?</span>'+
                                  '</label> '+
-                                 '<input type="text" id='sgem_hmhcia_p_loan_turm' class="inputnumber" value="360" min="0" max="100" onkeypress="return isNumber(event)"/>'+
+                                 '<input type="text" id="sgem_hmhcia_p_loan_turm" class="inputnumber" value="360" min="0" max="100" onkeypress="return isNumber(event)"/>'+
                                  '<span class="sgem_hmhcia_err_msg" id="sgem_hmhcia_err_expected_mortgage"></span>'+   
                               '</div>'+
                            '</div>'+
@@ -305,6 +305,6 @@ var sgem_401k_main_contents = '<div class="sgem-hmhcia-cal-main-id">'+
    '</div>'+
 '</div>';
 
-sgem_401k_main_contents += '</div>';  
+sgem_hmhcia_main_contents += '</div>';  
 
-document.getElementById('sgem-401k-cal').innerHTML = sgem_401k_main_contents;
+document.getElementById('sgem-hmhcia-cal').innerHTML = sgem_hmhcia_main_contents;
