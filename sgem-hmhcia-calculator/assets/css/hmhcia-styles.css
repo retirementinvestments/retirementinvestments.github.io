@@ -162,6 +162,16 @@
 	font-weight: 400;
 	font-size: 16px;
 }
+.sgem-hmhcia-cal-1 .sgem-hmhcia-form-flex.sgem-hmhcia-month-holder::after {
+	content: '/month';
+	position: absolute;
+	left: 125px;
+	top: 48px;
+	display: block; 
+	color: #A3A3A3;
+	font-weight: 400;
+	font-size: 16px;
+}
 .sgem-hmhcia-cal-1 .sgem-hmhcia-form-flex.sgem-hmhcia-year-holder::after {
 	content: '/year';
 	position: absolute;
@@ -173,13 +183,22 @@
 	font-size: 16px;
 }
 .sgem-hmhcia-cal-1 .sgem-hmhcia-form-flex.sgem-hmhcia-precentage-holder.sgem-hmhcia-form-group-after-style::after,
-.sgem-hmhcia-cal-1 .sgem-hmhcia-form-flex.sgem-hmhcia-months-holder.sgem-hmhcia-form-group-after-style::after
+.sgem-hmhcia-cal-1 .sgem-hmhcia-month-holder.sgem-hmhcia-form-group-after-style::after
 {
 	top: 71px;
 }
 .sgem-hmhcia-form-label-content {
 	color: #000000;
     font-size: 16px;
+	font-weight: 300;
+}
+.sgem-hmhcia-cal-1 .sgem-hmhcia-form-group.sgem-hmhcia-form-checkbox label {
+	font-weight: 500;
+	margin-bottom: 16px;
+}
+#sgem-hmhcia-cal-content1 .sgem-hmhcia-cal-1 .sgem-hmhcia-form-group.sgem-hmhcia-form-checkbox label {
+	font-weight: 500;
+	margin-bottom: 0px;
 }
 .sgem-hmhcia-cal-1 .sgem-hmhcia-form-flex.sgem-hmhcia-currency-holder input[type="text"] {
 	padding-left: 33px;
@@ -820,8 +839,62 @@
     font-size: 13px;
     color: #ff5964;
 }
-
-/* right side new styles */
+.sgem-hmhcia-cal-1-result-footer .sgem-hmhcia-content {
+	padding-top: 70px;
+}
+img#sgem-hmhcia-image-pig,
+img#sgem-hmhcia-image-house
+{
+	max-width: 100px;
+	min-width: 40px;
+}
+/* range js  styles*/
+.rangeslider__value-bubble, .rangeslider__value-bubble2 {
+  	border: 1px solid #ccc;
+  	display: block;
+  	padding: 5px;
+  	position: absolute;
+  	bottom: -85px;
+  	margin-bottom: 25px;
+  	width: 100px;
+  	margin-left: -50px;
+  	text-align: center;
+  	-moz-border-radius: 5px;
+  	-webkit-border-radius: 5px;
+  	border-radius: 5px;
+  	box-shadow: 1px 2px 5px #00000036;
+    color: #002340;
+    font-size: 14px;
+}
+.rangeslider__value-bubble:before, 
+.rangeslider__value-bubble:after,
+.rangeslider__value-bubble2:before, 
+.rangeslider__value-bubble2:after
+{
+  	border-width: 11px;
+  	border-style: solid;
+  	border-color: transparent;
+  	content: "";
+  	display: block;
+  	margin: auto;
+  	width: 0px;
+  	position: absolute;
+  	left: 0;
+  	right: 0;
+  	transform: rotate(180deg);
+}
+.rangeslider__value-bubble:before,
+.rangeslider__value-bubble2:before {
+  	border-top-color: #ccc;
+  	border-bottom-width: 0;
+  	bottom: 33px;
+}
+.rangeslider__value-bubble:after,
+.rangeslider__value-bubble2:after {
+  	border-top-color: #fff;
+  	border-bottom-width: 0;
+  	bottom: 31px;
+}
 .sgem-hmhcia-chart-section-wrapper {
 	position: relative;
     display: flex;
@@ -854,54 +927,8 @@
 .sgem-hmhcia-cal-right-tabs-top input#sgem-hmhcia-cal-tab4 {
 	display: none;
 }
-.sgem-hmhcia-cal-1-result-footer .sgem-hmhcia-content {
-	padding-top: 70px;
-}
-img#sgem-hmhcia-image-pig,
-img#sgem-hmhcia-image-house
-{
-	max-width: 100px;
-	min-width: 40px;
-}
-/* range js  styles*/
-.rangeslider__value-bubble {
-  border: 1px solid #ccc;
-  display: block;
-  padding: 5px;
-  position: absolute;
-  bottom: -85px;
-  margin-bottom: 25px;
-  width: 100px;
-  margin-left: -50px;
-  text-align: center;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-}
-.rangeslider__value-bubble:before, .rangeslider__value-bubble:after {
-  border-width: 11px;
-  border-style: solid;
-  border-color: transparent;
-  content: "";
-  display: block;
-  margin: auto;
-  width: 10px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  transform: rotate(180deg);
-}
-.rangeslider__value-bubble:before {
-  border-top-color: #ccc;
-  border-bottom-width: 0;
-  bottom: 33px;
-}
-.rangeslider__value-bubble:after {
-  border-top-color: #fff;
-  border-bottom-width: 0;
-  bottom: 31px;
-}
 
+/* range js  styles*/
 .sgem-hmhcia-slider-range-input .rangeslider__fill {
 	background: #4BCC8C;
 }
@@ -994,14 +1021,17 @@ span.sgem-mhmcia-range-end-value {
 .sgem-hmhcia-principle-interest-te,
 .sgem-hmhcia-property-te,
 .sgem-hmhcia-insurance-te,
-.sgem-hmhcia-pmi-te {
+.sgem-hmhcia-pmi-te,
+.sgem-hmhcia-hoe-te {
 	font-size: 16px;
     color: #000;
+	font-weight: 300;
 }
 span.sgem_hmhcia_side_total_lbl {
 	margin: 0 0 0 auto;
 	font-family: 'DM Serif Display', serif;
     color: #000;
+	font-size: 16px;
 }
 
 /* Create a custom checkbox */
@@ -1317,6 +1347,12 @@ details.sgem-hmhcia-details-disclaimer[open] > summary::after {
 .sgem-hmhcia-cal-left-add-class .sgem-hmhcia-cal-tabs > h4 {
 	font-size: 1em;
 }
+.sgem-hmhcia-cal-left-add-class .sgem-hmhcia-cal-1 .sgem-hmhcia-month-holder::after {
+    font-size: 0.8em;
+    right: 29px;
+    top: 44px;
+    left: auto;
+}
 
 /* add mobile styles */
 .sgem-hmhcia-wrapper-add-mobile .sgem-hmhcia-cal-left {
@@ -1326,8 +1362,23 @@ details.sgem-hmhcia-details-disclaimer[open] > summary::after {
 	padding-right: 0;
 }
 .sgem-hmhcia-wrapper-add-mobile .sgem-hmhcia-cal-left-add-class .sgem-hmhcia-cal-1 .sgem-hmhcia-form-flex.sgem-hmhcia-currency-holder::after {
-    font-size: 0.8em;
-    top: 43px;
+    font-size: 1em;
+    top: 41px;
+}
+.sgem-hmhcia-wrapper-add-mobile .sgem-hmhcia-cal-left-add-class .sgem-hmhcia-cal-1 .sgem-hmhcia-form-flex.sgem-hmhcia-precentage-holder::after {
+    font-size: 1em;
+    right: 29px;
+    top: 44px;
+}
+.sgem-hmhcia-wrapper-add-mobile .sgem-hmhcia-cal-left-add-class .sgem-hmhcia-cal-1 .sgem-hmhcia-form-flex.sgem-hmhcia-months-holder::after,
+.sgem-hmhcia-wrapper-add-mobile .sgem-hmhcia-cal-left-add-class .sgem-hmhcia-cal-1 .sgem-hmhcia-form-flex.sgem-hmhcia-month-holder::after{
+    font-size: 1em;
+}
+.sgem-hmhcia-wrapper-add-mobile .sgem-hmhcia-cal-left-add-class .sgem-hmhcia-cal-1 .sgem-hmhcia-form-flex.sgem-hmhcia-year-holder::after {
+    font-size: 1em;
+}
+.sgem-hmhcia-wrapper-add-mobile .sgem-hmhcia-cal-left-add-class .sgem-hmhcia-collapsible-summary-title {
+    font-size: 1em;
 }
 .sgem-hmhcia-wrapper-add-mobile .sgem-hmhcia-option-title {
 	padding-bottom: 16px;
@@ -1362,6 +1413,43 @@ details.sgem-hmhcia-details-disclaimer[open] > summary::after {
 }
 .sgem-hmhcia-wrapper-add-mobile .sgem-hmhcia-chart-legend-total {
     width: 100%;
+}
+.sgem-hmhcia-wrapper-add-mobile .sgem-hmhcia-legend-item {
+	padding-bottom: 18px;
+}
+.sgem-hmhcia-wrapper-add-mobile .sgem-hmhcia-cal-1 .sgem-hmhcia-month-holder.sgem-hmhcia-form-group-after-style::after {
+    font-size: 0.8em;
+    right: 25px;
+    left: auto;
+    top: 42px;
+}
+.sgem-hmhcia-wrapper-add-mobile .sgem-hmhcia-cal-1 .sgem-hmhcia-month-holder::after {
+    font-size: 0.8em;
+    right: 25px;
+    left: auto;
+    top: 42px;
+}
+.sgem-hmhcia-wrapper-add-mobile .sgem-hmhcia-cal-left-add-class .sgem-hmhcia-cal-tabs label.sgem-hmhcia-label-tabs-check {
+	font-size: 1em;
+}
+.sgem-hmhcia-wrapper-add-mobile .sgem-hmhcia-cal-left-add-class .sgem-hmhcia-cal-1 .sgem-hmhcia-form-group label {
+    font-size: 1em;
+}
+.sgem-hmhcia-wrapper-add-mobile .sgem-hmhcia-cal-left-add-class .sgem-hmhcia-cal-1 input[type="text"] {
+    font-size: 1em;
+    height: 45px;
+}
+.sgem-hmhcia-wrapper-add-mobile .sgem-hmhcia-cal-left-add-class .sgem-hmhcia-cal-1 .sgem-hmhcia-form-flex.sgem-hmhcia-precentage-holder::after {
+    top: 41px;
+}
+.sgem-hmhcia-wrapper-add-mobile .sgem-hmhcia-cal-left-add-class .sgem-hmhcia-cal-1 .sgem-hmhcia-form-flex.sgem-hmhcia-months-holder::after {
+    top: 41px;
+}
+.sgem-hmhcia-wrapper-add-mobile .sgem-hmhcia-cal-left-add-class .sgem-hmhcia-cal-1 .sgem-hmhcia-form-flex.sgem-hmhcia-year-holder::after {
+    top: 41px;
+}
+.sgem-hmhcia-wrapper-add-mobile span.sgem_hmhcia_side_total_lbl {
+    font-size: 1em;
 }
 /* end */
   
