@@ -1431,7 +1431,7 @@ $(function () {
       updateValueBubble(null, null, this);
       },
 
-      onSlide: function(pos, value) {
+      onSlideEnd: function(pos, value) {
       updateValueBubble(pos, value, this);
       sgem_hmhcia_calculationmin();
 
