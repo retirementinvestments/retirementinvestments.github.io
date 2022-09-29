@@ -537,7 +537,7 @@ if ($('#sgem-hmhcia-ranger,#sgem-hmhcia-cal-tab1,#sgem-hmhcia-cal-tab2,#sgem_hmh
       // Remove duplicated decimal point, if one exists:
       this.value=this.value.replace(/^(\d*\.)(.*)\.(.*)$/, '$1$2$3')
       // Keep only two digits past the decimal point:
-      this.value=this.value.replace(/\.(\d{0})\d+/, '')
+      // this.value=this.value.replace(/\.(\d{0})\d+/, '')
       // Add thousands separators:
       this.value=this.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
       
@@ -1097,9 +1097,6 @@ function radiochange() {
         "background": "#FFCECE" });
          $('#sgem_hmhcia_err_rent_payment_afford').html('This cannot be empty or more than 100%').fadeIn(); 
 
-  }else{
-    $(this).val(function(i, v) {
-             return v.replace('%','') + '%';  });
   }
             
     });
@@ -1112,9 +1109,6 @@ function radiochange() {
         "background": "#FFCECE" });
          $('#sgem_hmhcia_err_interest_rate').html('This cannot be empty or more than 100%').fadeIn(); 
 
-  }else{
-    $(this).val(function(i, v) {
-             return v.replace('%','') + '%';  });
   }
             
     });
@@ -1127,11 +1121,7 @@ function radiochange() {
         "background": "#FFCECE" });
          $('#sgem_hmhcia_err__prop_tax_').html('This cannot be empty or more than 100%').fadeIn(); 
 
-  }else{
-    $(this).val(function(i, v) {
-             return v.replace('%','') + '%';  });
-  }
-            
+  }            
     });
 
  $('#sgem_hmhcia_private_mortgage_insurance').on('keyup', function() {
@@ -1142,9 +1132,6 @@ function radiochange() {
         "background": "#FFCECE" });
          $('#sgem_hmhcia_err_private_mortgage_insurance').html('This cannot be empty or more than 100%').fadeIn(); 
 
-  }else{
-    $(this).val(function(i, v) {
-             return v.replace('%','') + '%';  });
   }
             
     });
@@ -1157,11 +1144,7 @@ function radiochange() {
         "background": "#FFCECE" });
          $('#sgem_hmhcia_err_rent_interest_rate_payment').html('This cannot be empty or more than 100%').fadeIn(); 
 
-  }else{
-    $(this).val(function(i, v) {
-             return v.replace('%','') + '%';  });
-  }
-            
+  }            
     });
 
 
@@ -1341,10 +1324,9 @@ function hmhica_update_chart() {
 
 var sliderData = document.getElementById('sgem-hmhcia-ranger');
 
-if( $('.sgem-hmhcia-range').length>0 ) {
-	sgemGenarateSlider(calby);
-	// sgemGenarateSlider2(calby);
-}
+sgemGenarateSlider(calby);
+sgemGenarateSlider2(calby);
+
 
 function sgemGenarateSlider(calby) {
 
