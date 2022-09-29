@@ -310,386 +310,6 @@ sgem_hmhcia_main_contents += '</div>';
 document.getElementById('sgem-hmhcia-cal').innerHTML = sgem_hmhcia_main_contents;
 
 
-//---------------------------------------------------------------------------------------Chart
-
-// setup 
-var p_and_i = JSON.parse(localStorage.getItem('sgem_hmhcia_doughnut_data_array'));
-
-
-const data = {
-    labels: ['Principle & interest', 'Insurance', 'Property tax', 'PMI' , 'HOE'],
-    datasets: [{
-        label: 'Chart',
-        data: p_and_i,
-        backgroundColor: [
-            '#FFB822',
-            '#5C78FF',
-            '#FA4380',
-            '#36D154',
-            '#f9e600'
-        ],
-        // hoverOffset: 4
-    }]
-};
-
-var calby = $(".sgem-hmhcia-calculate-by:checked").val();
-
-//hmhciaGenerateDochart(calby, data);
-
-//function hmhciaGenerateDochart(calby, data) {
-const centerText = {
-    id: 'centerText',
-    beforeDatasetsDraw(chart, args, options) {
-        const {
-            ctx,
-            chartArea: {
-                left,
-                right,
-                top,
-                bottom,
-                width,
-                height
-            }
-        } =
-        chart;
-
-        ctx.save();
-
-        const textTotal = parseFloat(chart.data.datasets[0].data[0]) +
-            parseFloat(chart.data.datasets[0].data[1]) +
-            parseFloat(chart.data.datasets[0].data[2]) +
-            parseFloat(chart.data.datasets[0].data[3]) +
-            parseFloat(chart.data.datasets[0].data[4]);
-
-        const totalValue = '$' + (textTotal).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-      
-
-        ctx.font = '13px DM SANS';
-        ctx.fillStyle = '#A3A3A3';
-        ctx.textAlign = 'center';
-        ctx.fillText('Total monthly payment', width / 2, height / 2 + top);
-        ctx.restore();
-
-        ctx.font = '25px DM Serif Display';
-        ctx.fillStyle = '#000000';
-        ctx.textAlign = 'center';
-
-        if (isNaN(textTotal) || textTotal < 1) {
-
-             ctx.fillText('$00.00', width / 2, height / 2 + 30);
-
-        } else {
-
-             ctx.fillText(totalValue, width / 2, height / 2 + 30);
-        }
-
-        ctx.restore();
-    }
-};
-
-// 
-const config = {
-    type: 'doughnut',
-    data: data,
-    options: {
-        cutout: 80,
-        plugins: {
-            legend: {
-                display: false,
-            },
-            tooltip: {
-
-                backgroundColor: 'white',
-                borderColor: 'hsl(210, 3%, 70%)',
-                borderWidth: 1,
-                usePointStyle: true,
-                bodyFont: {
-                    size: 14,
-                    family: "'DM Sans'",
-                },
-                bodySpacing: 1,
-                boxWidth: 0,
-                boxHeight: 20,
-
-                callbacks: {
-                    labelTextColor: function(context) {
-                        return myChart.data.datasets.borderColor;
-                    },
-                    labelPointStyle: function(context) {
-                        return {
-                            pointStyle: 'triangle',
-                            rotation: 0
-                        };
-                    }
-                }
-            }
-        }
-    },
-    plugins: [centerText]
-};
-
-// render init block
-const myChart = new Chart(
-    document.getElementById('myChart'),
-    config
-);
-
-
-
-// 
-//if (calby == 'income') {
-document.getElementById('sgem_hmhcia_principle_interest').style.backgroundColor = myChart.data.datasets[0].backgroundColor[0];
-document.getElementById('sgem_hmhcia_principle_interest_te').innerText = myChart.data.labels[0];
-document.getElementById('sgem_hmhcia_interest_value').innerText = myChart.data.datasets[0].data[0];
-
-document.getElementById('sgem_hmhcia_insurance').style.backgroundColor = myChart.data.datasets[0].backgroundColor[1];
-document.getElementById('sgem_hmhcia_insurance_te').innerText = myChart.data.labels[1];
-document.getElementById('sgem_hmhcia_insurance_value').innerText = myChart.data.datasets[0].data[1];
-
-document.getElementById('sgem_hmhcia_property').style.backgroundColor = myChart.data.datasets[0].backgroundColor[2];
-document.getElementById('sgem_hmhcia_property_te').innerText = myChart.data.labels[2];
-document.getElementById('sgem_hmhcia_property_value').innerText = myChart.data.datasets[0].data[2];
-
-document.getElementById('sgem_hmhcia_pmi').style.backgroundColor = myChart.data.datasets[0].backgroundColor[3];
-document.getElementById('sgem_hmhcia_pmi_te').innerText = myChart.data.labels[3];
-document.getElementById('sgem_hmhcia_pmi_value').innerText = myChart.data.datasets[0].data[3];
-
-document.getElementById('sgem_hmhcia_hoe').style.backgroundColor = myChart.data.datasets[0].backgroundColor[4];
-document.getElementById('sgem_hmhcia_hoe_te').innerText = myChart.data.labels[4];
-document.getElementById('sgem_hmhcia_hoe_value').innerText = myChart.data.datasets[0].data[4];
-//  }
-/*  else {
-    document.getElementById('sgem_hmhcia_principle_interest').style.backgroundColor = myChart.data.datasets[0].backgroundColor[0];
-    document.getElementById('sgem_hmhcia_principle_interest_te').innerText = myChart.data.labels[0];
-    document.getElementById('sgem_hmhcia_interest_value').innerText = myChart.data.datasets[0].data[0];
-
-    document.getElementById('sgem_hmhcia_pmi').style.backgroundColor = myChart.data.datasets[0].backgroundColor[3];
-    document.getElementById('sgem_hmhcia_pmi_te').innerText = myChart.data.labels[3];
-    document.getElementById('sgem_hmhcia_pmi_value').innerText = myChart.data.datasets[0].data[3];
-  }*/
-
-
-
-//}
-
-
-function hmhica_update_chart() {
-
-    myChart.data.datasets[0].data = JSON.parse(localStorage.getItem('sgem_hmhcia_doughnut_data_array'));
-    //myChart.data.datasets[0].label = JSON.parse(localStorage.getItem('income_doughnut_data_array')); 
-
-    myChart.update();
-}
-
-
-
-var sliderData = document.getElementById('sgem-hmhcia-ranger');
-
-sgemGenarateSlider(calby);
-sgemGenarateSlider2(calby);
-
-
-function sgemGenarateSlider(calby) {
-
-    var ranger = document.getElementById('sgem-hmhcia-ranger');
-    var sgemimgpig = document.getElementById('sgem-hmhcia-image-pig');
-    var sgemimghouse = document.getElementById('sgem-hmhcia-image-house');
-    var width = sgemimgpig.width;
-    var height = sgemimgpig.height;
-    var width = sgemimghouse.width;
-    var height = sgemimghouse.height;
-    ranger.onchange = function() {
-        sgemimgpig.width = width / (ranger.value / 40);
-        sgemimgpig.height = height / (ranger.value / 40);
-
-        sgemimghouse.width = width * (ranger.value / 70);
-        sgemimghouse.height = height * (ranger.value / 70);
-    }
-}
-function sgemGenarateSlider2(calby) {
-
-    var ranger = document.getElementById('sgem-hmhcia-ranger2');
-    var sgemimgpig = document.getElementById('sgem-hmhcia-image-pig');
-    var sgemimghouse = document.getElementById('sgem-hmhcia-image-house');
-    var width = sgemimgpig.width;
-    var height = sgemimgpig.height;
-    var width = sgemimghouse.width;
-    var height = sgemimghouse.height;
-    ranger.onchange = function() {
-        sgemimgpig.width = width / (ranger.value / 100);
-        sgemimgpig.height = height / (ranger.value / 100);
-
-        sgemimghouse.width = width * (ranger.value / 100);
-        sgemimghouse.height = height * (ranger.value / 100);
-    }
-}
-
-// tooltip for range slider
-var hmhciaValueBubble = '<output class="rangeslider__value-bubble" />';
-var hmhciaValueBubble2 = '<output class="rangeslider__value-bubble2" />';
-
-function updateValueBubble(pos, value, context) {
-  pos = pos || context.position;
-  value = value || context.value;
-  var $hmhciaValueBubble = $('.rangeslider__value-bubble', context.$range);
-  var tempPosition = pos + context.grabPos;
-  var position = (tempPosition <= context.handleDimension) ? context.handleDimension : (tempPosition >= context.maxHandlePos) ? context.maxHandlePos : tempPosition;
-
-  var delayInMilliseconds = 100; //1 second
-
-setTimeout(function() {
-  var permonth_income = JSON.parse(localStorage.getItem('monthlypayment_slider'));
-
-  if ($hmhciaValueBubble.length) {
-    $hmhciaValueBubble[0].style.left = Math.ceil(position) + 'px';
-    $hmhciaValueBubble[0].innerHTML = numberWithCommas('$' + permonth_income + ' /mo');
-  }
-}, delayInMilliseconds);
-   
-}
-
-function updateValueBubble2(pos, value, context) {
-  pos = pos || context.position;
-  value = value || context.value;
-  var $hmhciaValueBubble2 = $('.rangeslider__value-bubble2', context.$range);
-  var tempPosition = pos + context.grabPos;
-  var position = (tempPosition <= context.handleDimension) ? context.handleDimension : (tempPosition >= context.maxHandlePos) ? context.maxHandlePos : tempPosition;
-
-   var delayInMilliseconds2 = 100; //1 second
-
-   setTimeout(function() {
-    var permonth_payment = JSON.parse(localStorage.getItem('sgem_hmhcia_payment_total_monthly_payment'));
- 
-  if ($hmhciaValueBubble2.length) {
-    $hmhciaValueBubble2[0].style.left = Math.ceil(position) + 'px';
-    $hmhciaValueBubble2[0].innerHTML = numberWithCommas('$' + permonth_payment + ' /mo');
-  }
-  
-}, delayInMilliseconds2);
-   
-}
-
-function sliderfun() {
-$(function () {
-    const $inputRange = $('.sgem-hmhcia-range');
-    const $inputRange2 = $('.sgem-hmhcia-range2');
-
-    var debt_to_income_ratio10 = $('#sgem_hmhcia_rent_payment').val().trim();
-    var debt_to_income_ratio20 = debt_to_income_ratio10.replace('%', "");
-
-    var slider_maximum_payment1 = $('#sgem_hmhcia_interest_maximum_payment').val().trim();
-    var slider_maximum_payment2 = slider_maximum_payment1.replace(/\,/g, '');
-    var slider_maximum_payment = parseInt(slider_maximum_payment2, 10);
-
-
-    $inputRange.rangeslider({
-        polyfill: false,
-        fillClass: 'rangeslider__fill',
-
-         onInit: function() {
-      this.$range.append($(hmhciaValueBubble));
-      updateValueBubble(null, null, this);
-      },
-
-      onSlideEnd: function(pos, value) {
-      updateValueBubble(pos, value, this);
-      sgem_hmhcia_calculationmin();
-
-      },
-    });
-    $inputRange2.rangeslider({
-        polyfill: false,
-        fillClass: 'rangeslider__fill',
-
-         onInit: function() {
-      this.$range.append($(hmhciaValueBubble2));
-      updateValueBubble2(null, null, this);
-      },
-
-      onSlideEnd: function(pos, value) {
-      updateValueBubble2(pos, value, this);
-      sgem_hmhcia_calculationmin();
-
-      },
-    });
-
-    $('.sgem-hmhcia-range').rangeslider('update', true);
-     $('.sgem-hmhcia-range2').rangeslider('update', true);
-
-
-    //   load values to input
-    
-     //console.log($inputRange.val());
-
-$('.sgem-hmhcia-range').val(debt_to_income_ratio20).change();
-
-$('.sgem-hmhcia-range2').val(slider_maximum_payment).change();
- 
- document.getElementById("sgem-hmhcia-ranger2").max = 8000;    
-
-});
-}
-//--------------------------------------------------------------------------------------------
-
-
-function isNumber(evt) {
-    evt = (evt) ? evt : window.event;
-    var charCode = (evt.which) ? evt.which : evt.keyCode;
-    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        //if (charCode == 31 && charCode > 32 && (charCode < 48 || charCode > 57)) { // for decimal
-        return false;
-    }
-    return true;
-}
-
-
-/**
- * Toolt Tip
- */
-/* Tippy Tool */
-
-tippy('[data-tippy-content]', {
-    arrow: true,
-    theme: 'light-border',
-    trigger: 'click',
-});
-
-$(document).ready(function() {
-    if ($('.sgem-hmhcia-cal-wrapper').width() < 1024) {
-        $('.sgem-hmhcia-cal-left').addClass('sgem-hmhcia-cal-left-add-class');
-        $('.sgem-hmhcia-cal-right').addClass('sgem-hmhcia-cal-right-add-class');
-    } else {
-        $('.sgem-hmhcia-cal-left').removeClass('sgem-hmhcia-cal-left-add-class');
-        $('.sgem-hmhcia-cal-right').removeClass('sgem-hmhcia-cal-right-add-class');
-    }
-
-    if ($('.sgem-hmhcia-cal-main-id').width() < 650) {
-        $('.sgem-hmhcia-cal-wrapper').addClass('sgem-hmhcia-wrapper-add-mobile');
-    } else {
-        $('.sgem-hmhcia-cal-wrapper').removeClass('sgem-hmhcia-wrapper-add-mobile');
-    }
-
-    $(window).on('resize', function() {
-        if ($('.sgem-hmhcia-cal-wrapper').width() < 1024) {
-            $('.sgem-hmhcia-cal-left').addClass('sgem-hmhcia-cal-left-add-class');
-            $('.sgem-hmhcia-cal-right').addClass('sgem-hmhcia-cal-right-add-class');
-        } else {
-            $('.sgem-hmhcia-cal-left').removeClass('sgem-hmhcia-cal-left-add-class');
-            $('.sgem-hmhcia-cal-right').removeClass('sgem-hmhcia-cal-right-add-class');
-        }
-    }).trigger('resize');
-
-    $(window).on('resize', function() {
-        if ($('.sgem-hmhcia-cal-main-id').width() < 650) {
-            $('.sgem-hmhcia-cal-wrapper').addClass('sgem-hmhcia-wrapper-add-mobile');
-        } else {
-            $('.sgem-hmhcia-cal-wrapper').removeClass('sgem-hmhcia-wrapper-add-mobile');
-        }
-    }).trigger('resize');
-});
-
-// DOCUMENT.READY END
-
 // decimal points
 function decimalTwoPoints(x) {
   return Number.parseFloat(x).toFixed(0);
@@ -1539,6 +1159,427 @@ function radiochange() {
             
     });
 
+
+
+//---------------------------------------------------------------------------------------Chart
+
+// setup 
+var p_and_i = JSON.parse(localStorage.getItem('sgem_hmhcia_doughnut_data_array'));
+
+
+const data = {
+    labels: ['Principle & interest', 'Insurance', 'Property tax', 'PMI' , 'HOE'],
+    datasets: [{
+        label: 'Chart',
+        data: p_and_i,
+        backgroundColor: [
+            '#FFB822',
+            '#5C78FF',
+            '#FA4380',
+            '#36D154',
+            '#f9e600'
+        ],
+        // hoverOffset: 4
+    }]
+};
+
+var calby = $(".sgem-hmhcia-calculate-by:checked").val();
+
+//hmhciaGenerateDochart(calby, data);
+
+//function hmhciaGenerateDochart(calby, data) {
+const centerText = {
+    id: 'centerText',
+    beforeDatasetsDraw(chart, args, options) {
+        const {
+            ctx,
+            chartArea: {
+                left,
+                right,
+                top,
+                bottom,
+                width,
+                height
+            }
+        } =
+        chart;
+
+        ctx.save();
+
+        const textTotal = parseFloat(chart.data.datasets[0].data[0]) +
+            parseFloat(chart.data.datasets[0].data[1]) +
+            parseFloat(chart.data.datasets[0].data[2]) +
+            parseFloat(chart.data.datasets[0].data[3]) +
+            parseFloat(chart.data.datasets[0].data[4]);
+
+        const totalValue = '$' + (textTotal).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      
+
+        ctx.font = '13px DM SANS';
+        ctx.fillStyle = '#A3A3A3';
+        ctx.textAlign = 'center';
+        ctx.fillText('Total monthly payment', width / 2, height / 2 + top);
+        ctx.restore();
+
+        ctx.font = '25px DM Serif Display';
+        ctx.fillStyle = '#000000';
+        ctx.textAlign = 'center';
+
+        if (isNaN(textTotal) || textTotal < 1) {
+
+             ctx.fillText('$00.00', width / 2, height / 2 + 30);
+
+        } else {
+
+             ctx.fillText(totalValue, width / 2, height / 2 + 30);
+        }
+
+        ctx.restore();
+    }
+};
+
+// 
+const config = {
+    type: 'doughnut',
+    data: data,
+    options: {
+        cutout: 80,
+        plugins: {
+            legend: {
+                display: false,
+            },
+            tooltip: {
+
+                backgroundColor: 'white',
+                borderColor: 'hsl(210, 3%, 70%)',
+                borderWidth: 1,
+                usePointStyle: true,
+                bodyFont: {
+                    size: 14,
+                    family: "'DM Sans'",
+                },
+                bodySpacing: 1,
+                boxWidth: 0,
+                boxHeight: 20,
+
+                callbacks: {
+                    labelTextColor: function(context) {
+                        return myChart.data.datasets.borderColor;
+                    },
+                    labelPointStyle: function(context) {
+                        return {
+                            pointStyle: 'triangle',
+                            rotation: 0
+                        };
+                    }
+                }
+            }
+        }
+    },
+    plugins: [centerText]
+};
+
+// render init block
+const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+);
+
+
+
+// 
+//if (calby == 'income') {
+document.getElementById('sgem_hmhcia_principle_interest').style.backgroundColor = myChart.data.datasets[0].backgroundColor[0];
+document.getElementById('sgem_hmhcia_principle_interest_te').innerText = myChart.data.labels[0];
+document.getElementById('sgem_hmhcia_interest_value').innerText = myChart.data.datasets[0].data[0];
+
+document.getElementById('sgem_hmhcia_insurance').style.backgroundColor = myChart.data.datasets[0].backgroundColor[1];
+document.getElementById('sgem_hmhcia_insurance_te').innerText = myChart.data.labels[1];
+document.getElementById('sgem_hmhcia_insurance_value').innerText = myChart.data.datasets[0].data[1];
+
+document.getElementById('sgem_hmhcia_property').style.backgroundColor = myChart.data.datasets[0].backgroundColor[2];
+document.getElementById('sgem_hmhcia_property_te').innerText = myChart.data.labels[2];
+document.getElementById('sgem_hmhcia_property_value').innerText = myChart.data.datasets[0].data[2];
+
+document.getElementById('sgem_hmhcia_pmi').style.backgroundColor = myChart.data.datasets[0].backgroundColor[3];
+document.getElementById('sgem_hmhcia_pmi_te').innerText = myChart.data.labels[3];
+document.getElementById('sgem_hmhcia_pmi_value').innerText = myChart.data.datasets[0].data[3];
+
+document.getElementById('sgem_hmhcia_hoe').style.backgroundColor = myChart.data.datasets[0].backgroundColor[4];
+document.getElementById('sgem_hmhcia_hoe_te').innerText = myChart.data.labels[4];
+document.getElementById('sgem_hmhcia_hoe_value').innerText = myChart.data.datasets[0].data[4];
+//  }
+/*  else {
+    document.getElementById('sgem_hmhcia_principle_interest').style.backgroundColor = myChart.data.datasets[0].backgroundColor[0];
+    document.getElementById('sgem_hmhcia_principle_interest_te').innerText = myChart.data.labels[0];
+    document.getElementById('sgem_hmhcia_interest_value').innerText = myChart.data.datasets[0].data[0];
+
+    document.getElementById('sgem_hmhcia_pmi').style.backgroundColor = myChart.data.datasets[0].backgroundColor[3];
+    document.getElementById('sgem_hmhcia_pmi_te').innerText = myChart.data.labels[3];
+    document.getElementById('sgem_hmhcia_pmi_value').innerText = myChart.data.datasets[0].data[3];
+  }*/
+
+
+
+//}
+
+
+function hmhica_update_chart() {
+
+    myChart.data.datasets[0].data = JSON.parse(localStorage.getItem('sgem_hmhcia_doughnut_data_array'));
+    //myChart.data.datasets[0].label = JSON.parse(localStorage.getItem('income_doughnut_data_array')); 
+
+    myChart.update();
+}
+
+
+
+var sliderData = document.getElementById('sgem-hmhcia-ranger');
+
+sgemGenarateSlider(calby);
+sgemGenarateSlider2(calby);
+
+
+function sgemGenarateSlider(calby) {
+
+    var ranger = document.getElementById('sgem-hmhcia-ranger');
+    var sgemimgpig = document.getElementById('sgem-hmhcia-image-pig');
+    var sgemimghouse = document.getElementById('sgem-hmhcia-image-house');
+    var width = sgemimgpig.width;
+    var height = sgemimgpig.height;
+    var width = sgemimghouse.width;
+    var height = sgemimghouse.height;
+    ranger.onchange = function() {
+        sgemimgpig.width = width / (ranger.value / 40);
+        sgemimgpig.height = height / (ranger.value / 40);
+
+        sgemimghouse.width = width * (ranger.value / 70);
+        sgemimghouse.height = height * (ranger.value / 70);
+    }
+}
+function sgemGenarateSlider2(calby) {
+
+    var ranger = document.getElementById('sgem-hmhcia-ranger2');
+    var sgemimgpig = document.getElementById('sgem-hmhcia-image-pig');
+    var sgemimghouse = document.getElementById('sgem-hmhcia-image-house');
+    var width = sgemimgpig.width;
+    var height = sgemimgpig.height;
+    var width = sgemimghouse.width;
+    var height = sgemimghouse.height;
+    ranger.onchange = function() {
+        sgemimgpig.width = width / (ranger.value / 100);
+        sgemimgpig.height = height / (ranger.value / 100);
+
+        sgemimghouse.width = width * (ranger.value / 100);
+        sgemimghouse.height = height * (ranger.value / 100);
+    }
+}
+
+// tooltip for range slider
+var hmhciaValueBubble = '<output class="rangeslider__value-bubble" />';
+var hmhciaValueBubble2 = '<output class="rangeslider__value-bubble2" />';
+
+function updateValueBubble(pos, value, context) {
+  pos = pos || context.position;
+  value = value || context.value;
+  var $hmhciaValueBubble = $('.rangeslider__value-bubble', context.$range);
+  var tempPosition = pos + context.grabPos;
+  var position = (tempPosition <= context.handleDimension) ? context.handleDimension : (tempPosition >= context.maxHandlePos) ? context.maxHandlePos : tempPosition;
+
+  var delayInMilliseconds = 100; //1 second
+
+setTimeout(function() {
+  var permonth_income = JSON.parse(localStorage.getItem('monthlypayment_slider'));
+
+  if ($hmhciaValueBubble.length) {
+    $hmhciaValueBubble[0].style.left = Math.ceil(position) + 'px';
+    $hmhciaValueBubble[0].innerHTML = numberWithCommas('$' + permonth_income + ' /mo');
+  }
+}, delayInMilliseconds);
+   
+}
+
+function updateValueBubble2(pos, value, context) {
+  pos = pos || context.position;
+  value = value || context.value;
+  var $hmhciaValueBubble2 = $('.rangeslider__value-bubble2', context.$range);
+  var tempPosition = pos + context.grabPos;
+  var position = (tempPosition <= context.handleDimension) ? context.handleDimension : (tempPosition >= context.maxHandlePos) ? context.maxHandlePos : tempPosition;
+
+   var delayInMilliseconds2 = 100; //1 second
+
+   setTimeout(function() {
+    var permonth_payment = JSON.parse(localStorage.getItem('sgem_hmhcia_payment_total_monthly_payment'));
+ 
+  if ($hmhciaValueBubble2.length) {
+    $hmhciaValueBubble2[0].style.left = Math.ceil(position) + 'px';
+    $hmhciaValueBubble2[0].innerHTML = numberWithCommas('$' + permonth_payment + ' /mo');
+  }
+  
+}, delayInMilliseconds2);
+   
+}
+
+function sliderfun() {
+$(function () {
+    const $inputRange = $('.sgem-hmhcia-range');
+    const $inputRange2 = $('.sgem-hmhcia-range2');
+
+    var debt_to_income_ratio10 = $('#sgem_hmhcia_rent_payment').val().trim();
+    var debt_to_income_ratio20 = debt_to_income_ratio10.replace('%', "");
+
+    var slider_maximum_payment1 = $('#sgem_hmhcia_interest_maximum_payment').val().trim();
+    var slider_maximum_payment2 = slider_maximum_payment1.replace(/\,/g, '');
+    var slider_maximum_payment = parseInt(slider_maximum_payment2, 10);
+
+
+    $inputRange.rangeslider({
+        polyfill: false,
+        fillClass: 'rangeslider__fill',
+
+         onInit: function() {
+      this.$range.append($(hmhciaValueBubble));
+      updateValueBubble(null, null, this);
+      },
+
+      onSlideEnd: function(pos, value) {
+      updateValueBubble(pos, value, this);
+      sgem_hmhcia_calculationmin();
+
+      },
+    });
+    $inputRange2.rangeslider({
+        polyfill: false,
+        fillClass: 'rangeslider__fill',
+
+         onInit: function() {
+      this.$range.append($(hmhciaValueBubble2));
+      updateValueBubble2(null, null, this);
+      },
+
+      onSlideEnd: function(pos, value) {
+      updateValueBubble2(pos, value, this);
+      sgem_hmhcia_calculationmin();
+
+      },
+    });
+
+    $('.sgem-hmhcia-range').rangeslider('update', true);
+     $('.sgem-hmhcia-range2').rangeslider('update', true);
+
+
+    //   load values to input
+    
+     //console.log($inputRange.val());
+
+$('.sgem-hmhcia-range').val(debt_to_income_ratio20).change();
+
+$('.sgem-hmhcia-range2').val(slider_maximum_payment).change();
+ 
+ document.getElementById("sgem-hmhcia-ranger2").max = 8000;    
+
+});
+}
+//--------------------------------------------------------------------------------------------
+
+
+function isNumber(evt) {
+    evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        //if (charCode == 31 && charCode > 32 && (charCode < 48 || charCode > 57)) { // for decimal
+        return false;
+    }
+    return true;
+}
+
+/*$(function() {
+    $('input.inputnumber').keyup(function(event) {
+        if (event.which >= 37 && event.which <= 40) return;
+        $(this).val(function(index, value) {
+            return value
+                // Keep only digits and decimal points:
+                .replace(/[^\d.]/g, "")
+                // Remove duplicated decimal point, if one exists:
+                .replace(/^(\d*\.)(.*)\.(.*)$/, '$1$2$3')
+                // Keep only two digits past the decimal point:
+                .replace(/\.(\d{2})\d+/, '.$1')
+                // Add thousands separators:
+                .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+        });
+    });
+
+    $("#sgem_hmhcia_expected_mortgage").on('input', function() {
+        $(this).val(function(i, v) {
+            return v.replace('%', '') + '%';
+        });
+    });
+});*/
+
+
+/**
+ * Toolt Tip
+ */
+/* Tippy Tool */
+
+tippy('[data-tippy-content]', {
+    arrow: true,
+    theme: 'light-border',
+    trigger: 'click',
+});
+
+
+
+/*$('input.inputnumber').keyup(function(event) {
+    if (event.which >= 37 && event.which <= 40) return;
+    $(this).val(function(index, value) {
+        return value
+            // Keep only digits and decimal points:
+            .replace(/[^\d.]/g, "")
+            // Remove duplicated decimal point, if one exists:
+            .replace(/^(\d*\.)(.*)\.(.*)$/, '$1$2$3')
+            // Keep only two digits past the decimal point:
+            .replace(/\.(\d{2})\d+/, '.$1')
+            // Add thousands separators:
+            .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+    });
+});*/
+
+$(document).ready(function() {
+    if ($('.sgem-hmhcia-cal-wrapper').width() < 1024) {
+        $('.sgem-hmhcia-cal-left').addClass('sgem-hmhcia-cal-left-add-class');
+        $('.sgem-hmhcia-cal-right').addClass('sgem-hmhcia-cal-right-add-class');
+    } else {
+        $('.sgem-hmhcia-cal-left').removeClass('sgem-hmhcia-cal-left-add-class');
+        $('.sgem-hmhcia-cal-right').removeClass('sgem-hmhcia-cal-right-add-class');
+    }
+
+    if ($('.sgem-hmhcia-cal-main-id').width() < 650) {
+        $('.sgem-hmhcia-cal-wrapper').addClass('sgem-hmhcia-wrapper-add-mobile');
+    } else {
+        $('.sgem-hmhcia-cal-wrapper').removeClass('sgem-hmhcia-wrapper-add-mobile');
+    }
+
+    $(window).on('resize', function() {
+        if ($('.sgem-hmhcia-cal-wrapper').width() < 1024) {
+            $('.sgem-hmhcia-cal-left').addClass('sgem-hmhcia-cal-left-add-class');
+            $('.sgem-hmhcia-cal-right').addClass('sgem-hmhcia-cal-right-add-class');
+        } else {
+            $('.sgem-hmhcia-cal-left').removeClass('sgem-hmhcia-cal-left-add-class');
+            $('.sgem-hmhcia-cal-right').removeClass('sgem-hmhcia-cal-right-add-class');
+        }
+    }).trigger('resize');
+
+    $(window).on('resize', function() {
+        if ($('.sgem-hmhcia-cal-main-id').width() < 650) {
+            $('.sgem-hmhcia-cal-wrapper').addClass('sgem-hmhcia-wrapper-add-mobile');
+        } else {
+            $('.sgem-hmhcia-cal-wrapper').removeClass('sgem-hmhcia-wrapper-add-mobile');
+        }
+    }).trigger('resize');
+});
+
+// DOCUMENT.READY END
 
 for (let e of document.querySelectorAll('input[type="range"].slider-progress')) {
     e.style.setProperty('--value', e.value);
