@@ -248,6 +248,9 @@ var sgem_hmhcia_main_contents = '<div class="sgem-hmhcia-cal-main-id">'+
       '<div class="sgem-hmhcia-input-range-custom-section">'+
       '<input id="sgem-hmhcia-ranger" class="sgem-hmhcia-range" type="range" name="rangeInput" min="0" max="43" value="30" oninput="amount.value=rangeInput.value"/>'+
       '</div>'+
+      '<div class="sgem-hmhcia-input-range-custom-section2" id="sliderrangeone2">'+
+      '<input id="sgem-hmhcia-ranger2" class="sgem-hmhcia-range2" type="range" name="rangeInput2" min="0" max="8000" value="2000" oninput="amount2.value=rangeInput2.value"/>'+
+      '</div>'+
       '</form>'+
       '</div>'+
       '</div>'+
@@ -1326,7 +1329,7 @@ var sliderData = document.getElementById('sgem-hmhcia-ranger');
 
 if( $('.sgem-hmhcia-range').length>0 ) {
 	sgemGenarateSlider(calby);
-	// sgemGenarateSlider2(calby);
+	sgemGenarateSlider2(calby);
 }
 
 function sgemGenarateSlider(calby) {
