@@ -43,7 +43,7 @@ var sgem_hmhcia_main_contents = '<div class="sgem-hmhcia-cal-main-id">'+
                      '<div class="sgem-hmhcia-flex-container">'+
                         '<div class="sgem-hmhcia-form-group sgem-hmhcia-form-flex sgem-hmhcia-currency-holder">'+
                            '<label>Annual income'+
-                           '<span class="sgem-hmhcia-info-tooltip tooltip" data-tippy-content="Your total pre tax annual earnings, for you and your co-borrower. Annual income includes your salary and any additional incomes such as commissions, bonuses, tips, investment income, and pension.">?</span>
+                           '<span class="sgem-hmhcia-info-tooltip tooltip" data-tippy-content="Your total pre tax annual earnings, for you and your co-borrower. Annual income includes your salary and any additional incomes such as commissions, bonuses, tips, investment income, and pension.">?</span>'+
                            '</label>'+
                            '<input type="text" class="inputmove inputnumber"  id="sgem_hmhcia_annual_income" value="100,000" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
                            '<span class="sgem_hmhcia_err_msg" id="sgem_hmhcia_err_annual_income"></span>   '+
