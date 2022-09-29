@@ -245,7 +245,7 @@ var sgem_hmhcia_main_contents = '<div class="sgem-hmhcia-cal-main-id">'+
       '<img id="sgem-hmhcia-image-house" src="/wp-content/plugins/HMHCIA-Calculator/assets/images/hmhcia-house.svg" width="70px" height="70px" />'+
       '</div>'+
       '<div class="sgem-hmhcia-slider-range-input">'+
-      '<div class="sgem-hmhcia-input-range-custom-section">'+
+      '<div class="sgem-hmhcia-input-range-custom-section" id="sliderrangeone">'+
       '<input id="sgem-hmhcia-ranger" class="sgem-hmhcia-range" type="range" name="rangeInput" min="0" max="43" value="30" oninput="amount.value=rangeInput.value"/>'+
       '</div>'+
       '<div class="sgem-hmhcia-input-range-custom-section2" id="sliderrangeone2">'+
