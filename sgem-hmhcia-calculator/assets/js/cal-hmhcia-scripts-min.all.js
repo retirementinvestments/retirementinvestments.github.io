@@ -1454,7 +1454,7 @@ $(function () {
     });
 
     $('.sgem-hmhcia-range').rangeslider('update', true);
-     $('.sgem-hmhcia-range2').rangeslider('update', true);
+    $('.sgem-hmhcia-range2').rangeslider('update', true);
 
 
     //   load values to input
