@@ -75,9 +75,9 @@ var sgem_hmhcia_main_contents = '<div class="sgem-hmhcia-cal-main-id">'+
                            '<div class="sgem-hmhcia-flex-container">'+
                               '<div class="sgem-hmhcia-form-group sgem-hmhcia-form-flex sgem-hmhcia-precentage-holder">'+
                                  '<label>Debt-to-income'+
-                                 '<span class="sgem-hmhcia-info-tooltip tooltip" data-tippy-content="Debt-to-income ratio is obtained by dividing the total of your monthly debt payments by your gross monthly income, which is shown as a percentage. Enter the percentage of your income you are comfortable spending on monthly debts.">?</span>
+                                 '<span class="sgem-hmhcia-info-tooltip tooltip" data-tippy-content="Debt-to-income ratio is obtained by dividing the total of your monthly debt payments by your gross monthly income, which is shown as a percentage. Enter the percentage of your income you are comfortable spending on monthly debts.">?</span>'+
                                  '</label>'+
-                                 '<input oninput="rangeInput.value=amount.value" type="text" class="inputmove inputnumber" id="sgem_hmhcia_rent_payment" value="36" min="0" max="100" name="amount" for="rangeInput" oninput="amount.value=rangeInput.value" onkeypress="return isNumber(event)"/>
+                                 '<input oninput="rangeInput.value=amount.value" type="text" class="inputmove inputnumber" id="sgem_hmhcia_rent_payment" value="36" min="0" max="100" name="amount" for="rangeInput" oninput="amount.value=rangeInput.value" onkeypress="return isNumber(event)"/>'+
                                  '<span class="sgem_hmhcia_err_msg" id="sgem_hmhcia_err_rent_payment_afford"></span>'+   
                               '</div>'+
                               '<div class="sgem-hmhcia-form-group sgem-hmhcia-form-flex sgem-hmhcia-precentage-holder">'+
