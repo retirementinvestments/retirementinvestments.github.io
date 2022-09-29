@@ -240,7 +240,7 @@
 	background-repeat: no-repeat;
 	background-position: center -5px;
 	background-size: 25px;
-	background-image: url('/wp-content/plugins/HMHCIA-Calculator/assets/images/drop-down-arrow-hmhcia-ira.svg');
+	background-image: url('/sgem-hmhcia-calculator/assets/images/drop-down-arrow-hmhcia-ira.svg');
 }
 .sgem-hmhcia-cal-1 details[open] > summary::after {
 	-moz-transform: rotate(-180deg);
@@ -1108,13 +1108,13 @@ span.sgem_hmhcia_side_total_lbl {
 	cursor: pointer;
 }
 .sgem-hmhcia-cal-tabs input#sgem-hmhcia-cal-tab1:checked ~ .sgem-hmhcia-form-checkbox-style-tic1:before {
-	content: url(/wp-content/plugins/HMHCIA-Calculator/assets/images/fill-green-tic.svg);
+	content: url(/sgem-hmhcia-calculator/assets/images/fill-green-tic.svg);
 	position: absolute;
     right: 4px;
     top: -1px;
 }
 .sgem-hmhcia-cal-tabs input#sgem-hmhcia-cal-tab2:checked ~ .sgem-hmhcia-form-checkbox-style-tic2:before {
-	content: url(/wp-content/plugins/HMHCIA-Calculator/assets/images/fill-green-tic.svg);
+	content: url(/sgem-hmhcia-calculator/assets/images/fill-green-tic.svg);
 	position: absolute;
     right: 4px;
 	top: -1px;
