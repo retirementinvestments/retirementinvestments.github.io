@@ -1409,7 +1409,7 @@ function updateValueBubble2(pos, value, context) {
    
 }
 
-window.onload = function sliderfun() {
+function sliderfun() {
 $(function () {
     const $inputRange = $('.sgem-hmhcia-range');
     const $inputRange2 = $('.sgem-hmhcia-range2');
