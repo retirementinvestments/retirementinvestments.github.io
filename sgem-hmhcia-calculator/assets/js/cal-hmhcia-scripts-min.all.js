@@ -1341,9 +1341,10 @@ function hmhica_update_chart() {
 
 var sliderData = document.getElementById('sgem-hmhcia-ranger');
 
-sgemGenarateSlider(calby);
-sgemGenarateSlider2(calby);
-
+if( $('.sgem-hmhcia-range').length>0 ) {
+	sgemGenarateSlider(calby);
+	sgemGenarateSlider2(calby);
+}
 
 function sgemGenarateSlider(calby) {
 
