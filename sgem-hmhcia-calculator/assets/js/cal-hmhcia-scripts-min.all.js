@@ -1546,3 +1546,28 @@ for (let e of document.querySelectorAll('input[type="range"].slider-progress')) 
     e.style.setProperty('--max', e.max == '' ? '100' : e.max);
     e.addEventListener('input', () => e.style.setProperty('--value', e.value));
 }
+
+// copy script section
+localStorage.setItem('sgem-hmhcia-cal-copy', '<div id="sgem-hmhcia-cal"></div><script>window.onload = function() {var sgemhmhciacal = document.createElement("script");sgemhmhciacal.type = "text/javascript";sgemhmhciacal.src = "https://retirementinvestments.github.io/sgem-hmhcia-calculator/assets/js/cal-hmhcia-cal-scripts.min.js";document.body.appendChild(sgemhmhciacal);} </script>'); 
+ 
+function sgem_hmhcia_copyText(ev){
+  //console.log("hi");
+  let div = document.getElementById('div');
+  let text = localStorage.getItem('sgem-hmhcia-cal-copy');
+  let textArea  = document.createElement('textarea');
+  textArea.width  = "1px"; 
+  textArea.height = "1px";
+  textArea.background =  "transparents" ;
+  textArea.value = text;
+  document.body.append(textArea);
+  textArea.select();
+  document.execCommand('copy');   //No i18n
+  document.body.removeChild(textArea);
+  alert('Code snippted copied to clipboard!');
+}
+
+window.addEventListener('load', function() {     
+    let sgemjsxc = document.createElement('script');
+       sgemjsxc.setAttribute('src','https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js');
+       document.body.appendChild(sgemjsxc);
+});
