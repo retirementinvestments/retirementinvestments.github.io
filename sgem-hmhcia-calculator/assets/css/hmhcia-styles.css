@@ -850,7 +850,10 @@
     color: #ff5964;
 }
 .sgem-hmhcia-cal-1-result-footer .sgem-hmhcia-content {
-	padding-top: 70px;
+	padding-top: 0px;
+}
+.sgem-hmhcia-cal-main-id .sgem-hmhcia-cal-1-result-wrapper.sgem-hmhcia-slider-section {
+	padding-bottom: 70px;
 }
 img#sgem-hmhcia-image-pig,
 img#sgem-hmhcia-image-house
@@ -1010,6 +1013,7 @@ span.sgem-mhmcia-range-end-value {
     border: 0;
     margin-right: 20px;
     border-radius: 40px;
+    padding: 0;
 }
 .sgem-hmhcia-legend-total-section {
 	font-size: 20px;
