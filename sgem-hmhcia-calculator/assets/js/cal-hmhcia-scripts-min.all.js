@@ -75,7 +75,7 @@ window.onload = function() {
 }
 
 
-jQuery(document).ready(function($){
+
 
 function sgem_hmhcia_calculationmin() {
 
@@ -267,6 +267,7 @@ function sgem_hmhcia_calculationmin() {
 
 }
 
+jQuery(document).ready(function($){
 
 sgem_hmhcia_calculationmin();
 
