@@ -1251,6 +1251,11 @@ tippy('[data-tippy-content]', {
 });*/
 
 $(document).ready(function() {
+
+    window.onload=function(){
+        document.getElementById("sgem-hmhcia-cal-tab1").click();
+    };
+
     if ($('.sgem-hmhcia-cal-wrapper').width() < 1024) {
         $('.sgem-hmhcia-cal-left').addClass('sgem-hmhcia-cal-left-add-class');
         $('.sgem-hmhcia-cal-right').addClass('sgem-hmhcia-cal-right-add-class');
