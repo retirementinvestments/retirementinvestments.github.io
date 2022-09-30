@@ -1217,7 +1217,7 @@ input#sgem-hmhcia-cal-tab1:checked, input#sgem-hmhcia-cal-tab2:checked {
 
 /* disclaimer styles */
 .sgem-hmhcia-section-disclaimer {
-	margin-top: 40px;
+	margin-top: 0px;
 }
 .sgem-hmhcia-details-disclaimer summary {
     display: flex !important;
