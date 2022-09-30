@@ -285,165 +285,7 @@ if ($('#sgem_hmhcia_annual_income,#sgem_hmhcia_monthly_debts,#sgem_hmhcia_income
 
    
 
-function radiochange() {
 
-    var rchange = $('.sgem-hmhcia-calculate-by:checked').val();
-
-    if (rchange == 'income') {
-
-        var main_value_of_house_income = JSON.parse(localStorage.getItem('sgem_hmhcia_income_value_of_house'));
-
-         if (isNaN(main_value_of_house_income) || main_value_of_house_income < 1) {
-
-            $('#sgem_hmhcia_total_text').text('$00.00');
-
-        } else {
-
-            $('#sgem_hmhcia_total_text').text(numberWithCommas('$' + main_value_of_house_income));
-        }
-        //-----------------------
-
-        var finalisingincomearray = JSON.parse(localStorage.getItem('sgem_hmhcia_income_doughnut_data_array'));
-        localStorage.setItem('sgem_hmhcia_doughnut_data_array', JSON.stringify(finalisingincomearray));
-        $("#hidemeon").show();
-        $("#hidemeon2").show();
-        $("#sliderrangeone2").hide();
-        $("#sliderrangeone").show();
-        hmhica_update_chart();
-        sliderfun();
-        //-----------------------
-        var income_monthly_principal_intrest_d = JSON.parse(localStorage.getItem('sgem_hmhcia_income_monthly_principal_intrest'));
-
-        if (isNaN(income_monthly_principal_intrest_d) || income_monthly_principal_intrest_d < 1) {
-
-            $('#sgem_hmhcia_interest_value').text('0');
-
-        } else {
-
-            $('#sgem_hmhcia_interest_value').text(numberWithCommas(income_monthly_principal_intrest_d));
-        }
-        //------------------------
-
-        var income_monthly_home_insurance_d = JSON.parse(localStorage.getItem('sgem_hmhcia_income_monthly_home_insurance'));
-
-        if (isNaN(income_monthly_home_insurance_d) || income_monthly_home_insurance_d < 1) {
-
-            $('#sgem_hmhcia_insurance_value').text('0');
-
-        } else {
-
-            $('#sgem_hmhcia_insurance_value').text(numberWithCommas(income_monthly_home_insurance_d));
-        }
-
-        //--------------------------
-       
-        var  income_monthly_hoa_fees_d = JSON.parse(localStorage.getItem('sgem_hmhcia_income_monthly_hoa_fees'));
-
-         if (isNaN(income_monthly_hoa_fees_d) || income_monthly_hoa_fees_d < 1) {
-
-            $('#sgem_hmhcia_hoe_value').text('0');
-
-        } else {
-
-            $('#sgem_hmhcia_hoe_value').text(numberWithCommas(income_monthly_hoa_fees_d));
-        }
-
-        //--------------------------
-
-        var income_total_monthly_payment_d = JSON.parse(localStorage.getItem('sgem_hmhcia_income_total_monthly_payment_p'));
-
-        if (isNaN(income_total_monthly_payment_d) || income_total_monthly_payment_d < 1) {
-
-            $('.sgem-hmhcia-price-legend-item').text('$0');
-            localStorage.setItem('monthlypayment_slider', JSON.stringify(0));
-
-        } else {
-
-            $('.sgem-hmhcia-price-legend-item').text(numberWithCommas('$'+income_total_monthly_payment_d));
-            localStorage.setItem('monthlypayment_slider', JSON.stringify(income_total_monthly_payment_d));
-
-        }
-
-        //--------------------------
-
-    } else if (rchange == 'payment') {
-
-           var main_value_of_house_payment = JSON.parse(localStorage.getItem('sgem_hmhcia_payment_value_of_house'));
-
-         if (isNaN(main_value_of_house_payment) || main_value_of_house_payment < 1) {
-
-            $('#sgem_hmhcia_total_text').text('$00.00');
-
-        } else {
-
-            $('#sgem_hmhcia_total_text').text(numberWithCommas('$' + main_value_of_house_payment));
-        }
-        //------------------------
-
-        var finalisingpaymentarray = JSON.parse(localStorage.getItem('sgem_hmhcia_payment_doughnut_data_array'));
-        localStorage.setItem('sgem_hmhcia_doughnut_data_array', JSON.stringify(finalisingpaymentarray));
-        $("#hidemeon").hide();
-        $("#hidemeon2").hide();
-         $("#sliderrangeone2").show();
-        $("#sliderrangeone").hide();
-        hmhica_update_chart();
-        sliderfun();
-        //------------------------
-        var payment_monthly_principal_intrest_d = JSON.parse(localStorage.getItem('sgem_hmhcia_payment_monthly_principal_intrest'));
-
-        if (isNaN(payment_monthly_principal_intrest_d) || payment_monthly_principal_intrest_d < 1) {
-
-            $('#sgem_hmhcia_interest_value').text('0');
-
-        } else {
-
-            $('#sgem_hmhcia_interest_value').text(numberWithCommas(payment_monthly_principal_intrest_d));
-        }
-        //------------------------
-
-        var payment_monthly_home_insurance_d = JSON.parse(localStorage.getItem('sgem_hmhcia_payment_monthly_home_insurance'));
-
-        if (isNaN(payment_monthly_home_insurance_d) || payment_monthly_home_insurance_d < 1) {
-
-            $('#sgem_hmhcia_insurance_value').text('0');
-
-        } else {
-
-            $('#sgem_hmhcia_insurance_value').text(numberWithCommas(payment_monthly_home_insurance_d));
-        }
-        //-------------------------
-       
-        var   payment_monthly_hoa_fees_d = JSON.parse(localStorage.getItem('sgem_hmhcia_payment_monthly_hoa_fees'));
-
-         if (isNaN(payment_monthly_hoa_fees_d) || payment_monthly_hoa_fees_d < 1) {
-
-            $('#sgem_hmhcia_hoe_value').text('0');
-
-        } else {
-
-            $('#sgem_hmhcia_hoe_value').text(numberWithCommas(payment_monthly_hoa_fees_d));
-        }
-
-        //-------------------------
-
-        var payment_total_monthly_payment_d = JSON.parse(localStorage.getItem('sgem_hmhcia_payment_total_monthly_payment'));
-
-
-        if (isNaN(payment_total_monthly_payment_d) || payment_total_monthly_payment_d < 1) {
-
-            $('.sgem-hmhcia-price-legend-item').text('$0');
-
-        } else {
-
-            $('.sgem-hmhcia-price-legend-item').text(numberWithCommas('$'+payment_total_monthly_payment_d));
-           
-
-        }
-        //-------------------------
-    }
-
-
-}
 
 //------------------------ validations
 
@@ -874,6 +716,166 @@ function radiochange() {
 
 });
 // document ready end
+
+function radiochange() {
+
+    var rchange = $('.sgem-hmhcia-calculate-by:checked').val();
+
+    if (rchange == 'income') {
+
+        var main_value_of_house_income = JSON.parse(localStorage.getItem('sgem_hmhcia_income_value_of_house'));
+
+         if (isNaN(main_value_of_house_income) || main_value_of_house_income < 1) {
+
+            $('#sgem_hmhcia_total_text').text('$00.00');
+
+        } else {
+
+            $('#sgem_hmhcia_total_text').text(numberWithCommas('$' + main_value_of_house_income));
+        }
+        //-----------------------
+
+        var finalisingincomearray = JSON.parse(localStorage.getItem('sgem_hmhcia_income_doughnut_data_array'));
+        localStorage.setItem('sgem_hmhcia_doughnut_data_array', JSON.stringify(finalisingincomearray));
+        $("#hidemeon").show();
+        $("#hidemeon2").show();
+        $("#sliderrangeone2").hide();
+        $("#sliderrangeone").show();
+        hmhica_update_chart();
+        sliderfun();
+        //-----------------------
+        var income_monthly_principal_intrest_d = JSON.parse(localStorage.getItem('sgem_hmhcia_income_monthly_principal_intrest'));
+
+        if (isNaN(income_monthly_principal_intrest_d) || income_monthly_principal_intrest_d < 1) {
+
+            $('#sgem_hmhcia_interest_value').text('0');
+
+        } else {
+
+            $('#sgem_hmhcia_interest_value').text(numberWithCommas(income_monthly_principal_intrest_d));
+        }
+        //------------------------
+
+        var income_monthly_home_insurance_d = JSON.parse(localStorage.getItem('sgem_hmhcia_income_monthly_home_insurance'));
+
+        if (isNaN(income_monthly_home_insurance_d) || income_monthly_home_insurance_d < 1) {
+
+            $('#sgem_hmhcia_insurance_value').text('0');
+
+        } else {
+
+            $('#sgem_hmhcia_insurance_value').text(numberWithCommas(income_monthly_home_insurance_d));
+        }
+
+        //--------------------------
+       
+        var  income_monthly_hoa_fees_d = JSON.parse(localStorage.getItem('sgem_hmhcia_income_monthly_hoa_fees'));
+
+         if (isNaN(income_monthly_hoa_fees_d) || income_monthly_hoa_fees_d < 1) {
+
+            $('#sgem_hmhcia_hoe_value').text('0');
+
+        } else {
+
+            $('#sgem_hmhcia_hoe_value').text(numberWithCommas(income_monthly_hoa_fees_d));
+        }
+
+        //--------------------------
+
+        var income_total_monthly_payment_d = JSON.parse(localStorage.getItem('sgem_hmhcia_income_total_monthly_payment_p'));
+
+        if (isNaN(income_total_monthly_payment_d) || income_total_monthly_payment_d < 1) {
+
+            $('.sgem-hmhcia-price-legend-item').text('$0');
+            localStorage.setItem('monthlypayment_slider', JSON.stringify(0));
+
+        } else {
+
+            $('.sgem-hmhcia-price-legend-item').text(numberWithCommas('$'+income_total_monthly_payment_d));
+            localStorage.setItem('monthlypayment_slider', JSON.stringify(income_total_monthly_payment_d));
+
+        }
+
+        //--------------------------
+
+    } else if (rchange == 'payment') {
+
+           var main_value_of_house_payment = JSON.parse(localStorage.getItem('sgem_hmhcia_payment_value_of_house'));
+
+         if (isNaN(main_value_of_house_payment) || main_value_of_house_payment < 1) {
+
+            $('#sgem_hmhcia_total_text').text('$00.00');
+
+        } else {
+
+            $('#sgem_hmhcia_total_text').text(numberWithCommas('$' + main_value_of_house_payment));
+        }
+        //------------------------
+
+        var finalisingpaymentarray = JSON.parse(localStorage.getItem('sgem_hmhcia_payment_doughnut_data_array'));
+        localStorage.setItem('sgem_hmhcia_doughnut_data_array', JSON.stringify(finalisingpaymentarray));
+        $("#hidemeon").hide();
+        $("#hidemeon2").hide();
+         $("#sliderrangeone2").show();
+        $("#sliderrangeone").hide();
+        hmhica_update_chart();
+        sliderfun();
+        //------------------------
+        var payment_monthly_principal_intrest_d = JSON.parse(localStorage.getItem('sgem_hmhcia_payment_monthly_principal_intrest'));
+
+        if (isNaN(payment_monthly_principal_intrest_d) || payment_monthly_principal_intrest_d < 1) {
+
+            $('#sgem_hmhcia_interest_value').text('0');
+
+        } else {
+
+            $('#sgem_hmhcia_interest_value').text(numberWithCommas(payment_monthly_principal_intrest_d));
+        }
+        //------------------------
+
+        var payment_monthly_home_insurance_d = JSON.parse(localStorage.getItem('sgem_hmhcia_payment_monthly_home_insurance'));
+
+        if (isNaN(payment_monthly_home_insurance_d) || payment_monthly_home_insurance_d < 1) {
+
+            $('#sgem_hmhcia_insurance_value').text('0');
+
+        } else {
+
+            $('#sgem_hmhcia_insurance_value').text(numberWithCommas(payment_monthly_home_insurance_d));
+        }
+        //-------------------------
+       
+        var   payment_monthly_hoa_fees_d = JSON.parse(localStorage.getItem('sgem_hmhcia_payment_monthly_hoa_fees'));
+
+         if (isNaN(payment_monthly_hoa_fees_d) || payment_monthly_hoa_fees_d < 1) {
+
+            $('#sgem_hmhcia_hoe_value').text('0');
+
+        } else {
+
+            $('#sgem_hmhcia_hoe_value').text(numberWithCommas(payment_monthly_hoa_fees_d));
+        }
+
+        //-------------------------
+
+        var payment_total_monthly_payment_d = JSON.parse(localStorage.getItem('sgem_hmhcia_payment_total_monthly_payment'));
+
+
+        if (isNaN(payment_total_monthly_payment_d) || payment_total_monthly_payment_d < 1) {
+
+            $('.sgem-hmhcia-price-legend-item').text('$0');
+
+        } else {
+
+            $('.sgem-hmhcia-price-legend-item').text(numberWithCommas('$'+payment_total_monthly_payment_d));
+           
+
+        }
+        //-------------------------
+    }
+
+
+}
 
 //---------------------------------------------------------------------------------------Chart
 
