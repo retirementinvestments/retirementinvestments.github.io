@@ -60,6 +60,10 @@ function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
+window.onload = function() {
+    sgem_hmhcia_calculationmin();
+}
+
 jQuery(document).ready(function($){
 
 function sgem_hmhcia_calculationmin() {
@@ -1036,9 +1040,7 @@ document.getElementById('sgem_hmhcia_hoe_value').innerText = myChart.data.datase
   }*/
 //}
 
-window.onload = function() {
-    sgem_hmhcia_calculationmin();
-}
+
 
 function hmhica_update_chart() {
 
