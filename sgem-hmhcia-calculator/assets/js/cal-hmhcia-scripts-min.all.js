@@ -1036,13 +1036,6 @@ function hmhica_update_chart() {
     myChart.update();
 }
 
-// 
-$(function() {
-    var $radios = $('input:radio[name=sgem-hmhcia-calculate-by]');
-    if($radios.is(':checked') === false) {
-        $radios.filter('[value=income]').prop('checked', true);
-    }
-});
 
 var sliderData = document.getElementById('sgem-hmhcia-ranger');
 
