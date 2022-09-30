@@ -915,9 +915,7 @@ const data = {
     }]
 };
 
-jQuery(function($) {
-    var calby = $(".sgem-hmhcia-calculate-by:checked").val();
-});
+var calby = $(".sgem-hmhcia-calculate-by:checked").val();
 
 //hmhciaGenerateDochart(calby, data);
 
