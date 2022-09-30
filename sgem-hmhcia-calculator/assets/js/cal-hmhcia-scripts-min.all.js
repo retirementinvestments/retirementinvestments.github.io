@@ -1138,7 +1138,6 @@ function updateValueBubble2(pos, value, context) {
    
 }
 
-jQuery(document).ready(function($){
 function sliderfun() {
 $(function () {
     const $inputRange = $('.sgem-hmhcia-range');
@@ -1199,8 +1198,6 @@ $('.sgem-hmhcia-range2').val(slider_maximum_payment).change();
 
 });
 }
-
-});
 //--------------------------------------------------------------------------------------------
 
 
