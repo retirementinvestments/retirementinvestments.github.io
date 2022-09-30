@@ -1080,11 +1080,11 @@ function sgemGenarateSlider(calby) {
     var width = sgemimghouse.width;
     var height = sgemimghouse.height;
     ranger.onchange = function() {
-        sgemimgpig.width = width / (ranger.value / 40);
-        sgemimgpig.height = height / (ranger.value / 40);
+        sgemimgpig.width = width / (ranger.value / 5);
+        sgemimgpig.height = height / (ranger.value / 5);
 
-        sgemimghouse.width = width * (ranger.value / 70);
-        sgemimghouse.height = height * (ranger.value / 70);
+        sgemimghouse.width = width * (ranger.value / 5);
+        sgemimghouse.height = height * (ranger.value / 5);
     }
 }
 function sgemGenarateSlider2(calby) {
@@ -1097,11 +1097,11 @@ function sgemGenarateSlider2(calby) {
     var width = sgemimghouse.width;
     var height = sgemimghouse.height;
     ranger.onchange = function() {
-        sgemimgpig.width = width / (ranger.value / 100);
-        sgemimgpig.height = height / (ranger.value / 100);
+        sgemimgpig.width = width / (ranger.value / 4000);
+        sgemimgpig.height = height / (ranger.value / 4000);
 
-        sgemimghouse.width = width * (ranger.value / 100);
-        sgemimghouse.height = height * (ranger.value / 100);
+        sgemimghouse.width = width * (ranger.value / 4000);
+        sgemimghouse.height = height * (ranger.value / 4000);
     }
 }
 
