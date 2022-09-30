@@ -36,12 +36,12 @@ var sgem_hmhcia_main_contents = '<div class="sgem-hmhcia-cal-main-id"> <div clas
 	'</details></div></div></div></div></div>'+
     '<div class="sgem-hmhcia-logo-center">'+
         '<a class="sgem-hmhcia-url-text" href="https://retirementinvestments.com/retirement/hmhcia-calculator" target="_blank" rel="noopener">HMHCIA Calculator  </a>&nbsp;by Retirement investments'+
-    '</div>'+
     '<div class="sgem-hmhcia-copy-option-panel">'+
         '<h3>Do you want to add this calculator into your website?</h3>'+
         '<div class="sgem-hmhcia-copy-code-wrap">'+
             '<button class="sgem-hmhcia-copy-code" id="sgem-hmhcia-copy-code" onclick="sgem_hmhcia_copyText(event)">Get Calculator'+
             '</button>'+
+        '</div>'+
         '</div>'+
     '</div>';
 
