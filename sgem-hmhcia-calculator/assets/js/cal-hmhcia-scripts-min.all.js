@@ -1173,7 +1173,7 @@ $(function () {
 
       onSlideEnd: function(pos, value) {
       updateValueBubble(pos, value, this);
-      sgem_calmin();
+      sgem_hmhcia_calculationmin();
 
       },
     });
@@ -1188,7 +1188,7 @@ $(function () {
 
       onSlideEnd: function(pos, value) {
       updateValueBubble2(pos, value, this);
-      sgem_calmin();
+      sgem_hmhcia_calculationmin();
 
       },
     });
