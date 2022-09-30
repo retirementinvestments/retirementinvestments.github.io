@@ -1438,16 +1438,16 @@ details.sgem-hmhcia-details-disclaimer[open] > summary::after {
     top: 41px;
 }
 .sgem-hmhcia-wrapper-add-mobile .sgem-hmhcia-cal-left-add-class .sgem-hmhcia-cal-1 .sgem-hmhcia-form-flex.sgem-hmhcia-precentage-holder::after {
-    font-size: 1em;
+    font-size: 0.8em;
     right: 29px;
     top: 44px;
 }
 .sgem-hmhcia-wrapper-add-mobile .sgem-hmhcia-cal-left-add-class .sgem-hmhcia-cal-1 .sgem-hmhcia-form-flex.sgem-hmhcia-months-holder::after,
 .sgem-hmhcia-wrapper-add-mobile .sgem-hmhcia-cal-left-add-class .sgem-hmhcia-cal-1 .sgem-hmhcia-form-flex.sgem-hmhcia-month-holder::after{
-    font-size: 1em;
+    font-size: 0.8em;
 }
 .sgem-hmhcia-wrapper-add-mobile .sgem-hmhcia-cal-left-add-class .sgem-hmhcia-cal-1 .sgem-hmhcia-form-flex.sgem-hmhcia-year-holder::after {
-    font-size: 1em;
+    font-size: 0.8em;
 }
 .sgem-hmhcia-wrapper-add-mobile .sgem-hmhcia-cal-left-add-class .sgem-hmhcia-collapsible-summary-title {
     font-size: 1em;
