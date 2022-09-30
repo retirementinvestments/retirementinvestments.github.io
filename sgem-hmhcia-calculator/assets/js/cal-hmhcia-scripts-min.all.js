@@ -60,6 +60,8 @@ function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
+jQuery(document).ready(function($){
+
 function sgem_hmhcia_calculationmin() {
 
     var doughnut_data_array = [];
@@ -253,9 +255,9 @@ function sgem_hmhcia_calculationmin() {
 
 sgem_hmhcia_calculationmin();
 
-window.onload = function() {
-    sgem_hmhcia_calculationmin();
-}
+// window.onload = function() {
+//     sgem_hmhcia_calculationmin();
+// }
 
 if ($('#sgem-hmhcia-ranger,#sgem-hmhcia-cal-tab1,#sgem-hmhcia-cal-tab2,#sgem_hmhcia_annual_income,#sgem_hmhcia_monthly_debts,#sgem_hmhcia_income_down_payment,#sgem_hmhcia_rent_payment,#sgem_hmhcia_interest_rate,#sgem_hmhcia_loan_term,#sgem_hmhcia_prop_tax_,#sgem_hmhcia_home_insurance,#sgem_hmhcia_private_mortgage_insurance,#sgem_hmhcia_ahomeowners_association_dues,#sgem_hmhcia_interest_maximum_payment,#sgem_hmhcia_down_payment_pay,#sgem_hmhcia_interest_rate_payment,#sgem_hmhcia_p_loan_turm,#sgem_hmhcia_home_insurance_payment,#sgem_hmhcia_hoa_dues').length > 0) {
     $('#sgem-hmhcia-ranger,#sgem-hmhcia-cal-tab1,#sgem-hmhcia-cal-tab2,#sgem_hmhcia_annual_income,#sgem_hmhcia_monthly_debts,#sgem_hmhcia_income_down_payment,#sgem_hmhcia_rent_payment,#sgem_hmhcia_interest_rate,#sgem_hmhcia_loan_term,#sgem_hmhcia_prop_tax_,#sgem_hmhcia_home_insurance,#sgem_hmhcia_private_mortgage_insurance,#sgem_hmhcia_ahomeowners_association_dues,#sgem_hmhcia_interest_maximum_payment,#sgem_hmhcia_down_payment_pay,#sgem_hmhcia_interest_rate_payment,#sgem_hmhcia_p_loan_turm,#sgem_hmhcia_home_insurance_payment,#sgem_hmhcia_hoa_dues').on('keyup', function() {
@@ -874,7 +876,8 @@ function radiochange() {
   }            
     });
 
-
+});
+// document ready end
 
 //---------------------------------------------------------------------------------------Chart
 
