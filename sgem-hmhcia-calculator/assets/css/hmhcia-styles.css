@@ -1414,6 +1414,18 @@ details.sgem-hmhcia-details-disclaimer[open] > summary::after {
 	top: 0px;
 }
 
+.sgem-hmhcia-cal-main-id .sgem-hmhcia-cal-left-add-class .sgem-hmhcia-form-checkbox label .sgem-hmhcia-form-checkbox-style:after {
+    left: 7px;
+    top: 4px;
+    width: 6px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
 /* add mobile styles */
 .sgem-hmhcia-wrapper-add-mobile .sgem-hmhcia-cal-left {
     height: auto;
