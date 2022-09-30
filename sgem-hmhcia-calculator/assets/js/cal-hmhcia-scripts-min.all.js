@@ -36,7 +36,8 @@ var sgem_hmhcia_main_contents = '<div class="sgem-hmhcia-cal-main-id"> <div clas
 
 if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com"){
     sgem_hmhcia_main_contents += '<div class="sgem-hmhcia-cal-1-result-footer">';
-    sgem_hmhcia_main_contents += '</div><div class="sgem-hmhcia-buttonGet">';
+    sgem_hmhcia_main_contents += '<div class="sgem-hmhcia-content">The right mortgage can save you thousands. Confirm your affordability with our recommended lender.</div>';
+    sgem_hmhcia_main_contents += '<div class="sgem-hmhcia-buttonGet">';
     sgem_hmhcia_main_contents += '<a href="https://retirementinvestments.com/affordabilitycalculator" target="_blank" class="sgem-hmhcia-getStart" rel="noopener"> GET STARTED </a>';
     sgem_hmhcia_main_contents += '</div></div>';
 }
