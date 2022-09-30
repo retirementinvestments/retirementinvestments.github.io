@@ -75,7 +75,7 @@ window.onload = function() {
 }
 
 
-function sgem_calmin() {
+jQuery(document).ready(function($){
 
 function sgem_hmhcia_calculationmin() {
 
@@ -729,7 +729,7 @@ if ($('#sgem_hmhcia_annual_income,#sgem_hmhcia_monthly_debts,#sgem_hmhcia_income
   }            
     });
 
-}
+});
 // document ready end
 
 function radiochange() {
