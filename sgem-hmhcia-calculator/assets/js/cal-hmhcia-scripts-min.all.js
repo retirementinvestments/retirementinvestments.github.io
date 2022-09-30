@@ -1250,6 +1250,10 @@ tippy('[data-tippy-content]', {
     });
 });*/
 
+window.onload=function(){
+    document.getElementById("sgem-hmhcia-cal-tab1").click();
+};
+
 $(document).ready(function() {
 
     window.onload=function(){
