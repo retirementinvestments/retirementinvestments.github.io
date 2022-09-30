@@ -65,7 +65,7 @@ window.onload = function() {
     sgem_hmhcia_calculationmin();
 }
 
-jQuery(document).ready(function($){
+jQuery(document).ready(function sgem_calmin ($){
 
 function sgem_hmhcia_calculationmin() {
 
@@ -1163,7 +1163,7 @@ $(function () {
 
       onSlideEnd: function(pos, value) {
       updateValueBubble(pos, value, this);
-      sgem_hmhcia_calculationmin();
+      sgem_calmin();
 
       },
     });
@@ -1178,7 +1178,7 @@ $(function () {
 
       onSlideEnd: function(pos, value) {
       updateValueBubble2(pos, value, this);
-      sgem_hmhcia_calculationmin();
+      sgem_calmin();
 
       },
     });
