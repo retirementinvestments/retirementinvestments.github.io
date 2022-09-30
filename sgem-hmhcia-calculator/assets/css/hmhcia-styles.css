@@ -1350,7 +1350,8 @@ details.sgem-hmhcia-details-disclaimer[open] > summary::after {
 .sgem-hmhcia-cal-right-add-class .sgem-hmhcia-principle-interest-te, 
 .sgem-hmhcia-cal-right-add-class .sgem-hmhcia-property-te, 
 .sgem-hmhcia-cal-right-add-class .sgem-hmhcia-insurance-te, 
-.sgem-hmhcia-cal-right-add-class .sgem-hmhcia-pmi-te {
+.sgem-hmhcia-cal-right-add-class .sgem-hmhcia-pmi-te,
+.sgem-hmhcia-cal-right-add-class .sgem_hmhcia_hoe_te {
 	font-size: 0.9em;
 }
 .sgem-hmhcia-cal-right-add-class .sgem-hmhcia-legend-total-section {
