@@ -1404,14 +1404,14 @@ details.sgem-hmhcia-details-disclaimer[open] > summary::after {
 .sgem-hmhcia-cal-left-add-class .sgem-hmhcia-cal-tabs input#sgem-hmhcia-cal-tab1:checked ~ .sgem-hmhcia-form-checkbox-style-tic1:before {
 	content: url(/sgem-hmhcia-calculator/assets/images/fill-green-tic.svg);
 	position: absolute;
-    right: 5px;
-    top: 0px;
+    right: 6px;
+    top: 2px;
 }
 .sgem-hmhcia-cal-left-add-class .sgem-hmhcia-cal-tabs input#sgem-hmhcia-cal-tab2:checked ~ .sgem-hmhcia-form-checkbox-style-tic2:before {
 	content: url(/sgem-hmhcia-calculator/assets/images/fill-green-tic.svg);
 	position: absolute;
-    right: 5px;
-	top: 0px;
+    right: 6px;
+	top: 2px;
 }
 
 .sgem-hmhcia-cal-main-id .sgem-hmhcia-cal-left-add-class .sgem-hmhcia-form-checkbox label .sgem-hmhcia-form-checkbox-style:after {
