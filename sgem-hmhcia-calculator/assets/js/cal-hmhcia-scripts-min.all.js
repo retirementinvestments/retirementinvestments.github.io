@@ -49,10 +49,10 @@ if( (location.hostname != "calculatorstg.wpengine.com") || (location.hostname !=
 }
     
 if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com"){
-    sgem_401k_main_contents += '<div class="sgem-hmhcia-copy-option-panel">';
-    sgem_401k_main_contents += '<h3>Do you want to add this calculator into your website?</h3><div class="sgem-hmhcia-copy-code-wrap">';
-    sgem_401k_main_contents += '<button class="sgem-hmhcia-copy-code" id="sgem-hmhcia-copy-code" onclick="sgem_hmhcia_copyText(event)">Get Calculator</button>';
-    sgem_401k_main_contents += '</div></div></div>';
+    sgem_hmhcia_main_contents += '<div class="sgem-hmhcia-copy-option-panel">';
+    sgem_hmhcia_main_contents += '<h3>Do you want to add this calculator into your website?</h3><div class="sgem-hmhcia-copy-code-wrap">';
+    sgem_hmhcia_main_contents += '<button class="sgem-hmhcia-copy-code" id="sgem-hmhcia-copy-code" onclick="sgem_hmhcia_copyText(event)">Get Calculator</button>';
+    sgem_hmhcia_main_contents += '</div></div></div>';
 }
 sgem_hmhcia_main_contents += '</div>';  
 
