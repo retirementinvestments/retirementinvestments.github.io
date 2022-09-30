@@ -1304,6 +1304,7 @@ details.sgem-hmhcia-details-disclaimer[open] > summary::after {
 .sgem-hmhcia-cal-left-add-class .sgem-hmhcia-cal-1 input[type="text"] {
     font-size: 0.8em;
     height: 45px;
+    width: 100%;
 }
 .sgem-hmhcia-cal-left-add-class .sgem-hmhcia-info-tooltip {
     width: 15px;
