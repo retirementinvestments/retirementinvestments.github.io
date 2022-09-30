@@ -1434,7 +1434,7 @@ details.sgem-hmhcia-details-disclaimer[open] > summary::after {
 	padding-right: 0;
 }
 .sgem-hmhcia-wrapper-add-mobile .sgem-hmhcia-cal-left-add-class .sgem-hmhcia-cal-1 .sgem-hmhcia-form-flex.sgem-hmhcia-currency-holder::after {
-    font-size: 1em;
+    font-size: 0.8em;
     top: 41px;
 }
 .sgem-hmhcia-wrapper-add-mobile .sgem-hmhcia-cal-left-add-class .sgem-hmhcia-cal-1 .sgem-hmhcia-form-flex.sgem-hmhcia-precentage-holder::after {
@@ -1505,10 +1505,10 @@ details.sgem-hmhcia-details-disclaimer[open] > summary::after {
 	font-size: 1em;
 }
 .sgem-hmhcia-wrapper-add-mobile .sgem-hmhcia-cal-left-add-class .sgem-hmhcia-cal-1 .sgem-hmhcia-form-group label {
-    font-size: 1em;
+    font-size: 0.8em;
 }
 .sgem-hmhcia-wrapper-add-mobile .sgem-hmhcia-cal-left-add-class .sgem-hmhcia-cal-1 input[type="text"] {
-    font-size: 1em;
+    font-size: 0.8em;
     height: 45px;
     width: 100%;
 }
