@@ -1319,7 +1319,7 @@ for (let e of document.querySelectorAll('input[type="range"].slider-progress')) 
 }
 
 // copy script section
-localStorage.setItem('sgem-hmhcia-cal-copy', '<div id="sgem-hmhcia-cal"></div><script>window.onload = function() {var sgemhmhciacal = document.createElement("script");sgemhmhciacal.type = "text/javascript";sgemhmhciacal.src = "https://retirementinvestments.github.io/sgem-hmhcia-calculator/assets/js/cal-hmhcia-cal-scripts.min.js";document.body.appendChild(sgemhmhciacal);} </script>'); 
+localStorage.setItem('sgem-hmhcia-cal-copy', '<div id="sgem-hmhcia-cal"></div><script>window.onload = function() {var sgemhmhciacal = document.createElement("script");sgemhmhciacal.type = "text/javascript";sgemhmhciacal.src = "https://retirementinvestments.github.io/sgem-hmhcia-calculator/assets/js/cal-hmhcia-scripts.min.js";document.body.appendChild(sgemhmhciacal);} </script>'); 
  
 function sgem_hmhcia_copyText(ev){
   //console.log("hi");
