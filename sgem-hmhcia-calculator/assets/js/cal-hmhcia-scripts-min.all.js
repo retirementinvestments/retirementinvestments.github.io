@@ -1036,7 +1036,13 @@ function hmhica_update_chart() {
     myChart.update();
 }
 
-
+// 
+$(function() {
+    var $radios = $('input:radio[name=sgem-hmhcia-calculate-by]');
+    if($radios.is(':checked') === false) {
+        $radios.filter('[value=income]').prop('checked', true);
+    }
+});
 
 var sliderData = document.getElementById('sgem-hmhcia-ranger');
 
@@ -1250,15 +1256,8 @@ tippy('[data-tippy-content]', {
     });
 });*/
 
-window.onload=function(){
-    document.getElementById("sgem-hmhcia-cal-tab1").click();
-};
 
 $(document).ready(function() {
-
-    window.onload=function(){
-        document.getElementById("sgem-hmhcia-cal-tab1").click();
-    };
 
     if ($('.sgem-hmhcia-cal-wrapper').width() < 1024) {
         $('.sgem-hmhcia-cal-left').addClass('sgem-hmhcia-cal-left-add-class');
