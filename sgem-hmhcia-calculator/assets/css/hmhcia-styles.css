@@ -30,8 +30,15 @@
     align-content: center;
     justify-content: center;
     align-items: center;
-    font-size: 16px;
+    font-size: 13px;
 	padding-right: 5px;
+}
+.sgem-hmhcia-logo-center a.sgem-401k-url-text {
+	color: rgb(21, 105, 176);
+}
+.sgem-401k-logo-center a.sgem-401k-url-text:hover {
+    text-decoration: none;
+    color: #002340;
 }
 .sgem-hmhcia-logo-image {
 	padding-top: 5px;
