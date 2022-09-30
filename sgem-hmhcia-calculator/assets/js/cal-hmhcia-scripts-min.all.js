@@ -43,7 +43,7 @@ var sgem_hmhcia_main_contents = '<div class="sgem-hmhcia-cal-main-id"> <div clas
             '<button class="sgem-hmhcia-copy-code" id="sgem-hmhcia-copy-code" onclick="sgem_hmhcia_copyText(event)">Get Calculator'+
             '</button>'+
         '</div>'+
-    '</div>'+
+    '</div>';
 
 sgem_hmhcia_main_contents += '</div>';  
 
