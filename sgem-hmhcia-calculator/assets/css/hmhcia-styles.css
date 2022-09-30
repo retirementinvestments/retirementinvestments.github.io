@@ -33,10 +33,10 @@
     font-size: 13px;
 	padding-right: 5px;
 }
-.sgem-hmhcia-logo-center a.sgem-401k-url-text {
+.sgem-hmhcia-logo-center a.sgem-hmhcia-url-text {
 	color: rgb(21, 105, 176);
 }
-.sgem-401k-logo-center a.sgem-401k-url-text:hover {
+.sgem-401k-logo-center a.sgem-hmhcia-url-text:hover {
     text-decoration: none;
     color: #002340;
 }
