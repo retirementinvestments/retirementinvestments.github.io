@@ -780,8 +780,8 @@ function updateBubblePosition() {
     jQuery('.rangeslider__value-bubble').css('left',rangeFillWidth);
 }
 function updateBubblePosition2() {
-    var rangeFillWidth = jQuery('.rangeslider__fill').css("width");
-    jQuery('.rangeslider__value-bubble2').css('left',rangeFillWidth);
+    var rangeFillWidth2 = jQuery('.rangeslider__fill').css("width");
+    jQuery('.rangeslider__value-bubble2').css('left',rangeFillWidth2);
 }
 
 
