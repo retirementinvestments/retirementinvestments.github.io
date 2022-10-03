@@ -102,6 +102,7 @@ function numberWithCommas(x) {
 window.onload = function() {
     sgem_hmhcia_calculationmin();
     updateBubblePosition();
+    updateBubblePosition2();
 }
 
 
