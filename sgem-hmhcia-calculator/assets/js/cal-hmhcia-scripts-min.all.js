@@ -770,14 +770,13 @@ if ($('#sgem_hmhcia_annual_income,#sgem_hmhcia_monthly_debts,#sgem_hmhcia_income
   }            
     });
 
+});
+// document ready end
+
 function bubblePositionUpdate() {
     var rangeFillWidth = jQuery('.rangeslider__fill').css("width");
     jQuery('.rangeslider__value-bubble').css('left',rangeFillWidth);
 }
-
-
-});
-// document ready end
 
 function radiochange() {
 
