@@ -101,11 +101,11 @@ function numberWithCommas(x) {
 
 window.onload = function() {
     sgem_hmhcia_calculationmin();
-    
+
     setInterval(function(){
        updateBubblePosition();
         updateBubblePosition2();
-    }, 500);
+    }, 3000);
 }
 
 window.addEventListener('load', function () {
