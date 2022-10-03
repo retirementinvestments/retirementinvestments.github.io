@@ -108,6 +108,7 @@ window.onload = function() {
 window.addEventListener('load', function () {
     updateBubblePosition();
     updateBubblePosition2();
+    updateValueBubble();
 })
 
 
