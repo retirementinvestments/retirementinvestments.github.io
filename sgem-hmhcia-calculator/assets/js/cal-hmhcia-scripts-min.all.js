@@ -1222,7 +1222,7 @@ function sliderfun() {
 
       onSlide: function(pos, value) {
           updateBubblePosition();
-      }
+      },
 
       onSlideEnd: function(pos, value) {
       updateValueBubble(pos, value, this);
