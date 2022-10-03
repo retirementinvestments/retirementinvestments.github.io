@@ -103,11 +103,13 @@ window.onload = function() {
     sgem_hmhcia_calculationmin();
     // updateBubblePosition();
     // updateBubblePosition2();
+    updateValueBubble();
 }
 
 window.addEventListener('load', function () {
     updateBubblePosition();
     updateBubblePosition2();
+    updateValueBubble();
 });
 
 
