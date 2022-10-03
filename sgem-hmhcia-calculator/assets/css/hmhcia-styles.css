@@ -1551,6 +1551,10 @@ details.sgem-hmhcia-details-disclaimer[open] > summary::after {
 	.sgem-hmhcia-cal-left-add-class .sgem-hmhcia-cal-tabs input#sgem-hmhcia-cal-tab2:checked ~ .sgem-hmhcia-form-checkbox-style-tic2:before {
 		top: 0px;
 	}
+	.sgem-hmhcia-copy-option-panel {
+	    margin-top: 25px;
+	    padding: 0 20px;
+	}
 }
 
 @media (max-width: 650px) {
