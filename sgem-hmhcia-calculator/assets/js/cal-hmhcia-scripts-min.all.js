@@ -774,11 +774,12 @@ if ($('#sgem_hmhcia_annual_income,#sgem_hmhcia_monthly_debts,#sgem_hmhcia_income
 // document ready end
 
 function updateBubblePosition() {
-    // const rangeslider__fill_ = getElementsByClassName('rangeslider__fill');
-    // rangeslider__fill_.onchange = function() {
-        var rangeFillWidth = jQuery('.rangeslider__fill').css("width");
-        jQuery('.rangeslider__value-bubble').css('left',rangeFillWidth);
-//     }
+    var rangeFillWidth = jQuery('.rangeslider__fill').css("width");
+    jQuery('.rangeslider__value-bubble').css('left',rangeFillWidth);
+}
+function updateBubblePosition2() {
+    var rangeFillWidth = jQuery('.rangeslider__fill').css("width");
+    jQuery('.rangeslider__value-bubble2').css('left',rangeFillWidth);
 }
 
 
@@ -1240,7 +1241,7 @@ function sliderfun() {
       },
 
       onSlide: function(pos, value) {
-          updateBubblePosition();
+          updateBubblePosition2();
       },
 
       onSlideEnd: function(pos, value) {
