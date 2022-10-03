@@ -947,9 +947,13 @@ img#sgem-hmhcia-image-house2
 }
 
 /* range js  styles*/
-.sgem-hmhcia-slider-range-input .rangeslider__fill,
+.sgem-hmhcia-slider-range-input .rangeslider__fill {
+	background: #4BCC8C;
+}
 .sgem-hmhcia-slider-range-input .rangeslider__fill2 {
 	background: #4BCC8C;
+    height: 10px;
+    border-radius: 10px;
 }
 .sgem-hmhcia-slider-range-input .rangeslider--horizontal {
     height: 10px;
