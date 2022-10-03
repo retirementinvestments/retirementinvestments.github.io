@@ -1184,6 +1184,8 @@ setTimeout(function() {
     $hmhciaValueBubble[0].style.left = Math.ceil(position) + 'px';
     $hmhciaValueBubble[0].innerHTML = numberWithCommas('$' + permonth_income + ' /mo');
   }
+  updateBubblePosition(); // sh
+  
 }, delayInMilliseconds);
    
 }
