@@ -786,11 +786,13 @@ function updateBubblePosition() {
 	//alert(2222);
     //var rangeFillWidth = jQuery('.rangeslider__fill').css("width");
     //$('.rangeslider__value-bubble').css('left',rangeFillWidth);
-	$('.rangeslider__handle').trigger('click');
+	//$('.rangeslider__handle').trigger('click');
+	$('#sgem-hmhcia-ranger').rangeslider('update', true);
 }
 function updateBubblePosition2() {
-    var rangeFillWidth2 = jQuery('.rangeslider__fill2').css("width");
-    $('.rangeslider__value-bubble2').css('left',rangeFillWidth2);
+    //var rangeFillWidth2 = jQuery('.rangeslider__fill2').css("width");
+    //$('.rangeslider__value-bubble2').css('left',rangeFillWidth2);
+	$('#sgem-hmhcia-ranger2').rangeslider('update', true);
 }
 
 
