@@ -105,7 +105,10 @@ window.onload = function() {
     // updateBubblePosition2();
 }
 
-
+window.addEventListener('load', function () {
+    updateBubblePosition();
+    updateBubblePosition2();
+})
 
 
 function sgem_hmhcia_calculationmin() {
@@ -771,11 +774,6 @@ if ($('#sgem_hmhcia_annual_income,#sgem_hmhcia_monthly_debts,#sgem_hmhcia_income
 
   }            
     });
-
-window.addEventListener('load', function () {
-    updateBubblePosition();
-    updateBubblePosition2();
-});
 
 });
 // document ready end
