@@ -545,7 +545,7 @@ if ($('#sgem_hmhcia_annual_income,#sgem_hmhcia_monthly_debts,#sgem_hmhcia_income
 
       // hoe
     $('#sgem_hmhcia_ahomeowners_association_dues').on('keyup', function () {
-      var vcsac3     = $('#sgem_hmhcia_home_insurance').val().trim();
+      var vcsac3     = $('#sgem_hmhcia_ahomeowners_association_dues').val().trim();
       var vcsac2 = vcsac3.replace(/\,/g,'');
       var vcsac = parseInt(vcsac2,10); 
       if (isNaN(vcsac) || vcsac>20000){
