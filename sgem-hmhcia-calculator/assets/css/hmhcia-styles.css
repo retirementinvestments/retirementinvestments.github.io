@@ -1545,6 +1545,12 @@ details.sgem-hmhcia-details-disclaimer[open] > summary::after {
     	border-left: solid 12px transparent;
     	border-right: solid 12px transparent;
 	}
+	.sgem-hmhcia-cal-left-add-class .sgem-hmhcia-cal-tabs input#sgem-hmhcia-cal-tab1:checked ~ .sgem-hmhcia-form-checkbox-style-tic1:before {
+		top: 0px;
+	}
+	.sgem-hmhcia-cal-left-add-class .sgem-hmhcia-cal-tabs input#sgem-hmhcia-cal-tab2:checked ~ .sgem-hmhcia-form-checkbox-style-tic2:before {
+		top: 0px;
+	}
 }
 
 @media (max-width: 650px) {
