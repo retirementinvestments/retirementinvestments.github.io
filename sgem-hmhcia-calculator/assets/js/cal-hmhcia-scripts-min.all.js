@@ -102,12 +102,12 @@ function numberWithCommas(x) {
 window.onload = function() {
     sgem_hmhcia_calculationmin();
 
-    setInterval(function(){
+    //setInterval(function(){
         //updateBubblePosition();
         //updateBubblePosition2();
 		var rangeFillWidth = jQuery('.rangeslider__fill').css("width");
 		$('.rangeslider__value-bubble').css('left',rangeFillWidth);
-    }, 1000);
+   // }, 1000);
 }
 
 // window.addEventListener('load', function () {
