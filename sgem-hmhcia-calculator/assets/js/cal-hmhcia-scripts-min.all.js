@@ -1246,6 +1246,8 @@ function sliderfun() {
       onSlideEnd: function(pos, value) {
       // updateValueBubble(pos, value, this);
       sgem_hmhcia_calculationmin();
+	  var rangeFillWidth = jQuery('.rangeslider__fill').css("width");
+		$('.rangeslider__value-bubble').css('left',rangeFillWidth);
 
       },
     });
