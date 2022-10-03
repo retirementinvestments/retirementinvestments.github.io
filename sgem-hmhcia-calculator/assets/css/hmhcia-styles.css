@@ -856,8 +856,13 @@
 .sgem-hmhcia-cal-main-id .sgem-hmhcia-cal-1-result-wrapper .sgem-hmhcia-slider-section {
 	padding-bottom: 70px;
 }
+.sgem-hmhcia-input-range-custom-section {
+	margin-bottom: 30px;
+}
 img#sgem-hmhcia-image-pig,
-img#sgem-hmhcia-image-house
+img#sgem-hmhcia-image-house,
+img#sgem-hmhcia-image-pig2,
+img#sgem-hmhcia-image-house2
 {
 	max-width: 100px;
 	min-width: 40px;
