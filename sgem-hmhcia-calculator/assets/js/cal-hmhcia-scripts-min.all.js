@@ -1184,7 +1184,7 @@ setTimeout(function() {
     $hmhciaValueBubble[0].style.left = Math.ceil(position) + 'px';
     $hmhciaValueBubble[0].innerHTML = numberWithCommas('$' + permonth_income + ' /mo');
   }
-  updateBubblePosition(); // sh
+  //updateBubblePosition(); // sh
   
 }, delayInMilliseconds);
    
@@ -1350,15 +1350,19 @@ $(document).ready(function() {
     if ($('.sgem-hmhcia-cal-wrapper').width() < 1024) {
         $('.sgem-hmhcia-cal-left').addClass('sgem-hmhcia-cal-left-add-class');
         $('.sgem-hmhcia-cal-right').addClass('sgem-hmhcia-cal-right-add-class');
+		updateBubblePosition(); // sh
     } else {
         $('.sgem-hmhcia-cal-left').removeClass('sgem-hmhcia-cal-left-add-class');
         $('.sgem-hmhcia-cal-right').removeClass('sgem-hmhcia-cal-right-add-class');
+		updateBubblePosition(); // sh
     }
 
     if ($('.sgem-hmhcia-cal-main-id').width() < 650) {
         $('.sgem-hmhcia-cal-wrapper').addClass('sgem-hmhcia-wrapper-add-mobile');
+		updateBubblePosition(); // sh
     } else {
         $('.sgem-hmhcia-cal-wrapper').removeClass('sgem-hmhcia-wrapper-add-mobile');
+		updateBubblePosition(); // sh
     }
 
     $(window).on('resize', function() {
