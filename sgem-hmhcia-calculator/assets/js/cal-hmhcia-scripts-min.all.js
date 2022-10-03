@@ -105,7 +105,7 @@ window.onload = function() {
     setInterval(function(){
         updateBubblePosition();
         updateBubblePosition2();
-    }, 6000);
+    }, 3000);
 }
 
 window.addEventListener('load', function () {
