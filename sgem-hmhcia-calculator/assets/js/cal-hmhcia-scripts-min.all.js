@@ -103,9 +103,11 @@ window.onload = function() {
     sgem_hmhcia_calculationmin();
 
     setInterval(function(){
-        updateBubblePosition();
-        updateBubblePosition2();
-    }, 3000);
+        //updateBubblePosition();
+        //updateBubblePosition2();
+		var rangeFillWidth = jQuery('.rangeslider__fill').css("width");
+		$('.rangeslider__value-bubble').css('left',rangeFillWidth);
+    }, 1000);
 }
 
 // window.addEventListener('load', function () {
@@ -301,8 +303,8 @@ function sgem_hmhcia_calculationmin() {
     radiochange();
     hmhica_update_chart();
 
-    updateBubblePosition();
-    updateBubblePosition2();
+    //updateBubblePosition();
+    //updateBubblePosition2();
     
 
 }
@@ -784,8 +786,8 @@ if ($('#sgem_hmhcia_annual_income,#sgem_hmhcia_monthly_debts,#sgem_hmhcia_income
 
 function updateBubblePosition() {
 	//alert(2222);
-    var rangeFillWidth = jQuery('.rangeslider__fill').css("width");
-    $('.rangeslider__value-bubble').css('left',rangeFillWidth);
+    //var rangeFillWidth = jQuery('.rangeslider__fill').css("width");
+   // $('.rangeslider__value-bubble').css('left',rangeFillWidth);
 	//$('.rangeslider__handle').trigger('click');
 	//$('#sgem-hmhcia-ranger').rangeslider('update', true);
 }
@@ -1237,7 +1239,7 @@ function sliderfun() {
       },
 
       onSlide: function(pos, value) {
-          updateBubblePosition();
+          //updateBubblePosition();
           updateValueBubble(pos, value, this);
       },
 
@@ -1257,7 +1259,7 @@ function sliderfun() {
       },
 
       onSlide: function(pos, value) {
-          updateBubblePosition2();
+          //updateBubblePosition2();
           updateValueBubble2(pos, value, this);
       },
 
@@ -1354,19 +1356,19 @@ $(document).ready(function() {
     if ($('.sgem-hmhcia-cal-wrapper').width() < 1024) {
         $('.sgem-hmhcia-cal-left').addClass('sgem-hmhcia-cal-left-add-class');
         $('.sgem-hmhcia-cal-right').addClass('sgem-hmhcia-cal-right-add-class');
-		updateBubblePosition(); // sh
+		//updateBubblePosition(); // sh
     } else {
         $('.sgem-hmhcia-cal-left').removeClass('sgem-hmhcia-cal-left-add-class');
         $('.sgem-hmhcia-cal-right').removeClass('sgem-hmhcia-cal-right-add-class');
-		updateBubblePosition(); // sh
+		//updateBubblePosition(); // sh
     }
 
     if ($('.sgem-hmhcia-cal-main-id').width() < 650) {
         $('.sgem-hmhcia-cal-wrapper').addClass('sgem-hmhcia-wrapper-add-mobile');
-		updateBubblePosition(); // sh
+		//updateBubblePosition(); // sh
     } else {
         $('.sgem-hmhcia-cal-wrapper').removeClass('sgem-hmhcia-wrapper-add-mobile');
-		updateBubblePosition(); // sh
+		//updateBubblePosition(); // sh
     }
 
     $(window).on('resize', function() { 
