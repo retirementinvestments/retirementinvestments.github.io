@@ -105,7 +105,7 @@ window.onload = function() {
     setInterval(function(){
         //updateBubblePosition();
         //updateBubblePosition2();
-		var rangeFillWidth = jQuery('.rangeslider__fill').css("width");
+		var rangeFillWidth = $('.rangeslider__fill').css("width");
 		$('.rangeslider__value-bubble').css('left',rangeFillWidth);
     }, 300);
 }
@@ -305,7 +305,8 @@ function sgem_hmhcia_calculationmin() {
 
     //updateBubblePosition();
     //updateBubblePosition2();
-    
+    var rangeFillWidth = $('.rangeslider__fill').css("width");
+		$('.rangeslider__value-bubble').css('left',rangeFillWidth);
 
 }
 
@@ -1236,8 +1237,8 @@ function sliderfun() {
          onInit: function() {
       this.$range.append($(hmhciaValueBubble));
       updateValueBubble(null, null, this);
-	  var rangeFillWidth = jQuery('.rangeslider__fill').css("width");
-		$('.rangeslider__value-bubble').css('left',rangeFillWidth);
+	  //var rangeFillWidth = jQuery('.rangeslider__fill').css("width");
+		//$('.rangeslider__value-bubble').css('left',rangeFillWidth);
       },
 
       onSlide: function(pos, value) {
@@ -1248,8 +1249,8 @@ function sliderfun() {
       onSlideEnd: function(pos, value) {
       // updateValueBubble(pos, value, this);
       sgem_hmhcia_calculationmin();
-	    var rangeFillWidth = jQuery('.rangeslider__fill').css("width");
-		$('.rangeslider__value-bubble').css('left',rangeFillWidth);
+	    //var rangeFillWidth = jQuery('.rangeslider__fill').css("width");
+		//$('.rangeslider__value-bubble').css('left',rangeFillWidth);
 
       },
     });
