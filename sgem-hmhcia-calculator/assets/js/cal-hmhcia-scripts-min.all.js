@@ -1365,7 +1365,7 @@ $(document).ready(function() {
 		updateBubblePosition(); // sh
     }
 
-    $(window).on('resize', function() {
+    $(window).on('resize', function() { 
         if ($('.sgem-hmhcia-cal-wrapper').width() < 1024) {
             $('.sgem-hmhcia-cal-left').addClass('sgem-hmhcia-cal-left-add-class');
             $('.sgem-hmhcia-cal-right').addClass('sgem-hmhcia-cal-right-add-class');
