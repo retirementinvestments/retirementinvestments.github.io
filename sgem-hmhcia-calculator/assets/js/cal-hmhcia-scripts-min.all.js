@@ -105,9 +105,11 @@ window.onload = function() {
     setInterval(function(){
         //updateBubblePosition();
         //updateBubblePosition2();
-		var rangeFillWidth = $('.rangeslider__fill').css("width");
-		$('.rangeslider__value-bubble').css('left',rangeFillWidth);
-    }, 300);
+		if($('.rangeslider__handle').length >0){
+			var rangeFillWidth = $('.rangeslider__fill').css("width");
+			$('.rangeslider__value-bubble').css('left',rangeFillWidth);
+		}
+    }, 500);
 }
 
 // window.addEventListener('load', function () {
@@ -306,10 +308,10 @@ function sgem_hmhcia_calculationmin() {
     //updateBubblePosition();
     //updateBubblePosition2();
     var rangeFillWidth = $('.rangeslider__fill').css("width");
-		$('.rangeslider__value-bubble').css('left',rangeFillWidth);
+    $('.rangeslider__value-bubble').css('left',rangeFillWidth);
 
 }
-
+ 
 
 jQuery(document).ready(function($){
 
