@@ -784,15 +784,15 @@ if ($('#sgem_hmhcia_annual_income,#sgem_hmhcia_monthly_debts,#sgem_hmhcia_income
 
 function updateBubblePosition() {
 	//alert(2222);
-    //var rangeFillWidth = jQuery('.rangeslider__fill').css("width");
-    //$('.rangeslider__value-bubble').css('left',rangeFillWidth);
+    var rangeFillWidth = jQuery('.rangeslider__fill').css("width");
+    $('.rangeslider__value-bubble').css('left',rangeFillWidth);
 	//$('.rangeslider__handle').trigger('click');
-	$('#sgem-hmhcia-ranger').rangeslider('update', true);
+	//$('#sgem-hmhcia-ranger').rangeslider('update', true);
 }
 function updateBubblePosition2() {
     //var rangeFillWidth2 = jQuery('.rangeslider__fill2').css("width");
     //$('.rangeslider__value-bubble2').css('left',rangeFillWidth2);
-	$('#sgem-hmhcia-ranger2').rangeslider('update', true);
+	//$('#sgem-hmhcia-ranger2').rangeslider('update', true);
 }
 
 
