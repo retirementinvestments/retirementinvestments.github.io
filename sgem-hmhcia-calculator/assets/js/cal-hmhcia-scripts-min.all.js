@@ -1208,12 +1208,8 @@ function sliderfun() {
       updateValueBubble(null, null, this);
       },
 
-      onSlide: function(pos, value) {
-      updateValueBubble(pos, value, this);
-
-      },
-
       onSlideEnd: function(pos, value) {
+      updateValueBubble(pos, value, this);
       sgem_hmhcia_calculationmin();
 
       },
