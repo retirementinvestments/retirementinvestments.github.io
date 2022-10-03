@@ -1573,8 +1573,9 @@ details.sgem-hmhcia-details-disclaimer[open] > summary::after {
 		width: 100%;
 	}
 	.sgem-hmhcia-cal-main-id .sgem-hmhcia-cal-left-add-class .sgem-hmhcia-form-checkbox label .sgem-hmhcia-form-checkbox-style:after {
-	    left: 5px;
-	    top: 2px;
+	   	left: 6px;
+    	top: 1.8px;
+    	width: 5px;
 	}
 }
  
