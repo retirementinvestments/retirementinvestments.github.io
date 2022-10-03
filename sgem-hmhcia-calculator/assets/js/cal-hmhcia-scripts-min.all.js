@@ -113,7 +113,7 @@ window.onload = function() {
 	var xdrb = localStorage.setItem('sgem_hmhcia_bublt_status',0);
 	const interval = setInterval(function() {
 		 
-	     if(xdrb.length>0 && xdrb==0){
+	     if(xdrb==0){
 			var rangeFillWidth = $('.rangeslider__fill').css("width");
 			$('.rangeslider__value-bubble').css('left',rangeFillWidth);
 			 localStorage.setItem('sgem_hmhcia_bublt_status', 1);
