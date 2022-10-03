@@ -110,14 +110,14 @@ window.onload = function() {
 			$('.rangeslider__value-bubble').css('left',rangeFillWidth);
 		}
     }, 500);
-	var xdrb = localStorage.setItem('sgem_hmhcia_bublt_status',0);
+	//var xdrb = localStorage.setItem('sgem_hmhcia_bublt_status',0);
 	const interval = setInterval(function() {
 		 
-	    // if(xdrb==0){
+	    if($('.rangeslider.rangeslider--horizontal').length>0){
 			var rangeFillWidth = $('.rangeslider__fill').css("width");
 			$('.rangeslider__value-bubble').css('left',rangeFillWidth);
 			 //localStorage.setItem('sgem_hmhcia_bublt_status', 1);
-		//}
+		 }
 	 }, 2000);
 
 	clearInterval(interval); 
