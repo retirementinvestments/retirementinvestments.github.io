@@ -1225,10 +1225,11 @@ function sliderfun() {
 
       onSlide: function(pos, value) {
           updateBubblePosition();
+          updateValueBubble(pos, value, this);
       },
 
       onSlideEnd: function(pos, value) {
-      updateValueBubble(pos, value, this);
+      // updateValueBubble(pos, value, this);
       sgem_hmhcia_calculationmin();
 
       },
@@ -1244,10 +1245,11 @@ function sliderfun() {
 
       onSlide: function(pos, value) {
           updateBubblePosition2();
+          updateValueBubble2(pos, value, this);
       },
 
       onSlideEnd: function(pos, value) {
-      updateValueBubble2(pos, value, this);
+      // updateValueBubble2(pos, value, this);
       sgem_hmhcia_calculationmin();
 
       },
