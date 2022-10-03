@@ -780,7 +780,7 @@ function updateBubblePosition() {
     jQuery('.rangeslider__value-bubble').css('left',rangeFillWidth);
 }
 function updateBubblePosition2() {
-    var rangeFillWidth2 = jQuery('.rangeslider__fill').css("width");
+    var rangeFillWidth2 = jQuery('.rangeslider__fill2').css("width");
     jQuery('.rangeslider__value-bubble2').css('left',rangeFillWidth2);
 }
 
@@ -1235,7 +1235,7 @@ function sliderfun() {
     });
     $inputRange2.rangeslider({
         polyfill: false,
-        fillClass: 'rangeslider__fill',
+        fillClass: 'rangeslider__fill2',
 
          onInit: function() {
       this.$range.append($(hmhciaValueBubble2));
