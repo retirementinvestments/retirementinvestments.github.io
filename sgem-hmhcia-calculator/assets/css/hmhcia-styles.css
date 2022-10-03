@@ -91,6 +91,7 @@
 	width: 200px;
 	color: #002340;
 	border:  1px solid #bbb;
+	background: #fff;
 }
 
 .sgem-hmhcia-form-group.sgem-hmhcia-form-flex #sgem_hmhcia_down_payment {
@@ -852,7 +853,7 @@
 	padding-top: 0px;
 }
 .sgem-hmhcia-cal-main-id .sgem-hmhcia-cal-1-result-wrapper .sgem-hmhcia-slider-section {
-	padding-bottom: 70px;
+	padding-bottom: 90px;
 }
 .sgem-hmhcia-input-range-custom-section {
 	margin-bottom: 30px;
