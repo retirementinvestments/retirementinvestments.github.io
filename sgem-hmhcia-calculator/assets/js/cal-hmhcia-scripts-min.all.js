@@ -692,7 +692,7 @@ if ($('#sgem_hmhcia_annual_income,#sgem_hmhcia_monthly_debts,#sgem_hmhcia_income
       if (isNaN(jjxvac) || jjxvac>jaa){
          
          this.value ='';
-         $('#sgem_hmhcia_err_hoa_dues').html('This cannot be empty or more than down payment').fadeIn();  
+         $('#sgem_hmhcia_err_hoa_dues').html('This cannot be empty or more than Maximum payment').fadeIn();  
           $(this).css({
         "border": "1px solid red",
         "background": "#FFCECE" });  
