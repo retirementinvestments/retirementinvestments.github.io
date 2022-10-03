@@ -105,7 +105,7 @@ window.onload = function() {
     setInterval(function(){
         updateBubblePosition();
         updateBubblePosition2();
-    }, 10000);
+    }, 3000);
 }
 
 // window.addEventListener('load', function () {
@@ -783,6 +783,7 @@ if ($('#sgem_hmhcia_annual_income,#sgem_hmhcia_monthly_debts,#sgem_hmhcia_income
 // document ready end
 
 function updateBubblePosition() {
+	alert(2222);
     var rangeFillWidth = jQuery('.rangeslider__fill').css("width");
     $('.rangeslider__value-bubble').css('left',rangeFillWidth);
 }
