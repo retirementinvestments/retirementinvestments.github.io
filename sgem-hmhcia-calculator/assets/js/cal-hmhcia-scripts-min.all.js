@@ -103,8 +103,9 @@ window.onload = function() {
     sgem_hmhcia_calculationmin();
 
     setInterval(function(){
-       updateBubblePosition();
+        updateBubblePosition();
         updateBubblePosition2();
+        updateValueBubble();
     }, 3000);
 }
 
