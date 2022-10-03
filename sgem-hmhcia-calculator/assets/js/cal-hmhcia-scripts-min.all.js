@@ -1109,19 +1109,19 @@ var sliderData = document.getElementById('sgem-hmhcia-ranger');
 
 function sgemGenarateSlider(calby) {
 
-    var ranger = document.getElementById('sgem-hmhcia-ranger');
-    var sgemimgpig = document.getElementById('sgem-hmhcia-image-pig');
-    var sgemimghouse = document.getElementById('sgem-hmhcia-image-house');
-    var width = sgemimgpig.width;
-    var height = sgemimgpig.height;
-    var width = sgemimghouse.width;
-    var height = sgemimghouse.height;
-    ranger.onchange = function() {
-        sgemimgpig.width = width / (ranger.value / 5);
-        sgemimgpig.height = height / (ranger.value / 5);
+    var rangerOne = document.getElementById('sgem-hmhcia-ranger');
+    var sgemimgpig = document.getElementById('sgem-hmhcia-image-pig2');
+    var sgemimghouse = document.getElementById('sgem-hmhcia-image-house2');
+    var width1 = sgemimgpig.width;
+    var height1 = sgemimgpig.height;
+    var width1 = sgemimghouse.width;
+    var height1 = sgemimghouse.height;
+    rangerOne.onchange = function() {
+        sgemimgpig.width = width1 / (rangerOne.value / 25);
+        sgemimgpig.height = height1 / (rangerOne.value / 25);
 
-        sgemimghouse.width = width * (ranger.value / 5);
-        sgemimghouse.height = height * (ranger.value / 5);
+        sgemimghouse.width = width1 * (rangerOne.value / 25);
+        sgemimghouse.height = height1 * (rangerOne.value / 25);
     }
 }
 function sgemGenarateSlider2(calby) {
