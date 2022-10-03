@@ -774,11 +774,11 @@ if ($('#sgem_hmhcia_annual_income,#sgem_hmhcia_monthly_debts,#sgem_hmhcia_income
 // document ready end
 
 function updateBubblePosition() {
-    const rangeslider__fill = getElementsByClassName('rangeslider__fill');
-    rangeslider__fill.onchange = function() {
+    // const rangeslider__fill_ = getElementsByClassName('rangeslider__fill');
+    // rangeslider__fill_.onchange = function() {
         var rangeFillWidth = jQuery('.rangeslider__fill').css("width");
         jQuery('.rangeslider__value-bubble').css('left',rangeFillWidth);
-    }
+//     }
 }
 
 
