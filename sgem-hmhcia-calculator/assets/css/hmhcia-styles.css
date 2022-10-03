@@ -947,7 +947,8 @@ img#sgem-hmhcia-image-house2
 }
 
 /* range js  styles*/
-.sgem-hmhcia-slider-range-input .rangeslider__fill {
+.sgem-hmhcia-slider-range-input .rangeslider__fill,
+.sgem-hmhcia-slider-range-input .rangeslider__fill2 {
 	background: #4BCC8C;
 }
 .sgem-hmhcia-slider-range-input .rangeslider--horizontal {
@@ -968,7 +969,8 @@ img#sgem-hmhcia-image-house2
     background: #4BCC8C;
 }
 .sgem-hmhcia-slider-range-input .rangeslider, 
-.sgem-hmhcia-slider-range-input  .rangeslider__fill {
+.sgem-hmhcia-slider-range-input  .rangeslider__fill,
+.sgem-hmhcia-slider-range-input  .rangeslider__fill2 {
 	box-shadow: inset 0 0px 0px rgb(0 0 0 / 30%);
 	-webkit-box-shadow: inset 0 0px 0px rgb(0 0 0 / 30%);
 }
