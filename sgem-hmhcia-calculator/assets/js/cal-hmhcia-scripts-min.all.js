@@ -108,10 +108,10 @@ window.onload = function() {
     }, 3000);
 }
 
-window.addEventListener('load', function () {
-    updateBubblePosition();
-    updateBubblePosition2();
-});
+// window.addEventListener('load', function () {
+//     updateBubblePosition();
+//     updateBubblePosition2();
+// });
 
 
 function sgem_hmhcia_calculationmin() {
