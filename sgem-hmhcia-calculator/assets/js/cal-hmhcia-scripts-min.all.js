@@ -771,7 +771,7 @@ if ($('#sgem_hmhcia_annual_income,#sgem_hmhcia_monthly_debts,#sgem_hmhcia_income
 });
 // document ready end
 
-var rangeslider__fill = documentElementbyClass('.rangeslider__fill');
+var rangeslider__fill = getElementsByClassName('rangeslider__fill');
 rangeslider__fill.onchange = function() {
     var rangeFillWidth = jQuery('.rangeslider__fill').css("width");
     jQuery('.rangeslider__value-bubble').css('left',rangeFillWidth);
