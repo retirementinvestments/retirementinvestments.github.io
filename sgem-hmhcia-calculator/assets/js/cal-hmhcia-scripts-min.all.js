@@ -55,7 +55,7 @@ var sgem_hmhcia_main_contents = '<div class="sgem-hmhcia-cal-main-id"> <div clas
                                  '<img id="sgem-hmhcia-image-house" src="https://retirementinvestments.github.io/sgem-hmhcia-calculator/assets/images/hmhcia-house.svg" width="70px" height="70px" />'+
                               '</div>'+
                            '</div>'+
-                           '<input id="sgem-hmhcia-ranger2" class="sgem-hmhcia-range2" type="range" name="rangeInput2" min="0" max="8000" value="2000" oninput="document.getElementById(\'sgem_hmhcia_interest_maximum_payment\').value=this.value"/>'+
+                           '<input id="sgem-hmhcia-ranger2" class="sgem-hmhcia-range2" type="range" name="rangeInput2" min="1" max="8000" value="2000" oninput="document.getElementById(\'sgem_hmhcia_interest_maximum_payment\').value=this.value"/>'+
                         '</div>'+
                      '</div>'+
             '</form>'+
