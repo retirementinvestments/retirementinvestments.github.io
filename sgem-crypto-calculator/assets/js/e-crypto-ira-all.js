@@ -1143,7 +1143,7 @@ function sgem_crypto_ira_copyText(ev){
   textArea.select();
   document.execCommand('copy');   //No i18n
   document.body.removeChild(textArea);
-  alert('Code snippted copied to clipboard!');
+  alert('Code snippet copied to clipboard!');
 }
 
 window.addEventListener('load', function() {	 
