@@ -858,6 +858,12 @@
 .sgem-hmhcia-input-range-custom-section {
 	margin-bottom: 30px;
 }
+
+img#sgem-hmhcia-image-pig,
+img#sgem-hmhcia-image-pig2 {
+	max-width: 110px;
+}
+
 img#sgem-hmhcia-image-pig,
 img#sgem-hmhcia-image-house,
 img#sgem-hmhcia-image-pig2,
