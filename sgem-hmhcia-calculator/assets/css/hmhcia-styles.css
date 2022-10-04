@@ -863,8 +863,8 @@ img#sgem-hmhcia-image-house,
 img#sgem-hmhcia-image-pig2,
 img#sgem-hmhcia-image-house2
 {
-	max-width: 100px;
-	min-width: 40px;
+	max-width: 110px;
+    min-width: 30px;
 	transition: 0.9s;
 }
 /* range js  styles*/
