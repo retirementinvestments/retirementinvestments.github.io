@@ -734,5 +734,5 @@ function sgem_re_copyText(event){
   textArea.select();
   document.execCommand('copy');   //No i18n
   document.body.removeChild(textArea);
-  alert('Code snippted copied to clipboard!');
+  alert('Code snippet copied to clipboard!');
 }
