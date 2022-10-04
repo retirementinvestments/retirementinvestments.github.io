@@ -1157,13 +1157,13 @@ function sgemGenarateSlider(calby) {
     var rangerOne = document.getElementById('sgem-hmhcia-ranger');
     var sgemimgpig = document.getElementById('sgem-hmhcia-image-pig2');
     var sgemimghouse = document.getElementById('sgem-hmhcia-image-house2');
-    var width1 = sgemimgpig.width;
-    var height1 = sgemimgpig.height;
+    var widthp1 = sgemimgpig.width;
+    var heightp1 = sgemimgpig.height;
     var width1 = sgemimghouse.width;
     var height1 = sgemimghouse.height;
     rangerOne.onchange = function() {
-        sgemimgpig.width = width1 / (rangerOne.value / 80 );
-        sgemimgpig.height = height1 / (rangerOne.value / 80 );
+        sgemimgpig.width = widthp1 / (rangerOne.value / 5 );
+        sgemimgpig.height = heightp1 / (rangerOne.value / 5 );
 
         sgemimghouse.width = width1 * (rangerOne.value / 23 );
         sgemimghouse.height = height1 * (rangerOne.value / 23 );
