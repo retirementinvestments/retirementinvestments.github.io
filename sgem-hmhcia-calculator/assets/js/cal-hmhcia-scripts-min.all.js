@@ -1179,11 +1179,11 @@ function sgemGenarateSlider2(calby) {
     var width = sgemimghouse.width;
     var height = sgemimghouse.height;
     ranger.onchange = function() {
-        sgemimgpig.width = width / (ranger.value / 1500);
-        sgemimgpig.height = height / (ranger.value / 1500);
+        sgemimgpig.width = width - (ranger.value / 4000);
+        sgemimgpig.height = height - (ranger.value / 4000);
 
-        sgemimghouse.width = width * (ranger.value / 4000);
-        sgemimghouse.height = height * (ranger.value / 4000);
+        sgemimghouse.width = width + (ranger.value / 4000);
+        sgemimghouse.height = height + (ranger.value / 4000);
     }
 }
 
