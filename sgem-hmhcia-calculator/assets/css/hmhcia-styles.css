@@ -871,8 +871,7 @@ img#sgem-hmhcia-image-house2
 {
 	max-height: 110px;
     min-height: 30px;
-	transition: 0.9s;
-	width: auto;
+	transition: 0.5s;
 }
 /* range js  styles*/
 .rangeslider__value-bubble, .rangeslider__value-bubble2 {
