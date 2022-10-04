@@ -814,8 +814,7 @@ function updateBubblePosition2() {
     //$('.rangeslider__value-bubble2').css('left',rangeFillWidth2);
 	//$('#sgem-hmhcia-ranger2').rangeslider('update', true);
 }
-
-
+ 
 function radiochange() {
 
     var rchange = $('.sgem-hmhcia-calculate-by:checked').val();
