@@ -1162,11 +1162,11 @@ function sgemGenarateSlider(calby) {
     var width1 = sgemimghouse.width;
     var height1 = sgemimghouse.height;
     rangerOne.onchange = function() {
-        sgemimgpig.width = width1 / (rangerOne.value / 25);
-        sgemimgpig.height = height1 / (rangerOne.value / 25);
+        sgemimgpig.width = width1 / (rangerOne.value / 20);
+        sgemimgpig.height = height1 / (rangerOne.value / 20);
 
-        sgemimghouse.width = width1 * (rangerOne.value / 25);
-        sgemimghouse.height = height1 * (rangerOne.value / 25);
+        sgemimghouse.width = width1 * (rangerOne.value / 20);
+        sgemimghouse.height = height1 * (rangerOne.value / 20);
     }
 }
 function sgemGenarateSlider2(calby) {
