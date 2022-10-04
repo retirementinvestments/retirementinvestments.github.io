@@ -999,6 +999,9 @@ img#sgem-hmhcia-image-house2
 .sgem-hmhcia-img-piggy,
 .sgem-hmhcia-img-house {
 	height: 100px;
+	align-items: flex-end;
+    align-content: flex-end;
+    display: flex;
 }
 .sgem-hmhcia-form-range-valus-wrapper {
 	display: inline-flex;
