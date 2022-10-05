@@ -341,7 +341,7 @@ function sgem_hmhcia_calculationmin() {
     var rangeFillWidth = $('.rangeslider__fill').css("width");
     $('.rangeslider__value-bubble').css('left',rangeFillWidth);
     
-
+ 
 }
  
 
