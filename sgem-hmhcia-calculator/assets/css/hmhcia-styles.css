@@ -859,15 +859,15 @@
 	margin-bottom: 30px;
 }
 
-img#sgem-hmhcia-image-pig,
-img#sgem-hmhcia-image-pig2 {
-	width: 50px;
+.sgem-hmhcia-cal-wrapper .sgem-hmhcia-cal-right img#sgem-hmhcia-image-pig,
+.sgem-hmhcia-cal-wrapper .sgem-hmhcia-cal-right img#sgem-hmhcia-image-pig2 {
+	max-weight: 110px;
 }
 
-img#sgem-hmhcia-image-pig,
-img#sgem-hmhcia-image-house,
-img#sgem-hmhcia-image-pig2,
-img#sgem-hmhcia-image-house2
+.sgem-hmhcia-cal-wrapper .sgem-hmhcia-cal-right img#sgem-hmhcia-image-pig,
+.sgem-hmhcia-cal-wrapper .sgem-hmhcia-cal-right img#sgem-hmhcia-image-house,
+.sgem-hmhcia-cal-wrapper .sgem-hmhcia-cal-right img#sgem-hmhcia-image-pig2,
+.sgem-hmhcia-cal-wrapper .sgem-hmhcia-cal-right img#sgem-hmhcia-image-house2
 {
 	max-height: 110px;
 	max-weight: 110px;
