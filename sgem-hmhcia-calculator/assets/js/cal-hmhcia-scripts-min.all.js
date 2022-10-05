@@ -1168,6 +1168,7 @@ function sgemGenarateSlider(calby) {
 
         sgemimghouse.width = width1 * (rangerOne.value / 23 );
         sgemimghouse.height = height1 * (rangerOne.value / 23 );
+        console.log(rangerOne.value);
     }
 }
 function sgemGenarateSlider2(calby) {
