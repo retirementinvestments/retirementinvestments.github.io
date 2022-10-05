@@ -1169,7 +1169,7 @@ function sgemGenarateSlider(calby) {
 
         // sgemimgpig.width = rangerOne.value + 57;
 
-        var sliderOnePig = parseFloat(20) / (parseFloat(rangerOne.value) / parseFloat(22) ); 
+        var sliderOnePig = parseFloat(2) / (parseFloat(rangerOne.value) / parseFloat(43) ); 
         $('#sgem-hmhcia-image-pig2').css('width',sliderOnePig + 'px');
 
         var sliderOneHouse = parseFloat(rangerOne.value) + parseFloat(40); 
