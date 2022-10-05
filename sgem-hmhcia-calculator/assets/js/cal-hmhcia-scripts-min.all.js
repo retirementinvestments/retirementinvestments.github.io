@@ -1172,9 +1172,12 @@ function sgemGenarateSlider(calby) {
         var sliderOnePig = parseFloat(rangerOne.value) + parseFloat(40); 
         $('#sgem-hmhcia-image-pig2').css('width',sliderOnePig + 'px');
 
-        sgemimghouse.width = width1 * (rangerOne.value / 23 );
-        sgemimghouse.height = height1 * (rangerOne.value / 23 );
-        console.log(rangerOne.value);
+        var sliderOneHouse = parseFloat(rangerOne.value) + parseFloat(40); 
+        $('#sgem-hmhcia-image-house2').css('width',sliderOneHouse + 'px');
+
+        // sgemimghouse.width = width1 * (rangerOne.value / 23 );
+        // sgemimghouse.height = height1 * (rangerOne.value / 23 );
+        // console.log(rangerOne.value);
     }
 }
 function sgemGenarateSlider2(calby) {
