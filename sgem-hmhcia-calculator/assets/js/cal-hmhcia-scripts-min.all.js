@@ -1164,8 +1164,8 @@ function sgemGenarateSlider(calby) {
     var width1 = sgemimghouse.width;
     var height1 = sgemimghouse.height;
     rangerOne.onchange = function() {
-        sgemimgpig.width = widthp1 / (parseFloat(rangerOne.value) / parseFloat(2) );
-        sgemimgpig.height = heightp1 / (parseFloat(rangerOne.value) / parseFloat(2) );
+        sgemimgpig.width = widthp1 / (parseFloat(rangerOne.value) / parseFloat(8) );
+        sgemimgpig.height = heightp1 / (parseFloat(rangerOne.value) / parseFloat(8) );
 
         // var sliderOnePig = parseFloat(rangerOne.value) + parseFloat(10); 
 
