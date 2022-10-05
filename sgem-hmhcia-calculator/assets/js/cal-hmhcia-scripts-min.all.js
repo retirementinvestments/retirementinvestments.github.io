@@ -1169,10 +1169,10 @@ function sgemGenarateSlider(calby) {
 
         // sgemimgpig.width = rangerOne.value + 57;
 
-        var sliderOnePig = parseFloat(rangerOne.value) / parseFloat(2.5); 
+        var sliderOnePig = parseFloat(widthp1) / (parseFloat(rangerOne.value) / parseFloat(8) ); 
         $('#sgem-hmhcia-image-pig2').css('width',sliderOnePig + 'px');
 
-        var sliderOneHouse = parseFloat(rangerOne.value) * parseFloat(2.5); 
+        var sliderOneHouse = parseFloat(rangerOne.value) + parseFloat(40); 
         $('#sgem-hmhcia-image-house2').css('width',sliderOneHouse + 'px');
 
         // sgemimghouse.width = width1 * (rangerOne.value / 23 );
