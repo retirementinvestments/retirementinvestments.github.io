@@ -870,6 +870,7 @@ img#sgem-hmhcia-image-pig2,
 img#sgem-hmhcia-image-house2
 {
 	max-height: 110px;
+	max-weight: 110px;
     min-height: 30px;
     min-width: 30px;
 	transition: 0.5s;
