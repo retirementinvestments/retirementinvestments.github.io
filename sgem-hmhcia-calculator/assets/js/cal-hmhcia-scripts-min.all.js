@@ -796,6 +796,7 @@ if ($('#sgem_hmhcia_annual_income,#sgem_hmhcia_monthly_debts,#sgem_hmhcia_income
 	 }, 2000);
 
 
+
 	clearInterval(interval); 
 	
 
@@ -1166,7 +1167,8 @@ function sgemGenarateSlider(calby) {
         // sgemimgpig.width = widthp1 / (rangerOne.value / 20 );
         // sgemimgpig.height = heightp1 / (rangerOne.value / 20 );
 
-        sgemimgpig.width = rangerOne.value + 57;
+        // sgemimgpig.width = rangerOne.value + 57;
+        $('#sgem-hmhcia-image-pig2').css('width',rangerOne.value + 57 + 'px');
 
         sgemimghouse.width = width1 * (rangerOne.value / 23 );
         sgemimghouse.height = height1 * (rangerOne.value / 23 );
