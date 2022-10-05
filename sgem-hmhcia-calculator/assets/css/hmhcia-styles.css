@@ -860,17 +860,12 @@
 }
 
 .sgem-hmhcia-cal-wrapper .sgem-hmhcia-cal-right img#sgem-hmhcia-image-pig,
-.sgem-hmhcia-cal-wrapper .sgem-hmhcia-cal-right img#sgem-hmhcia-image-pig2 {
-	max-weight: 110px;
-}
-
-.sgem-hmhcia-cal-wrapper .sgem-hmhcia-cal-right img#sgem-hmhcia-image-pig,
 .sgem-hmhcia-cal-wrapper .sgem-hmhcia-cal-right img#sgem-hmhcia-image-house,
 .sgem-hmhcia-cal-wrapper .sgem-hmhcia-cal-right img#sgem-hmhcia-image-pig2,
 .sgem-hmhcia-cal-wrapper .sgem-hmhcia-cal-right img#sgem-hmhcia-image-house2
 {
 	max-height: 110px;
-	max-weight: 110px;
+	max-width: 110px;
     min-height: 30px;
     min-width: 30px;
 	transition: 0.5s;
