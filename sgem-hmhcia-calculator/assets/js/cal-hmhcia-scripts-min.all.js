@@ -935,7 +935,7 @@ function radiochange() {
         var income_total_monthly_payment_d = JSON.parse(localStorage.getItem('sgem_hmhcia_income_total_monthly_payment_p'));
         var income_i_plus_tax_d = JSON.parse(localStorage.getItem('sgem_hmhcia_income_insurance_plus_p_tax'));
         var income_i_plus_tax_d_hoe = parseFloat(income_i_plus_tax_d) + parseFloat(income_monthly_hoa_fees_d);
-        console.log(income_i_plus_tax_d);
+        // console.log(income_i_plus_tax_d);
 
         if (isNaN(income_total_monthly_payment_d)) {
 
