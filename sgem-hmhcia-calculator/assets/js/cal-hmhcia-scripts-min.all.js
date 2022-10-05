@@ -1167,8 +1167,10 @@ function sgemGenarateSlider(calby) {
         // sgemimgpig.width = widthp1 / (rangerOne.value / 20 );
         // sgemimgpig.height = heightp1 / (rangerOne.value / 20 );
 
+        var sliderOnePig = parseFloat(rangerOne.value) + parseFloat(57);
+
         // sgemimgpig.width = rangerOne.value + 57;
-        $('#sgem-hmhcia-image-pig2').css('width',rangerOne.value + 57 + 'px');
+        $('#sgem-hmhcia-image-pig2').css('width',sliderOnePig + 'px');
 
         sgemimghouse.width = width1 * (rangerOne.value / 23 );
         sgemimghouse.height = height1 * (rangerOne.value / 23 );
