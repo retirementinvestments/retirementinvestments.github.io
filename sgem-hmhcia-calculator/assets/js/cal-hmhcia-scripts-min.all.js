@@ -75,7 +75,7 @@ sgem_hmhcia_main_contents += '<div class="sgem-hmhcia-section-disclaimer"><detai
 sgem_hmhcia_main_contents += '</details></div></div></div></div>';
     
 if( (location.hostname != "calculatorstg.wpengine.com") || (location.hostname != "retirementinvestments.com") ){
-    sgem_hmhcia_main_contents += '<div class="sgem-hmhcia-logo-center"><a class="sgem-hmhcia-url-text" href="https://retirementinvestments.com/real-estate/house-affordability-calculator" target="_blank" rel="noopener">House Affordability Calculator</a>&nbsp;by Retirement investments</div>';
+    sgem_hmhcia_main_contents += '<div class="sgem-hmhcia-logo-center"><a class="sgem-hmhcia-url-text" href="https://retirementinvestments.com/real-estate/home-affordability-calculator/" target="_blank" rel="noopener">Home Affordability Calculator</a>&nbsp;by Retirement investments</div>';
 }
     
 if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com"){
