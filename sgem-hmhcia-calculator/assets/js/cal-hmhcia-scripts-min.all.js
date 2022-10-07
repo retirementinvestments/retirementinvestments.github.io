@@ -1246,9 +1246,9 @@ function sgemGenarateSlider(calby) {
 
         // sgemimgpig.width = rangerOne.value + 57;
 
-        // if (rangerOne.value > 10 ) {
-        //     rangerOne.value + 
-        // }
+        if (rangerOne.value > 3 ) {
+            rangerOne.value + parseFloat(30);
+        }
 
         var sliderOnePig = ( parseFloat(10) / parseFloat(rangerOne.value) ) * parseFloat(40); 
         var sliderOnePig1 = (sliderOnePig / parseFloat(10)) * parseFloat(2) + parseFloat(50);
