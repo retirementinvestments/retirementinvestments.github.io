@@ -1246,10 +1246,10 @@ function sgemGenarateSlider(calby) {
 
         // sgemimgpig.width = rangerOne.value + 57;
 
-        var sliderOnePig = ( parseFloat(20) / parseFloat(rangerOne.value) ) * parseFloat(43)/2; 
-        console.log(sliderOnePig);
-        // var sliderOnePig1 = (sliderOnePig * parseFloat(100)) * parseFloat(2);
-        $('#sgem-hmhcia-image-pig2').css('width',sliderOnePig + 'px');
+        var sliderOnePig = ( parseFloat(20) / parseFloat(rangerOne.value) ) * parseFloat(43); 
+        var sliderOnePig1 = sliderOnePig / parseFloat(2);
+        $('#sgem-hmhcia-image-pig2').css('width',sliderOnePig1 + 'px');
+        console.log(sliderOnePig1);
 
         var sliderOneHouse = parseFloat(rangerOne.value) + parseFloat(40);
         $('#sgem-hmhcia-image-house2').css('width',sliderOneHouse + 'px');
