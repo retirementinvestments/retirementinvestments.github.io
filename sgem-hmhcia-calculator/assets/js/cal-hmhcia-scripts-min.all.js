@@ -1255,6 +1255,8 @@ function sgemGenarateSlider(calby) {
         if (sliderOnePig1 > 200 ) {
             rangerValueSlide = (parseFloat(sliderOnePig1) - parseFloat(sliderOnePig1)) + parseFloat(80);
             $('#sgem-hmhcia-image-pig2').css('width',rangerValueSlide + 'px');
+        } else (sliderOnePig1 < 200) {
+            $('#sgem-hmhcia-image-pig2').css('width',sliderOnePig1 + 'px');
         }
         
         console.log(sliderOnePig1);
