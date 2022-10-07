@@ -1253,8 +1253,8 @@ function sgemGenarateSlider(calby) {
         var sliderOnePig = ( parseFloat(25) / parseFloat(rangerOne.value) ) * parseFloat(22); 
         var sliderOnePig1 = (sliderOnePig / parseFloat(10)) * parseFloat(25);
 
-        if (sliderOnePig1 > 90 ) {
-            rangerValueSlide = (parseFloat(sliderOnePig1) - parseFloat(sliderOnePig1)) + ( parseFloat(widthp1) / parseFloat(rangerOne.value) ) + parseFloat(100);
+        if (sliderOnePig1 > 80 ) {
+            rangerValueSlide = (parseFloat(sliderOnePig1) - parseFloat(sliderOnePig1)) + ( parseFloat(widthp1) / parseFloat(rangerOne.value) ) + parseFloat(90);
             $('#sgem-hmhcia-image-pig2').css('width',rangerValueSlide + 'px');
         } else {
             $('#sgem-hmhcia-image-pig2').css('width',sliderOnePig1 + 'px');
