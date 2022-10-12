@@ -1,28 +1,29 @@
-
 <div class="sgem-cpg-cal-main-id">
    <div class="sgem-cpg-cal-wrapper">
       <div class="sgem-cpg-cal-left">
          <div class="sgem-cpg-form sgem-cpg-cal-1">
             <div class="sgem-cpg-flex-container">
                <div class="sgem-cpg-form-group sgem-cpg-form-flex sgem-cpg-currency-holder">
-                  <label>I purchased the item for</label> 
-                  <input type="text"class="inputmove inputnumber" id='sgem_cpg_purchased_item' value="60000" min="0" max="1000000" onkeypress="return isNumber(event)"/>
+                  <label>Purchase price</label> 
+                  <input type="text"class="inputmove inputnumber" id="sgem_cpg_purchased_price" value="10000" min="0" max="1000000" onkeypress="return isNumber(event)"/>
                   <span class="sgem_cpg_err_msg" id="sgem_cpg_err_purchase_the_item"></span>
                </div>
                <div class="sgem-cpg-form-group sgem-cpg-form-flex sgem_cpg_right_field_row sgem-cpg-currency-holder">
-                  <label>I sold the item for</label> 
-                  <input type="text"class="inputmove inputnumber" id='sgem_cpg_sold_item' value="60000" min="0" max="1000000" onkeypress="return isNumber(event)"/>
+                  <label>Sales price</label> 
+                  <input type="text"class="inputmove inputnumber" id="sgem_cpg_sales_price" value="60000" min="0" max="1000000" onkeypress="return isNumber(event)"/>
                   <span class="sgem_cpg_err_msg" id="sgem_cpg_err_sold_the_item"></span>
                </div>
             </div>
             <div class="sgem-cpg-flex-container">
                <div class="sgem-cpg-form-group sgem-cpg-form-flex sgem-cpg-currency-holder">
-                  <label>My 2022 taxable income</label> 
-                  <input type="text"class="inputmove inputnumber" id='sgem_cpg_my_taxable_income' value="60000" min="0" max="100000" onkeypress="return isNumber(event)"/>
+                  <label>2021 taxable income
+                  <span class="sgem-cpg-info-tooltip tooltip" data-tippy-content="Please enter your taxable income without the inclusion of any capital gains. Your taxable income is inclusive of all income that is not tax-exempt such as interest, dividends, salary, wages, pensions, minus deductions such as itemized or standard deductions.">?</span>
+                  </label> 
+                  <input type="text"class="inputmove inputnumber" id="sgem_cpg_my_taxable_income" value="10000" min="0" max="100000" onkeypress="return isNumber(event)"/>
                   <span class="sgem_cpg_err_msg" id="sgem_cpg_err_taxable_income"></span>
                </div>
                <div class="sgem-cpg-form-group sgem-cpg-form-flex sgem_cpg_right_field_row">
-                  <label for="yearscount">I had the item for </label>  
+                  <label for="yearscount">Holding period</label>  
                   <select id="sgem_cpg_year_status" class="sgem-cpg-drop-selection" name="yearscount" onkeypress="return isNumber(event)">
                      <option value="One year or less">One year or less</option>
                      <option value="More than a year">More than a year</option>
@@ -31,8 +32,7 @@
             </div>
             <div class="sgem-cpg-flex-container">
                <div class="sgem-cpg-form-group sgem-cpg-form-flex">
-                  <label for="marital">My tax-filing status is 
-                    <!-- <span class="sgem-cpg-tooltip tooltip" data-tippy-content="The marital status you report to the IRS">?</span> -->
+                  <label for="marital">Tax filing status
                   </label>  
                   <select id="sgem_cpg_marital_status" class="sgem-cpg-drop-selection" name="marital" onkeypress="return isNumber(event)">
                      <option value="single">Single</option>
@@ -48,7 +48,7 @@
          <div class="sgem-cpg-cal-1-result-wrapper">
             <div class="sgem-cpg-flex-container sgem-cpg-column2">
                <div class="sgem-cpg-form-group sgem-cpg-form-flex">
-                  <span class="futuretext sgem-result-value">YOUR PRE-TAX CAPITAL GAIN IS</span> 
+                  <span class="futuretext sgem-result-value">YOUR ESTIMATED PRE-TAX GAIN IS</span> 
                   <div id="futureV" class="sgem-cpg-result-label">$<span id="sgem_cpg_pre_cap_tax">145,000</span>
                   </div>
                </div>
@@ -74,16 +74,28 @@
                </div>
             </div>
             <div class="sgem-cpg-cal-1-result-footer">
-               <div class="sgem-cpg-content">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero</div>
+               <div class="sgem-cpg-content">Do it yourself, get expert help, or hand it off start to finish—let’s get your taxes done right.</div>
                <div class="sgem-cpg-buttonGet">
-                  <a href="#" class="sgem-cpg-getStart">
+                  <a href="https://www.irs.gov/faqs/capital-gains-losses-and-sale-of-home" target="_blank" class="sgem-cpg-getStart" rel="noopener">
                   GET STARTED
                   </a>
                </div>
             </div>
-           <div class="sgem-cpg-section-disclaimer"><details class="sgem-cpg-details-disclaimer"><summary><div class="sgem-cpg-collapsible-summary-disclaimer">Disclaimer</div></summary><div class="sgem-cpg-collapsible-text-disclaimer">This material is provided for general and educational purposes only; it is not intended to provide legal, tax or investment advice.</div></details></div>
+            <div class="sgem-cpg-section-disclaimer">
+               <details class="sgem-cpg-details-disclaimer">
+                  <summary>
+                     <div class="sgem-cpg-collapsible-summary-disclaimer">Disclaimer</div>
+                  </summary>
+                  <div class="sgem-cpg-collapsible-text-disclaimer">Calculations are estimates based on the tax law as of September 2021. These rates are subject to change. Check the IRS website for the latest information about capital gains</div>
+               </details>
+            </div>
          </div>
-         
+      </div>
+   </div>
+   <div class="sgem-cpg-copy-option-panel">
+      <h3>Do you want to add this calculator into your website?</h3>
+      <div class="sgem-cpg-copy-code-wrap">
+         <button class="sgem-cpg-copy-code" id="sgem-cpg-copy-code" onclick="sgem_cpg_copyText(event)">Get Calculator</button>
       </div>
    </div>
 </div>
