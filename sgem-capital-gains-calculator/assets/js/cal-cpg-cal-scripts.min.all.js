@@ -131,1164 +131,2746 @@ var sgem_401k_main_contents = '<div class="sgem-cpg-cal-main-id">'+
    '</div>'+
 '</div>'+
 
-sgem_401k_main_contents += '</div>';  
+sgem_mrc_main_contents += '</div>';  
 
-document.getElementById('sgem-401k-cal').innerHTML = sgem_401k_main_contents;
+document.getElementById('sgem-401k-cal').innerHTML = sgem_mrc_main_contents;
  
-localStorage.setItem('401k_chart_years','0');
-localStorage.setItem('401k_chart_age','0');
-localStorage.setItem('401k_chart_individual_contribution','0');
-localStorage.setItem('401k_chart_employer_match','0');
-localStorage.setItem('401k_chart_catchup_con','0');
-localStorage.setItem('401k_chart_intrest_com','0');
-localStorage.setItem('401k_chart_y_max','0');
-
- // setup 
- var data_401_years =  JSON.parse(localStorage.getItem('401k_chart_years')),
-        data_401_age =  JSON.parse(localStorage.getItem('401k_chart_age')),
-        data_401_individual_contribution =  JSON.parse(localStorage.getItem('401k_chart_individual_contribution')),
-        data_401_employer_match =  JSON.parse(localStorage.getItem('401k_chart_employer_match')),
-        data_401_catchup_con =  JSON.parse(localStorage.getItem('401k_chart_catchup_con')),
-        data_401_intrest_com =  JSON.parse(localStorage.getItem('401k_chart_intrest_com')),
-        data_401_y_max =  JSON.parse(localStorage.getItem('401k_chart_y_max'));
-
- var ctx = document.getElementById("myChart").getContext("2d");
-
-  var data = {
-    labels: data_401_years,
-    datasets: [
-  { //[0]
-    label: 'Age',
-    backgroundColor: "#000",
-    labels:  ['Age'],
-    data: data_401_age,
-  },
-  { //[1]
-    label: 'Individual contribution',
-    backgroundColor: "#1569B0",
-    labels:  ['Individual contribution'],
-    data: data_401_individual_contribution,
-  }, { // [2]
-    label: 'Catch up',
-    backgroundColor: "#FEB929",
-    labels:  ['Catch up'],
-    data: data_401_catchup_con,
-  }, { // [3]
-    label: 'Employer match',
-    backgroundColor: "#42C581",
-    labels:  ['Employer match'],
-    data: data_401_employer_match,
-  },{ // [4]
-    label: 'Interest accumulated',
-    backgroundColor: "#FF824A",
-    labels:  ['Interest accumulated'],
-    data: data_401_intrest_com,
-  }
-],
-  };
-
-  // config 
-  const config = {
-    type: 'bar',
-    data,
-    options: {
-      
-      local:'en-US',
-      responsive: true, 
-      interaction: {
-            mode:'index'
-    },
-      scales: {
-        x: {
-          ticks: {
-            color: '#000',
-            maxTicksLimit: 3,
-            maxRotation: 0,
-            lineWidth: 2,
-          font: {
-            size: 14
-          },
-        },
-          grid: {
-                display: false
-             },
-              stacked: true,
-             },
-        
-        y: {
-          min:0,
-          max: 3200000,
-          grid: {
-            borderDash: [4],
-            color: "#A3A3A3"
-          },
-          stacked: true,
-          ticks:{
-            color: '#000',
-            callback: (value, index, values) => { 
-                return sgem_401_ConvertToInternationalCurrencySystemRound(value);
-  return new Intl.NumberFormat('en-US', {style: 'currency',
-       currency: 'USD',
-       maximumSignificantDigits: 3
-                                                          } ). format(value);            
-            },
-            font: {
-              size: 13,
-              family: "'DM Sans'",
-            }
-          },
-          beginAtZero: false           
-        }    
-      },
-      plugins: {
-        legend: {
-          display: false    
-        },
-        tooltip: {
-          backgroundColor: 'white',
-          yAlign: 'bottom',
-          borderColor: 'hsl(210, 3%, 70%)',
-          borderWidth: 1,
-          usePointStyle: true,
-          bodyFont: {
-            size: 14,
-            family: "'DM Sans'",
-          },
-          titleFont: {
-              size: 14,
-              family: "'DM Sans'"
-          },
-          bodySpacing: 1,
-          titleColor: '#757575',
-          boxWidth: 0,
-          boxHeight: 20,
-          callbacks: {
-            labelTextColor: function(context){
-              return myChart.data.datasets.borderColor;
-            }, 
-            label: function(context) {
-              return context.dataset.labels + ': ' + sgem_401_ConvertToInternationalCurrencySystemRoundtooltip(context.dataset.data[context.dataIndex])
-            },
-            labelPointStyle: function(context) {
-              return {
-                  pointStyle: 'triangle',
-                  rotation: 0
-              };
-          }
-          } 
-        }
-      }
-    }
-  };
-
-  // render init block
-  const myChart = new Chart(
-    document.getElementById('myChart'),
-    config
-  ); 
-
-document.getElementById('sgem_401k_contribution').style.backgroundColor = myChart.data.datasets[1].backgroundColor;
- document.getElementById('sgem_401k_catchup').style.backgroundColor = myChart.data.datasets[2].backgroundColor;
- document.getElementById('sgem_401k_emp_match').style.backgroundColor = myChart.data.datasets[3].backgroundColor;
-document.getElementById('sgem_401k_interest_accu').style.backgroundColor = myChart.data.datasets[4].backgroundColor;
-document.getElementById('sgem_401k_contribution_te').innerText = myChart.data.datasets[1].label;
- document.getElementById('sgem_401k_catchup_te').innerText = myChart.data.datasets[2].label;
- document.getElementById('sgem_401k_emp_match_te').innerText = myChart.data.datasets[3].label;
-document.getElementById('sgem_401k_interest_accu_te').innerText = myChart.data.datasets[4].label;
-
-// 
-
-window.onload = function() {
-  sgem_401k_calculationmin();
-}
-
-/* Tippy Tool */
-     
-tippy('[data-tippy-content]', {  
-      arrow: true, 
-      theme: 'light-border',
-       trigger: 'click',
-}); 
-
-
- 
-/*
-Call : <input type="text" onkeypress="return isNumber(event)" />
-*/
 function isNumber(evt) {
-  evt = (evt) ? evt : window.event;
-  var charCode = (evt.which) ? evt.which : evt.keyCode;
-  if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-    //if (charCode == 31 && charCode > 32 && (charCode < 48 || charCode > 57)) { // for decimal
-    return false;
-  }
-  return true;
-}
-
-jQuery(document).ready(function($){
-
-    if( location.hostname == "calculatorstg.wpengine.com") {
-        $('.sgem-401k-logo-center').hide(); 
-    } else if(location.hostname == "retirementinvestments.com"){
-        $('.sgem-401k-logo-center').hide();  
-    } else {
-        $('.sgem-401k-logo-center').show();  
+    evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        //if (charCode == 31 && charCode > 32 && (charCode < 48 || charCode > 57)) { // for decimal
+        return false;
     }
-
-  //*******************************************************
-
-        if ($('.sgem-401k-cal-wrapper').width() < 1024) {
-            $('.sgem-401k-cal-left').addClass('sgem-401k-cal-left-add-class');
-            $('.sgem-401k-cal-right').addClass('sgem-401k-cal-right-add-class');
-        }
-        else {
-            $('.sgem-401k-cal-left').removeClass('sgem-401k-cal-left-add-class');
-            $('.sgem-401k-cal-right').removeClass('sgem-401k-cal-right-add-class');
-        }
-
-        if ($('.sgem-401k-cal-main-id').width() < 650) {
-            $('.sgem-401k-cal-wrapper').addClass('sgem-401k-wrapper-add-mobile');
-        }
-        else {
-            $('.sgem-401k-cal-wrapper').removeClass('sgem-401k-wrapper-add-mobile');
-        }
-
-        $(window).on('resize', function() {
-        if ($('.sgem-401k-cal-wrapper').width() < 1024) {
-            $('.sgem-401k-cal-left').addClass('sgem-401k-cal-left-add-class');
-            $('.sgem-401k-cal-right').addClass('sgem-401k-cal-right-add-class');
-        }
-        else {
-            $('.sgem-401k-cal-left').removeClass('sgem-401k-cal-left-add-class');
-            $('.sgem-401k-cal-right').removeClass('sgem-401k-cal-right-add-class');
-        }
-        }).trigger('resize');
-
-        $(window).on('resize', function() {
-           if ($('.sgem-401k-cal-main-id').width() < 650) {
-                $('.sgem-401k-cal-wrapper').addClass('sgem-401k-wrapper-add-mobile');
-           }
-           else {
-                $('.sgem-401k-cal-wrapper').removeClass('sgem-401k-wrapper-add-mobile');
-           }
-        }).trigger('resize');
-
-});
- //*********************************************
-
- function sgem_401_ConvertToInternationalCurrencySystem(labelValue) {
-
-    // Nine Zeroes for Billions
-    return Math.abs(Number(labelValue)) >= 1.0e+9
-
-    ? (Math.abs(Number(labelValue)) / 1.0e+9).toFixed(2) + "B"
-    // Six Zeroes for Millions 
-    : Math.abs(Number(labelValue)) >= 1.0e+6
-
-    ? (Math.abs(Number(labelValue)) / 1.0e+6).toFixed(2) + "M"
-    // Three Zeroes for Thousands
-    : Math.abs(Number(labelValue)) >= 1.0e+3
-
-    ? (Math.abs(Number(labelValue)) / 1.0e+3).toFixed(2) + "K"
-
-    : Math.abs(Number(labelValue));
-
-}
-
-function sgem_401_ConvertToInternationalCurrencySystemRoundtooltip(labelValue) {
-
-    // Nine Zeroes for Billions
-    return Math.abs(Number(labelValue)) >= 1.0e+9
-
-    ? (Math.abs(Number(labelValue)) / 1.0e+9).toFixed(1) + "B"
-    // Six Zeroes for Millions 
-    : Math.abs(Number(labelValue)) >= 1.0e+6
-
-    ? (Math.abs(Number(labelValue)) / 1.0e+6).toFixed(1) + "M"
-    // Three Zeroes for Thousands
-    : Math.abs(Number(labelValue)) >= 1.0e+3
-
-    ? (Math.abs(Number(labelValue)) / 1.0e+3).toFixed(1) + "K"
-
-    : Math.abs(Number(labelValue));
-
-}
-
-function sgem_401_ConvertToInternationalCurrencySystemRound(labelValue) {
-
-    // Nine Zeroes for Billions
-    return Math.abs(Number(labelValue)) >= 1.0e+9
-
-    ? (Math.abs(Number(labelValue)) / 1.0e+9).toFixed(1) + "B"
-    // Six Zeroes for Millions 
-    : Math.abs(Number(labelValue)) >= 1.0e+6
-
-    ? (Math.abs(Number(labelValue)) / 1.0e+6).toFixed(1) + "M"
-    // Three Zeroes for Thousands
-    : Math.abs(Number(labelValue)) >= 1.0e+3
-
-    ? (Math.abs(Number(labelValue)) / 1.0e+3).toFixed() + "K"
-
-    : Math.abs(Number(labelValue));
-
+    return true;
 }
 
 // decimal points
 function decimalTwoPoints(x) {
-  return Number.parseFloat(x).toFixed(0);
+    return Number.parseFloat(x).toFixed(0);
 }
 // end
 
-jQuery(document).ready(function($){
-    
-function sgem_401k_calculationmin() {
-
-
-var chart401_label_year_array = [];
-var each401_year_age_array = [];
-var each401_individual_contribution_array = [];
-var each401_year_employee_match_array = [];
-var each401_year_catchup_array = [];
-var each401_year_total_contribution_array = [];
-var each401_interest_component_array = [];
-var each401_interest_component_array_final = [];
-var y401_axis_max_array = [];
-var y401_axis_max_array_nan = [];
-
-var current_age = $('#sgem_401k_age').val().trim();
-
-var curent_age_chart = current_age - 1;
-
-var retirement_age = $('#sgem_401k_retirement_age').val().trim();
-
-var years_to_retirement = retirement_age - current_age;
-
-var rate_of_return1 = $('#sgem_401k_rate_of_return').val().trim();
-var rate_of_return2 = rate_of_return1.replace('%', "");
-var rate_of_return = parseFloat(rate_of_return2/100);
-
-var current_annual_income1 = $('#sgem_401k_income_before_taxes').val().trim();
-var current_annual_income2 = current_annual_income1.replace(/\,/g,'');
-var current_annual_income = parseInt(current_annual_income2,10); 
-
-var current_saving_in_account1 = $('#sgem_401k_current_balance').val().trim();
-var current_saving_in_account2 = current_saving_in_account1.replace(/\,/g,'');
-var current_saving_in_account = parseInt(current_saving_in_account2,10); 
- 
-var annual_catchup_con_ifany1 = $('#sgem_401k_annual_catchup_contribution').val().trim();
-var annual_catchup_con_ifany2 = annual_catchup_con_ifany1.replace(/\,/g,'');
-var annual_catchup_con_ifany = parseInt(annual_catchup_con_ifany2,10); //after 50 years can contribute extra 6500
-
-var limit_on_matching_contribution1 = $('#sgem_401k_limit_on_matching').val().trim();
-var limit_on_matching_contribution2 = limit_on_matching_contribution1.replace('%', "");
-var limit_on_matching_contribution = parseFloat(limit_on_matching_contribution2/100);
-
-var employer_match1 = $('#sgem_401k_employer_match').val().trim();
-var employer_match2 = employer_match1.replace('%', "");
-var employer_match = parseFloat(employer_match2/100);
-
-var inflation = 3 / 100; //def
-
-var growth_rate1 = $('#sgem_401k_growth_rate').val().trim();
-var growth_rate2 = growth_rate1.replace('%', "");
-var growth_rate = parseFloat(growth_rate2/100);
-
-var income_tax = 27 / 100; //def
-
-var percentage_of_income_during_retirement = 70 / 100; //def
-var k_counting_fifty_years= 50-current_age;
-var k_counting_fifty_years2= 50-current_age;
-
-var t_annual_employee_contribution_atstart1 = $('#sgem_401k_annual_contributions').val().trim();
-var t_annual_employee_contribution_atstart2 = t_annual_employee_contribution_atstart1.replace(/\,/g,'');
-var t_annual_employee_contribution_atstart = parseInt(t_annual_employee_contribution_atstart2,10);//maiximum is 20500
-
-//Traditional 401k
-var t_annual_catchup_con_ifany = annual_catchup_con_ifany;
-var t_annual_employer_match_atstart = (current_annual_income * limit_on_matching_contribution) * employer_match;
-var t_totalannual_contribution = t_annual_employee_contribution_atstart + t_annual_employer_match_atstart;
-var t_total_annual_contribution_with_catchup = t_totalannual_contribution + t_annual_catchup_con_ifany;
-
-var annual_contribution_as_pct = t_annual_employee_contribution_atstart / current_annual_income;
-
-//Validation for Maximum Total Annual contribution
-
-if (t_totalannual_contribution > 61000){
-
-  $('#sgem_401k_err_annualmax').html('Calculation is exceeding the maximum Total Annual contribution value, please adjust your <b>Income before taxes,Employer match</b> or <b>Limit on matching contributions</b> in order to fix this').fadeIn();  
-  $('#sgem_401k_income_before_taxes,#sgem_401k_employer_match,#sgem_401k_limit_on_matching').css({
-        "border": "1px solid red",
-        "background": "#FFCECE" });
-
-}else{
-
-     $('#sgem_401k_err_annualmax').html('').fadeOut();
-
-    $('#sgem_401k_income_before_taxes,#sgem_401k_employer_match,#sgem_401k_limit_on_matching').css({
-        "border": "1px solid #707070",
-        "background": "#ffffff"
-      }); 
-   
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-//Validation for Maximum Total Annual contribution with catchup
-
-if (t_total_annual_contribution_with_catchup > 67500) {
-
-  $('#sgem_401k_err_annualmax_withcatchup').html('Calculation is exceeding the maximum Total Annual contribution with catchup value, please adjust your <b>Income before taxes,Employer match,Limit on matching contributions</b> or <b>Annual catch-up contribution</b> in order to fix this').fadeIn();  
-  $('#sgem_401k_income_before_taxes,#sgem_401k_employer_match,#sgem_401k_limit_on_matching,#sgem_401k_annual_catchup_contribution').css({
-        "border": "1px solid red",
-        "background": "#FFCECE" });
-
-}else {
-
-     $('#sgem_401k_err_annualmax_withcatchup').html('').fadeOut();
-
-    $('#sgem_401k_income_before_taxes,#sgem_401k_employer_match,#sgem_401k_limit_on_matching,#sgem_401k_annual_catchup_contribution').css({
-        "border": "1px solid #707070",
-        "background": "#ffffff"
-      }); 
+window.onload = function() {
+    sgem_capital_gain_calculationmin();
 }
 
+function sgem_capital_gain_calculationmin() {
+
+    //Rate table If holding period more than one year
+    //--------------------------------------------
+    var table_year = 2021;
+    //--------------------------------------------
+    var table_rates_bracket = 0; //0%
+
+    var single_0_to = 40400; //upto this value
+    var mfs_0_to = 40400;
+    var mfj_0_to = 80800;
+    var hoh_0_to = 54100; //More than
+    //--------------------------------------------
+    var table_rates_bracket2 = 0.15; //15%
+
+    var single_15_to = 445850; //upto this value
+    var mfs_15_to = 250800;
+    var mfj_15_to = 501600;
+    var hoh_15_to = 473750; //More than
+    //--------------------------------------------
+    var table_rates_bracket3 = 0.20; //20%
+
+    var single_20_above = 445850; //upto this value
+    var mfs_20_above = 250800;
+    var mfj_20_above = 501600;
+    var hoh_20_above = 473750; //More than
+    //--------------------------------------------
+    //--------------------------------------------
+    var table_year2 = 2022;
+    //--------------------------------------------
+    var table_rates_22_bracket = 0; //0%
+
+    var single_0_to_2 = 41675; //upto this value
+    var mfs_0_to_2 = 41675;
+    var mfj_0_to_2 = 83350;
+    var hoh_0_to_2 = 55800; //More than
+    //--------------------------------------------
+    var table_rates_22_bracket2 = 0.15; //15%
+
+    var single_15_to_2 = 459750; //upto this value
+    var mfs_15_to_2 = 258600;
+    var mfj_15_to_2 = 517200;
+    var hoh_15_to_2 = 488500; //More than
+    //--------------------------------------------
+    var table_rates_22_bracket3 = 0.20; //20% 
+
+    var single_20_above_2 = 459750; //upto this value
+    var mfs_20_above_2 = 258600;
+    var mfj_20_above_2 = 517200;
+    var hoh_20_above_2 = 488500; //More than
+    //--------------------------------------------
+
+
+    //Rate table If holding period one year or less than one
+    //--------------------------------------------
+    var table_year3 = 2021;
+    //--------------------------------------------
+    var table_rates_21_bracket = 0.10; //10% 
+
+    var single_10_to = 9950;
+    var mfs_10_to = 19900;
+    var mfj_10_to = 9950;
+    var hoh_10_above = 14200;
+    //--------------------------------------------
+    var table_rates_21_bracket2 = 0.12; //12% 
+
+    var single_12_to = 9951;
+    var mfs_12_to = 81050;
+    var mfj_12_to = 40525;
+    var hoh_12_above = 54200;
+    //--------------------------------------------
+    var table_rates_21_bracket3 = 0.22; //22% 
+
+    var single_22_to = 86375;
+    var mfs_22_to = 172751;
+    var mfj_22_to = 86375;
+    var hoh_22_above = 86350;
+    //--------------------------------------------
+    var table_rates_21_bracket4 = 0.24; //24% 
+
+    var single_24_to = 164925;
+    var mfs_24_to = 329850;
+    var mfj_24_to = 164925;
+    var hoh_24_above = 164900;
+    //--------------------------------------------
+    var table_rates_21_bracket5 = 0.32; //32%
+
+    var single_32_to = 209425;
+    var mfs_32_to = 418850;
+    var mfj_32_to = 209425;
+    var hoh_32_above = 209400;
+    //--------------------------------------------
+    var table_rates_21_bracket6 = 0.35; //35%
+
+    var single_35_to = 523600;
+    var mfs_35_to = 628300;
+    var mfj_35_to = 314150;
+    var hoh_35_above = 523600;
+    //--------------------------------------------
+    var table_rates_21_bracket7 = 0.37; //37%
+
+    var single_37_above = 523600;
+    var mfs_37_above = 628300;
+    var mfj_37_above = 314150;
+    var hoh_37_above = 523600;
+    //--------------------------------------------
+    //--------------------------------------------
+    var table_year4 = 2022;
+    //--------------------------------------------
+    var table_rates_22_bracket4 = 0.10; //10%
+
+    var single_10_to1 = 10275;
+    var mfs_10_to1 = 20550;
+    var mfj_10_to1 = 10275;
+    var hoh_10_to1 = 14650;
+    //--------------------------------------------
+    var table_rates_22_bracket5 = 0.12; //12%
 
-//----------------------------------------------------------
+    var single_12_to1 = 41775;
+    var mfs_12_to1 = 83550;
+    var mfj_12_to1 = 41775;
+    var hoh_12_to1 = 55900;
+    //--------------------------------------------
+    var table_rates_22_bracket6 = 0.22; //22%
 
-//Monthly retirement spending
+    var single_22_to1 = 89075;
+    var mfs_22_to1 = 178150;
+    var mfj_22_to1 = 89075;
+    var hoh_22_to1 = 89050;
+    //--------------------------------------------
+    var table_rates_22_bracket7 = 0.24; //24%
 
-var monthly_retirement_spending1 = current_annual_income / 12;
-var monthly_retirement_spending2 = 1 - income_tax;
-var monthly_retirement_spending3 = 1 + inflation;
-let monthly_retirement_spending4 = Math.pow(monthly_retirement_spending3, years_to_retirement);
-var monthly_retirement_spending = (monthly_retirement_spending1 * monthly_retirement_spending2 * percentage_of_income_during_retirement * monthly_retirement_spending4).toFixed();
-//console.log(monthly_retirement_spending);
+    var single_24_to1 = 170050;
+    var mfs_24_to1 = 340100;
+    var mfj_24_to1 = 170050;
+    var hoh_24_to1 = 170050;
+    //--------------------------------------------
+    var table_rates_22_bracket8 = 0.32; //32%
 
-      if (isNaN(monthly_retirement_spending) || monthly_retirement_spending < 1){
+    var single_32_to1 = 215950;
+    var mfs_32_to1 = 431900;
+    var mfj_32_to1 = 215950;
+    var hoh_32_to1 = 215950;
+    //--------------------------------------------
+    var table_rates_22_bracket9 = 0.35; //35%
 
-          $('#sgem_you_will_have').text('00.00'); 
+    var single_35_to1 = 539900;
+    var mfs_35_to1 = 647850;
+    var mfj_35_to1 = 323925;
+    var hoh_35_to1 = 539900;
+    //--------------------------------------------
+    var table_rates_22_bracket10 = 0.37; //37%
 
-      }else{
+    var single_37_above1 = 539900;
+    var mfs_37_above1 = 647850;
+    var mfj_37_above1 = 323925;
+    var hoh_37_above1 = 539900;
+    //--------------------------------------------
+    //--------------------------------------------
 
-        $('#sgem_you_will_have').text(decimalTwoPoints(monthly_retirement_spending).replace(/\B(?=(\d{3})+(?!\d))/g, ",")+'/mo'); 
-      }
 
+    var purchase_price3 = $('#sgem_cpg_purchased_price').val().trim();
+    var purchase_price2 = purchase_price3.replace(/\,/g, '');
+    var purchase_price = parseInt(purchase_price2, 10);
 
-//----------------------------------------------------------
+    var sales_price3 = $('#sgem_cpg_sales_price').val().trim();
+    var sales_price2 = sales_price3.replace(/\,/g, '');
+    var sales_price = parseInt(sales_price2, 10);
 
-//Total individual contribution including catchup
+    var taxable_income3 = $('#sgem_cpg_my_taxable_income').val().trim();
+    var taxable_income2 = taxable_income3.replace(/\,/g, '');
+    var taxable_income = parseInt(taxable_income2, 10);
 
-if (growth_rate > 0) {
+    var holding_period = $('#sgem_cpg_year_status').val(); //1,2
 
-    var total_individual_contribution1 = 1 + growth_rate;
-    let total_individual_contribution2 = Math.pow(total_individual_contribution1, years_to_retirement);
-    var total_individual_contribution21 = total_individual_contribution2 - 1;
-    var total_individual_contribution22 = total_individual_contribution21 / growth_rate;
-    var total_individual_contribution3 = t_annual_employee_contribution_atstart * total_individual_contribution22;
+    var filing_status = $('#sgem_cpg_marital_status').val(); //Single, mfj, mfs, hoh
 
-    var total_individual_contribution16 = retirement_age - 50;
-    var total_individual_contribution17 = t_annual_catchup_con_ifany * total_individual_contribution16;
+    var year_of_tax_filing = new Date().getFullYear();
 
-    var total_individual_contribution = (total_individual_contribution3 + total_individual_contribution17).toFixed(2);
+    var your_estimated_pretax_capital_gain = sales_price - purchase_price;
 
-} else {
+    var your_total_taxable_income_incld_capital_gain = taxable_income + your_estimated_pretax_capital_gain;
 
-    var total_individual_contribution5 = t_annual_employee_contribution_atstart * years_to_retirement;
+    var due_date2 = year_of_tax_filing + 1;
+    var due_date = 'April 18, ' + due_date2;
 
-    var total_individual_contribution6 = retirement_age - 50;
-    var total_individual_contribution7 = t_annual_catchup_con_ifany * total_individual_contribution6;
+    //Holding period If more than one year
 
-    var total_individual_contribution = (total_individual_contribution5 + total_individual_contribution7).toFixed(2);
+    if ((holding_period == "1" && filing_status == "single" && year_of_tax_filing == 2022 && taxable_income <= single_0_to_2) ||
+        (holding_period == "1" && filing_status == "mfs" && year_of_tax_filing == 2022 && taxable_income <= mfs_0_to_2) ||
+        (holding_period == "1" && filing_status == "mfj" && year_of_tax_filing == 2022 && taxable_income <= mfj_0_to_2) ||
+        (holding_period == "1" && filing_status == "hoh" && year_of_tax_filing == 2022 && taxable_income <= hoh_0_to_2)) {
 
-}
-//console.log(total_individual_contribution);
+        var percentage_balance_ammount_20 = your_total_taxable_income_incld_capital_gain - single_15_to_2;
+        var percentage_balance_ammount_20_mfs = your_total_taxable_income_incld_capital_gain - mfs_15_to_2;
+        var percentage_balance_ammount_20_mfj = your_total_taxable_income_incld_capital_gain - mfj_15_to_2;
+        var percentage_balance_ammount_20_hoh = your_total_taxable_income_incld_capital_gain - hoh_15_to_2;
 
-      if (isNaN(total_individual_contribution) || total_individual_contribution < 1){
 
-          $('#sgem_total_individual_con').text('00.00'); 
+        switch (filing_status) {
 
-      }else{
+            case "single":
 
-        $('#sgem_total_individual_con').text(decimalTwoPoints(total_individual_contribution).replace(/\B(?=(\d{3})+(?!\d))/g, ","));
-      }
+                if (taxable_income >= single_0_to_2 && percentage_balance_ammount_20 > 1) {
 
-//----------------------------------------------------------
+                    var newtwst = single_15_to_2 - single_0_to_2;
+                    var capital_gain_test1 = newtwst * table_rates_22_bracket2;
 
-//Total Employer Contribution
+                    var newtwst2 = percentage_balance_ammount_20 * table_rates_22_bracket3;
+                    var capital_gain_test = capital_gain_test1 + newtwst2;
 
-if (growth_rate > 0) {
+                    var rates = table_rates_22_bracket3;
 
-    var total_employer_contribution1 = 1 + growth_rate;
-    let total_employer_contribution2 = Math.pow(total_employer_contribution1, years_to_retirement);
-    var total_employer_contribution3 = total_employer_contribution2 - 1;
-    var total_employer_contribution4 = total_employer_contribution3 / growth_rate;
-    var total_employer_contribution = (t_annual_employer_match_atstart * total_employer_contribution4).toFixed(2);
+                    break;
 
-} else {
+                } else if (taxable_income <= single_0_to_2 && your_total_taxable_income_incld_capital_gain <= single_15_to_2) {
 
-    var total_employer_contribution = t_annual_employer_match_atstart * years_to_retirement;
+                    var newtest = single_0_to_2 - taxable_income;
+                    var capital_gain_test1 = newtest * table_rates_22_bracket;
 
-}
-//console.log(total_employer_contribution);
+                    var newtest2 = your_estimated_pretax_capital_gain - newtest;
+                    var capital_gain_test2 = newtest2 * table_rates_22_bracket2;
 
-      if (isNaN(total_employer_contribution) || total_employer_contribution < 1){
+                    var capital_gain_test3 = capital_gain_test1 + capital_gain_test2;
 
-          $('#sgem_total_employer_con').text('00.00'); 
+                    var rates = table_rates_22_bracket2;
 
-      }else{
+                    if (capital_gain_test3 < 0) {
 
-        $('#sgem_total_employer_con').text(decimalTwoPoints(total_employer_contribution).replace(/\B(?=(\d{3})+(?!\d))/g, ","));
-      }
+                        var capital_gain_test = 0;
 
-//----------------------------------------------------------
+                    } else {
 
-//Total Value at Retirement, with growth
+                        var capital_gain_test = capital_gain_test3;
 
-var total_value_at_retirement_w_growth1 = 1 + rate_of_return;
-let total_value_at_retirement_w_growth2 = Math.pow(total_value_at_retirement_w_growth1, years_to_retirement);
-var total_value_at_retirement_w_growth3 = current_saving_in_account * total_value_at_retirement_w_growth2;
+                    }
 
-var total_value_at_retirement_w_growth4 = 1 + rate_of_return;
-let total_value_at_retirement_w_growth5 = Math.pow(total_value_at_retirement_w_growth4, years_to_retirement);
-var total_value_at_retirement_w_growth6 = 1 + growth_rate;
-let total_value_at_retirement_w_growth7 = Math.pow(total_value_at_retirement_w_growth6, years_to_retirement);
-var total_value_at_retirement_w_growth8 = total_value_at_retirement_w_growth5 - total_value_at_retirement_w_growth7;
-var total_value_at_retirement_w_growth9 = rate_of_return - growth_rate;
-var total_value_at_retirement_w_growth10 = total_value_at_retirement_w_growth8 / total_value_at_retirement_w_growth9;
-var total_value_at_retirement_w_growth11 = t_totalannual_contribution * total_value_at_retirement_w_growth10;
+                    break;
 
-var total_value_at_retirement_w_growth12 = 1 + rate_of_return;
-var total_value_at_retirement_w_growth13 = retirement_age - 50;
-let total_value_at_retirement_w_growth14 = Math.pow(total_value_at_retirement_w_growth12, total_value_at_retirement_w_growth13);
-var total_value_at_retirement_w_growth15 = 1 + growth_rate;
-var total_value_at_retirement_w_growth16 = retirement_age - 50;
-let total_value_at_retirement_w_growth17 = Math.pow(total_value_at_retirement_w_growth15, total_value_at_retirement_w_growth16);
-var total_value_at_retirement_w_growth18 = total_value_at_retirement_w_growth14 - total_value_at_retirement_w_growth17;
-var total_value_at_retirement_w_growth19 = rate_of_return - growth_rate;
-var total_value_at_retirement_w_growth20 = total_value_at_retirement_w_growth18 / total_value_at_retirement_w_growth19;
-var total_value_at_retirement_w_growth21 = t_annual_catchup_con_ifany * total_value_at_retirement_w_growth20;
+                } else {
 
-var total_value_at_retirement_w_growth = (total_value_at_retirement_w_growth3 + total_value_at_retirement_w_growth11 + total_value_at_retirement_w_growth21).toFixed(2);
+                    var newtwst = single_0_to_2 - taxable_income;
+                    var capital_gain_test1 = newtwst * table_rates_22_bracket;
 
-//console.log(total_value_at_retirement_w_growth);
+                    var newtest2 = single_15_to_2 - single_0_to_2;
+                    var capital_gain_test2 = newtest2 * table_rates_22_bracket2;
 
-      if (isNaN(total_value_at_retirement_w_growth) || total_value_at_retirement_w_growth < 1){
+                    var percentage_balance_ammount_20_pretax = your_estimated_pretax_capital_gain - newtwst;
+                    var newtest3 = percentage_balance_ammount_20_pretax - newtest2;
+                    var capital_gain_test3 = newtest3 * table_rates_22_bracket3;
 
-          $('#sgem_401k_price_text').text('00.00'); 
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3;
 
-      }else{
+                    var rates = table_rates_22_bracket3;
 
-        $('#sgem_401k_price_text').text(sgem_401_ConvertToInternationalCurrencySystem(total_value_at_retirement_w_growth));
-      }
+                    break;
 
+                }
 
-//----------------------------------------------------------
+            case "mfs":
 
-// Chart Values --------------------------------------------
+                if (taxable_income >= mfs_0_to_2 && percentage_balance_ammount_20_mfs > 1) {
 
-//chart year label
+                    var newtwst = mfs_15_to_2 - mfs_0_to_2;
+                    var capital_gain_test1 = newtwst * table_rates_22_bracket2;
 
-var current_year = new Date().getFullYear();
-var endyear = current_year + years_to_retirement;
+                    var newtwst2 = percentage_balance_ammount_20_mfs * table_rates_22_bracket3;
+                    var capital_gain_test = capital_gain_test1 + newtwst2;
 
-var display_years_concat = "";
-while (current_year < endyear) {
-    var eachyear = current_year++;
-    display_years_concat += eachyear + ',';
-    chart401_label_year_array.push(eachyear);
-}
+                    var rates = table_rates_22_bracket3;
 
-//console.log(chart401_label_year_array);
-localStorage.setItem('401k_chart_years', JSON.stringify(chart401_label_year_array));
+                    break;
 
-//----------------------------------------------------------
+                } else if (taxable_income <= mfs_0_to_2 && your_total_taxable_income_incld_capital_gain <= mfs_15_to_2) {
 
-//Age for chart
+                    var newtest = mfs_0_to_2 - taxable_income;
+                    var capital_gain_test1 = newtest * table_rates_22_bracket;
 
-var each401_year_age = "";
+                    var newtest2 = your_estimated_pretax_capital_gain - newtest;
+                    var capital_gain_test2 = newtest2 * table_rates_22_bracket2;
 
-while (curent_age_chart < retirement_age) {
-    each401_year_age += curent_age_chart++;
-    each401_year_age_array.push(curent_age_chart);
-}
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2;
 
-//console.log(each401_year_age_array);
-localStorage.setItem('401k_chart_age', JSON.stringify(each401_year_age_array));
+                    var rates = table_rates_22_bracket2;
 
+                    break;
 
-//----------------------------------------------------------
+                } else {
 
-//Individual Contribution 
+                    var newtwst = mfs_0_to_2 - taxable_income;
+                    var capital_gain_test1 = newtwst * table_rates_22_bracket;
 
-var year_first_value = 1;
-var each401_year_individual_con = "";
+                    var newtest2 = mfs_15_to_2 - mfs_0_to_2;
+                    var capital_gain_test2 = newtest2 * table_rates_22_bracket2;
 
-if (growth_rate > 0) {
+                    var percentage_balance_ammount_20_pretax = your_estimated_pretax_capital_gain - newtwst;
+                    var newtest3 = percentage_balance_ammount_20_pretax - newtest2;
+                    var capital_gain_test3 = newtest3 * table_rates_22_bracket3;
 
-    while (year_first_value <= years_to_retirement) {
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3;
 
-        var k_individual_contribution1 = 1 + growth_rate;
-        let k_individual_contribution2 = Math.pow(k_individual_contribution1, year_first_value++);
-        var k_individual_contribution3 = k_individual_contribution2 - 1;
-        var k_individual_contribution4 = k_individual_contribution3 / growth_rate;
-        var k_individual_contribution5 = t_annual_employee_contribution_atstart * k_individual_contribution4;
-        var k_individual_contribution = (current_saving_in_account + k_individual_contribution5).toFixed(2);
+                    var rates = table_rates_22_bracket3;
 
-        each401_year_individual_con += k_individual_contribution + ',';
-        each401_individual_contribution_array.push(k_individual_contribution);
+                    break;
+
+                }
+
+            case "mfj":
+
+                if (taxable_income >= mfj_0_to_2 && percentage_balance_ammount_20_mfj > 1) {
+
+                    var newtwst = mfj_15_to_2 - mfj_0_to_2;
+                    var capital_gain_test1 = newtwst * table_rates_22_bracket2;
+
+                    var newtwst2 = percentage_balance_ammount_20_mfj * table_rates_22_bracket3;
+                    var capital_gain_test = capital_gain_test1 + newtwst2;
+
+                    var rates = table_rates_22_bracket3;
+
+                    break;
+
+                } else if (taxable_income <= mfj_0_to_2 && your_total_taxable_income_incld_capital_gain <= mfj_15_to_2) {
+
+                    var newtest = mfj_0_to_2 - taxable_income;
+                    var capital_gain_test1 = newtest * table_rates_22_bracket;
+
+                    var newtest2 = your_estimated_pretax_capital_gain - newtest;
+                    var capital_gain_test2 = newtest2 * table_rates_22_bracket2;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2;
+
+                    var rates = table_rates_22_bracket2;
+
+                    break;
+
+                } else {
+
+                    var newtwst = mfj_0_to_2 - taxable_income;
+                    var capital_gain_test1 = newtwst * table_rates_22_bracket;
+
+                    var newtest2 = mfj_15_to_2 - mfj_0_to_2;
+                    var capital_gain_test2 = newtest2 * table_rates_22_bracket2;
+
+                    var percentage_balance_ammount_20_pretax = your_estimated_pretax_capital_gain - newtwst;
+                    var newtest3 = percentage_balance_ammount_20_pretax - newtest2;
+                    var capital_gain_test3 = newtest3 * table_rates_22_bracket3;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3;
+
+                    var rates = table_rates_22_bracket3;
+
+                    break;
+
+                }
+
+            case "hoh":
+
+                if (taxable_income >= hoh_0_to_2 && percentage_balance_ammount_20_hoh > 1) {
+
+                    var newtwst = hoh_15_to_2 - hoh_0_to_2;
+                    var capital_gain_test1 = newtwst * table_rates_22_bracket2;
+
+                    var newtwst2 = percentage_balance_ammount_20_hoh * table_rates_22_bracket3;
+                    var capital_gain_test = capital_gain_test1 + newtwst2;
+
+                    var rates = table_rates_22_bracket3;
+
+                    break;
+
+                } else if (taxable_income <= hoh_0_to_2 && your_total_taxable_income_incld_capital_gain <= hoh_15_to_2) {
+
+                    var newtest = hoh_0_to_2 - taxable_income;
+                    var capital_gain_test1 = newtest * table_rates_22_bracket;
+
+                    var newtest2 = your_estimated_pretax_capital_gain - newtest;
+                    var capital_gain_test2 = newtest2 * table_rates_22_bracket2;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2;
+
+                    var rates = table_rates_22_bracket2;
+
+                    break;
+
+                } else {
+
+                    var newtwst = hoh_0_to_2 - taxable_income;
+                    var capital_gain_test1 = newtwst * table_rates_22_bracket;
+
+                    var newtest2 = hoh_15_to_2 - hoh_0_to_2;
+                    var capital_gain_test2 = newtest2 * table_rates_22_bracket2;
+
+                    var percentage_balance_ammount_20_pretax = your_estimated_pretax_capital_gain - newtwst;
+                    var newtest3 = percentage_balance_ammount_20_pretax - newtest2;
+                    var capital_gain_test3 = newtest3 * table_rates_22_bracket3;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3;
+
+                    var rates = table_rates_22_bracket3;
+
+                    break;
+
+                }
+
+        }
+
+
+    } else if ((holding_period == "1" && filing_status == "single" && year_of_tax_filing == 2022 && taxable_income <= single_15_to_2) ||
+        (holding_period == "1" && filing_status == "mfs" && year_of_tax_filing == 2022 && taxable_income <= mfs_15_to_2) ||
+        (holding_period == "1" && filing_status == "mfj" && year_of_tax_filing == 2022 && taxable_income <= mfj_15_to_2) ||
+        (holding_period == "1" && filing_status == "hoh" && year_of_tax_filing == 2022 && taxable_income <= hoh_15_to_2)) {
+
+        switch (filing_status) {
+            case "single":
+
+                if (taxable_income >= single_0_to_2 && your_total_taxable_income_incld_capital_gain < single_15_to_2) {
+
+                    var capital_gain_test = your_estimated_pretax_capital_gain * table_rates_22_bracket2;
+
+                    var rates = table_rates_22_bracket2;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain > single_15_to_2 && taxable_income >= single_0_to_2) {
+
+                    var newtwst = single_15_to_2 - taxable_income;
+                    var capital_gain_test1 = newtwst * table_rates_22_bracket2;
+
+                    var newtest2 = your_estimated_pretax_capital_gain - newtwst;
+                    var capital_gain_test2 = newtest2 * table_rates_22_bracket3;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2;
+
+                    var rates = table_rates_22_bracket3;
+
+                    break;
+                }
+
+            case "mfs":
+
+                if (taxable_income >= mfs_0_to_2 && your_total_taxable_income_incld_capital_gain < mfs_15_to_2) {
+
+                    var capital_gain_test = your_estimated_pretax_capital_gain * table_rates_22_bracket2;
+
+                    var rates = table_rates_22_bracket2;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain > mfs_15_to_2 && taxable_income >= mfs_0_to_2) {
+
+                    var newtwst = mfs_15_to_2 - taxable_income;
+                    var capital_gain_test1 = newtwst * table_rates_22_bracket2;
+
+                    var newtest2 = your_estimated_pretax_capital_gain - newtwst;
+                    var capital_gain_test2 = newtest2 * table_rates_22_bracket3;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2;
+
+                    var rates = table_rates_22_bracket3;
+
+                    break;
+
+                }
+
+            case "mfj":
+
+                if (taxable_income >= mfj_0_to_2 && your_total_taxable_income_incld_capital_gain < mfj_15_to_2) {
+
+                    var capital_gain_test = your_estimated_pretax_capital_gain * table_rates_22_bracket2;
+
+                    var rates = table_rates_22_bracket2;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain > mfj_15_to_2 && taxable_income >= mfj_0_to_2) {
+
+                    var newtwst = mfj_15_to_2 - taxable_income;
+                    var capital_gain_test1 = newtwst * table_rates_22_bracket2;
+
+                    var newtest2 = your_estimated_pretax_capital_gain - newtwst;
+                    var capital_gain_test2 = newtest2 * table_rates_22_bracket3;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2;
+
+                    var rates = table_rates_22_bracket3;
+
+                    break;
+
+                }
+
+            case "hoh":
+
+                if (taxable_income >= hoh_0_to_2 && your_total_taxable_income_incld_capital_gain < hoh_15_to_2) {
+
+                    var capital_gain_test = your_estimated_pretax_capital_gain * table_rates_22_bracket2;
+
+                    var rates = table_rates_22_bracket2;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain > hoh_15_to_2 && taxable_income >= hoh_0_to_2) {
+
+                    var newtwst = hoh_15_to_2 - taxable_income;
+                    var capital_gain_test1 = newtwst * table_rates_22_bracket2;
+
+                    var newtest2 = your_estimated_pretax_capital_gain - newtwst;
+                    var capital_gain_test2 = newtest2 * table_rates_22_bracket3;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2;
+
+                    var rates = table_rates_22_bracket3;
+
+                    break;
+
+                }
+        }
+
+
+    } else if ((holding_period == "1" && filing_status == "single" && year_of_tax_filing == 2022 && taxable_income > single_20_above_2) ||
+        (holding_period == "1" && filing_status == "mfs" && year_of_tax_filing == 2022 && taxable_income > mfs_20_above_2) ||
+        (holding_period == "1" && filing_status == "mfj" && year_of_tax_filing == 2022 && taxable_income > mfj_20_above_2) ||
+        (holding_period == "1" && filing_status == "hoh" && year_of_tax_filing == 2022 && taxable_income > hoh_20_above_2)) {
+
+        var rates = table_rates_22_bracket3;
+
+        var capital_gain_test = your_estimated_pretax_capital_gain * table_rates_22_bracket3;
 
     }
 
 
-} else {
 
-    while (year_first_value <= years_to_retirement) {
+    //Holding period If one year or less
 
-        var k_individual_contribution6 = t_annual_employee_contribution_atstart * year_first_value++;
-        var k_individual_contribution = (current_saving_in_account + k_individual_contribution6).toFixed(2);
+    if ((holding_period == "2" && filing_status == "single" && year_of_tax_filing == 2022 && taxable_income <= single_10_to1) ||
+        (holding_period == "2" && filing_status == "mfs" && year_of_tax_filing == 2022 && taxable_income <= mfs_10_to1) ||
+        (holding_period == "2" && filing_status == "mfj" && year_of_tax_filing == 2022 && taxable_income <= mfj_10_to1) ||
+        (holding_period == "2" && filing_status == "hoh" && year_of_tax_filing == 2022 && taxable_income <= hoh_10_to1)) {
 
-        each401_year_individual_con += k_individual_contribution + ',';
-        each401_individual_contribution_array.push(k_individual_contribution);
+
+        switch (filing_status) {
+            case "single":
+
+                if (your_total_taxable_income_incld_capital_gain <= single_10_to1) {
+
+                    var shortone = your_estimated_pretax_capital_gain * table_rates_22_bracket4;
+                    var capital_gain_test = shortone;
+
+                    var rates = table_rates_22_bracket4;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= single_12_to1) {
+
+                    var shortone = single_10_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket4;
+
+                    var shorttwo = your_total_taxable_income_incld_capital_gain - single_10_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket5;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2;
+
+                    var rates = table_rates_22_bracket5;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= single_22_to1) {
+
+                    var shortone = single_10_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket4;
+
+                    var shorttwo = single_12_to1 - single_10_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket5;
+
+                    var shortthree = your_total_taxable_income_incld_capital_gain - single_12_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket6;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3;
+
+                    var rates = table_rates_22_bracket6;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= single_24_to1) {
+
+                    var shortone = single_10_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket4;
+
+                    var shorttwo = single_12_to1 - single_10_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket5;
+
+                    var shortthree = single_22_to1 - single_12_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket6;
+
+                    var shortfour = your_total_taxable_income_incld_capital_gain - single_22_to1;
+                    var capital_gain_test4 = shortfour * table_rates_22_bracket7;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3 + capital_gain_test4;
+
+                    var rates = table_rates_22_bracket7;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= single_32_to1) {
+
+                    var shortone = single_10_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket4;
+
+                    var shorttwo = single_12_to1 - single_10_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket5;
+
+                    var shortthree = single_22_to1 - single_12_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket6;
+
+                    var shortfour = single_24_to1 - single_22_to1;
+                    var capital_gain_test4 = shortfour * table_rates_22_bracket7;
+
+                    var shortfive = your_total_taxable_income_incld_capital_gain - single_24_to1;
+                    var capital_gain_test5 = shortfive * table_rates_22_bracket8;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3 + capital_gain_test4 + capital_gain_test5;
+
+                    var rates = table_rates_22_bracket8;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= single_35_to1) {
+
+                    var shortone = single_10_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket4;
+
+                    var shorttwo = single_12_to1 - single_10_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket5;
+
+                    var shortthree = single_22_to1 - single_12_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket6;
+
+                    var shortfour = single_24_to1 - single_22_to1;
+                    var capital_gain_test4 = shortfour * table_rates_22_bracket7;
+
+                    var shortfive = single_32_to1 - single_24_to1;
+                    var capital_gain_test5 = shortfive * table_rates_22_bracket8;
+
+                    var shortsix = your_total_taxable_income_incld_capital_gain - single_32_to1;
+                    var capital_gain_test6 = shortsix * table_rates_22_bracket9;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3 + capital_gain_test4 + capital_gain_test5 + capital_gain_test6;
+
+                    var rates = table_rates_22_bracket9;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain > single_35_to1) {
+
+                    var shortone = single_10_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket4;
+
+                    var shorttwo = single_12_to1 - single_10_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket5;
+
+                    var shortthree = single_22_to1 - single_12_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket6;
+
+                    var shortfour = single_24_to1 - single_22_to1;
+                    var capital_gain_test4 = shortfour * table_rates_22_bracket7;
+
+                    var shortfive = single_32_to1 - single_24_to1;
+                    var capital_gain_test5 = shortfive * table_rates_22_bracket8;
+
+                    var shortsix = single_35_to1 - single_32_to1;
+                    var capital_gain_test6 = shortsix * table_rates_22_bracket9;
+
+                    var shortseven = your_total_taxable_income_incld_capital_gain - single_35_to1;
+                    var capital_gain_test7 = shortseven * table_rates_22_bracket10;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3 + capital_gain_test4 + capital_gain_test5 + capital_gain_test6 + capital_gain_test7;
+
+                    var rates = table_rates_22_bracket10;
+
+                    break;
+                }
+
+
+            case "mfs":
+
+                if (your_total_taxable_income_incld_capital_gain <= mfs_10_to1) {
+
+                    var shortone = your_estimated_pretax_capital_gain * table_rates_22_bracket4;
+                    var capital_gain_test = shortone;
+
+                    var rates = table_rates_22_bracket4;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= mfs_12_to1) {
+
+                    var shortone = mfs_10_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket4;
+
+                    var shorttwo = your_total_taxable_income_incld_capital_gain - mfs_10_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket5;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2;
+
+                    var rates = table_rates_22_bracket5;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= mfs_22_to1) {
+
+                    var shortone = mfs_10_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket4;
+
+                    var shorttwo = mfs_12_to1 - mfs_10_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket5;
+
+                    var shortthree = your_total_taxable_income_incld_capital_gain - mfs_12_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket6;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3;
+
+                    var rates = table_rates_22_bracket6;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= mfs_24_to1) {
+
+                    var shortone = mfs_10_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket4;
+
+                    var shorttwo = mfs_12_to1 - mfs_10_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket5;
+
+                    var shortthree = mfs_22_to1 - mfs_12_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket6;
+
+                    var shortfour = your_total_taxable_income_incld_capital_gain - mfs_22_to1;
+                    var capital_gain_test4 = shortfour * table_rates_22_bracket7;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3 + capital_gain_test4;
+
+                    var rates = table_rates_22_bracket7;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= mfs_32_to1) {
+
+                    var shortone = mfs_10_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket4;
+
+                    var shorttwo = mfs_12_to1 - mfs_10_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket5;
+
+                    var shortthree = mfs_22_to1 - mfs_12_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket6;
+
+                    var shortfour = mfs_24_to1 - mfs_22_to1;
+                    var capital_gain_test4 = shortfour * table_rates_22_bracket7;
+
+                    var shortfive = your_total_taxable_income_incld_capital_gain - mfs_24_to1;
+                    var capital_gain_test5 = shortfive * table_rates_22_bracket8;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3 + capital_gain_test4 + capital_gain_test5;
+
+                    var rates = table_rates_22_bracket8;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= mfs_35_to1) {
+
+                    var shortone = mfs_10_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket4;
+
+                    var shorttwo = mfs_12_to1 - mfs_10_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket5;
+
+                    var shortthree = mfs_22_to1 - mfs_12_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket6;
+
+                    var shortfour = mfs_24_to1 - mfs_22_to1;
+                    var capital_gain_test4 = shortfour * table_rates_22_bracket7;
+
+                    var shortfive = mfs_32_to1 - mfs_24_to1;
+                    var capital_gain_test5 = shortfive * table_rates_22_bracket8;
+
+                    var shortsix = your_total_taxable_income_incld_capital_gain - mfs_32_to1;
+                    var capital_gain_test6 = shortsix * table_rates_22_bracket9;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3 + capital_gain_test4 + capital_gain_test5 + capital_gain_test6;
+
+                    var rates = table_rates_22_bracket9;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain > mfs_35_to1) {
+
+                    var shortone = mfs_10_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket4;
+
+                    var shorttwo = mfs_12_to1 - mfs_10_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket5;
+
+                    var shortthree = mfs_22_to1 - mfs_12_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket6;
+
+                    var shortfour = mfs_24_to1 - mfs_22_to1;
+                    var capital_gain_test4 = shortfour * table_rates_22_bracket7;
+
+                    var shortfive = mfs_32_to1 - mfs_24_to1;
+                    var capital_gain_test5 = shortfive * table_rates_22_bracket8;
+
+                    var shortsix = mfs_35_to1 - mfs_32_to1;
+                    var capital_gain_test6 = shortsix * table_rates_22_bracket9;
+
+                    var shortseven = your_total_taxable_income_incld_capital_gain - mfs_35_to1;
+                    var capital_gain_test7 = shortseven * table_rates_22_bracket10;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3 + capital_gain_test4 + capital_gain_test5 + capital_gain_test6 + capital_gain_test7;
+
+                    var rates = table_rates_22_bracket10;
+
+                    break;
+                }
+
+            case "mfj":
+
+                if (your_total_taxable_income_incld_capital_gain <= mfj_10_to1) {
+
+                    var shortone = your_estimated_pretax_capital_gain * table_rates_22_bracket4;
+                    var capital_gain_test = shortone;
+
+                    var rates = table_rates_22_bracket4;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= mfj_12_to1) {
+
+                    var shortone = mfj_10_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket4;
+
+                    var shorttwo = your_total_taxable_income_incld_capital_gain - mfj_10_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket5;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2;
+
+                    var rates = table_rates_22_bracket5;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= mfj_22_to1) {
+
+                    var shortone = mfj_10_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket4;
+
+                    var shorttwo = mfj_12_to1 - mfj_10_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket5;
+
+                    var shortthree = your_total_taxable_income_incld_capital_gain - mfj_12_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket6;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3;
+
+                    var rates = table_rates_22_bracket6;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= mfj_24_to1) {
+
+                    var shortone = mfj_10_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket4;
+
+                    var shorttwo = mfj_12_to1 - mfj_10_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket5;
+
+                    var shortthree = mfj_22_to1 - mfj_12_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket6;
+
+                    var shortfour = your_total_taxable_income_incld_capital_gain - mfj_22_to1;
+                    var capital_gain_test4 = shortfour * table_rates_22_bracket7;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3 + capital_gain_test4;
+
+                    var rates = table_rates_22_bracket7;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= mfj_32_to1) {
+
+                    var shortone = mfj_10_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket4;
+
+                    var shorttwo = mfj_12_to1 - mfj_10_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket5;
+
+                    var shortthree = mfj_22_to1 - mfj_12_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket6;
+
+                    var shortfour = mfj_24_to1 - mfj_22_to1;
+                    var capital_gain_test4 = shortfour * table_rates_22_bracket7;
+
+                    var shortfive = your_total_taxable_income_incld_capital_gain - mfj_24_to1;
+                    var capital_gain_test5 = shortfive * table_rates_22_bracket8;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3 + capital_gain_test4 + capital_gain_test5;
+
+                    var rates = table_rates_22_bracket8;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= mfj_35_to1) {
+
+                    var shortone = mfj_10_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket4;
+
+                    var shorttwo = mfj_12_to1 - mfj_10_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket5;
+
+                    var shortthree = mfj_22_to1 - mfj_12_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket6;
+
+                    var shortfour = mfj_24_to1 - mfj_22_to1;
+                    var capital_gain_test4 = shortfour * table_rates_22_bracket7;
+
+                    var shortfive = mfj_32_to1 - mfj_24_to1;
+                    var capital_gain_test5 = shortfive * table_rates_22_bracket8;
+
+                    var shortsix = your_total_taxable_income_incld_capital_gain - mfj_32_to1;
+                    var capital_gain_test6 = shortsix * table_rates_22_bracket9;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3 + capital_gain_test4 + capital_gain_test5 + capital_gain_test6;
+
+                    var rates = table_rates_22_bracket9;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain > mfj_35_to1) {
+
+                    var shortone = mfj_10_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket4;
+
+                    var shorttwo = mfj_12_to1 - mfj_10_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket5;
+
+                    var shortthree = mfj_22_to1 - mfj_12_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket6;
+
+                    var shortfour = mfj_24_to1 - mfj_22_to1;
+                    var capital_gain_test4 = shortfour * table_rates_22_bracket7;
+
+                    var shortfive = mfj_32_to1 - mfj_24_to1;
+                    var capital_gain_test5 = shortfive * table_rates_22_bracket8;
+
+                    var shortsix = mfj_35_to1 - mfj_32_to1;
+                    var capital_gain_test6 = shortsix * table_rates_22_bracket9;
+
+                    var shortseven = your_total_taxable_income_incld_capital_gain - mfj_35_to1;
+                    var capital_gain_test7 = shortseven * table_rates_22_bracket10;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3 + capital_gain_test4 + capital_gain_test5 + capital_gain_test6 + capital_gain_test7;
+
+                    var rates = table_rates_22_bracket10;
+
+                    break;
+                }
+
+            case "hoh":
+
+                if (your_total_taxable_income_incld_capital_gain <= hoh_10_to1) {
+
+                    var shortone = your_estimated_pretax_capital_gain * table_rates_22_bracket4;
+                    var capital_gain_test = shortone;
+
+                    var rates = table_rates_22_bracket4;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= hoh_12_to1) {
+
+                    var shortone = hoh_10_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket4;
+
+                    var shorttwo = your_total_taxable_income_incld_capital_gain - hoh_10_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket5;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2;
+
+                    var rates = table_rates_22_bracket5;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= hoh_22_to1) {
+
+                    var shortone = hoh_10_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket4;
+
+                    var shorttwo = hoh_12_to1 - hoh_10_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket5;
+
+                    var shortthree = your_total_taxable_income_incld_capital_gain - hoh_12_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket6;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3;
+
+                    var rates = table_rates_22_bracket6;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= hoh_24_to1) {
+
+                    var shortone = hoh_10_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket4;
+
+                    var shorttwo = hoh_12_to1 - hoh_10_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket5;
+
+                    var shortthree = hoh_22_to1 - hoh_12_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket6;
+
+                    var shortfour = your_total_taxable_income_incld_capital_gain - hoh_22_to1;
+                    var capital_gain_test4 = shortfour * table_rates_22_bracket7;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3 + capital_gain_test4;
+
+                    var rates = table_rates_22_bracket7;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= hoh_32_to1) {
+
+                    var shortone = hoh_10_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket4;
+
+                    var shorttwo = hoh_12_to1 - hoh_10_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket5;
+
+                    var shortthree = hoh_22_to1 - hoh_12_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket6;
+
+                    var shortfour = hoh_24_to1 - hoh_22_to1;
+                    var capital_gain_test4 = shortfour * table_rates_22_bracket7;
+
+                    var shortfive = your_total_taxable_income_incld_capital_gain - hoh_24_to1;
+                    var capital_gain_test5 = shortfive * table_rates_22_bracket8;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3 + capital_gain_test4 + capital_gain_test5;
+
+                    var rates = table_rates_22_bracket8;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= hoh_35_to1) {
+
+                    var shortone = hoh_10_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket4;
+
+                    var shorttwo = hoh_12_to1 - hoh_10_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket5;
+
+                    var shortthree = hoh_22_to1 - hoh_12_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket6;
+
+                    var shortfour = hoh_24_to1 - hoh_22_to1;
+                    var capital_gain_test4 = shortfour * table_rates_22_bracket7;
+
+                    var shortfive = hoh_32_to1 - hoh_24_to1;
+                    var capital_gain_test5 = shortfive * table_rates_22_bracket8;
+
+                    var shortsix = your_total_taxable_income_incld_capital_gain - hoh_32_to1;
+                    var capital_gain_test6 = shortsix * table_rates_22_bracket9;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3 + capital_gain_test4 + capital_gain_test5 + capital_gain_test6;
+
+                    var rates = table_rates_22_bracket9;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain > hoh_37_above1) {
+
+                    var shortone = hoh_10_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket4;
+
+                    var shorttwo = hoh_12_to1 - hoh_10_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket5;
+
+                    var shortthree = hoh_22_to1 - hoh_12_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket6;
+
+                    var shortfour = hoh_24_to1 - hoh_22_to1;
+                    var capital_gain_test4 = shortfour * table_rates_22_bracket7;
+
+                    var shortfive = hoh_32_to1 - hoh_24_to1;
+                    var capital_gain_test5 = shortfive * table_rates_22_bracket8;
+
+                    var shortsix = hoh_35_to1 - hoh_32_to1;
+                    var capital_gain_test6 = shortsix * table_rates_22_bracket9;
+
+                    var shortseven = your_total_taxable_income_incld_capital_gain - hoh_35_to1;
+                    var capital_gain_test7 = shortseven * table_rates_22_bracket10;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3 + capital_gain_test4 + capital_gain_test5 + capital_gain_test6 + capital_gain_test7;
+
+                    var rates = table_rates_22_bracket10;
+
+                    break;
+                }
+
+        }
+
+
+    } else if ((holding_period == "2" && filing_status == "single" && year_of_tax_filing == 2022 && taxable_income <= single_12_to1) ||
+        (holding_period == "2" && filing_status == "mfs" && year_of_tax_filing == 2022 && taxable_income <= mfs_12_to1) ||
+        (holding_period == "2" && filing_status == "mfj" && year_of_tax_filing == 2022 && taxable_income <= mfj_12_to1) ||
+        (holding_period == "2" && filing_status == "hoh" && year_of_tax_filing == 2022 && taxable_income <= hoh_12_to1)) {
+
+
+        switch (filing_status) {
+            case "single":
+
+                if (your_total_taxable_income_incld_capital_gain <= single_12_to1) {
+
+                    var shortone = your_estimated_pretax_capital_gain * table_rates_22_bracket5;
+                    var capital_gain_test = shortone;
+
+                    var rates = table_rates_22_bracket5;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= single_22_to1) {
+
+                    var shortone = single_12_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket5;
+
+                    var shorttwo = your_total_taxable_income_incld_capital_gain - single_12_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket6;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2;
+
+                    var rates = table_rates_22_bracket6;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= single_24_to1) {
+
+                    var shortone = single_12_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket5;
+
+                    var shorttwo = single_22_to1 - single_12_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket6;
+
+                    var shortthree = your_total_taxable_income_incld_capital_gain - single_22_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket7;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3;
+
+                    var rates = table_rates_22_bracket7;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= single_32_to1) {
+
+                    var shortone = single_12_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket5;
+
+                    var shorttwo = single_22_to1 - single_12_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket6;
+
+                    var shortthree = single_24_to1 - single_22_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket7;
+
+                    var shortfour = your_total_taxable_income_incld_capital_gain - single_24_to1;
+                    var capital_gain_test4 = shortfour * table_rates_22_bracket8;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3 + capital_gain_test4;
+
+                    var rates = table_rates_22_bracket8;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= single_35_to1) {
+
+                    var shortone = single_12_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket5;
+
+                    var shorttwo = single_22_to1 - single_12_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket6;
+
+                    var shortthree = single_24_to1 - single_22_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket7;
+
+                    var shortfour = single_32_to1 - single_24_to1;
+                    var capital_gain_test4 = shortfour * table_rates_22_bracket8;
+
+                    var shortfive = your_total_taxable_income_incld_capital_gain - single_32_to1;
+                    var capital_gain_test5 = shortfive * table_rates_22_bracket9;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3 + capital_gain_test4 + capital_gain_test5;
+
+                    var rates = table_rates_22_bracket9;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain > single_37_above1) {
+
+                    var shortone = single_12_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket5;
+
+                    var shorttwo = single_22_to1 - single_12_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket6;
+
+                    var shortthree = single_24_to1 - single_22_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket7;
+
+                    var shortfour = single_32_to1 - single_24_to1;
+                    var capital_gain_test4 = shortfour * table_rates_22_bracket8;
+
+                    var shortfive = single_35_to1 - single_32_to1;
+                    var capital_gain_test5 = shortfive * table_rates_22_bracket9;
+
+                    var shortsix = your_total_taxable_income_incld_capital_gain - single_35_to1;
+                    var capital_gain_test6 = shortsix * table_rates_22_bracket10;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3 + capital_gain_test4 + capital_gain_test5 + capital_gain_test6;
+
+                    var rates = table_rates_22_bracket10;
+
+                    break;
+
+                }
+
+            case "mfs":
+
+                if (your_total_taxable_income_incld_capital_gain <= mfs_12_to1) {
+
+                    var shortone = your_estimated_pretax_capital_gain * table_rates_22_bracket5;
+                    var capital_gain_test = shortone;
+
+                    var rates = table_rates_22_bracket5;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= mfs_22_to1) {
+
+                    var shortone = mfs_12_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket5;
+
+                    var shorttwo = your_total_taxable_income_incld_capital_gain - mfs_12_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket6;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2;
+
+                    var rates = table_rates_22_bracket6;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= mfs_24_to1) {
+
+                    var shortone = mfs_12_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket5;
+
+                    var shorttwo = mfs_22_to1 - mfs_12_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket6;
+
+                    var shortthree = your_total_taxable_income_incld_capital_gain - mfs_22_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket7;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3;
+
+                    var rates = table_rates_22_bracket7;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= mfs_32_to1) {
+
+                    var shortone = mfs_12_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket5;
+
+                    var shorttwo = mfs_22_to1 - mfs_12_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket6;
+
+                    var shortthree = mfs_24_to1 - mfs_22_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket7;
+
+                    var shortfour = your_total_taxable_income_incld_capital_gain - mfs_24_to1;
+                    var capital_gain_test4 = shortfour * table_rates_22_bracket8;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3 + capital_gain_test4;
+
+                    var rates = table_rates_22_bracket8;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= mfs_35_to1) {
+
+                    var shortone = mfs_12_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket5;
+
+                    var shorttwo = mfs_22_to1 - mfs_12_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket6;
+
+                    var shortthree = mfs_24_to1 - mfs_22_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket7;
+
+                    var shortfour = mfs_32_to1 - mfs_24_to1;
+                    var capital_gain_test4 = shortfour * table_rates_22_bracket8;
+
+                    var shortfive = your_total_taxable_income_incld_capital_gain - mfs_32_to1;
+                    var capital_gain_test5 = shortfive * table_rates_22_bracket9;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3 + capital_gain_test4 + capital_gain_test5;
+
+                    var rates = table_rates_22_bracket9;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain > mfs_37_above1) {
+
+                    var shortone = mfs_12_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket5;
+
+                    var shorttwo = mfs_22_to1 - mfs_12_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket6;
+
+                    var shortthree = mfs_24_to1 - mfs_22_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket7;
+
+                    var shortfour = mfs_32_to1 - mfs_24_to1;
+                    var capital_gain_test4 = shortfour * table_rates_22_bracket8;
+
+                    var shortfive = mfs_35_to1 - mfs_32_to1;
+                    var capital_gain_test5 = shortfive * table_rates_22_bracket9;
+
+                    var shortsix = your_total_taxable_income_incld_capital_gain - mfs_35_to1;
+                    var capital_gain_test6 = shortsix * table_rates_22_bracket10;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3 + capital_gain_test4 + capital_gain_test5 + capital_gain_test6;
+
+                    var rates = table_rates_22_bracket10;
+
+                    break;
+
+                }
+
+            case "mfj":
+
+                if (your_total_taxable_income_incld_capital_gain <= mfj_12_to1) {
+
+                    var shortone = your_estimated_pretax_capital_gain * table_rates_22_bracket5;
+                    var capital_gain_test = shortone;
+
+                    var rates = table_rates_22_bracket5;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= mfj_22_to1) {
+
+                    var shortone = mfj_12_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket5;
+
+                    var shorttwo = your_total_taxable_income_incld_capital_gain - mfj_12_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket6;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2;
+
+                    var rates = table_rates_22_bracket6;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= mfj_24_to1) {
+
+                    var shortone = mfj_12_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket5;
+
+                    var shorttwo = mfj_22_to1 - mfj_12_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket6;
+
+                    var shortthree = your_total_taxable_income_incld_capital_gain - mfj_22_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket7;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3;
+
+                    var rates = table_rates_22_bracket7;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= mfj_32_to1) {
+
+                    var shortone = mfj_12_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket5;
+
+                    var shorttwo = mfj_22_to1 - mfj_12_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket6;
+
+                    var shortthree = mfj_24_to1 - mfj_22_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket7;
+
+                    var shortfour = your_total_taxable_income_incld_capital_gain - mfj_24_to1;
+                    var capital_gain_test4 = shortfour * table_rates_22_bracket8;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3 + capital_gain_test4;
+
+                    var rates = table_rates_22_bracket8;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= mfj_35_to1) {
+
+                    var shortone = mfj_12_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket5;
+
+                    var shorttwo = mfj_22_to1 - mfj_12_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket6;
+
+                    var shortthree = mfj_24_to1 - mfj_22_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket7;
+
+                    var shortfour = mfj_32_to1 - mfj_24_to1;
+                    var capital_gain_test4 = shortfour * table_rates_22_bracket8;
+
+                    var shortfive = your_total_taxable_income_incld_capital_gain - mfj_32_to1;
+                    var capital_gain_test5 = shortfive * table_rates_22_bracket9;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3 + capital_gain_test4 + capital_gain_test5;
+
+                    var rates = table_rates_22_bracket9;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain > mfj_37_above1) {
+
+                    var shortone = mfj_12_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket5;
+
+                    var shorttwo = mfj_22_to1 - mfj_12_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket6;
+
+                    var shortthree = mfj_24_to1 - mfj_22_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket7;
+
+                    var shortfour = mfj_32_to1 - mfj_24_to1;
+                    var capital_gain_test4 = shortfour * table_rates_22_bracket8;
+
+                    var shortfive = mfj_35_to1 - mfj_32_to1;
+                    var capital_gain_test5 = shortfive * table_rates_22_bracket9;
+
+                    var shortsix = your_total_taxable_income_incld_capital_gain - mfj_35_to1;
+                    var capital_gain_test6 = shortsix * table_rates_22_bracket10;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3 + capital_gain_test4 + capital_gain_test5 + capital_gain_test6;
+
+                    var rates = table_rates_22_bracket10;
+
+                    break;
+
+                }
+
+            case "hoh":
+
+                if (your_total_taxable_income_incld_capital_gain <= hoh_12_to1) {
+
+                    var shortone = your_estimated_pretax_capital_gain * table_rates_22_bracket5;
+                    var capital_gain_test = shortone;
+
+                    var rates = table_rates_22_bracket5;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= hoh_22_to1) {
+
+                    var shortone = hoh_12_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket5;
+
+                    var shorttwo = your_total_taxable_income_incld_capital_gain - hoh_12_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket6;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2;
+
+                    var rates = table_rates_22_bracket6;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= hoh_24_to1) {
+
+                    var shortone = hoh_12_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket5;
+
+                    var shorttwo = hoh_22_to1 - hoh_12_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket6;
+
+                    var shortthree = your_total_taxable_income_incld_capital_gain - hoh_22_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket7;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3;
+
+                    var rates = table_rates_22_bracket7;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= hoh_32_to1) {
+
+                    var shortone = hoh_12_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket5;
+
+                    var shorttwo = hoh_22_to1 - hoh_12_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket6;
+
+                    var shortthree = hoh_24_to1 - hoh_22_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket7;
+
+                    var shortfour = your_total_taxable_income_incld_capital_gain - hoh_24_to1;
+                    var capital_gain_test4 = shortfour * table_rates_22_bracket8;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3 + capital_gain_test4;
+
+                    var rates = table_rates_22_bracket8;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= hoh_35_to1) {
+
+                    var shortone = hoh_12_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket5;
+
+                    var shorttwo = hoh_22_to1 - hoh_12_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket6;
+
+                    var shortthree = hoh_24_to1 - hoh_22_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket7;
+
+                    var shortfour = hoh_32_to1 - hoh_24_to1;
+                    var capital_gain_test4 = shortfour * table_rates_22_bracket8;
+
+                    var shortfive = your_total_taxable_income_incld_capital_gain - hoh_32_to1;
+                    var capital_gain_test5 = shortfive * table_rates_22_bracket9;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3 + capital_gain_test4 + capital_gain_test5;
+
+                    var rates = table_rates_22_bracket9;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain > hoh_37_above1) {
+
+                    var shortone = hoh_12_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket5;
+
+                    var shorttwo = hoh_22_to1 - hoh_12_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket6;
+
+                    var shortthree = hoh_24_to1 - hoh_22_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket7;
+
+                    var shortfour = hoh_32_to1 - hoh_24_to1;
+                    var capital_gain_test4 = shortfour * table_rates_22_bracket8;
+
+                    var shortfive = hoh_35_to1 - hoh_32_to1;
+                    var capital_gain_test5 = shortfive * table_rates_22_bracket9;
+
+                    var shortsix = your_total_taxable_income_incld_capital_gain - hoh_35_to1;
+                    var capital_gain_test6 = shortsix * table_rates_22_bracket10;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3 + capital_gain_test4 + capital_gain_test5 + capital_gain_test6;
+
+                    var rates = table_rates_22_bracket10;
+
+                    break;
+
+                }
+
+        }
+
+
+    } else if ((holding_period == "2" && filing_status == "single" && year_of_tax_filing == 2022 && taxable_income <= single_22_to1) ||
+        (holding_period == "2" && filing_status == "mfs" && year_of_tax_filing == 2022 && taxable_income <= mfs_22_to1) ||
+        (holding_period == "2" && filing_status == "mfj" && year_of_tax_filing == 2022 && taxable_income <= mfj_22_to1) ||
+        (holding_period == "2" && filing_status == "hoh" && year_of_tax_filing == 2022 && taxable_income <= hoh_22_to1)) {
+
+
+        switch (filing_status) {
+            case "single":
+
+                if (your_total_taxable_income_incld_capital_gain <= single_22_to1) {
+
+                    var shortone = your_estimated_pretax_capital_gain * table_rates_22_bracket6;
+                    var capital_gain_test = shortone;
+
+                    var rates = table_rates_22_bracket6;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= single_24_to1) {
+
+                    var shortone = single_22_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket6;
+
+                    var shorttwo = your_total_taxable_income_incld_capital_gain - single_22_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket7;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2;
+
+                    var rates = table_rates_22_bracket7;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= single_32_to1) {
+
+                    var shortone = single_22_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket6;
+
+                    var shorttwo = single_24_to1 - single_22_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket7;
+
+                    var shortthree = your_total_taxable_income_incld_capital_gain - single_24_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket8;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3;
+
+                    var rates = table_rates_22_bracket8;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= single_35_to1) {
+
+                    var shortone = single_22_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket6;
+
+                    var shorttwo = single_24_to1 - single_22_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket7;
+
+                    var shortthree = single_32_to1 - single_24_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket8;
+
+                    var shortfour = your_total_taxable_income_incld_capital_gain - single_32_to1;
+                    var capital_gain_test4 = shortfour * table_rates_22_bracket9;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3 + capital_gain_test4;
+
+                    var rates = table_rates_22_bracket9;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain > single_37_above1) {
+
+                    var shortone = single_22_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket6;
+
+                    var shorttwo = single_24_to1 - single_22_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket7;
+
+                    var shortthree = single_32_to1 - single_24_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket8;
+
+                    var shortfour = single_35_to1 - single_32_to1;
+                    var capital_gain_test4 = shortfour * table_rates_22_bracket9;
+
+                    var shortfive = your_total_taxable_income_incld_capital_gain - single_35_to1;
+                    var capital_gain_test5 = shortfive * table_rates_22_bracket10;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3 + capital_gain_test4 + capital_gain_test5;
+
+                    var rates = table_rates_22_bracket10;
+
+                    break;
+
+                }
+
+            case "mfs":
+
+                if (your_total_taxable_income_incld_capital_gain <= mfs_22_to1) {
+
+                    var shortone = your_estimated_pretax_capital_gain * table_rates_22_bracket6;
+                    var capital_gain_test = shortone;
+
+                    var rates = table_rates_22_bracket6;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= mfs_24_to1) {
+
+                    var shortone = mfs_22_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket6;
+
+                    var shorttwo = your_total_taxable_income_incld_capital_gain - mfs_22_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket7;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2;
+
+                    var rates = table_rates_22_bracket7;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= mfs_32_to1) {
+
+                    var shortone = mfs_22_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket6;
+
+                    var shorttwo = mfs_24_to1 - mfs_22_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket7;
+
+                    var shortthree = your_total_taxable_income_incld_capital_gain - mfs_24_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket8;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3;
+
+                    var rates = table_rates_22_bracket8;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= mfs_35_to1) {
+
+                    var shortone = mfs_22_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket6;
+
+                    var shorttwo = mfs_24_to1 - mfs_22_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket7;
+
+                    var shortthree = mfs_32_to1 - mfs_24_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket8;
+
+                    var shortfour = your_total_taxable_income_incld_capital_gain - mfs_32_to1;
+                    var capital_gain_test4 = shortfour * table_rates_22_bracket9;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3 + capital_gain_test4;
+
+                    var rates = table_rates_22_bracket9;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain > mfs_37_above1) {
+
+                    var shortone = mfs_22_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket6;
+
+                    var shorttwo = mfs_24_to1 - mfs_22_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket7;
+
+                    var shortthree = mfs_32_to1 - mfs_24_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket8;
+
+                    var shortfour = mfs_35_to1 - mfs_32_to1;
+                    var capital_gain_test4 = shortfour * table_rates_22_bracket9;
+
+                    var shortfive = your_total_taxable_income_incld_capital_gain - mfs_35_to1;
+                    var capital_gain_test5 = shortfive * table_rates_22_bracket10;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3 + capital_gain_test4 + capital_gain_test5;
+
+                    var rates = table_rates_22_bracket10;
+
+                    break;
+
+                }
+
+            case "mfj":
+
+                if (your_total_taxable_income_incld_capital_gain <= mfj_22_to1) {
+
+                    var shortone = your_estimated_pretax_capital_gain * table_rates_22_bracket6;
+                    var capital_gain_test = shortone;
+
+                    var rates = table_rates_22_bracket6;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= mfj_24_to1) {
+
+                    var shortone = mfj_22_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket6;
+
+                    var shorttwo = your_total_taxable_income_incld_capital_gain - mfj_22_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket7;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2;
+
+                    var rates = table_rates_22_bracket7;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= mfj_32_to1) {
+
+                    var shortone = mfj_22_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket6;
+
+                    var shorttwo = mfj_24_to1 - mfj_22_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket7;
+
+                    var shortthree = your_total_taxable_income_incld_capital_gain - mfj_24_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket8;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3;
+
+                    var rates = table_rates_22_bracket8;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= mfj_35_to1) {
+
+                    var shortone = mfj_22_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket6;
+
+                    var shorttwo = mfj_24_to1 - mfj_22_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket7;
+
+                    var shortthree = mfj_32_to1 - mfj_24_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket8;
+
+                    var shortfour = your_total_taxable_income_incld_capital_gain - mfj_32_to1;
+                    var capital_gain_test4 = shortfour * table_rates_22_bracket9;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3 + capital_gain_test4;
+
+                    var rates = table_rates_22_bracket9;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain > mfj_37_above1) {
+
+                    var shortone = mfj_22_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket6;
+
+                    var shorttwo = mfj_24_to1 - mfj_22_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket7;
+
+                    var shortthree = mfj_32_to1 - mfj_24_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket8;
+
+                    var shortfour = mfj_35_to1 - mfj_32_to1;
+                    var capital_gain_test4 = shortfour * table_rates_22_bracket9;
+
+                    var shortfive = your_total_taxable_income_incld_capital_gain - mfj_35_to1;
+                    var capital_gain_test5 = shortfive * table_rates_22_bracket10;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3 + capital_gain_test4 + capital_gain_test5;
+
+                    var rates = table_rates_22_bracket10;
+
+                    break;
+
+                }
+
+            case "hoh":
+
+                if (your_total_taxable_income_incld_capital_gain <= hoh_22_to1) {
+
+                    var shortone = your_estimated_pretax_capital_gain * table_rates_22_bracket6;
+                    var capital_gain_test = shortone;
+
+                    var rates = table_rates_22_bracket6;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= hoh_24_to1) {
+
+                    var shortone = hoh_22_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket6;
+
+                    var shorttwo = your_total_taxable_income_incld_capital_gain - hoh_22_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket7;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2;
+
+                    var rates = table_rates_22_bracket7;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= hoh_32_to1) {
+
+                    var shortone = hoh_22_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket6;
+
+                    var shorttwo = hoh_24_to1 - hoh_22_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket7;
+
+                    var shortthree = your_total_taxable_income_incld_capital_gain - hoh_24_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket8;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3;
+
+                    var rates = table_rates_22_bracket8;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= hoh_35_to1) {
+
+                    var shortone = hoh_22_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket6;
+
+                    var shorttwo = hoh_24_to1 - hoh_22_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket7;
+
+                    var shortthree = hoh_32_to1 - hoh_24_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket8;
+
+                    var shortfour = your_total_taxable_income_incld_capital_gain - hoh_32_to1;
+                    var capital_gain_test4 = shortfour * table_rates_22_bracket9;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3 + capital_gain_test4;
+
+                    var rates = table_rates_22_bracket9;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain > hoh_37_above1) {
+
+                    var shortone = hoh_22_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket6;
+
+                    var shorttwo = hoh_24_to1 - hoh_22_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket7;
+
+                    var shortthree = hoh_32_to1 - hoh_24_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket8;
+
+                    var shortfour = hoh_35_to1 - hoh_32_to1;
+                    var capital_gain_test4 = shortfour * table_rates_22_bracket9;
+
+                    var shortfive = your_total_taxable_income_incld_capital_gain - hoh_35_to1;
+                    var capital_gain_test5 = shortfive * table_rates_22_bracket10;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3 + capital_gain_test4 + capital_gain_test5;
+
+                    var rates = table_rates_22_bracket10;
+
+                    break;
+
+                }
+
+        }
+
+    } else if ((holding_period == "2" && filing_status == "single" && year_of_tax_filing == 2022 && taxable_income <= single_24_to1) ||
+        (holding_period == "2" && filing_status == "mfs" && year_of_tax_filing == 2022 && taxable_income <= mfs_24_to1) ||
+        (holding_period == "2" && filing_status == "mfj" && year_of_tax_filing == 2022 && taxable_income <= mfj_24_to1) ||
+        (holding_period == "2" && filing_status == "hoh" && year_of_tax_filing == 2022 && taxable_income <= hoh_24_to1)) {
+
+        var rates = table_rates_22_bracket7;
+
+        switch (filing_status) {
+            case "single":
+
+                if (your_total_taxable_income_incld_capital_gain <= single_24_to1) {
+
+                    var shortone = your_estimated_pretax_capital_gain * table_rates_22_bracket7;
+                    var capital_gain_test = shortone;
+
+                    var rates = table_rates_22_bracket7;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= single_32_to1) {
+
+                    var shortone = single_24_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket7;
+
+                    var shorttwo = your_total_taxable_income_incld_capital_gain - single_24_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket8;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2;
+
+                    var rates = table_rates_22_bracket8;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= single_35_to1) {
+
+                    var shortone = single_24_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket7;
+
+                    var shorttwo = single_32_to1 - single_24_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket8;
+
+                    var shortthree = your_total_taxable_income_incld_capital_gain - single_32_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket9;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3;
+
+                    var rates = table_rates_22_bracket9;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain > single_37_above1) {
+
+                    var shortone = single_24_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket7;
+
+                    var shorttwo = single_32_to1 - single_24_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket8;
+
+                    var shortthree = single_35_to1 - single_32_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket9;
+
+                    var shortfour = your_total_taxable_income_incld_capital_gain - single_35_to1;
+                    var capital_gain_test4 = shortfour * table_rates_22_bracket10;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3 + capital_gain_test4;
+
+                    var rates = table_rates_22_bracket10;
+
+                    break;
+
+                }
+
+            case "mfs":
+
+                if (your_total_taxable_income_incld_capital_gain <= mfs_24_to1) {
+
+                    var shortone = your_estimated_pretax_capital_gain * table_rates_22_bracket7;
+                    var capital_gain_test = shortone;
+
+                    var rates = table_rates_22_bracket7;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= mfs_32_to1) {
+
+                    var shortone = mfs_24_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket7;
+
+                    var shorttwo = your_total_taxable_income_incld_capital_gain - mfs_24_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket8;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2;
+
+                    var rates = table_rates_22_bracket8;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= mfs_35_to1) {
+
+                    var shortone = mfs_24_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket7;
+
+                    var shorttwo = mfs_32_to1 - mfs_24_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket8;
+
+                    var shortthree = your_total_taxable_income_incld_capital_gain - mfs_32_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket9;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3;
+
+                    var rates = table_rates_22_bracket9;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain > mfs_37_above1) {
+
+                    var shortone = mfs_24_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket7;
+
+                    var shorttwo = mfs_32_to1 - mfs_24_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket8;
+
+                    var shortthree = mfs_35_to1 - mfs_32_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket9;
+
+                    var shortfour = your_total_taxable_income_incld_capital_gain - mfs_35_to1;
+                    var capital_gain_test4 = shortfour * table_rates_22_bracket10;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3 + capital_gain_test4;
+
+                    var rates = table_rates_22_bracket10;
+
+                    break;
+
+                }
+
+            case "mfj":
+
+                if (your_total_taxable_income_incld_capital_gain <= mfj_24_to1) {
+
+                    var shortone = your_estimated_pretax_capital_gain * table_rates_22_bracket7;
+                    var capital_gain_test = shortone;
+
+                    var rates = table_rates_22_bracket7;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= mfj_32_to1) {
+
+                    var shortone = mfj_24_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket7;
+
+                    var shorttwo = your_total_taxable_income_incld_capital_gain - mfj_24_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket8;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2;
+
+                    var rates = table_rates_22_bracket8;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= mfj_35_to1) {
+
+                    var shortone = mfj_24_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket7;
+
+                    var shorttwo = mfj_32_to1 - mfj_24_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket8;
+
+                    var shortthree = your_total_taxable_income_incld_capital_gain - mfj_32_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket9;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3;
+
+                    var rates = table_rates_22_bracket9;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain > mfj_37_above1) {
+
+                    var shortone = mfj_24_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket7;
+
+                    var shorttwo = mfj_32_to1 - mfj_24_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket8;
+
+                    var shortthree = mfj_35_to1 - mfj_32_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket9;
+
+                    var shortfour = your_total_taxable_income_incld_capital_gain - mfj_35_to1;
+                    var capital_gain_test4 = shortfour * table_rates_22_bracket10;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3 + capital_gain_test4;
+
+                    var rates = table_rates_22_bracket10;
+
+                    break;
+
+                }
+
+            case "hoh":
+
+                if (your_total_taxable_income_incld_capital_gain <= hoh_24_to1) {
+
+                    var shortone = your_estimated_pretax_capital_gain * table_rates_22_bracket7;
+                    var capital_gain_test = shortone;
+
+                    var rates = table_rates_22_bracket7;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= hoh_32_to1) {
+
+                    var shortone = hoh_24_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket7;
+
+                    var shorttwo = your_total_taxable_income_incld_capital_gain - hoh_24_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket8;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2;
+
+                    var rates = table_rates_22_bracket8;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= hoh_35_to1) {
+
+                    var shortone = hoh_24_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket7;
+
+                    var shorttwo = hoh_32_to1 - hoh_24_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket8;
+
+                    var shortthree = your_total_taxable_income_incld_capital_gain - hoh_32_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket9;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3;
+
+                    var rates = table_rates_22_bracket9;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain > hoh_37_above1) {
+
+                    var shortone = hoh_24_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket7;
+
+                    var shorttwo = hoh_32_to1 - hoh_24_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket8;
+
+                    var shortthree = hoh_35_to1 - hoh_32_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket9;
+
+                    var shortfour = your_total_taxable_income_incld_capital_gain - hoh_35_to1;
+                    var capital_gain_test4 = shortfour * table_rates_22_bracket10;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3 + capital_gain_test4;
+
+                    var rates = table_rates_22_bracket10;
+
+                    break;
+
+                }
+
+        }
+
+
+    } else if ((holding_period == "2" && filing_status == "single" && year_of_tax_filing == 2022 && taxable_income <= single_32_to1) ||
+        (holding_period == "2" && filing_status == "mfs" && year_of_tax_filing == 2022 && taxable_income <= mfs_32_to1) ||
+        (holding_period == "2" && filing_status == "mfj" && year_of_tax_filing == 2022 && taxable_income <= mfj_32_to1) ||
+        (holding_period == "2" && filing_status == "hoh" && year_of_tax_filing == 2022 && taxable_income <= hoh_32_to1)) {
+
+
+        switch (filing_status) {
+            case "single":
+
+                if (your_total_taxable_income_incld_capital_gain <= single_32_to1) {
+
+                    var shortone = your_estimated_pretax_capital_gain * table_rates_22_bracket8;
+                    var capital_gain_test = shortone;
+
+                    var rates = table_rates_22_bracket8;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= single_35_to1) {
+
+                    var shortone = single_32_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket8;
+
+                    var shorttwo = your_total_taxable_income_incld_capital_gain - single_32_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket9;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2;
+
+                    var rates = table_rates_22_bracket9;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain > single_37_above1) {
+
+                    var shortone = single_32_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket8;
+
+                    var shorttwo = single_35_to1 - single_32_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket9;
+
+                    var shortthree = your_total_taxable_income_incld_capital_gain - single_35_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket10;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3;
+
+                    var rates = table_rates_22_bracket10;
+
+                    break;
+
+                }
+
+            case "mfs":
+
+                if (your_total_taxable_income_incld_capital_gain <= mfs_32_to1) {
+
+                    var shortone = your_estimated_pretax_capital_gain * table_rates_22_bracket8;
+                    var capital_gain_test = shortone;
+
+                    var rates = table_rates_22_bracket8;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= mfs_35_to1) {
+
+                    var shortone = mfs_32_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket8;
+
+                    var shorttwo = your_total_taxable_income_incld_capital_gain - mfs_32_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket9;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2;
+
+                    var rates = table_rates_22_bracket9;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain > mfs_37_above1) {
+
+                    var shortone = mfs_32_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket8;
+
+                    var shorttwo = mfs_35_to1 - mfs_32_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket9;
+
+                    var shortthree = your_total_taxable_income_incld_capital_gain - mfs_35_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket10;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3;
+
+                    var rates = table_rates_22_bracket10;
+
+                    break;
+
+                }
+
+            case "mfj":
+
+                if (your_total_taxable_income_incld_capital_gain <= mfj_32_to1) {
+
+                    var shortone = your_estimated_pretax_capital_gain * table_rates_22_bracket8;
+                    var capital_gain_test = shortone;
+
+                    var rates = table_rates_22_bracket8;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= mfj_35_to1) {
+
+                    var shortone = mfj_32_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket8;
+
+                    var shorttwo = your_total_taxable_income_incld_capital_gain - mfj_32_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket9;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2;
+
+                    var rates = table_rates_22_bracket9;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain > mfj_37_above1) {
+
+                    var shortone = mfj_32_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket8;
+
+                    var shorttwo = mfj_35_to1 - mfj_32_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket9;
+
+                    var shortthree = your_total_taxable_income_incld_capital_gain - mfj_35_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket10;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3;
+
+                    var rates = table_rates_22_bracket10;
+
+                    break;
+
+                }
+
+            case "hoh":
+
+                if (your_total_taxable_income_incld_capital_gain <= hoh_32_to1) {
+
+                    var shortone = your_estimated_pretax_capital_gain * table_rates_22_bracket8;
+                    var capital_gain_test = shortone;
+
+                    var rates = table_rates_22_bracket8;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain <= hoh_35_to1) {
+
+                    var shortone = hoh_32_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket8;
+
+                    var shorttwo = your_total_taxable_income_incld_capital_gain - hoh_32_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket9;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2;
+
+                    var rates = table_rates_22_bracket9;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain > hoh_37_above1) {
+
+                    var shortone = hoh_32_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket8;
+
+                    var shorttwo = hoh_35_to1 - hoh_32_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket9;
+
+                    var shortthree = your_total_taxable_income_incld_capital_gain - hoh_35_to1;
+                    var capital_gain_test3 = shortthree * table_rates_22_bracket10;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2 + capital_gain_test3;
+
+                    var rates = table_rates_22_bracket10;
+
+                    break;
+
+                }
+
+        }
+
+
+    } else if ((holding_period == "2" && filing_status == "single" && year_of_tax_filing == 2022 && taxable_income <= single_35_to1) ||
+        (holding_period == "2" && filing_status == "mfs" && year_of_tax_filing == 2022 && taxable_income <= mfs_35_to1) ||
+        (holding_period == "2" && filing_status == "mfj" && year_of_tax_filing == 2022 && taxable_income <= mfj_35_to1) ||
+        (holding_period == "2" && filing_status == "hoh" && year_of_tax_filing == 2022 && taxable_income <= hoh_35_to1)) {
+
+
+        switch (filing_status) {
+            case "single":
+
+                if (your_total_taxable_income_incld_capital_gain <= single_35_to1) {
+
+                    var shortone = your_estimated_pretax_capital_gain * table_rates_22_bracket9;
+                    var capital_gain_test = shortone;
+
+                    var rates = table_rates_22_bracket9;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain > single_37_above1) {
+
+                    var shortone = single_35_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket9;
+
+                    var shorttwo = your_total_taxable_income_incld_capital_gain - single_35_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket10;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2;
+
+                    var rates = table_rates_22_bracket10;
+
+                    break;
+
+                }
+
+            case "mfs":
+
+                if (your_total_taxable_income_incld_capital_gain <= mfs_35_to1) {
+
+                    var shortone = your_estimated_pretax_capital_gain * table_rates_22_bracket9;
+                    var capital_gain_test = shortone;
+
+                    var rates = table_rates_22_bracket9;
+
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain > mfs_37_above1) {
+
+                    var shortone = mfs_35_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket9;
+
+                    var shorttwo = your_total_taxable_income_incld_capital_gain - mfs_35_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket10;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2;
+
+                    var rates = table_rates_22_bracket10;
+
+                    break;
+
+                }
+
+            case "mfj":
+
+                if (your_total_taxable_income_incld_capital_gain <= mfj_35_to1) {
+
+                    var shortone = your_estimated_pretax_capital_gain * table_rates_22_bracket9;
+                    var capital_gain_test = shortone;
+
+                    var rates = table_rates_22_bracket9;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain > mfj_37_above1) {
+
+                    var shortone = mfj_35_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket9;
+
+                    var shorttwo = your_total_taxable_income_incld_capital_gain - mfj_35_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket10;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2;
+
+                    var rates = table_rates_22_bracket10;
+
+                    break;
+
+                }
+
+            case "hoh":
+
+                if (your_total_taxable_income_incld_capital_gain <= hoh_35_to1) {
+
+                    var shortone = your_estimated_pretax_capital_gain * table_rates_22_bracket9;
+                    var capital_gain_test = shortone;
+
+                    var rates = table_rates_22_bracket9;
+
+                    break;
+
+                } else if (your_total_taxable_income_incld_capital_gain > hoh_37_above1) {
+
+                    var shortone = hoh_35_to1 - taxable_income;
+                    var capital_gain_test1 = shortone * table_rates_22_bracket9;
+
+                    var shorttwo = your_total_taxable_income_incld_capital_gain - hoh_35_to1;
+                    var capital_gain_test2 = shorttwo * table_rates_22_bracket10;
+
+                    var capital_gain_test = capital_gain_test1 + capital_gain_test2;
+
+                    var rates = table_rates_22_bracket10;
+
+                    break;
+
+                }
+
+        }
+
+
+    } else if ((holding_period == "2" && filing_status == "single" && year_of_tax_filing == 2022 && taxable_income > single_37_above1) ||
+        (holding_period == "2" && filing_status == "mfs" && year_of_tax_filing == 2022 && taxable_income > mfs_37_above1) ||
+        (holding_period == "2" && filing_status == "mfj" && year_of_tax_filing == 2022 && taxable_income > mfj_37_above1) ||
+        (holding_period == "2" && filing_status == "hoh" && year_of_tax_filing == 2022 && taxable_income > hoh_37_above1)) {
+
+        var rates = table_rates_22_bracket10;
+
+        var shortone = your_estimated_pretax_capital_gain * table_rates_22_bracket10;
+        var capital_gain_test = shortone;
 
     }
-}
 
-//console.log(each401_individual_contribution_array);
-localStorage.setItem('401k_chart_individual_contribution', JSON.stringify(each401_individual_contribution_array));
+    /*console.log(your_estimated_pretax_capital_gain);
+    console.log(your_total_taxable_income_incld_capital_gain);
+    console.log(capital_gain_test);
+    console.log(rates * 100 + '%');
+    console.log(due_date);*/
 
-//----------------------------------------------------------
+    if (isNaN(your_estimated_pretax_capital_gain) || your_estimated_pretax_capital_gain < 1) {
 
-//Employer Match
-
-var year_first_value_em = 1;
-var each401_year_em = "";
-
-if (growth_rate > 0) {
-
-    while (year_first_value_em <= years_to_retirement) {
-
-        var k_employer_match1 = 1 + growth_rate;
-        let k_employer_match2 = Math.pow(k_employer_match1, year_first_value_em++);
-        var k_employer_match3 = k_employer_match2 - 1;
-        var k_employer_match4 = k_employer_match3 / growth_rate;
-        var k_employer_match = (t_annual_employer_match_atstart * k_employer_match4).toFixed(2);
-
-        each401_year_em += k_employer_match + ',';
-        each401_year_employee_match_array.push(k_employer_match);
-
-    }
-
-} else {
-
-   while (year_first_value_em <= years_to_retirement) {
-    
-    var k_employer_match5 = t_annual_employer_match_atstart * year_first_value_em++;
-    var k_employer_match6 = k_employer_match5.toFixed(2);
-
-    each401_year_em += k_employer_match6 + ',';
-    each401_year_employee_match_array.push(k_employer_match6);
-
-   }
-
-}
-
-//console.log(each401_year_employee_match_array);
-localStorage.setItem('401k_chart_employer_match', JSON.stringify(each401_year_employee_match_array));
-
-
-//----------------------------------------------------------
-
-//Catchup contribution 
-
-var year_first_value_cc = 1;
-var each401_year_cc = "";
-//each401_year_xx = "";
-//var catchup_con_age = current_age - 1;
-var newage_cur50 = 50;
-
-while (year_first_value_cc <= years_to_retirement) {
-
-    var k_catchup_contribution1 = 0 * year_first_value_cc++;
-    var k_catchup_contribution = k_catchup_contribution1;
- 
-  
-    //each401_year_xx += k_catchup_contribution4 + ',';
-
-    each401_year_cc += k_catchup_contribution + ',';
-    each401_year_catchup_array.push(k_catchup_contribution);
-    //console.log(k_catchup_contribution4);
-
-}
-
-//After current age is =<50 adding last part of the formula to the array list
-
-while (newage_cur50 <= retirement_age){
-  // formula to add after 50 years
-    var k_catchup_contribution2 = newage_cur50++ - 50;
-    var k_catchup_contribution3 = k_catchup_contribution2 + 1 ;
-    var k_catchup_contribution4 = t_annual_catchup_con_ifany * k_catchup_contribution3;
-
-    each401_year_catchup_array[k_counting_fifty_years++] += k_catchup_contribution4;
-
-}
-
-//console.log(each401_year_catchup_array);
-localStorage.setItem('401k_chart_catchup_con', JSON.stringify(each401_year_catchup_array));
-
-
-//----------------------------------------------------------
-
-// Total Balance
-
-var first_year_tb = 1;
-var first_year_tb2 = 1;
-var first_year_tb3 = 1;
-var tb_total_balance = "";
-
-while(first_year_tb <= years_to_retirement,first_year_tb2 <= years_to_retirement,first_year_tb3 <= years_to_retirement){
-
-var total_balance1 = 1 + rate_of_return;
-let total_balance2 = Math.pow(total_balance1, first_year_tb++);
-var total_balance3 = current_saving_in_account * total_balance2;
-
-var total_balance4 = 1 + rate_of_return;
-let total_balance5 = Math.pow(total_balance4, first_year_tb2++);
-var total_balance6 = 1 + growth_rate;
-let total_balance7 = Math.pow(total_balance6, first_year_tb3++);
-var total_balance8 = total_balance5 - total_balance7;
-var total_balance9 = rate_of_return - growth_rate;
-var total_balance10 = total_balance8 / total_balance9;
-var total_balance11 = t_totalannual_contribution * total_balance10;
-
-var total_balance12 = total_balance3 + total_balance11;
-
-tb_total_balance += total_balance12 + ',';
-each401_year_total_contribution_array.push(total_balance12);
-
-}
-
-var newage2_cur50 = 50;
-var newage3_cur50 = 50;
-
-while (newage2_cur50 <= retirement_age,newage3_cur50 <= retirement_age){
-
-var total_balance13 = 1 + rate_of_return;
-var total_balance14 = newage2_cur50++ - 50;
-var total_balance15 = total_balance14 + 1;
-let total_balance16 = Math.pow(total_balance13, total_balance15);
-
-var total_balance17 = 1 + growth_rate;
-var total_balance18 = newage3_cur50++ - 50;
-var total_balance19 = total_balance18 + 1;
-let total_balance20 = Math.pow(total_balance17, total_balance19);
-
-var total_balance21 = total_balance16 - total_balance20;
-var total_balance22 = rate_of_return - growth_rate;
-
-var total_balance23 = total_balance21 / total_balance22;
-var total_balance24 = t_annual_catchup_con_ifany * total_balance23;
-
-each401_year_total_contribution_array[k_counting_fifty_years2++] += total_balance24;
-
-}
-//console.log(each401_year_total_contribution_array);
-
-//----------------------------------------------------------
-
-//Y Axis maximum
-var y_axis_max = each401_year_total_contribution_array[each401_year_total_contribution_array.length - 2] + each401_year_catchup_array[each401_year_catchup_array.length - 2];
-var y_axis_max_nan = 1000000;
-y401_axis_max_array_nan.push(y_axis_max_nan.toFixed(2));
-y401_axis_max_array.push(y_axis_max.toFixed(2));
-
-
-    if (isNaN(y_axis_max)) {
-      
-      localStorage.setItem('401k_chart_y_max', JSON.stringify(y401_axis_max_array_nan));
+        $('#sgem_cpg_pre_cap_tax').text('0');
 
     }else {
 
-      localStorage.setItem('401k_chart_y_max', JSON.stringify(y401_axis_max_array));
+        $('#sgem_cpg_pre_cap_tax').text(numberWithCommas(your_estimated_pretax_capital_gain));
     }
 
+    //-------------------------------------------------------------------------------------------------------------
 
-//----------------------------------------------------------
+    if (isNaN(your_total_taxable_income_incld_capital_gain) || your_total_taxable_income_incld_capital_gain < 1) {
 
-//Interest Component
+        $('#sgem_cpg_tax_income').text('0');
 
-var arrayLength = each401_individual_contribution_array.length;
+    }else {
 
-for (var i = 0; i < arrayLength; i++){
+        $('#sgem_cpg_tax_income').text(numberWithCommas(your_total_taxable_income_incld_capital_gain));
+    }
 
-     var finalanswer = parseFloat(each401_individual_contribution_array[i]) + parseFloat(each401_year_employee_match_array[i]);
-     each401_interest_component_array.push(finalanswer.toFixed(2));  
+    //-------------------------------------------------------------------------------------------------------------
 
-      var intrest_component = parseFloat(each401_year_total_contribution_array[i]) - parseFloat(each401_interest_component_array[i]);
-     each401_interest_component_array_final.push(intrest_component.toFixed(2));
- 
+    if (isNaN(capital_gain_test) || capital_gain_test < 0) {
+
+        $('#sgem_cpg_estimated_tax').text('0');
+
+    }else {
+
+        $('#sgem_cpg_estimated_tax').text(numberWithCommas(decimalTwoPoints(capital_gain_test)));
+    }
+
+    //-------------------------------------------------------------------------------------------------------------
+
+    if (isNaN(rates)) {
+
+        $('#sgem_cpg_you_marginal_tax_rate').text('0');
+
+    }else {
+
+        $('#sgem_cpg_you_marginal_tax_rate').text(rates * 100 + '%');
+    }
+
+    //-------------------------------------------------------------------------------------------------------------
+
+    if (holding_period == 1) {
+
+        $('#change_text_ondrop,#change_text_ondrop2').text('Long-Term');
+
+    }else {
+
+        $('#change_text_ondrop,#change_text_ondrop2').text('Short-Term');
+
+    }
+
+    //-------------------------------------------------------------------------------------------------------------
+
+
+
 }
 
+if ($('#sgem_cpg_purchased_price,#sgem_cpg_sales_price,#sgem_cpg_my_taxable_income,#sgem_cpg_year_status,#sgem_cpg_marital_status').length > 0) {
+    $('#sgem_cpg_purchased_price,#sgem_cpg_sales_price,#sgem_cpg_my_taxable_income,#sgem_cpg_year_status,#sgem_cpg_marital_status').on('keyup', function() {
+        sgem_capital_gain_calculationmin();
 
-//console.log(each401_interest_component_array_final);
-localStorage.setItem('401k_chart_intrest_com', JSON.stringify(each401_interest_component_array_final));
-
-
-//----------------------------------------------------------
-
-k401_update_chart();
-
-}
-
-sgem_401k_calculationmin();
-
-if($('#sgem_401k_age,#sgem_401k_retirement_age,#sgem_401k_income_before_taxes,#sgem_401k_current_balance,#sgem_401k_annual_contributions,#sgem_401k_employer_match,#sgem_401k_limit_on_matching,#sgem_401k_rate_of_return,#sgem_401k_annual_catchup_contribution,#sgem_401k_growth_rate').length > 0) {
-      $('#sgem_401k_age,#sgem_401k_retirement_age,#sgem_401k_income_before_taxes,#sgem_401k_current_balance,#sgem_401k_annual_contributions,#sgem_401k_employer_match,#sgem_401k_limit_on_matching,#sgem_401k_rate_of_return,#sgem_401k_annual_catchup_contribution,#sgem_401k_growth_rate').on('keyup', function () {
-        sgem_401k_calculationmin();
-      //pcm_init_chart(); 
-
-     
         // Keep only digits and decimal points:
-      this.value=this.value.replace(/[^\d.]/g, "")
-      // Remove duplicated decimal point, if one exists:
-      this.value=this.value.replace(/^(\d*\.)(.*)\.(.*)$/, '$1$2$3')
-      // Keep only two digits past the decimal point:
-      this.value=this.value.replace(/\.(\d{0})\d+/, '')
-      // Add thousands separators:
-      this.value=this.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        this.value = this.value.replace(/[^\d.]/g, "")
+        // Remove duplicated decimal point, if one exists:
+        this.value = this.value.replace(/^(\d*\.)(.*)\.(.*)$/, '$1$2$3')
+        // Keep only two digits past the decimal point:
+        this.value = this.value.replace(/\.(\d{0})\d+/, '')
+        // Add thousands separators:
+        this.value = this.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        // Removing front zero
+        this.value = this.value.replace(/^0+/, '');
 
-      });
- }
 
-//keyup for zero on front validation
- if($('#sgem_401k_age,#sgem_401k_retirement_age,#sgem_401k_income_before_taxes,#sgem_401k_current_balance,#sgem_401k_annual_contributions,#sgem_401k_employer_match,#sgem_401k_limit_on_matching,#sgem_401k_rate_of_return,#sgem_401k_growth_rate').length > 0) {
-      $('#sgem_401k_age,#sgem_401k_retirement_age,#sgem_401k_income_before_taxes,#sgem_401k_current_balance,#sgem_401k_annual_contributions,#sgem_401k_employer_match,#sgem_401k_limit_on_matching,#sgem_401k_rate_of_return,#sgem_401k_growth_rate').on('keyup', function () {
-      
-       // Removing front zero
-      this.value=this.value.replace(/^0+/, '');
-
-      });
- }
-
-//----------------------------------------------------
-//Validations
-
- // Current age validation
-    $('#sgem_401k_age').on('keyup', function () {
-       var retirement_age7     = $('#sgem_401k_retirement_age').val().trim();
-       var x = parseFloat(retirement_age7);
-      var val = this.value;
-      var y = parseFloat(val);
-      if (isNaN(y) || y.length>2 || y < 0 || y > x){
-         
-         this.value ='';
-         $('#sgem_401k_err_my_age').html('Age cannot be more than 100 and retirement age').fadeIn();  
-          $(this).css({
-        "border": "1px solid red",
-        "background": "#FFCECE" });  
-          
-
-  }else{
-     $('#sgem_401k_err_my_age').html('').fadeOut();  
-    $(this).css({
-        "border": "1px solid #707070",
-        "background": "#ffffff"
-      }); 
-  }    
     });
-
-
-    // Retirement age validation
-    $('#sgem_401k_retirement_age').on('keyup', function () {
-      var current_age7     = $('#sgem_401k_age').val().trim();
-      var val = this.value;
-      if ($(this).val().length>2 || val < current_age7){    
-         this.value ='';
-         $('#sgem_401k_err_rmt').html('Retirement age should be between your age '+current_age7+' and 100').fadeIn();      
-          $(this).css({
-        "border": "1px solid red",
-        "background": "#FFCECE"
-      }); 
-    
-       
-  }else{
-     $('#sgem_401k_err_rmt').html('').fadeOut();  
-    $(this).css({
-        "border": "1px solid #707070",
-        "background": "#ffffff"
-      }); 
-  }   
-    });
-
- // income before taxes
-    $('#sgem_401k_income_before_taxes').on('keyup', function () {
-      var val = this.value;
-      var xc = parseInt(val);
-      if (isNaN(xc) || $(this).val().length>11){
-         
-         this.value ='';
-         $('#sgem_401k_err_income_before_taxes').html('This cannot be empty or more than $900,000,000').fadeIn();  
-          $(this).css({
-        "border": "1px solid red",
-        "background": "#FFCECE" });  
-          
-
-  }else{
-     $('#sgem_401k_err_income_before_taxes').html('').fadeOut();  
-    $(this).css({
-        "border": "1px solid #707070",
-        "background": "#ffffff"
-      }); 
-  }    
-    });
-
-
- // current balance
-    $('#sgem_401k_current_balance').on('keyup', function () {
-      var val = this.value;
-      var xcx = parseInt(val);
-      if (isNaN(xcx) || $(this).val().length>11){
-         
-         this.value ='';
-         $('#sgem_401k_err_current_balance').html('This cannot be empty or more than $900,000,000').fadeIn();  
-          $(this).css({
-        "border": "1px solid red",
-        "background": "#FFCECE" });  
-          
-
-  }else{
-     $('#sgem_401k_err_current_balance').html('').fadeOut();  
-    $(this).css({
-        "border": "1px solid #707070",
-        "background": "#ffffff"
-      }); 
-  }    
-    });
-
-    //Annual contribution
-    $('#sgem_401k_annual_contributions').on('keyup', function () {
-      var vac3     = $('#sgem_401k_annual_contributions').val().trim();
-      var vac2 = vac3.replace(/\,/g,'');
-      var vac = parseInt(vac2,10); 
-      if (isNaN(vac) || vac>20500){
-         
-         this.value ='';
-         $('#sgem_401k_err_annual_contributions').html('This cannot be empty or more than $20,500').fadeIn();  
-          $(this).css({
-        "border": "1px solid red",
-        "background": "#FFCECE" });  
-          
-
-  }else{
-     $('#sgem_401k_err_annual_contributions').html('').fadeOut();  
-    $(this).css({
-        "border": "1px solid #707070",
-        "background": "#ffffff"
-      }); 
-  }    
-    });
-
- //Employer match
-    $('#sgem_401k_employer_match').on('keyup', function () {
-      var vrr2     = $('#sgem_401k_employer_match').val().trim();
-      var vrr = vrr2.replace('%', "");
-      if (isNaN(vrr) || vrr>100){
-         
-         this.value ='';
-         $('#sgem_401k_err_employer_match').html('This cannot be empty or more than 100%').fadeIn();  
-          $(this).css({
-        "border": "1px solid red",
-        "background": "#FFCECE" });  
-          
-
-  }else{
-     $('#sgem_401k_err_employer_match').html('').fadeOut();  
-    $(this).css({
-        "border": "1px solid #707070",
-        "background": "#ffffff"
-      }); 
-  }    
-    });
-
-     //limit on matching con
-    $('#sgem_401k_limit_on_matching').on('keyup', function () {
-      var vrr2     = $('#sgem_401k_limit_on_matching').val().trim();
-      var vrr = vrr2.replace('%', "");
-      if (isNaN(vrr) || vrr>100){
-         
-         this.value ='';
-         $('#sgem_401k_err_limit_on_matching').html('This cannot be empty or more than 100%').fadeIn();  
-          $(this).css({
-        "border": "1px solid red",
-        "background": "#FFCECE" });  
-          
-
-  }else{
-     $('#sgem_401k_err_limit_on_matching').html('').fadeOut();  
-    $(this).css({
-        "border": "1px solid #707070",
-        "background": "#ffffff"
-      }); 
-  }    
-    });
-
-     //Employer match
-    $('#sgem_401k_rate_of_return').on('keyup', function () {
-      var vrr2     = $('#sgem_401k_rate_of_return').val().trim();
-      var vrr = vrr2.replace('%', "");
-      if (isNaN(vrr) || vrr>100){
-         
-         this.value ='';
-         $('#sgem_401k_err_rate_of_return').html('This cannot be empty or more than 100%').fadeIn();  
-          $(this).css({
-        "border": "1px solid red",
-        "background": "#FFCECE" });  
-          
-
-  }else{
-     $('#sgem_401k_err_rate_of_return').html('').fadeOut();  
-    $(this).css({
-        "border": "1px solid #707070",
-        "background": "#ffffff"
-      }); 
-  }    
-    });
-
-     //Annual catch-up contribution 
-    $('#sgem_401k_annual_catchup_contribution').on('keyup', function () {
-      var vac3     = $('#sgem_401k_annual_catchup_contribution').val().trim();
-      var vac2 = vac3.replace(/\,/g,'');
-      var vac = parseInt(vac2,10); 
-      if (isNaN(vac) || vac>6500){
-         
-         this.value ='';
-         $('#sgem_401k_err_annual_catchup_contribution').html('This cannot be empty or more than $6,500').fadeIn();  
-          $(this).css({
-        "border": "1px solid red",
-        "background": "#FFCECE" });  
-          
-
-  }else{
-     $('#sgem_401k_err_annual_catchup_contribution').html('').fadeOut();  
-    $(this).css({
-        "border": "1px solid #707070",
-        "background": "#ffffff"
-      }); 
-  }    
-    });
-
-     //Growth rate
-    $('#sgem_401k_growth_rate').on('keyup', function () {
-      var vrr2     = $('#sgem_401k_growth_rate').val().trim();
-      var vrr = vrr2.replace('%', "");
-      if (isNaN(vrr) || vrr>100){
-         
-         this.value ='';
-         $('#sgem_401k_err_growth_rate').html('This cannot be empty or more than 100%').fadeIn();  
-          $(this).css({
-        "border": "1px solid red",
-        "background": "#FFCECE" });  
-          
-
-  }else{
-     $('#sgem_401k_err_growth_rate').html('').fadeOut();  
-    $(this).css({
-        "border": "1px solid #707070",
-        "background": "#ffffff"
-      }); 
-  }    
-    });
-
- //------------------------------
-
- // % fields validation %
-
- $('#sgem_401k_employer_match').on('keyup', function() {
-  if ($(this).val()==''){
-  
-      $(this).css({
-        "border": "1px solid red",
-        "background": "#FFCECE" });
-         $('#sgem_401k_err_employer_match').html('This cannot be empty or more than 100%').fadeIn(); 
-
-  }else{
-    $(this).val(function(i, v) {
-             return v.replace('%','') + '%';  });
-  }
-            
-    }); 
-
-  $('#sgem_401k_limit_on_matching').on('keyup', function() {
-  if ($(this).val()==''){
-  
-      $(this).css({
-        "border": "1px solid red",
-        "background": "#FFCECE" });
-         $('#sgem_401k_err_limit_on_matching').html('This cannot be empty or more than 100%').fadeIn(); 
-
-  }else{
-    $(this).val(function(i, v) {
-             return v.replace('%','') + '%';  });
-  }
-            
-    }); 
-
-   $('#sgem_401k_rate_of_return').on('keyup', function() {
-  if ($(this).val()==''){
-  
-      $(this).css({
-        "border": "1px solid red",
-        "background": "#FFCECE" });
-         $('#sgem_401k_err_rate_of_return').html('This cannot be empty or more than 100%').fadeIn(); 
-
-  }else{
-    $(this).val(function(i, v) {
-             return v.replace('%','') + '%';  });
-  }
-            
-    }); 
-
-    $('#sgem_401k_growth_rate').on('keyup', function() {
-  if ($(this).val()==''){
-  
-      $(this).css({
-        "border": "1px solid red",
-        "background": "#FFCECE" });
-         $('#sgem_401k_err_growth_rate').html('This cannot be empty or more than 100%').fadeIn(); 
-
-  }else{
-    $(this).val(function(i, v) {
-             return v.replace('%','') + '%';  });
-  }
-            
-}); 
-
-}); 
-
-function k401_update_chart(){
-  myChart.data.labels = JSON.parse(localStorage.getItem('401k_chart_years'));
-
-  myChart.options.scales.y.max = JSON.parse(localStorage.getItem('401k_chart_y_max'));
-
-  myChart.data.datasets[0].data = JSON.parse(localStorage.getItem('401k_chart_age')); 
-
-  myChart.data.datasets[1].data = JSON.parse(localStorage.getItem('401k_chart_individual_contribution'));
-  
-  myChart.data.datasets[2].data = JSON.parse(localStorage.getItem('401k_chart_catchup_con'));
-
-  myChart.data.datasets[3].data = JSON.parse(localStorage.getItem('401k_chart_employer_match')); 
-
-  myChart.data.datasets[4].data = JSON.parse(localStorage.getItem('401k_chart_intrest_com'));  
- 
-  myChart.update();  
 }
 
-function toggleData(value){
-  const visibilityData = myChart.isDatasetVisible(value);
-  if (visibilityData === true ){
-    myChart.hide(value);
-  }
-   if (visibilityData === false ){
-    myChart.show(value);
-  } 
-}
+$('#sgem_cpg_year_status,#sgem_cpg_marital_status').on('change', function() {
+    sgem_capital_gain_calculationmin();
+
+});
+
+//Validations-------------------------------------------------------------------
+
+// purchase price
+$('#sgem_cpg_purchased_price').on('keyup', function() {
+    var val = this.value;
+    var xc = parseInt(val);
+    if (isNaN(xc) || $(this).val().length > 11) {
+
+        this.value = '';
+        $('#sgem_cpg_err_purchase_the_item').html('This cannot be empty or more than $900,000,000').fadeIn();
+        $(this).css({
+            "border": "1px solid red",
+            "background": "#FFCECE"
+        });
+
+
+    } else {
+        $('#sgem_cpg_err_purchase_the_item').html('').fadeOut();
+        $(this).css({
+            "border": "1px solid #707070",
+            "background": "#ffffff"
+        });
+    }
+});
+
+// salse price
+$('#sgem_cpg_sales_price').on('keyup', function() {
+    var cval = this.value;
+    var cxc = parseInt(cval);
+    if (isNaN(cxc) || $(this).val().length > 11) {
+
+        this.value = '';
+        $('#sgem_cpg_err_sold_the_item').html('This cannot be empty or more than $900,000,000').fadeIn();
+        $(this).css({
+            "border": "1px solid red",
+            "background": "#FFCECE"
+        });
+
+
+    } else {
+        $('#sgem_cpg_err_sold_the_item').html('').fadeOut();
+        $(this).css({
+            "border": "1px solid #707070",
+            "background": "#ffffff"
+        });
+    }
+});
+
+// taxable income
+$('#sgem_cpg_my_taxable_income').on('keyup', function() {
+    var scval = this.value;
+    var scxc = parseInt(scval);
+    if (isNaN(scxc) || $(this).val().length > 11) {
+
+        this.value = '';
+        $('#sgem_cpg_err_taxable_income').html('This cannot be empty or more than $900,000,000').fadeIn();
+        $(this).css({
+            "border": "1px solid red",
+            "background": "#FFCECE"
+        });
+
+
+    } else {
+        $('#sgem_cpg_err_taxable_income').html('').fadeOut();
+        $(this).css({
+            "border": "1px solid #707070",
+            "background": "#ffffff"
+        });
+    }
+});
+
+//------------------------------------------------------------------------------
+
+
+$(document).ready(function() {
+
+    if ($('.sgem-cpg-cal-wrapper').width() < 1024) {
+        $('.sgem-cpg-cal-left').addClass('sgem-cpg-cal-left-add-class');
+        $('.sgem-cpg-cal-right').addClass('sgem-cpg-cal-right-add-class');
+    } else {
+        $('.sgem-cpg-cal-left').removeClass('sgem-cpg-cal-left-add-class');
+        $('.sgem-cpg-cal-right').removeClass('sgem-cpg-cal-right-add-class');
+    }
+
+    if ($('.sgem-cpg-cal-main-id').width() < 650) {
+        $('.sgem-cpg-cal-wrapper').addClass('sgem-cpg-wrapper-add-mobile');
+    } else {
+        $('.sgem-cpg-cal-wrapper').removeClass('sgem-cpg-wrapper-add-mobile');
+    }
+
+    $(window).on('resize', function() {
+        if ($('.sgem-cpg-cal-wrapper').width() < 1024) {
+            $('.sgem-cpg-cal-left').addClass('sgem-cpg-cal-left-add-class');
+            $('.sgem-cpg-cal-right').addClass('sgem-cpg-cal-right-add-class');
+        } else {
+            $('.sgem-cpg-cal-left').removeClass('sgem-cpg-cal-left-add-class');
+            $('.sgem-cpg-cal-right').removeClass('sgem-cpg-cal-right-add-class');
+        }
+    }).trigger('resize');
+
+    $(window).on('resize', function() {
+        if ($('.sgem-cpg-cal-main-id').width() < 650) {
+            $('.sgem-cpg-cal-wrapper').addClass('sgem-cpg-wrapper-add-mobile');
+        } else {
+            $('.sgem-cpg-cal-wrapper').removeClass('sgem-cpg-wrapper-add-mobile');
+        }
+    }).trigger('resize');
+
+
+});
+
+// DOCUMENT.READY END
 
 localStorage.setItem('sgem-401k-cal-copy', '<div id="sgem-401k-cal"></div><script>window.onload = function() {var sgem401kcal = document.createElement("script");sgem401kcal.type = "text/javascript";sgem401kcal.src = "https://retirementinvestments.github.io/sgem-401k-calculator/assets/js/cal-401k-cal-scripts.min.js";document.body.appendChild(sgem401kcal);} </script>'); 
  
