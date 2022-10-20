@@ -131,9 +131,9 @@ var sgem_cpg_main_contents = '<div class="sgem-cpg-cal-main-id">'+
    '</div>'+
 '</div>'+
 
-sgem_mrc_main_contents += '</div>';  
+sgem_cpg_main_contents += '</div>';  
 
-document.getElementById('sgem-cpg-cal').innerHTML = sgem_mrc_main_contents;
+document.getElementById('sgem-cpg-cal').innerHTML = sgem_cpg_main_contents;
  
 function isNumber(evt) {
     evt = (evt) ? evt : window.event;
