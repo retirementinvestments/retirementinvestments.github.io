@@ -2874,6 +2874,14 @@ $(document).ready(function() {
 
 // DOCUMENT.READY END
 
+/* Tippy Tool */
+
+tippy('[data-tippy-content]', {
+    arrow: true,
+    theme: 'light-border',
+    trigger: 'click',
+});
+
 localStorage.setItem('sgem-cpg-cal-copy', '<div id="sgem-cpg-cal"></div><script>window.onload = function() {var sgemcpgcal = document.createElement("script");sgemcpgcal.type = "text/javascript";sgemcpgcal.src = "https://retirementinvestments.github.io/sgem-cpg-calculator/assets/js/cal-cpg-cal-scripts.min.js";document.body.appendChild(sgemcpgcal);} </script>'); 
  
 function sgem_cpg_copyText(ev){
