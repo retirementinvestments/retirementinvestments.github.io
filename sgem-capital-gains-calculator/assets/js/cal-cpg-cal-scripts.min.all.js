@@ -2882,7 +2882,7 @@ tippy('[data-tippy-content]', {
     trigger: 'click',
 });
 
-localStorage.setItem('sgem-cpg-cal-copy', '<div id="sgem-cpg-cal"></div><script>window.onload = function() {var sgemcpgcal = document.createElement("script");sgemcpgcal.type = "text/javascript";sgemcpgcal.src = "https://retirementinvestments.github.io/sgem-cpg-calculator/assets/js/cal-cpg-cal-scripts.min.js";document.body.appendChild(sgemcpgcal);} </script>'); 
+localStorage.setItem('sgem-cpg-cal-copy', '<div id="sgem-cpg-cal"></div><script>window.onload = function() {var sgemcpgcal = document.createElement("script");sgemcpgcal.type = "text/javascript";sgemcpgcal.src = "https://retirementinvestments.github.io/sgem-capital-gains-calculator/assets/js/cal-cpg-cal-scripts.min.js";document.body.appendChild(sgemcpgcal);} </script>'); 
  
 function sgem_cpg_copyText(ev){
   //console.log("hi");
