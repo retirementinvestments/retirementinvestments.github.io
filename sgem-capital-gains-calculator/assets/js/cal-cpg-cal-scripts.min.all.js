@@ -47,7 +47,7 @@ var sgem_cpg_main_contents = '<div class="sgem-cpg-cal-main-id">'+
             '</div>'+
             '<div class="sgem-cpg-flex-container">'+
                '<div class="sgem-cpg-form-group sgem-cpg-form-flex sgem-cpg-currency-holder">'+
-                  '<label>2022 taxable income'+
+                  '<label>2022 taxable income '+
                   '<span class="sgem-cpg-info-tooltip tooltip" data-tippy-content="Please enter your taxable income without the inclusion of any capital gains. Your taxable income is inclusive of all income that is not tax-exempt such as interest, dividends, salary, wages, pensions, minus deductions such as itemized or standard deductions.">?</span>'+
                   '</label> '+
                   '<input type="text"class="inputmove inputnumber" id="sgem_cpg_my_taxable_income" value="10,000" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
