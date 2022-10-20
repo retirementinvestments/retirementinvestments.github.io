@@ -29,34 +29,35 @@ function(a){a.stopPropagation();a.preventDefault();return!1});m.hover(function()
 x();"bottom"===a.start?(c.css({top:b.outerHeight()-c.outerHeight()}),n(0,!0)):"top"!==a.start&&(n(e(a.start).position().top,null,!0),a.alwaysVisible||c.hide());window.addEventListener?(this.addEventListener("DOMMouseScroll",v,!1),this.addEventListener("mousewheel",v,!1)):document.attachEvent("onmousewheel",v)}});return this}});e.fn.extend({slimscroll:e.fn.slimScroll})})(jQuery);
 
 
-var sgem_cpg_main_contents = '<div class="sgem-cpg-cal-main-id"><div class="sgem-cpg-cal-wrapper">'+
+var sgem_cpg_main_contents = '<div class="sgem-cpg-cal-main-id">'+
+   '<div class="sgem-cpg-cal-wrapper">'+
       '<div class="sgem-cpg-cal-left">'+
          '<div class="sgem-cpg-form sgem-cpg-cal-1">'+
             '<div class="sgem-cpg-flex-container">'+
                '<div class="sgem-cpg-form-group sgem-cpg-form-flex sgem-cpg-currency-holder">'+
                   '<label>Purchase price</label> '+
-                  '<input type="text"class="inputmove inputnumber" id="sgem_cpg_purchased_price" value="10000" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
+                  '<input type="text"class="inputmove inputnumber" id="sgem_cpg_purchased_price" value="10,000" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
                   '<span class="sgem_cpg_err_msg" id="sgem_cpg_err_purchase_the_item"></span>'+
                '</div>'+
                '<div class="sgem-cpg-form-group sgem-cpg-form-flex sgem_cpg_right_field_row sgem-cpg-currency-holder">'+
                   '<label>Sales price</label> '+
-                  '<input type="text"class="inputmove inputnumber" id="sgem_cpg_sales_price" value="60000" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
+                  '<input type="text"class="inputmove inputnumber" id="sgem_cpg_sales_price" value="60,000" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
                   '<span class="sgem_cpg_err_msg" id="sgem_cpg_err_sold_the_item"></span>'+
                '</div>'+
             '</div>'+
             '<div class="sgem-cpg-flex-container">'+
                '<div class="sgem-cpg-form-group sgem-cpg-form-flex sgem-cpg-currency-holder">'+
-                  '<label>2021 taxable income'+
+                  '<label>2022 taxable income'+
                   '<span class="sgem-cpg-info-tooltip tooltip" data-tippy-content="Please enter your taxable income without the inclusion of any capital gains. Your taxable income is inclusive of all income that is not tax-exempt such as interest, dividends, salary, wages, pensions, minus deductions such as itemized or standard deductions.">?</span>'+
                   '</label> '+
-                  '<input type="text"class="inputmove inputnumber" id="sgem_cpg_my_taxable_income" value="10000" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
+                  '<input type="text"class="inputmove inputnumber" id="sgem_cpg_my_taxable_income" value="10,000" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
                   '<span class="sgem_cpg_err_msg" id="sgem_cpg_err_taxable_income"></span>'+
                '</div>'+
                '<div class="sgem-cpg-form-group sgem-cpg-form-flex sgem_cpg_right_field_row">'+
-                  '<label for="yearscount">Holding period</label>  '+
+                  '<label for="yearscount">Holding period</label>'+  
                   '<select id="sgem_cpg_year_status" class="sgem-cpg-drop-selection" name="yearscount" onkeypress="return isNumber(event)">'+
-                     '<option value="One year or less">One year or less</option>'+
-                     '<option value="More than a year">More than a year</option>'+
+                       '<option value="2">One year or less</option>'+
+                    '<option value="1">More than a year</option>'+
                   '</select>'+
                '</div>'+
             '</div>'+
@@ -66,9 +67,9 @@ var sgem_cpg_main_contents = '<div class="sgem-cpg-cal-main-id"><div class="sgem
                   '</label>  '+
                   '<select id="sgem_cpg_marital_status" class="sgem-cpg-drop-selection" name="marital" onkeypress="return isNumber(event)">'+
                      '<option value="single">Single</option>'+
-                     '<option value="married, filing jointly">Married, filing jointly</option>'+
-                     '<option value="married, filing separately">Married, filing separately</option>'+
-                     '<option value="head of household">Head of household</option>'+
+                     '<option value="mfj">Married, filing jointly</option>'+
+                     '<option value="mfs">Married, filing separately</option>'+
+                     '<option value="hoh">Head of household</option>'+
                   '</select>'+
                '</div>'+
             '</div>'+
@@ -91,16 +92,16 @@ var sgem_cpg_main_contents = '<div class="sgem-cpg-cal-main-id"><div class="sgem
             '</div>'+
             '<div class="sgem-cpg-flex-container sgem-cpg-column2">'+
                '<div class="sgem-cpg-form-group sgem-cpg-form-flex">'+
-                  '<span class="futuretext3 sgem-result-value">ESTIMATED 2021 TAX</span> '+
+                  '<span class="futuretext3 sgem-result-value">ESTIMATED 2022 TAX</span> '+
                   '<div id="futureV3" class="sgem-cpg-result-label">$<span id="sgem_cpg_estimated_tax">30,820.00</span>'+
                   '</div>'+
-                  '<span class="futuretext3 sgem-cpg-result-value">on Short-Term Capital Gain</span>'+
+                  '<span class="futuretext3 sgem-cpg-result-value">on <span id="change_text_ondrop">Short-Term</span> Capital Gain</span>'+
                '</div>'+
                '<div class="sgem-cpg-form-group sgem-cpg-form-flex ">'+
                   '<span class="futuretext4 sgem-result-value">YOUR MARGINAL FEDERAL TAX RATE</span>'+
                   '<div id="futureV4" class="sgem-cpg-result-label"><span id="sgem_cpg_you_marginal_tax_rate">24%</span>'+
                   '</div>'+
-                  '<span class="futuretext4 sgem-cpg-result-value">on short-term capital gains</span>'+
+                  '<span class="futuretext4 sgem-cpg-result-value">on <span id="change_text_ondrop2">Short-Term</span> capital gains</span>'+
                '</div>'+
             '</div>'+
             '<div class="sgem-cpg-cal-1-result-footer">'+
