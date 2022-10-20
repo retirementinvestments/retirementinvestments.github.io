@@ -2734,105 +2734,109 @@ function sgem_capital_gain_calculationmin() {
 
 }
 
-if ($('#sgem_cpg_purchased_price,#sgem_cpg_sales_price,#sgem_cpg_my_taxable_income,#sgem_cpg_year_status,#sgem_cpg_marital_status').length > 0) {
-    $('#sgem_cpg_purchased_price,#sgem_cpg_sales_price,#sgem_cpg_my_taxable_income,#sgem_cpg_year_status,#sgem_cpg_marital_status').on('keyup', function() {
-        sgem_capital_gain_calculationmin();
 
-        // Keep only digits and decimal points:
-        this.value = this.value.replace(/[^\d.]/g, "")
-        // Remove duplicated decimal point, if one exists:
-        this.value = this.value.replace(/^(\d*\.)(.*)\.(.*)$/, '$1$2$3')
-        // Keep only two digits past the decimal point:
-        this.value = this.value.replace(/\.(\d{0})\d+/, '')
-        // Add thousands separators:
-        this.value = this.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        // Removing front zero
-        this.value = this.value.replace(/^0+/, '');
-
-
-    });
-}
-
-$('#sgem_cpg_year_status,#sgem_cpg_marital_status').on('change', function() {
-    sgem_capital_gain_calculationmin();
-
-});
-
-//Validations-------------------------------------------------------------------
-
-// purchase price
-$('#sgem_cpg_purchased_price').on('keyup', function() {
-    var val = this.value;
-    var xc = parseInt(val);
-    if (isNaN(xc) || $(this).val().length > 11) {
-
-        this.value = '';
-        $('#sgem_cpg_err_purchase_the_item').html('This cannot be empty or more than $900,000,000').fadeIn();
-        $(this).css({
-            "border": "1px solid red",
-            "background": "#FFCECE"
-        });
-
-
-    } else {
-        $('#sgem_cpg_err_purchase_the_item').html('').fadeOut();
-        $(this).css({
-            "border": "1px solid #707070",
-            "background": "#ffffff"
-        });
-    }
-});
-
-// salse price
-$('#sgem_cpg_sales_price').on('keyup', function() {
-    var cval = this.value;
-    var cxc = parseInt(cval);
-    if (isNaN(cxc) || $(this).val().length > 11) {
-
-        this.value = '';
-        $('#sgem_cpg_err_sold_the_item').html('This cannot be empty or more than $900,000,000').fadeIn();
-        $(this).css({
-            "border": "1px solid red",
-            "background": "#FFCECE"
-        });
-
-
-    } else {
-        $('#sgem_cpg_err_sold_the_item').html('').fadeOut();
-        $(this).css({
-            "border": "1px solid #707070",
-            "background": "#ffffff"
-        });
-    }
-});
-
-// taxable income
-$('#sgem_cpg_my_taxable_income').on('keyup', function() {
-    var scval = this.value;
-    var scxc = parseInt(scval);
-    if (isNaN(scxc) || $(this).val().length > 11) {
-
-        this.value = '';
-        $('#sgem_cpg_err_taxable_income').html('This cannot be empty or more than $900,000,000').fadeIn();
-        $(this).css({
-            "border": "1px solid red",
-            "background": "#FFCECE"
-        });
-
-
-    } else {
-        $('#sgem_cpg_err_taxable_income').html('').fadeOut();
-        $(this).css({
-            "border": "1px solid #707070",
-            "background": "#ffffff"
-        });
-    }
-});
-
-//------------------------------------------------------------------------------
 
 
 $(document).ready(function() {
+
+    if ($('#sgem_cpg_purchased_price,#sgem_cpg_sales_price,#sgem_cpg_my_taxable_income,#sgem_cpg_year_status,#sgem_cpg_marital_status').length > 0) {
+        $('#sgem_cpg_purchased_price,#sgem_cpg_sales_price,#sgem_cpg_my_taxable_income,#sgem_cpg_year_status,#sgem_cpg_marital_status').on('keyup', function() {
+            sgem_capital_gain_calculationmin();
+
+            // Keep only digits and decimal points:
+            this.value = this.value.replace(/[^\d.]/g, "")
+            // Remove duplicated decimal point, if one exists:
+            this.value = this.value.replace(/^(\d*\.)(.*)\.(.*)$/, '$1$2$3')
+            // Keep only two digits past the decimal point:
+            this.value = this.value.replace(/\.(\d{0})\d+/, '')
+            // Add thousands separators:
+            this.value = this.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            // Removing front zero
+            this.value = this.value.replace(/^0+/, '');
+
+
+        });
+    }
+
+    $('#sgem_cpg_year_status,#sgem_cpg_marital_status').on('change', function() {
+        sgem_capital_gain_calculationmin();
+
+    });
+
+    //Validations-------------------------------------------------------------------
+
+    // purchase price
+    $('#sgem_cpg_purchased_price').on('keyup', function() {
+        var val = this.value;
+        var xc = parseInt(val);
+        if (isNaN(xc) || $(this).val().length > 11) {
+
+            this.value = '';
+            $('#sgem_cpg_err_purchase_the_item').html('This cannot be empty or more than $900,000,000').fadeIn();
+            $(this).css({
+                "border": "1px solid red",
+                "background": "#FFCECE"
+            });
+
+
+        } else {
+            $('#sgem_cpg_err_purchase_the_item').html('').fadeOut();
+            $(this).css({
+                "border": "1px solid #707070",
+                "background": "#ffffff"
+            });
+        }
+    });
+
+    // salse price
+    $('#sgem_cpg_sales_price').on('keyup', function() {
+        var cval = this.value;
+        var cxc = parseInt(cval);
+        if (isNaN(cxc) || $(this).val().length > 11) {
+
+            this.value = '';
+            $('#sgem_cpg_err_sold_the_item').html('This cannot be empty or more than $900,000,000').fadeIn();
+            $(this).css({
+                "border": "1px solid red",
+                "background": "#FFCECE"
+            });
+
+
+        } else {
+            $('#sgem_cpg_err_sold_the_item').html('').fadeOut();
+            $(this).css({
+                "border": "1px solid #707070",
+                "background": "#ffffff"
+            });
+        }
+    });
+
+    // taxable income
+    $('#sgem_cpg_my_taxable_income').on('keyup', function() {
+        var scval = this.value;
+        var scxc = parseInt(scval);
+        if (isNaN(scxc) || $(this).val().length > 11) {
+
+            this.value = '';
+            $('#sgem_cpg_err_taxable_income').html('This cannot be empty or more than $900,000,000').fadeIn();
+            $(this).css({
+                "border": "1px solid red",
+                "background": "#FFCECE"
+            });
+
+
+        } else {
+            $('#sgem_cpg_err_taxable_income').html('').fadeOut();
+            $(this).css({
+                "border": "1px solid #707070",
+                "background": "#ffffff"
+            });
+        }
+    });
+
+    //------------------------------------------------------------------------------
+
+    sgem_capital_gain_calculationmin();
 
     if ($('.sgem-cpg-cal-wrapper').width() < 1024) {
         $('.sgem-cpg-cal-left').addClass('sgem-cpg-cal-left-add-class');
