@@ -29,8 +29,7 @@ function(a){a.stopPropagation();a.preventDefault();return!1});m.hover(function()
 x();"bottom"===a.start?(c.css({top:b.outerHeight()-c.outerHeight()}),n(0,!0)):"top"!==a.start&&(n(e(a.start).position().top,null,!0),a.alwaysVisible||c.hide());window.addEventListener?(this.addEventListener("DOMMouseScroll",v,!1),this.addEventListener("mousewheel",v,!1)):document.attachEvent("onmousewheel",v)}});return this}});e.fn.extend({slimscroll:e.fn.slimScroll})})(jQuery);
 
 
-var sgem_cpg_main_contents = '<div class="sgem-cpg-cal-main-id">'+
-   '<div class="sgem-cpg-cal-wrapper">'+
+var sgem_cpg_main_contents = '<div class="sgem-cpg-cal-main-id"><div class="sgem-cpg-cal-wrapper">'+
       '<div class="sgem-cpg-cal-left">'+
          '<div class="sgem-cpg-form sgem-cpg-cal-1">'+
             '<div class="sgem-cpg-flex-container">'+
@@ -129,7 +128,7 @@ var sgem_cpg_main_contents = '<div class="sgem-cpg-cal-main-id">'+
          '<button class="sgem-cpg-copy-code" id="sgem-cpg-copy-code" onclick="sgem_cpg_copyText(event)">Get Calculator</button>'+
       '</div>'+
    '</div>'+
-'</div>'+
+'</div>';
 
 sgem_cpg_main_contents += '</div>';  
 
