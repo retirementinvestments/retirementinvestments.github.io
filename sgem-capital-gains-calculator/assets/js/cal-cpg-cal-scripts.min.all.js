@@ -29,7 +29,7 @@ function(a){a.stopPropagation();a.preventDefault();return!1});m.hover(function()
 x();"bottom"===a.start?(c.css({top:b.outerHeight()-c.outerHeight()}),n(0,!0)):"top"!==a.start&&(n(e(a.start).position().top,null,!0),a.alwaysVisible||c.hide());window.addEventListener?(this.addEventListener("DOMMouseScroll",v,!1),this.addEventListener("mousewheel",v,!1)):document.attachEvent("onmousewheel",v)}});return this}});e.fn.extend({slimscroll:e.fn.slimScroll})})(jQuery);
 
 
-var sgem_401k_main_contents = '<div class="sgem-cpg-cal-main-id">'+
+var sgem_cpg_main_contents = '<div class="sgem-cpg-cal-main-id">'+
    '<div class="sgem-cpg-cal-wrapper">'+
       '<div class="sgem-cpg-cal-left">'+
          '<div class="sgem-cpg-form sgem-cpg-cal-1">'+
@@ -133,7 +133,7 @@ var sgem_401k_main_contents = '<div class="sgem-cpg-cal-main-id">'+
 
 sgem_mrc_main_contents += '</div>';  
 
-document.getElementById('sgem-401k-cal').innerHTML = sgem_mrc_main_contents;
+document.getElementById('sgem-cpg-cal').innerHTML = sgem_mrc_main_contents;
  
 function isNumber(evt) {
     evt = (evt) ? evt : window.event;
@@ -2872,12 +2872,12 @@ $(document).ready(function() {
 
 // DOCUMENT.READY END
 
-localStorage.setItem('sgem-401k-cal-copy', '<div id="sgem-401k-cal"></div><script>window.onload = function() {var sgem401kcal = document.createElement("script");sgem401kcal.type = "text/javascript";sgem401kcal.src = "https://retirementinvestments.github.io/sgem-401k-calculator/assets/js/cal-401k-cal-scripts.min.js";document.body.appendChild(sgem401kcal);} </script>'); 
+localStorage.setItem('sgem-cpg-cal-copy', '<div id="sgem-cpg-cal"></div><script>window.onload = function() {var sgemcpgcal = document.createElement("script");sgemcpgcal.type = "text/javascript";sgemcpgcal.src = "https://retirementinvestments.github.io/sgem-cpg-calculator/assets/js/cal-cpg-cal-scripts.min.js";document.body.appendChild(sgemcpgcal);} </script>'); 
  
-function sgem_401k_copyText(ev){
+function sgem_cpg_copyText(ev){
   //console.log("hi");
   let div = document.getElementById('div');
-  let text = localStorage.getItem('sgem-401k-cal-copy');
+  let text = localStorage.getItem('sgem-cpg-cal-copy');
   let textArea  = document.createElement('textarea');
   textArea.width  = "1px"; 
   textArea.height = "1px";
