@@ -2834,8 +2834,6 @@ $('#sgem_cpg_my_taxable_income').on('keyup', function() {
 
 $(document).ready(function() {
 
-    sgem_capital_gain_calculationmin();
-
     if ($('.sgem-cpg-cal-wrapper').width() < 1024) {
         $('.sgem-cpg-cal-left').addClass('sgem-cpg-cal-left-add-class');
         $('.sgem-cpg-cal-right').addClass('sgem-cpg-cal-right-add-class');
