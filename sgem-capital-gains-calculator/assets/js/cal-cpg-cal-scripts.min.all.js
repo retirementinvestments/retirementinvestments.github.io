@@ -103,7 +103,7 @@ var sgem_cpg_main_contents = '<div class="sgem-cpg-cal-main-id">'+
                   '</div>'+
                   '<span class="futuretext4 sgem-cpg-result-value">on <span id="change_text_ondrop2">Short-Term</span> capital gains</span>'+
                '</div>'+
-            '</div>'+
+            '</div>';
 
 
 if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com"){
