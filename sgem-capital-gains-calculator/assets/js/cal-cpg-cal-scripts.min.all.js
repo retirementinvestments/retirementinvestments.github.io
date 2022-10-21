@@ -2739,6 +2739,14 @@ function sgem_capital_gain_calculationmin() {
 
 $(document).ready(function() {
 
+    if( location.hostname == "calculatorstg.wpengine.com") {
+        $('.sgem-cpg-logo-center').hide(); 
+    } else if(location.hostname == "retirementinvestments.com"){
+        $('.sgem-cpg-logo-center').hide();  
+    } else {
+        $('.sgem-cpg-logo-center').show();  
+    }
+
     if ($('#sgem_cpg_purchased_price,#sgem_cpg_sales_price,#sgem_cpg_my_taxable_income,#sgem_cpg_year_status,#sgem_cpg_marital_status').length > 0) {
         $('#sgem_cpg_purchased_price,#sgem_cpg_sales_price,#sgem_cpg_my_taxable_income,#sgem_cpg_year_status,#sgem_cpg_marital_status').on('keyup', function() {
             sgem_capital_gain_calculationmin();
