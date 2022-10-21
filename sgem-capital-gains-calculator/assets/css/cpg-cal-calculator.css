@@ -28,9 +28,12 @@
     align-content: center;
     justify-content: center;
     align-items: center;
-    font-size: 16px;
+    font-size: 13px;
 	padding-right: 5px;
   }
+ .sgem-cpg-logo-center a.sgem-cpg-url-text {
+ 	color: rgb(21, 105, 176);
+ }
 .sgem-cpg-logo-image {
 	padding-top: 5px;
 	padding-right: 5px;
