@@ -776,19 +776,19 @@ details.sgem-cpg-details-disclaimer[open] > summary::after {
 
 /* add class js styles */
 .sgem-cpg-cal-left-add-class .sgem-cpg-cal-1 .sgem-cpg-form-group label {
-	font-size: 1em;
+	font-size: 0.8em;
 }
 .sgem-cpg-cal-left-add-class .sgem-cpg-cal-1 input[type="text"] {
-	font-size: 1em;
+	font-size: 0.8em;
 	height: 45px;
 	width: 100%;
 }
 .sgem-cpg-cal-left-add-class .sgem-cpg-cal-1 .sgem-cpg-form-flex.sgem-cpg-currency-holder::after {
-	font-size: 1em;
+	font-size: 0.8em;
 	top: 42px;
 }
 .sgem-cpg-cal-left-add-class .sgem-cpg-drop-selection {
-	font-size: 1em;
+	font-size: 0.8em;
 	height: 45px;
 	width: 100%;
 }
@@ -799,7 +799,7 @@ details.sgem-cpg-details-disclaimer[open] > summary::after {
 }
 .sgem-cpg-cal-left-add-class .sgem-cpg-form-flex .sgem-result-value {
     color: #1A1A1A;
-    font-size: 1em;
+    font-size: 0.8em;
 }
 .sgem-cpg-cal-left.sgem-cpg-cal-left-add-class {
 	width: 33%;
@@ -921,8 +921,26 @@ details.sgem-cpg-details-disclaimer[open] > summary::after {
 }
 
 @media (max-width: 650px) {
+	.sgem-cpg-cal-left-add-class .sgem-cpg-cal-1 .sgem-cpg-form-group label {
+		font-size: 1em;
+	}
+	.sgem-cpg-cal-left-add-class .sgem-cpg-cal-1 input[type="text"] {
+	    font-size: 1em;
+	}
+	.sgem-cpg-cal-right-add-class .sgem-cpg-form-flex .sgem-result-value {
+	    font-size: 1em;
+	}
+	.sgem-cpg-cal-right-add-class .sgem-cpg-cal-1-result-wrapper .sgem-cpg-result-value {
+	    font-size: 1em;
+	}
 	.sgem-cpg-collapsible-text-disclaimer {
 		font-size: 14px;
+	}
+	.sgem-cpg-cal-right-add-class .sgem-cpg-cal-1-result-footer .sgem-cpg-content {
+	    font-size: 1em;
+	}
+	.sgem-cpg-cal-left-add-class .sgem-cpg-cal-1 .sgem-cpg-form-flex.sgem-cpg-currency-holder::after {
+	    font-size: 1em;
 	}
 	.sgem-cpg-cal-wrapper {
 		display: block;
