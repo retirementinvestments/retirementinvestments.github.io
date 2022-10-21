@@ -925,6 +925,9 @@ details.sgem-cpg-details-disclaimer[open] > summary::after {
 }
 
 @media (max-width: 650px) {
+	.sgem-cpg-cal-left-add-class .sgem-cpg-drop-selection {
+		font-size: 1em;
+	}
 	.sgem-cpg-cal-left-add-class .sgem-cpg-cal-1 .sgem-cpg-form-group label {
 		font-size: 1em;
 	}
