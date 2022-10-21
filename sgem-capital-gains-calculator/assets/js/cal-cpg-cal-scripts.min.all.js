@@ -123,6 +123,8 @@ var sgem_cpg_main_contents = '<div class="sgem-cpg-cal-main-id">'+
          '</div>'+
       '</div>'+
    '</div>'+
+   '<div class="sgem-cpg-logo-center">'+
+   '<a class="sgem-cpg-url-text" href="#" target="_blank" rel="noopener">Capital Gains Calculator&nbsp;</a>by&nbsp;Retirement investments</div>'+
    '<div class="sgem-cpg-copy-option-panel">'+
       '<h3>Do you want to add this calculator into your website?</h3>'+
       '<div class="sgem-cpg-copy-code-wrap">'+
