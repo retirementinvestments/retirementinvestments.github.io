@@ -107,29 +107,29 @@ var sgem_cpg_main_contents = '<div class="sgem-cpg-cal-main-id">'+
 
 
 if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com"){
-    sgem_hmhcia_main_contents += '<div class="sgem-cpg-cal-1-result-footer">';
-    sgem_hmhcia_main_contents += '<div class="sgem-cpg-content">Do it yourself, get expert help, or hand it off start to finish—let’s get your taxes done right.</div>';
-    sgem_hmhcia_main_contents += '<div class="sgem-cpg-buttonGet">';
-    sgem_hmhcia_main_contents += '<a href="https://www.irs.gov/faqs/capital-gains-losses-and-sale-of-home" target="_blank" class="sgem-cpg-getStart" rel="noopener">';
-    sgem_hmhcia_main_contents += 'GET STARTED</a></div></div>';
+    sgem_cpg_main_contents += '<div class="sgem-cpg-cal-1-result-footer">';
+    sgem_cpg_main_contents += '<div class="sgem-cpg-content">Do it yourself, get expert help, or hand it off start to finish—let’s get your taxes done right.</div>';
+    sgem_cpg_main_contents += '<div class="sgem-cpg-buttonGet">';
+    sgem_cpg_main_contents += '<a href="https://www.irs.gov/faqs/capital-gains-losses-and-sale-of-home" target="_blank" class="sgem-cpg-getStart" rel="noopener">';
+    sgem_cpg_main_contents += 'GET STARTED</a></div></div>';
 }
     
-sgem_hmhcia_main_contents += '<div class="sgem-cpg-section-disclaimer"><details class="sgem-cpg-details-disclaimer"><summary><div class="sgem-cpg-collapsible-summary-disclaimer">Disclaimer</div>';
-sgem_hmhcia_main_contents += '</summary><div class="sgem-cpg-collapsible-text-disclaimer">Calculations are estimates based on the tax law as of September 2021. These rates are subject to change. Check the IRS website for the latest information about capital gains</div>';
-sgem_hmhcia_main_contents += '</details></div></div></div></div>';
+sgem_cpg_main_contents += '<div class="sgem-cpg-section-disclaimer"><details class="sgem-cpg-details-disclaimer"><summary><div class="sgem-cpg-collapsible-summary-disclaimer">Disclaimer</div>';
+sgem_cpg_main_contents += '</summary><div class="sgem-cpg-collapsible-text-disclaimer">Calculations are estimates based on the tax law as of September 2021. These rates are subject to change. Check the IRS website for the latest information about capital gains</div>';
+sgem_cpg_main_contents += '</details></div></div></div></div>';
     
 if( (location.hostname != "calculatorstg.wpengine.com") || (location.hostname != "retirementinvestments.com") ){
-    sgem_hmhcia_main_contents += '<div class="sgem-cpg-logo-center">';
-    sgem_hmhcia_main_contents += '<a class="sgem-cpg-url-text" href="#" target="_blank" rel="noopener">Capital Gains Calculator&nbsp;</a>by&nbsp;Retirement investments</div>';
+    sgem_cpg_main_contents += '<div class="sgem-cpg-logo-center">';
+    sgem_cpg_main_contents += '<a class="sgem-cpg-url-text" href="#" target="_blank" rel="noopener">Capital Gains Calculator&nbsp;</a>by&nbsp;Retirement investments</div>';
    
 }
     
 if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com"){
-    sgem_hmhcia_main_contents += '<div class="sgem-cpg-copy-option-panel">';
-    sgem_hmhcia_main_contents += '<h3>Do you want to add this calculator into your website?</h3>';
-    sgem_hmhcia_main_contents += '<div class="sgem-cpg-copy-code-wrap">';
-    sgem_hmhcia_main_contents += '<button class="sgem-cpg-copy-code" id="sgem-cpg-copy-code" onclick="sgem_cpg_copyText(event)">Get Calculator</button>';
-    sgem_hmhcia_main_contents += '</div></div></div>';
+    sgem_cpg_main_contents += '<div class="sgem-cpg-copy-option-panel">';
+    sgem_cpg_main_contents += '<h3>Do you want to add this calculator into your website?</h3>';
+    sgem_cpg_main_contents += '<div class="sgem-cpg-copy-code-wrap">';
+    sgem_cpg_main_contents += '<button class="sgem-cpg-copy-code" id="sgem-cpg-copy-code" onclick="sgem_cpg_copyText(event)">Get Calculator</button>';
+    sgem_cpg_main_contents += '</div></div></div>';
 }
 
 sgem_cpg_main_contents += '</div>';  
