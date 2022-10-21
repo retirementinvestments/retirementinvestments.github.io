@@ -814,6 +814,7 @@ details.sgem-cpg-details-disclaimer[open] > summary::after {
 
 .sgem-cpg-cal-right-add-class .sgem-cpg-form-flex .sgem-result-value {
     font-size: 0.8em;
+    width: 80%;
 }
 .sgem-cpg-cal-right-add-class .sgem-cpg-cal-1-result-wrapper .sgem-cpg-result-value {
 	font-size: 0.8em;
