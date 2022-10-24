@@ -110,12 +110,12 @@ if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "re
     sgem_cpg_main_contents += '<div class="sgem-cpg-cal-1-result-footer">';
     sgem_cpg_main_contents += '<div class="sgem-cpg-content">Do it yourself, get expert help, or hand it off start to finish—let’s get your taxes done right.</div>';
     sgem_cpg_main_contents += '<div class="sgem-cpg-buttonGet">';
-    sgem_cpg_main_contents += '<a href="https://www.irs.gov/faqs/capital-gains-losses-and-sale-of-home" target="_blank" class="sgem-cpg-getStart" rel="noopener">';
+    sgem_cpg_main_contents += '<a href="#" target="_blank" class="sgem-cpg-getStart" rel="noopener">';
     sgem_cpg_main_contents += 'GET STARTED</a></div></div>';
 }
     
 sgem_cpg_main_contents += '<div class="sgem-cpg-section-disclaimer"><details class="sgem-cpg-details-disclaimer"><summary><div class="sgem-cpg-collapsible-summary-disclaimer">Disclaimer</div>';
-sgem_cpg_main_contents += '</summary><div class="sgem-cpg-collapsible-text-disclaimer">Calculations are estimates based on the tax law as of September 2021. These rates are subject to change. Check the IRS website for the latest information about capital gains</div>';
+sgem_cpg_main_contents += '</summary><div class="sgem-cpg-collapsible-text-disclaimer">Calculations are estimates based on the tax law as of September 2021. These rates are subject to change. <a href="https://www.irs.gov/faqs/capital-gains-losses-and-sale-of-home" target="_blank">Check the IRS website</a> for the latest information about capital gains</div>';
 sgem_cpg_main_contents += '</details></div></div></div></div>';
     
 if( (location.hostname != "calculatorstg.wpengine.com") || (location.hostname != "retirementinvestments.com") ){
