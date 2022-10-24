@@ -729,12 +729,15 @@ details.sgem-cpg-details-disclaimer[open] > summary::after {
     transform: rotate(-180deg);
     background-position: center 1px;
 }
-.sgem-cpg-collapsible-text-disclaimer {
+.sgem-cpg-cal-wrapper .sgem-cpg-collapsible-text-disclaimer {
     font-weight: 400;
     line-height: 18px;
     font-size: 14px;
     padding: 10px 0;
     color: #474747;
+}
+.sgem-cpg-cal-wrapper .sgem-cpg-collapsible-text-disclaimer a {
+	color: rgb(21, 105, 176);
 }
 .sgem-cpg-info-tooltip {
     border: 1px solid #000;
