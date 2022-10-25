@@ -108,9 +108,9 @@ var sgem_cpg_main_contents = '<div class="sgem-cpg-cal-main-id">'+
 
 if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com"){
     sgem_cpg_main_contents += '<div class="sgem-cpg-cal-1-result-footer">';
-    sgem_cpg_main_contents += '<div class="sgem-cpg-content">Do it yourself, get expert help, or hand it off start to finish—let’s get your taxes done right.</div>';
+    sgem_cpg_main_contents += '<div class="sgem-cpg-content">Learn how to save money on your capital gains taxes if you have made money with stocks, real estate, or crypto.</div>';
     sgem_cpg_main_contents += '<div class="sgem-cpg-buttonGet">';
-    sgem_cpg_main_contents += '<a href="#" target="_blank" class="sgem-cpg-getStart" rel="noopener">';
+    sgem_cpg_main_contents += '<a href="https://retirementinvestments.com/capitalgainscalculator" target="_blank" class="sgem-cpg-getStart" rel="noopener">';
     sgem_cpg_main_contents += 'GET STARTED</a></div></div>';
 }
     
@@ -120,7 +120,7 @@ sgem_cpg_main_contents += '</details></div></div></div></div>';
     
 if( (location.hostname != "calculatorstg.wpengine.com") || (location.hostname != "retirementinvestments.com") ){
     sgem_cpg_main_contents += '<div class="sgem-cpg-logo-center">';
-    sgem_cpg_main_contents += '<a class="sgem-cpg-url-text" href="#" target="_blank" rel="noopener">Capital Gains Calculator&nbsp;</a>by&nbsp;Retirement investments</div>';
+    sgem_cpg_main_contents += '<a class="sgem-cpg-url-text" href="https://retirementinvestments.com/taxes/capital-gains-tax-calculator/" target="_blank" rel="noopener">Capital Gains Calculator&nbsp;</a>by&nbsp;Retirement investments</div>';
    
 }
     
