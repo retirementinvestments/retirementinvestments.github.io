@@ -1019,12 +1019,12 @@ function toggleData(value) {
 }
 
 // copy script section
-localStorage.setItem('sgem-hmhcia-cal-copy', '<div id="sgem-hmhcia-cal"></div><script>window.onload = function() {var sgemhmhciacal = document.createElement("script");sgemhmhciacal.type = "text/javascript";sgemhmhciacal.src = "https://retirementinvestments.github.io/sgem-hmhcia-calculator/assets/js/cal-hmhcia-scripts.min.js";document.body.appendChild(sgemhmhciacal);} </script>'); 
- 
+localStorage.setItem('sgem-mrc-cal-copy', '<div id="sgem-mrc-cal"></div><script>window.onload = function() {var sgemmrccal = document.createElement("script");sgemmrccal.type = "text/javascript";sgemmrccal.src = "https://retirementinvestments.github.io/sgem-mrc-calculator/assets/js/cal-mrc-scripts.min.js";document.body.appendChild(sgemmrccal);} </script>'); 
+
 function sgem_hmhcia_copyText(ev){
   //console.log("hi");
   let div = document.getElementById('div');
-  let text = localStorage.getItem('sgem-hmhcia-cal-copy');
+  let text = localStorage.getItem('sgem-mrc-cal-copy');
   let textArea  = document.createElement('textarea');
   textArea.width  = "1px"; 
   textArea.height = "1px";
