@@ -208,7 +208,7 @@
 	background-repeat: no-repeat;
 	background-position: center -5px;
 	background-size: 25px;
-	background-image: url('https://retirementinvestments.github.io/sgem-mrc-calculator/assets/images/drop-down-arrow-mrc.svg');
+	background-image: url('https://retirementinvestments.github.io/sgem-mrc-calculator/assets/images/drop-down-arrow-mrc-ira.svg');
 }
 .sgem-mrc-cal-1 details[open] > summary::after {
 	-moz-transform: rotate(-180deg);
@@ -844,7 +844,7 @@ details.sgem-mrc-details-disclaimer > summary::after {
     background-repeat: no-repeat;
     background-position: center -2px;
     background-size: 25px;
-    background-image: url('https://retirementinvestments.github.io/sgem-mrc-calculator/assets/images/drop-down-arrow-mrc.svg');
+    background-image: url('https://retirementinvestments.github.io/sgem-mrc-calculator/assets/images/drop-down-arrow-mrc-ira.svg');
     margin-top: 5px;
 }
 details.sgem-mrc-details-disclaimer[open] > summary::after {
