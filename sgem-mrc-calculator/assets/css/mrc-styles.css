@@ -1302,6 +1302,9 @@ details.sgem-mrc-details-disclaimer[open] > summary::after {
 	.sgem-mrc-cal-1-result-header {
 	    margin-bottom: 10px;
 	}
+	.sgem-mrc-cal-main-id .sgem-mrc-copy-option-panel {
+	    padding: 25px;
+	}
 }
 
 /* ******** ipad ************ */
@@ -1329,6 +1332,9 @@ details.sgem-mrc-details-disclaimer[open] > summary::after {
  
 /* ******** mobile view ************ */
 @media (max-width: 650px) {
+	.sgem-mrc-cal-left.sgem-mrc-cal-left-add-class {
+		height: auto;
+	}
 	.sgem-mrc-cal-left-add-class .sgem-mrc-cal-1 .sgem-mrc-form-group label {
 		font-size: 1em;
 	}
