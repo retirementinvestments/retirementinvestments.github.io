@@ -167,6 +167,7 @@
     display: inline-block;
     text-align: center;
     cursor: pointer;
+    margin-left: 5px;
 }
 .sgem-mrc-cal-1 .sgem-mrc-form-flex .sgem-mrc-cal-label {
 	width: 180px;
