@@ -159,28 +159,33 @@ var sgem_mrc_main_contents = '<div class="sgem-mrc-cal-main-id">'+
                       '</div>'+
                   '</div>'+
                '</div>'+
-            '</div>'+
-            '<div class="sgem-mrc-cal-1-result-footer">'+
-               '<div class="sgem-mrc-loan-started-in-txt">'+
-                  'YOUR CURRENT LOAN STARTED IN <span id="calculated_date">JANUARY, 2010</span>'+
-               '</div>'+
-               '<div class="sgem-mrc-content">Ready to refinance? Learn more about your mortgage refinancing options and getting the best rate by our recommended lender.</div>'+
-               '<div class="sgem-mrc-buttonGet">'+
-                  '<a href="https://retirementinvestments.com/refinancecalculator" target="_blank" class="sgem-mrc-getStart">'+
-                  'GET STARTED</a>'+
-               '</div>'+
-            '</div>'+
-           '<div class="sgem-mrc-section-disclaimer"><details class="sgem-mrc-details-disclaimer"><summary><div class="sgem-mrc-collapsible-summary-disclaimer">Disclaimer</div></summary><div class="sgem-mrc-collapsible-text-disclaimer">This material is provided for general and educational purposes only; it is not intended to provide legal, tax or investment advice.</div></details></div>'+
-         '</div>'+
-      '</div>'+
-   '</div>'+
-   '<div class="sgem-mrc-logo-center">'+
-      '<a class="sgem-mrc-logo-image" href="https://retirementinvestments.com/real-estate/refinance-calculator/" target="_blank" rel="noopener">'+
-       'Mortgage Refinance Calculator '+
-      '</a>&nbsp; by Retirement investments'+
-   '</div>'+
-   '<div class="sgem-mrc-copy-option-panel"><h3>Do you want to add this calculator into your website?</h3><div class="sgem-mrc-copy-code-wrap"><button class="sgem-mrc-copy-code" id="sgem-mrc-copy-code" onclick="sgem_mrc_copyText(event)">Get Calculator</button></div></div>'+
-'</div>';
+            '</div>';
+
+if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com"){
+    sgem_mrc_main_contents += '<div class="sgem-mrc-cal-1-result-footer">';
+    sgem_mrc_main_contents += '<div class="sgem-mrc-loan-started-in-txt">';
+    sgem_mrc_main_contents += 'YOUR CURRENT LOAN STARTED IN <span id="calculated_date">JANUARY, 2010</span></div>';
+    sgem_mrc_main_contents += '<div class="sgem-mrc-content">Ready to refinance? Learn more about your mortgage refinancing options and getting the best rate by our recommended lender.</div>';
+    sgem_mrc_main_contents += '<div class="sgem-mrc-buttonGet"><a href="https://retirementinvestments.com/refinancecalculator" target="_blank" class="sgem-mrc-getStart">';
+    sgem_mrc_main_contents += 'GET STARTED</a></div>';
+    sgem_mrc_main_contents += '</div>';
+}
+
+sgem_mrc_main_contents += '<div class="sgem-mrc-section-disclaimer"><details class="sgem-mrc-details-disclaimer"><summary><div class="sgem-mrc-collapsible-summary-disclaimer">Disclaimer</div></summary><div class="sgem-mrc-collapsible-text-disclaimer">This material is provided for general and educational purposes only; it is not intended to provide legal, tax or investment advice.</div>';
+sgem_mrc_main_contents += '</details></div></div></div></div>';
+
+if( (location.hostname != "calculatorstg.wpengine.com") || (location.hostname != "retirementinvestments.com") ){
+    sgem_mrc_main_contents += '<div class="sgem-mrc-logo-center">';
+    sgem_mrc_main_contents += '<a class="sgem-mrc-logo-image" href="https://retirementinvestments.com/real-estate/refinance-calculator/" target="_blank" rel="noopener">';
+    sgem_mrc_main_contents += 'Mortgage Refinance Calculator</a>&nbsp; by Retirement investments</div>';
+}
+    
+if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com"){
+    sgem_mrc_main_contents += '<div class="sgem-mrc-copy-option-panel"><h3>Do you want to add this calculator into your website?</h3>';
+    sgem_mrc_main_contents += '<div class="sgem-mrc-copy-code-wrap">';
+    sgem_mrc_main_contents += '<button class="sgem-mrc-copy-code" id="sgem-mrc-copy-code" onclick="sgem_mrc_copyText(event)">Get Calculator</button>';
+    sgem_mrc_main_contents += '</div></div></div>';
+}
 
 sgem_mrc_main_contents += '</div>';  
 
