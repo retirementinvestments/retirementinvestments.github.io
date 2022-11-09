@@ -1294,6 +1294,11 @@ details.sgem-mrc-details-disclaimer[open] > summary::after {
 	    overflow: hidden;
 	    overflow-y: scroll;
 	}
+	.sgem-mrc-cal-left-add-class .sgem-mrc-form-checkbox label .sgem-mrc-form-checkbox-style:after {
+	    left: 7px;
+	    top: 3px;
+	    width: 4px;
+	}
 }
 
 /* ******** ipad ************ */
