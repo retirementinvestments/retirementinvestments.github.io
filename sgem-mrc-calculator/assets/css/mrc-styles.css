@@ -1049,7 +1049,7 @@ details.sgem-mrc-details-disclaimer[open] > summary::after {
 }
 .sgem-mrc-cal-left-add-class .sgem-mrc-cal-1 .sgem-mrc-form-flex.sgem-mrc-currency-holder::after {
 	font-size: 0.8em;
-	top: 43px;
+	top: 42px;
 }
 .sgem-mrc-cal-left-add-class .sgem-mrc-cal-1 .sgem-mrc-flex-container {
 	display: block;
