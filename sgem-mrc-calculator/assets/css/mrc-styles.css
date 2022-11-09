@@ -1006,7 +1006,7 @@ details.sgem-mrc-details-disclaimer[open] > summary::after {
 
 /* add js class styles */
 .sgem-mrc-cal-left-add-class .sgem-mrc-cal-1 {
-	height: 865px;
+	height: 815px;
     overflow: hidden;
     overflow-y: scroll;
 }
