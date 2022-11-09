@@ -1287,28 +1287,32 @@ details.sgem-mrc-details-disclaimer[open] > summary::after {
 	}
 }
 
-/* ******** ipad ************ */
-@media (max-width:1024px) {
+@media (max-width:1100px) {
 	.sgem-mrc-cal-left.sgem-mrc-cal-left-add-class {
 	    padding: 10px 18px 10px 10px;
 	    height: 960px;
 	    overflow: hidden;
 	    overflow-y: scroll;
 	}
+}
+
+/* ******** ipad ************ */
+@media (max-width:1024px) {
+
 	.sgem-mrc-logo-wrapper {
-    position: absolute;
-    right: 5px;
-    top: -7px;
+	    position: absolute;
+	    right: 5px;
+	    top: -7px;
 	}
 	.sgem-mrc-drop-selection {
 		width: 100%;
 	}
 	.sgem-mrc-plusminus {
-    width: 100%;
-  } 
-  .sgem-mrc-inline .sgem-mrc-plusminus .sgem-mrc-midvalue input[type="text"]{
-    width:125px;
-  }
+    	width: 100%;
+  	} 
+  	.sgem-mrc-inline .sgem-mrc-plusminus .sgem-mrc-midvalue input[type="text"]{
+    	width:125px;
+  	}
 	.sgem-mrc-checkbox {
 		width: 100%;
 		padding: 15px 18px;
