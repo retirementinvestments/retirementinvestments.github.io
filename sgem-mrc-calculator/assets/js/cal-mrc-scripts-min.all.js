@@ -148,12 +148,12 @@ var sgem_mrc_main_contents = '<div class="sgem-mrc-cal-main-id">'+
                           '<span class="sgem_mrc_side_total_lbl"><span id="sgem_mrc_property_value">40 months</span></span>'+
                       '</div>'+
                       '<div class="sgem-mrc-legend-item" id="hidemeon2">'+
-                          '<button id="sgem_mrc_cost" class="sgem-mrc-cost"></button>'+
+                          '<div id="sgem_mrc_cost" class="sgem-mrc-cost"></div>'+
                           '<div id="sgem_mrc_cost_te" class="sgem-mrc-pmi-te">COST</div>'+
                           '<span class="sgem_mrc_side_total_lbl">$<span id="sgem_mrc_pmi_value">6,000</span></span>'+
                       '</div>'+
                       '<div class="sgem-mrc-legend-item">'+
-                          '<button id="sgem_mrc_liftime_saving" class="sgem-mrc-lifetime-saving"></button>'+
+                          '<div id="sgem_mrc_liftime_saving" class="sgem-mrc-lifetime-saving"></div>'+
                           '<div id="sgem_mrc_lifetime-saving_te" class="sgem-mrc-lifetime-saving-te">LIFETIME SAVINGS</div>'+
                           '<span class="sgem_mrc_side_total_lbl">$<span id="sgem_mrc_hoe_value">151,533</span></span>'+
                       '</div>'+
