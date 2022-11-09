@@ -177,7 +177,7 @@ var sgem_mrc_main_contents = '<div class="sgem-mrc-cal-main-id">'+
    '<div class="sgem-mrc-logo-center">'+
       '<a class="sgem-mrc-logo-image" href="https://retirementinvestments.com/real-estate/refinance-calculator/" target="_blank" rel="noopener">'+
        'Mortgage Refinance Calculator '+
-      '</a> by Retirement investments'+
+      '</a>&nbsp; by Retirement investments'+
    '</div>'+
 '</div>';
 
