@@ -1289,6 +1289,12 @@ details.sgem-mrc-details-disclaimer[open] > summary::after {
 
 /* ******** ipad ************ */
 @media (max-width:1024px) {
+	.sgem-mrc-cal-left.sgem-mrc-cal-left-add-class {
+	    padding: 10px 18px 10px 10px;
+	    height: 960px;
+	    overflow: hidden;
+	    overflow-y: scroll;
+	}
 	.sgem-mrc-logo-wrapper {
     position: absolute;
     right: 5px;
