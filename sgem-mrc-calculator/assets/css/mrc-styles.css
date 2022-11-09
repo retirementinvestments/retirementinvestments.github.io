@@ -1026,6 +1026,7 @@ details.sgem-mrc-details-disclaimer[open] > summary::after {
 .sgem-mrc-cal-left-add-class .sgem-mrc-cal-1 input[type="text"] {
     font-size: 0.8em;
     height: 45px;
+    width: 100%;
 }
 .sgem-mrc-cal-left-add-class .sgem-mrc-tooltip {
     width: 15px;
