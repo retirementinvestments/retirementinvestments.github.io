@@ -550,6 +550,8 @@ function sgem_mrf_calculationmin() {
 
 $(document).ready(function() {
 
+    sgem_mrf_calculationmin(); 
+
     if ($('#sgem_mrc_currunt_loan_amount,#sgem_mrc_current_term,#sgem_mrc_terms_passed,#sgem_mrc_new_loan_amount,#sgem_mrc_new_term,#sgem_mrc_refinance_fee,#sgem_mrc_include_tax').length > 0) {
     $('#sgem_mrc_currunt_loan_amount,#sgem_mrc_current_term,#sgem_mrc_terms_passed,#sgem_mrc_new_loan_amount,#sgem_mrc_new_term,#sgem_mrc_refinance_fee,#sgem_mrc_include_tax').on('keyup', function() {
 
