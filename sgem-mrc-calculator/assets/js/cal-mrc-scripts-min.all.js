@@ -1060,12 +1060,12 @@ tippy('[data-tippy-content]', {
 
 
 // copy script section
-localStorage.setItem('sgem-mrc-cal-copy', '<div id="sgem-mrc-cal"></div><script>window.onload = function() {var sgemmrccal = document.createElement("script");sgemmrccal.type = "text/javascript";sgemmrccal.src = "https://retirementinvestments.github.io/sgem-mrc-calculator/assets/js/cal-mrc-scripts.min.js";document.body.appendChild(sgemmrccal);} </script>'); 
+localStorage.setItem('sgem-mrc-copy-code', '<div id="sgem-mrc-copy-code"></div><script>window.onload = function() {var sgemmrccal = document.createElement("script");sgemmrccal.type = "text/javascript";sgemmrccal.src = "https://retirementinvestments.github.io/sgem-mrc-calculator/assets/js/cal-mrc-scripts.min.js";document.body.appendChild(sgemmrccal);} </script>'); 
 
 function sgem_hmhcia_copyText(ev){
   //console.log("hi");
   let div = document.getElementById('div');
-  let text = localStorage.getItem('sgem-mrc-cal-copy');
+  let text = localStorage.getItem('sgem-mrc-copy-code');
   let textArea  = document.createElement('textarea');
   textArea.width  = "1px"; 
   textArea.height = "1px";
