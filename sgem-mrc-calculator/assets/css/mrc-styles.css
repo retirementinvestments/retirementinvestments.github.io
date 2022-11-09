@@ -1299,6 +1299,9 @@ details.sgem-mrc-details-disclaimer[open] > summary::after {
 	    top: 3px;
 	    width: 4px;
 	}
+	.sgem-mrc-cal-1-result-header {
+	    margin-bottom: 10px;
+	}
 }
 
 /* ******** ipad ************ */
