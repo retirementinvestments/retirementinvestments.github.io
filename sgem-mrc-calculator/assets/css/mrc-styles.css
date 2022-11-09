@@ -1010,17 +1010,20 @@ details.sgem-mrc-details-disclaimer[open] > summary::after {
     top: 4px;
     width: 6px;
 }
-.sgem-mrc-cal-left-add-class .sgem-mrc-cal-1 {
+/*.sgem-mrc-cal-left-add-class .sgem-mrc-cal-1 {
 	height: 815px;
     overflow: hidden;
     overflow-y: scroll;
-}
+}*/
 .sgem-mrc-cal-wrapper {
     flex-direction: row;
 }
 .sgem-mrc-cal-left.sgem-mrc-cal-left-add-class {
 	width: 33%;
-	padding: 10px 18px 10px 10px;
+	padding: 10px 0px 10px 10px;
+    height: 815px;
+    overflow: hidden;
+    overflow-y: scroll;
 }
 .sgem-mrc-cal-right.sgem-mrc-cal-right-add-class {
 	width: 67%;
