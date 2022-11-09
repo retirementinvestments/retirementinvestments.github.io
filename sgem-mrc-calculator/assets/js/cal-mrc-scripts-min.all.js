@@ -179,6 +179,7 @@ var sgem_mrc_main_contents = '<div class="sgem-mrc-cal-main-id">'+
        'Mortgage Refinance Calculator '+
       '</a>&nbsp; by Retirement investments'+
    '</div>'+
+   '<div class="sgem-mrc-copy-option-panel"><h3>Do you want to add this calculator into your website?</h3><div class="sgem-mrc-copy-code-wrap"><button class="sgem-mrc-copy-code" id="sgem-mrc-copy-code" onclick="sgem_mrc_copyText(event)">Get Calculator</button></div></div>'+
 '</div>';
 
 sgem_mrc_main_contents += '</div>';  
