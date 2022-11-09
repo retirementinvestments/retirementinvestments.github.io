@@ -31,67 +31,164 @@ x();"bottom"===a.start?(c.css({top:b.outerHeight()-c.outerHeight()}),n(0,!0)):"t
 /*! rangeslider.js - v2.3.0 | (c) 2016 @andreruffert | MIT license | https://github.com/andreruffert/rangeslider.js */
 !function(a){"use strict";"function"==typeof define&&define.amd?define(["jquery"],a):"object"==typeof exports?module.exports=a(require("jquery")):a(jQuery)}(function(a){"use strict";function b(){var a=document.createElement("input");return a.setAttribute("type","range"),"text"!==a.type}function c(a,b){var c=Array.prototype.slice.call(arguments,2);return setTimeout(function(){return a.apply(null,c)},b)}function d(a,b){return b=b||100,function(){if(!a.debouncing){var c=Array.prototype.slice.apply(arguments);a.lastReturnVal=a.apply(window,c),a.debouncing=!0}return clearTimeout(a.debounceTimeout),a.debounceTimeout=setTimeout(function(){a.debouncing=!1},b),a.lastReturnVal}}function e(a){return a&&(0===a.offsetWidth||0===a.offsetHeight||a.open===!1)}function f(a){for(var b=[],c=a.parentNode;e(c);)b.push(c),c=c.parentNode;return b}function g(a,b){function c(a){"undefined"!=typeof a.open&&(a.open=!a.open)}var d=f(a),e=d.length,g=[],h=a[b];if(e){for(var i=0;i<e;i++)g[i]=d[i].style.cssText,d[i].style.setProperty?d[i].style.setProperty("display","block","important"):d[i].style.cssText+=";display: block !important",d[i].style.height="0",d[i].style.overflow="hidden",d[i].style.visibility="hidden",c(d[i]);h=a[b];for(var j=0;j<e;j++)d[j].style.cssText=g[j],c(d[j])}return h}function h(a,b){var c=parseFloat(a);return Number.isNaN(c)?b:c}function i(a){return a.charAt(0).toUpperCase()+a.substr(1)}function j(b,e){if(this.$window=a(window),this.$document=a(document),this.$element=a(b),this.options=a.extend({},n,e),this.polyfill=this.options.polyfill,this.orientation=this.$element[0].getAttribute("data-orientation")||this.options.orientation,this.onInit=this.options.onInit,this.onSlide=this.options.onSlide,this.onSlideEnd=this.options.onSlideEnd,this.DIMENSION=o.orientation[this.orientation].dimension,this.DIRECTION=o.orientation[this.orientation].direction,this.DIRECTION_STYLE=o.orientation[this.orientation].directionStyle,this.COORDINATE=o.orientation[this.orientation].coordinate,this.polyfill&&m)return!1;this.identifier="js-"+k+"-"+l++,this.startEvent=this.options.startEvent.join("."+this.identifier+" ")+"."+this.identifier,this.moveEvent=this.options.moveEvent.join("."+this.identifier+" ")+"."+this.identifier,this.endEvent=this.options.endEvent.join("."+this.identifier+" ")+"."+this.identifier,this.toFixed=(this.step+"").replace(".","").length-1,this.$fill=a('<div class="'+this.options.fillClass+'" />'),this.$handle=a('<div class="'+this.options.handleClass+'" />'),this.$range=a('<div class="'+this.options.rangeClass+" "+this.options[this.orientation+"Class"]+'" id="'+this.identifier+'" />').insertAfter(this.$element).prepend(this.$fill,this.$handle),this.$element.css({position:"absolute",width:"1px",height:"1px",overflow:"hidden",opacity:"0"}),this.handleDown=a.proxy(this.handleDown,this),this.handleMove=a.proxy(this.handleMove,this),this.handleEnd=a.proxy(this.handleEnd,this),this.init();var f=this;this.$window.on("resize."+this.identifier,d(function(){c(function(){f.update(!1,!1)},300)},20)),this.$document.on(this.startEvent,"#"+this.identifier+":not(."+this.options.disabledClass+")",this.handleDown),this.$element.on("change."+this.identifier,function(a,b){if(!b||b.origin!==f.identifier){var c=a.target.value,d=f.getPositionFromValue(c);f.setPosition(d)}})}Number.isNaN=Number.isNaN||function(a){return"number"==typeof a&&a!==a};var k="rangeslider",l=0,m=b(),n={polyfill:!0,orientation:"horizontal",rangeClass:"rangeslider",disabledClass:"rangeslider--disabled",activeClass:"rangeslider--active",horizontalClass:"rangeslider--horizontal",verticalClass:"rangeslider--vertical",fillClass:"rangeslider__fill",handleClass:"rangeslider__handle",startEvent:["mousedown","touchstart","pointerdown"],moveEvent:["mousemove","touchmove","pointermove"],endEvent:["mouseup","touchend","pointerup"]},o={orientation:{horizontal:{dimension:"width",direction:"left",directionStyle:"left",coordinate:"x"},vertical:{dimension:"height",direction:"top",directionStyle:"bottom",coordinate:"y"}}};return j.prototype.init=function(){this.update(!0,!1),this.onInit&&"function"==typeof this.onInit&&this.onInit()},j.prototype.update=function(a,b){a=a||!1,a&&(this.min=h(this.$element[0].getAttribute("min"),0),this.max=h(this.$element[0].getAttribute("max"),100),this.value=h(this.$element[0].value,Math.round(this.min+(this.max-this.min)/2)),this.step=h(this.$element[0].getAttribute("step"),1)),this.handleDimension=g(this.$handle[0],"offset"+i(this.DIMENSION)),this.rangeDimension=g(this.$range[0],"offset"+i(this.DIMENSION)),this.maxHandlePos=this.rangeDimension-this.handleDimension,this.grabPos=this.handleDimension/2,this.position=this.getPositionFromValue(this.value),this.$element[0].disabled?this.$range.addClass(this.options.disabledClass):this.$range.removeClass(this.options.disabledClass),this.setPosition(this.position,b)},j.prototype.handleDown=function(a){if(a.preventDefault(),this.$document.on(this.moveEvent,this.handleMove),this.$document.on(this.endEvent,this.handleEnd),this.$range.addClass(this.options.activeClass),!((" "+a.target.className+" ").replace(/[\n\t]/g," ").indexOf(this.options.handleClass)>-1)){var b=this.getRelativePosition(a),c=this.$range[0].getBoundingClientRect()[this.DIRECTION],d=this.getPositionFromNode(this.$handle[0])-c,e="vertical"===this.orientation?this.maxHandlePos-(b-this.grabPos):b-this.grabPos;this.setPosition(e),b>=d&&b<d+this.handleDimension&&(this.grabPos=b-d)}},j.prototype.handleMove=function(a){a.preventDefault();var b=this.getRelativePosition(a),c="vertical"===this.orientation?this.maxHandlePos-(b-this.grabPos):b-this.grabPos;this.setPosition(c)},j.prototype.handleEnd=function(a){a.preventDefault(),this.$document.off(this.moveEvent,this.handleMove),this.$document.off(this.endEvent,this.handleEnd),this.$range.removeClass(this.options.activeClass),this.$element.trigger("change",{origin:this.identifier}),this.onSlideEnd&&"function"==typeof this.onSlideEnd&&this.onSlideEnd(this.position,this.value)},j.prototype.cap=function(a,b,c){return a<b?b:a>c?c:a},j.prototype.setPosition=function(a,b){var c,d;void 0===b&&(b=!0),c=this.getValueFromPosition(this.cap(a,0,this.maxHandlePos)),d=this.getPositionFromValue(c),this.$fill[0].style[this.DIMENSION]=d+this.grabPos+"px",this.$handle[0].style[this.DIRECTION_STYLE]=d+"px",this.setValue(c),this.position=d,this.value=c,b&&this.onSlide&&"function"==typeof this.onSlide&&this.onSlide(d,c)},j.prototype.getPositionFromNode=function(a){for(var b=0;null!==a;)b+=a.offsetLeft,a=a.offsetParent;return b},j.prototype.getRelativePosition=function(a){var b=i(this.COORDINATE),c=this.$range[0].getBoundingClientRect()[this.DIRECTION],d=0;return"undefined"!=typeof a.originalEvent["client"+b]?d=a.originalEvent["client"+b]:a.originalEvent.touches&&a.originalEvent.touches[0]&&"undefined"!=typeof a.originalEvent.touches[0]["client"+b]?d=a.originalEvent.touches[0]["client"+b]:a.currentPoint&&"undefined"!=typeof a.currentPoint[this.COORDINATE]&&(d=a.currentPoint[this.COORDINATE]),d-c},j.prototype.getPositionFromValue=function(a){var b,c;return b=(a-this.min)/(this.max-this.min),c=Number.isNaN(b)?0:b*this.maxHandlePos},j.prototype.getValueFromPosition=function(a){var b,c;return b=a/(this.maxHandlePos||1),c=this.step*Math.round(b*(this.max-this.min)/this.step)+this.min,Number(c.toFixed(this.toFixed))},j.prototype.setValue=function(a){a===this.value&&""!==this.$element[0].value||this.$element.val(a).trigger("input",{origin:this.identifier})},j.prototype.destroy=function(){this.$document.off("."+this.identifier),this.$window.off("."+this.identifier),this.$element.off("."+this.identifier).removeAttr("style").removeData("plugin_"+k),this.$range&&this.$range.length&&this.$range[0].parentNode.removeChild(this.$range[0])},a.fn[k]=function(b){var c=Array.prototype.slice.call(arguments,1);return this.each(function(){var d=a(this),e=d.data("plugin_"+k);e||d.data("plugin_"+k,e=new j(this,b)),"string"==typeof b&&e[b].apply(e,c)})},"rangeslider.js is available in jQuery context e.g $(selector).rangeslider(options);"});
 
-var sgem_hmhcia_main_contents = '<div class="sgem-hmhcia-cal-main-id"> <div class="sgem-hmhcia-cal-wrapper"> <div class="sgem-hmhcia-cal-left"> <div class="sgem-hmhcia-cal-tabs"> <h4>Calculate by</h4><form> <input id="sgem-hmhcia-cal-tab1" type="radio" name="sgem-hmhcia-calculate-by" class="sgem-hmhcia-calculate-by" value="income" checked onclick="radiochange()"/> <span class="sgem-hmhcia-form-checkbox-style-tic1"></span> <label class="sgem-hmhcia-label-tabs-check" for="sgem-hmhcia-cal-tab1">Income</label> <input id="sgem-hmhcia-cal-tab2" type="radio" name="sgem-hmhcia-calculate-by" class="sgem-hmhcia-calculate-by" value="payment" onclick="radiochange()"/> <span class="sgem-hmhcia-form-checkbox-style-tic2"></span> <label class="sgem-hmhcia-label-tabs-check" for="sgem-hmhcia-cal-tab2">Payment</label> <section id="sgem-hmhcia-cal-content1"> <div class="sgem-hmhcia-form sgem-hmhcia-cal-1"> <div class="sgem-hmhcia-flex-container"> <div class="sgem-hmhcia-form-group sgem-hmhcia-form-flex sgem-hmhcia-currency-holder"> <label>Annual income <span class="sgem-hmhcia-info-tooltip tooltip" data-tippy-content="Your total pre tax annual earnings, for you and your co-borrower. Annual income includes your salary and any additional incomes such as commissions, bonuses, tips, investment income, and pension.">?</span> </label> <input type="text" class="inputmove inputnumber" id="sgem_hmhcia_annual_income" value="100,000" min="0" max="1000000" onkeypress="return isNumber(event)"/> <span class="sgem_hmhcia_err_msg" id="sgem_hmhcia_err_annual_income"></span> </div><div class="sgem-hmhcia-form-group sgem-hmhcia-form-flex sgem-hmhcia-currency-holder"> <label>Monthly debts <span class="sgem-hmhcia-info-tooltip tooltip" data-tippy-content="Recurring monthly expenses like car payments, credit card payments, student loans or other personal loans.">?</span> </label> <input type="text" id="sgem_hmhcia_monthly_debts" class="inputnumber" value="1,000" min="0" max="100" onkeypress="return isNumber(event)"/> <span class="sgem_hmhcia_err_msg" id="sgem_hmhcia_err_monthly_debts"></span> </div></div><div class="sgem-hmhcia-flex-container"> <div class="sgem-hmhcia-form-group sgem-hmhcia-form-flex sgem-hmhcia-currency-holder"> <label>Down payment <span class="sgem-hmhcia-info-tooltip tooltip" data-tippy-content="The amount of money you spend upfront to purchase a home. Please refer to any laws on the minimum requirement in your locality.">?</span> </label> <input type="text"class="inputmove inputnumber" id="sgem_hmhcia_income_down_payment" value="20,000" min="0" max="30" onkeypress="return isNumber(event)"/> <span class="sgem_hmhcia_err_msg" id="sgem_hmhcia_income_down_payment_msg"></span> </div></div><details class="sgem-hmhcia-input-more-details" open> <summary> <div> <h3 class="sgem-hmhcia-collapsible-summary-title">Advanced</h3> </div></summary> <div class="collapsible-content"> <div class="sgem-hmhcia-flex-container"> <div class="sgem-hmhcia-form-group sgem-hmhcia-form-flex sgem-hmhcia-precentage-holder"> <label>Debt-to-income <span class="sgem-hmhcia-info-tooltip tooltip" data-tippy-content="Debt-to-income ratio is obtained by dividing the total of your monthly debt payments by your gross monthly income, which is shown as a percentage. Enter the percentage of your income you are comfortable spending on monthly debts.">?</span> </label> <input oninput="document.getElementById(\'sgem-hmhcia-ranger\').value=this.value" type="text" class="inputmove inputnumber" id="sgem_hmhcia_rent_payment" value="36" min="0" max="100" name="amount" for="rangeInput" /> <span class="sgem_hmhcia_err_msg" id="sgem_hmhcia_err_rent_payment_afford"></span> </div><div class="sgem-hmhcia-form-group sgem-hmhcia-form-flex sgem-hmhcia-precentage-holder"> <label>Interest rate <span class="sgem-hmhcia-info-tooltip tooltip" data-tippy-content="The rate charged by the lender from the borrower.">?</span> </label> <input type="text" id="sgem_hmhcia_interest_rate" class="inputnumber" value="10" min="0" max="100" /> <span class="sgem_hmhcia_err_msg" id="sgem_hmhcia_err_interest_rate"></span> </div></div><div class="sgem-hmhcia-flex-container"> <div class="sgem-hmhcia-form-group sgem-hmhcia-form-flex sgem-hmhcia-months-holder"> <label>Loan term <span class="sgem-hmhcia-info-tooltip tooltip" data-tippy-content="The amount of time the lender gives you to repay your mortgage.">?</span> </label> <input type="text"class="inputmove inputnumber" id="sgem_hmhcia_loan_term" value="360" min="0" max="30" onkeypress="return isNumber(event)"/> <span class="sgem_hmhcia_err_msg" id="sgem_hmhcia_err_loan_term"></span> </div></div><div class="sgem-hmhcia-flex-container"> <div class="sgem-hmhcia-form-group sgem-hmhcia-form-flex sgem-hmhcia-form-checkbox"> <label>Include taxes/ins <span class="sgem-hmhcia-info-tooltip tooltip" data-tippy-content="Include property taxes, homeowners insurance, private mortgage insurance, and homeowners association dues.">?</span> <input name="sgem-hmhcia-include-tax" id="sgem_hmhcia_include_tax" type="checkbox" checked="checked"> <span class="sgem-hmhcia-form-checkbox-style"></span> </label> </div></div><div class="sgem-hmhcia-flex-container"> <div class="sgem-hmhcia-form-group sgem-hmhcia-form-flex sgem-hmhcia-precentage-holder"> <label>Property tax <span class="sgem-hmhcia-info-tooltip tooltip" data-tippy-content="Enter the Property Tax applicable to the locality you’re planning on purchasing from.">?</span> </label> <input type="text" class="inputmove inputnumber" id="sgem_hmhcia_prop_tax_" value="1.20" min="0" max="1000000" /> <span class="sgem_hmhcia_err_msg" id="sgem_hmhcia_err__prop_tax_"></span> </div><div class="sgem-hmhcia-form-group sgem-hmhcia-form-flex sgem-hmhcia-year-holder"> <label>Home insurance <span class="sgem-hmhcia-info-tooltip tooltip" data-tippy-content="Enter the annual cost of your expected home insurance, if known.">?</span> </label> <input type="text" id="sgem_hmhcia_home_insurance" class="inputnumber" value="800" min="0" max="100" onkeypress="return isNumber(event)"/> <span class="sgem_hmhcia_err_msg" id="sgem_hmhcia_err_home_insurance"></span> </div></div><div class="sgem-hmhcia-flex-container"> <div class="sgem-hmhcia-form-group sgem-hmhcia-form-flex sgem-hmhcia-form-group-after-style sgem-hmhcia-precentage-holder"> <label>Private Mortgage Insurance <span class="sgem-hmhcia-info-tooltip tooltip" data-tippy-content="If PMI is applicable, the calculator would consider a fee of 0.6% of the loan balance per year. If the percentage expected is known, please update this field.">?</span> </label> <input type="text" class="inputmove inputnumber" id="sgem_hmhcia_private_mortgage_insurance" value="0.60" min="0" max="1000000" /> <span class="sgem_hmhcia_err_msg" id="sgem_hmhcia_err_private_mortgage_insurance"></span> </div><div class="sgem-hmhcia-form-group sgem-hmhcia-form-group-after-style sgem-hmhcia-form-flex sgem-hmhcia-month-holder"> <label>Homeowners association dues <span class="sgem-hmhcia-info-tooltip tooltip" data-tippy-content="Enter the monthly fee to be paid to HOA, if known.">?</span> </label> <input type="text" id="sgem_hmhcia_ahomeowners_association_dues" class="inputnumber" value="0" min="0" max="100" onkeypress="return isNumber(event)"/> <span class="sgem_hmhcia_err_msg" id="sgem_hmhcia_err_ahomeowners_association_dues"></span> </div></div></div></details> </div></section> <section id="sgem-hmhcia-cal-content2"> <div class="sgem-hmhcia-form sgem-hmhcia-cal-1"> <div class="sgem-hmhcia-flex-container"> <div class="sgem-hmhcia-form-group sgem-hmhcia-form-flex sgem-hmhcia-currency-holder"> <label>Maximum payment </label> <input oninput="document.getElementById(\'sgem-hmhcia-ranger2\').value=this.value" type="text" class="inputmove inputnumber" id="sgem_hmhcia_interest_maximum_payment" value="2,000" min="0" max="1000000" onkeypress="return isNumber(event)" name="amount2" for="rangeInput2" /> <span class="sgem_hmhcia_err_msg" id="sgem_hmhcia_err_rent_interest_maximum_payment"></span> </div><div class="sgem-hmhcia-form-group sgem-hmhcia-form-flex sgem-hmhcia-currency-holder"> <label>Down payment <span class="sgem-hmhcia-info-tooltip tooltip" data-tippy-content="The amount of money you spend upfront to purchase a home. Please refer to any laws on the minimum requirement in your locality.">?</span> </label> <input type="text" id="sgem_hmhcia_down_payment_pay" class="inputnumber" value="20,000" min="0" max="100" onkeypress="return isNumber(event)"/> <span class="sgem_hmhcia_err_msg" id="sgem_hmhcia_err_down_payment_pay"></span> </div></div><details class="sgem-hmhcia-input-more-details" open> <summary> <div> <h3 class="sgem-hmhcia-collapsible-summary-title">Advanced</h3> </div></summary> <div class="collapsible-content"> <div class="sgem-hmhcia-flex-container"> <div class="sgem-hmhcia-form-group sgem-hmhcia-form-flex sgem-hmhcia-precentage-holder"> <label>Interest rate <span class="sgem-hmhcia-info-tooltip tooltip" data-tippy-content="The rate charged by the lender from the borrower.">?</span> </label> <input type="text" class="inputmove inputnumber" id="sgem_hmhcia_interest_rate_payment" value="10" min="0" max="1000000" /> <span class="sgem_hmhcia_err_msg" id="sgem_hmhcia_err_rent_interest_rate_payment"></span> </div><div class="sgem-hmhcia-form-group sgem-hmhcia-form-flex sgem-hmhcia-months-holder"> <label>Loan term <span class="sgem-hmhcia-info-tooltip tooltip" data-tippy-content="The amount of time the lender gives you to repay your mortgage.">?</span> </label> <input type="text" id="sgem_hmhcia_p_loan_turm" class="inputnumber" value="360" min="0" max="100" onkeypress="return isNumber(event)"/> <span class="sgem_hmhcia_err_msg" id="sgem_hmhcia_err_expected_mortgage"></span> </div></div><div class="sgem-hmhcia-flex-container"> <div class="sgem-hmhcia-form-group sgem-hmhcia-form-flex sgem-hmhcia-form-checkbox"> <label>Include taxes/ins <span class="sgem-hmhcia-info-tooltip tooltip" data-tippy-content="Include property taxes, homeowners insurance, private mortgage insurance, and homeowners association dues.">?</span> <input name="sgem-hmhcia-payment-include-tax" id="sgem_hmhcia_payment_include_tax" type="checkbox" checked="checked"> <span class="sgem-hmhcia-form-checkbox-style"></span> </label> <div class="sgem-hmhcia-form-label-content"> Note: You may have additional monthly charges for Property Tax and PMI, if applicable </div></div></div><div class="sgem-hmhcia-flex-container"> <div class="sgem-hmhcia-form-group sgem-hmhcia-form-flex sgem-hmhcia-year-holder"> <label>Home insurance <span class="sgem-hmhcia-info-tooltip tooltip" data-tippy-content="Enter the annual cost of your expected home insurance, if known.">?</span> </label> <input type="text" class="inputmove inputnumber" id="sgem_hmhcia_home_insurance_payment" value="800" min="0" max="1000000" onkeypress="return isNumber(event)"/> <span class="sgem_hmhcia_err_msg" id="sgem_hmhcia_err_home_insurance_payment"></span> </div><div class="sgem-hmhcia-form-group sgem-hmhcia-form-flex sgem-hmhcia-month-holder"> <label>HOA dues <span class="sgem-hmhcia-info-tooltip tooltip" data-tippy-content="Enter the monthly fee to be paid to HOA, if known.">?</span> </label> <input type="text" id="sgem_hmhcia_hoa_dues" class="inputnumber" value="0" min="0" max="100" onkeypress="return isNumber(event)"/> <span class="sgem_hmhcia_err_msg" id="sgem_hmhcia_err_hoa_dues"></span> </div></div></div></details> </div></section> </div></div><div class="sgem-hmhcia-cal-right">'+
-    '<div class="sgem-hmhcia-cal-1-result-wrapper"> <div class="sgem-hmhcia-cal-tabs sgem-hmhcia-cal-right-tabs-top"> <input id="sgem-hmhcia-cal-tab3" type="radio" name="sgem-hmhcia-tabs-right" checked> <label class="sgem-hmhcia-label-tabs-check-right1" for="sgem-hmhcia-cal-tab3">HOME PRICE</label> <input id="sgem-hmhcia-cal-tab4" type="radio" name="sgem-hmhcia-tabs-right"> <label class="sgem-hmhcia-label-tabs-check-right2" for="sgem-hmhcia-cal-tab4">PAYMENT</label> <span class="sgem-hmhcia-hr-border-for-tabs"></span> <section id="sgem-hmhcia-cal-content3"> <div class="sgem-hmhcia-cal-1-result-header"> <div class="sgem-hmhcia-value-label"> <span class="sgem-hmhcia-staticvalue-text">YOU CAN AFFORD A HOUSE UP TO</span> <span id="sgem_hmhcia_total_text" class="sgem-hmhcia-total-text">$252,112</span> <div class="sgem-hmhcia-content">Based on your information, you should be able to afford a house around this price.</div></div></div>'+
-        '<div class="sgem-hmhcia-slider-section"> '+
-                '<div class="sgem-hmhcia-slider-range-input">'+
-                        '<div class="sgem-hmhcia-input-range-custom-section1" id="sliderrangeone">'+
-                           '<div class="sgem-hmhcia-input-range-custom-section">'+
-                              '<div class="sgem-hmhcia-img-piggy">'+
-                                 '<img id="sgem-hmhcia-image-pig2" src="https://retirementinvestments.github.io/sgem-hmhcia-calculator/assets/images/hmhcia-piggy-bank.svg" width="80px" height="80px" />'+
-                              '</div>'+
-                              '<div class="sgem-hmhcia-img-house">'+
-                                 '<img id="sgem-hmhcia-image-house2" src="https://retirementinvestments.github.io/sgem-hmhcia-calculator/assets/images/hmhcia-house.svg" width="70px" height="70px" />'+
-                              '</div>'+
-                           '</div>'+
-                           '<input id="sgem-hmhcia-ranger" class="sgem-hmhcia-range" type="range" name="rangeInput" min="1" max="43" value="36" oninput="document.getElementById(\'sgem_hmhcia_rent_payment\').value=this.value"/>'+
-                        '</div>'+
-                        '<div class="sgem-hmhcia-input-range-custom-section2" id="sliderrangeone2">'+
-                           '<div class="sgem-hmhcia-input-range-custom-section">'+
-                              '<div class="sgem-hmhcia-img-piggy">'+
-                                 '<img id="sgem-hmhcia-image-pig" src="https://retirementinvestments.github.io/sgem-hmhcia-calculator/assets/images/hmhcia-piggy-bank.svg" width="80px" height="80px" />'+
-                              '</div>'+
-                              '<div class="sgem-hmhcia-img-house">'+
-                                 '<img id="sgem-hmhcia-image-house" src="https://retirementinvestments.github.io/sgem-hmhcia-calculator/assets/images/hmhcia-house.svg" width="70px" height="70px" />'+
-                              '</div>'+
-                           '</div>'+
-                           '<input id="sgem-hmhcia-ranger2" class="sgem-hmhcia-range2" type="range" name="rangeInput2" min="1" max="8000" value="2000" oninput="document.getElementById(\'sgem_hmhcia_interest_maximum_payment\').value=this.value"/>'+
+var sgem_hmhcia_main_contents = '<div class="sgem-mrc-cal-main-id">'+
+   '<div class="sgem-mrc-cal-wrapper">'+
+      '<div class="sgem-mrc-cal-left">'+
+         '<div class="sgem-mrc-form sgem-mrc-cal-1">'+
+            '<div class="sgem-mrc-flex-container">'+
+               '<div class="sgem-mrc-form-group sgem-mrc-form-flex sgem-mrc-currency-holder">'+
+                  '<label class="sgem-mrc-cal-label">Current loan amount'+
+                  '<span class="sgem-mrc-info-tooltip tooltip" data-tippy-content="The original value of your existing loan.">?</span>'+
+                  '</label>'+
+                  '<input type="text" class="inputmove inputnumber" id="sgem_mrc_currunt_loan_amount" value="650,000" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
+                  '<span class="sgem_mrc_err_style" id="sgem_mrc_err_currunt_loan_amount"></span> '+
+               '</div>'+
+               '<div class="sgem-mrc-form-group sgem-mrc-form-flex sgem-mrc-precentage-holder">'+
+                  '<label class="sgem-mrc-cal-label">Current interest rate</label>'+
+                  '<input type="text" class="inputmove inputnumber"  id="sgem_mrc_currunt_interest_rate" value="6" min="0" max="100"/>'+
+                  '<span class="sgem_mrc_err_style" id="sgem_mrc_err_currunt_interest_rate"></span> '+
+               '</div>'+
+            '</div>'+
+            '<div class="sgem-mrc-flex-container">'+
+               '<div class="sgem-mrc-form-group sgem-mrc-form-flex sgem-mrc-months-holder">'+
+                  '<label class="sgem-mrc-cal-label">Current term'+
+                     '<span class="sgem-mrc-info-tooltip tooltip" data-tippy-content="Number of months originally set by your lender to pay off existing loan. To convert years into months, multiply number of years by 12.">?</span>'+
+                  '</label> '+
+                  '<input type="text"class="inputmove inputnumber" id="sgem_mrc_current_term" value="360" min="0" max="100" onkeypress="return isNumber(event)"/>'+
+                  '<span class="sgem_mrc_err_style" id="sgem_mrc_err_current_term"></span>'+
+               '</div>'+
+               '<div class="sgem-mrc-form-group sgem-mrc-form-flex sgem-mrc-months-holder">'+
+                  '<label class="sgem-mrc-cal-label">Terms Passed'+
+                     '<span class="sgem-mrc-info-tooltip tooltip" data-tippy-content="Number of terms paid off of current loan.">?</span>'+
+                  '</label>'+
+                  '<input type="text" class="inputmove inputnumber" id="sgem_mrc_terms_passed" value="52" min="0" max="2050" onkeypress="return isNumber(event)"/>'+
+                  '<span class="sgem_mrc_err_style" id="sgem_mrc_err_terms_passed"></span>    '+
+               '</div>'+
+            '</div>'+
+            '<div class="sgem-mrc-flex-container">'+
+               '<div class="sgem-mrc-form-group sgem-mrc-form-flex sgem-mrc-currency-holder">'+
+                  '<label class="sgem-mrc-cal-label">New loan amount</label> '+
+                  '<input type="text"class="inputmove inputnumber" id="sgem_mrc_new_loan_amount" value="250,000" min="0" max="100" onkeypress="return isNumber(event)"/>'+
+                  '<span class="sgem_mrc_err_style" id="sgem_mrc_err_new_loan_amount"></span> '+
+               '</div>'+
+               '<div class="sgem-mrc-form-group sgem-mrc-form-flex sgem-mrc-precentage-holder">'+
+                  '<label class="sgem-mrc-cal-label">New interest rate</label> '+
+                  '<input type="text"class="inputmove inputnumber" id="sgem_mrc_new_interest_rate" value="4.18" min="0" max="100" />'+
+                  '<span class="sgem_mrc_err_style" id="sgem_mrc_err_new_interest_rate"></span>'+
+               '</div>'+
+            '</div>'+
+            '<div class="sgem-mrc-flex-container">'+
+               '<div class="sgem-mrc-form-group sgem-mrc-form-flex sgem-mrc-months-holder">'+
+                  '<label class="sgem-mrc-cal-label">New term</label> '+
+                  '<input type="text"class="inputmove inputnumber" id="sgem_mrc_new_term" value="360" min="0" max="100" onkeypress="return isNumber(event)"/>'+
+                  '<span class="sgem_mrc_err_style" id="sgem_mrc_err_new_term"></span>'+
+               '</div>'+
+               '<div class="sgem-mrc-form-group sgem-mrc-form-flex sgem-mrc-currency-holder">'+
+                  '<label class="sgem-mrc-cal-label">Refinance fee'+
+                     '<span class="sgem-mrc-info-tooltip tooltip" data-tippy-content="Closing costs are processing fees you pay to your lender when you close on your loan. Closing costs on a mortgage loan usually equal 3 – 6% of your total loan balance.">?</span>'+
+                  '</label> '+
+                  '<input type="text"class="inputmove inputnumber" id="sgem_mrc_refinance_fee" value="4,000" min="0" max="100" onkeypress="return isNumber(event)"/>'+
+                  '<span class="sgem_mrc_err_style" id="sgem_mrc_err_refinance_fee"></span>'+ 
+               '</div>'+
+            '</div>'+
+            '<details class="sgem-mrc-input-more-details" open="">'+
+               '<summary>'+
+                  '<div><h3 class="sgem-mrc-collapsible-summary-title">Advanced</h3></div>'+
+               '</summary>'+
+               '<div class="collapsible-content">'+
+                  '<div class="sgem-mrc-flex-container">'+
+                     '<div class="sgem-mrc-form-group sgem-mrc-form-flex sgem-mrc-form-field-full sgem-mrc-currency-holder">'+
+                        '<label>Cash out refinance <span class="sgem-mrc-tooltip tooltip" data-tippy-content="Debt-to-income ratio is obtained by dividing the total of your monthly debt payments by your gross monthly income, which is shown as a percentage. Enter the percentage of your income you are comfortable spending on monthly debts.">?</span></label>'+
+                        '<input type="text" class="inputmove inputnumber"  id="sgem_mrc_cash_out_refinance" value="0" min="0" max="100" onkeypress="return isNumber(event)"/>'+
+                        '<span class="sgem_mrc_err_style" id="sgem_mrc_err_cash_out_refinance"></span>'+
+                     '</div>'+
+                  '</div>'+
+                  '<div class="sgem-mrc-flex-container">'+
+                     '<div class="sgem-mrc-form-group sgem-mrc-form-flex sgem-mrc-form-checkbox">'+
+                        '<label>Roll fees into new one'+
+                           '<input name="sgem-mrc-include-tax" id="sgem_mrc_include_tax" type="checkbox" checked="checked" onclick="isChecked()"> <span class="sgem-mrc-form-checkbox-style"></span>'+
+                        '</label>'+
+                        '<div class="sgem-mrc-check-box-label-tooltip">'+
+                           '<span class="sgem-mrc-info-tooltip tooltip" data-tippy-content="Include property taxes, homeowners insurance, private mortgage insurance, and homeowners association dues.">?</span> '+
                         '</div>'+
                      '</div>'+
-            '</form>'+
-        '</div>'+
-    '</section> '+
-        '<section id="sgem-hmhcia-cal-content4"> <div class="sgem-hmhcia-cal-1-result-header"> <div class="sgem-hmhcia-value-label"> <span class="sgem-hmhcia-staticvalue-text">MONTHLY PAYMENT BREAKDOWN</span> </div></div><div class="sgem-hmhcia-chart-section-wrapper"> <div class="sgem-hmhcia-chartCard"> <div class="chartBox"> <canvas id="myChart"></canvas> </div></div><div class="sgem-hmhcia-chart-legend-total"> <div class="sgem-hmhcia-legendbox"> <div class="sgem-hmhcia-legend-item"> <button id="sgem_hmhcia_principle_interest" class="sgem-hmhcia-principle-interest"></button> <div id="sgem_hmhcia_principle_interest_te" class="sgem-hmhcia-principle-interest-te"></div><span class="sgem_hmhcia_side_total_lbl">$<span id="sgem_hmhcia_interest_value"></span></span> </div><div class="sgem-hmhcia-legend-item"> <button id="sgem_hmhcia_insurance" class="sgem-hmhcia-insurance"></button><div id="sgem_hmhcia_insurance_te" class="sgem-hmhcia-insurance-te"></div><span class="sgem_hmhcia_side_total_lbl">$<span id="sgem_hmhcia_insurance_value"></span></span> </div><div class="sgem-hmhcia-legend-item" id="hidemeon"> <button id="sgem_hmhcia_property" class="sgem-hmhcia-property"></button> <div id="sgem_hmhcia_property_te" class="sgem-hmhcia-property-te"></div><span class="sgem_hmhcia_side_total_lbl">$<span id="sgem_hmhcia_property_value"></span></span> </div><div class="sgem-hmhcia-legend-item" id="hidemeon2"> <button id="sgem_hmhcia_pmi" class="sgem-hmhcia-pmi"></button><div id="sgem_hmhcia_pmi_te" class="sgem-hmhcia-pmi-te"></div><span class="sgem_hmhcia_side_total_lbl">$<span id="sgem_hmhcia_pmi_value"></span></span> </div><div class="sgem-hmhcia-legend-item"> <button id="sgem_hmhcia_hoe" class="sgem-hmhcia-hoe"></button><div id="sgem_hmhcia_hoe_te" class="sgem-hmhcia-hoe-te"></div><span class="sgem_hmhcia_side_total_lbl">$<span id="sgem_hmhcia_hoe_value"></span></span> </div><div class="sgem-hmhcia-legend-total-section"> <span class="sgem-hmhcia-label-legend-item">Total monthly payment</span><span class="sgem-hmhcia-price-legend-item">$1,837</span> </div></div></div></div></section> </div>';
+                  '</div>'+
+               '</div>'+
+            '</details>'+
+         '</div>'+
+      '</div>'+
+      '<div class="sgem-mrc-cal-right">'+
+         '<div class="sgem-mrc-cal-1-result-wrapper">'+
+            '<div class="sgem-mrc-cal-1-result-header">'+
+               '<div class="sgem-mrc-flex-container sgem-mrc-column-right-section-one">'+
+                  '<div class="sgem-mrc-total-top-form">'+
+                     '<span class="sgem-mrc-total-value">$150</span><span class="sgem-mrc-month-txt">/month</span>'+
+                     '<span class="sgem-mrc-refinance-save-you">REFINANCING COULD SAVE YOU</span>'+
+                  '</div>'+
+               '</div>'+
+            '</div>'+
+            '<div class="sgem-mrc-flex-container sgem-mrc-container-chart">'+
+               '<div class="sgem-mrc-chartCard">'+
+                  '<div class="chartBox">'+
+                     '<canvas id="myChart"></canvas>'+
+                  '</div>'+
+               '</div>'+
+               '<div class="sgem-mrc-chart-legend-total">'+ 
+                  '<div class="sgem-mrc-legendbox">'+
+                      '<div class="sgem-mrc-legend-item">'+ 
+                          '<div id="sgem_mrc_principle_interest_te" class="sgem-mrc-principle-interest-te">MONTHLY SAVINGS</div>'+
+                          '<span class="sgem_mrc_side_total_lbl">$<span id="sgem_mrc_interest_value">150 /mon</span></span>'+
+                      '</div>'+
+                       '<div class="sgem-mrc-legend-item">'+
+                          '<div id="sgem_mrc_insurance_te" class="sgem-mrc-insurance-te">NEW PAYMENT</div>'+
+                          '<span class="sgem_mrc_side_total_lbl">$<span id="sgem_mrc_insurance_value">1,208</span></span>'+
+                      '</div>'+
+                      '<div class="sgem-mrc-legend-item" id="hidemeon">'+
+                          '<div id="sgem_mrc_property_te" class="sgem-mrc-property-te">BREAK EVENT</div>'+
+                          '<span class="sgem_mrc_side_total_lbl"><span id="sgem_mrc_property_value">40 months</span></span>'+
+                      '</div>'+
+                      '<div class="sgem-mrc-legend-item" id="hidemeon2">'+
+                          '<button id="sgem_mrc_cost" class="sgem-mrc-cost"></button>'+
+                          '<div id="sgem_mrc_cost_te" class="sgem-mrc-pmi-te">COST</div>'+
+                          '<span class="sgem_mrc_side_total_lbl">$<span id="sgem_mrc_pmi_value">6,000</span></span>'+
+                      '</div>'+
+                      '<div class="sgem-mrc-legend-item">'+
+                          '<button id="sgem_mrc_liftime_saving" class="sgem-mrc-lifetime-saving"></button>'+
+                          '<div id="sgem_mrc_lifetime-saving_te" class="sgem-mrc-lifetime-saving-te">LIFETIME SAVINGS</div>'+
+                          '<span class="sgem_mrc_side_total_lbl">$<span id="sgem_mrc_hoe_value">151,533</span></span>'+
+                      '</div>'+
+                  '</div>'+
+               '</div>'+
+            '</div>'+
+            '<div class="sgem-mrc-cal-1-result-footer">'+
+               '<div class="sgem-mrc-loan-started-in-txt">'+
+                  'YOUR CURRENT LOAN STARTED IN <span id="calculated_date">JANUARY, 2010</span>'+
+               '</div>'+
+               '<div class="sgem-mrc-content">Ready to refinance? Learn more about your mortgage refinancing options and getting the best rate by our recommended lender.</div>'+
+               '<div class="sgem-mrc-buttonGet">'+
+                  '<a href="https://retirementinvestments.com/refinancecalculator" target="_blank" class="sgem-mrc-getStart">'+
+                  'GET STARTED</a>'+
+               '</div>'+
+            '</div>'+
+           '<div class="sgem-mrc-section-disclaimer"><details class="sgem-mrc-details-disclaimer"><summary><div class="sgem-mrc-collapsible-summary-disclaimer">Disclaimer</div></summary><div class="sgem-mrc-collapsible-text-disclaimer">This material is provided for general and educational purposes only; it is not intended to provide legal, tax or investment advice.</div></details></div>'+
+         '</div>'+
+      '</div>'+
+   '</div>'+
+   '<div class="sgem-mrc-logo-center">'+
+      '<a class="sgem-mrc-logo-image" href="https://retirementinvestments.com/real-estate/refinance-calculator/" target="_blank" rel="noopener">'+
+       'Mortgage Refinance Calculator'+
+      '</a>by Retirement investments'+
+   '</div>'+
+'</div>';
 
-if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com"){
-    sgem_hmhcia_main_contents += '<div class="sgem-hmhcia-cal-1-result-footer">';
-    sgem_hmhcia_main_contents += '<div class="sgem-hmhcia-content">The right mortgage can save you thousands. Confirm your affordability with our recommended lender.</div>';
-    sgem_hmhcia_main_contents += '<div class="sgem-hmhcia-buttonGet">';
-    sgem_hmhcia_main_contents += '<a href="https://retirementinvestments.com/affordabilitycalculator" target="_blank" class="sgem-hmhcia-getStart" rel="noopener"> GET STARTED </a>';
-    sgem_hmhcia_main_contents += '</div></div>';
-}
-    
-sgem_hmhcia_main_contents += '<div class="sgem-hmhcia-section-disclaimer"><details class="sgem-hmhcia-details-disclaimer"><summary><div class="sgem-hmhcia-collapsible-summary-disclaimer">Disclaimer</div></summary><div class="sgem-hmhcia-collapsible-text-disclaimer">This material is provided for general and educational purposes only; it is not intended to provide legal, tax or investment advice.</div>';
-sgem_hmhcia_main_contents += '</details></div></div></div></div>';
-    
-if( (location.hostname != "calculatorstg.wpengine.com") || (location.hostname != "retirementinvestments.com") ){
-    sgem_hmhcia_main_contents += '<div class="sgem-hmhcia-logo-center"><a class="sgem-hmhcia-url-text" href="https://retirementinvestments.com/real-estate/home-affordability-calculator/" target="_blank" rel="noopener">Home Affordability Calculator</a>&nbsp;by Retirement investments</div>';
-}
-    
-if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com"){
-    sgem_hmhcia_main_contents += '<div class="sgem-hmhcia-copy-option-panel">';
-    sgem_hmhcia_main_contents += '<h3>Do you want to add this calculator into your website?</h3><div class="sgem-hmhcia-copy-code-wrap">';
-    sgem_hmhcia_main_contents += '<button class="sgem-hmhcia-copy-code" id="sgem-hmhcia-copy-code" onclick="sgem_hmhcia_copyText(event)">Get Calculator</button>';
-    sgem_hmhcia_main_contents += '</div></div></div>';
-}
 sgem_hmhcia_main_contents += '</div>';  
 
-document.getElementById('sgem-hmhcia-cal').innerHTML = sgem_hmhcia_main_contents;
+document.getElementById('sgem-mrc-cal').innerHTML = sgem_hmhcia_main_contents;
 
 
 // decimal points
 function decimalTwoPoints(x) {
-  return Number.parseFloat(x).toFixed(0);
+    return Number.parseFloat(x).toFixed(0);
 }
 // end
 
@@ -100,1050 +197,731 @@ function numberWithCommas(x) {
 }
 
 window.onload = function() {
-    sgem_hmhcia_calculationmin(); 
+    sgem_mrf_calculationmin(); 
 }
 
-// window.addEventListener('load', function () {
-//     updateBubblePosition();
-//     updateBubblePosition2();
-// });
+function sgem_mrf_calculationmin() {
 
+    var chart_values_array = [];
 
-function sgem_hmhcia_calculationmin() {
+    var current_loan_ammont3 = $('#sgem_mrc_currunt_loan_amount').val().trim();
+    var current_loan_ammont2 = current_loan_ammont3.replace(/\,/g, '');
+    var current_loan_ammont = parseInt(current_loan_ammont2, 10);
 
-    var doughnut_data_array = [];
-    var doughnut_data_secondarray = [];
+    var current_interest_rate3 = $('#sgem_mrc_currunt_interest_rate').val().trim();
+    var current_interest_rate2 = current_interest_rate3.replace('%', "");
+    var current_interest_rate = parseFloat(current_interest_rate2 / 100);
 
-    var annual_income1 = $('#sgem_hmhcia_annual_income').val().trim();
-    var annual_income2 = annual_income1.replace(/\,/g, '');
-    var annual_income = parseInt(annual_income2, 10);
+    var current_term_months = $('#sgem_mrc_current_term').val().trim();
 
-    var monthly_debts1 = $('#sgem_hmhcia_monthly_debts').val().trim();
-    var monthly_debts2 = monthly_debts1.replace(/\,/g, '');
-    var monthly_debts = parseInt(monthly_debts2, 10);
+    var term_passed = $('#sgem_mrc_terms_passed').val().trim();
 
-    var down_payment1 = $('#sgem_hmhcia_income_down_payment').val().trim();
-    var down_payment2 = down_payment1.replace(/\,/g, '');
-    var down_payment = parseInt(down_payment2, 10);
+    var new_loan_ammount3 = $('#sgem_mrc_new_loan_amount').val().trim();
+    var new_loan_ammount2 = new_loan_ammount3.replace(/\,/g, '');
+    var new_loan_ammount = parseInt(new_loan_ammount2, 10);
 
-    var debt_to_income_ratio1 = $('#sgem_hmhcia_rent_payment').val().trim();
-    var debt_to_income_ratio2 = debt_to_income_ratio1.replace('%', "");
-    var debt_to_income_ratio = parseFloat(debt_to_income_ratio2 / 100);
+    var new_intrest_rate3 = $('#sgem_mrc_new_interest_rate').val().trim();
+    var new_intrest_rate2 = new_intrest_rate3.replace('%', "");
+    var new_intrest_rate = parseFloat(new_intrest_rate2 / 100);
 
-    var interesr_rate_a_p_r1 = $('#sgem_hmhcia_interest_rate').val().trim();
-    var interesr_rate_a_p_r2 = interesr_rate_a_p_r1.replace('%', "");
-    var interesr_rate_a_p_r = parseFloat(interesr_rate_a_p_r2 / 100);
+    var new_term_months = $('#sgem_mrc_new_term').val().trim();
 
-    var loan_terms_months = $('#sgem_hmhcia_loan_term').val().trim();
+    var refinance_fee3 = $('#sgem_mrc_refinance_fee').val().trim();
+    var refinance_fee2 = refinance_fee3.replace(/\,/g, '');
+    var refinance_fee = parseInt(refinance_fee2, 10);
 
-    var property_tax1 = $('#sgem_hmhcia_prop_tax_').val().trim();
-    var property_tax2 = property_tax1.replace('%', "");
-    var property_tax = parseFloat(property_tax2 / 100);
+    var cash_out3 = $('#sgem_mrc_cash_out_refinance').val().trim();
+    var cash_out2 = cash_out3.replace(/\,/g, '');
+    var cash_out = parseInt(cash_out2, 10);
 
-    var home_insurance_peryear1 = $('#sgem_hmhcia_home_insurance').val().trim();
-    var home_insurance_peryear2 = home_insurance_peryear1.replace(/\,/g, '');
-    var home_insurance_peryear = parseInt(home_insurance_peryear2, 10);
+    var date = new Date();
+    date.setMonth(date.getMonth() - term_passed);
 
-    var private_mortage_insurance1 = $('#sgem_hmhcia_private_mortgage_insurance').val().trim();
-    var private_mortage_insurance2 = private_mortage_insurance1.replace('%', "");
-    var private_mortage_insurance = parseFloat(private_mortage_insurance2 / 100);
+    $('#calculated_date').text(date.toLocaleString('default', { month: 'long' })+", "+date.getFullYear());
 
-    var homeowners_association_dues_permonth1 = $('#sgem_hmhcia_ahomeowners_association_dues').val().trim();
-    var homeowners_association_dues_permonth2 = homeowners_association_dues_permonth1.replace(/\,/g, '');
-    var homeowners_association_dues_permonth = parseInt(homeowners_association_dues_permonth2, 10);
+    //Calculations
 
-    //----------
-    var monthly_principal_intrest1 = annual_income / 12;
-    var monthly_principal_intrest = (monthly_principal_intrest1 * debt_to_income_ratio - monthly_debts).toFixed(0);
-    localStorage.setItem('sgem_hmhcia_income_monthly_principal_intrest', JSON.stringify(monthly_principal_intrest));
-
-    //----------
-    var monthly_hoa_fees = homeowners_association_dues_permonth;
-    localStorage.setItem('sgem_hmhcia_income_monthly_hoa_fees', JSON.stringify(monthly_hoa_fees));
-    //----------
-    var value_of_loan1 = interesr_rate_a_p_r / 12;
-    var value_of_loan2 = 1 + value_of_loan1;
-    let value_of_loan3 = Math.pow(value_of_loan2, -loan_terms_months);
-    var value_of_loan4 = 1 - value_of_loan3;
-    var value_of_loan5 = interesr_rate_a_p_r / 12;
-    var value_of_loan6 = value_of_loan4 / value_of_loan5;
-    var value_of_loan = (monthly_principal_intrest * value_of_loan6).toFixed(0);
-    //----------
-    var value_of_house = parseFloat(value_of_loan) + down_payment;
-    localStorage.setItem('sgem_hmhcia_income_value_of_house', JSON.stringify(value_of_house));
-
-    //----------
-    var monthly_property_tax = ((property_tax / 12) * value_of_house).toFixed(0);
-    //localStorage.setItem('income_monthly_property_tax', JSON.stringify(monthly_property_tax));
-
-    if (isNaN(monthly_property_tax) || monthly_property_tax < 1) {
-
-        $('#sgem_hmhcia_property_value').text('0');
-
-    } else {
-
-        $('#sgem_hmhcia_property_value').text(numberWithCommas(monthly_property_tax));
-    }
-    //----------
-
-    var monthly_home_insurance = (home_insurance_peryear / 12).toFixed(0);
-    localStorage.setItem('sgem_hmhcia_income_monthly_home_insurance', JSON.stringify(monthly_home_insurance));
-
-    //----------
-    if (down_payment / value_of_house >= 0.2) {
-
-        var monthly_pmi_fees = 0;
-
-    } else {
-
-        var monthly_pmi_fees = ((private_mortage_insurance / 12) * value_of_loan).toFixed(0);
-    }
-    //localStorage.setItem('income_monthly_pmi_fees', JSON.stringify(monthly_pmi_fees));
-
-    if (isNaN(monthly_pmi_fees) || monthly_pmi_fees < 1) {
-
-        $('#sgem_hmhcia_pmi_value').text('0');
-
-    } else {
-
-        $('#sgem_hmhcia_pmi_value').text(numberWithCommas(monthly_pmi_fees));
-    }
-
-
-    //------------
-
-    var income_total_monthly_payment = (parseFloat(monthly_pmi_fees) + parseFloat(monthly_home_insurance) + parseFloat(monthly_property_tax) + parseFloat(monthly_principal_intrest) + monthly_hoa_fees).toFixed(0);
-    localStorage.setItem('sgem_hmhcia_income_total_monthly_payment_p', JSON.stringify(income_total_monthly_payment));
-
-    //validated value for range slider tooltip
-
-    if (monthly_property_tax < 1){
-
-    var insurance_plus_p_tax = monthly_home_insurance;
-
-    }else{
-
-    var insurance_plus_p_tax = parseFloat(monthly_home_insurance) + parseFloat(monthly_property_tax);
-
-    }
-    localStorage.setItem('sgem_hmhcia_income_insurance_plus_p_tax', JSON.stringify(parseFloat(insurance_plus_p_tax)));
-
-    //----------------------------------------
-
-    var p_maximum_payment1 = $('#sgem_hmhcia_interest_maximum_payment').val().trim();
-    var p_maximum_payment2 = p_maximum_payment1.replace(/\,/g, '');
-    var p_maximum_payment = parseInt(p_maximum_payment2, 10);
-
-    var p_down_payment1 = $('#sgem_hmhcia_down_payment_pay').val().trim();
-    var p_down_payment2 = p_down_payment1.replace(/\,/g, '');
-    var p_down_payment = parseInt(p_down_payment2, 10);
-
-    var p_annual_intrest_rate_apr1 = $('#sgem_hmhcia_interest_rate_payment').val().trim();
-    var p_annual_intrest_rate_apr2 = p_annual_intrest_rate_apr1.replace('%', "");
-    var p_annual_intrest_rate_apr = parseFloat(p_annual_intrest_rate_apr2 / 100);
-
-    var p_loan_turms_months = $('#sgem_hmhcia_p_loan_turm').val().trim();
-
-    var p_home_insurance_peryear1 = $('#sgem_hmhcia_home_insurance_payment').val().trim();
-    var p_home_insurance_peryear2 = p_home_insurance_peryear1.replace(/\,/g, '');
-    var p_home_insurance_peryear = parseInt(p_home_insurance_peryear2, 10);
-
-    var p_homeowners_association_due_permonth1 = $('#sgem_hmhcia_hoa_dues').val().trim();
-    var p_homeowners_association_due_permonth2 = p_homeowners_association_due_permonth1.replace(/\,/g, '');
-    var p_homeowners_association_due_permonth = parseInt(p_homeowners_association_due_permonth2, 10);
-
-    var p_monthly_home_insurance = (p_home_insurance_peryear / 12).toFixed(2);
-    localStorage.setItem('sgem_hmhcia_payment_monthly_home_insurance', JSON.stringify(decimalTwoPoints(p_monthly_home_insurance)));
-
-    //-------------
-    var p_monthly_hoa_fees = p_homeowners_association_due_permonth;
-    localStorage.setItem('sgem_hmhcia_payment_monthly_hoa_fees', JSON.stringify(p_monthly_hoa_fees));
-    //-------------
-    var p_total_monthly_payment = p_maximum_payment;
-
-    if (isNaN(p_total_monthly_payment) || p_total_monthly_payment < 1) {
-
-            localStorage.setItem('sgem_hmhcia_payment_total_monthly_payment', JSON.stringify(0));
-
-        } else {
-
-            localStorage.setItem('sgem_hmhcia_payment_total_monthly_payment', JSON.stringify(p_total_monthly_payment));
-    }
+    var remaining_turms_in_current_loan = current_term_months - term_passed;
     
-    //-------------
-    var p_monthly_principal_and_interest1 = parseFloat(p_monthly_home_insurance) + p_monthly_hoa_fees;
-    var p_monthly_principal_and_interest = (p_total_monthly_payment - p_monthly_principal_and_interest1).toFixed(0);
-    localStorage.setItem('sgem_hmhcia_payment_monthly_principal_intrest', JSON.stringify(p_monthly_principal_and_interest));
-   
-    //console.log(p_monthly_principal_and_interest);
-    //-------------
-    var p_value_of_loan1 = p_annual_intrest_rate_apr / 12;
-    var p_value_of_loan2 = 1 + p_value_of_loan1;
-    let p_value_of_loan3 = Math.pow(p_value_of_loan2, -p_loan_turms_months);
-    var p_value_of_loan4 = 1 - p_value_of_loan3;
-    var p_value_of_loan5 = p_annual_intrest_rate_apr / 12;
-    var p_value_of_loan6 = p_value_of_loan4 / p_value_of_loan5;
-    var p_value_of_loan = (parseFloat(p_monthly_principal_and_interest) * p_value_of_loan6).toFixed(0);
-    //-------------
-    var p_value_of_house = parseFloat(p_value_of_loan) + p_down_payment;
-    localStorage.setItem('sgem_hmhcia_payment_value_of_house', JSON.stringify(p_value_of_house));
-    //----------------------------------------
 
-    //if income
-    if (monthly_principal_intrest <= 0){
+    //-----------------------------------
 
-        doughnut_data_array[0] = 0;
+    if (document.getElementById('sgem_mrc_include_tax').checked) {
 
-    }else {
+        var total_value_for_pv_tobecon1 = new_loan_ammount + cash_out + refinance_fee;
+
+    } else {
+
+        var total_value_for_pv_tobecon1 = new_loan_ammount + cash_out;
+
+    }
+
+    var total_value_for_pv_tobecon = decimalTwoPoints(total_value_for_pv_tobecon1);
+    
+
+    //-----------------------------------
+
+    var current_monthly_payment1 = current_interest_rate / 12;
+    var current_monthly_payment2 = current_monthly_payment1 * current_loan_ammont;
+
+    var current_monthly_payment3 = current_interest_rate / 12;
+    var current_monthly_payment4 = 1 + current_monthly_payment3;
+    let current_monthly_payment5 = Math.pow(current_monthly_payment4, -current_term_months);
+    var current_monthly_payment6 = 1 - current_monthly_payment5;
+
+    var current_monthly_payment = decimalTwoPoints(current_monthly_payment2 / current_monthly_payment6);
+    
+
+    //-----------------------------------
+
+    var new_monthly_payment1 = (new_intrest_rate / 12).toFixed(5);
+    var new_monthly_payment11 = parseFloat(new_monthly_payment1) * total_value_for_pv_tobecon;
+
+    var new_monthly_payment2 = (new_intrest_rate / 12).toFixed(5);
+    var new_monthly_payment22 = 1 + parseFloat(new_monthly_payment2);
+    let new_monthly_payment3 = Math.pow(new_monthly_payment22, -new_term_months);
+    var new_monthly_payment4 = 1 - new_monthly_payment3;
+
+    var new_monthly_payment = decimalTwoPoints(new_monthly_payment11 / new_monthly_payment4);
+    
+
+    if (isNaN(new_monthly_payment) || new_monthly_payment < 1) {
+
+        $('#sgem_mrc_insurance_value').text('$0');
+
+    } else {
+
+        $('#sgem_mrc_insurance_value').text(numberWithCommas(new_monthly_payment) + ' /mo');
+    }
+
+    //-----------------------------------
+
+    var monthly_savings = decimalTwoPoints(current_monthly_payment - new_monthly_payment);
+    
+
+    if (isNaN(monthly_savings) || monthly_savings < 1) {
+
+        $('.sgem-mrc-total-value').text('$0');
+        $('#sgem_mrc_interest_value').text('$0');
+
+    } else {
+
+        $('.sgem-mrc-total-value').text('$' + numberWithCommas(monthly_savings));
+        $('#sgem_mrc_interest_value').text(numberWithCommas(monthly_savings));
+    }
+
+    //-----------------------------------
+
+    var break_even_months = decimalTwoPoints(refinance_fee / monthly_savings);
+    
+
+    if (isNaN(break_even_months) || break_even_months < 0) {
+
+        $('#sgem_mrc_property_value').text('0');
+
+    } else {
+
+        $('#sgem_mrc_property_value').text(break_even_months + ' Months');
+    }
+
+    //-----------------------------------
+
+    var cost = decimalTwoPoints(refinance_fee);
+    
+
+    if (isNaN(cost) || cost < 0) {
+
+        $('#sgem_mrc_pmi_value').text('$0');
+
+    } else {
+
+        $('#sgem_mrc_pmi_value').text(numberWithCommas(cost));
+    }
+
+    //-----------------------------------
+
+    if (document.getElementById('sgem_mrc_include_tax').checked) {
+
+        var lifetime_savings1 = monthly_savings * remaining_turms_in_current_loan;
+
+        var lifetime_savings2 = new_term_months - remaining_turms_in_current_loan;
+        var lifetime_savings3 = lifetime_savings2 * new_monthly_payment;
+
+        var lifetime_savings = lifetime_savings1 - lifetime_savings3;
         
-        doughnut_data_array[0] = monthly_principal_intrest;
-
-    }
-
-    doughnut_data_array[1] = monthly_home_insurance;
-
-    if (monthly_property_tax <= 0){
-
-        doughnut_data_array[2] = 0;
-
-    }else{
-        
-        doughnut_data_array[2] = monthly_property_tax;
-
-    }
-    if (monthly_pmi_fees <= 0){
-       
-        doughnut_data_array[3] = 0;
-
-    }else{
-
-        doughnut_data_array[3] = monthly_pmi_fees;
-    }
-    
-        doughnut_data_array[4] = monthly_hoa_fees;
-
-    localStorage.setItem('sgem_hmhcia_income_doughnut_data_array', JSON.stringify(doughnut_data_array));
-
-    //if payment
-    doughnut_data_secondarray[0] = p_monthly_principal_and_interest;
-    doughnut_data_secondarray[1] = decimalTwoPoints(p_monthly_home_insurance);
-    doughnut_data_secondarray[2] = 0;
-    doughnut_data_secondarray[3] = 0;
-    doughnut_data_secondarray[4] = p_monthly_hoa_fees;
 
 
-    localStorage.setItem('sgem_hmhcia_payment_doughnut_data_array', JSON.stringify(doughnut_data_secondarray));
-
-
-    radiochange();
-    hmhica_update_chart();
-
-    var rangeFillWidth = $('.rangeslider__fill').css("width");
-    $('.rangeslider__value-bubble').css('left',rangeFillWidth);
-    
- 
-}
- 
-
-jQuery(document).ready(function($){
-
-    if( location.hostname == "calculatorstg.wpengine.com") {
-        $('.sgem-hmhcia-logo-center').hide(); 
-    } else if(location.hostname == "retirementinvestments.com"){
-        $('.sgem-hmhcia-logo-center').hide();  
     } else {
-        $('.sgem-hmhcia-logo-center').show();  
+
+        var lifetime_savings1 = monthly_savings * remaining_turms_in_current_loan;
+
+        var lifetime_savings2 = new_term_months - remaining_turms_in_current_loan;
+        var lifetime_savings3 = lifetime_savings2 * new_monthly_payment;
+
+        var lifetime_savings = lifetime_savings1 - lifetime_savings3 - parseFloat(cost);
+        
+
     }
 
-sgem_hmhcia_calculationmin();
+    if (isNaN(lifetime_savings) || lifetime_savings < 0) {
 
-if ($('#sgem-hmhcia-ranger,#sgem-hmhcia-cal-tab1,#sgem-hmhcia-cal-tab2,#sgem_hmhcia_annual_income,#sgem_hmhcia_monthly_debts,#sgem_hmhcia_income_down_payment,#sgem_hmhcia_rent_payment,#sgem_hmhcia_interest_rate,#sgem_hmhcia_loan_term,#sgem_hmhcia_prop_tax_,#sgem_hmhcia_home_insurance,#sgem_hmhcia_private_mortgage_insurance,#sgem_hmhcia_ahomeowners_association_dues,#sgem_hmhcia_interest_maximum_payment,#sgem_hmhcia_down_payment_pay,#sgem_hmhcia_interest_rate_payment,#sgem_hmhcia_p_loan_turm,#sgem_hmhcia_home_insurance_payment,#sgem_hmhcia_hoa_dues').length > 0) {
-    $('#sgem-hmhcia-ranger,#sgem-hmhcia-cal-tab1,#sgem-hmhcia-cal-tab2,#sgem_hmhcia_annual_income,#sgem_hmhcia_monthly_debts,#sgem_hmhcia_income_down_payment,#sgem_hmhcia_rent_payment,#sgem_hmhcia_interest_rate,#sgem_hmhcia_loan_term,#sgem_hmhcia_prop_tax_,#sgem_hmhcia_home_insurance,#sgem_hmhcia_private_mortgage_insurance,#sgem_hmhcia_ahomeowners_association_dues,#sgem_hmhcia_interest_maximum_payment,#sgem_hmhcia_down_payment_pay,#sgem_hmhcia_interest_rate_payment,#sgem_hmhcia_p_loan_turm,#sgem_hmhcia_home_insurance_payment,#sgem_hmhcia_hoa_dues').on('keyup', function() {
-        sgem_hmhcia_calculationmin();
+        $('#sgem_mrc_hoe_value').text('0');
 
-    
-      // Add thousands separators:
-      this.value=this.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    } else {
+
+        $('#sgem_mrc_hoe_value').text(numberWithCommas(lifetime_savings));
+    }
+
+    // Chart values -----------------------------------
+
+    // 1 year
+
+    if (remaining_turms_in_current_loan > 12) {
+
+        var first_year = 12 * monthly_savings;
+
+
+    } else {
+
+        var first_year_1 = 12 - remaining_turms_in_current_loan;
+        var first_year_2 = first_year_1 * new_monthly_payment;
+
+        var first_year_3 = remaining_turms_in_current_loan * monthly_savings;
+        var first_year = first_year_3 - first_year_2;
+    }
+
+
+    // 10 years
+
+    if (remaining_turms_in_current_loan >= 120) {
+
+        var ten_years_1 = 120 - 12;
+        var ten_years_2 = ten_years_1 * monthly_savings;
+
+    } else if (remaining_turms_in_current_loan >= 12) {
+
+        var ten_years_1 = remaining_turms_in_current_loan - 12;
+        var ten_years_2 = ten_years_1 * monthly_savings;
+
+    } else {
+
+        var ten_years_2 = 0;
+
+    }
+
+    if (remaining_turms_in_current_loan > 120) {
+
+        var ten_years = ten_years_2 - 0;
+
+    } else if (remaining_turms_in_current_loan <= 12) {
+
+        var ten_years_3 = 120 - 12;
+        var ten_years_4 = ten_years_3 * new_monthly_payment;
+
+        var ten_years = ten_years_2 - ten_years_4;
+
+    } else {
+
+        var ten_years_3 = 120 - remaining_turms_in_current_loan;
+        var ten_years_4 = ten_years_3 * new_monthly_payment;
+
+        var ten_years = ten_years_2 - ten_years_4;
+    }
+
+
+    // 20 years
+
+    if (remaining_turms_in_current_loan >= 240) {
+
+        var twenty_years_1 = 240 - 120;
+        var twenty_years_2 = twenty_years_1 * monthly_savings;
+
+    } else if (remaining_turms_in_current_loan >= 120) {
+
+        var twenty_years_1 = remaining_turms_in_current_loan - 120;
+        var twenty_years_2 = twenty_years_1 * monthly_savings;
+
+    } else {
+
+        var twenty_years_2 = 0;
+    }
+
+    if (remaining_turms_in_current_loan > 240) {
+
+        var twenty_years = twenty_years_2 - 0;
+
+    } else if (remaining_turms_in_current_loan <= 120) {
+
+        var twenty_years_3 = 240 - 120;
+        var twenty_years_4 = twenty_years_3 * new_monthly_payment;
+
+        var twenty_years = twenty_years_2 - twenty_years_4;
+
+    } else {
+
+        var twenty_years_3 = 240 - remaining_turms_in_current_loan;
+        var twenty_years_4 = twenty_years_3 * new_monthly_payment;
+
+        var twenty_years = twenty_years_2 - twenty_years_4;
+
+    }
+
+
+    // 30 years
+
+    if (remaining_turms_in_current_loan >= 360) {
+
+        var thirty_years_1 = 360 - 240;
+        var thirty_years_2 = thirty_years_1 * monthly_savings;
+
+    } else if (remaining_turms_in_current_loan >= 240) {
+
+        var thirty_years_1 = remaining_turms_in_current_loan - 240;
+        var thirty_years_2 = thirty_years_1 * monthly_savings;
+
+    } else {
+
+        var thirty_years_2 = 0;
+    }
+
+    if (remaining_turms_in_current_loan > 360) {
+
+        var thirty_years = thirty_years_2 - 0;
+
+    } else if (remaining_turms_in_current_loan <= 240) {
+
+        var thirty_years_3 = 360 - 240;
+        var thirty_years_4 = thirty_years_3 * new_monthly_payment;
+
+        var thirty_years = thirty_years_2 - thirty_years_4;
+
+    } else {
+
+        var thirty_years_3 = 360 - remaining_turms_in_current_loan;
+        var thirty_years_4 = thirty_years_3 * new_monthly_payment;
+
+        var thirty_years = thirty_years_2 - thirty_years_4;
+
+    }
+
+     if(first_year < 0 || isNaN(first_year)){
+
+        chart_values_array[0] = 0;
+
+     }else{
       
+       chart_values_array[0] = first_year;
 
-    });
+     }
+     
+     if(ten_years < 0 || isNaN(ten_years)){
+
+        chart_values_array[1] = 0;
+
+     }else{
+     
+      chart_values_array[1] = ten_years;
+
+     }
+
+      if(twenty_years < 0 || isNaN(twenty_years)){
+
+        chart_values_array[2] = 0;
+
+     }else{
+
+        chart_values_array[2] = twenty_years;
+     }
+
+      if(thirty_years < 0 || isNaN(thirty_years)){
+
+        chart_values_array[3] = 0;
+
+     }else{
+
+        chart_values_array[3] = thirty_years;
+     }
+     
+
+    localStorage.setItem('sgem_mrf_chart_array', JSON.stringify(chart_values_array));
+    mrf_update_chart();
+
 }
 
-if ($('#sgem_hmhcia_annual_income,#sgem_hmhcia_monthly_debts,#sgem_hmhcia_income_down_payment,#sgem_hmhcia_loan_term,#sgem_hmhcia_home_insurance,#sgem_hmhcia_interest_maximum_payment,#sgem_hmhcia_down_payment_pay,#sgem_hmhcia_p_loan_turm,#sgem_hmhcia_interest_rate_payment,#sgem_hmhcia_rent_payment,#sgem_hmhcia_interest_rate').length > 0) {
-    $('#sgem_hmhcia_annual_income,#sgem_hmhcia_monthly_debts,#sgem_hmhcia_income_down_payment,#sgem_hmhcia_loan_term,#sgem_hmhcia_home_insurance,#sgem_hmhcia_interest_maximum_payment,#sgem_hmhcia_down_payment_pay,#sgem_hmhcia_p_loan_turm,#sgem_hmhcia_interest_rate_payment,#sgem_hmhcia_rent_payment,#sgem_hmhcia_interest_rate').on('keyup', function() {
+$(document).ready(function() {
 
-         // Removing front zero
-      this.value=this.value.replace(/^0+/, '');
+    if ($('#sgem_mrc_currunt_loan_amount,#sgem_mrc_current_term,#sgem_mrc_terms_passed,#sgem_mrc_new_loan_amount,#sgem_mrc_new_term,#sgem_mrc_refinance_fee,#sgem_mrc_include_tax').length > 0) {
+    $('#sgem_mrc_currunt_loan_amount,#sgem_mrc_current_term,#sgem_mrc_terms_passed,#sgem_mrc_new_loan_amount,#sgem_mrc_new_term,#sgem_mrc_refinance_fee,#sgem_mrc_include_tax').on('keyup', function() {
+
+            sgem_mrf_calculationmin();
+
+            // Keep only digits and decimal points:
+            this.value = this.value.replace(/[^\d.]/g, "")
+            // Remove duplicated decimal point, if one exists:
+            this.value = this.value.replace(/^(\d*\.)(.*)\.(.*)$/, '$1$2$3')
+            // Keep only two digits past the decimal point:
+            this.value = this.value.replace(/\.(\d{0})\d+/, '')
+            // Add thousands separators:
+            this.value = this.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            // Removing front zero
+            this.value=this.value.replace(/^0+/, '');
+
+        });
+    }
+
+    if ($('#sgem_mrc_currunt_interest_rate,#sgem_mrc_new_interest_rate').length > 0) {
+        $('#sgem_mrc_currunt_interest_rate,#sgem_mrc_new_interest_rate').on('keyup', function() {
+
+            sgem_mrf_calculationmin();
+
+            // Removing front zero
+            this.value=this.value.replace(/^0+/, '');
+
+        });
+    }
+
+    if ($('#sgem_mrc_cash_out_refinance').length > 0) {
+        $('#sgem_mrc_cash_out_refinance').on('keyup', function() {
+
+            sgem_mrf_calculationmin();
+
+            // Keep only digits and decimal points:
+            this.value = this.value.replace(/[^\d.]/g, "")
+            // Remove duplicated decimal point, if one exists:
+            this.value = this.value.replace(/^(\d*\.)(.*)\.(.*)$/, '$1$2$3')
+            // Keep only two digits past the decimal point:
+            this.value = this.value.replace(/\.(\d{0})\d+/, '')
+            // Add thousands separators:
+            this.value = this.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+        });
+    }
+
+    //----------------------------- 
+    //Vallidations
+
+        // current loan ammount
+        $('#sgem_mrc_currunt_loan_amount').on('keyup', function () {
+          var val = this.value;
+          var xc = parseInt(val);
+          if (isNaN(xc) || $(this).val().length>11){
+             
+             this.value ='';
+             $('#sgem_mrc_err_currunt_loan_amount').html('This cannot be empty or more than $900,000,000').fadeIn();  
+              $(this).css({
+            "border": "1px solid red",
+            "background": "#FFCECE" });  
+              
+
+      }else{
+         $('#sgem_mrc_err_currunt_loan_amount').html('').fadeOut();  
+        $(this).css({
+            "border": "1px solid #707070",
+            "background": "#ffffff"
+          }); 
+      }    
+        });
+
+            //current intrest rate
+        $('#sgem_mrc_currunt_interest_rate').on('keyup', function () {
+          var vrr2     = $('#sgem_mrc_currunt_interest_rate').val().trim();
+          var vrr = vrr2.replace('%', "");
+          if (isNaN(vrr) || vrr>100){
+             
+             this.value ='';
+             $('#sgem_mrc_err_currunt_interest_rate').html('This cannot be empty or more than 100%').fadeIn();  
+              $(this).css({
+            "border": "1px solid red",
+            "background": "#FFCECE" });  
+              
+
+      }else{
+         $('#sgem_mrc_err_currunt_interest_rate').html('').fadeOut();  
+        $(this).css({
+            "border": "1px solid #707070",
+            "background": "#ffffff"
+          }); 
+      }    
+        });
+
+            // Current term
+        $('#sgem_mrc_current_term').on('keyup', function () {
+          var val = this.value;
+          var xc = parseInt(val);
+          if (isNaN(xc) || $(this).val().length>4){    
+             this.value ='';
+             $('#sgem_mrc_err_current_term').html('This cannot be empty').fadeIn();      
+              $(this).css({
+            "border": "1px solid red",
+            "background": "#FFCECE"
+          }); 
+        
+           
+      }else{
+         $('#sgem_mrc_err_current_term').html('').fadeOut();  
+        $(this).css({
+            "border": "1px solid #707070",
+            "background": "#ffffff"
+          }); 
+      }   
+        });
+
+          // Term passed
+        $('#sgem_mrc_terms_passed').on('keyup', function () {
+          var c_term     = $('#sgem_mrc_current_term').val().trim();
+          var val = this.value;
+          var ccxc = parseInt(val);
+          if (isNaN(ccxc) || $(this).val().length>4 || ccxc >= c_term){    
+             this.value ='';
+             $('#sgem_mrc_err_terms_passed').html('This cannot be empty or more than Current term').fadeIn();      
+              $(this).css({
+            "border": "1px solid red",
+            "background": "#FFCECE"
+          }); 
+        
+           
+      }else{
+         $('#sgem_mrc_err_terms_passed').html('').fadeOut();  
+        $(this).css({
+            "border": "1px solid #707070",
+            "background": "#ffffff"
+          }); 
+      }   
+        });
+
+            // new loan ammount
+        $('#sgem_mrc_new_loan_amount').on('keyup', function () {
+          var val = this.value;
+          var newxc = parseInt(val);
+          if (isNaN(newxc) || $(this).val().length>11){
+             
+             this.value ='';
+             $('#sgem_mrc_err_new_loan_amount').html('This cannot be empty or more than $900,000,000').fadeIn();  
+              $(this).css({
+            "border": "1px solid red",
+            "background": "#FFCECE" });  
+              
+
+      }else{
+         $('#sgem_mrc_err_new_loan_amount').html('').fadeOut();  
+        $(this).css({
+            "border": "1px solid #707070",
+            "background": "#ffffff"
+          }); 
+      }    
+        });
+
+               //new intrest rate
+        $('#sgem_mrc_new_interest_rate').on('keyup', function () {
+          var vrr2     = $('#sgem_mrc_new_interest_rate').val().trim();
+          var newvrr = vrr2.replace('%', "");
+          if (isNaN(newvrr) || newvrr>100){
+             
+             this.value ='';
+             $('#sgem_mrc_err_new_interest_rate').html('This cannot be empty or more than 100%').fadeIn();  
+              $(this).css({
+            "border": "1px solid red",
+            "background": "#FFCECE" });  
+              
+
+      }else{
+         $('#sgem_mrc_err_new_interest_rate').html('').fadeOut();  
+        $(this).css({
+            "border": "1px solid #707070",
+            "background": "#ffffff"
+          }); 
+      }    
+        });
+
+
+            // new term
+        $('#sgem_mrc_new_term').on('keyup', function () {
+          var val = this.value;
+          var newcxc = parseInt(val);
+          if (isNaN(newcxc) || $(this).val().length>4){    
+             this.value ='';
+             $('#sgem_mrc_err_new_term').html('This cannot be empty').fadeIn();      
+              $(this).css({
+            "border": "1px solid red",
+            "background": "#FFCECE"
+          }); 
+        
+           
+      }else{
+         $('#sgem_mrc_err_new_term').html('').fadeOut();  
+        $(this).css({
+            "border": "1px solid #707070",
+            "background": "#ffffff"
+          }); 
+      }   
+        });
+
+           // refinance fee
+        $('#sgem_mrc_refinance_fee').on('keyup', function () {
+          var val = this.value;
+          var xvvc = parseInt(val);
+          if (isNaN(xvvc) || $(this).val().length>9){
+             
+             this.value ='';
+             $('#sgem_mrc_err_refinance_fee').html('This cannot be empty or more than $9,000,000').fadeIn();  
+              $(this).css({
+            "border": "1px solid red",
+            "background": "#FFCECE" });  
+              
+
+      }else{
+         $('#sgem_mrc_err_refinance_fee').html('').fadeOut();  
+        $(this).css({
+            "border": "1px solid #707070",
+            "background": "#ffffff"
+          }); 
+      }    
+        });
+
+             // cash out
+        $('#sgem_mrc_cash_out_refinance').on('keyup', function () {
+          var val = this.value;
+          var sxvvc = parseInt(val);
+          if (isNaN(sxvvc) || $(this).val().length>9){
+             
+             this.value ='';
+             $('#sgem_mrc_err_cash_out_refinance').html('This cannot be empty or more than $9,000,000').fadeIn();  
+              $(this).css({
+            "border": "1px solid red",
+            "background": "#FFCECE" });  
+              
+
+      }else{
+         $('#sgem_mrc_err_cash_out_refinance').html('').fadeOut();  
+        $(this).css({
+            "border": "1px solid #707070",
+            "background": "#ffffff"
+          }); 
+      }    
+        });
+
+    //-----------
+
+    $('#sgem_mrc_currunt_interest_rate').on('keyup', function() {
+      if ($(this).val()==''){
       
-
-    }); 
-}
-
-if ($('#sgem_hmhcia_annual_income,#sgem_hmhcia_monthly_debts,#sgem_hmhcia_income_down_payment,#sgem_hmhcia_loan_term,#sgem_hmhcia_home_insurance,#sgem_hmhcia_ahomeowners_association_dues,#sgem_hmhcia_interest_maximum_payment,#sgem_hmhcia_down_payment_pay,#sgem_hmhcia_p_loan_turm,#sgem_hmhcia_home_insurance_payment,#sgem_hmhcia_hoa_dues').length > 0) {
-    $('#sgem_hmhcia_annual_income,#sgem_hmhcia_monthly_debts,#sgem_hmhcia_income_down_payment,#sgem_hmhcia_loan_term,#sgem_hmhcia_home_insurance,#sgem_hmhcia_ahomeowners_association_dues,#sgem_hmhcia_interest_maximum_payment,#sgem_hmhcia_down_payment_pay,#sgem_hmhcia_p_loan_turm,#sgem_hmhcia_home_insurance_payment,#sgem_hmhcia_hoa_dues').on('keyup', function() {
-
-      // Keep only digits and decimal points:
-      this.value=this.value.replace(/[^\d.]/g, "")
-      // Remove duplicated decimal point, if one exists:
-      this.value=this.value.replace(/^(\d*\.)(.*)\.(.*)$/, '$1$2$3')
-      // Keep only two digits past the decimal point:
-      this.value=this.value.replace(/\.(\d{0})\d+/, '')
-      // Add thousands separators:
-      this.value=this.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-
-    });
-}
-
-   
-
-
-
-//------------------------ validations
-
- // annual income 
-    $('#sgem_hmhcia_annual_income').on('keyup', function () {
-      var val = this.value;
-      var xcx = parseInt(val);
-      if (isNaN(xcx) || $(this).val().length>11){
-         
-         this.value ='';
-         $('#sgem_hmhcia_err_annual_income').html('This cannot be empty or more than $900,000,000').fadeIn();  
-          $(this).css({"border": "1px solid red","background": "#FFCECE" });  
-          
-
-  }else{
-     $('#sgem_hmhcia_err_annual_income').html('').fadeOut();  
-    $(this).css({
-        "border": "1px solid #707070",
-        "background": "#ffffff"
-      }); 
-  }    
-    });
-
-  // Monthly debts
-    $('#sgem_hmhcia_monthly_debts').on('keyup', function () {
-      var vac3     = $('#sgem_hmhcia_monthly_debts').val().trim();
-      var vac2 = vac3.replace(/\,/g,'');
-      var vac = parseInt(vac2,10); 
-      if (isNaN(vac) || vac>20000){
-         
-         this.value ='';
-         $('#sgem_hmhcia_err_monthly_debts').html('This cannot be empty or more than $20,000').fadeIn();  
           $(this).css({
-        "border": "1px solid red",
-        "background": "#FFCECE" });  
-          
+            "border": "1px solid red",
+            "background": "#FFCECE" });
+             $('#sgem_mrc_err_currunt_interest_rate').html('This cannot be empty or more than 100%').fadeIn(); 
 
-  }else{
-     $('#sgem_hmhcia_err_monthly_debts').html('').fadeOut();  
-    $(this).css({
-        "border": "1px solid #707070",
-        "background": "#ffffff"
-      }); 
-  }    
-    });
+      }
+                
+        });
 
-     // Down payment 
-       $('#sgem_hmhcia_income_down_payment').on('keyup', function () {
-      var rvac3     = $('#sgem_hmhcia_income_down_payment').val().trim();
-      var rvac2 = rvac3.replace(/\,/g,'');
-      var rvac = parseInt(rvac2,10); 
-      if (isNaN(rvac) || $(this).val().length>11){
-         
-         this.value ='';
-         $('#sgem_hmhcia_income_down_payment_msg').html('This cannot be empty or more than $900,000,000').fadeIn();  
+
+    $('#sgem_mrc_new_interest_rate').on('keyup', function() {
+      if ($(this).val()==''){
+      
           $(this).css({
-        "border": "1px solid red",
-        "background": "#FFCECE" });  
-          
+            "border": "1px solid red",
+            "background": "#FFCECE" });
+             $('#sgem_mrc_err_new_interest_rate').html('This cannot be empty or more than 100%').fadeIn(); 
 
-  }else{
-     $('#sgem_hmhcia_income_down_payment_msg').html('').fadeOut();  
-    $(this).css({
-        "border": "1px solid #707070",
-        "background": "#ffffff"
-      }); 
-  }    
+      }
+                
     });
 
-    // debt to income
-    $('#sgem_hmhcia_rent_payment').on('keyup', function () {
-      var vrr2     = $('#sgem_hmhcia_rent_payment').val().trim();
-      var vrr = vrr2.replace('%', "");
-      if (isNaN(vrr) || vrr>43){
-         
-         this.value ='';
-         $('#sgem_hmhcia_err_rent_payment_afford').html('This cannot be empty or more than 43%').fadeIn();  
-          $(this).css({
-        "border": "1px solid red",
-        "background": "#FFCECE" });  
-          
 
-  }else{
-     $('#sgem_hmhcia_err_rent_payment_afford').html('').fadeOut();  
-    $(this).css({
-        "border": "1px solid #707070",
-        "background": "#ffffff"
-      }); 
-  }    
-    });
-
-     //intrest rate
-    $('#sgem_hmhcia_interest_rate').on('keyup', function () {
-      var avrr2     = $('#sgem_hmhcia_interest_rate').val().trim();
-      var avrr = avrr2.replace('%', "");
-      if (isNaN(avrr) || avrr>100){
-         
-         this.value ='';
-         $('#sgem_hmhcia_err_interest_rate').html('This cannot be empty or more than 100%').fadeIn();  
-          $(this).css({
-        "border": "1px solid red",
-        "background": "#FFCECE" });  
-          
-
-  }else{
-     $('#sgem_hmhcia_err_interest_rate').html('').fadeOut();  
-    $(this).css({
-        "border": "1px solid #707070",
-        "background": "#ffffff"
-      }); 
-  }    
-    });
-
-    //loan term
-
-    $('#sgem_hmhcia_loan_term').on('keyup', function () {
-      var jvac3     = $('#sgem_hmhcia_loan_term').val().trim();
-      var jvac2 = jvac3.replace(/\,/g,'');
-      var jvac = parseInt(jvac2,10); 
-      if (isNaN(jvac) || jvac>10000){
-         
-         this.value ='';
-         $('#sgem_hmhcia_err_loan_term').html('This cannot be empty').fadeIn();  
-          $(this).css({
-        "border": "1px solid red",
-        "background": "#FFCECE" });  
-          
-
-  }else{
-     $('#sgem_hmhcia_err_loan_term').html('').fadeOut();  
-    $(this).css({
-        "border": "1px solid #707070",
-        "background": "#ffffff"
-      }); 
-  }    
-    });
-
-//property tax
-     $('#sgem_hmhcia_prop_tax_').on('keyup', function () {
-      var abvrr2     = $('#sgem_hmhcia_prop_tax_').val().trim();
-      var abvrr = abvrr2.replace('%', "");
-      if (isNaN(abvrr) || abvrr>100){
-         
-         this.value ='';
-         $('#sgem_hmhcia_err__prop_tax_').html('This cannot be empty or more than 100%').fadeIn();  
-          $(this).css({
-        "border": "1px solid red",
-        "background": "#FFCECE" });  
-          
-
-  }else{
-     $('#sgem_hmhcia_err__prop_tax_').html('').fadeOut();  
-    $(this).css({
-        "border": "1px solid #707070",
-        "background": "#ffffff"
-      }); 
-  }    
-    });
-
-    //property tax
-     $('#sgem_hmhcia_private_mortgage_insurance').on('keyup', function () {
-      var abvx2     = $('#sgem_hmhcia_private_mortgage_insurance').val().trim();
-      var abvx = abvx2.replace('%', "");
-      if (isNaN(abvx) || abvx>100){
-         
-         this.value ='';
-         $('#sgem_hmhcia_err_private_mortgage_insurance').html('This cannot be empty or more than 100%').fadeIn();  
-          $(this).css({
-        "border": "1px solid red",
-        "background": "#FFCECE" });  
-          
-
-  }else{
-     $('#sgem_hmhcia_err_private_mortgage_insurance').html('').fadeOut();  
-    $(this).css({
-        "border": "1px solid #707070",
-        "background": "#ffffff"
-      }); 
-  }    
-    });
-
-      // Monthly debts
-    $('#sgem_hmhcia_home_insurance').on('keyup', function () {
-      var vsac3     = $('#sgem_hmhcia_home_insurance').val().trim();
-      var vsac2 = vsac3.replace(/\,/g,'');
-      var vsac = parseInt(vsac2,10); 
-      if (isNaN(vsac) || vsac>20000){
-         
-         this.value ='';
-         $('#sgem_hmhcia_err_home_insurance').html('This cannot be empty').fadeIn();  
-          $(this).css({
-        "border": "1px solid red",
-        "background": "#FFCECE" });  
-          
-
-  }else{
-     $('#sgem_hmhcia_err_home_insurance').html('').fadeOut();  
-    $(this).css({
-        "border": "1px solid #707070",
-        "background": "#ffffff"
-      }); 
-  }    
-    });
-
-      // hoe
-    $('#sgem_hmhcia_ahomeowners_association_dues').on('keyup', function () {
-      var vcsac3     = $('#sgem_hmhcia_ahomeowners_association_dues').val().trim();
-      var vcsac2 = vcsac3.replace(/\,/g,'');
-      var vcsac = parseInt(vcsac2,10); 
-      if (isNaN(vcsac) || vcsac>20000){
-         
-         this.value ='';
-         $('#sgem_hmhcia_err_ahomeowners_association_dues').html('This cannot be empty').fadeIn();  
-          $(this).css({
-        "border": "1px solid red",
-        "background": "#FFCECE" });  
-          
-
-  }else{
-     $('#sgem_hmhcia_err_ahomeowners_association_dues').html('').fadeOut();  
-    $(this).css({
-        "border": "1px solid #707070",
-        "background": "#ffffff"
-      }); 
-  }    
-    });
-
-    // maximum payment 
-    $('#sgem_hmhcia_interest_maximum_payment').on('keyup', function () {
-      var ooval = this.value;
-      var ooxcx = parseInt(ooval);
-      if (isNaN(ooxcx) || $(this).val().length>11){
-         
-         this.value ='';
-         $('#sgem_hmhcia_err_rent_interest_maximum_payment').html('This cannot be empty or more than $900,000,000').fadeIn();  
-          $(this).css({
-        "border": "1px solid red",
-        "background": "#FFCECE" });  
-          
-
-  }else{
-     $('#sgem_hmhcia_err_rent_interest_maximum_payment').html('').fadeOut();  
-    $(this).css({
-        "border": "1px solid #707070",
-        "background": "#ffffff"
-      }); 
-  }    
-    });
-
-    // down payment 
-    $('#sgem_hmhcia_down_payment_pay').on('keyup', function () {
-      var vval = this.value;
-      var vxcx = parseInt(vval);
-      if (isNaN(vxcx) || $(this).val().length>11){
-         
-         this.value ='';
-         $('#sgem_hmhcia_err_down_payment_pay').html('This cannot be empty or more than $900,000,000').fadeIn();  
-          $(this).css({
-        "border": "1px solid red",
-        "background": "#FFCECE" });  
-          
-
-  }else{
-     $('#sgem_hmhcia_err_down_payment_pay').html('').fadeOut();  
-    $(this).css({
-        "border": "1px solid #707070",
-        "background": "#ffffff"
-      }); 
-  }    
-    });
- 
-  //intrest rate
-     $('#sgem_hmhcia_interest_rate_payment').on('keyup', function () {
-      var abbvx2     = $('#sgem_hmhcia_interest_rate_payment').val().trim();
-      var abbvx = abbvx2.replace('%', "");
-      if (isNaN(abbvx) || abbvx>100){
-         
-         this.value ='';
-         $('#sgem_hmhcia_err_rent_interest_rate_payment').html('This cannot be empty or more than 100%').fadeIn();  
-          $(this).css({
-        "border": "1px solid red",
-        "background": "#FFCECE" });  
-          
-
-  }else{
-     $('#sgem_hmhcia_err_rent_interest_rate_payment').html('').fadeOut();  
-    $(this).css({
-        "border": "1px solid #707070",
-        "background": "#ffffff"
-      }); 
-  }    
-    });
-
-       //loan term payment
-
-    $('#sgem_hmhcia_p_loan_turm').on('keyup', function () {
-      var jjvac3     = $('#sgem_hmhcia_p_loan_turm').val().trim();
-      var jjvac2 = jjvac3.replace(/\,/g,'');
-      var jjvac = parseInt(jjvac2,10); 
-      if (isNaN(jjvac) || jjvac>10000){
-         
-         this.value ='';
-         $('#sgem_hmhcia_err_expected_mortgage').html('This cannot be empty').fadeIn();  
-          $(this).css({
-        "border": "1px solid red",
-        "background": "#FFCECE" });  
-          
-
-  }else{
-     $('#sgem_hmhcia_err_expected_mortgage').html('').fadeOut();  
-    $(this).css({
-        "border": "1px solid #707070",
-        "background": "#ffffff"
-      }); 
-  }    
-    });
-
-      //home insurance
-
-    $('#sgem_hmhcia_home_insurance_payment').on('keyup', function () {
-      var jjvvac3     = $('#sgem_hmhcia_home_insurance_payment').val().trim();
-      var jjvvac2 = jjvvac3.replace(/\,/g,'');
-      var jjvvac = parseInt(jjvvac2,10); 
-      if (isNaN(jjvvac) || jjvvac>10000){
-         
-         this.value ='';
-         $('#sgem_hmhcia_err_home_insurance_payment').html('This cannot be empty').fadeIn();  
-          $(this).css({
-        "border": "1px solid red",
-        "background": "#FFCECE" });  
-          
-
-  }else{
-     $('#sgem_hmhcia_err_home_insurance_payment').html('').fadeOut();  
-    $(this).css({
-        "border": "1px solid #707070",
-        "background": "#ffffff"
-      }); 
-  }    
-    });
-
-      //hoe
-
-    $('#sgem_hmhcia_hoa_dues').on('keyup', function () {
-      var jaa3     = $('#sgem_hmhcia_interest_maximum_payment').val().trim();
-      var jaa2 = jaa3.replace(/\,/g,'');
-      var jaa = parseInt(jaa2,10);  
-      var jjxvac3     = $('#sgem_hmhcia_hoa_dues').val().trim();
-      var jjxvac2 = jjxvac3.replace(/\,/g,'');
-      var jjxvac = parseInt(jjxvac2,10); 
-      if (isNaN(jjxvac) || jjxvac>jaa){
-         
-         this.value ='';
-         $('#sgem_hmhcia_err_hoa_dues').html('This cannot be empty or more than Maximum payment').fadeIn();  
-          $(this).css({
-        "border": "1px solid red",
-        "background": "#FFCECE" });  
-          
-
-  }else{
-     $('#sgem_hmhcia_err_hoa_dues').html('').fadeOut();  
-    $(this).css({
-        "border": "1px solid #707070",
-        "background": "#ffffff"
-      }); 
-  }    
-    });
-
-//--------------------------------- % part two validations
-
- $('#sgem_hmhcia_rent_payment').on('keyup', function() {
-  if ($(this).val()==''){
-  
-      $(this).css({
-        "border": "1px solid red",
-        "background": "#FFCECE" });
-         $('#sgem_hmhcia_err_rent_payment_afford').html('This cannot be empty or more than 100%').fadeIn(); 
-
-  }
-            
-    });
-
- $('#sgem_hmhcia_interest_rate').on('keyup', function() {
-  if ($(this).val()==''){
-  
-      $(this).css({
-        "border": "1px solid red",
-        "background": "#FFCECE" });
-         $('#sgem_hmhcia_err_interest_rate').html('This cannot be empty or more than 100%').fadeIn(); 
-
-  }
-            
-    });
-
- $('#sgem_hmhcia_prop_tax_').on('keyup', function() {
-  if ($(this).val()==''){
-  
-      $(this).css({
-        "border": "1px solid red",
-        "background": "#FFCECE" });
-         $('#sgem_hmhcia_err__prop_tax_').html('This cannot be empty or more than 100%').fadeIn(); 
-
-  }            
-    });
-
- $('#sgem_hmhcia_private_mortgage_insurance').on('keyup', function() {
-  if ($(this).val()==''){
-  
-      $(this).css({
-        "border": "1px solid red",
-        "background": "#FFCECE" });
-         $('#sgem_hmhcia_err_private_mortgage_insurance').html('This cannot be empty or more than 100%').fadeIn(); 
-
-  }
-            
-    });
-
-  $('#sgem_hmhcia_interest_rate_payment').on('keyup', function() {
-  if ($(this).val()==''){
-  
-      $(this).css({
-        "border": "1px solid red",
-        "background": "#FFCECE" });
-         $('#sgem_hmhcia_err_rent_interest_rate_payment').html('This cannot be empty or more than 100%').fadeIn(); 
-
-  }            
-    });
-	
-	
-	
-    setInterval(function(){
-        //updateBubblePosition();
-        //updateBubblePosition2();
-		if($('.rangeslider__handle').length >0){
-			var rangeFillWidth = $('.rangeslider__fill').css("width");
-			$('.rangeslider__value-bubble').css('left',rangeFillWidth);
-		}
-    }, 500);
-	//var xdrb = localStorage.setItem('sgem_hmhcia_bublt_status',0);
-	const interval = setInterval(function() {
-		 
-	    if($('.rangeslider.rangeslider--horizontal').length>0){
-			var rangeFillWidth = $('.rangeslider__fill').css("width");
-			$('.rangeslider__value-bubble').css('left',rangeFillWidth);
-			 //localStorage.setItem('sgem_hmhcia_bublt_status', 1);
-		 }
-	 }, 2000);
-
-
-
-	clearInterval(interval); 
-	
 
 });
-// document ready end
 
-function updateBubblePosition() {
-	//alert(2222);
-    //var rangeFillWidth = jQuery('.rangeslider__fill').css("width");
-   // $('.rangeslider__value-bubble').css('left',rangeFillWidth);
-	//$('.rangeslider__handle').trigger('click');
-	//$('#sgem-hmhcia-ranger').rangeslider('update', true);
-}
-function updateBubblePosition2() {
-    //var rangeFillWidth2 = jQuery('.rangeslider__fill2').css("width");
-    //$('.rangeslider__value-bubble2').css('left',rangeFillWidth2);
-	//$('#sgem-hmhcia-ranger2').rangeslider('update', true);
-}
+function isChecked() {
 
- 
-function radiochange() {
-
-    var rchange = $('.sgem-hmhcia-calculate-by:checked').val();
-
-    if (rchange == 'income') {
-
-        var main_value_of_house_income = JSON.parse(localStorage.getItem('sgem_hmhcia_income_value_of_house'));
-
-         if (isNaN(main_value_of_house_income) || main_value_of_house_income < 1) {
-
-            $('#sgem_hmhcia_total_text').text('$00.00');
-
-        } else {
-
-            $('#sgem_hmhcia_total_text').text(numberWithCommas('$' + main_value_of_house_income));
-        }
-        //-----------------------
-
-        var finalisingincomearray = JSON.parse(localStorage.getItem('sgem_hmhcia_income_doughnut_data_array'));
-        localStorage.setItem('sgem_hmhcia_doughnut_data_array', JSON.stringify(finalisingincomearray));
-        $("#hidemeon").show();
-        $("#hidemeon2").show();
-        $("#sliderrangeone2").hide();
-        $("#sliderrangeone").show();
-        hmhica_update_chart();
-        sliderfun();
-        //-----------------------
-        var income_monthly_principal_intrest_d = JSON.parse(localStorage.getItem('sgem_hmhcia_income_monthly_principal_intrest'));
-
-        if (isNaN(income_monthly_principal_intrest_d) || income_monthly_principal_intrest_d < 1) {
-
-            $('#sgem_hmhcia_interest_value').text('0');
-
-        } else {
-
-            $('#sgem_hmhcia_interest_value').text(numberWithCommas(income_monthly_principal_intrest_d));
-        }
-        //------------------------
-
-        var income_monthly_home_insurance_d = JSON.parse(localStorage.getItem('sgem_hmhcia_income_monthly_home_insurance'));
-
-        if (isNaN(income_monthly_home_insurance_d) || income_monthly_home_insurance_d < 1) {
-
-            $('#sgem_hmhcia_insurance_value').text('0');
-
-        } else {
-
-            $('#sgem_hmhcia_insurance_value').text(numberWithCommas(income_monthly_home_insurance_d));
-        }
-
-        //--------------------------
-       
-        var  income_monthly_hoa_fees_d = JSON.parse(localStorage.getItem('sgem_hmhcia_income_monthly_hoa_fees'));
-
-         if (isNaN(income_monthly_hoa_fees_d) || income_monthly_hoa_fees_d < 1) {
-
-            $('#sgem_hmhcia_hoe_value').text('0');
-
-        } else {
-
-            $('#sgem_hmhcia_hoe_value').text(numberWithCommas(income_monthly_hoa_fees_d));
-        }
-
-        //--------------------------
-
-        var income_total_monthly_payment_d = JSON.parse(localStorage.getItem('sgem_hmhcia_income_total_monthly_payment_p'));
-        var income_i_plus_tax_d = JSON.parse(localStorage.getItem('sgem_hmhcia_income_insurance_plus_p_tax'));
-        var income_i_plus_tax_d_hoe = parseFloat(income_i_plus_tax_d) + parseFloat(income_monthly_hoa_fees_d);
-        // console.log(income_i_plus_tax_d);
-
-        if (isNaN(income_total_monthly_payment_d)) {
-
-            $('.sgem-hmhcia-price-legend-item').text('$ 00.00');
-            localStorage.setItem('monthlypayment_slider', JSON.stringify(0));
-
-        }else if(income_total_monthly_payment_d < 1){
-          
-           $('.sgem-hmhcia-price-legend-item').text(numberWithCommas('$' + income_i_plus_tax_d));
-            localStorage.setItem('monthlypayment_slider', JSON.stringify(income_i_plus_tax_d));
-
-        } else if(income_monthly_principal_intrest_d > 1){
-
-            $('.sgem-hmhcia-price-legend-item').text(numberWithCommas('$'+income_total_monthly_payment_d));
-            localStorage.setItem('monthlypayment_slider', JSON.stringify(income_total_monthly_payment_d));
-
-        }else if(income_monthly_principal_intrest_d < 1 || income_monthly_hoa_fees_d > 1 ){
-           
-            $('.sgem-hmhcia-price-legend-item').text(numberWithCommas('$' + income_i_plus_tax_d_hoe));
-            localStorage.setItem('monthlypayment_slider', JSON.stringify(income_i_plus_tax_d_hoe));
-
-        }
-
-        //--------------------------
-
-    } else if (rchange == 'payment') {
-
-           var main_value_of_house_payment = JSON.parse(localStorage.getItem('sgem_hmhcia_payment_value_of_house'));
-
-         if (isNaN(main_value_of_house_payment) || main_value_of_house_payment < 1) {
-
-            $('#sgem_hmhcia_total_text').text('$00.00');
-
-        } else {
-
-            $('#sgem_hmhcia_total_text').text(numberWithCommas('$' + main_value_of_house_payment));
-        }
-        //------------------------
-
-        var finalisingpaymentarray = JSON.parse(localStorage.getItem('sgem_hmhcia_payment_doughnut_data_array'));
-        localStorage.setItem('sgem_hmhcia_doughnut_data_array', JSON.stringify(finalisingpaymentarray));
-        $("#hidemeon").hide();
-        $("#hidemeon2").hide();
-         $("#sliderrangeone2").show();
-        $("#sliderrangeone").hide();
-        hmhica_update_chart();
-        sliderfun();
-        //------------------------
-        var payment_monthly_principal_intrest_d = JSON.parse(localStorage.getItem('sgem_hmhcia_payment_monthly_principal_intrest'));
-
-        if (isNaN(payment_monthly_principal_intrest_d) || payment_monthly_principal_intrest_d < 1) {
-
-            $('#sgem_hmhcia_interest_value').text('0');
-
-        } else {
-
-            $('#sgem_hmhcia_interest_value').text(numberWithCommas(payment_monthly_principal_intrest_d));
-        }
-        //------------------------
-
-        var payment_monthly_home_insurance_d = JSON.parse(localStorage.getItem('sgem_hmhcia_payment_monthly_home_insurance'));
-
-        if (isNaN(payment_monthly_home_insurance_d) || payment_monthly_home_insurance_d < 1) {
-
-            $('#sgem_hmhcia_insurance_value').text('0');
-
-        } else {
-
-            $('#sgem_hmhcia_insurance_value').text(numberWithCommas(payment_monthly_home_insurance_d));
-        }
-        //-------------------------
-       
-        var   payment_monthly_hoa_fees_d = JSON.parse(localStorage.getItem('sgem_hmhcia_payment_monthly_hoa_fees'));
-
-         if (isNaN(payment_monthly_hoa_fees_d) || payment_monthly_hoa_fees_d < 1) {
-
-            $('#sgem_hmhcia_hoe_value').text('0');
-
-        } else {
-
-            $('#sgem_hmhcia_hoe_value').text(numberWithCommas(payment_monthly_hoa_fees_d));
-        }
-
-        //-------------------------
-
-        var payment_total_monthly_payment_d = JSON.parse(localStorage.getItem('sgem_hmhcia_payment_total_monthly_payment'));
-
-
-        if (isNaN(payment_total_monthly_payment_d) || payment_total_monthly_payment_d < 1) {
-
-            $('.sgem-hmhcia-price-legend-item').text('$0');
-
-        } else {
-
-            $('.sgem-hmhcia-price-legend-item').text(numberWithCommas('$'+payment_total_monthly_payment_d));
-           
-
-        }
-        //-------------------------
-    }
-
+    sgem_mrf_calculationmin();
 
 }
 
-//---------------------------------------------------------------------------------------Chart
+//-----------------------------
+//Chart
 
 // setup 
-var p_and_i = JSON.parse(localStorage.getItem('sgem_hmhcia_doughnut_data_array'));
-
+var data_mrf_chart_values =  JSON.parse(localStorage.getItem('sgem_mrf_chart_array'));
 
 const data = {
-    labels: ['Principle & interest', 'Insurance', 'Property tax', 'PMI' , 'HOE'],
+    labels: ['1 yr', '10 yrs', '20 yrs', '30 yrs'],
     datasets: [{
-        label: 'Chart',
-        data: p_and_i,
+        label: 'Yearly Amount',
+        data: data_mrf_chart_values,
         backgroundColor: [
-            '#FFB822',
-            '#5C78FF',
-            '#FA4380',
-            '#36D154',
-            '#f9e600'
+            '#FF5964',
+            '#4BCC8C',
+            '#FF5964',
+            '#4BCC8C'
         ],
-        // hoverOffset: 4
+        borderColor: [
+            '#FF5964',
+            '#4BCC8C',
+            '#FF5964',
+            '#4BCC8C'
+        ],
+        borderWidth: 1,
+        barThickness: 20,
+        // barPercentage: 0.50,
+
+        // categoryPercentage: 1.0
+        // barPercentage: 1.0
+        Bar: 1.0,
+        Category: 1.0,
     }]
 };
 
-var calby = $(".sgem-hmhcia-calculate-by:checked").val();
-
-//hmhciaGenerateDochart(calby, data);
-
-//function hmhciaGenerateDochart(calby, data) {
-const centerText = {
-    id: 'centerText',
-    beforeDatasetsDraw(chart, args, options) {
-        const {
-            ctx,
-            chartArea: {
-                left,
-                right,
-                top,
-                bottom,
-                width,
-                height
-            }
-        } =
-        chart;
-
-        ctx.save();
-
-        const textTotal = parseFloat(chart.data.datasets[0].data[0]) +
-            parseFloat(chart.data.datasets[0].data[1]) +
-            parseFloat(chart.data.datasets[0].data[2]) +
-            parseFloat(chart.data.datasets[0].data[3]) +
-            parseFloat(chart.data.datasets[0].data[4]);
-
-        const property_tax_chart_value = parseFloat(chart.data.datasets[0].data[2]);
-
-        if(property_tax_chart_value < 1 ){
-
-            var inc_p_tax = parseFloat(chart.data.datasets[0].data[1]);
-
-        }else{
-
-            var inc_p_tax = parseFloat(chart.data.datasets[0].data[1])+parseFloat(chart.data.datasets[0].data[2]);
-
-        }
-
-        
-
-        const totalValue = '$' + (textTotal).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-      
-
-        ctx.font = '13px DM SANS';
-        ctx.fillStyle = '#A3A3A3';
-        ctx.textAlign = 'center';
-        ctx.fillText('Total monthly payment', width / 2, height / 2 + top);
-        ctx.restore();
-
-        ctx.font = '25px DM Serif Display';
-        ctx.fillStyle = '#000000';
-        ctx.textAlign = 'center';
-
-        if (isNaN(textTotal) || textTotal < 1) {
-
-             ctx.fillText('$' +inc_p_tax, width / 2, height / 2 + 30);
-
-        } else {
-
-             ctx.fillText(totalValue, width / 2, height / 2 + 30);
-        }
-
-        ctx.restore();
-    }
-};
-
-// 
+// config 
 const config = {
-    type: 'doughnut',
-    data: data,
+    type: 'bar',
+    data,
     options: {
-        cutout: 80,
+        indexAxis: 'y',
+        legend: {
+            display: false
+        },
+        scales: {
+            y: {
+                grid: {
+                    display: false,
+                },
+                beginAtZero: true,
+                ticks: {
+                    // callback: function(value, index, ticks) {
+                    //     return value + ' yrs';
+                    // },
+                    font: {
+                        size: 14,
+                        family: "'DM Sans'",
+                    }
+                }
+            },
+            x: {
+                grid: {
+                    display: false,
+                },
+                ticks: {
+                    // Include a dollar sign in the ticks
+                    callback: function(value, index, ticks) {
+                        // return '$' + value;
+                        return '$' + value / 1000 + "k";
+                    },
+                    font: {
+                        size: 14,
+                        family: "'DM Sans'",
+                    }
+
+                }
+            },
+        },
+
         plugins: {
             legend: {
-                display: false,
+                display: false
             },
             tooltip: {
-
                 backgroundColor: 'white',
+                yAlign: 'bottom',
                 borderColor: 'hsl(210, 3%, 70%)',
                 borderWidth: 1,
                 usePointStyle: true,
@@ -1151,13 +929,19 @@ const config = {
                     size: 14,
                     family: "'DM Sans'",
                 },
+                titleFont: {
+                    size: 14,
+                    family: "'DM Sans'"
+                },
                 bodySpacing: 1,
+                titleColor: '#000',
+                labelColor: '#000',
                 boxWidth: 0,
-                boxHeight: 20,
-
+                boxHeight: 30,
                 callbacks: {
                     labelTextColor: function(context) {
-                        return myChart.data.datasets.borderColor;
+                        //return myChart.data.datasets.borderColor;
+                        return '#4BCC8C';
                     },
                     labelPointStyle: function(context) {
                         return {
@@ -1168,8 +952,7 @@ const config = {
                 }
             }
         }
-    },
-    plugins: [centerText]
+    }
 };
 
 // render init block
@@ -1178,347 +961,61 @@ const myChart = new Chart(
     config
 );
 
-
-
-// 
-//if (calby == 'income') {
-document.getElementById('sgem_hmhcia_principle_interest').style.backgroundColor = myChart.data.datasets[0].backgroundColor[0];
-document.getElementById('sgem_hmhcia_principle_interest_te').innerText = myChart.data.labels[0];
-document.getElementById('sgem_hmhcia_interest_value').innerText = myChart.data.datasets[0].data[0];
-
-document.getElementById('sgem_hmhcia_insurance').style.backgroundColor = myChart.data.datasets[0].backgroundColor[1];
-document.getElementById('sgem_hmhcia_insurance_te').innerText = myChart.data.labels[1];
-document.getElementById('sgem_hmhcia_insurance_value').innerText = myChart.data.datasets[0].data[1];
-
-document.getElementById('sgem_hmhcia_property').style.backgroundColor = myChart.data.datasets[0].backgroundColor[2];
-document.getElementById('sgem_hmhcia_property_te').innerText = myChart.data.labels[2];
-document.getElementById('sgem_hmhcia_property_value').innerText = myChart.data.datasets[0].data[2];
-
-document.getElementById('sgem_hmhcia_pmi').style.backgroundColor = myChart.data.datasets[0].backgroundColor[3];
-document.getElementById('sgem_hmhcia_pmi_te').innerText = myChart.data.labels[3];
-document.getElementById('sgem_hmhcia_pmi_value').innerText = myChart.data.datasets[0].data[3];
-
-document.getElementById('sgem_hmhcia_hoe').style.backgroundColor = myChart.data.datasets[0].backgroundColor[4];
-document.getElementById('sgem_hmhcia_hoe_te').innerText = myChart.data.labels[4];
-document.getElementById('sgem_hmhcia_hoe_value').innerText = myChart.data.datasets[0].data[4];
-//  }
-/*  else {
-    document.getElementById('sgem_hmhcia_principle_interest').style.backgroundColor = myChart.data.datasets[0].backgroundColor[0];
-    document.getElementById('sgem_hmhcia_principle_interest_te').innerText = myChart.data.labels[0];
-    document.getElementById('sgem_hmhcia_interest_value').innerText = myChart.data.datasets[0].data[0];
-
-    document.getElementById('sgem_hmhcia_pmi').style.backgroundColor = myChart.data.datasets[0].backgroundColor[3];
-    document.getElementById('sgem_hmhcia_pmi_te').innerText = myChart.data.labels[3];
-    document.getElementById('sgem_hmhcia_pmi_value').innerText = myChart.data.datasets[0].data[3];
-  }*/
-//}
-
-
-
-function hmhica_update_chart() {
-
-    myChart.data.datasets[0].data = JSON.parse(localStorage.getItem('sgem_hmhcia_doughnut_data_array'));
-    //myChart.data.datasets[0].label = JSON.parse(localStorage.getItem('income_doughnut_data_array')); 
-
-    myChart.update();
-}
-
-
-var sliderData = document.getElementById('sgem-hmhcia-ranger');
-
-//if( $('.sgem-hmhcia-range').length>0 ) {
-	sgemGenarateSlider(calby);
-	sgemGenarateSlider2(calby);
-//}
-
-function sgemGenarateSlider(calby) {
-
-    var rangerOne = document.getElementById('sgem-hmhcia-ranger');
-    var sgemimgpig = document.getElementById('sgem-hmhcia-image-pig2');
-    var sgemimghouse = document.getElementById('sgem-hmhcia-image-house2');
-    var widthp1 = sgemimgpig.width;
-    var heightp1 = sgemimgpig.height;
-    var width1 = sgemimghouse.width;
-    var height1 = sgemimghouse.height;
-    rangerOne.onchange = function() {
-        // sgemimgpig.width = widthp1 / (parseFloat(rangerOne.value) / parseFloat(8) );
-        // sgemimgpig.height = heightp1 / (parseFloat(rangerOne.value) / parseFloat(8) );
-
-        // sgemimgpig.width = rangerOne.value + 57;
-
-        // if (rangerOne.value > 3 ) {
-        //     rangerValueSlide = rangerOne.value + parseFloat(30);
-        // }
-
-        var sliderOnePig = ( parseFloat(25) / parseFloat(rangerOne.value) ) * parseFloat(22); 
-        var sliderOnePig1 = (sliderOnePig / parseFloat(10)) * parseFloat(25);
-
-        if (sliderOnePig1 > 80 ) {
-            rangerValueSlide = (parseFloat(sliderOnePig1) - parseFloat(sliderOnePig1)) + ( parseFloat(widthp1) / parseFloat(rangerOne.value) ) + parseFloat(80);
-            $('#sgem-hmhcia-image-pig2').css('width',rangerValueSlide + 'px');
-        } else {
-            $('#sgem-hmhcia-image-pig2').css('width',sliderOnePig1 + 'px');
-        }
-        
-        // console.log(sliderOnePig1);
-
-        var sliderOneHouse = parseFloat(rangerOne.value) + parseFloat(40);
-        $('#sgem-hmhcia-image-house2').css('width',sliderOneHouse + 'px');
-
-        // sgemimghouse.width = width1 * (rangerOne.value / 23 );
-        // sgemimghouse.height = height1 * (rangerOne.value / 23 );
-        // console.log(rangerOne.value);
-    }
-}
-function sgemGenarateSlider2(calby) {
-
-    var ranger = document.getElementById('sgem-hmhcia-ranger2');
-    var sgemimgpig = document.getElementById('sgem-hmhcia-image-pig');
-    var sgemimghouse = document.getElementById('sgem-hmhcia-image-house');
-    var width = sgemimgpig.width;
-    var height = sgemimgpig.height;
-    var width = sgemimghouse.width;
-    var height = sgemimghouse.height;
-    ranger.onchange = function() {
-        sgemimgpig.width = width / (ranger.value / 4000);
-        sgemimgpig.height = height / (ranger.value / 4000);
-
-        sgemimghouse.width = width * (ranger.value / 4000);
-        sgemimghouse.height = height * (ranger.value / 4000);
-    }
-}
-
-// tooltip for range slider
-var hmhciaValueBubble = '<output class="rangeslider__value-bubble" />';
-var hmhciaValueBubble2 = '<output class="rangeslider__value-bubble2" />';
-
-function updateValueBubble(pos, value, context) {
-  pos = pos || context.position;
-  value = value || context.value;
-  var $hmhciaValueBubble = $('.rangeslider__value-bubble', context.$range);
-  var tempPosition = pos + context.grabPos;
-  var position = (tempPosition <= context.handleDimension) ? context.handleDimension : (tempPosition >= context.maxHandlePos) ? context.maxHandlePos : tempPosition;
-
-  var delayInMilliseconds = 100; //1 second
-
-setTimeout(function() {
-  var permonth_income = JSON.parse(localStorage.getItem('monthlypayment_slider'));
-
-  if ($hmhciaValueBubble.length) {
-    $hmhciaValueBubble[0].style.left = Math.ceil(position) + 'px';
-    $hmhciaValueBubble[0].innerHTML = numberWithCommas('$' + permonth_income + ' /mo');
-  }
-  //updateBubblePosition(); // sh
+function mrf_update_chart(){
   
-}, delayInMilliseconds);
-   
-}
-
-function updateValueBubble2(pos, value, context) {
-  pos = pos || context.position;
-  value = value || context.value;
-  var $hmhciaValueBubble2 = $('.rangeslider__value-bubble2', context.$range);
-  var tempPosition = pos + context.grabPos;
-  var position = (tempPosition <= context.handleDimension) ? context.handleDimension : (tempPosition >= context.maxHandlePos) ? context.maxHandlePos : tempPosition;
-
-   var delayInMilliseconds2 = 100; //1 second
-
-   setTimeout(function() {
-    var permonth_payment = JSON.parse(localStorage.getItem('sgem_hmhcia_payment_total_monthly_payment'));
- 
-  if ($hmhciaValueBubble2.length) {
-    $hmhciaValueBubble2[0].style.left = Math.ceil(position) + 'px';
-    $hmhciaValueBubble2[0].innerHTML = numberWithCommas('$' + permonth_payment + ' /mo');
-  }
+  myChart.data.datasets[0].data = JSON.parse(localStorage.getItem('sgem_mrf_chart_array')); 
   
-}, delayInMilliseconds2);
-   
-}
-
-function sliderfun() {
-    const $inputRange = $('.sgem-hmhcia-range');
-    const $inputRange2 = $('.sgem-hmhcia-range2');
-
-    var debt_to_income_ratio10 = $('#sgem_hmhcia_rent_payment').val().trim();
-    var debt_to_income_ratio20 = debt_to_income_ratio10.replace('%', "");
-
-    var slider_maximum_payment1 = $('#sgem_hmhcia_interest_maximum_payment').val().trim();
-    var slider_maximum_payment2 = slider_maximum_payment1.replace(/\,/g, '');
-    var slider_maximum_payment = parseInt(slider_maximum_payment2, 10);
-
-
-    $inputRange.rangeslider({
-        polyfill: false,
-        fillClass: 'rangeslider__fill',
-
-         onInit: function() {
-      this.$range.append($(hmhciaValueBubble));
-      updateValueBubble(null, null, this);
-	  //var rangeFillWidth = jQuery('.rangeslider__fill').css("width");
-		//$('.rangeslider__value-bubble').css('left',rangeFillWidth);
-      },
-
-      onSlide: function(pos, value) {
-          //updateBubblePosition();
-          updateValueBubble(pos, value, this);
-      },
-
-      onSlideEnd: function(pos, value) {
-      // updateValueBubble(pos, value, this);
-      sgem_hmhcia_calculationmin();
-	    //var rangeFillWidth = jQuery('.rangeslider__fill').css("width");
-		//$('.rangeslider__value-bubble').css('left',rangeFillWidth);
-
-      },
-    });
-    $inputRange2.rangeslider({
-        polyfill: false,
-        fillClass: 'rangeslider__fill2',
-
-         onInit: function() {
-      this.$range.append($(hmhciaValueBubble2));
-      updateValueBubble2(null, null, this);
-      },
-
-      onSlide: function(pos, value) {
-          //updateBubblePosition2();
-          updateValueBubble2(pos, value, this);
-      },
-
-      onSlideEnd: function(pos, value) {
-      // updateValueBubble2(pos, value, this);
-      sgem_hmhcia_calculationmin();
-
-      },
-    });
-
-    $('.sgem-hmhcia-range').rangeslider('update', true);
-    $('.sgem-hmhcia-range2').rangeslider('update', true);
-
-
-    //   load values to input
-    
-     //console.log($inputRange.val());
-
-$('.sgem-hmhcia-range').val(debt_to_income_ratio20).change();
-
-$('.sgem-hmhcia-range2').val(slider_maximum_payment).change();
- 
- document.getElementById("sgem-hmhcia-ranger2").max = 8000;    
+  myChart.update();  
 
 }
-//--------------------------------------------------------------------------------------------
 
 
-function isNumber(evt) {
-    evt = (evt) ? evt : window.event;
-    var charCode = (evt.which) ? evt.which : evt.keyCode;
-    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-        //if (charCode == 31 && charCode > 32 && (charCode < 48 || charCode > 57)) { // for decimal
-        return false;
-    }
-    return true;
-}
-
-/*$(function() {
-    $('input.inputnumber').keyup(function(event) {
-        if (event.which >= 37 && event.which <= 40) return;
-        $(this).val(function(index, value) {
-            return value
-                // Keep only digits and decimal points:
-                .replace(/[^\d.]/g, "")
-                // Remove duplicated decimal point, if one exists:
-                .replace(/^(\d*\.)(.*)\.(.*)$/, '$1$2$3')
-                // Keep only two digits past the decimal point:
-                .replace(/\.(\d{2})\d+/, '.$1')
-                // Add thousands separators:
-                .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-        });
-    });
-
-    $("#sgem_hmhcia_expected_mortgage").on('input', function() {
-        $(this).val(function(i, v) {
-            return v.replace('%', '') + '%';
-        });
-    });
-});*/
-
-
-/**
- * Toolt Tip
- */
-/* Tippy Tool */
-
-tippy('[data-tippy-content]', {
-    arrow: true,
-    theme: 'light-border',
-    trigger: 'click',
-});
-
-
-
-/*$('input.inputnumber').keyup(function(event) {
-    if (event.which >= 37 && event.which <= 40) return;
-    $(this).val(function(index, value) {
-        return value
-            // Keep only digits and decimal points:
-            .replace(/[^\d.]/g, "")
-            // Remove duplicated decimal point, if one exists:
-            .replace(/^(\d*\.)(.*)\.(.*)$/, '$1$2$3')
-            // Keep only two digits past the decimal point:
-            .replace(/\.(\d{2})\d+/, '.$1')
-            // Add thousands separators:
-            .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-    });
-});*/
-
+// document.getElementById('sgem_mrc_cost').style.backgroundColor = myChart.data.datasets[0].backgroundColor[0];
+// document.getElementById('sgem_mrc_liftime_saving').style.backgroundColor = myChart.data.datasets[0].backgroundColor[1];
 
 $(document).ready(function() {
-
-    if ($('.sgem-hmhcia-cal-wrapper').width() < 1024) {
-        $('.sgem-hmhcia-cal-left').addClass('sgem-hmhcia-cal-left-add-class');
-        $('.sgem-hmhcia-cal-right').addClass('sgem-hmhcia-cal-right-add-class');
-		//updateBubblePosition(); // sh
+    if ($('.sgem-mrc-cal-wrapper').width() < 1100) {
+        $('.sgem-mrc-cal-left').addClass('sgem-mrc-cal-left-add-class');
+        $('.sgem-mrc-cal-right').addClass('sgem-mrc-cal-right-add-class');
     } else {
-        $('.sgem-hmhcia-cal-left').removeClass('sgem-hmhcia-cal-left-add-class');
-        $('.sgem-hmhcia-cal-right').removeClass('sgem-hmhcia-cal-right-add-class');
-		//updateBubblePosition(); // sh
+        $('.sgem-mrc-cal-left').removeClass('sgem-mrc-cal-left-add-class');
+        $('.sgem-mrc-cal-right').removeClass('sgem-mrc-cal-right-add-class');
     }
 
-    if ($('.sgem-hmhcia-cal-main-id').width() < 650) {
-        $('.sgem-hmhcia-cal-wrapper').addClass('sgem-hmhcia-wrapper-add-mobile');
-		//updateBubblePosition(); // sh
+    if ($('.sgem-mrc-cal-main-id').width() < 650) {
+        $('.sgem-mrc-cal-wrapper').addClass('sgem-mrc-wrapper-add-mobile');
     } else {
-        $('.sgem-hmhcia-cal-wrapper').removeClass('sgem-hmhcia-wrapper-add-mobile');
-		//updateBubblePosition(); // sh
+        $('.sgem-mrc-cal-wrapper').removeClass('sgem-mrc-wrapper-add-mobile');
     }
 
-    $(window).on('resize', function() { 
-        if ($('.sgem-hmhcia-cal-wrapper').width() < 1024) {
-            $('.sgem-hmhcia-cal-left').addClass('sgem-hmhcia-cal-left-add-class');
-            $('.sgem-hmhcia-cal-right').addClass('sgem-hmhcia-cal-right-add-class');
+    $(window).on('resize', function() {
+        if ($('.sgem-mrc-cal-wrapper').width() < 1100) {
+            $('.sgem-mrc-cal-left').addClass('sgem-mrc-cal-left-add-class');
+            $('.sgem-mrc-cal-right').addClass('sgem-mrc-cal-right-add-class');
         } else {
-            $('.sgem-hmhcia-cal-left').removeClass('sgem-hmhcia-cal-left-add-class');
-            $('.sgem-hmhcia-cal-right').removeClass('sgem-hmhcia-cal-right-add-class');
+            $('.sgem-mrc-cal-left').removeClass('sgem-mrc-cal-left-add-class');
+            $('.sgem-mrc-cal-right').removeClass('sgem-mrc-cal-right-add-class');
         }
     }).trigger('resize');
 
     $(window).on('resize', function() {
-        if ($('.sgem-hmhcia-cal-main-id').width() < 650) {
-            $('.sgem-hmhcia-cal-wrapper').addClass('sgem-hmhcia-wrapper-add-mobile');
+        if ($('.sgem-mrc-cal-main-id').width() < 650) {
+            $('.sgem-mrc-cal-wrapper').addClass('sgem-mrc-wrapper-add-mobile');
         } else {
-            $('.sgem-hmhcia-cal-wrapper').removeClass('sgem-hmhcia-wrapper-add-mobile');
+            $('.sgem-mrc-cal-wrapper').removeClass('sgem-mrc-wrapper-add-mobile');
         }
     }).trigger('resize');
 });
 
-// DOCUMENT.READY END
 
-for (let e of document.querySelectorAll('input[type="range"].slider-progress')) {
-    e.style.setProperty('--value', e.value);
-    e.style.setProperty('--min', e.min == '' ? '0' : e.min);
-    e.style.setProperty('--max', e.max == '' ? '100' : e.max);
-    e.addEventListener('input', () => e.style.setProperty('--value', e.value));
+function toggleData(value) {
+    const visibilityData = myChart.isDatasetVisible(0);
+    if (visibilityData === true) {
+        myChart.hide(value);
+    }
+    if (visibilityData === false) {
+        myChart.show(value);
+    }
 }
 
 // copy script section
