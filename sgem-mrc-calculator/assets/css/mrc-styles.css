@@ -1020,7 +1020,7 @@ details.sgem-mrc-details-disclaimer[open] > summary::after {
 }
 .sgem-mrc-cal-left.sgem-mrc-cal-left-add-class {
 	width: 33%;
-	padding: 10px 0px 10px 10px;
+	padding: 10px 18px 10px 10px;
     height: 815px;
     overflow: hidden;
     overflow-y: scroll;
