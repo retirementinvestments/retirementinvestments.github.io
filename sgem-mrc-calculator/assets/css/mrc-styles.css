@@ -1005,6 +1005,11 @@ details.sgem-mrc-details-disclaimer[open] > summary::after {
 }
 
 /* add js class styles */
+.sgem-mrc-cal-left-add-class .sgem-mrc-form-checkbox label .sgem-mrc-form-checkbox-style:after {
+	left: 7px;
+    top: 4px;
+    width: 6px;
+}
 .sgem-mrc-cal-left-add-class .sgem-mrc-cal-1 {
 	height: 815px;
     overflow: hidden;
