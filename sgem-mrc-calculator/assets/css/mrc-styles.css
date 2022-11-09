@@ -1112,7 +1112,7 @@ details.sgem-mrc-details-disclaimer[open] > summary::after {
 .sgem-mrc-cal-left-add-class .sgem-mrc-info-tooltip {
     width: 15px;
     height: 15px;
-    font-size: 0.8em;
+    font-size: 11px;
     line-height: 15px;
 }
 .sgem-mrc-cal-right-add-class .sgem-mrc-cal-1-result-wrapper .sgem-mrc-total-top-form span.sgem-mrc-total-value,
