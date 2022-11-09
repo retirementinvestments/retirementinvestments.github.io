@@ -1190,6 +1190,10 @@ details.sgem-mrc-details-disclaimer[open] > summary::after {
 }
 
 /* add mobile styles */
+.sgem-mrc-wrapper-add-mobile .sgem-mrc-cal-left.sgem-mrc-cal-left-add-class {
+    overflow: hidden;
+    overflow-y: hidden;
+}
 .sgem-mrc-wrapper-add-mobile .sgem-mrc-cal-left {
     height: auto;
 }
