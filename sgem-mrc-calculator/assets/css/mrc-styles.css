@@ -844,7 +844,7 @@ details.sgem-mrc-details-disclaimer > summary::after {
     background-repeat: no-repeat;
     background-position: center -2px;
     background-size: 25px;
-    background-image: url(https://retirementinvestments.github.io/sgem-mrc-calculator/assets/images/drop-down-arrow-mrc.svg);
+    background-image: url('https://retirementinvestments.github.io/sgem-mrc-calculator/assets/images/drop-down-arrow-mrc.svg');
     margin-top: 5px;
 }
 details.sgem-mrc-details-disclaimer[open] > summary::after {
