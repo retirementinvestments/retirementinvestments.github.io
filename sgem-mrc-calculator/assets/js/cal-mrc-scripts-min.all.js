@@ -1018,6 +1018,44 @@ function toggleData(value) {
     }
 }
 
+//-----------------------------
+
+function isNumber(evt) {
+    evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        //if (charCode == 31 && charCode > 32 && (charCode < 48 || charCode > 57)) { // for decimal
+        return false;
+    }
+    return true;
+}
+
+
+/**
+ * Percentage
+ */
+
+$(function() {
+
+    $("#sgem_mrc_original_mortgage_interest_rate, #sgem_mrc_new_mortgage_interest_rate").on('input', function() {
+        $(this).val(function(i, v) {
+            return v.replace('%', '') + '%';
+        });
+    });
+});
+
+
+/**
+ * Tool Tip
+ */
+
+tippy('[data-tippy-content]', {
+    arrow: true,
+    theme: 'light-border',
+    trigger: 'click',
+});
+
+
 // copy script section
 localStorage.setItem('sgem-mrc-cal-copy', '<div id="sgem-mrc-cal"></div><script>window.onload = function() {var sgemmrccal = document.createElement("script");sgemmrccal.type = "text/javascript";sgemmrccal.src = "https://retirementinvestments.github.io/sgem-mrc-calculator/assets/js/cal-mrc-scripts.min.js";document.body.appendChild(sgemmrccal);} </script>'); 
 
