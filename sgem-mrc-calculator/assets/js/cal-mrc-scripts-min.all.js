@@ -177,7 +177,7 @@ sgem_mrc_main_contents += '</details></div></div></div></div>';
 if( (location.hostname != "calculatorstg.wpengine.com") || (location.hostname != "retirementinvestments.com") ){
     sgem_mrc_main_contents += '<div class="sgem-mrc-logo-center">';
     sgem_mrc_main_contents += '<a class="sgem-mrc-logo-image" href="https://retirementinvestments.com/real-estate/refinance-calculator/" target="_blank" rel="noopener">';
-    sgem_mrc_main_contents += 'Mortgage Refinance Calculator</a>&nbsp; by Retirement investments</div>';
+    sgem_mrc_main_contents += 'Mortgage Refinance Calculator</a>&nbsp; by Retirement Investments</div>';
 }
     
 if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com"){
