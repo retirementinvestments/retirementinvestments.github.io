@@ -940,8 +940,8 @@ details.sgem-mrc-details-disclaimer[open] > summary::after {
 	width: 100%;
 }
 .sgem-mrc-cal-1-result-wrapper .sgem-mrc-chart-legend-total {
-	width: 325px;
-	padding-left: 40px;
+	width: 290px;
+	padding-left: 20px;
 }
 .sgem_mrc_side_total_lbl {
 	margin: 0 0 0 auto;
@@ -1160,8 +1160,8 @@ details.sgem-mrc-details-disclaimer[open] > summary::after {
 }
 
 .sgem-mrc-chartCard {
-	height: 235px;
-    width: 347px;
+	height: auto;
+    width: 380px;
 }
 
 .sgem-mrc-form-checkbox label:hover input ~ .sgem-mrc-form-checkbox-style {
