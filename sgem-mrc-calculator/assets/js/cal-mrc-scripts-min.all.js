@@ -509,43 +509,52 @@ function sgem_mrf_calculationmin() {
         var thirty_years = thirty_years_2 - thirty_years_4;
 
     }
+    
+    if(cost < 0 || isNaN(cost)){
+
+        chart_values_array[0] = 0;
+    
+    }else{
+
+        chart_values_array[0] = cost;
+    }
 
      if(first_year < 0 || isNaN(first_year)){
 
-        chart_values_array[0] = 0;
+        chart_values_array[1] = 0;
 
      }else{
       
-       chart_values_array[0] = first_year;
+       chart_values_array[1] = first_year;
 
      }
      
      if(ten_years < 0 || isNaN(ten_years)){
 
-        chart_values_array[1] = 0;
+        chart_values_array[2] = 0;
 
      }else{
      
-      chart_values_array[1] = ten_years;
+      chart_values_array[2] = ten_years;
 
      }
 
       if(twenty_years < 0 || isNaN(twenty_years)){
 
-        chart_values_array[2] = 0;
-
-     }else{
-
-        chart_values_array[2] = twenty_years;
-     }
-
-      if(thirty_years < 0 || isNaN(thirty_years)){
-
         chart_values_array[3] = 0;
 
      }else{
 
-        chart_values_array[3] = thirty_years;
+        chart_values_array[3] = twenty_years;
+     }
+
+      if(thirty_years < 0 || isNaN(thirty_years)){
+
+        chart_values_array[4] = 0;
+
+     }else{
+
+        chart_values_array[4] = thirty_years;
      }
      
 
@@ -860,20 +869,20 @@ function isChecked() {
 var data_mrf_chart_values =  JSON.parse(localStorage.getItem('sgem_mrf_chart_array'));
 
 const data = {
-    labels: ['1 yr', '10 yrs', '20 yrs', '30 yrs'],
+    labels: ['Cost','1 yr', '10 yrs', '20 yrs', '30 yrs'],
     datasets: [{
         label: 'Yearly Amount',
         data: data_mrf_chart_values,
         backgroundColor: [
             '#FF5964',
             '#4BCC8C',
-            '#FF5964',
+            '#4BCC8C',
             '#4BCC8C'
         ],
         borderColor: [
             '#FF5964',
             '#4BCC8C',
-            '#FF5964',
+            '#4BCC8C',
             '#4BCC8C'
         ],
         borderWidth: 1,
