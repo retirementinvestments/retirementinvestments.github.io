@@ -871,7 +871,7 @@ var data_mrf_chart_values =  JSON.parse(localStorage.getItem('sgem_mrf_chart_arr
 const data = {
     labels: ['Cost','1 yr', '10 yrs', '20 yrs', '30 yrs'],
     datasets: [{
-        label: 'Yearly Amount',
+        label: '$',
         data: data_mrf_chart_values,
         backgroundColor: [
             '#FF5964',
