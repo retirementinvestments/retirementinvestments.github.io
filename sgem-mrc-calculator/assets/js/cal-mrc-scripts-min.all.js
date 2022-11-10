@@ -877,10 +877,12 @@ const data = {
             '#FF5964',
             '#4BCC8C',
             '#4BCC8C',
+            '#4BCC8C',
             '#4BCC8C'
         ],
         borderColor: [
             '#FF5964',
+            '#4BCC8C',
             '#4BCC8C',
             '#4BCC8C',
             '#4BCC8C'
