@@ -1163,6 +1163,9 @@ details.sgem-mrc-details-disclaimer[open] > summary::after {
 	height: auto;
     width: 380px;
 }
+.sgem-mrc-cal-left.sgem-mrc-cal-left-add-class::-webkit-scrollbar {
+    width: 0px;
+}
 
 .sgem-mrc-form-checkbox label:hover input ~ .sgem-mrc-form-checkbox-style {
   	background-color: #ccc;
