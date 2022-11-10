@@ -1054,6 +1054,11 @@ details.sgem-mrc-details-disclaimer[open] > summary::after {
 .sgem-mrc-cal-left-add-class .sgem-mrc-cal-1 .sgem-mrc-flex-container {
 	display: block;
 }
+.sgem-mrc-cal-left-add-class .sgem-mrc-check-box-label-tooltip {
+    margin-left: 5px;
+    position: relative;
+    top: -4px;
+}
 
 .sgem-mrc-cal-right-add-class .sgem-mrc-cal-1-result-wrapper .sgem-mrc-current-label,
 .sgem-mrc-cal-right-add-class .sgem-mrc-cal-1-result-wrapper .sgem-mrc-new-label,
