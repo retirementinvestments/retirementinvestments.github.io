@@ -144,7 +144,7 @@ var sgem_mrc_main_contents = '<div class="sgem-mrc-cal-main-id">'+
                           '<span class="sgem_mrc_side_total_lbl">$<span id="sgem_mrc_insurance_value">1,208</span></span>'+
                       '</div>'+
                       '<div class="sgem-mrc-legend-item" id="hidemeon">'+
-                          '<div id="sgem_mrc_property_te" class="sgem-mrc-property-te">BREAK EVENT</div>'+
+                          '<div id="sgem_mrc_property_te" class="sgem-mrc-property-te">BREAK EVEN</div>'+
                           '<span class="sgem_mrc_side_total_lbl"><span id="sgem_mrc_property_value">40 months</span></span>'+
                       '</div>'+
                       '<div class="sgem-mrc-legend-item" id="hidemeon2">'+
