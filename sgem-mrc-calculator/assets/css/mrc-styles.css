@@ -626,7 +626,6 @@
 }
 .sgem-mrc-legend-item {
 	display: flex;
-    cursor: pointer;
     align-items: center;
     padding-bottom: 21px;
     color: #1A1A1A;
