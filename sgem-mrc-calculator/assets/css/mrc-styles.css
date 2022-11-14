@@ -1197,6 +1197,12 @@ details.sgem-mrc-details-disclaimer[open] > summary::after {
   	transform: rotate(45deg);
 }
 
+.sgem-mrc-cal-1 .sgem_mrc_err_style {
+	font-weight: 300;
+    font-size: 13px;
+    color: #ff5964;
+}
+
 /* add mobile styles */
 .sgem-mrc-wrapper-add-mobile .sgem-mrc-cal-left.sgem-mrc-cal-left-add-class {
     overflow: hidden;
