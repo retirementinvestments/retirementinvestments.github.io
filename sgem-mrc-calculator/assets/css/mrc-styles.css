@@ -1352,6 +1352,14 @@ details.sgem-mrc-details-disclaimer[open] > summary::after {
 		padding-top: 0;
 	}
 	
+	.sgem-mrc-cal-right-add-class .sgem-mrc-legendbox { 
+		flex-direction: row;
+		flex-wrap: nowrap; 
+		padding-left: 2px;
+	}
+	.sgem-mrc-cal-right-add-class .sgem-mrc-legend-item.pt-40 {
+		padding-top: 0;
+	}	
 	
 @media (max-width:1130px) {
 /* sh */
