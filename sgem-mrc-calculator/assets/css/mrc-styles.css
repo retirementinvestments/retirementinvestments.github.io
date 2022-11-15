@@ -1341,6 +1341,18 @@ details.sgem-mrc-details-disclaimer[open] > summary::after {
 	
 }
 
+
+/* sh */
+	.sgem-mrc-wrapper-add-mobile .sgem-mrc-legendbox { 
+		flex-direction: row;
+		flex-wrap: nowrap; 
+		padding-left: 2px;
+	}
+	.sgem-mrc-wrapper-add-mobile .sgem-mrc-legend-item.pt-40 {
+		padding-top: 0;
+	}
+	
+	
 @media (max-width:1130px) {
 /* sh */
 	.sgem-mrc-legendbox { 
