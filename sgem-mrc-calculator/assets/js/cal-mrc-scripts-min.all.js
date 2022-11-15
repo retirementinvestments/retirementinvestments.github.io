@@ -340,7 +340,7 @@ function sgem_mrf_calculationmin() {
     var break_even_months2 = refinance_fee / monthly_savings;
     var break_even_months = decimalTwoPoints(break_even_months2);
 
-    if (isNaN(break_even_months) || break_even_months < 0) {
+    if (isNaN(break_even_months) || break_even_months <= 0) {
 
         $('#sgem_mrc_property_value').text('0');
 
@@ -388,7 +388,7 @@ function sgem_mrf_calculationmin() {
 
     }
 
-    if (isNaN(lifetime_savings) || lifetime_savings < 0) {
+    if (isNaN(lifetime_savings)) {
 
         $('#sgem_mrc_hoe_value').text('0');
 
