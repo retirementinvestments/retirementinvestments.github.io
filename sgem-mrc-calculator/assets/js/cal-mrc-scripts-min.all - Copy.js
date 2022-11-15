@@ -133,20 +133,28 @@ var sgem_mrc_main_contents = '<div class="sgem-mrc-cal-main-id">'+
                      '<canvas id="myChart"></canvas>'+
                   '</div>'+
                '</div>'+
-               '<div class="sgem-mrc-chart-legend-total"> '+
-                 '<div class="sgem-mrc-legendbox">'+                     
+               '<div class="sgem-mrc-chart-legend-total">'+ 
+                  '<div class="sgem-mrc-legendbox">'+
+                      '<div class="sgem-mrc-legend-item">'+ 
+                          '<div id="sgem_mrc_principle_interest_te" class="sgem-mrc-principle-interest-te">MONTHLY SAVINGS</div>'+
+                          '<span class="sgem_mrc_side_total_lbl">$<span id="sgem_mrc_interest_value">150 /mon</span></span>'+
+                      '</div>'+
+                       '<div class="sgem-mrc-legend-item">'+
+                          '<div id="sgem_mrc_insurance_te" class="sgem-mrc-insurance-te">NEW PAYMENT</div>'+
+                          '<span class="sgem_mrc_side_total_lbl">$<span id="sgem_mrc_insurance_value">1,208</span></span>'+
+                      '</div>'+
+                      '<div class="sgem-mrc-legend-item" id="hidemeon">'+
+                          '<div id="sgem_mrc_property_te" class="sgem-mrc-property-te">BREAK EVEN</div>'+
+                          '<span class="sgem_mrc_side_total_lbl"><span id="sgem_mrc_property_value">40 months</span></span>'+
+                      '</div>'+
                       '<div class="sgem-mrc-legend-item" id="hidemeon2">'+
-                          '<div class="sgem-mrc-legend-item-label">'+
-							'<div id="sgem_mrc_cost" class="sgem-mrc-cost"></div>'+
-							'<div id="sgem_mrc_cost_te" class="sgem-mrc-pmi-te">COST</div>'+
-						  '</div>'+						  
+                          '<div id="sgem_mrc_cost" class="sgem-mrc-cost"></div>'+
+                          '<div id="sgem_mrc_cost_te" class="sgem-mrc-pmi-te">COST</div>'+
                           '<span class="sgem_mrc_side_total_lbl">$<span id="sgem_mrc_pmi_value">6,000</span></span>'+
                       '</div>'+
-                      '<div class="sgem-mrc-legend-item pt-40">'+
-                          '<div class="sgem-mrc-legend-item-label">'+
-							'<div id="sgem_mrc_liftime_saving" class="sgem-mrc-lifetime-saving"></div>'+
-							'<div id="sgem_mrc_lifetime-saving_te" class="sgem-mrc-lifetime-saving-te">LIFETIME SAVINGS</div>'+
-						  '</div>'+	
+                      '<div class="sgem-mrc-legend-item">'+
+                          '<div id="sgem_mrc_liftime_saving" class="sgem-mrc-lifetime-saving"></div>'+
+                          '<div id="sgem_mrc_lifetime-saving_te" class="sgem-mrc-lifetime-saving-te">LIFETIME SAVINGS</div>'+
                           '<span class="sgem_mrc_side_total_lbl">$<span id="sgem_mrc_hoe_value">151,533</span></span>'+
                       '</div>'+
                   '</div>'+
@@ -154,39 +162,13 @@ var sgem_mrc_main_contents = '<div class="sgem-mrc-cal-main-id">'+
             '</div>';
 
 if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com"){
-    
-			sgem_mrc_main_contents += '<div class="sgem-mrc-cal-1-result-footer">';
-				sgem_mrc_main_contents += '<div class="sgem-mrc-loan-started-in-txt">';
-				sgem_mrc_main_contents += 'YOUR CURRENT LOAN STARTED IN <span id="calculated_date">JANUARY, 2010</span>';
-				sgem_mrc_main_contents += '</div>';				
-				sgem_mrc_main_contents += '<div class="sgem-mrc-legend-item-panel">';
-					  sgem_mrc_main_contents += '<div class="sgem-mrc-legend-item">';
-                          sgem_mrc_main_contents += '<div id="sgem_mrc_principle_interest_te" class="sgem-mrc-principle-interest-te">MONTHLY SAVINGS</div>
-                          sgem_mrc_main_contents += '<span class="sgem_mrc_side_total_lbl">$<span id="sgem_mrc_interest_value">150 /mon</span></span>';
-                      sgem_mrc_main_contents += '</div>';
-                       sgem_mrc_main_contents += '<div class="sgem-mrc-legend-item">';
-                          sgem_mrc_main_contents += '<div id="sgem_mrc_insurance_te" class="sgem-mrc-insurance-te">NEW PAYMENT</div>';
-                          sgem_mrc_main_contents += '<span class="sgem_mrc_side_total_lbl">$<span id="sgem_mrc_insurance_value">1,208</span></span>';
-                      sgem_mrc_main_contents += '</div>';
-                      sgem_mrc_main_contents += '<div class="sgem-mrc-legend-item" id="hidemeon">';
-                          sgem_mrc_main_contents += '<div id="sgem_mrc_property_te" class="sgem-mrc-property-te">BREAK EVEN</div>';
-                          sgem_mrc_main_contents += '<span class="sgem_mrc_side_total_lbl"><span id="sgem_mrc_property_value">40 months</span></span>';
-                      sgem_mrc_main_contents += '</div>';
-				sgem_mrc_main_contents += '</div>';				
-				sgem_mrc_main_contents += '<div class="sgem-mrc-content">Ready to refinance? Learn more about your mortgage refinancing options and getting the best rate by our recommended lender.</div>';
-				sgem_mrc_main_contents += '<div class="sgem-mrc-buttonGet"><a href="https://retirementinvestments.com/refinancecalculator" target="_blank" class="sgem-mrc-getStart">';
-				sgem_mrc_main_contents += 'GET STARTED</a>';
-				sgem_mrc_main_contents += '</div>';
-			sgem_mrc_main_contents += '</div>';
-	
-	
-	/*sgem_mrc_main_contents += '<div class="sgem-mrc-cal-1-result-footer">';
+    sgem_mrc_main_contents += '<div class="sgem-mrc-cal-1-result-footer">';
     sgem_mrc_main_contents += '<div class="sgem-mrc-loan-started-in-txt">';
     sgem_mrc_main_contents += 'YOUR CURRENT LOAN STARTED IN <span id="calculated_date">JANUARY, 2010</span></div>';
     sgem_mrc_main_contents += '<div class="sgem-mrc-content">Ready to refinance? Learn more about your mortgage refinancing options and getting the best rate by our recommended lender.</div>';
     sgem_mrc_main_contents += '<div class="sgem-mrc-buttonGet"><a href="https://retirementinvestments.com/refinancecalculator" target="_blank" class="sgem-mrc-getStart">';
     sgem_mrc_main_contents += 'GET STARTED</a></div>';
-    sgem_mrc_main_contents += '</div>';*/
+    sgem_mrc_main_contents += '</div>';
 }
 
 sgem_mrc_main_contents += '<div class="sgem-mrc-section-disclaimer"><details class="sgem-mrc-details-disclaimer"><summary><div class="sgem-mrc-collapsible-summary-disclaimer">Disclaimer</div></summary><div class="sgem-mrc-collapsible-text-disclaimer">This material is provided for general and educational purposes only; it is not intended to provide legal, tax or investment advice.</div>';
@@ -297,10 +279,11 @@ function sgem_mrf_calculationmin() {
     
 
     //-----------------------------------
-	var new_monthly_payment1 = (new_intrest_rate / 12);
+
+    var new_monthly_payment1 = (new_intrest_rate / 12).toFixed(5);
     var new_monthly_payment11 = parseFloat(new_monthly_payment1) * total_value_for_pv_tobecon;
 
-    var new_monthly_payment2 = (new_intrest_rate / 12);
+    var new_monthly_payment2 = (new_intrest_rate / 12).toFixed(5);
     var new_monthly_payment22 = 1 + parseFloat(new_monthly_payment2);
     let new_monthly_payment3 = Math.pow(new_monthly_payment22, -new_term_months);
     var new_monthly_payment4 = 1 - new_monthly_payment3;
@@ -335,10 +318,8 @@ function sgem_mrf_calculationmin() {
 
     //-----------------------------------
 
-
-    //var break_even_months = decimalTwoPoints(refinance_fee / monthly_savings);
-    var break_even_months2 = refinance_fee / monthly_savings;
-    var break_even_months = decimalTwoPoints(break_even_months2);
+    var break_even_months = decimalTwoPoints(refinance_fee / monthly_savings);
+    
 
     if (isNaN(break_even_months) || break_even_months < 0) {
 
@@ -910,7 +891,7 @@ const data = {
         barThickness: 20,
         // barPercentage: 0.50,
 
-       //categoryPercentage: 0.5,
+        // categoryPercentage: 1.0
         // barPercentage: 1.0
         Bar: 1.0,
         Category: 1.0,
@@ -921,17 +902,12 @@ const data = {
 const config = {
     type: 'bar',
     data,
-    options: {  
-		layout: {
-            padding: {
-                left: 0
-            }
-        },
+    options: {
         indexAxis: 'y',
         legend: {
             display: false
         },
-        scales: { 
+        scales: {
             y: {
                 grid: {
                     display: false,

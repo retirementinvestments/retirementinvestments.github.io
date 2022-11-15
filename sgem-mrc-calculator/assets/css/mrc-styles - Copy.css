@@ -624,7 +624,7 @@
     align-content: flex-end;
     font-size: 14px;
 }
-/*.sgem-mrc-legend-item {
+.sgem-mrc-legend-item {
 	display: flex;
     align-items: center;
     padding-bottom: 21px;
@@ -633,18 +633,7 @@
     font-size: 16px;
     line-height: 21px;
     width: 100%;
-}*/
-.sgem-mrc-legend-item {
-	display: block;
-	align-items: center;
-	padding-bottom: 21px;
-	color: #1A1A1A;
-	font-weight: 500;
-	font-size: 16px;
-	line-height: 21px;
-	width: 100%;
 }
-
   .sgem-mrc-contribution {
     border:0px;
     padding: 0px;
@@ -949,27 +938,15 @@ details.sgem-mrc-details-disclaimer[open] > summary::after {
 	display: inline-flex;
 	width: 100%;
 }
-/*.sgem-mrc-cal-1-result-wrapper .sgem-mrc-chart-legend-total {
-	width: 290px;
-	padding-left: 20px;
-}*/
 .sgem-mrc-cal-1-result-wrapper .sgem-mrc-chart-legend-total {
 	width: 290px;
-	padding-left: 50px;
+	padding-left: 20px;
 }
-/*.sgem_mrc_side_total_lbl {
+.sgem_mrc_side_total_lbl {
 	margin: 0 0 0 auto;
     font-family: 'DM Serif Display', serif;
     color: #1A1A1A;
     font-size: 16px;
-}*/
-.sgem_mrc_side_total_lbl {
-	margin: 4px 0 0 auto;
-	font-family: 'DM Serif Display', serif;
-	color: #1A1A1A;
-	font-size: 32px;
-	line-height: 44px; 
-	display: block;
 }
 .sgem-mrc-cal-1-result-wrapper .sgem-mrc-legendbox .sgem-mrc-cost {
 	background: #FF5964;
@@ -1225,20 +1202,6 @@ details.sgem-mrc-details-disclaimer[open] > summary::after {
     color: #ff5964;
 }
 
-/* sumith */
-.sgem-mrc-legend-item-label {
-  display: flex;
-}
-.pt-40 {
-	padding-top: 35px;
-}
-.sgem-mrc-legend-item-panel {
-	display: flex;
-}
-.sgem-mrc-legend-item-panel .sgem-mrc-legend-item {
-	padding-bottom: 40px;
-}
-
 /* add mobile styles */
 .sgem-mrc-wrapper-add-mobile .sgem-mrc-cal-left.sgem-mrc-cal-left-add-class {
     overflow: hidden;
@@ -1304,9 +1267,6 @@ details.sgem-mrc-details-disclaimer[open] > summary::after {
 	height: auto;
     overflow: hidden;
 }
-
-
-
 /* end */
 
 @media (max-width:1200px) {
@@ -1338,21 +1298,8 @@ details.sgem-mrc-details-disclaimer[open] > summary::after {
 	.sgem-mrc-age-text {
 		font-size: 22px;
 	}
-	
 }
 
-@media (max-width:1130px) {
-/* sh */
-	.sgem-mrc-legendbox { 
-		flex-direction: row;
-		flex-wrap: nowrap; 
-		padding-left: 2px;
-	}
-	.sgem-mrc-legend-item.pt-40 {
-		padding-top: 0;
-	}
-}	
-	
 @media (max-width:1115px) {
 	.sgem-mrc-cal-left.sgem-mrc-cal-left-add-class {
 	    padding: 10px 18px 10px 10px;
@@ -1394,41 +1341,8 @@ details.sgem-mrc-details-disclaimer[open] > summary::after {
 		width: 100%;
 		padding: 15px 18px;
 	}
-	/* sh */
-	.sgem-mrc-legendbox { 
-		flex-direction: row;
-		flex-wrap: nowrap; 
-		padding-left: 2px;
-	}
-	.sgem-mrc-legend-item.pt-40 {
-		padding-top: 0;
-	}
 }
- @media only screen and (min-device-width: 320px) and (max-device-width: 820px) {
-/* sh */
-	.sgem-mrc-legend-item-panel { 
-		display: flex;
-	} 
-	.sgem-mrc-legend-item div {
-		font-size: 13px;
-	}
-	.sgem_mrc_side_total_lbl {
-		font-size: 22px;
-	}
-}	
- @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-/* sh */
-	.sgem-mrc-legend-item-panel { 
-		display: block;
-	} 
-	.sgem-mrc-legend-item div {
-		font-size: 16px;
-	}
-	.sgem_mrc_side_total_lbl {
-		font-size: 35px;
-	}
-}	
-
+ 
 /* ******** mobile view ************ */
 @media (max-width: 650px) {
 	.sgem-mrc-cal-left.sgem-mrc-cal-left-add-class {
@@ -1453,15 +1367,6 @@ details.sgem-mrc-details-disclaimer[open] > summary::after {
 	}
 	.sgem-mrc-legend-item {
 		font-size: 1em;
-	}
-	/* sh */
-	.sgem-mrc-legendbox { 
-		flex-direction: row;
-		flex-wrap: nowrap; 
-		padding-left: 2px;
-	}
-	.sgem-mrc-legend-item.pt-40 {
-		padding-top: 0;
 	}
 }
 @media (max-width: 480px) {
@@ -1621,15 +1526,6 @@ details.sgem-mrc-details-disclaimer[open] > summary::after {
 		font-size: 22px;
 		padding-top: 0px;
 	}
-	/* sh */
-	.sgem-mrc-legendbox { 
-		flex-direction: row;
-		flex-wrap: nowrap; 
-		padding-left: 2px;
-	}
-	.sgem-mrc-legend-item.pt-40 {
-		padding-top: 0;
-	}
 }
 @media (max-width: 420px){
 	
@@ -1644,17 +1540,8 @@ details.sgem-mrc-details-disclaimer[open] > summary::after {
     font-size: 10px;
 	}
 	.sgem-mrc-inline .sgem-mrc-plusminus input[type="text"] {
-		width:125px;
-	  } 
-	  /* sh */
-	.sgem-mrc-legendbox { 
-		flex-direction: column;
-		flex-wrap: wrap; 
-		padding-left: 0px;
-	}
-	.sgem-mrc-legend-item.pt-40 {
-		padding-top: 35px;
-	}
+    width:125px;
+  }
 }
 @media (max-width: 380px) {
 	.sgem-mrc-inline .sgem-mrc-plusminus input[type="text"] {
