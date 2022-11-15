@@ -40,7 +40,7 @@ var sgem_mrc_main_contents = '<div class="sgem-mrc-cal-main-id">'+
                   '<label class="sgem-mrc-cal-label">Current loan amount'+
                   '<span class="sgem-mrc-info-tooltip tooltip" data-tippy-content="The original value of your existing loan.">?</span>'+
                   '</label>'+
-                  '<input type="text" class="inputmove inputnumber" id="sgem_mrc_currunt_loan_amount" value="650,000" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
+                  '<input type="text" class="inputmove inputnumber" id="sgem_mrc_currunt_loan_amount" value="200,000" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
                   '<span class="sgem_mrc_err_style" id="sgem_mrc_err_currunt_loan_amount"></span> '+
                '</div>'+
                '<div class="sgem-mrc-form-group sgem-mrc-form-flex sgem-mrc-precentage-holder">'+
@@ -61,19 +61,19 @@ var sgem_mrc_main_contents = '<div class="sgem-mrc-cal-main-id">'+
                   '<label class="sgem-mrc-cal-label">Terms Passed'+
                      '<span class="sgem-mrc-info-tooltip tooltip" data-tippy-content="Number of terms paid off of current loan.">?</span>'+
                   '</label>'+
-                  '<input type="text" class="inputmove inputnumber" id="sgem_mrc_terms_passed" value="52" min="0" max="2050" onkeypress="return isNumber(event)"/>'+
+                  '<input type="text" class="inputmove inputnumber" id="sgem_mrc_terms_passed" value="29" min="0" max="2050" onkeypress="return isNumber(event)"/>'+
                   '<span class="sgem_mrc_err_style" id="sgem_mrc_err_terms_passed"></span>    '+
                '</div>'+
             '</div>'+
             '<div class="sgem-mrc-flex-container">'+
                '<div class="sgem-mrc-form-group sgem-mrc-form-flex sgem-mrc-currency-holder">'+
                   '<label class="sgem-mrc-cal-label">New loan amount</label> '+
-                  '<input type="text"class="inputmove inputnumber" id="sgem_mrc_new_loan_amount" value="250,000" min="0" max="100" onkeypress="return isNumber(event)"/>'+
+                  '<input type="text"class="inputmove inputnumber" id="sgem_mrc_new_loan_amount" value="200,000" min="0" max="100" onkeypress="return isNumber(event)"/>'+
                   '<span class="sgem_mrc_err_style" id="sgem_mrc_err_new_loan_amount"></span> '+
                '</div>'+
                '<div class="sgem-mrc-form-group sgem-mrc-form-flex sgem-mrc-precentage-holder">'+
                   '<label class="sgem-mrc-cal-label">New interest rate</label> '+
-                  '<input type="text"class="inputmove inputnumber" id="sgem_mrc_new_interest_rate" value="4.18" min="0" max="100" />'+
+                  '<input type="text"class="inputmove inputnumber" id="sgem_mrc_new_interest_rate" value="5" min="0" max="100" />'+
                   '<span class="sgem_mrc_err_style" id="sgem_mrc_err_new_interest_rate"></span>'+
                '</div>'+
             '</div>'+
