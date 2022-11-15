@@ -1373,6 +1373,21 @@ details.sgem-mrc-details-disclaimer[open] > summary::after {
 	}
 }
 
+
+ @media only screen and (min-device-width: 320px) and (max-device-width: 820px) {
+/* sh */
+	.sgem-mrc-legend-item-panel { 
+		display: flex;
+	} 
+	.sgem-mrc-legend-item div {
+		font-size: 13px;
+	}
+	.sgem_mrc_side_total_lbl {
+		font-size: 22px;
+	}
+}
+
+
 /* ******** ipad ************ */
 @media (max-width:1024px) {
 
@@ -1404,18 +1419,7 @@ details.sgem-mrc-details-disclaimer[open] > summary::after {
 		padding-top: 0;
 	}
 }
- @media only screen and (min-device-width: 320px) and (max-device-width: 820px) {
-/* sh */
-	.sgem-mrc-legend-item-panel { 
-		display: flex;
-	} 
-	.sgem-mrc-legend-item div {
-		font-size: 13px;
-	}
-	.sgem_mrc_side_total_lbl {
-		font-size: 22px;
-	}
-}	
+	
  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
 /* sh */
 	.sgem-mrc-legend-item-panel { 
