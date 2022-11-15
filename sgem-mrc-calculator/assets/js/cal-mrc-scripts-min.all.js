@@ -279,11 +279,10 @@ function sgem_mrf_calculationmin() {
     
 
     //-----------------------------------
-
-    var new_monthly_payment1 = (new_intrest_rate / 12).toFixed(5);
+	var new_monthly_payment1 = (new_intrest_rate / 12);
     var new_monthly_payment11 = parseFloat(new_monthly_payment1) * total_value_for_pv_tobecon;
 
-    var new_monthly_payment2 = (new_intrest_rate / 12).toFixed(5);
+    var new_monthly_payment2 = (new_intrest_rate / 12);
     var new_monthly_payment22 = 1 + parseFloat(new_monthly_payment2);
     let new_monthly_payment3 = Math.pow(new_monthly_payment22, -new_term_months);
     var new_monthly_payment4 = 1 - new_monthly_payment3;
@@ -318,10 +317,12 @@ function sgem_mrf_calculationmin() {
 
     //-----------------------------------
 
-    var break_even_months = decimalTwoPoints(refinance_fee / monthly_savings);
-    
 
-    if (isNaN(break_even_months) || break_even_months <= 0) {
+    //var break_even_months = decimalTwoPoints(refinance_fee / monthly_savings);
+    var break_even_months2 = refinance_fee / monthly_savings;
+    var break_even_months = decimalTwoPoints(break_even_months2);
+
+    if (isNaN(break_even_months) || break_even_months < 0) {
 
         $('#sgem_mrc_property_value').text('0');
 
@@ -369,8 +370,7 @@ function sgem_mrf_calculationmin() {
 
     }
 
-    //if (isNaN(lifetime_savings) || lifetime_savings < 0) {
-   if (isNaN(lifetime_savings)) {
+    if (isNaN(lifetime_savings) || lifetime_savings < 0) {
 
         $('#sgem_mrc_hoe_value').text('0');
 
@@ -892,7 +892,7 @@ const data = {
         barThickness: 20,
         // barPercentage: 0.50,
 
-        // categoryPercentage: 1.0
+       //categoryPercentage: 0.5,
         // barPercentage: 1.0
         Bar: 1.0,
         Category: 1.0,
@@ -903,12 +903,17 @@ const data = {
 const config = {
     type: 'bar',
     data,
-    options: {
+    options: {  
+		layout: {
+            padding: {
+                left: 0
+            }
+        },
         indexAxis: 'y',
         legend: {
             display: false
         },
-        scales: {
+        scales: { 
             y: {
                 grid: {
                     display: false,
