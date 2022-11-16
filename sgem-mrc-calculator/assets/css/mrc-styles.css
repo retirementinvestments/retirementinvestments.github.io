@@ -1435,6 +1435,9 @@ details.sgem-mrc-details-disclaimer[open] > summary::after {
 	.sgem_mrc_side_total_lbl {
 		font-size: 22px;
 	}
+	.sgem-mrc-cal-1-result-wrapper .sgem-mrc-total-top-form span.sgem-mrc-refinance-save-you {
+		display: block;
+	}
 }	
  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
 /* sh */
@@ -1691,4 +1694,4 @@ details.sgem-mrc-details-disclaimer[open] > summary::after {
     width:80px;
   }
 }
-/* Surge end
+/* Surge end */
