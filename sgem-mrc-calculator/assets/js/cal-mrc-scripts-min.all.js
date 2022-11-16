@@ -58,7 +58,7 @@ var sgem_mrc_main_contents = '<div class="sgem-mrc-cal-main-id">'+
                   '<span class="sgem_mrc_err_style" id="sgem_mrc_err_current_term"></span>'+
                '</div>'+
                '<div class="sgem-mrc-form-group sgem-mrc-form-flex sgem-mrc-months-holder">'+
-                  '<label class="sgem-mrc-cal-label">Terms Passed'+
+                  '<label class="sgem-mrc-cal-label">Terms passed'+
                      '<span class="sgem-mrc-info-tooltip tooltip" data-tippy-content="Number of terms paid off of current loan.">?</span>'+
                   '</label>'+
                   '<input type="text" class="inputmove inputnumber" id="sgem_mrc_terms_passed" value="29" min="0" max="2050" onkeypress="return isNumber(event)"/>'+
