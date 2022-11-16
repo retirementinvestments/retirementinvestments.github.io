@@ -122,8 +122,8 @@ var sgem_mrc_main_contents = '<div class="sgem-mrc-cal-main-id">'+
             '<div class="sgem-mrc-cal-1-result-header">'+
                '<div class="sgem-mrc-flex-container sgem-mrc-column-right-section-one">'+
                   '<div class="sgem-mrc-total-top-form">'+
-                     '<span class="sgem-mrc-total-value">$150</span><span class="sgem-mrc-month-txt">/month</span>'+
-                     '<span class="sgem-mrc-refinance-save-you">REFINANCING COULD SAVE YOU</span>'+
+                        '<span class="sgem-mrc-refinance-save-you">REFINANCING COULD SAVE YOU</span>'+
+                        '<span class="sgem-mrc-total-value">$150</span><span class="sgem-mrc-month-txt">/month</span>'+
                   '</div>'+
                '</div>'+
             '</div>'+
