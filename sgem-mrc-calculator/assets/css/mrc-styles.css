@@ -935,7 +935,7 @@ details.sgem-mrc-details-disclaimer[open] > summary::after {
 .sgem-mrc-cal-1-result-wrapper .sgem-mrc-total-top-form span.sgem-mrc-refinance-save-you {
 	font-size: 20px;
     color: #002340;
-    margin-left: 16px;
+    margin-right: 16px;
     line-height: 45px;
 }
 .sgem-mrc-cal-1-result-wrapper .sgem-mrc-loan-started-in-txt {
