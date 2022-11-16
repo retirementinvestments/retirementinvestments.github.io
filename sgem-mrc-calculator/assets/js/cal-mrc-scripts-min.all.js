@@ -198,7 +198,7 @@ if( (location.hostname != "calculatorstg.wpengine.com") || (location.hostname !=
     sgem_mrc_main_contents += 'Mortgage Refinance Calculator</a>&nbsp; by Retirement Investments</div>';
 }
     
-if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com" || location.hostname == "goldiracompanies.com"){
+if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com"){
     sgem_mrc_main_contents += '<div class="sgem-mrc-copy-option-panel"><h3>Do you want to add this calculator into your website?</h3>';
     sgem_mrc_main_contents += '<div class="sgem-mrc-copy-code-wrap">';
     sgem_mrc_main_contents += '<button class="sgem-mrc-copy-code" id="sgem-mrc-copy-code" onclick="sgem_mrc_copyText(event)">Get Calculator</button>';
