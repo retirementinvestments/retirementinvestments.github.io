@@ -98,7 +98,7 @@ var sgem_mrc_main_contents = '<div class="sgem-mrc-cal-main-id">'+
                '<div class="collapsible-content">'+
                   '<div class="sgem-mrc-flex-container">'+
                      '<div class="sgem-mrc-form-group sgem-mrc-form-flex sgem-mrc-form-field-full sgem-mrc-currency-holder">'+
-                        '<label>Cash out refinance <span class="sgem-mrc-tooltip tooltip" data-tippy-content="Debt-to-income ratio is obtained by dividing the total of your monthly debt payments by your gross monthly income, which is shown as a percentage. Enter the percentage of your income you are comfortable spending on monthly debts.">?</span></label>'+
+                        '<label>Cash out refinance <span class="sgem-mrc-tooltip tooltip" data-tippy-content="If you have enough equity in your home, you may be able to take cash out up to 80% of your home equity during a refinance.">?</span></label>'+
                         '<input type="text" class="inputmove inputnumber"  id="sgem_mrc_cash_out_refinance" value="0" min="0" max="100" onkeypress="return isNumber(event)"/>'+
                         '<span class="sgem_mrc_err_style" id="sgem_mrc_err_cash_out_refinance"></span>'+
                      '</div>'+
