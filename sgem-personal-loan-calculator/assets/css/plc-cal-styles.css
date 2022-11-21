@@ -876,6 +876,11 @@ details.sgem-plc-details-disclaimer[open] > summary::after {
 .sgem-plc-cal-left-add-class .sgem-plc-legend-item {
     font-size: 0.8em;
 }
+.sgem-plc-cal-right-add-class .sgem-plc-principle-te, 
+.sgem-plc-cal-right-add-class .sgem-plc-principle-te-l2, 
+.sgem-plc-cal-right-add-class .sgem-plc-le-interest-te {
+    font-size: 0.8em;
+}
 
 /* add class mob */
 .sgem-plc-wrapper-add-mobile .sgem-plc-cal-1 .sgem-plc-flex-container .sgem-plc-form-flex {
