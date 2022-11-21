@@ -809,12 +809,12 @@ tippy('[data-tippy-content]', {
 
 
 // copy script section
-localStorage.setItem('sgem-mrc-cal', '<div id="sgem-mrc-cal"></div><script>window.onload = function() {var sgemmrccal = document.createElement("script");sgemmrccal.type = "text/javascript";sgemmrccal.src = "https://retirementinvestments.github.io/sgem-mrc-calculator/assets/js/cal-mrc-scripts.min.js";document.body.appendChild(sgemmrccal);} </script>'); 
+localStorage.setItem('sgem-plc-cal', '<div id="sgem-plc-cal"></div><script>window.onload = function() {var sgemplccal = document.createElement("script");sgemplccal.type = "text/javascript";sgemplccal.src = "https://retirementinvestments.github.io/sgem-personal-loan-calculator/assets/js/cal-plc-scripts.min.js";document.body.appendChild(sgemplccal);} </script>'); 
 
 function sgem_mrc_copyText(ev){
   //console.log("hi");
   let div = document.getElementById('div');
-  let text = localStorage.getItem('sgem-mrc-cal');
+  let text = localStorage.getItem('sgem-plc-cal');
   let textArea  = document.createElement('textarea');
   textArea.width  = "1px"; 
   textArea.height = "1px";
