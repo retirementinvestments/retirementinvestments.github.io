@@ -129,7 +129,7 @@ sgem_plc_main_contents += '</div></details></div></div></div></div>';
 
 
 if( (location.hostname != "calculatorstg.wpengine.com") || (location.hostname != "retirementinvestments.com") ){
-    sgem_plc_main_contents += '<div class="sgem-plc-logo-center"><a class="sgem-plc-logo-image" href="https://retirementinvestments.com/real-estate/refinance-calculator/" target="_blank" rel="noopener">';
+    sgem_plc_main_contents += '<div class="sgem-plc-logo-center"><a class="sgem-plc-logo-image" href="https://retirementinvestments.com/loans/personal-loan-calculator/" target="_blank" rel="noopener">';
     sgem_plc_main_contents += 'Personal Loan Calculator</a>&nbsp; by Retirement Investments</div>';
 }
 
