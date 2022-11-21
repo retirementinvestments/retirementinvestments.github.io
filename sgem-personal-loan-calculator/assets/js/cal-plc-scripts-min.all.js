@@ -113,16 +113,14 @@ var sgem_plc_main_contents = '<div class="sgem-plc-cal-main-id">'+
                '</div>'+
             '</div>';
 
-if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com"){
-    sgem_plc_main_contents += '<div class="sgem-plc-cal-1-result-footer">';
-    sgem_plc_main_contents += '<div class="sgem-plc-content">Find the right personal loan rate for you. Shop and compare personal loan offers in minutes.</div>';
-    sgem_plc_main_contents += '<div class="sgem-plc-buttonGet">';
-    sgem_plc_main_contents += '<a href="https://retirementinvestments.com/loancalculator" target="_blank" class="sgem-plc-getStart" rel="noopener">';
-    sgem_plc_main_contents += 'GET STARTED';
-    sgem_plc_main_contents += '</a>';
-    sgem_plc_main_contents += '</div>';
-    sgem_plc_main_contents += '</div>';
-}
+sgem_plc_main_contents += '<div class="sgem-plc-cal-1-result-footer">';
+sgem_plc_main_contents += '<div class="sgem-plc-content">Find the right personal loan rate for you. Shop and compare personal loan offers in minutes.</div>';
+sgem_plc_main_contents += '<div class="sgem-plc-buttonGet">';
+sgem_plc_main_contents += '<a href="https://retirementinvestments.com/loancalculator" target="_blank" class="sgem-plc-getStart" rel="noopener">';
+sgem_plc_main_contents += 'GET STARTED';
+sgem_plc_main_contents += '</a>';
+sgem_plc_main_contents += '</div>';
+sgem_plc_main_contents += '</div>';
             
 sgem_plc_main_contents += '<div class="sgem-plc-section-disclaimer"><details class="sgem-plc-details-disclaimer">';
 sgem_plc_main_contents += '<summary><div class="sgem-plc-collapsible-summary-disclaimer">Disclaimer</div></summary><div class="sgem-plc-collapsible-text-disclaimer">';
