@@ -169,14 +169,13 @@ var sgem_401k_main_contents = '<div class="sgem-401k-cal-main-id">'+
                   '<span class="futuretext3 sgem-401k-result-text-down">in retirement</span>'+
                '</div>'+
             '</div>';
-if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com"){
+
     sgem_401k_main_contents += '<div class="sgem-401k-cal-1-result-footer">';
     sgem_401k_main_contents += '<div class="sgem-401k-content">Get a comprehensive wealth management for your 401(k) account that includes rebalancing and tracking all your transactions. </div>';
     sgem_401k_main_contents += '<div class="sgem-401k-buttonGet">';
     sgem_401k_main_contents += '<a href="https://retirementinvestments.com/401kcalculator" target="_blank" class="sgem-401k-getStart">GET STARTED</a>'
     sgem_401k_main_contents += '</div>';
-    sgem_401k_main_contents += '</div>'; // footer end
-}
+    sgem_401k_main_contents += '</div>';
 
 sgem_401k_main_contents += '<div class="sgem-401k-section-disclaimer"><details class="sgem-401k-details-disclaimer"><summary><div class="sgem-401k-collapsible-summary-disclaimer">Disclaimer</div></summary><div class="sgem-401k-collapsible-text-disclaimer">This material is provided for general and educational purposes only; it is not intended to provide legal, tax or investment advice.</div></details></div>';
 
