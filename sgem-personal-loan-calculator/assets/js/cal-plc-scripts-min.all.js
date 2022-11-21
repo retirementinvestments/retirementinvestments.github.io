@@ -133,14 +133,14 @@ var sgem_plc_main_contents = '<div class="sgem-plc-cal-main-id">'+
          '</div>'+
       '</div>'+
    '</div>'+
-'</div>'+
 '<div class="sgem-mrc-logo-center">'+
 '<a class="sgem-mrc-logo-image" href="https://retirementinvestments.com/real-estate/refinance-calculator/" target="_blank" rel="noopener">'+
 'Personal Loan Calculator</a>&nbsp; by Retirement Investments</div>'+
 '<div class="sgem-plc-copy-option-panel"><h3>Do you want to add this calculator into your website?</h3>'+
 '<div class="sgem-plc-copy-code-wrap">'+
 '<button class="sgem-plc-copy-code" id="sgem-plc-copy-code" onclick="sgem_mrc_copyText(event)">Get Calculator</button>'+
-'</div></div>';
+'</div></div>'+
+'</div>';
 
 sgem_plc_main_contents += '</div>';  
 
