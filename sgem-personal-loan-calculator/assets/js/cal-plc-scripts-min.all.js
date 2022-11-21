@@ -345,6 +345,14 @@ function sgem_pl_calculationm() {
 
 $(document).ready(function() {
 
+    if( location.hostname == "calculatorstg.wpengine.com") {
+        $('.sgem-plc-logo-center').hide(); 
+    } else if(location.hostname == "retirementinvestments.com"){
+        $('.sgem-plc-logo-center').hide();  
+    } else {
+        $('.sgem-plc-logo-center').show();  
+    }
+
     if($('#sgem_plc_loan_amount_required,#sgem_plc_loan_term').length > 0) {
         $('#sgem_plc_loan_amount_required,#sgem_plc_loan_term').on('keyup', function () {
             sgem_pl_calculationm() ;
