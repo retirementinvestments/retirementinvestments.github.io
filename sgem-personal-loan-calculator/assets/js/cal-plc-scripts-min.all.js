@@ -87,7 +87,7 @@ var sgem_plc_main_contents = '<div class="sgem-plc-cal-main-id">'+
                         '</div>'+
                         '<div class="sgem-plc-legendbox">'+
                            '<div class="sgem-plc-legend-item"> '+
-                              '<button id="sgem_plc_principle" onclick="toggleDatachart(0)" class="sgem-plc-principle"></button>'+
+                              '<div id="sgem_plc_principle" onclick="toggleDatachart(0)" class="sgem-plc-principle"></div>'+
                               '<div id="sgem_plc_principle_te" onclick="toggleDatachart(0)" class="sgem-plc-principle-te">Principle</div>'+
                            '</div>'+
                         '</div>'+
@@ -100,11 +100,11 @@ var sgem_plc_main_contents = '<div class="sgem-plc-cal-main-id">'+
                         '</div>'+
                         '<div class="sgem-plc-legendbox">'+
                            '<div class="sgem-plc-legend-item"> '+
-                              '<button id="sgem_plc_principle_l2" onclick="toggleData(0)" class="sgem-plc-principle-l2"></button>'+
+                              '<div id="sgem_plc_principle_l2" onclick="toggleData(0)" class="sgem-plc-principle-l2"></div>'+
                               '<div id="sgem_plc_principle_te_l2" onclick="toggleData(0)" class="sgem-plc-principle-te-l2">Principle</div>'+
                            '</div>'+
                            '<div class="sgem-plc-legend-item"> '+
-                              '<button id="sgem_plc_le_interest" onclick="toggleData(1)" class="sgem-plc-le-interest"></button>'+
+                              '<div id="sgem_plc_le_interest" onclick="toggleData(1)" class="sgem-plc-le-interest"></div>'+
                               '<div id="sgem_plc_le_interest_te" onclick="toggleData(1)" class="sgem-plc-le-interest-te">Interest</div>'+
                            '</div>'+
                         '</div>'+
