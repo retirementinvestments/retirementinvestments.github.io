@@ -112,35 +112,34 @@ var sgem_plc_main_contents = '<div class="sgem-plc-cal-main-id">'+
                   '</div>'+
                '</div>'+
             '</div>'+
-            '<div class="sgem-plc-cal-1-result-footer">'+
-               '<div class="sgem-plc-content">Find the right personal loan rate for you. Shop and compare personal loan offers in minutes.</div>'+
-               '<div class="sgem-plc-buttonGet">'+
-                  '<a href="https://retirementinvestments.com/loancalculator" target="_blank" class="sgem-plc-getStart" rel="noopener">'+
-                  'GET STARTED'+
-                  '</a>'+
-               '</div>'+
-            '</div>'+
-            '<div class="sgem-plc-section-disclaimer">'+
-               '<details class="sgem-plc-details-disclaimer">'+
-                  '<summary>'+
-                     '<div class="sgem-plc-collapsible-summary-disclaimer">Disclaimer</div>'+
-                  '</summary>'+
-                  '<div class="sgem-plc-collapsible-text-disclaimer">'+
-                     'This material is provided for general and educational purposes only; it is not intended to provide legal, tax or investment advice.'+
-                  '</div>'+
-               '</details>'+
-            '</div>'+
-         '</div>'+
-      '</div>'+
-   '</div>'+
-'<div class="sgem-plc-logo-center">'+
-'<a class="sgem-plc-logo-image" href="https://retirementinvestments.com/real-estate/refinance-calculator/" target="_blank" rel="noopener">'+
-'Personal Loan Calculator</a>&nbsp; by Retirement Investments</div>'+
-'<div class="sgem-plc-copy-option-panel"><h3>Do you want to add this calculator into your website?</h3>'+
-'<div class="sgem-plc-copy-code-wrap">'+
-'<button class="sgem-plc-copy-code" id="sgem-plc-copy-code" onclick="sgem_plc_copyText(event)">Get Calculator</button>'+
-'</div></div>'+
-'</div>';
+
+if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com"){
+    sgem_plc_main_contents += '<div class="sgem-plc-cal-1-result-footer">';
+    sgem_plc_main_contents += '<div class="sgem-plc-content">Find the right personal loan rate for you. Shop and compare personal loan offers in minutes.</div>';
+    sgem_plc_main_contents += '<div class="sgem-plc-buttonGet">';
+    sgem_plc_main_contents += '<a href="https://retirementinvestments.com/loancalculator" target="_blank" class="sgem-plc-getStart" rel="noopener">';
+    sgem_plc_main_contents += 'GET STARTED';
+    sgem_plc_main_contents += '</a>';
+    sgem_plc_main_contents += '</div>';
+    sgem_plc_main_contents += '</div>';
+}
+            
+sgem_plc_main_contents += '<div class="sgem-plc-section-disclaimer"><details class="sgem-plc-details-disclaimer">';
+sgem_plc_main_contents += '<summary><div class="sgem-plc-collapsible-summary-disclaimer">Disclaimer</div></summary><div class="sgem-plc-collapsible-text-disclaimer">';
+sgem_plc_main_contents += 'This material is provided for general and educational purposes only; it is not intended to provide legal, tax or investment advice.';
+sgem_plc_main_contents += '</div></details></div></div></div></div>';
+
+if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com"){
+    sgem_plc_main_contents += '<div class="sgem-plc-logo-center"><a class="sgem-plc-logo-image" href="https://retirementinvestments.com/real-estate/refinance-calculator/" target="_blank" rel="noopener">';
+    sgem_plc_main_contents += 'Personal Loan Calculator</a>&nbsp; by Retirement Investments</div>';
+    sgem_plc_main_contents += '<div class="sgem-plc-copy-option-panel"><h3>Do you want to add this calculator into your website?</h3>';
+}
+
+if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com"){
+    sgem_plc_main_contents += '<div class="sgem-plc-copy-code-wrap">';
+    sgem_plc_main_contents += '<button class="sgem-plc-copy-code" id="sgem-plc-copy-code" onclick="sgem_plc_copyText(event)">Get Calculator</button>';
+    sgem_plc_main_contents += '</div></div></div>';
+}
 
 sgem_plc_main_contents += '</div>';  
 
