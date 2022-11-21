@@ -84,12 +84,10 @@ var sgem_pmc_main_contents = '<div class="sgem-pmc-cal-main-id" id="sgem-pmc-cal
                   
 sgem_pmc_main_contents += '<div class="sgem-pmc-cal-1-result-footer">';
 
-if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com"){
 	sgem_pmc_main_contents += '<div class="sgem-pmc-content">Get the free gold IRA kit Americans are using to protect their retirement savings</div>';
 	sgem_pmc_main_contents += '<div class="sgem-pmc-buttonGet">';   
 	sgem_pmc_main_contents += '<a href="https://retirementinvestments.com/preciousmetalscalculator" target="_blank" class="sgem-pmc-getStart">Request Your Free Kit</a>';
 	sgem_pmc_main_contents += '</div>';
-} 
 
 sgem_pmc_main_contents += '</div>';
 
