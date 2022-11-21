@@ -78,10 +78,9 @@ var sgem_main_contents = '<div class="sgem-cal-wrapper">' +
       'Let\'s get Future You </div> <div id="mainmessage">out of the red.</div>';
         //'<div id="message">There are a few steps you could take to jumpstart your retirement savings. Create an account to reduce your bills, eliminate debt and grow your money.</div>'+
      
-	 if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com"){
 	   sgem_main_contents += '<div class="sgem-cal-static-text">Spend retirement with more. Enjoy monthly income through retirement with the confidence your savings will last.</div>';
 	   sgem_main_contents += '<a href="https://retirementinvestments.com/retirementcalculator" target="_blank" class="sgem-getStart">GET STARTED</a>';
-     }
+     
 
      sgem_main_contents += '</div><div class="sgem-ret-section-disclaimer"><details class="sgem-ret-details-disclaimer"><summary><div class="sgem-ret-collapsible-summary-disclaimer">Disclaimer</div>'+
 	 '</summary><div class="sgem-ret-collapsible-text-disclaimer">This material is provided for general and educational purposes only; it is not intended to provide legal, tax or investment advice.</div></details></div>'+
