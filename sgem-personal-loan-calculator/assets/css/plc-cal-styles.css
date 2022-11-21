@@ -846,29 +846,29 @@ details.sgem-plc-details-disclaimer[open] > summary::after {
     font-size: 1em;
 }
 .sgem-plc-cal-right-add-class .sgem-plc-cal-tab-wrapper-section .sgem-plc-tabset > label {
-	font-size: 1em;
+	font-size: 0.8em;
 }
 .sgem-plc-cal-right-add-class .sgem-plc-cal-tab-wrapper-section .sgem-plc-tabset > input:checked + label {
 	font-size: 1em;
 }
 .sgem-plc-cal-left-add-class .sgem-plc-cal-1 input[type="text"] {
-	font-size: 1em;
+	font-size: 0.8em;
     height: 45px;
 }
 .sgem-plc-cal-left-add-class .sgem-plc-cal-1 .sgem-plc-form-group label {
-    font-size: 1em;
+    font-size: 0.8em;
 }
 .sgem-plc-cal-left-add-class .sgem-plc-cal-1 .sgem-plc-form-flex.sgem-plc-currency-holder::after {
 	top: 43px;
-	font-size: 1em;
+	font-size: 0.8em;
 }
 .sgem-plc-cal-left-add-class .sgem-plc-cal-1 .sgem-plc-form-flex.sgem-plc-years-holder::before {
 	top: 43px;
-	font-size: 1em;	
+	font-size: 0.8em;	
 }
 .sgem-plc-cal-left-add-class .sgem-plc-cal-1 .sgem-plc-form-flex.sgem-plc-precentage-holder::after {
 	top: 43px;
-	font-size: 1em;	
+	font-size: 0.8em;	
 }
 .sgem-plc-cal-right-add-class .sgem-plc-cal-1-result-wrapper {
     padding: 20px;
