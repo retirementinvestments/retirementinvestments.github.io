@@ -647,6 +647,9 @@ $(document).ready(function() {
               stacked: true,
               beginAtZero: true,
               ticks: {
+                autoSkip: false,
+                maxRotation: 90,
+                minRotation: 90,
                 callback: function(value, index, ticks) {
                     // return '$' + value;
                     return '$' + value / 1000 + "k";
@@ -663,6 +666,9 @@ $(document).ready(function() {
               },
               stacked: true,
               ticks: {
+                autoSkip: false,
+                maxRotation: 90,
+                minRotation: 90,
                 // Include a dollar sign in the ticks
                 // callback: function(value, index, ticks) {
                 //     // return '$' + value;
