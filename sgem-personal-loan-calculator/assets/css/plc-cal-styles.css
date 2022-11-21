@@ -870,6 +870,12 @@ details.sgem-plc-details-disclaimer[open] > summary::after {
 	top: 43px;
 	font-size: 1em;	
 }
+.sgem-plc-cal-left-add-class .sgem-plc-cal-1-result-wrapper {
+    padding: 20px;
+}
+.sgem-plc-cal-left-add-class .sgem-plc-legend-item {
+    font-size: 0.8em;
+}
 
 /* add class mob */
 .sgem-plc-wrapper-add-mobile .sgem-plc-cal-1 .sgem-plc-flex-container .sgem-plc-form-flex {
