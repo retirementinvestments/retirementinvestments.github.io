@@ -105,14 +105,12 @@ var sgem_cpg_main_contents = '<div class="sgem-cpg-cal-main-id">'+
                '</div>'+
             '</div>';
 
-
-if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com"){
     sgem_cpg_main_contents += '<div class="sgem-cpg-cal-1-result-footer">';
     sgem_cpg_main_contents += '<div class="sgem-cpg-content">Learn how to save money on your capital gains taxes if you have made money with stocks, real estate, or crypto.</div>';
     sgem_cpg_main_contents += '<div class="sgem-cpg-buttonGet">';
     sgem_cpg_main_contents += '<a href="https://retirementinvestments.com/capitalgainscalculator" target="_blank" class="sgem-cpg-getStart" rel="noopener">';
     sgem_cpg_main_contents += 'GET STARTED</a></div></div>';
-}
+
     
 sgem_cpg_main_contents += '<div class="sgem-cpg-section-disclaimer"><details class="sgem-cpg-details-disclaimer"><summary><div class="sgem-cpg-collapsible-summary-disclaimer">Disclaimer</div>';
 sgem_cpg_main_contents += '</summary><div class="sgem-cpg-collapsible-text-disclaimer">Calculations are estimates based on the tax law as of September 2021. These rates are subject to change. <a href="https://www.irs.gov/faqs/capital-gains-losses-and-sale-of-home" target="_blank">Check the IRS website</a> for the latest information about capital gains</div>';
