@@ -849,7 +849,7 @@ details.sgem-plc-details-disclaimer[open] > summary::after {
 	font-size: 0.8em;
 }
 .sgem-plc-cal-right-add-class .sgem-plc-cal-tab-wrapper-section .sgem-plc-tabset > input:checked + label {
-	font-size: 1em;
+	font-size: 0.8em;
 }
 .sgem-plc-cal-left-add-class .sgem-plc-cal-1 input[type="text"] {
 	font-size: 0.8em;
