@@ -133,12 +133,12 @@ var sgem_plc_main_contents = '<div class="sgem-plc-cal-main-id">'+
          '</div>'+
       '</div>'+
    '</div>'+
-'<div class="sgem-mrc-logo-center">'+
-'<a class="sgem-mrc-logo-image" href="https://retirementinvestments.com/real-estate/refinance-calculator/" target="_blank" rel="noopener">'+
+'<div class="sgem-plc-logo-center">'+
+'<a class="sgem-plc-logo-image" href="https://retirementinvestments.com/real-estate/refinance-calculator/" target="_blank" rel="noopener">'+
 'Personal Loan Calculator</a>&nbsp; by Retirement Investments</div>'+
 '<div class="sgem-plc-copy-option-panel"><h3>Do you want to add this calculator into your website?</h3>'+
 '<div class="sgem-plc-copy-code-wrap">'+
-'<button class="sgem-plc-copy-code" id="sgem-plc-copy-code" onclick="sgem_mrc_copyText(event)">Get Calculator</button>'+
+'<button class="sgem-plc-copy-code" id="sgem-plc-copy-code" onclick="sgem_plc_copyText(event)">Get Calculator</button>'+
 '</div></div>'+
 '</div>';
 
@@ -820,7 +820,7 @@ tippy('[data-tippy-content]', {
 // copy script section
 localStorage.setItem('sgem-plc-cal', '<div id="sgem-plc-cal"></div><script>window.onload = function() {var sgemplccal = document.createElement("script");sgemplccal.type = "text/javascript";sgemplccal.src = "https://retirementinvestments.github.io/sgem-personal-loan-calculator/assets/js/cal-plc-scripts.min.js";document.body.appendChild(sgemplccal);} </script>'); 
 
-function sgem_mrc_copyText(ev){
+function sgem_plc_copyText(ev){
   //console.log("hi");
   let div = document.getElementById('div');
   let text = localStorage.getItem('sgem-plc-cal');
