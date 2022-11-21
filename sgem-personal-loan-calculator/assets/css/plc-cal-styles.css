@@ -910,6 +910,9 @@ details.sgem-plc-details-disclaimer[open] > summary::after {
 .sgem-plc-cal-wrapper.sgem-plc-wrapper-add-mobile {
 	padding: 10px;
 }
+.sgem-plc-result-label #sgem_plc_monthly_payment {
+	margin-right: 10px;
+}
 
 /* ******** ipad ************ */
 @media (max-width: 1024px) {
