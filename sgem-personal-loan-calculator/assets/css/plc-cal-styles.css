@@ -945,6 +945,9 @@ details.sgem-plc-details-disclaimer[open] > summary::after {
     width: 100%;
     padding: 15px 18px;
   }
+  .sgem-plc-cal-wrapper {
+	padding: 10px;
+  }
 }
 
 @media (max-width: 1100px) {
