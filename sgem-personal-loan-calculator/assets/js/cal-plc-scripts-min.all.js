@@ -650,9 +650,6 @@ $(document).ready(function() {
               stacked: true,
               beginAtZero: true,
               ticks: {
-                autoSkip: false,
-                maxRotation: 90,
-                minRotation: 90,
                 callback: function(value, index, ticks) {
                     // return '$' + value;
                     return '$' + value / 1000 + "k";
