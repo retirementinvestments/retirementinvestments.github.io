@@ -204,7 +204,7 @@
   background-repeat: no-repeat;
   background-position: center -5px;
   background-size: 25px;
-  background-image: url("/wp-content/plugins/sgem-plc-calculator/assets/images/drop-down-arrow-cpg.svg");
+  background-image: url("https://retirementinvestments.github.io/sgem-personal-loan-calculator/assets/images/drop-down-arrow-plc.svg");
 }
 .sgem-plc-cal-1 details[open] > summary::after {
   -moz-transform: rotate(-180deg);
