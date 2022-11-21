@@ -792,7 +792,7 @@ details.sgem-plc-details-disclaimer > summary::after {
     background-repeat: no-repeat;
     background-position: center -2px;
     background-size: 25px;
-    background-image: url(/wp-content/plugins/sgem-plc-calculator/assets/images/drop-down-arrow-plc.svg);
+    background-image: url(https://retirementinvestments.github.io/sgem-personal-loan-calculator/assets/images/drop-down-arrow-plc.svg);
     margin-top: 5px;
 }
 details.sgem-plc-details-disclaimer[open] > summary::after {
