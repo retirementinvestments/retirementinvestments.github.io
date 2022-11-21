@@ -153,41 +153,29 @@ var sgem_mrc_main_contents = '<div class="sgem-mrc-cal-main-id">'+
                '</div>'+
             '</div>';
 
-if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com" || location.hostname == "goldiracompanies.com"){
-    
 			sgem_mrc_main_contents += '<div class="sgem-mrc-cal-1-result-footer">';
-				sgem_mrc_main_contents += '<div class="sgem-mrc-loan-started-in-txt">';
-				sgem_mrc_main_contents += 'YOUR CURRENT LOAN STARTED IN <span id="calculated_date">JANUARY, 2010</span>';
-				sgem_mrc_main_contents += '</div>';				
-				sgem_mrc_main_contents += '<div class="sgem-mrc-legend-item-panel">';
-					  sgem_mrc_main_contents += '<div class="sgem-mrc-legend-item">';
-                          sgem_mrc_main_contents += '<div id="sgem_mrc_principle_interest_te" class="sgem-mrc-principle-interest-te">MONTHLY SAVINGS</div>';
-                          sgem_mrc_main_contents += '<span class="sgem_mrc_side_total_lbl">$<span id="sgem_mrc_interest_value">150 /mon</span></span>';
-                      sgem_mrc_main_contents += '</div>';
-                       sgem_mrc_main_contents += '<div class="sgem-mrc-legend-item">';
-                          sgem_mrc_main_contents += '<div id="sgem_mrc_insurance_te" class="sgem-mrc-insurance-te">NEW PAYMENT</div>';
-                          sgem_mrc_main_contents += '<span class="sgem_mrc_side_total_lbl">$<span id="sgem_mrc_insurance_value">1,208</span></span>';
-                      sgem_mrc_main_contents += '</div>';
-                      sgem_mrc_main_contents += '<div class="sgem-mrc-legend-item" id="hidemeon">';
-                          sgem_mrc_main_contents += '<div id="sgem_mrc_property_te" class="sgem-mrc-property-te">BREAK EVEN</div>';
-                          sgem_mrc_main_contents += '<span class="sgem_mrc_side_total_lbl"><span id="sgem_mrc_property_value">40 months</span></span>';
-                      sgem_mrc_main_contents += '</div>';
-				sgem_mrc_main_contents += '</div>';				
-				sgem_mrc_main_contents += '<div class="sgem-mrc-content">Ready to refinance? Learn more about your mortgage refinancing options and getting the best rate by our recommended lender.</div>';
-				sgem_mrc_main_contents += '<div class="sgem-mrc-buttonGet"><a href="https://retirementinvestments.com/refinancecalculator" target="_blank" class="sgem-mrc-getStart">';
-				sgem_mrc_main_contents += 'GET STARTED</a>';
-				sgem_mrc_main_contents += '</div>';
+			sgem_mrc_main_contents += '<div class="sgem-mrc-loan-started-in-txt">';
+			sgem_mrc_main_contents += 'YOUR CURRENT LOAN STARTED IN <span id="calculated_date">JANUARY, 2010</span>';
+			sgem_mrc_main_contents += '</div>';				
+			sgem_mrc_main_contents += '<div class="sgem-mrc-legend-item-panel">';
+			sgem_mrc_main_contents += '<div class="sgem-mrc-legend-item">';
+            sgem_mrc_main_contents += '<div id="sgem_mrc_principle_interest_te" class="sgem-mrc-principle-interest-te">MONTHLY SAVINGS</div>';
+            sgem_mrc_main_contents += '<span class="sgem_mrc_side_total_lbl">$<span id="sgem_mrc_interest_value">150 /mon</span></span>';
+            sgem_mrc_main_contents += '</div>';
+            sgem_mrc_main_contents += '<div class="sgem-mrc-legend-item">';
+            sgem_mrc_main_contents += '<div id="sgem_mrc_insurance_te" class="sgem-mrc-insurance-te">NEW PAYMENT</div>';
+            sgem_mrc_main_contents += '<span class="sgem_mrc_side_total_lbl">$<span id="sgem_mrc_insurance_value">1,208</span></span>';
+            sgem_mrc_main_contents += '</div>';
+            sgem_mrc_main_contents += '<div class="sgem-mrc-legend-item" id="hidemeon">';
+            sgem_mrc_main_contents += '<div id="sgem_mrc_property_te" class="sgem-mrc-property-te">BREAK EVEN</div>';
+            sgem_mrc_main_contents += '<span class="sgem_mrc_side_total_lbl"><span id="sgem_mrc_property_value">40 months</span></span>';
+            sgem_mrc_main_contents += '</div>';
+			sgem_mrc_main_contents += '</div>';				
+			sgem_mrc_main_contents += '<div class="sgem-mrc-content">Ready to refinance? Learn more about your mortgage refinancing options and getting the best rate by our recommended lender.</div>';
+			sgem_mrc_main_contents += '<div class="sgem-mrc-buttonGet"><a href="https://retirementinvestments.com/refinancecalculator" target="_blank" class="sgem-mrc-getStart">';
+			sgem_mrc_main_contents += 'GET STARTED</a>';
 			sgem_mrc_main_contents += '</div>';
-	
-	
-	/*sgem_mrc_main_contents += '<div class="sgem-mrc-cal-1-result-footer">';
-    sgem_mrc_main_contents += '<div class="sgem-mrc-loan-started-in-txt">';
-    sgem_mrc_main_contents += 'YOUR CURRENT LOAN STARTED IN <span id="calculated_date">JANUARY, 2010</span></div>';
-    sgem_mrc_main_contents += '<div class="sgem-mrc-content">Ready to refinance? Learn more about your mortgage refinancing options and getting the best rate by our recommended lender.</div>';
-    sgem_mrc_main_contents += '<div class="sgem-mrc-buttonGet"><a href="https://retirementinvestments.com/refinancecalculator" target="_blank" class="sgem-mrc-getStart">';
-    sgem_mrc_main_contents += 'GET STARTED</a></div>';
-    sgem_mrc_main_contents += '</div>';*/
-}
+			sgem_mrc_main_contents += '</div>';
 
 sgem_mrc_main_contents += '<div class="sgem-mrc-section-disclaimer"><details class="sgem-mrc-details-disclaimer"><summary><div class="sgem-mrc-collapsible-summary-disclaimer">Disclaimer</div></summary><div class="sgem-mrc-collapsible-text-disclaimer">This material is provided for general and educational purposes only; it is not intended to provide legal, tax or investment advice.</div>';
 sgem_mrc_main_contents += '</details></div></div></div></div>';
