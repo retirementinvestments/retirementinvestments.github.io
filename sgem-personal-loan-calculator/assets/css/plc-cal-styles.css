@@ -834,6 +834,17 @@ details.sgem-plc-details-disclaimer[open] > summary::after {
     margin-left: 10px;
 	color: #1A1A1A;
 }
+/* footer section */
+.sgem-plc-cal-main-id .sgem-mrc-logo-center {
+	display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+}
+.sgem-plc-cal-main-id .sgem-mrc-logo-center a {
+	color: rgb(21, 105, 176);
+}
 
 /* add class js styles */ 
 .sgem-plc-cal-right-add-class .sgem-plc-cal-1-result-wrapper .sgem-plc-column2 {
