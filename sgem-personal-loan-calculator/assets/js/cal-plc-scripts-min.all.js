@@ -111,7 +111,7 @@ var sgem_plc_main_contents = '<div class="sgem-plc-cal-main-id">'+
                      '</section>'+
                   '</div>'+
                '</div>'+
-            '</div>'+
+            '</div>';
 
 if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com"){
     sgem_plc_main_contents += '<div class="sgem-plc-cal-1-result-footer">';
