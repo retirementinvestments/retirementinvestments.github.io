@@ -882,15 +882,15 @@ details.sgem-plc-details-disclaimer[open] > summary::after {
 	display: block;
 }
 .sgem-plc-wrapper-add-mobile .sgem-plc-cal-1 .sgem-plc-form-group label {
-	font-size: 1em;
+	font-size: 0.8em;
 }
 .sgem-plc-wrapper-add-mobile .sgem-plc-cal-1 input[type="text"] {
-    font-size: 1em;
+    font-size: 0.8em;
 }
 .sgem-plc-wrapper-add-mobile .sgem-plc-cal-1 .sgem-plc-form-flex.sgem-plc-currency-holder::after,
 .sgem-plc-wrapper-add-mobile .sgem-plc-cal-1 .sgem-plc-form-flex.sgem-plc-years-holder::before,
 .sgem-plc-wrapper-add-mobile .sgem-plc-cal-1 .sgem-plc-form-flex.sgem-plc-precentage-holder::after {
-	font-size: 1em;
+	font-size: 0.8em;
 }
 .sgem-plc-wrapper-add-mobile .sgem-plc-cal-1 .sgem-plc-form-flex.sgem-plc-years-holder::before {
 	right: 18px;
