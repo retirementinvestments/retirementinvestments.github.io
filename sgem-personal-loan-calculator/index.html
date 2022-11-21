@@ -1,0 +1,114 @@
+<div class="sgem-plc-cal-main-id">
+   <div class="sgem-plc-cal-wrapper">
+      <div class="sgem-plc-cal-left">
+         <div class="sgem-plc-form sgem-plc-cal-1">
+            <div class="sgem-plc-flex-container">
+               <div class="sgem-plc-form-group sgem-plc-form-flex sgem-plc-currency-holder">
+                  <label>Loan amount <span class="sgem-plc-tooltip tooltip" data-tippy-content="The original value of your existing loan.">?</span></label> 
+                  <input type="text" class="inputmove inputnumber" id="sgem_plc_loan_amount_required" value="10,000" min="0" max="1000000" onkeypress="return isNumber(event)"/>
+                  <span id="sgem_plc_err_loan_amount_required" class="sgem-plc-err-style"></span>
+               </div>
+               <div class="sgem-plc-form-group sgem-plc-form-flex sgem-plc-years-holder">
+                  <label>Loan term <span class="sgem-plc-tooltip tooltip" data-tippy-content="The amount of time the lender gives you to repay your mortgage.">?</span></label> 
+                  <input type="text" class="inputmove inputnumber" id="sgem_plc_loan_term" value="5" min="0" max="1000000" onkeypress="return isNumber(event)"/>
+                  <span id="sgem_plc_err_loan_required" class="sgem-plc-err-style"></span>
+               </div>
+               <div class="sgem-plc-form-group sgem-plc-form-flex sgem-plc-precentage-holder sgem-plc-right-field">
+                  <label>Annual interest rate <span class="sgem-plc-tooltip tooltip" data-tippy-content="The rate charged by the lender from the borrower.">?</span></label> 
+                  <input type="text" class="inputmove inputnumber" id="sgem_plc_annual_interest_rate" value="10.52" min="0" max="100" />
+                  <span id="sgem_plc_err_no_of_months" class="sgem-plc-err-style"></span>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="sgem-plc-cal-right">
+         <div class="sgem-plc-cal-1-result-wrapper">
+            <div class="sgem-plc-flex-container sgem-plc-column2">
+               <div class="sgem-plc-form-group sgem-plc-form-flex">
+                  <span class="futuretext sgem-plc-result-headtext">PAYBACK AMOUNT</span> 
+                  <div id="futureV" class="sgem-plc-result-label">$<span id="sgem_plc_payback_amount">608,292</span>  
+                  </div>
+               </div>
+               <div class="sgem-plc-form-group sgem-plc-form-flex ">
+                  <span class="futuretext2 sgem-plc-result-headtext">MONTHLY PAYMENT</span>
+                  <div id="futureV2" class="sgem-plc-result-label">$<span id="sgem_plc_monthly_payment">10,138</span>
+                     <span class="sgem-plc-monthly-paym-years" id="sgem_plc_monthly_paym_years">over 5 years</span>
+                  </div>
+               </div>
+            </div>
+
+            <div class="sgem-plc-cal-tab-wrapper-section">
+               <div class="sgem-plc-tabset">
+                  <!-- Tab 1 -->
+                  <input type="radio" name="tabset" id="sgem-plc-cal-tab1" aria-controls="sgem-plc-cal-tab1" checked>
+                  <label for="sgem-plc-cal-tab1">SCHEDULE</label>
+                  <!-- Tab 2 -->
+                  <input type="radio" name="tabset" id="sgem-plc-cal-tab2" aria-controls="sgem-plc-cal-tab2">
+                  <label for="sgem-plc-cal-tab2">BREAKDOWN</label>
+
+                  <div class="sgem-plc-cal-border-for-tabs"></div>
+                 
+                  <div class="tab-panels">
+                     <section id="sgem-plc-cal-tab1" class="tab-panel">
+                        <div class="sgem-plc-cal-chartCard">
+                          <div class="chartBox">
+                            <canvas id="myChart"></canvas>
+                          </div>
+                        </div>
+
+                        <div class="sgem-plc-legendbox">
+                           <div class="sgem-plc-legend-item"> 
+                              <button id="sgem_plc_principle" onclick="toggleDatachart(0)" class="sgem-plc-principle"></button>
+
+                              <div id="sgem_plc_principle_te" onclick="toggleDatachart(0)" class="sgem-plc-principle-te">Principle</div>
+                           </div>
+                        </div>
+
+                     </section>
+                     <section id="sgem-plc-cal-tab2" class="tab-panel">
+                        <div class="sgem-plc-cal-chartCard">
+                          <div class="chartBox">
+                            <canvas id="myChart2"></canvas>
+                          </div>
+                        </div>
+
+                        <div class="sgem-plc-legendbox">
+                           <div class="sgem-plc-legend-item"> 
+                              <button id="sgem_plc_principle_l2" onclick="toggleData(0)" class="sgem-plc-principle-l2"></button>
+
+                              <div id="sgem_plc_principle_te_l2" onclick="toggleData(0)" class="sgem-plc-principle-te-l2">Principle</div>
+                           </div>
+
+                           <div class="sgem-plc-legend-item"> 
+                              <button id="sgem_plc_le_interest" onclick="toggleData(1)" class="sgem-plc-le-interest"></button>
+
+                              <div id="sgem_plc_le_interest_te" onclick="toggleData(1)" class="sgem-plc-le-interest-te">Interest</div>
+                           </div>
+                        </div>
+                     </section>
+                  </div>
+               </div>
+            </div>
+            
+            <div class="sgem-plc-cal-1-result-footer">
+               <div class="sgem-plc-content">Find the right personal loan rate for you. Shop and compare personal loan offers in minutes.</div>
+               <div class="sgem-plc-buttonGet">
+                  <a href="https://retirementinvestments.com/loancalculator" target="_blank" class="sgem-plc-getStart" rel="noopener">
+                  GET STARTED
+                  </a>
+               </div>
+            </div>
+            <div class="sgem-plc-section-disclaimer">
+               <details class="sgem-plc-details-disclaimer">
+                  <summary>
+                     <div class="sgem-plc-collapsible-summary-disclaimer">Disclaimer</div>
+                  </summary>
+                  <div class="sgem-plc-collapsible-text-disclaimer">
+                     This material is provided for general and educational purposes only; it is not intended to provide legal, tax or investment advice.
+                  </div>
+               </details>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
