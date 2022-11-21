@@ -536,6 +536,9 @@ $(document).ready(function() {
                 display: false,
               },
               ticks: {
+                autoSkip: false,
+                maxRotation: 90,
+                minRotation: 90,
                 // Include a dollar sign in the ticks
                 // callback: function(value, index, ticks) {
                 //     // return '$' + value;
