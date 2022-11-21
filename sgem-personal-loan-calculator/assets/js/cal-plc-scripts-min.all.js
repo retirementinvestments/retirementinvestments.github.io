@@ -31,1047 +31,762 @@ x();"bottom"===a.start?(c.css({top:b.outerHeight()-c.outerHeight()}),n(0,!0)):"t
 /*! rangeslider.js - v2.3.0 | (c) 2016 @andreruffert | MIT license | https://github.com/andreruffert/rangeslider.js */
 !function(a){"use strict";"function"==typeof define&&define.amd?define(["jquery"],a):"object"==typeof exports?module.exports=a(require("jquery")):a(jQuery)}(function(a){"use strict";function b(){var a=document.createElement("input");return a.setAttribute("type","range"),"text"!==a.type}function c(a,b){var c=Array.prototype.slice.call(arguments,2);return setTimeout(function(){return a.apply(null,c)},b)}function d(a,b){return b=b||100,function(){if(!a.debouncing){var c=Array.prototype.slice.apply(arguments);a.lastReturnVal=a.apply(window,c),a.debouncing=!0}return clearTimeout(a.debounceTimeout),a.debounceTimeout=setTimeout(function(){a.debouncing=!1},b),a.lastReturnVal}}function e(a){return a&&(0===a.offsetWidth||0===a.offsetHeight||a.open===!1)}function f(a){for(var b=[],c=a.parentNode;e(c);)b.push(c),c=c.parentNode;return b}function g(a,b){function c(a){"undefined"!=typeof a.open&&(a.open=!a.open)}var d=f(a),e=d.length,g=[],h=a[b];if(e){for(var i=0;i<e;i++)g[i]=d[i].style.cssText,d[i].style.setProperty?d[i].style.setProperty("display","block","important"):d[i].style.cssText+=";display: block !important",d[i].style.height="0",d[i].style.overflow="hidden",d[i].style.visibility="hidden",c(d[i]);h=a[b];for(var j=0;j<e;j++)d[j].style.cssText=g[j],c(d[j])}return h}function h(a,b){var c=parseFloat(a);return Number.isNaN(c)?b:c}function i(a){return a.charAt(0).toUpperCase()+a.substr(1)}function j(b,e){if(this.$window=a(window),this.$document=a(document),this.$element=a(b),this.options=a.extend({},n,e),this.polyfill=this.options.polyfill,this.orientation=this.$element[0].getAttribute("data-orientation")||this.options.orientation,this.onInit=this.options.onInit,this.onSlide=this.options.onSlide,this.onSlideEnd=this.options.onSlideEnd,this.DIMENSION=o.orientation[this.orientation].dimension,this.DIRECTION=o.orientation[this.orientation].direction,this.DIRECTION_STYLE=o.orientation[this.orientation].directionStyle,this.COORDINATE=o.orientation[this.orientation].coordinate,this.polyfill&&m)return!1;this.identifier="js-"+k+"-"+l++,this.startEvent=this.options.startEvent.join("."+this.identifier+" ")+"."+this.identifier,this.moveEvent=this.options.moveEvent.join("."+this.identifier+" ")+"."+this.identifier,this.endEvent=this.options.endEvent.join("."+this.identifier+" ")+"."+this.identifier,this.toFixed=(this.step+"").replace(".","").length-1,this.$fill=a('<div class="'+this.options.fillClass+'" />'),this.$handle=a('<div class="'+this.options.handleClass+'" />'),this.$range=a('<div class="'+this.options.rangeClass+" "+this.options[this.orientation+"Class"]+'" id="'+this.identifier+'" />').insertAfter(this.$element).prepend(this.$fill,this.$handle),this.$element.css({position:"absolute",width:"1px",height:"1px",overflow:"hidden",opacity:"0"}),this.handleDown=a.proxy(this.handleDown,this),this.handleMove=a.proxy(this.handleMove,this),this.handleEnd=a.proxy(this.handleEnd,this),this.init();var f=this;this.$window.on("resize."+this.identifier,d(function(){c(function(){f.update(!1,!1)},300)},20)),this.$document.on(this.startEvent,"#"+this.identifier+":not(."+this.options.disabledClass+")",this.handleDown),this.$element.on("change."+this.identifier,function(a,b){if(!b||b.origin!==f.identifier){var c=a.target.value,d=f.getPositionFromValue(c);f.setPosition(d)}})}Number.isNaN=Number.isNaN||function(a){return"number"==typeof a&&a!==a};var k="rangeslider",l=0,m=b(),n={polyfill:!0,orientation:"horizontal",rangeClass:"rangeslider",disabledClass:"rangeslider--disabled",activeClass:"rangeslider--active",horizontalClass:"rangeslider--horizontal",verticalClass:"rangeslider--vertical",fillClass:"rangeslider__fill",handleClass:"rangeslider__handle",startEvent:["mousedown","touchstart","pointerdown"],moveEvent:["mousemove","touchmove","pointermove"],endEvent:["mouseup","touchend","pointerup"]},o={orientation:{horizontal:{dimension:"width",direction:"left",directionStyle:"left",coordinate:"x"},vertical:{dimension:"height",direction:"top",directionStyle:"bottom",coordinate:"y"}}};return j.prototype.init=function(){this.update(!0,!1),this.onInit&&"function"==typeof this.onInit&&this.onInit()},j.prototype.update=function(a,b){a=a||!1,a&&(this.min=h(this.$element[0].getAttribute("min"),0),this.max=h(this.$element[0].getAttribute("max"),100),this.value=h(this.$element[0].value,Math.round(this.min+(this.max-this.min)/2)),this.step=h(this.$element[0].getAttribute("step"),1)),this.handleDimension=g(this.$handle[0],"offset"+i(this.DIMENSION)),this.rangeDimension=g(this.$range[0],"offset"+i(this.DIMENSION)),this.maxHandlePos=this.rangeDimension-this.handleDimension,this.grabPos=this.handleDimension/2,this.position=this.getPositionFromValue(this.value),this.$element[0].disabled?this.$range.addClass(this.options.disabledClass):this.$range.removeClass(this.options.disabledClass),this.setPosition(this.position,b)},j.prototype.handleDown=function(a){if(a.preventDefault(),this.$document.on(this.moveEvent,this.handleMove),this.$document.on(this.endEvent,this.handleEnd),this.$range.addClass(this.options.activeClass),!((" "+a.target.className+" ").replace(/[\n\t]/g," ").indexOf(this.options.handleClass)>-1)){var b=this.getRelativePosition(a),c=this.$range[0].getBoundingClientRect()[this.DIRECTION],d=this.getPositionFromNode(this.$handle[0])-c,e="vertical"===this.orientation?this.maxHandlePos-(b-this.grabPos):b-this.grabPos;this.setPosition(e),b>=d&&b<d+this.handleDimension&&(this.grabPos=b-d)}},j.prototype.handleMove=function(a){a.preventDefault();var b=this.getRelativePosition(a),c="vertical"===this.orientation?this.maxHandlePos-(b-this.grabPos):b-this.grabPos;this.setPosition(c)},j.prototype.handleEnd=function(a){a.preventDefault(),this.$document.off(this.moveEvent,this.handleMove),this.$document.off(this.endEvent,this.handleEnd),this.$range.removeClass(this.options.activeClass),this.$element.trigger("change",{origin:this.identifier}),this.onSlideEnd&&"function"==typeof this.onSlideEnd&&this.onSlideEnd(this.position,this.value)},j.prototype.cap=function(a,b,c){return a<b?b:a>c?c:a},j.prototype.setPosition=function(a,b){var c,d;void 0===b&&(b=!0),c=this.getValueFromPosition(this.cap(a,0,this.maxHandlePos)),d=this.getPositionFromValue(c),this.$fill[0].style[this.DIMENSION]=d+this.grabPos+"px",this.$handle[0].style[this.DIRECTION_STYLE]=d+"px",this.setValue(c),this.position=d,this.value=c,b&&this.onSlide&&"function"==typeof this.onSlide&&this.onSlide(d,c)},j.prototype.getPositionFromNode=function(a){for(var b=0;null!==a;)b+=a.offsetLeft,a=a.offsetParent;return b},j.prototype.getRelativePosition=function(a){var b=i(this.COORDINATE),c=this.$range[0].getBoundingClientRect()[this.DIRECTION],d=0;return"undefined"!=typeof a.originalEvent["client"+b]?d=a.originalEvent["client"+b]:a.originalEvent.touches&&a.originalEvent.touches[0]&&"undefined"!=typeof a.originalEvent.touches[0]["client"+b]?d=a.originalEvent.touches[0]["client"+b]:a.currentPoint&&"undefined"!=typeof a.currentPoint[this.COORDINATE]&&(d=a.currentPoint[this.COORDINATE]),d-c},j.prototype.getPositionFromValue=function(a){var b,c;return b=(a-this.min)/(this.max-this.min),c=Number.isNaN(b)?0:b*this.maxHandlePos},j.prototype.getValueFromPosition=function(a){var b,c;return b=a/(this.maxHandlePos||1),c=this.step*Math.round(b*(this.max-this.min)/this.step)+this.min,Number(c.toFixed(this.toFixed))},j.prototype.setValue=function(a){a===this.value&&""!==this.$element[0].value||this.$element.val(a).trigger("input",{origin:this.identifier})},j.prototype.destroy=function(){this.$document.off("."+this.identifier),this.$window.off("."+this.identifier),this.$element.off("."+this.identifier).removeAttr("style").removeData("plugin_"+k),this.$range&&this.$range.length&&this.$range[0].parentNode.removeChild(this.$range[0])},a.fn[k]=function(b){var c=Array.prototype.slice.call(arguments,1);return this.each(function(){var d=a(this),e=d.data("plugin_"+k);e||d.data("plugin_"+k,e=new j(this,b)),"string"==typeof b&&e[b].apply(e,c)})},"rangeslider.js is available in jQuery context e.g $(selector).rangeslider(options);"});
 
-var sgem_mrc_main_contents = '<div class="sgem-mrc-cal-main-id">'+
-   '<div class="sgem-mrc-cal-wrapper">'+
-      '<div class="sgem-mrc-cal-left">'+
-         '<div class="sgem-mrc-form sgem-mrc-cal-1">'+
-            '<div class="sgem-mrc-flex-container">'+
-               '<div class="sgem-mrc-form-group sgem-mrc-form-flex sgem-mrc-currency-holder">'+
-                  '<label class="sgem-mrc-cal-label">Current loan amount'+
-                  '<span class="sgem-mrc-info-tooltip tooltip" data-tippy-content="The original value of your existing loan.">?</span>'+
-                  '</label>'+
-                  '<input type="text" class="inputmove inputnumber" id="sgem_mrc_currunt_loan_amount" value="200,000" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
-                  '<span class="sgem_mrc_err_style" id="sgem_mrc_err_currunt_loan_amount"></span> '+
+var sgem_plc_main_contents = '<div class="sgem-plc-cal-main-id">'+
+   '<div class="sgem-plc-cal-wrapper">'+
+      '<div class="sgem-plc-cal-left">'+
+         '<div class="sgem-plc-form sgem-plc-cal-1">'+
+            '<div class="sgem-plc-flex-container">'+
+               '<div class="sgem-plc-form-group sgem-plc-form-flex sgem-plc-currency-holder">'+
+                  '<label>Loan amount <span class="sgem-plc-tooltip tooltip" data-tippy-content="The original value of your existing loan.">?</span></label> '+
+                  '<input type="text" class="inputmove inputnumber" id="sgem_plc_loan_amount_required" value="10,000" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
+                  '<span id="sgem_plc_err_loan_amount_required" class="sgem-plc-err-style"></span>'+
                '</div>'+
-               '<div class="sgem-mrc-form-group sgem-mrc-form-flex sgem-mrc-precentage-holder">'+
-                  '<label class="sgem-mrc-cal-label">Current interest rate</label>'+
-                  '<input type="text" class="inputmove inputnumber"  id="sgem_mrc_currunt_interest_rate" value="6" min="0" max="100"/>'+
-                  '<span class="sgem_mrc_err_style" id="sgem_mrc_err_currunt_interest_rate"></span> '+
+               '<div class="sgem-plc-form-group sgem-plc-form-flex sgem-plc-years-holder">'+
+                  '<label>Loan term <span class="sgem-plc-tooltip tooltip" data-tippy-content="The amount of time the lender gives you to repay your mortgage.">?</span></label>'+ 
+                  '<input type="text" class="inputmove inputnumber" id="sgem_plc_loan_term" value="5" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
+                  '<span id="sgem_plc_err_loan_required" class="sgem-plc-err-style"></span>'+
                '</div>'+
-            '</div>'+
-            '<div class="sgem-mrc-flex-container">'+
-               '<div class="sgem-mrc-form-group sgem-mrc-form-flex sgem-mrc-months-holder">'+
-                  '<label class="sgem-mrc-cal-label">Current term'+
-                     '<span class="sgem-mrc-info-tooltip tooltip" data-tippy-content="Number of months originally set by your lender to pay off existing loan. To convert years into months, multiply number of years by 12.">?</span>'+
-                  '</label> '+
-                  '<input type="text"class="inputmove inputnumber" id="sgem_mrc_current_term" value="360" min="0" max="100" onkeypress="return isNumber(event)"/>'+
-                  '<span class="sgem_mrc_err_style" id="sgem_mrc_err_current_term"></span>'+
-               '</div>'+
-               '<div class="sgem-mrc-form-group sgem-mrc-form-flex sgem-mrc-months-holder">'+
-                  '<label class="sgem-mrc-cal-label">Terms passed'+
-                     '<span class="sgem-mrc-info-tooltip tooltip" data-tippy-content="Number of terms paid off of current loan.">?</span>'+
-                  '</label>'+
-                  '<input type="text" class="inputmove inputnumber" id="sgem_mrc_terms_passed" value="29" min="0" max="2050" onkeypress="return isNumber(event)"/>'+
-                  '<span class="sgem_mrc_err_style" id="sgem_mrc_err_terms_passed"></span>    '+
+               '<div class="sgem-plc-form-group sgem-plc-form-flex sgem-plc-precentage-holder sgem-plc-right-field">'+
+                  '<label>Annual interest rate <span class="sgem-plc-tooltip tooltip" data-tippy-content="The rate charged by the lender from the borrower.">?</span></label>'+ 
+                  '<input type="text" class="inputmove inputnumber" id="sgem_plc_annual_interest_rate" value="10.52" min="0" max="100" />'+
+                  '<span id="sgem_plc_err_no_of_months" class="sgem-plc-err-style"></span>'+
                '</div>'+
             '</div>'+
-            '<div class="sgem-mrc-flex-container">'+
-               '<div class="sgem-mrc-form-group sgem-mrc-form-flex sgem-mrc-currency-holder">'+
-                  '<label class="sgem-mrc-cal-label">New loan amount</label> '+
-                  '<input type="text"class="inputmove inputnumber" id="sgem_mrc_new_loan_amount" value="200,000" min="0" max="100" onkeypress="return isNumber(event)"/>'+
-                  '<span class="sgem_mrc_err_style" id="sgem_mrc_err_new_loan_amount"></span> '+
-               '</div>'+
-               '<div class="sgem-mrc-form-group sgem-mrc-form-flex sgem-mrc-precentage-holder">'+
-                  '<label class="sgem-mrc-cal-label">New interest rate</label> '+
-                  '<input type="text"class="inputmove inputnumber" id="sgem_mrc_new_interest_rate" value="5" min="0" max="100" />'+
-                  '<span class="sgem_mrc_err_style" id="sgem_mrc_err_new_interest_rate"></span>'+
-               '</div>'+
-            '</div>'+
-            '<div class="sgem-mrc-flex-container">'+
-               '<div class="sgem-mrc-form-group sgem-mrc-form-flex sgem-mrc-months-holder">'+
-                  '<label class="sgem-mrc-cal-label">New term</label> '+
-                  '<input type="text"class="inputmove inputnumber" id="sgem_mrc_new_term" value="360" min="0" max="100" onkeypress="return isNumber(event)"/>'+
-                  '<span class="sgem_mrc_err_style" id="sgem_mrc_err_new_term"></span>'+
-               '</div>'+
-               '<div class="sgem-mrc-form-group sgem-mrc-form-flex sgem-mrc-currency-holder">'+
-                  '<label class="sgem-mrc-cal-label">Refinance fee'+
-                     '<span class="sgem-mrc-info-tooltip tooltip" data-tippy-content="Closing costs are processing fees you pay to your lender when you close on your loan. Closing costs on a mortgage loan usually equal 3 – 6% of your total loan balance.">?</span>'+
-                  '</label> '+
-                  '<input type="text"class="inputmove inputnumber" id="sgem_mrc_refinance_fee" value="4,000" min="0" max="100" onkeypress="return isNumber(event)"/>'+
-                  '<span class="sgem_mrc_err_style" id="sgem_mrc_err_refinance_fee"></span>'+ 
-               '</div>'+
-            '</div>'+
-            '<details class="sgem-mrc-input-more-details" open="">'+
-               '<summary>'+
-                  '<div><h3 class="sgem-mrc-collapsible-summary-title">Advanced</h3></div>'+
-               '</summary>'+
-               '<div class="collapsible-content">'+
-                  '<div class="sgem-mrc-flex-container">'+
-                     '<div class="sgem-mrc-form-group sgem-mrc-form-flex sgem-mrc-form-field-full sgem-mrc-currency-holder">'+
-                        '<label>Cash out refinance <span class="sgem-mrc-tooltip tooltip" data-tippy-content="If you have enough equity in your home, you may be able to take cash out up to 80% of your home equity during a refinance.">?</span></label>'+
-                        '<input type="text" class="inputmove inputnumber"  id="sgem_mrc_cash_out_refinance" value="0" min="0" max="100" onkeypress="return isNumber(event)"/>'+
-                        '<span class="sgem_mrc_err_style" id="sgem_mrc_err_cash_out_refinance"></span>'+
-                     '</div>'+
-                  '</div>'+
-                  '<div class="sgem-mrc-flex-container">'+
-                     '<div class="sgem-mrc-form-group sgem-mrc-form-flex sgem-mrc-form-checkbox">'+
-                        '<label>Roll fees into new one'+
-                           '<input name="sgem-mrc-include-tax" id="sgem_mrc_include_tax" type="checkbox" checked="checked" onclick="isChecked()"> <span class="sgem-mrc-form-checkbox-style"></span>'+
-                        '</label>'+
-                        '<div class="sgem-mrc-check-box-label-tooltip">'+
-                           '<span class="sgem-mrc-info-tooltip tooltip" data-tippy-content="Include property taxes, homeowners insurance, private mortgage insurance, and homeowners association dues.">?</span> '+
-                        '</div>'+
-                     '</div>'+
-                  '</div>'+
-               '</div>'+
-            '</details>'+
          '</div>'+
       '</div>'+
-      '<div class="sgem-mrc-cal-right">'+
-         '<div class="sgem-mrc-cal-1-result-wrapper">'+
-            '<div class="sgem-mrc-cal-1-result-header">'+
-               '<div class="sgem-mrc-flex-container sgem-mrc-column-right-section-one">'+
-                  '<div class="sgem-mrc-total-top-form">'+
-                        '<span class="sgem-mrc-refinance-save-you">REFINANCING COULD SAVE YOU</span>'+
-                        '<span class="sgem-mrc-total-value">$150</span><span class="sgem-mrc-month-txt">/month</span>'+
+      '<div class="sgem-plc-cal-right">'+
+         '<div class="sgem-plc-cal-1-result-wrapper">'+
+            '<div class="sgem-plc-flex-container sgem-plc-column2">'+
+               '<div class="sgem-plc-form-group sgem-plc-form-flex">'+
+                  '<span class="futuretext sgem-plc-result-headtext">PAYBACK AMOUNT</span> '+
+                  '<div id="futureV" class="sgem-plc-result-label">$<span id="sgem_plc_payback_amount">608,292</span>'+  
+                  '</div>'+
+               '</div>'+
+               '<div class="sgem-plc-form-group sgem-plc-form-flex ">'+
+                  '<span class="futuretext2 sgem-plc-result-headtext">MONTHLY PAYMENT</span>'+
+                  '<div id="futureV2" class="sgem-plc-result-label">$<span id="sgem_plc_monthly_payment">10,138</span>'+
+                     '<span class="sgem-plc-monthly-paym-years" id="sgem_plc_monthly_paym_years">over 5 years</span>'+
                   '</div>'+
                '</div>'+
             '</div>'+
-            '<div class="sgem-mrc-flex-container sgem-mrc-container-chart">'+
-               '<div class="sgem-mrc-chartCard">'+
-                  '<div class="chartBox">'+
-                     '<canvas id="myChart"></canvas>'+
+            '<div class="sgem-plc-cal-tab-wrapper-section">'+
+               '<div class="sgem-plc-tabset">'+
+                  '<!-- Tab 1 -->'+
+                  '<input type="radio" name="tabset" id="sgem-plc-cal-tab1" aria-controls="sgem-plc-cal-tab1" checked>'+
+                  '<label for="sgem-plc-cal-tab1">SCHEDULE</label>'+
+                  '<!-- Tab 2 -->'+
+                  '<input type="radio" name="tabset" id="sgem-plc-cal-tab2" aria-controls="sgem-plc-cal-tab2">'+
+                  '<label for="sgem-plc-cal-tab2">BREAKDOWN</label>'+
+                  '<div class="sgem-plc-cal-border-for-tabs"></div>'+
+                  '<div class="tab-panels">'+
+                     '<section id="sgem-plc-cal-tab1" class="tab-panel">'+
+                        '<div class="sgem-plc-cal-chartCard">'+
+                          '<div class="chartBox">'+
+                            '<canvas id="myChart"></canvas>'+
+                          '</div>'+
+                        '</div>'+
+                        '<div class="sgem-plc-legendbox">'+
+                           '<div class="sgem-plc-legend-item"> '+
+                              '<button id="sgem_plc_principle" onclick="toggleDatachart(0)" class="sgem-plc-principle"></button>'+
+                              '<div id="sgem_plc_principle_te" onclick="toggleDatachart(0)" class="sgem-plc-principle-te">Principle</div>'+
+                           '</div>'+
+                        '</div>'+
+                     '</section>'+
+                     '<section id="sgem-plc-cal-tab2" class="tab-panel">'+
+                        '<div class="sgem-plc-cal-chartCard">'+
+                          '<div class="chartBox">'+
+                            '<canvas id="myChart2"></canvas>'+
+                          '</div>'+
+                        '</div>'+
+                        '<div class="sgem-plc-legendbox">'+
+                           '<div class="sgem-plc-legend-item"> '+
+                              '<button id="sgem_plc_principle_l2" onclick="toggleData(0)" class="sgem-plc-principle-l2"></button>'+
+                              '<div id="sgem_plc_principle_te_l2" onclick="toggleData(0)" class="sgem-plc-principle-te-l2">Principle</div>'+
+                           '</div>'+
+                           '<div class="sgem-plc-legend-item"> '+
+                              '<button id="sgem_plc_le_interest" onclick="toggleData(1)" class="sgem-plc-le-interest"></button>'+
+                              '<div id="sgem_plc_le_interest_te" onclick="toggleData(1)" class="sgem-plc-le-interest-te">Interest</div>'+
+                           '</div>'+
+                        '</div>'+
+                     '</section>'+
                   '</div>'+
                '</div>'+
-               '<div class="sgem-mrc-chart-legend-total"> '+
-                 '<div class="sgem-mrc-legendbox">'+                     
-                      '<div class="sgem-mrc-legend-item" id="hidemeon2">'+
-                          '<div class="sgem-mrc-legend-item-label">'+
-							'<div id="sgem_mrc_cost" class="sgem-mrc-cost"></div>'+
-							'<div id="sgem_mrc_cost_te" class="sgem-mrc-pmi-te">COST</div>'+
-						  '</div>'+						  
-                          '<span class="sgem_mrc_side_total_lbl">$<span id="sgem_mrc_pmi_value">6,000</span></span>'+
-                      '</div>'+
-                      '<div class="sgem-mrc-legend-item pt-40">'+
-                          '<div class="sgem-mrc-legend-item-label">'+
-							'<div id="sgem_mrc_liftime_saving" class="sgem-mrc-lifetime-saving"></div>'+
-							'<div id="sgem_mrc_lifetime-saving_te" class="sgem-mrc-lifetime-saving-te">LIFETIME SAVINGS</div>'+
-						  '</div>'+	
-                          '<span class="sgem_mrc_side_total_lbl">$<span id="sgem_mrc_hoe_value">151,533</span></span>'+
-                      '</div>'+
-                  '</div>'+
+            '</div>'+
+            '<div class="sgem-plc-cal-1-result-footer">'+
+               '<div class="sgem-plc-content">Find the right personal loan rate for you. Shop and compare personal loan offers in minutes.</div>'+
+               '<div class="sgem-plc-buttonGet">'+
+                  '<a href="https://retirementinvestments.com/loancalculator" target="_blank" class="sgem-plc-getStart" rel="noopener">'+
+                  'GET STARTED'+
+                  '</a>'+
                '</div>'+
-            '</div>';
+            '</div>'+
+            '<div class="sgem-plc-section-disclaimer">'+
+               '<details class="sgem-plc-details-disclaimer">'+
+                  '<summary>'+
+                     '<div class="sgem-plc-collapsible-summary-disclaimer">Disclaimer</div>'+
+                  '</summary>'+
+                  '<div class="sgem-plc-collapsible-text-disclaimer">'+
+                     'This material is provided for general and educational purposes only; it is not intended to provide legal, tax or investment advice.'+
+                  '</div>'+
+               '</details>'+
+            '</div>'+
+         '</div>'+
+      '</div>'+
+   '</div>'+
+'</div>';
 
-if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com" || location.hostname == "goldiracompanies.com"){
-    
-			sgem_mrc_main_contents += '<div class="sgem-mrc-cal-1-result-footer">';
-				sgem_mrc_main_contents += '<div class="sgem-mrc-loan-started-in-txt">';
-				sgem_mrc_main_contents += 'YOUR CURRENT LOAN STARTED IN <span id="calculated_date">JANUARY, 2010</span>';
-				sgem_mrc_main_contents += '</div>';				
-				sgem_mrc_main_contents += '<div class="sgem-mrc-legend-item-panel">';
-					  sgem_mrc_main_contents += '<div class="sgem-mrc-legend-item">';
-                          sgem_mrc_main_contents += '<div id="sgem_mrc_principle_interest_te" class="sgem-mrc-principle-interest-te">MONTHLY SAVINGS</div>';
-                          sgem_mrc_main_contents += '<span class="sgem_mrc_side_total_lbl">$<span id="sgem_mrc_interest_value">150 /mon</span></span>';
-                      sgem_mrc_main_contents += '</div>';
-                       sgem_mrc_main_contents += '<div class="sgem-mrc-legend-item">';
-                          sgem_mrc_main_contents += '<div id="sgem_mrc_insurance_te" class="sgem-mrc-insurance-te">NEW PAYMENT</div>';
-                          sgem_mrc_main_contents += '<span class="sgem_mrc_side_total_lbl">$<span id="sgem_mrc_insurance_value">1,208</span></span>';
-                      sgem_mrc_main_contents += '</div>';
-                      sgem_mrc_main_contents += '<div class="sgem-mrc-legend-item" id="hidemeon">';
-                          sgem_mrc_main_contents += '<div id="sgem_mrc_property_te" class="sgem-mrc-property-te">BREAK EVEN</div>';
-                          sgem_mrc_main_contents += '<span class="sgem_mrc_side_total_lbl"><span id="sgem_mrc_property_value">40 months</span></span>';
-                      sgem_mrc_main_contents += '</div>';
-				sgem_mrc_main_contents += '</div>';				
-				sgem_mrc_main_contents += '<div class="sgem-mrc-content">Ready to refinance? Learn more about your mortgage refinancing options and getting the best rate by our recommended lender.</div>';
-				sgem_mrc_main_contents += '<div class="sgem-mrc-buttonGet"><a href="https://retirementinvestments.com/refinancecalculator" target="_blank" class="sgem-mrc-getStart">';
-				sgem_mrc_main_contents += 'GET STARTED</a>';
-				sgem_mrc_main_contents += '</div>';
-			sgem_mrc_main_contents += '</div>';
-	
-	
-	/*sgem_mrc_main_contents += '<div class="sgem-mrc-cal-1-result-footer">';
-    sgem_mrc_main_contents += '<div class="sgem-mrc-loan-started-in-txt">';
-    sgem_mrc_main_contents += 'YOUR CURRENT LOAN STARTED IN <span id="calculated_date">JANUARY, 2010</span></div>';
-    sgem_mrc_main_contents += '<div class="sgem-mrc-content">Ready to refinance? Learn more about your mortgage refinancing options and getting the best rate by our recommended lender.</div>';
-    sgem_mrc_main_contents += '<div class="sgem-mrc-buttonGet"><a href="https://retirementinvestments.com/refinancecalculator" target="_blank" class="sgem-mrc-getStart">';
-    sgem_mrc_main_contents += 'GET STARTED</a></div>';
-    sgem_mrc_main_contents += '</div>';*/
-}
+sgem_plc_main_contents += '</div>';  
 
-sgem_mrc_main_contents += '<div class="sgem-mrc-section-disclaimer"><details class="sgem-mrc-details-disclaimer"><summary><div class="sgem-mrc-collapsible-summary-disclaimer">Disclaimer</div></summary><div class="sgem-mrc-collapsible-text-disclaimer">This material is provided for general and educational purposes only; it is not intended to provide legal, tax or investment advice.</div>';
-sgem_mrc_main_contents += '</details></div></div></div></div>';
-
-if( (location.hostname != "calculatorstg.wpengine.com") || (location.hostname != "retirementinvestments.com" || location.hostname == "goldiracompanies.com") ){
-    sgem_mrc_main_contents += '<div class="sgem-mrc-logo-center">';
-    sgem_mrc_main_contents += '<a class="sgem-mrc-logo-image" href="https://retirementinvestments.com/real-estate/refinance-calculator/" target="_blank" rel="noopener">';
-    sgem_mrc_main_contents += 'Mortgage Refinance Calculator</a>&nbsp; by Retirement Investments</div>';
-}
-    
-if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com"){
-    sgem_mrc_main_contents += '<div class="sgem-mrc-copy-option-panel"><h3>Do you want to add this calculator into your website?</h3>';
-    sgem_mrc_main_contents += '<div class="sgem-mrc-copy-code-wrap">';
-    sgem_mrc_main_contents += '<button class="sgem-mrc-copy-code" id="sgem-mrc-copy-code" onclick="sgem_mrc_copyText(event)">Get Calculator</button>';
-    sgem_mrc_main_contents += '</div></div></div>';
-}
-
-sgem_mrc_main_contents += '</div>';  
-
-document.getElementById('sgem-mrc-cal').innerHTML = sgem_mrc_main_contents;
+document.getElementById('sgem-plc-cal').innerHTML = sgem_plc_main_contents;
 
 
 // decimal points
 function decimalTwoPoints(x) {
-    return Number.parseFloat(x).toFixed(0);
+  return Number.parseFloat(x).toFixed(0);
 }
 // end
 
 function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
 window.onload = function() {
-    sgem_mrf_calculationmin(); 
+    sgem_pl_calculationm(); 
 }
 
-function sgem_mrf_calculationmin() {
+function sgem_pl_calculationm() {
 
-    var chart_values_array = [];
+    var chart_years_array = [];
+    var chart_starting_balance_array = [];
+    var chart_end_balance_array = [];
+    var chart_principal_paid_array = [];
+    var chart_intrest_paid_array = [];
 
-    var current_loan_ammont3 = $('#sgem_mrc_currunt_loan_amount').val().trim();
-    var current_loan_ammont2 = current_loan_ammont3.replace(/\,/g, '');
-    var current_loan_ammont = parseInt(current_loan_ammont2, 10);
+    var loan_ammount1 = $('#sgem_plc_loan_amount_required').val().trim();
+    var loan_ammount2 = loan_ammount1.replace(/\,/g,'');
+    var loan_ammount = parseInt(loan_ammount2,10);
 
-    var current_interest_rate3 = $('#sgem_mrc_currunt_interest_rate').val().trim();
-    var current_interest_rate2 = current_interest_rate3.replace('%', "");
-    var current_interest_rate = parseFloat(current_interest_rate2 / 100);
+    var annual_intrest_rate1 = $('#sgem_plc_annual_interest_rate').val().trim();
+    var annual_intrest_rate2 = annual_intrest_rate1.replace('%', "");
+    var annual_intrest_rate = parseFloat(annual_intrest_rate2 / 100);
 
-    var current_term_months = $('#sgem_mrc_current_term').val().trim();
+    var loan_terms_years1 = $('#sgem_plc_loan_term').val().trim();
+    var loan_terms_years = parseFloat(loan_terms_years1);
 
-    var term_passed = $('#sgem_mrc_terms_passed').val().trim();
+    //Years on card
 
-    var new_loan_ammount3 = $('#sgem_mrc_new_loan_amount').val().trim();
-    var new_loan_ammount2 = new_loan_ammount3.replace(/\,/g, '');
-    var new_loan_ammount = parseInt(new_loan_ammount2, 10);
+    var years_on_the_card = loan_terms_years;
 
-    var new_intrest_rate3 = $('#sgem_mrc_new_interest_rate').val().trim();
-    var new_intrest_rate2 = new_intrest_rate3.replace('%', "");
-    var new_intrest_rate = parseFloat(new_intrest_rate2 / 100);
+    if (isNaN(years_on_the_card)){
 
-    var new_term_months = $('#sgem_mrc_new_term').val().trim();
+      $('#sgem_plc_monthly_paym_years').text(''); 
 
-    var refinance_fee3 = $('#sgem_mrc_refinance_fee').val().trim();
-    var refinance_fee2 = refinance_fee3.replace(/\,/g, '');
-    var refinance_fee = parseInt(refinance_fee2, 10);
-
-    var cash_out3 = $('#sgem_mrc_cash_out_refinance').val().trim();
-    var cash_out2 = cash_out3.replace(/\,/g, '');
-    var cash_out = parseInt(cash_out2, 10);
-
-    var date = new Date();
-    date.setMonth(date.getMonth() - term_passed);
-
-    $('#calculated_date').text(date.toLocaleString('default', { month: 'long' })+", "+date.getFullYear());
-
-    //Calculations
-
-    var remaining_turms_in_current_loan = current_term_months - term_passed;
-    
-
-    //-----------------------------------
-
-    if (document.getElementById('sgem_mrc_include_tax').checked) {
-
-        var total_value_for_pv_tobecon1 = new_loan_ammount + cash_out + refinance_fee;
-
-    } else {
-
-        var total_value_for_pv_tobecon1 = new_loan_ammount + cash_out;
-
-    }
-
-    var total_value_for_pv_tobecon = decimalTwoPoints(total_value_for_pv_tobecon1);
-    
-
-    //-----------------------------------
-
-    var current_monthly_payment1 = current_interest_rate / 12;
-    var current_monthly_payment2 = current_monthly_payment1 * current_loan_ammont;
-
-    var current_monthly_payment3 = current_interest_rate / 12;
-    var current_monthly_payment4 = 1 + current_monthly_payment3;
-    let current_monthly_payment5 = Math.pow(current_monthly_payment4, -current_term_months);
-    var current_monthly_payment6 = 1 - current_monthly_payment5;
-
-    var current_monthly_payment = decimalTwoPoints(current_monthly_payment2 / current_monthly_payment6);
-    
-
-    //-----------------------------------
-	var new_monthly_payment1 = (new_intrest_rate / 12);
-    var new_monthly_payment11 = parseFloat(new_monthly_payment1) * total_value_for_pv_tobecon;
-
-    var new_monthly_payment2 = (new_intrest_rate / 12);
-    var new_monthly_payment22 = 1 + parseFloat(new_monthly_payment2);
-    let new_monthly_payment3 = Math.pow(new_monthly_payment22, -new_term_months);
-    var new_monthly_payment4 = 1 - new_monthly_payment3;
-
-    var new_monthly_payment = decimalTwoPoints(new_monthly_payment11 / new_monthly_payment4);
-    
-
-    if (isNaN(new_monthly_payment) || new_monthly_payment < 1) {
-
-        $('#sgem_mrc_insurance_value').text('$0');
-
-    } else {
-
-        $('#sgem_mrc_insurance_value').text(numberWithCommas(new_monthly_payment) + ' /mo');
-    }
-
-    //-----------------------------------
-
-    var monthly_savings = decimalTwoPoints(current_monthly_payment - new_monthly_payment);
-    
-
-    if (isNaN(monthly_savings) || monthly_savings < 1) {
-
-        $('.sgem-mrc-total-value').text('$0');
-        $('#sgem_mrc_interest_value').text('$0');
-
-    } else {
-
-        $('.sgem-mrc-total-value').text('$' + numberWithCommas(monthly_savings));
-        $('#sgem_mrc_interest_value').text(numberWithCommas(monthly_savings));
-    }
-
-    //-----------------------------------
-
-
-    //var break_even_months = decimalTwoPoints(refinance_fee / monthly_savings);
-    var break_even_months2 = refinance_fee / monthly_savings;
-    var break_even_months = decimalTwoPoints(break_even_months2);
-
-    if (isNaN(break_even_months) || break_even_months <= 0) {
-
-        $('#sgem_mrc_property_value').text('0');
-
-    } else {
-
-        $('#sgem_mrc_property_value').text(break_even_months + ' Months');
-    }
-
-    //-----------------------------------
-
-    var cost = decimalTwoPoints(refinance_fee);
-    
-
-    if (isNaN(cost) || cost < 0) {
-
-        $('#sgem_mrc_pmi_value').text('$0');
-
-    } else {
-
-        $('#sgem_mrc_pmi_value').text(numberWithCommas(cost));
-    }
-
-    //-----------------------------------
-
-    if (document.getElementById('sgem_mrc_include_tax').checked) {
-
-        var lifetime_savings1 = monthly_savings * remaining_turms_in_current_loan;
-
-        var lifetime_savings2 = new_term_months - remaining_turms_in_current_loan;
-        var lifetime_savings3 = lifetime_savings2 * new_monthly_payment;
-
-        var lifetime_savings = lifetime_savings1 - lifetime_savings3;
-        
-
-
-    } else {
-
-        var lifetime_savings1 = monthly_savings * remaining_turms_in_current_loan;
-
-        var lifetime_savings2 = new_term_months - remaining_turms_in_current_loan;
-        var lifetime_savings3 = lifetime_savings2 * new_monthly_payment;
-
-        var lifetime_savings = lifetime_savings1 - lifetime_savings3 - parseFloat(cost);
-        
-
-    }
-
-    if (isNaN(lifetime_savings)) {
-
-        $('#sgem_mrc_hoe_value').text('0');
-
-    } else {
-
-        $('#sgem_mrc_hoe_value').text(numberWithCommas(lifetime_savings));
-    }
-
-    // Chart values -----------------------------------
-
-    // 1 year
-
-    if (remaining_turms_in_current_loan > 12) {
-
-        var first_year = 12 * monthly_savings;
-
-
-    } else {
-
-        var first_year_1 = 12 - remaining_turms_in_current_loan;
-        var first_year_2 = first_year_1 * new_monthly_payment;
-
-        var first_year_3 = remaining_turms_in_current_loan * monthly_savings;
-        var first_year = first_year_3 - first_year_2;
-    }
-
-
-    // 10 years
-
-    if (remaining_turms_in_current_loan >= 120) {
-
-        var ten_years_1 = 120 - 12;
-        var ten_years_2 = ten_years_1 * monthly_savings;
-
-    } else if (remaining_turms_in_current_loan >= 12) {
-
-        var ten_years_1 = remaining_turms_in_current_loan - 12;
-        var ten_years_2 = ten_years_1 * monthly_savings;
-
-    } else {
-
-        var ten_years_2 = 0;
-
-    }
-
-    if (remaining_turms_in_current_loan > 120) {
-
-        var ten_years = ten_years_2 - 0;
-
-    } else if (remaining_turms_in_current_loan <= 12) {
-
-        var ten_years_3 = 120 - 12;
-        var ten_years_4 = ten_years_3 * new_monthly_payment;
-
-        var ten_years = ten_years_2 - ten_years_4;
-
-    } else {
-
-        var ten_years_3 = 120 - remaining_turms_in_current_loan;
-        var ten_years_4 = ten_years_3 * new_monthly_payment;
-
-        var ten_years = ten_years_2 - ten_years_4;
-    }
-
-
-    // 20 years
-
-    if (remaining_turms_in_current_loan >= 240) {
-
-        var twenty_years_1 = 240 - 120;
-        var twenty_years_2 = twenty_years_1 * monthly_savings;
-
-    } else if (remaining_turms_in_current_loan >= 120) {
-
-        var twenty_years_1 = remaining_turms_in_current_loan - 120;
-        var twenty_years_2 = twenty_years_1 * monthly_savings;
-
-    } else {
-
-        var twenty_years_2 = 0;
-    }
-
-    if (remaining_turms_in_current_loan > 240) {
-
-        var twenty_years = twenty_years_2 - 0;
-
-    } else if (remaining_turms_in_current_loan <= 120) {
-
-        var twenty_years_3 = 240 - 120;
-        var twenty_years_4 = twenty_years_3 * new_monthly_payment;
-
-        var twenty_years = twenty_years_2 - twenty_years_4;
-
-    } else {
-
-        var twenty_years_3 = 240 - remaining_turms_in_current_loan;
-        var twenty_years_4 = twenty_years_3 * new_monthly_payment;
-
-        var twenty_years = twenty_years_2 - twenty_years_4;
-
-    }
-
-
-    // 30 years
-
-    if (remaining_turms_in_current_loan >= 360) {
-
-        var thirty_years_1 = 360 - 240;
-        var thirty_years_2 = thirty_years_1 * monthly_savings;
-
-    } else if (remaining_turms_in_current_loan >= 240) {
-
-        var thirty_years_1 = remaining_turms_in_current_loan - 240;
-        var thirty_years_2 = thirty_years_1 * monthly_savings;
-
-    } else {
-
-        var thirty_years_2 = 0;
-    }
-
-    if (remaining_turms_in_current_loan > 360) {
-
-        var thirty_years = thirty_years_2 - 0;
-
-    } else if (remaining_turms_in_current_loan <= 240) {
-
-        var thirty_years_3 = 360 - 240;
-        var thirty_years_4 = thirty_years_3 * new_monthly_payment;
-
-        var thirty_years = thirty_years_2 - thirty_years_4;
-
-    } else {
-
-        var thirty_years_3 = 360 - remaining_turms_in_current_loan;
-        var thirty_years_4 = thirty_years_3 * new_monthly_payment;
-
-        var thirty_years = thirty_years_2 - thirty_years_4;
-
-    }
-    
-    if(cost < 0 || isNaN(cost)){
-
-        chart_values_array[0] = 0;
-    
     }else{
 
-        chart_values_array[0] = cost;
+      $('#sgem_plc_monthly_paym_years').text("over "+ years_on_the_card +" years");
+
     }
 
-     if(first_year < 0 || isNaN(first_year)){
 
-        chart_values_array[1] = 0;
+    //Monthly Payment
+    var monthly_payment1 = annual_intrest_rate / 12;
+    var monthly_payment2 = monthly_payment1 * loan_ammount;
 
-     }else{
-      
-       chart_values_array[1] = first_year;
+    var monthly_payment3 = annual_intrest_rate / 12;
+    var monthly_payment4 = monthly_payment3 + 1;
 
-     }
-     
-     if(ten_years < 0 || isNaN(ten_years)){
+    var monthly_payment5 = -loan_terms_years * 12;
 
-        chart_values_array[2] = 0;
+    let monthly_payment6 = Math.pow(monthly_payment4, monthly_payment5);
+    var monthly_payment7 = 1 - monthly_payment6;
+    var monthly_payment = monthly_payment2 / monthly_payment7;
 
-     }else{
-     
-      chart_values_array[2] = ten_years;
+    if (isNaN(monthly_payment) || monthly_payment <= 0){
 
-     }
+      $('#sgem_plc_monthly_payment').text('0'); 
 
-      if(twenty_years < 0 || isNaN(twenty_years)){
+    }else{
 
-        chart_values_array[3] = 0;
+    $('#sgem_plc_monthly_payment').text(numberWithCommas(decimalTwoPoints(monthly_payment))); 
+    }
 
-     }else{
+    //Total principal & intrest paid
 
-        chart_values_array[3] = twenty_years;
-     }
+    var total_p_and_i = monthly_payment * 12 * loan_terms_years;
 
-      if(thirty_years < 0 || isNaN(thirty_years)){
+    if (isNaN(total_p_and_i) || total_p_and_i <= 0){
 
-        chart_values_array[4] = 0;
+        $('#sgem_plc_payback_amount').text('0'); 
+        localStorage.setItem('sgem_pl_max1_array', JSON.stringify(100000));
 
-     }else{
+    }else{
 
-        chart_values_array[4] = thirty_years;
-     }
-     
+      $('#sgem_plc_payback_amount').text(numberWithCommas(decimalTwoPoints(total_p_and_i))); 
+      localStorage.setItem('sgem_pl_max1_array', JSON.stringify(total_p_and_i));
+    }
 
-    localStorage.setItem('sgem_mrf_chart_array', JSON.stringify(chart_values_array));
-    mrf_update_chart();
+    //Total intrest paid
+
+    var total_intrest_paid = total_p_and_i - loan_ammount;
+
+
+    //Chart values
+
+    //Year
+    var year_of_tax_filing = new Date().getFullYear();
+    var due_date2 = year_of_tax_filing;
+
+    var date = new Date();
+    date.setMonth(date.getMonth());
+
+    var last_year = due_date2 + loan_terms_years;
+
+    while (due_date2 < last_year) {
+
+        var newdate = due_date2++ + "-" + date.toLocaleString('default', {
+            month: 'short'
+        });
+        chart_years_array.push(newdate);
+
+    }
+
+    localStorage.setItem('sgem_pl_yearsx_array', JSON.stringify(chart_years_array));
+
+    //Starting balance
+
+    var starting_n = 1;
+
+    while (starting_n <= loan_terms_years) {
+
+        var starting_balance1 = annual_intrest_rate / 12;
+        var starting_balance2 = 1 + starting_balance1;
+
+        var starting_balance3 = loan_terms_years - starting_n++; //1 is n
+        var starting_balance4 = starting_balance3 + 1;
+        var starting_balance5 = starting_balance4 * 12;
+
+        let starting_balance6 = Math.pow(starting_balance2, -starting_balance5);
+        var starting_balance7 = 1 - starting_balance6;
+
+        var starting_balance8 = annual_intrest_rate / 12;
+
+        var starting_balance9 = starting_balance7 / starting_balance8;
+        var starting_balance = monthly_payment * starting_balance9;
+        chart_starting_balance_array.push(starting_balance);
+
+    }
+
+
+    //End balance
+
+    var end_balance_n = 1;
+
+    while (end_balance_n <= loan_terms_years) {
+
+        var end_balance1 = annual_intrest_rate / 12;
+        var end_balance2 = 1 + end_balance1;
+
+        var end_balance3 = loan_terms_years - end_balance_n++; //n
+        var end_balance4 = end_balance3 * 12;
+
+        let end_balance5 = Math.pow(end_balance2, -end_balance4);
+        var end_balance6 = 1 - end_balance5;
+
+        var end_balance7 = annual_intrest_rate / 12;
+
+        var end_balance8 = end_balance6 / end_balance7;
+        var end_balance = monthly_payment * end_balance8;
+        chart_end_balance_array.push(decimalTwoPoints(end_balance));
+
+    }
+
+    localStorage.setItem('sgem_pl_end_balance_array', JSON.stringify(chart_end_balance_array));
+
+
+    //Principal paid
+
+    var arrayLength = chart_end_balance_array.length;
+
+    for (var i = 0; i < arrayLength; i++) {
+
+        var principal_paid = parseFloat(chart_starting_balance_array[i]) - parseFloat(chart_end_balance_array[i]);
+        chart_principal_paid_array.push(decimalTwoPoints(principal_paid));
+
+    }
+
+    localStorage.setItem('sgem_pl_principal_p_array', JSON.stringify(chart_principal_paid_array));
+
+
+
+    //Intrest paid
+
+    var intrest_paid1 = monthly_payment * 12;
+
+    var arrayLength2 = chart_principal_paid_array.length;
+
+    for (var i = 0; i < arrayLength2; i++) {
+
+        var intrest_paid_paid = parseFloat(intrest_paid1) - parseFloat(chart_principal_paid_array[i]);
+        chart_intrest_paid_array.push(decimalTwoPoints(intrest_paid_paid));
+
+    }
+
+    localStorage.setItem('sgem_pl_intrest_p_array', JSON.stringify(chart_intrest_paid_array));
+    pl_update_chart();
 
 }
 
 $(document).ready(function() {
 
-    if( location.hostname == "calculatorstg.wpengine.com") {
-        $('.sgem-mrc-logo-center').hide(); 
-    } else if(location.hostname == "retirementinvestments.com"){
-        $('.sgem-mrc-logo-center').hide();  
-    } else {
-        $('.sgem-mrc-logo-center').show();  
-    }
+    if($('#sgem_plc_loan_amount_required,#sgem_plc_loan_term').length > 0) {
+        $('#sgem_plc_loan_amount_required,#sgem_plc_loan_term').on('keyup', function () {
+            sgem_pl_calculationm() ;
 
-    sgem_mrf_calculationmin(); 
+          // Keep only digits and decimal points:
+        this.value=this.value.replace(/[^\d.]/g, "")
+        // Remove duplicated decimal point, if one exists:
+        this.value=this.value.replace(/^(\d*\.)(.*)\.(.*)$/, '$1$2$3')
+        // Keep only two digits past the decimal point:
+        this.value=this.value.replace(/\.(\d{0})\d+/, '')
+        // Add thousands separators:
+        this.value=this.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+          // Removing front zero
+          this.value=this.value.replace(/^0+/, '');
 
-    if ($('#sgem_mrc_currunt_loan_amount,#sgem_mrc_current_term,#sgem_mrc_terms_passed,#sgem_mrc_new_loan_amount,#sgem_mrc_new_term,#sgem_mrc_refinance_fee,#sgem_mrc_include_tax').length > 0) {
-    $('#sgem_mrc_currunt_loan_amount,#sgem_mrc_current_term,#sgem_mrc_terms_passed,#sgem_mrc_new_loan_amount,#sgem_mrc_new_term,#sgem_mrc_refinance_fee,#sgem_mrc_include_tax').on('keyup', function() {
-
-            sgem_mrf_calculationmin();
-
-            // Keep only digits and decimal points:
-            this.value = this.value.replace(/[^\d.]/g, "")
-            // Remove duplicated decimal point, if one exists:
-            this.value = this.value.replace(/^(\d*\.)(.*)\.(.*)$/, '$1$2$3')
-            // Keep only two digits past the decimal point:
-            this.value = this.value.replace(/\.(\d{0})\d+/, '')
-            // Add thousands separators:
-            this.value = this.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-            // Removing front zero
-            this.value=this.value.replace(/^0+/, '');
 
         });
     }
 
-    if ($('#sgem_mrc_currunt_interest_rate,#sgem_mrc_new_interest_rate').length > 0) {
-        $('#sgem_mrc_currunt_interest_rate,#sgem_mrc_new_interest_rate').on('keyup', function() {
+    if($('#sgem_plc_annual_interest_rate').length > 0) {
+      $('#sgem_plc_annual_interest_rate').on('keyup', function () {
+          sgem_pl_calculationm() ;
 
-            sgem_mrf_calculationmin();
+       
+        // Removing front zero
+        this.value=this.value.replace(/^0+/, '');
+       
 
-            // Removing front zero
-            this.value=this.value.replace(/^0+/, '');
-
-        });
+      });
     }
 
-    if ($('#sgem_mrc_cash_out_refinance').length > 0) {
-        $('#sgem_mrc_cash_out_refinance').on('keyup', function() {
 
-            sgem_mrf_calculationmin();
+    //---------------------------------------------------------------------------------------------------
 
-            // Keep only digits and decimal points:
-            this.value = this.value.replace(/[^\d.]/g, "")
-            // Remove duplicated decimal point, if one exists:
-            this.value = this.value.replace(/^(\d*\.)(.*)\.(.*)$/, '$1$2$3')
-            // Keep only two digits past the decimal point:
-            this.value = this.value.replace(/\.(\d{0})\d+/, '')
-            // Add thousands separators:
-            this.value = this.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-
-        });
-    }
-
-    //----------------------------- 
-    //Vallidations
-
-        // current loan ammount
-        $('#sgem_mrc_currunt_loan_amount').on('keyup', function () {
-          var val = this.value;
-          var xc = parseInt(val);
-          if (isNaN(xc) || $(this).val().length>11){
-             
-             this.value ='';
-             $('#sgem_mrc_err_currunt_loan_amount').html('This cannot be empty or more than $900,000,000').fadeIn();  
-              $(this).css({
-            "border": "1px solid red",
-            "background": "#FFCECE" });  
-              
-
-      }else{
-         $('#sgem_mrc_err_currunt_loan_amount').html('').fadeOut();  
-        $(this).css({
-            "border": "1px solid #707070",
-            "background": "#ffffff"
-          }); 
-      }    
-        });
-
-            //current intrest rate
-        $('#sgem_mrc_currunt_interest_rate').on('keyup', function () {
-          var vrr2     = $('#sgem_mrc_currunt_interest_rate').val().trim();
-          var vrr = vrr2.replace('%', "");
-          if (isNaN(vrr) || vrr>100){
-             
-             this.value ='';
-             $('#sgem_mrc_err_currunt_interest_rate').html('This cannot be empty or more than 100%').fadeIn();  
-              $(this).css({
-            "border": "1px solid red",
-            "background": "#FFCECE" });  
-              
-
-      }else{
-         $('#sgem_mrc_err_currunt_interest_rate').html('').fadeOut();  
-        $(this).css({
-            "border": "1px solid #707070",
-            "background": "#ffffff"
-          }); 
-      }    
-        });
-
-            // Current term
-        $('#sgem_mrc_current_term').on('keyup', function () {
-          var val = this.value;
-          var xc = parseInt(val);
-          if (isNaN(xc) || $(this).val().length>4){    
-             this.value ='';
-             $('#sgem_mrc_err_current_term').html('This cannot be empty').fadeIn();      
-              $(this).css({
-            "border": "1px solid red",
-            "background": "#FFCECE"
-          }); 
-        
-           
-      }else{
-         $('#sgem_mrc_err_current_term').html('').fadeOut();  
-        $(this).css({
-            "border": "1px solid #707070",
-            "background": "#ffffff"
-          }); 
-      }   
-        });
-
-          // Term passed
-        $('#sgem_mrc_terms_passed').on('keyup', function () {
-          var c_term     = $('#sgem_mrc_current_term').val().trim();
-          var val = this.value;
-          var ccxc = parseInt(val);
-          if (isNaN(ccxc) || $(this).val().length>4 || ccxc >= c_term){    
-             this.value ='';
-             $('#sgem_mrc_err_terms_passed').html('This cannot be empty or more than Current term').fadeIn();      
-              $(this).css({
-            "border": "1px solid red",
-            "background": "#FFCECE"
-          }); 
-        
-           
-      }else{
-         $('#sgem_mrc_err_terms_passed').html('').fadeOut();  
-        $(this).css({
-            "border": "1px solid #707070",
-            "background": "#ffffff"
-          }); 
-      }   
-        });
-
-            // new loan ammount
-        $('#sgem_mrc_new_loan_amount').on('keyup', function () {
-          var val = this.value;
-          var newxc = parseInt(val);
-          if (isNaN(newxc) || $(this).val().length>11){
-             
-             this.value ='';
-             $('#sgem_mrc_err_new_loan_amount').html('This cannot be empty or more than $900,000,000').fadeIn();  
-              $(this).css({
-            "border": "1px solid red",
-            "background": "#FFCECE" });  
-              
-
-      }else{
-         $('#sgem_mrc_err_new_loan_amount').html('').fadeOut();  
-        $(this).css({
-            "border": "1px solid #707070",
-            "background": "#ffffff"
-          }); 
-      }    
-        });
-
-               //new intrest rate
-        $('#sgem_mrc_new_interest_rate').on('keyup', function () {
-          var vrr2     = $('#sgem_mrc_new_interest_rate').val().trim();
-          var newvrr = vrr2.replace('%', "");
-          if (isNaN(newvrr) || newvrr>100){
-             
-             this.value ='';
-             $('#sgem_mrc_err_new_interest_rate').html('This cannot be empty or more than 100%').fadeIn();  
-              $(this).css({
-            "border": "1px solid red",
-            "background": "#FFCECE" });  
-              
-
-      }else{
-         $('#sgem_mrc_err_new_interest_rate').html('').fadeOut();  
-        $(this).css({
-            "border": "1px solid #707070",
-            "background": "#ffffff"
-          }); 
-      }    
-        });
-
-
-            // new term
-        $('#sgem_mrc_new_term').on('keyup', function () {
-          var val = this.value;
-          var newcxc = parseInt(val);
-          if (isNaN(newcxc) || $(this).val().length>4){    
-             this.value ='';
-             $('#sgem_mrc_err_new_term').html('This cannot be empty').fadeIn();      
-              $(this).css({
-            "border": "1px solid red",
-            "background": "#FFCECE"
-          }); 
-        
-           
-      }else{
-         $('#sgem_mrc_err_new_term').html('').fadeOut();  
-        $(this).css({
-            "border": "1px solid #707070",
-            "background": "#ffffff"
-          }); 
-      }   
-        });
-
-           // refinance fee
-        $('#sgem_mrc_refinance_fee').on('keyup', function () {
-          var val = this.value;
-          var xvvc = parseInt(val);
-          if (isNaN(xvvc) || $(this).val().length>9){
-             
-             this.value ='';
-             $('#sgem_mrc_err_refinance_fee').html('This cannot be empty or more than $9,000,000').fadeIn();  
-              $(this).css({
-            "border": "1px solid red",
-            "background": "#FFCECE" });  
-              
-
-      }else{
-         $('#sgem_mrc_err_refinance_fee').html('').fadeOut();  
-        $(this).css({
-            "border": "1px solid #707070",
-            "background": "#ffffff"
-          }); 
-      }    
-        });
-
-             // cash out
-        $('#sgem_mrc_cash_out_refinance').on('keyup', function () {
-          var val = this.value;
-          var sxvvc = parseInt(val);
-          if (isNaN(sxvvc) || $(this).val().length>9){
-             
-             this.value ='';
-             $('#sgem_mrc_err_cash_out_refinance').html('This cannot be empty or more than $9,000,000').fadeIn();  
-              $(this).css({
-            "border": "1px solid red",
-            "background": "#FFCECE" });  
-              
-
-      }else{
-         $('#sgem_mrc_err_cash_out_refinance').html('').fadeOut();  
-        $(this).css({
-            "border": "1px solid #707070",
-            "background": "#ffffff"
-          }); 
-      }    
-        });
-
-    //-----------
-
-    $('#sgem_mrc_currunt_interest_rate').on('keyup', function() {
-      if ($(this).val()==''){
-      
+    // Loan ammount
+    $('#sgem_plc_loan_amount_required').on('keyup', function () {
+      var val = this.value;
+      var xcx = parseInt(val);
+      if (isNaN(xcx) || $(this).val().length>11){
+         
+         this.value ='';
+         $('#sgem_plc_err_loan_amount_required').html('This cannot be empty or more than $900,000,000').fadeIn();  
           $(this).css({
-            "border": "1px solid red",
-            "background": "#FFCECE" });
-             $('#sgem_mrc_err_currunt_interest_rate').html('This cannot be empty or more than 100%').fadeIn(); 
+        "border": "1px solid red",
+        "background": "#FFCECE" });  
+          
 
-      }
-                
-        });
-
-
-    $('#sgem_mrc_new_interest_rate').on('keyup', function() {
-      if ($(this).val()==''){
-      
-          $(this).css({
-            "border": "1px solid red",
-            "background": "#FFCECE" });
-             $('#sgem_mrc_err_new_interest_rate').html('This cannot be empty or more than 100%').fadeIn(); 
-
-      }
-                
+    }else{
+     $('#sgem_plc_err_loan_amount_required').html('').fadeOut();  
+    $(this).css({
+        "border": "1px solid #707070",
+        "background": "#ffffff"
+      }); 
+    }    
     });
 
+     //loan term
+     $('#sgem_plc_loan_term').on('keyup', function () {
+      var vrr     = $('#sgem_plc_loan_term').val().trim();
 
+      if (isNaN(vrr) || vrr>100){
+         
+         this.value ='';
+         $('#sgem_plc_err_loan_required').html('This cannot be empty or more than 100').fadeIn();  
+          $(this).css({
+        "border": "1px solid red",
+        "background": "#FFCECE" });  
+          
 
+    }else{
+     $('#sgem_plc_err_loan_required').html('').fadeOut();  
+    $(this).css({
+        "border": "1px solid #707070",
+        "background": "#ffffff"
+      }); 
+    }    
+    });
+
+     //annual inerest rate
+     $('#sgem_plc_annual_interest_rate').on('keyup', function () {
+      var svrr2     = $('#sgem_plc_annual_interest_rate').val().trim();
+      var svrr = svrr2.replace('%', "");
+      if (isNaN(svrr) || svrr>100){
+         
+         this.value ='';
+         $('#sgem_plc_err_no_of_months').html('This cannot be empty or more than 100%').fadeIn();  
+          $(this).css({
+        "border": "1px solid red",
+        "background": "#FFCECE" });  
+          
+
+    }else{
+     $('#sgem_plc_err_no_of_months').html('').fadeOut();  
+    $(this).css({
+        "border": "1px solid #707070",
+        "background": "#ffffff"
+      }); 
+    }    
+    });
+
+    $('#sgem_plc_loan_term').on('keyup', function() {
+      if ($(this).val()==''){
+      
+          $(this).css({
+            "border": "1px solid red",
+            "background": "#FFCECE" });
+             $('#sgem_plc_err_loan_required').html('This cannot be empty or more than 100').fadeIn(); 
+
+      }
+                
+        }); 
+
+      $('#sgem_plc_annual_interest_rate').on('keyup', function() {
+      if ($(this).val()==''){
+      
+          $(this).css({
+            "border": "1px solid red",
+            "background": "#FFCECE" });
+             $('#sgem_plc_err_no_of_months').html('This cannot be empty or more than 100%').fadeIn(); 
+
+      }
+                
+        }); 
+
+    //---------------------------------------------------------------------------------------------------
 });
 
-function isChecked() {
 
-    sgem_mrf_calculationmin();
+  // chart 1 start 
+  var data_pl_chart_years_values =  JSON.parse(localStorage.getItem('sgem_pl_yearsx_array')),
+  data_pl_chart_end_blance_values =  JSON.parse(localStorage.getItem('sgem_pl_end_balance_array')),
+  data_pl_chart_max1_values =  JSON.parse(localStorage.getItem('total_p_and_i'));
 
-}
-
-//-----------------------------
-//Chart
-
-// setup 
-var data_mrf_chart_values =  JSON.parse(localStorage.getItem('sgem_mrf_chart_array'));
-
-const data = {
-    labels: ['Cost','1 yr', '10 yrs', '20 yrs', '30 yrs'],
-    datasets: [{
-        label: 'Amount',
-        data: data_mrf_chart_values,
-        backgroundColor: [
-            '#FF5964',
-            '#4BCC8C',
-            '#4BCC8C',
-            '#4BCC8C',
-            '#4BCC8C'
-        ],
-        borderColor: [
-            '#FF5964',
-            '#4BCC8C',
-            '#4BCC8C',
-            '#4BCC8C',
-            '#4BCC8C'
-        ],
-        borderWidth: 1,
-        barThickness: 20,
-        // barPercentage: 0.50,
-
-       //categoryPercentage: 0.5,
-        // barPercentage: 1.0
-        Bar: 1.0,
-        Category: 1.0,
-    }]
-};
-
-// config 
-const config = {
-    type: 'bar',
-    data,
-    options: {  
-		layout: {
-            padding: {
-                left: 0
-            }
-        },
-        indexAxis: 'y',
-        legend: {
-            display: false
-        },
-        scales: { 
+  var ctx = document.getElementById('myChart').getContext('2d');
+  var gradientBg = ctx.createLinearGradient(0, 0, 0, 500);
+  
+  gradientBg.addColorStop(0, '#A5E5C5');
+  gradientBg.addColorStop(0.5, '#A5E5C5');
+  gradientBg.addColorStop(1, '#fff');
+  gradientBg.addColorStop(1, '#fff');
+  
+  var myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+          labels: data_pl_chart_years_values,
+          datasets: [{
+              label: 'Amount ',
+              data: data_pl_chart_end_blance_values,
+              borderWidth: 2,
+              backgroundColor: gradientBg,
+              borderColor: "#4BCC8C",
+              fill: true,
+              tension: 0.5,
+              pointRadius: 0,
+              pointHitRadius: 50,
+          }]
+      },
+      options: {
+          scales: {
             y: {
-                grid: {
-                    display: false,
+              min:0,
+              max: 100000,
+              grid: {
+                borderDash: [1, 2],
+                color: "#9F9F9F"
+              },
+              beginAtZero: true,
+              ticks: {
+                callback: function(value, index, ticks) {
+                    // return '$' + value;
+                    return '$' + value / 1000 + "k";
                 },
-                beginAtZero: true,
-                ticks: {
-                    // callback: function(value, index, ticks) {
-                    //     return value + ' yrs';
-                    // },
-                    font: {
-                        size: 14,
-                        family: "'DM Sans'",
-                    }
-                }
-            },
-            x: {
-                grid: {
-                    display: false,
-                },
-                ticks: {
-                    // Include a dollar sign in the ticks
-                    callback: function(value, index, ticks) {
-                        // return '$' + value;
-                        return '$' + value / 1000 + "k";
-                    },
-                    font: {
-                        size: 14,
-                        family: "'DM Sans'",
-                    }
-
-                }
-            },
-        },
-
-        plugins: {
-            legend: {
-                display: false
-            },
-            tooltip: {
-                backgroundColor: 'white',
-                yAlign: 'bottom',
-                borderColor: 'hsl(210, 3%, 70%)',
-                borderWidth: 1,
-                usePointStyle: true,
-                bodyFont: {
+                font: {
                     size: 14,
                     family: "'DM Sans'",
-                },
-                titleFont: {
-                    size: 14,
-                    family: "'DM Sans'"
-                },
-                bodySpacing: 1,
-                titleColor: '#000',
-                labelColor: '#000',
-                boxWidth: 0,
-                boxHeight: 30,
-                callbacks: {
-                    labelTextColor: function(context) {
-                        //return myChart.data.datasets.borderColor;
-                        return '#4BCC8C';
-                    },
-                    labelPointStyle: function(context) {
-                        return {
-                            pointStyle: 'triangle',
-                            rotation: 0
-                        };
-                    }
                 }
+              }
+            },
+            x: {
+              grid: {
+                display: false,
+              },
+              ticks: {
+                // Include a dollar sign in the ticks
+                // callback: function(value, index, ticks) {
+                //     // return '$' + value;
+                //     return '$' + value / 1000 + "k";
+                // },
+                font: {
+                    size: 14,
+                    family: "'DM Sans'",
+                }
+              }
+            },
+          },
+  
+          legend: {
+              display: false
+          },
+  
+          plugins: {
+            legend: {
+              display: false    
+            },
+            tooltip: {
+              backgroundColor: 'white',
+              yAlign: 'bottom',
+              borderColor: 'hsl(210, 3%, 70%)',
+              borderWidth: 1,
+              usePointStyle: true,
+              bodyFont: {
+                size: 14,
+                family: "'DM Sans'",
+              },
+              titleFont: {
+                  size: 14,
+                  family: "'DM Sans'"
+              },
+              bodySpacing: 1,
+              titleColor: '#000',
+              labelColor: '#000',
+              boxWidth: 0,
+              boxHeight: 30,
+              callbacks: {
+                labelTextColor: function(context){
+                    //return myChart.data.datasets.borderColor;
+                    return '#4BCC8C';
+                },
+                labelPointStyle: function(context) {
+                    return {
+                        pointStyle: 'triangle',
+                        rotation: 0
+                    };
+                }
+              } 
             }
-        }
-    }
-};
-
-// render init block
-const myChart = new Chart(
-    document.getElementById('myChart'),
-    config
-);
-
-function mrf_update_chart(){
+          }
+      }
+  });
   
-  myChart.data.datasets[0].data = JSON.parse(localStorage.getItem('sgem_mrf_chart_array')); 
+  document.getElementById('sgem_plc_principle').style.backgroundColor = myChart.data.datasets[0].borderColor;
   
-  myChart.update();  
+  // chart 2 start 
 
-}
+  var data_pl_chart_years_values2 =  JSON.parse(localStorage.getItem('sgem_pl_yearsx_array')),
+   data_pl_chart_principal_values =  JSON.parse(localStorage.getItem('sgem_pl_principal_p_array')),
+   data_pl_chart_intrest_values =  JSON.parse(localStorage.getItem('sgem_pl_intrest_p_array')),
+   data_pl_chart_max1_values2 =  JSON.parse(localStorage.getItem('total_p_and_i'));
 
-
-// document.getElementById('sgem_mrc_cost').style.backgroundColor = myChart.data.datasets[0].backgroundColor[0];
-// document.getElementById('sgem_mrc_liftime_saving').style.backgroundColor = myChart.data.datasets[0].backgroundColor[1];
-
-$(document).ready(function() {
-    if ($('.sgem-mrc-cal-wrapper').width() < 1100) {
-        $('.sgem-mrc-cal-left').addClass('sgem-mrc-cal-left-add-class');
-        $('.sgem-mrc-cal-right').addClass('sgem-mrc-cal-right-add-class');
-    } else {
-        $('.sgem-mrc-cal-left').removeClass('sgem-mrc-cal-left-add-class');
-        $('.sgem-mrc-cal-right').removeClass('sgem-mrc-cal-right-add-class');
+  var ctx = document.getElementById('myChart2').getContext('2d');
+  var myChart2 = new Chart(ctx, {
+      type: 'bar',
+      data: {
+          labels: data_pl_chart_years_values2,
+          datasets: [{
+              label: 'Principal ',
+              data: data_pl_chart_principal_values,
+              borderWidth: 2,
+              backgroundColor: "#4BCC8C",
+              borderColor: "#4BCC8C",
+              fill: true,
+              tension: 0.5,
+              pointRadius: 0,
+              pointHitRadius: 50,
+              order: 1,
+  //             barThickness: 70,
+          },
+          {
+              label: 'Interest ',
+              data: data_pl_chart_intrest_values,
+              borderWidth: 2,
+              backgroundColor: "#1569B0",
+              borderColor: "#1569B0",
+              fill: true,
+              tension: 0.5,
+              pointRadius: 0,
+              pointHitRadius: 50,
+              order: 2,
+  //             barThickness: 70,
+          }]
+      },
+      options: {
+          scales: {
+            y: {
+              min:0,
+              max: 700000,
+              grid: {
+                // display: false,
+                borderDash: [8, 4],
+                color: "#9F9F9F"
+              },
+              stacked: true,
+              beginAtZero: true,
+              ticks: {
+                callback: function(value, index, ticks) {
+                    // return '$' + value;
+                    return '$' + value / 1000 + "k";
+                },
+                font: {
+                    size: 14,
+                    family: "'DM Sans'",
+                }
+              }
+            },
+            x: {
+              grid: {
+                display: false,
+              },
+              stacked: true,
+              ticks: {
+                // Include a dollar sign in the ticks
+                // callback: function(value, index, ticks) {
+                //     // return '$' + value;
+                //     return '$' + value / 1000 + "k";
+                // },
+                font: {
+                    size: 14,
+                    family: "'DM Sans'",
+                }
+              }
+            },
+          },
+  
+          legend: {
+              display: false
+          },
+  
+          plugins: {
+            legend: {
+              display: false    
+            },
+            tooltip: {
+              backgroundColor: 'white',
+              yAlign: 'bottom',
+              borderColor: 'hsl(210, 3%, 70%)',
+              borderWidth: 1,
+              usePointStyle: true,
+              bodyFont: {
+                size: 14,
+                family: "'DM Sans'",
+              },
+              titleFont: {
+                  size: 14,
+                  family: "'DM Sans'"
+              },
+              bodySpacing: 1,
+              titleColor: '#000',
+              labelColor: '#000',
+              boxWidth: 0,
+              boxHeight: 30,
+              callbacks: {
+                labelTextColor: function(context){
+                    return myChart.data.datasets[0].borderColor;
+  //                   return '#4BCC8C';
+                },
+                labelPointStyle: function(context) {
+                    return {
+                        pointStyle: 'triangle',
+                        rotation: 0
+                    };
+                }
+              } 
+            }
+          }
+      }
+  });
+    
+  document.getElementById('sgem_plc_principle_l2').style.backgroundColor = myChart2.data.datasets[0].borderColor;
+  document.getElementById('sgem_plc_le_interest').style.backgroundColor = myChart2.data.datasets[1].borderColor;
+  
+  function toggleData(value){
+    const visibilityData = myChart2.isDatasetVisible(value);
+    if (visibilityData === true ){
+      myChart2.hide(value);
     }
+     if (visibilityData === false ){
+      myChart2.show(value);
+    } 
+  }
 
-    if ($('.sgem-mrc-cal-main-id').width() < 650) {
-        $('.sgem-mrc-cal-wrapper').addClass('sgem-mrc-wrapper-add-mobile');
-    } else {
-        $('.sgem-mrc-cal-wrapper').removeClass('sgem-mrc-wrapper-add-mobile');
+  function toggleDatachart(value){
+    const visibilityData = myChart.isDatasetVisible(value);
+    if (visibilityData === true ){
+      myChart.hide(value);
     }
+     if (visibilityData === false ){
+      myChart.show(value);
+    } 
+  }
 
-    $(window).on('resize', function() {
-        if ($('.sgem-mrc-cal-wrapper').width() < 1100) {
-            $('.sgem-mrc-cal-left').addClass('sgem-mrc-cal-left-add-class');
-            $('.sgem-mrc-cal-right').addClass('sgem-mrc-cal-right-add-class');
-        } else {
-            $('.sgem-mrc-cal-left').removeClass('sgem-mrc-cal-left-add-class');
-            $('.sgem-mrc-cal-right').removeClass('sgem-mrc-cal-right-add-class');
-        }
-    }).trigger('resize');
+  function pl_update_chart(){
+ 
+    myChart.data.labels = JSON.parse(localStorage.getItem('sgem_pl_yearsx_array'));
+  
+    myChart.data.datasets[0].data = JSON.parse(localStorage.getItem('sgem_pl_end_balance_array'));  
 
-    $(window).on('resize', function() {
-        if ($('.sgem-mrc-cal-main-id').width() < 650) {
-            $('.sgem-mrc-cal-wrapper').addClass('sgem-mrc-wrapper-add-mobile');
-        } else {
-            $('.sgem-mrc-cal-wrapper').removeClass('sgem-mrc-wrapper-add-mobile');
-        }
-    }).trigger('resize');
-});
+    myChart.options.scales.y.max = JSON.parse(localStorage.getItem('total_p_and_i'));
 
+    myChart2.data.labels = JSON.parse(localStorage.getItem('sgem_pl_yearsx_array'));
 
-function toggleData(value) {
-    const visibilityData = myChart.isDatasetVisible(0);
-    if (visibilityData === true) {
-        myChart.hide(value);
-    }
-    if (visibilityData === false) {
-        myChart.show(value);
-    }
-}
+    myChart2.data.datasets[0].data = JSON.parse(localStorage.getItem('sgem_pl_principal_p_array')); 
 
-//-----------------------------
+    myChart2.data.datasets[1].data = JSON.parse(localStorage.getItem('sgem_pl_intrest_p_array')); 
 
-function isNumber(evt) {
+    myChart2.options.scales.y.max = JSON.parse(localStorage.getItem('total_p_and_i'));
+  
+    myChart.update();
+    
+    myChart2.update();
+  
+  }
+ 
+  
+  $(document).ready(function() {
+      if ($('.sgem-plc-cal-wrapper').width() < 1024) {
+          $('.sgem-plc-cal-left').addClass('sgem-plc-cal-left-add-class');
+          $('.sgem-plc-cal-right').addClass('sgem-plc-cal-right-add-class');
+      } else {
+          $('.sgem-plc-cal-left').removeClass('sgem-plc-cal-left-add-class');
+          $('.sgem-plc-cal-right').removeClass('sgem-plc-cal-right-add-class');
+      }
+  
+      if ($('.sgem-plc-cal-main-id').width() < 650) {
+          $('.sgem-plc-cal-wrapper').addClass('sgem-plc-wrapper-add-mobile');
+      } else {
+          $('.sgem-plc-cal-wrapper').removeClass('sgem-plc-wrapper-add-mobile');
+      }
+  
+      $(window).on('resize', function() {
+          if ($('.sgem-plc-cal-wrapper').width() < 1024) {
+              $('.sgem-plc-cal-left').addClass('sgem-plc-cal-left-add-class');
+              $('.sgem-plc-cal-right').addClass('sgem-plc-cal-right-add-class');
+          } else {
+              $('.sgem-plc-cal-left').removeClass('sgem-plc-cal-left-add-class');
+              $('.sgem-plc-cal-right').removeClass('sgem-plc-cal-right-add-class');
+          }
+      }).trigger('resize');
+  
+      $(window).on('resize', function() {
+          if ($('.sgem-plc-cal-main-id').width() < 650) {
+              $('.sgem-plc-cal-wrapper').addClass('sgem-plc-wrapper-add-mobile');
+          } else {
+              $('.sgem-plc-cal-wrapper').removeClass('sgem-plc-wrapper-add-mobile');
+          }
+      }).trigger('resize');
+  });
+  
+
+  function isNumber(evt) {
     evt = (evt) ? evt : window.event;
     var charCode = (evt.which) ? evt.which : evt.keyCode;
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
@@ -1079,21 +794,7 @@ function isNumber(evt) {
         return false;
     }
     return true;
-}
-
-
-/**
- * Percentage
- */
-
-$(function() {
-
-    $("#sgem_mrc_original_mortgage_interest_rate, #sgem_mrc_new_mortgage_interest_rate").on('input', function() {
-        $(this).val(function(i, v) {
-            return v.replace('%', '') + '%';
-        });
-    });
-});
+  }
 
 
 /**
