@@ -1115,6 +1115,6 @@ function sgem_pcm_copyText(ev){
 window.addEventListener('load', function() {
 	 
 	let sgemjsx = document.createElement('script');
-	   sgemjsx.setAttribute('src','https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js');
+	   sgemjsx.setAttribute('src','https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.js');
 	   document.body.appendChild(sgemjsx);
 });
