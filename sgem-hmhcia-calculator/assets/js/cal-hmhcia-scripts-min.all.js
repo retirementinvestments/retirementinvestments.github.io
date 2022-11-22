@@ -1541,6 +1541,6 @@ function sgem_hmhcia_copyText(ev){
 
 window.addEventListener('load', function() {     
     let sgemjsxc = document.createElement('script');
-       sgemjsxc.setAttribute('src','https://retirementinvestments.github.io/sgem-401k-calculator/assets/js/plugins/chartjs.min.js');
+       sgemjsxc.setAttribute('src','https://retirementinvestments.github.io/sgem-hmhcia-calculator/assets/js/plugins/chartjs.min.js');
        document.body.appendChild(sgemjsxc);
 });
