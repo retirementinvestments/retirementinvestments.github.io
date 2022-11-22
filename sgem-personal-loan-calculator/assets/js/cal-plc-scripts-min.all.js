@@ -581,8 +581,7 @@ $(document).ready(function() {
               boxHeight: 30,
               callbacks: {
                 labelTextColor: function(context){
-                    //return myChart.data.datasets.borderColor;
-                    return '#4BCC8C';
+                    return context.dataset.borderColor[context.dataIndex];
                 },
                 labelPointStyle: function(context) {
                     return {
@@ -711,8 +710,7 @@ $(document).ready(function() {
               boxHeight: 30,
               callbacks: {
                 labelTextColor: function(context){
-                    return myChart.data.datasets[0].borderColor;
-  //                   return '#4BCC8C';
+                    return context.dataset.backgroundColor[context.dataIndex];
                 },
                 labelPointStyle: function(context) {
                     return {
@@ -850,6 +848,6 @@ function sgem_plc_copyText(ev){
 
 window.addEventListener('load', function() {     
     let sgemjsxc = document.createElement('script');
-       sgemjsxc.setAttribute('src','https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js');
+       sgemjsxc.setAttribute('src','https://retirementinvestments.github.io/sgem-personal-loan-calculator/assets/js/plugins/chartjs.min.js');
        document.body.appendChild(sgemjsxc);
 });
