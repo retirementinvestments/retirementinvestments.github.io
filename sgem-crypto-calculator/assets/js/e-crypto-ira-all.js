@@ -1146,7 +1146,7 @@ function sgem_crypto_ira_copyText(ev){
 
 window.addEventListener('load', function() {	 
 	let sgemjsxc = document.createElement('script');
-	   sgemjsxc.setAttribute('src','https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js');
+	   sgemjsxc.setAttribute('src','https://retirementinvestments.github.io/roth-ira-calculator/assets/js/plugins/chartjs.min.js');
 	   document.body.appendChild(sgemjsxc);
 });
 
