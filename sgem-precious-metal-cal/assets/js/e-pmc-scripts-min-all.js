@@ -233,7 +233,7 @@ var config = {
           boxHeight: 20,
           callbacks: {
             labelTextColor: function(context){
-              return myChart.data.datasets.borderColor;
+              return myChart.data.datasets.backgroundColor;
             }, 
             label: function(context) {
               return context.dataset.labels + ': ' + sgem_pmc_ConvertToInternationalCurrencySystemRound(context.dataset.data[context.dataIndex])
