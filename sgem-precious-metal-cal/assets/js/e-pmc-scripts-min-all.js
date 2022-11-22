@@ -234,6 +234,7 @@ var config = {
           callbacks: {
             labelTextColor: function(context){
               // return myChart.data.datasets.backgroundColor;
+                return '#757575';
             }, 
             label: function(context) {
               return context.dataset.labels + ': ' + sgem_pmc_ConvertToInternationalCurrencySystemRound(context.dataset.data[context.dataIndex])
