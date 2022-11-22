@@ -316,8 +316,8 @@ return new Intl.NumberFormat('en-US', {style: 'currency',
         boxHeight: 20,
         callbacks: {
           labelTextColor: function(context){
-            // return myChart.data.datasets.borderColor;
-            return '#757575';
+            return context.dataset.backgroundColor[context.dataIndex];
+            // return '#757575';
           },
           /* beforeLabel: (tooltipItems) => {
              console.log(tooltipItems);
