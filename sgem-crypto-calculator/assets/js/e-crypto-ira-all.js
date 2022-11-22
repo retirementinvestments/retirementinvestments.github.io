@@ -179,7 +179,8 @@ var config = {
           callbacks: {
             labelTextColor: function(context){
               // return myChart.data.datasets.borderColor;
-                return '#757575';
+                // return '#757575';
+                return context.dataset.backgroundColor[context.dataIndex];
             }, 
             label: function(context) {
               return context.dataset.labels + ': ' + sgem_crypto_ConvertToInternationalCurrencySystemRound(context.dataset.data[context.dataIndex])
