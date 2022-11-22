@@ -234,9 +234,9 @@ var config = {
           callbacks: {
             labelTextColor: function(context){
                 // return myChart.data.datasets.backgroundColor;
-                return '#757575';
+                // return '#757575';
                 // console.log(context);
-                // return context.dataset.backgroundColor[context.dataIndex];
+                return context.dataset.backgroundColor[context.dataIndex];
             }, 
             label: function(context) {
               return context.dataset.labels + ': ' + sgem_pmc_ConvertToInternationalCurrencySystemRound(context.dataset.data[context.dataIndex])
@@ -1115,6 +1115,6 @@ function sgem_pcm_copyText(ev){
 window.addEventListener('load', function() {
 	 
 	let sgemjsx = document.createElement('script');
-	   sgemjsx.setAttribute('src','https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js');
+	   sgemjsx.setAttribute('src','https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js');
 	   document.body.appendChild(sgemjsx);
 });
