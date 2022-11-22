@@ -581,7 +581,7 @@ $(document).ready(function() {
               boxHeight: 30,
               callbacks: {
                 labelTextColor: function(context){
-                    return context.dataset.borderColor[context.dataIndex];
+                    return '#4BCC8C';
                 },
                 labelPointStyle: function(context) {
                     return {
