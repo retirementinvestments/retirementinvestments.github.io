@@ -221,28 +221,28 @@ localStorage.setItem('401k_chart_y_max','0');
     datasets: [
   { //[0]
     label: 'Age',
-    backgroundColor: "#000",
+    backgroundColor: "rgba(0, 0, 0, 1)",
     labels:  ['Age'],
     data: data_401_age,
   },
   { //[1]
     label: 'Individual contribution',
-    backgroundColor: "#1569B0",
+    backgroundColor: "rgba(21, 105, 176, 1)",
     labels:  ['Individual contribution'],
     data: data_401_individual_contribution,
   }, { // [2]
     label: 'Catch up',
-    backgroundColor: "#FEB929",
+    backgroundColor: "rgba(254, 185, 41, 1)",
     labels:  ['Catch up'],
     data: data_401_catchup_con,
   }, { // [3]
     label: 'Employer match',
-    backgroundColor: "#42C581",
+    backgroundColor: "rgba(66, 197, 129, 1)",
     labels:  ['Employer match'],
     data: data_401_employer_match,
   },{ // [4]
     label: 'Interest accumulated',
-    backgroundColor: "#FF824A",
+    backgroundColor: "rgba(255, 130, 74, 1)",
     labels:  ['Interest accumulated'],
     data: data_401_intrest_com,
   }
@@ -326,8 +326,9 @@ localStorage.setItem('401k_chart_y_max','0');
           boxHeight: 20,
           callbacks: {
             labelTextColor: function(context){
-              return myChart.data.datasets.backgroundColor;
+              // return myChart.data.datasets.backgroundColor;
                 // return '#757575';
+                return context.dataset.backgroundColor[context.dataIndex];
             }, 
             label: function(context) {
               return context.dataset.labels + ': ' + sgem_401_ConvertToInternationalCurrencySystemRoundtooltip(context.dataset.data[context.dataIndex])
