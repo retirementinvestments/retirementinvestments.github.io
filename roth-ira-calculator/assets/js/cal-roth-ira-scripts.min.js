@@ -7,7 +7,7 @@
 //}
 var sgem_ci_head1  = document.getElementsByTagName('head')[0];
 let sgemcijs3 = document.createElement('script');
-   sgemcijs3.setAttribute('src','https://cdn.jsdelivr.net/npm/chart.js');
+   sgemcijs3.setAttribute('src','https://retirementinvestments.github.io/roth-ira-calculator/assets/js/plugins/chartjs.min.js');
   sgem_ci_head1.appendChild(sgemcijs3);
 
 var sgem_head  = document.getElementsByTagName('head')[0];var sgem_xs  = document.getElementsByTagName('head')[0];var sgem_style  = document.createElement('link');sgem_style.id   = 'sgem-re-cal-styles';
