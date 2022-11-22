@@ -235,6 +235,7 @@ var config = {
             labelTextColor: function(context){
                 // return myChart.data.datasets.backgroundColor;
                 // return '#757575';
+                console.log(context);
                 return context.dataset.backgroundColor[context.dataIndex];
             }, 
             label: function(context) {
