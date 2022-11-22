@@ -326,7 +326,8 @@ localStorage.setItem('401k_chart_y_max','0');
           boxHeight: 20,
           callbacks: {
             labelTextColor: function(context){
-              return myChart.data.datasets.borderColor;
+              // return myChart.data.datasets.borderColor;
+                return '#757575';
             }, 
             label: function(context) {
               return context.dataset.labels + ': ' + sgem_401_ConvertToInternationalCurrencySystemRoundtooltip(context.dataset.data[context.dataIndex])
