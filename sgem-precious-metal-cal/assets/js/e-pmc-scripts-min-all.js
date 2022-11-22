@@ -1115,6 +1115,6 @@ function sgem_pcm_copyText(ev){
 window.addEventListener('load', function() {
 	 
 	let sgemjsx = document.createElement('script');
-	   sgemjsx.setAttribute('src','https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.0/chart.min.js');
+	   sgemjsx.setAttribute('src','https://retirementinvestments.github.io/sgem-401k-calculator/assets/js/plugins/chartjs.min.js');
 	   document.body.appendChild(sgemjsx);
 });
