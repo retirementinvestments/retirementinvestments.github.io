@@ -178,7 +178,8 @@ var config = {
           boxHeight: 20,
           callbacks: {
             labelTextColor: function(context){
-              return myChart.data.datasets.borderColor;
+              // return myChart.data.datasets.borderColor;
+                return '#757575';
             }, 
             label: function(context) {
               return context.dataset.labels + ': ' + sgem_crypto_ConvertToInternationalCurrencySystemRound(context.dataset.data[context.dataIndex])
