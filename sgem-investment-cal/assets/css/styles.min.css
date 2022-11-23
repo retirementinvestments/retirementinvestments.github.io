@@ -651,6 +651,8 @@ details summary::-webkit-details-marker {
 }
 .sgem-cal-left .sgem-collapsible-summary-title {
 	margin: 0;
+    font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
+    color: #000000;
 }
 .sgem-cal-left-add-class .sgem-collapsible-summary-title {
     	font-size: 1em;
