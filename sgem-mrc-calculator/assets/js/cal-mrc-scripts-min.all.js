@@ -180,7 +180,7 @@ var sgem_mrc_main_contents = '<div class="sgem-mrc-cal-main-id">'+
 sgem_mrc_main_contents += '<div class="sgem-mrc-section-disclaimer"><details class="sgem-mrc-details-disclaimer"><summary><div class="sgem-mrc-collapsible-summary-disclaimer">Disclaimer</div></summary><div class="sgem-mrc-collapsible-text-disclaimer">This material is provided for general and educational purposes only; it is not intended to provide legal, tax or investment advice.</div>';
 sgem_mrc_main_contents += '</details></div></div></div></div>';
 
-if( (location.hostname != "calculatorstg.wpengine.com") || (location.hostname != "retirementinvestments.com" || (location.hostname != "staging.retirementinvestments.com") ){
+if( (location.hostname != "calculatorstg.wpengine.com") || (location.hostname != "retirementinvestments.com") || (location.hostname != "staging.retirementinvestments.com") ){
     sgem_mrc_main_contents += '<div class="sgem-mrc-logo-center">';
     sgem_mrc_main_contents += '<a class="sgem-mrc-logo-image" href="https://retirementinvestments.com/real-estate/refinance-calculator/" target="_blank" rel="noopener">';
     sgem_mrc_main_contents += 'Mortgage Refinance Calculator</a>&nbsp; by Retirement Investments</div>';
