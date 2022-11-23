@@ -87,7 +87,7 @@ height: 1px;
 background-color: #f3f3f3;
 }
 .sgem-crypto-ira-cal-right {
-   width: 700px;
+   width: 770px;
    background-color: #fff;
    display: flex;
    flex-direction: column;
@@ -1144,65 +1144,3 @@ details summary::-webkit-details-marker {
    }
 }
 
-
-/* new eqcss */
- /* new eqcss */
-  @element .sgem-crypto-ira-cal-wrapper and (min-width:700px) and (max-width:1024px)  {
-    :self .sgem-crypto-ira-cal-left {
-      width: 100%;
-      padding-top: 32px;
-      padding-right: 0px;
-      padding-left: 18px;
-      padding-bottom: 32px;
-    } 
-  } 
-  @element .sgem-crypto-ira-cal-wrapper and (min-width:700px) and (max-width:1024px) {
-    :self .sgem-crypto-ira-cal-right {
-      width: 100%;
-    } 
-  } 
-  @element .sgem-crypto-ira-cal-wrapper and (min-width:700px) and (max-width:1024px)  {
-    :self .sgem-crypto-ira-cal-1 .sgem-crypto-ira-flex-container {
-        flex-direction: column;
-    } 
-  } 
-  @element .sgem-crypto-ira-cal-wrapper and (min-width:700px) and (max-width:1024px)  {
-    :self .sgem-crypto-ira-cal-1 input[type="text"] {
-        width: 100%;
-    } 
-  } 
-  @element .sgem-crypto-ira-cal-wrapper and (min-width:700px) and (max-width:1024px)  {
-    :self .sgem-crypto-ira-cal-1 .sgem-crypto-ira-flex-container .sgem-crypto-ira-form-flex {
-        padding-right: 25px;
-    } 
-  }
-  @element .sgem-crypto-ira-cal-wrapper and (min-width:700px) and (max-width:1024px) {
-    :self .sgem-crypto-ira-cal-right .sgem-crypto-ira-cal-1-result-wrapper {
-      padding: 26px;
-    } 
-  } 
-  @element .sgem-crypto-ira-cal-wrapper and (min-width:700px) and (max-width:1024px) {
-    :self .sgem-crypto-ira-cal-left .sgem-crypto-ira-flex-container .sgem-crypto-ira-full-flex {
-      flex-direction: column;
-      padding-right: 25px;
-    } 
-  } 
-  @element .sgem-crypto-ira-cal-wrapper and (min-width:700px) and (max-width:1024px) {
-    :self .sgem-crypto-ira-cal-left {
-      width: 100%;  
-      padding-left: 12px;
-    } 
-  } 
-  @element .sgem-crypto-ira-cal-wrapper and (min-width:700px) and (max-width:1024px) {
-    :self .sgem-crypto-ira-cal-right .sgem-crypto-ira-column2 {
-      flex-direction: column;
-    } 
-  }
-    
-    /* *************** */
-    @element .sgem-crypto-ira-cal-wrapper and (max-width: 695px) {
-     :self .sgem-crypto-ira-cal-left {
-       padding-right: 3px;
-       padding-left: 12px;
-     } 
-   }  
