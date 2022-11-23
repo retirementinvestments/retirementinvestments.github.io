@@ -128,12 +128,12 @@ sgem_plc_main_contents += 'This material is provided for general and educational
 sgem_plc_main_contents += '</div></details></div></div></div></div>';
 
 
-if( (location.hostname != "calculatorstg.wpengine.com") || (location.hostname != "retirementinvestments.com") ){
+if( (location.hostname != "calculatorstg.wpengine.com") || (location.hostname != "retirementinvestments.com") || (location.hostname != "staging.retirementinvestments.com") ){
     sgem_plc_main_contents += '<div class="sgem-plc-logo-center"><a class="sgem-plc-logo-image" href="https://retirementinvestments.com/loans/personal-loan-calculator/" target="_blank" rel="noopener">';
     sgem_plc_main_contents += 'Personal Loan Calculator</a>&nbsp; by Retirement Investments</div>';
 }
 
-if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com"){
+if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com" || location.hostname == "staging.retirementinvestments.com"){
     sgem_plc_main_contents += '<div class="sgem-plc-copy-option-panel"><h3>Do you want to add this calculator into your website?</h3>';
     sgem_plc_main_contents += '<div class="sgem-plc-copy-code-wrap">';
     sgem_plc_main_contents += '<button class="sgem-plc-copy-code" id="sgem-plc-copy-code" onclick="sgem_plc_copyText(event)">Get Calculator</button>';
@@ -347,6 +347,8 @@ $(document).ready(function() {
         $('.sgem-plc-logo-center').hide(); 
     } else if(location.hostname == "retirementinvestments.com"){
         $('.sgem-plc-logo-center').hide();  
+    } else if(location.hostname == "staging.retirementinvestments.com"){
+        $('.sgem-hmhcia-logo-center').hide();  
     } else {
         $('.sgem-plc-logo-center').show();  
     }
