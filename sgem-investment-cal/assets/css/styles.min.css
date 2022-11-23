@@ -535,7 +535,7 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
     color: #000;
     padding-bottom: 5px;
 }
-.sgem-cal-copy-code {
+.sgem-cal-copy-code-wrap .sgem-cal-copy-code {
     background: #ffc12e;
     font-size: 16px;
     font-weight: 700;
@@ -551,6 +551,10 @@ details.sgem-ret-details-disclaimer[open] > summary::after {
     line-height: 1.5em !important;
     cursor: pointer;
     width: auto;
+}
+.sgem-cal-copy-code-wrap .sgem-cal-copy-code:hover {
+    background-color: #ffd061;
+    color: #002340;
 }
 .sgem-cal-copy-option-panel {
     margin-top: 25px;
