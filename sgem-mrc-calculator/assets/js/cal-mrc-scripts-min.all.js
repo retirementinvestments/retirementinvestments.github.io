@@ -577,7 +577,7 @@ $(document).ready(function() {
     } else if(location.hostname == "retirementinvestments.com"){
         $('.sgem-mrc-logo-center').hide();  
     } else if(location.hostname == "staging.retirementinvestments.com"){
-        $('.sgem-hmhcia-logo-center').hide();  
+        $('.sgem-mrc-logo-center').hide();  
     } else {
         $('.sgem-mrc-logo-center').show();  
     }

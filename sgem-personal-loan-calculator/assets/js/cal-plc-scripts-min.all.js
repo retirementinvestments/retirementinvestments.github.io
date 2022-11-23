@@ -348,7 +348,7 @@ $(document).ready(function() {
     } else if(location.hostname == "retirementinvestments.com"){
         $('.sgem-plc-logo-center').hide();  
     } else if(location.hostname == "staging.retirementinvestments.com"){
-        $('.sgem-hmhcia-logo-center').hide();  
+        $('.sgem-plc-logo-center').hide();  
     } else {
         $('.sgem-plc-logo-center').show();  
     }
