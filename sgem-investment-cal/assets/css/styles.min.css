@@ -255,7 +255,7 @@
     justify-content: center;
 }
 .sgem-cal-1 .sgem-cal-btn,
-.sgem-cal-1-result-footer .sgem-getStart {
+.sgem-cal-wrapper .sgem-cal-1-result-footer .sgem-getStart {
     font-size: 16px;
     font-weight: 700;
     letter-spacing: 0;
@@ -269,6 +269,10 @@
     height: 53px;
     text-align: center;
     text-decoration: none;
+}
+.sgem-cal-wrapper .sgem-cal-1-result-footer .sgem-getStart:hover {
+    color: #002340;
+    background-color: #ffd061;
 }
 .sgem-cal-1-result .sgem-needAtt {
     background-color: #ff5964;
