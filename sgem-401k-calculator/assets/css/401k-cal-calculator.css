@@ -50,11 +50,13 @@
 .sgem-401k-cal-left {
 	width: 470px;
 	padding: 20px 20px 20px 16px;
+} 
+.sgem-401k-cal-1 {
 	height: 820px;
     overflow: hidden;
     overflow-y: scroll;
-} 
-.sgem-401k-cal-left::-webkit-scrollbar {
+}
+.sgem-401k-cal-left .sgem-401k-cal-1::-webkit-scrollbar {
     width: 0px;
 }
 .sgem-401k-cal-right {
