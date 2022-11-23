@@ -98,11 +98,11 @@ sgem_pmc_main_contents += '</div>';
 sgem_pmc_main_contents += '</div>';
 sgem_pmc_main_contents += '</div>'; 
 
-if( (location.hostname != "calculatorstg.wpengine.com") || (location.hostname != "retirementinvestments.com") ){
+if( (location.hostname != "calculatorstg.wpengine.com") || (location.hostname != "retirementinvestments.com") || (location.hostname != "staging.retirementinvestments.com") ){
 	sgem_pmc_main_contents += '<div class="sgem-pmc-logo-center"><a class="sgem-pmc-url-text" href="https://retirementinvestments.com/precious-metals/precious-metals-ira-calculator/" target="_blank" rel="noopener">Precious Metals IRA Calculator&nbsp</a>by Retirement investments</div>';
 }	
 
-if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com"){
+if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com" || location.hostname == "staging.retirementinvestments.com"){
 	sgem_pmc_main_contents += '<div class="sgem-pmc-copy-option-panel">';
 	sgem_pmc_main_contents += '<h3>Do you want to add this calculator into your website?</h3>';
 	sgem_pmc_main_contents += '<div class="sgem-pmc-copy-code-wrap"><button class="sgem-pmc-copy-code" id="sgem-pmc-copy-code" onclick="sgem_pcm_copyText(event)">Get Calculator</button></div>';
@@ -355,6 +355,8 @@ if( location.hostname == "calculatorstg.wpengine.com") {
 	$('.sgem-pmc-logo-center').hide(); 
 } else if(location.hostname == "retirementinvestments.com"){
 	$('.sgem-pmc-logo-center').hide(); 	
+} else if(location.hostname == "staging.retirementinvestments.com"){
+    $('.sgem-pmc-logo-center').hide();  
 } else {
 	$('.sgem-pmc-logo-center').show(); 	
 }
