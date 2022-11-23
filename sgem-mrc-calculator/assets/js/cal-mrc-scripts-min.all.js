@@ -180,13 +180,13 @@ var sgem_mrc_main_contents = '<div class="sgem-mrc-cal-main-id">'+
 sgem_mrc_main_contents += '<div class="sgem-mrc-section-disclaimer"><details class="sgem-mrc-details-disclaimer"><summary><div class="sgem-mrc-collapsible-summary-disclaimer">Disclaimer</div></summary><div class="sgem-mrc-collapsible-text-disclaimer">This material is provided for general and educational purposes only; it is not intended to provide legal, tax or investment advice.</div>';
 sgem_mrc_main_contents += '</details></div></div></div></div>';
 
-if( (location.hostname != "calculatorstg.wpengine.com") || (location.hostname != "retirementinvestments.com" || location.hostname == "goldiracompanies.com") ){
+if( (location.hostname != "calculatorstg.wpengine.com") || (location.hostname != "retirementinvestments.com" || (location.hostname != "staging.retirementinvestments.com") ){
     sgem_mrc_main_contents += '<div class="sgem-mrc-logo-center">';
     sgem_mrc_main_contents += '<a class="sgem-mrc-logo-image" href="https://retirementinvestments.com/real-estate/refinance-calculator/" target="_blank" rel="noopener">';
     sgem_mrc_main_contents += 'Mortgage Refinance Calculator</a>&nbsp; by Retirement Investments</div>';
 }
     
-if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com"){
+if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com" || location.hostname == "staging.retirementinvestments.com"){
     sgem_mrc_main_contents += '<div class="sgem-mrc-copy-option-panel"><h3>Do you want to add this calculator into your website?</h3>';
     sgem_mrc_main_contents += '<div class="sgem-mrc-copy-code-wrap">';
     sgem_mrc_main_contents += '<button class="sgem-mrc-copy-code" id="sgem-mrc-copy-code" onclick="sgem_mrc_copyText(event)">Get Calculator</button>';
@@ -576,6 +576,8 @@ $(document).ready(function() {
         $('.sgem-mrc-logo-center').hide(); 
     } else if(location.hostname == "retirementinvestments.com"){
         $('.sgem-mrc-logo-center').hide();  
+    } else if(location.hostname == "staging.retirementinvestments.com"){
+        $('.sgem-hmhcia-logo-center').hide();  
     } else {
         $('.sgem-mrc-logo-center').show();  
     }
