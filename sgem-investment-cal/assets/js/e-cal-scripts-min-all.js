@@ -111,8 +111,12 @@ jQuery(document).ready(function($){
     tippy('.sgem-tooltip', {animation: 'sacle',theme: 'light-border', boundary: 'viewport',allowHTML: true,arrow: true,placement: 'top',size:'large',trigger: 'click',  });
 
 
-if( location.hostname == "calculatorstg.wpengine.com") || (location.hostname == "retirementinvestments.com") || (location.hostname == "staging.retirementinvestments.com") {
+if( location.hostname == "calculatorstg.wpengine.com") {
 	$('.sgem-ret-logo-center').hide(); 
+} else if(location.hostname == "retirementinvestments.com"){
+	$('.sgem-ret-logo-center').hide(); 	
+} else if(location.hostname == "staging.retirementinvestments.com"){
+	$('.sgem-ret-logo-center').hide(); 	
 } else {
 	$('.sgem-ret-logo-center').show(); 	
 }
