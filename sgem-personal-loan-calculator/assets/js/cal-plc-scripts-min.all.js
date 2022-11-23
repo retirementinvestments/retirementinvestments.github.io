@@ -88,7 +88,7 @@ var sgem_plc_main_contents = '<div class="sgem-plc-cal-main-id">'+
                         '<div class="sgem-plc-legendbox">'+
                            '<div class="sgem-plc-legend-item"> '+
                               '<div id="sgem_plc_principle" onclick="toggleDatachart(0)" class="sgem-plc-principle"></div>'+
-                              '<div id="sgem_plc_principle_te" onclick="toggleDatachart(0)" class="sgem-plc-principle-te">Principle</div>'+
+                              '<div id="sgem_plc_principle_te" onclick="toggleDatachart(0)" class="sgem-plc-principle-te">Balance</div>'+
                            '</div>'+
                         '</div>'+
                      '</section>'+
