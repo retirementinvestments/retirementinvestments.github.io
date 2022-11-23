@@ -116,13 +116,13 @@ sgem_cpg_main_contents += '<div class="sgem-cpg-section-disclaimer"><details cla
 sgem_cpg_main_contents += '</summary><div class="sgem-cpg-collapsible-text-disclaimer">Calculations are estimates based on the tax law as of September 2021. These rates are subject to change. <a href="https://www.irs.gov/faqs/capital-gains-losses-and-sale-of-home" target="_blank">Check the IRS website</a> for the latest information about capital gains</div>';
 sgem_cpg_main_contents += '</details></div></div></div></div>';
     
-if( (location.hostname != "calculatorstg.wpengine.com") || (location.hostname != "retirementinvestments.com") ){
+if( (location.hostname != "calculatorstg.wpengine.com") || (location.hostname != "retirementinvestments.com") || (location.hostname != "staging.retirementinvestments.com") ){
     sgem_cpg_main_contents += '<div class="sgem-cpg-logo-center">';
     sgem_cpg_main_contents += '<a class="sgem-cpg-url-text" href="https://retirementinvestments.com/taxes/capital-gains-tax-calculator/" target="_blank" rel="noopener">Capital Gains Calculator&nbsp;</a>by&nbsp;Retirement investments</div>';
    
 }
     
-if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com"){
+if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com" || location.hostname == "staging.retirementinvestments.com"){
     sgem_cpg_main_contents += '<div class="sgem-cpg-copy-option-panel">';
     sgem_cpg_main_contents += '<h3>Do you want to add this calculator into your website?</h3>';
     sgem_cpg_main_contents += '<div class="sgem-cpg-copy-code-wrap">';
@@ -2741,6 +2741,8 @@ $(document).ready(function() {
         $('.sgem-cpg-logo-center').hide(); 
     } else if(location.hostname == "retirementinvestments.com"){
         $('.sgem-cpg-logo-center').hide();  
+    } else if(location.hostname == "staging.retirementinvestments.com"){
+        $('.sgem-hmhcia-logo-center').hide();  
     } else {
         $('.sgem-cpg-logo-center').show();  
     }
