@@ -799,6 +799,15 @@ details summary::-webkit-details-marker {
   display:none !important;
 }
 
+.sgem-roth-ira-cal-wrapper .sgem-roth-ira-cal-1-result-footer .sgem-roth-ira-getStart:hover {
+    color: #002340;
+    background-color: #ffd061;
+}
+.sgem-roth-ira-copy-code-wrap .sgem-roth-ira-copy-code:hover {
+    background-color: #ffd061;
+    color: #002340;
+}
+
 /* max width css (add class js) */
 .sgem-roth-ira-cal-left.sgem-roth-ira-cal-left-add-class {
 	width: 33%;
