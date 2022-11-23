@@ -230,9 +230,12 @@
     line-height: 21px;
 }
 .sgem-roth-ira-details-disclaimer .sgem-roth-ira-collapsible-text-disclaimer {
-	font-size: 16px;
+	font-weight: 400;
+    font-size: 14px;
+    font-family: 'DM Sans',Helvetica,Arial,Lucida,sans-serif;
+    padding: 10px 0px;
     color: #474747;
-    font-weight: 300;
+    line-height: 18px;
 }
 .sgem-roth-ira-cal-1-result-header {
 	font-family: 'DM Sans',Helvetica,Arial,Lucida,sans-serif;
