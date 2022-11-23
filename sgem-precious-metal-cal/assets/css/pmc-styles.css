@@ -725,6 +725,15 @@ details summary::-webkit-details-marker {
   display:none !important;
 }
 
+.sgem-pmc-cal-wrapper .sgem-pmc-cal-1-result-footer .sgem-pmc-getStart:hover {
+    color: #002340;
+    background-color: #ffd061;
+}
+.sgem-pmc-copy-code-wrap .sgem-pmc-copy-code:hover {
+    background-color: #ffd061;
+    color: #002340;
+}
+
 /* add class styles */
 .sgem-pmc-cal-wrapper .sgem-pmc-cal-left-add-class {
     width: 33%;
