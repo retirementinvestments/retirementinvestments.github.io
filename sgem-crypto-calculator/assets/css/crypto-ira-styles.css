@@ -758,6 +758,15 @@ details summary::-webkit-details-marker {
   display:none !important;
 }
 
+.sgem-crypto-ira-cal-wrapper .sgem-crypto-ira-cal-1-result-footer .sgem-crypto-ira-getStart:hover {
+    color: #002340;
+    background-color: #ffd061;
+}
+.sgem-crypto-ira-copy-code-wrap .sgem-crypto-ira-copy-code:hover {
+    background-color: #ffd061;
+    color: #002340;
+}
+
 /* add class styles */
 .sgem-crypto-ira-cal-left-add-class .sgem-crypto-info-tooltip {
     width: 15px;
