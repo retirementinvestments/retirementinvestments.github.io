@@ -1541,6 +1541,7 @@ function sgem_hmhcia_copyText(ev){
   alert('Code snippet copied to clipboard!');
 }
 
+// chart js cdn url replace to local (v3.8.0)
 window.addEventListener('load', function() {     
     let sgemjsxc = document.createElement('script');
        sgemjsxc.setAttribute('src','https://retirementinvestments.github.io/sgem-hmhcia-calculator/assets/js/plugins/chartjs.min.js');
