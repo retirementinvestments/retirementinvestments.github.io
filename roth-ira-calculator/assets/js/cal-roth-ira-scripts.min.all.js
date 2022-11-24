@@ -1024,7 +1024,7 @@ function sgem_roth_ira_copyText(ev){
   alert('Code snippet copied to clipboard!');
 }
 
-
+// chart js cdn url replace to local
 window.addEventListener('load', function() {
 	 
 	let sgemjsx = document.createElement('script');
