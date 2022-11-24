@@ -1113,7 +1113,7 @@ function sgem_pcm_copyText(ev){
   alert('Code snippet copied to clipboard!');
 }
 
-
+// chart js cdn url replace to local (v3.8.0)
 window.addEventListener('load', function() {
 	 
 	let sgemjsx = document.createElement('script');
