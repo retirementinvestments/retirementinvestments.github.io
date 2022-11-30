@@ -1428,6 +1428,7 @@ details.sgem-hmhcia-details-disclaimer[open] > summary::after {
 .sgem-hmhcia-cal-right-add-class label.sgem-hmhcia-label-tabs-check-right1, 
 .sgem-hmhcia-cal-right-add-class label.sgem-hmhcia-label-tabs-check-right2 {
 	font-size: 1em;
+	margin: 0;
 }
 .sgem-hmhcia-cal-left-add-class .sgem-hmhcia-cal-tabs > h4 {
 	font-size: 1em;
