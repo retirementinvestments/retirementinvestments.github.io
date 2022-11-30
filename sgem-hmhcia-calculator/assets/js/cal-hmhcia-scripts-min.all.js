@@ -1476,7 +1476,7 @@ tippy('[data-tippy-content]', {
 
 $(document).ready(function() {
 
-    if ($('.sgem-hmhcia-cal-wrapper').width() < 1024) {
+    if ($('.sgem-hmhcia-cal-wrapper').width() < 1120) {
         $('.sgem-hmhcia-cal-left').addClass('sgem-hmhcia-cal-left-add-class');
         $('.sgem-hmhcia-cal-right').addClass('sgem-hmhcia-cal-right-add-class');
 		//updateBubblePosition(); // sh
@@ -1495,7 +1495,7 @@ $(document).ready(function() {
     }
 
     $(window).on('resize', function() { 
-        if ($('.sgem-hmhcia-cal-wrapper').width() < 1024) {
+        if ($('.sgem-hmhcia-cal-wrapper').width() < 1120) {
             $('.sgem-hmhcia-cal-left').addClass('sgem-hmhcia-cal-left-add-class');
             $('.sgem-hmhcia-cal-right').addClass('sgem-hmhcia-cal-right-add-class');
         } else {
