@@ -403,6 +403,7 @@
 }
 
 .sgem-hmhcia-cal-1-result-footer .sgem-hmhcia-getStart {
+	font-family: 'DM Sans',Helvetica,Arial,Lucida,sans-serif;
 	text-align: center;
 	font-size: 16px;
 	font-weight: bold;
@@ -417,6 +418,7 @@
 }
 .sgem-hmhcia-cal-1-result-footer .sgem-hmhcia-getStart:hover {
 	background-color: #ffd061;
+	color: #002340;
 }
 
 .sgem-hmhcia-cal-1 .sgem-hmhcia-cal-btn {
@@ -1300,6 +1302,7 @@ details.sgem-hmhcia-details-disclaimer[open] > summary::after {
     margin-top: 25px;
 }
 .sgem-hmhcia-copy-code {
+	font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
     background: #ffc12e;
     font-size: 16px;
     font-weight: 700;
@@ -1315,6 +1318,10 @@ details.sgem-hmhcia-details-disclaimer[open] > summary::after {
     line-height: 1.5em !important;
     cursor: pointer;
     width: auto;
+}
+.sgem-hmhcia-copy-code:hover {
+	background-color: #ffd061;
+	color: #002340;
 }
 /* end */
 
