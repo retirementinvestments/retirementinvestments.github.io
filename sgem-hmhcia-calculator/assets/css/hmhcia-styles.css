@@ -1160,6 +1160,7 @@ span.sgem_hmhcia_side_total_lbl {
 	cursor: pointer;
 	position: relative;
     top: 1px;
+    font-weight: 500;
 }
 #sgem-hmhcia-cal-content1,
 #sgem-hmhcia-cal-content2
@@ -1206,6 +1207,7 @@ label.sgem-hmhcia-label-tabs-check-right2 {
     font-size: 20px;
     padding: 0 15px 9px 15px;
 	cursor: pointer;
+	font-weight: 500;
 }
 .sgem-hmhcia-cal-tabs > h4 {
 	font-size: 16px;
