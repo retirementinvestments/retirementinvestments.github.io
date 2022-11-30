@@ -1188,18 +1188,27 @@ span.sgem_hmhcia_side_total_lbl {
   display: block;
 }
 .sgem-hmhcia-cal-tabs #sgem-hmhcia-cal-tab3:checked ~ .sgem-hmhcia-label-tabs-check-right1 {
-	border-bottom: 2px solid #000;
-	color: #000;
+    border-bottom: 2px solid #000;
+    color: #000;
+    z-index: 999;
+    position: relative;
+    margin: 0;
 }
 .sgem-hmhcia-cal-tabs #sgem-hmhcia-cal-tab4:checked ~ .sgem-hmhcia-label-tabs-check-right2 {
-	border-bottom: 2px solid #000;
-	color: #000;
+    border-bottom: 2px solid #000;
+    color: #000;
+    z-index: 999;
+    position: relative;
+    margin: 0;
 }
 span.sgem-hmhcia-hr-border-for-tabs {
-	border-bottom: 2px solid #EAEAEA;
+    border-bottom: 2px solid #EAEAEA;
     display: block;
     width: 100%;
-    padding-top: 7px;
+    padding-top: 0px;
+    position: relative;
+    bottom: 5px;
+    z-index: 0;
 }
 label.sgem-hmhcia-label-tabs-check-right1,
 label.sgem-hmhcia-label-tabs-check-right2 {
