@@ -1221,8 +1221,9 @@ label.sgem-hmhcia-label-tabs-check-right2 {
 .sgem-hmhcia-cal-tabs > h4 {
 	font-size: 16px;
     color: #474747;
-    font-weight: 100;
+    font-weight: 300;
     padding-bottom: 16px;
+    font-family: 'DM Sans',Helvetica,Arial,Lucida,sans-serif;
 }
 input#sgem-hmhcia-cal-tab1, input#sgem-hmhcia-cal-tab2 {
     margin: 0;
