@@ -889,7 +889,11 @@ details.sgem-net-worth-details-disclaimer[open] > summary::after {
     font-size: 1.1em;
 }
 .sgem-net-worth-cal-bottom-section-add-class .sgem-net-worth-result-label {
-    font-size: 4em;
+    font-size: 3.2em;
+    line-height: 65px;
+}
+.sgem-net-worth-cal-bottom-section-add-class .sgem-net-worth-flex-container .sgem-net-worth-form-flex {
+    padding-bottom: 20px;
 }
 .sgem-net-worth-cal-bottom-section-add-class .sgem-net-worth-result-headtext {
     font-size: 1em;
@@ -915,7 +919,7 @@ details.sgem-net-worth-details-disclaimer[open] > summary::after {
     top: 43px;
 }
 .sgem-net-worth-cal-wrapper.sgem-net-worth-cal-wrapper-add-mobile {
-  padding: 8px;
+  padding: 15px;
 }
 /* end */
 
