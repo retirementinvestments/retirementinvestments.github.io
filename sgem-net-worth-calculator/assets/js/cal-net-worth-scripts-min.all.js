@@ -31,118 +31,159 @@ x();"bottom"===a.start?(c.css({top:b.outerHeight()-c.outerHeight()}),n(0,!0)):"t
 /*! rangeslider.js - v2.3.0 | (c) 2016 @andreruffert | MIT license | https://github.com/andreruffert/rangeslider.js */
 !function(a){"use strict";"function"==typeof define&&define.amd?define(["jquery"],a):"object"==typeof exports?module.exports=a(require("jquery")):a(jQuery)}(function(a){"use strict";function b(){var a=document.createElement("input");return a.setAttribute("type","range"),"text"!==a.type}function c(a,b){var c=Array.prototype.slice.call(arguments,2);return setTimeout(function(){return a.apply(null,c)},b)}function d(a,b){return b=b||100,function(){if(!a.debouncing){var c=Array.prototype.slice.apply(arguments);a.lastReturnVal=a.apply(window,c),a.debouncing=!0}return clearTimeout(a.debounceTimeout),a.debounceTimeout=setTimeout(function(){a.debouncing=!1},b),a.lastReturnVal}}function e(a){return a&&(0===a.offsetWidth||0===a.offsetHeight||a.open===!1)}function f(a){for(var b=[],c=a.parentNode;e(c);)b.push(c),c=c.parentNode;return b}function g(a,b){function c(a){"undefined"!=typeof a.open&&(a.open=!a.open)}var d=f(a),e=d.length,g=[],h=a[b];if(e){for(var i=0;i<e;i++)g[i]=d[i].style.cssText,d[i].style.setProperty?d[i].style.setProperty("display","block","important"):d[i].style.cssText+=";display: block !important",d[i].style.height="0",d[i].style.overflow="hidden",d[i].style.visibility="hidden",c(d[i]);h=a[b];for(var j=0;j<e;j++)d[j].style.cssText=g[j],c(d[j])}return h}function h(a,b){var c=parseFloat(a);return Number.isNaN(c)?b:c}function i(a){return a.charAt(0).toUpperCase()+a.substr(1)}function j(b,e){if(this.$window=a(window),this.$document=a(document),this.$element=a(b),this.options=a.extend({},n,e),this.polyfill=this.options.polyfill,this.orientation=this.$element[0].getAttribute("data-orientation")||this.options.orientation,this.onInit=this.options.onInit,this.onSlide=this.options.onSlide,this.onSlideEnd=this.options.onSlideEnd,this.DIMENSION=o.orientation[this.orientation].dimension,this.DIRECTION=o.orientation[this.orientation].direction,this.DIRECTION_STYLE=o.orientation[this.orientation].directionStyle,this.COORDINATE=o.orientation[this.orientation].coordinate,this.polyfill&&m)return!1;this.identifier="js-"+k+"-"+l++,this.startEvent=this.options.startEvent.join("."+this.identifier+" ")+"."+this.identifier,this.moveEvent=this.options.moveEvent.join("."+this.identifier+" ")+"."+this.identifier,this.endEvent=this.options.endEvent.join("."+this.identifier+" ")+"."+this.identifier,this.toFixed=(this.step+"").replace(".","").length-1,this.$fill=a('<div class="'+this.options.fillClass+'" />'),this.$handle=a('<div class="'+this.options.handleClass+'" />'),this.$range=a('<div class="'+this.options.rangeClass+" "+this.options[this.orientation+"Class"]+'" id="'+this.identifier+'" />').insertAfter(this.$element).prepend(this.$fill,this.$handle),this.$element.css({position:"absolute",width:"1px",height:"1px",overflow:"hidden",opacity:"0"}),this.handleDown=a.proxy(this.handleDown,this),this.handleMove=a.proxy(this.handleMove,this),this.handleEnd=a.proxy(this.handleEnd,this),this.init();var f=this;this.$window.on("resize."+this.identifier,d(function(){c(function(){f.update(!1,!1)},300)},20)),this.$document.on(this.startEvent,"#"+this.identifier+":not(."+this.options.disabledClass+")",this.handleDown),this.$element.on("change."+this.identifier,function(a,b){if(!b||b.origin!==f.identifier){var c=a.target.value,d=f.getPositionFromValue(c);f.setPosition(d)}})}Number.isNaN=Number.isNaN||function(a){return"number"==typeof a&&a!==a};var k="rangeslider",l=0,m=b(),n={polyfill:!0,orientation:"horizontal",rangeClass:"rangeslider",disabledClass:"rangeslider--disabled",activeClass:"rangeslider--active",horizontalClass:"rangeslider--horizontal",verticalClass:"rangeslider--vertical",fillClass:"rangeslider__fill",handleClass:"rangeslider__handle",startEvent:["mousedown","touchstart","pointerdown"],moveEvent:["mousemove","touchmove","pointermove"],endEvent:["mouseup","touchend","pointerup"]},o={orientation:{horizontal:{dimension:"width",direction:"left",directionStyle:"left",coordinate:"x"},vertical:{dimension:"height",direction:"top",directionStyle:"bottom",coordinate:"y"}}};return j.prototype.init=function(){this.update(!0,!1),this.onInit&&"function"==typeof this.onInit&&this.onInit()},j.prototype.update=function(a,b){a=a||!1,a&&(this.min=h(this.$element[0].getAttribute("min"),0),this.max=h(this.$element[0].getAttribute("max"),100),this.value=h(this.$element[0].value,Math.round(this.min+(this.max-this.min)/2)),this.step=h(this.$element[0].getAttribute("step"),1)),this.handleDimension=g(this.$handle[0],"offset"+i(this.DIMENSION)),this.rangeDimension=g(this.$range[0],"offset"+i(this.DIMENSION)),this.maxHandlePos=this.rangeDimension-this.handleDimension,this.grabPos=this.handleDimension/2,this.position=this.getPositionFromValue(this.value),this.$element[0].disabled?this.$range.addClass(this.options.disabledClass):this.$range.removeClass(this.options.disabledClass),this.setPosition(this.position,b)},j.prototype.handleDown=function(a){if(a.preventDefault(),this.$document.on(this.moveEvent,this.handleMove),this.$document.on(this.endEvent,this.handleEnd),this.$range.addClass(this.options.activeClass),!((" "+a.target.className+" ").replace(/[\n\t]/g," ").indexOf(this.options.handleClass)>-1)){var b=this.getRelativePosition(a),c=this.$range[0].getBoundingClientRect()[this.DIRECTION],d=this.getPositionFromNode(this.$handle[0])-c,e="vertical"===this.orientation?this.maxHandlePos-(b-this.grabPos):b-this.grabPos;this.setPosition(e),b>=d&&b<d+this.handleDimension&&(this.grabPos=b-d)}},j.prototype.handleMove=function(a){a.preventDefault();var b=this.getRelativePosition(a),c="vertical"===this.orientation?this.maxHandlePos-(b-this.grabPos):b-this.grabPos;this.setPosition(c)},j.prototype.handleEnd=function(a){a.preventDefault(),this.$document.off(this.moveEvent,this.handleMove),this.$document.off(this.endEvent,this.handleEnd),this.$range.removeClass(this.options.activeClass),this.$element.trigger("change",{origin:this.identifier}),this.onSlideEnd&&"function"==typeof this.onSlideEnd&&this.onSlideEnd(this.position,this.value)},j.prototype.cap=function(a,b,c){return a<b?b:a>c?c:a},j.prototype.setPosition=function(a,b){var c,d;void 0===b&&(b=!0),c=this.getValueFromPosition(this.cap(a,0,this.maxHandlePos)),d=this.getPositionFromValue(c),this.$fill[0].style[this.DIMENSION]=d+this.grabPos+"px",this.$handle[0].style[this.DIRECTION_STYLE]=d+"px",this.setValue(c),this.position=d,this.value=c,b&&this.onSlide&&"function"==typeof this.onSlide&&this.onSlide(d,c)},j.prototype.getPositionFromNode=function(a){for(var b=0;null!==a;)b+=a.offsetLeft,a=a.offsetParent;return b},j.prototype.getRelativePosition=function(a){var b=i(this.COORDINATE),c=this.$range[0].getBoundingClientRect()[this.DIRECTION],d=0;return"undefined"!=typeof a.originalEvent["client"+b]?d=a.originalEvent["client"+b]:a.originalEvent.touches&&a.originalEvent.touches[0]&&"undefined"!=typeof a.originalEvent.touches[0]["client"+b]?d=a.originalEvent.touches[0]["client"+b]:a.currentPoint&&"undefined"!=typeof a.currentPoint[this.COORDINATE]&&(d=a.currentPoint[this.COORDINATE]),d-c},j.prototype.getPositionFromValue=function(a){var b,c;return b=(a-this.min)/(this.max-this.min),c=Number.isNaN(b)?0:b*this.maxHandlePos},j.prototype.getValueFromPosition=function(a){var b,c;return b=a/(this.maxHandlePos||1),c=this.step*Math.round(b*(this.max-this.min)/this.step)+this.min,Number(c.toFixed(this.toFixed))},j.prototype.setValue=function(a){a===this.value&&""!==this.$element[0].value||this.$element.val(a).trigger("input",{origin:this.identifier})},j.prototype.destroy=function(){this.$document.off("."+this.identifier),this.$window.off("."+this.identifier),this.$element.off("."+this.identifier).removeAttr("style").removeData("plugin_"+k),this.$range&&this.$range.length&&this.$range[0].parentNode.removeChild(this.$range[0])},a.fn[k]=function(b){var c=Array.prototype.slice.call(arguments,1);return this.each(function(){var d=a(this),e=d.data("plugin_"+k);e||d.data("plugin_"+k,e=new j(this,b)),"string"==typeof b&&e[b].apply(e,c)})},"rangeslider.js is available in jQuery context e.g $(selector).rangeslider(options);"});
 
-var sgem_plc_main_contents = '<div class="sgem-plc-cal-main-id">'+
-   '<div class="sgem-plc-cal-wrapper">'+
-      '<div class="sgem-plc-cal-left">'+
-         '<div class="sgem-plc-form sgem-plc-cal-1">'+
-            '<div class="sgem-plc-flex-container">'+
-               '<div class="sgem-plc-form-group sgem-plc-form-flex sgem-plc-currency-holder">'+
-                  '<label>Loan amount <span class="sgem-plc-tooltip tooltip" data-tippy-content="The original value of your existing loan.">?</span></label> '+
-                  '<input type="text" class="inputmove inputnumber" id="sgem_plc_loan_amount_required" value="10,000" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
-                  '<span id="sgem_plc_err_loan_amount_required" class="sgem-plc-err-style"></span>'+
+var sgem_net_worth_main_contents = '<div class="sgem-net-worth-cal-main-id">'+
+   '<div class="sgem-net-worth-cal-wrapper">'+
+      '<div class="sgem-net-worth-top-fields-section"> '+
+         '<div class="sgem-net-worth-cal-left">'+
+            '<div class="sgem-net-worth-form sgem-net-worth-cal-1">'+
+               '<div class="sgem-net-worth-container-title">'+
+                  'Assets<span class="sgem-net-worth-tooltip tooltip" data-tippy-content="Items owned, regarded as having value and available to meet debts, commitments, or legacies">?</span>'+
                '</div>'+
-               '<div class="sgem-plc-form-group sgem-plc-form-flex sgem-plc-years-holder">'+
-                  '<label>Loan term <span class="sgem-plc-tooltip tooltip" data-tippy-content="The amount of time the lender gives you to repay your mortgage.">?</span></label>'+ 
-                  '<input type="text" class="inputmove inputnumber" id="sgem_plc_loan_term" value="5" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
-                  '<span id="sgem_plc_err_loan_required" class="sgem-plc-err-style"></span>'+
+               '<div class="sgem-net-worth-flex-container">'+
+                  '<div class="sgem-net-worth-form-group sgem-net-worth-form-flex sgem-net-worth-currency-holder">'+
+                     '<label>Property value <span class="sgem-net-worth-tooltip tooltip" data-tippy-content="The estimated current value of your home and other properties">?</span></label> '+
+                     '<input type="text" class="inputmove inputnumber" id="sgem_net-worth_property_value_required" value="100,000" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
+                     '<span id="sgem_net-worth_err_property_value_required" class="sgem_net_worth_err_style"></span>'+
+                  '</div>'+
+                  '<div class="sgem-net-worth-form-group sgem-net-worth-form-flex sgem-net-worth-currency-holder">'+
+                     '<label>Checking accounts <span class="sgem-net-worth-tooltip tooltip" data-tippy-content="The money you currently have in your checking accounts">?</span></label> '+
+                     '<input type="text" class="inputmove inputnumber" id="sgem_net-worth_checking_acc_required" value="5,000" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
+                     '<span id="sgem_net-worth_err_checking_acc_required" class="sgem_net_worth_err_style"></span>'+
+                  '</div>'+
+                  '<div class="sgem-net-worth-form-group sgem-net-worth-form-flex sgem-net-worth-currency-holder sgem-net-worth-right-field">'+
+                     '<label>Savings accounts <span class="sgem-net-worth-tooltip tooltip" data-tippy-content="The money you currently have in your saving accounts">?</span></label> '+
+                     '<input type="text" class="inputmove inputnumber" id="sgem_net-worth_saving_accounts" value="25,000" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
+                     '<span id="sgem_net-worth_err_saving_accounts" class="sgem_net_worth_err_style"></span>'+
+                  '</div>'+
                '</div>'+
-               '<div class="sgem-plc-form-group sgem-plc-form-flex sgem-plc-precentage-holder sgem-plc-right-field">'+
-                  '<label>Annual interest rate <span class="sgem-plc-tooltip tooltip" data-tippy-content="The rate charged by the lender from the borrower.">?</span></label>'+ 
-                  '<input type="text" class="inputmove inputnumber" id="sgem_plc_annual_interest_rate" value="10.52" min="0" max="100" />'+
-                  '<span id="sgem_plc_err_no_of_months" class="sgem-plc-err-style"></span>'+
+
+               '<div class="sgem-net-worth-flex-container">'+
+                  '<div class="sgem-net-worth-form-group sgem-net-worth-form-flex sgem-net-worth-currency-holder sgem-net-worth-currency-holder-t">'+
+                     '<label>Retirement & brokerage accounts <span class="sgem-net-worth-tooltip tooltip" data-tippy-content="The estimated value of the stocks, bonds, mutual funds, and ETFs you currently hold and the money you have in retirement accounts such as the 401(k)s, 403(b)s, and IRAs.">?</span></label> 
+                     '<input type="text" class="inputmove inputnumber" id="sgem_net-worth_retirement_bro" value="10,000" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
+                     '<span id="sgem_net-worth_err_retirement_bro" class="sgem_net_worth_err_style"></span>'+
+                  '</div>'+
+                  '<div class="sgem-net-worth-form-group sgem-net-worth-form-flex sgem-net-worth-currency-holder sgem-net-worth-currency-holder-t">'+
+                     '<label class="sgem-net-worth-flex-con-last">Current vehicle value <span class="sgem-net-worth-tooltip tooltip" data-tippy-content="The estimated current value of all the vehicles you own.">?</span></label> '+
+                     '<input type="text" class="inputmove inputnumber" id="sgem_net-worth_current_vehicle_value" value="20,000" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
+                     '<span id="sgem_net-worth_err_current_vehicle_value" class="sgem_net_worth_err_style"></span>'+
+                  '</div>'+
+                  
+                  '<div class="sgem-net-worth-form-group sgem-net-worth-form-flex sgem-net-worth-currency-holder sgem-net-worth-right-field sgem-net-worth-currency-holder-t">'+
+                     '<label class="sgem-net-worth-flex-con-last">Other assets <span class="sgem-net-worth-tooltip tooltip" data-tippy-content="The estimated value of other assets such as antiques, jewelry, business assets, collectibles with retail value, and etc.">?</span></label> '+
+                     '<input type="text" class="inputmove inputnumber" id="sgem_net-worth_other_assets" value="1,000" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
+                     '<span id="sgem_net-worth_err_other_assets" class="sgem_net_worth_err_style"></span>'+
+                  '</div>'+
+               '</div>'+
+            '</div>'+
+         '</div>'+
+
+         '<div class="sgem-net-worth-cal-right">'+
+            '<div class="sgem-net-worth-form sgem-net-worth-cal-1">'+
+               '<div class="sgem-net-worth-container-title">'+
+                  'Liabilities<span class="sgem-net-worth-tooltip tooltip" data-tippy-content="The obiligation to pay money (or other assets) to third parties in the future. Please enter total value owed and NOT the monthly payment amount.">?</span>'+
+               '</div>'+
+               '<div class="sgem-net-worth-flex-container">'+
+                  '<div class="sgem-net-worth-form-group sgem-net-worth-form-flex sgem-net-worth-currency-holder">'+
+                     '<label>Real estate loans <span class="sgem-net-worth-tooltip tooltip" data-tippy-content="Total amount owed on the mortgage of your home and other properties.">?</span></label> '+
+                     '<input type="text" class="inputmove inputnumber" id="sgem_net-worth_real_estate_loans" value="120,000" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
+                     '<span id="sgem_net-worth_err_real_estate_loans" class="sgem_net_worth_err_style"></span>'+
+                  '</div>'+
+                  '<div class="sgem-net-worth-form-group sgem-net-worth-form-flex sgem-net-worth-currency-holder">'+
+                     '<label>Credit card debt <span class="sgem-net-worth-tooltip tooltip" data-tippy-content="Total amount of credit card debt that is owed. Please include any charges and interest owed as well.">?</span></label> '+
+                     '<input type="text" class="inputmove inputnumber" id="sgem_net-worth_credit_card_debt" value="200" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
+                     '<span id="sgem_net-worth_err_credit_card_debt" class="sgem_net_worth_err_style"></span>'+
+                  '</div>'+
+                  '<div class="sgem-net-worth-form-group sgem-net-worth-form-flex sgem-net-worth-currency-holder sgem-net-worth-right-field">'+
+                     '<label>Personal loan balance <span class="sgem-net-worth-tooltip tooltip" data-tippy-content="Total amount of personal loan debt owed to third parties (i.e., banks, finance companies, friends and family, and etc. ), including interest payable.">?</span></label> '+
+                     '<input type="text" class="inputmove inputnumber" id="sgem_net-worth_personal_loan_balance" value="1,000" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
+                     '<span id="sgem_net-worth_err_personal_loan_balance" class="sgem_net_worth_err_style"></span>'+
+                  '</div>'+
+               '</div>'+
+
+               '<div class="sgem-net-worth-flex-container sgem-net-worth-flex-con-last">'+
+                  '<div class="sgem-net-worth-form-group sgem-net-worth-form-flex sgem-net-worth-currency-holder">'+
+                     '<label>Student loan balance <span class="sgem-net-worth-tooltip tooltip" data-tippy-content="Total amount of student loan debts owed, including interest payable.">?</span></label> '+
+                     '<input type="text" class="inputmove inputnumber" id="sgem_net-worth_student_loan_balance" value="5,000" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
+                     '<span id="sgem_net-worth_err_student_loan_balance" class="sgem_net_worth_err_style"></span>'+
+                  '</div>'+
+                  '<div class="sgem-net-worth-form-group sgem-net-worth-form-flex sgem-net-worth-currency-holder">'+
+                     '<label>Auto loan balance <span class="sgem-net-worth-tooltip tooltip" data-tippy-content="Total amount of car loan payments owed, including interest payable.">?</span></label> '+
+                     '<input type="text" class="inputmove inputnumber" id="sgem_net-worth_auto_loan_balance" value="10,000" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
+                     '<span id="sgem_net-worth_err_auto_loan_balance" class="sgem_net_worth_err_style"></span>'+
+                  '</div>'+
+                  '<div class="sgem-net-worth-form-group sgem-net-worth-form-flex sgem-net-worth-currency-holder sgem-net-worth-right-field">'+
+                     '<label>Other debts <span class="sgem-net-worth-tooltip tooltip" data-tippy-content="Total amount of other debts owed such as medical bills, business loans, HELOCs, and etc.">?</span></label> '+
+                     '<input type="text" class="inputmove inputnumber" id="sgem_net-worth_other_debts" value="1,000" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
+                     '<span id="sgem_net-worth_err_other_debts" class="sgem_net_worth_err_style"></span>'+
+                  '</div>'+
                '</div>'+
             '</div>'+
          '</div>'+
       '</div>'+
-      '<div class="sgem-plc-cal-right">'+
-         '<div class="sgem-plc-cal-1-result-wrapper">'+
-            '<div class="sgem-plc-flex-container sgem-plc-column2">'+
-               '<div class="sgem-plc-form-group sgem-plc-form-flex">'+
-                  '<span class="futuretext sgem-plc-result-headtext">PAYBACK AMOUNT</span> '+
-                  '<div id="futureV" class="sgem-plc-result-label">$<span id="sgem_plc_payback_amount">608,292</span>'+  
+
+      '<div class="sgem-net-worth-cal-bottom-section">'+
+         '<div class="sgem-net-worth-cal-1-result-wrapper">'+
+            '<div class="sgem-net-worth-flex-container sgem-net-worth-column2">'+
+               '<div class="sgem-net-worth-form-group sgem-net-worth-form-flex">'+
+                  '<span class="futuretext sgem-net-worth-result-headtext-left">YOUR NET WORTH</span> '+
+                  '<div id="sgem_net_worth_your_tot" class="sgem-net-worth-result-label">$<span id="sgem_net-worth_payback_amount">5,224,000</span>  '+
                   '</div>'+
                '</div>'+
-               '<div class="sgem-plc-form-group sgem-plc-form-flex ">'+
-                  '<span class="futuretext2 sgem-plc-result-headtext">MONTHLY PAYMENT</span>'+
-                  '<div id="futureV2" class="sgem-plc-result-label">$<span id="sgem_plc_monthly_payment">10,138</span>'+
-                     '<span class="sgem-plc-monthly-paym-years" id="sgem_plc_monthly_paym_years">over 5 years</span>'+
+
+               '<div class="sgem-net-worth-form-right">'+
+                  '<div class="sgem-net-worth-form-group sgem-net-worth-result-flex ">'+
+                     '<span class="futuretext2 sgem-net-worth-result-headtext">ASSETS</span>'+
+                     '<div id="sgem_net_worth_assets_tot" class="sgem-net-worth-asset-label">$<span id="sgem_net-worth_asset">5,374,000</span>'+
+                     '</div>'+
+                  '</div>'+
+                  '<div class="sgem-net-worth-form-group sgem-net-worth-result-flex ">'+
+                     '<span class="futuretext2 sgem-net-worth-result-headtext">LIABILITIES</span>'+
+                     '<div id="sgem_net_worth_liabilities_tot" class="sgem-net-worth-liabilities-label">$<span id="sgem_net-worth_liabilities">150,000</span>'+
+                     '</div>'+
                   '</div>'+
                '</div>'+
             '</div>'+
-            '<div class="sgem-plc-cal-tab-wrapper-section">'+
-               '<div class="sgem-plc-tabset">'+
-                  '<!-- Tab 1 -->'+
-                  '<input type="radio" name="tabset" id="sgem-plc-cal-tab1" aria-controls="sgem-plc-cal-tab1" checked>'+
-                  '<label for="sgem-plc-cal-tab1">SCHEDULE</label>'+
-                  '<!-- Tab 2 -->'+
-                  '<input type="radio" name="tabset" id="sgem-plc-cal-tab2" aria-controls="sgem-plc-cal-tab2">'+
-                  '<label for="sgem-plc-cal-tab2">BREAKDOWN</label>'+
-                  '<div class="sgem-plc-cal-border-for-tabs"></div>'+
-                  '<div class="tab-panels">'+
-                     '<section id="sgem-plc-cal-tab1" class="tab-panel">'+
-                        '<div class="sgem-plc-cal-chartCard">'+
-                          '<div class="chartBox">'+
-                            '<canvas id="myChart"></canvas>'+
-                          '</div>'+
-                        '</div>'+
-                        '<div class="sgem-plc-legendbox">'+
-                           '<div class="sgem-plc-legend-item"> '+
-                              '<div id="sgem_plc_principle" onclick="toggleDatachart(0)" class="sgem-plc-principle"></div>'+
-                              '<div id="sgem_plc_principle_te" onclick="toggleDatachart(0)" class="sgem-plc-principle-te">Balance</div>'+
-                           '</div>'+
-                        '</div>'+
-                     '</section>'+
-                     '<section id="sgem-plc-cal-tab2" class="tab-panel">'+
-                        '<div class="sgem-plc-cal-chartCard">'+
-                          '<div class="chartBox">'+
-                            '<canvas id="myChart2"></canvas>'+
-                          '</div>'+
-                        '</div>'+
-                        '<div class="sgem-plc-legendbox">'+
-                           '<div class="sgem-plc-legend-item"> '+
-                              '<div id="sgem_plc_principle_l2" onclick="toggleData(0)" class="sgem-plc-principle-l2"></div>'+
-                              '<div id="sgem_plc_principle_te_l2" onclick="toggleData(0)" class="sgem-plc-principle-te-l2">Principle</div>'+
-                           '</div>'+
-                           '<div class="sgem-plc-legend-item"> '+
-                              '<div id="sgem_plc_le_interest" onclick="toggleData(1)" class="sgem-plc-le-interest"></div>'+
-                              '<div id="sgem_plc_le_interest_te" onclick="toggleData(1)" class="sgem-plc-le-interest-te">Interest</div>'+
-                           '</div>'+
-                        '</div>'+
-                     '</section>'+
-                  '</div>'+
-               '</div>'+
-            '</div>';
-
-sgem_plc_main_contents += '<div class="sgem-plc-cal-1-result-footer">';
-sgem_plc_main_contents += '<div class="sgem-plc-content">Find the right personal loan rate for you. Shop and compare personal loan offers in minutes.</div>';
-sgem_plc_main_contents += '<div class="sgem-plc-buttonGet">';
-sgem_plc_main_contents += '<a href="https://retirementinvestments.com/loancalculator" target="_blank" class="sgem-plc-getStart" rel="noopener">';
-sgem_plc_main_contents += 'GET STARTED';
-sgem_plc_main_contents += '</a>';
-sgem_plc_main_contents += '</div>';
-sgem_plc_main_contents += '</div>';
             
-sgem_plc_main_contents += '<div class="sgem-plc-section-disclaimer"><details class="sgem-plc-details-disclaimer">';
-sgem_plc_main_contents += '<summary><div class="sgem-plc-collapsible-summary-disclaimer">Disclaimer</div></summary><div class="sgem-plc-collapsible-text-disclaimer">';
-sgem_plc_main_contents += 'This material is provided for general and educational purposes only; it is not intended to provide legal, tax or investment advice.';
-sgem_plc_main_contents += '</div></details></div></div></div></div>';
+            '<div class="sgem-net-worth-cal-1-result-footer">'+
+               '<div class="sgem-net-worth-content">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,</div>'+
+               '<div class="sgem-net-worth-buttonGet">'+
+                  '<a href="https://retirementinvestments.com/networthcalculator" target="_blank" class="sgem-net-worth-getStart" rel="noopener">'+
+                  'GET STARTED'+
+                  '</a>'+
+               '</div>'+
+            '</div>'+
+            '<div class="sgem-net-worth-section-disclaimer">'+
+               '<details class="sgem-net-worth-details-disclaimer">'+
+                  '<summary>'+
+                     '<div class="sgem-net-worth-collapsible-summary-disclaimer">Disclaimer</div>'+
+                  '</summary>'+
+                  '<div class="sgem-net-worth-collapsible-text-disclaimer">'+
+                     'This material is provided for general and educational purposes only; it is not intended to provide legal, tax or investment advice.'+
+                  '</div>'+
+               '</details>'+
+            '</div>'+
+         '</div>'+
+      '</div>'+
+   '</div>'+
+
+   '<div class="sgem-net-worth-logo-center">'+
+      '<a class="sgem-net-worth-logo-image" href="https://retirementinvestments.com/net-worth-calculator/" target="_blank" rel="noopener">Net Worth Calculator'+
+      '</a>  by Retirement Investments'+
+   '</div>'+
+
+   '<div class="sgem-net-worth-copy-option-panel">'+
+      '<h3>Do you want to add this calculator into your website?</h3>'+
+      '<div class="sgem-net-worth-copy-code-wrap">'+
+         '<button class="sgem-net-worth-copy-code" id="sgem-net-worth-copy-code" onclick="sgem_plc_copyText(event)">Get Calculator</button>'+
+      '</div>'+
+   '</div>'+
+'</div>';
 
 
-if( (location.hostname != "calculatorstg.wpengine.com") || (location.hostname != "retirementinvestments.com") || (location.hostname != "staging.retirementinvestments.com") ){
-    sgem_plc_main_contents += '<div class="sgem-plc-logo-center"><a class="sgem-plc-logo-image" href="https://retirementinvestments.com/loans/personal-loan-calculator/" target="_blank" rel="noopener">';
-    sgem_plc_main_contents += 'Personal Loan Calculator</a>&nbsp; by Retirement Investments</div>';
-}
+sgem_net_worth_main_contents += '</div>'
 
-if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com" || location.hostname == "staging.retirementinvestments.com"){
-    sgem_plc_main_contents += '<div class="sgem-plc-copy-option-panel"><h3>Do you want to add this calculator into your website?</h3>';
-    sgem_plc_main_contents += '<div class="sgem-plc-copy-code-wrap">';
-    sgem_plc_main_contents += '<button class="sgem-plc-copy-code" id="sgem-plc-copy-code" onclick="sgem_plc_copyText(event)">Get Calculator</button>';
-    sgem_plc_main_contents += '</div></div></div>';
-}
-
-sgem_plc_main_contents += '</div>';  
-
-document.getElementById('sgem-plc-cal').innerHTML = sgem_plc_main_contents;
+document.getElementById('sgem-plc-cal').innerHTML = sgem_net_worth_main_contents;
 
 
 // decimal points
