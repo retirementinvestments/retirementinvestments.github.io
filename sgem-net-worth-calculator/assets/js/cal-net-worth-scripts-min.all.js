@@ -59,7 +59,7 @@ var sgem_net_worth_main_contents = '<div class="sgem-net-worth-cal-main-id">'+
 
                '<div class="sgem-net-worth-flex-container">'+
                   '<div class="sgem-net-worth-form-group sgem-net-worth-form-flex sgem-net-worth-currency-holder sgem-net-worth-currency-holder-t">'+
-                     '<label>Retirement & brokerage accounts <span class="sgem-net-worth-tooltip tooltip" data-tippy-content="The estimated value of the stocks, bonds, mutual funds, and ETFs you currently hold and the money you have in retirement accounts such as the 401(k)s, 403(b)s, and IRAs.">?</span></label> 
+                     '<label>Retirement & brokerage accounts <span class="sgem-net-worth-tooltip tooltip" data-tippy-content="The estimated value of the stocks, bonds, mutual funds, and ETFs you currently hold and the money you have in retirement accounts such as the 401(k)s, 403(b)s, and IRAs.">?</span></label> '+
                      '<input type="text" class="inputmove inputnumber" id="sgem_net-worth_retirement_bro" value="10,000" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
                      '<span id="sgem_net-worth_err_retirement_bro" class="sgem_net_worth_err_style"></span>'+
                   '</div>'+
