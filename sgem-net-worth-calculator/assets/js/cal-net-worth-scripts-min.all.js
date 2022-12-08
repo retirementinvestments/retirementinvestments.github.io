@@ -197,658 +197,394 @@ function numberWithCommas(x) {
 }
 
 window.onload = function() {
-    sgem_pl_calculationm(); 
+    sgem_net_worth_calculationmin(); 
 }
 
-function sgem_pl_calculationm() {
+function sgem_net_worth_calculationmin() {
 
-    var chart_years_array = [];
-    var chart_starting_balance_array = [];
-    var chart_end_balance_array = [];
-    var chart_principal_paid_array = [];
-    var chart_intrest_paid_array = [];
+var property_value3 = $('#sgem_net-worth_property_value_required').val().trim();
+var property_value2 = property_value3.replace(/\,/g, '');
+var property_value = parseInt(property_value2, 10);
 
-    var loan_ammount1 = $('#sgem_plc_loan_amount_required').val().trim();
-    var loan_ammount2 = loan_ammount1.replace(/\,/g,'');
-    var loan_ammount = parseInt(loan_ammount2,10);
+var savings_accounts3 = $('#sgem_net-worth_saving_accounts').val().trim();
+var savings_accounts2 = savings_accounts3.replace(/\,/g, '');
+var savings_accounts = parseInt(savings_accounts2, 10);
 
-    var annual_intrest_rate1 = $('#sgem_plc_annual_interest_rate').val().trim();
-    var annual_intrest_rate2 = annual_intrest_rate1.replace('%', "");
-    var annual_intrest_rate = parseFloat(annual_intrest_rate2 / 100);
+var checking_accounts3 = $('#sgem_net-worth_checking_acc_required').val().trim();
+var checking_accounts2 = checking_accounts3.replace(/\,/g, '');
+var checking_accounts = parseInt(checking_accounts2, 10);
 
-    var loan_terms_years1 = $('#sgem_plc_loan_term').val().trim();
-    var loan_terms_years = parseFloat(loan_terms_years1);
+var retirement_brokerage_acc3 = $('#sgem_net-worth_retirement_bro').val().trim();
+var retirement_brokerage_acc2 = retirement_brokerage_acc3.replace(/\,/g, '');
+var retirement_brokerage_acc = parseInt(retirement_brokerage_acc2, 10);
 
-    //Years on card
+var current_vehicle_value3 = $('#sgem_net-worth_current_vehicle_value').val().trim();
+var current_vehicle_value2 = current_vehicle_value3.replace(/\,/g, '');
+var current_vehicle_value = parseInt(current_vehicle_value2, 10);
 
-    var years_on_the_card = loan_terms_years;
+var other_assets3 = $('#sgem_net-worth_other_assets').val().trim();
+var other_assets2 = other_assets3.replace(/\,/g, '');
+var other_assets = parseInt(other_assets2, 10);
 
-    if (isNaN(years_on_the_card)){
+var real_estate_loans3 = $('#sgem_net-worth_real_estate_loans').val().trim();
+var real_estate_loans2 = real_estate_loans3.replace(/\,/g, '');
+var real_estate_loans = parseInt(real_estate_loans2, 10);
 
-      $('#sgem_plc_monthly_paym_years').text(''); 
+var student_loan_balance3 = $('#sgem_net-worth_student_loan_balance').val().trim();
+var student_loan_balance2 = student_loan_balance3.replace(/\,/g, '');
+var student_loan_balance = parseInt(student_loan_balance2, 10);
 
-    }else{
+var credit_card_debt3 = $('#sgem_net-worth_credit_card_debt').val().trim();
+var credit_card_debt2 = credit_card_debt3.replace(/\,/g, '');
+var credit_card_debt = parseInt(credit_card_debt2, 10);
 
-      $('#sgem_plc_monthly_paym_years').text("over "+ years_on_the_card +" years");
+var personal_loan_balance3 = $('#sgem_net-worth_personal_loan_balance').val().trim();
+var personal_loan_balance2 = personal_loan_balance3.replace(/\,/g, '');
+var personal_loan_balance = parseInt(personal_loan_balance2, 10);
 
+var auto_loan_balance3 = $('#sgem_net-worth_auto_loan_balance').val().trim();
+var auto_loan_balance2 = auto_loan_balance3.replace(/\,/g, '');
+var auto_loan_balance = parseInt(auto_loan_balance2, 10);
+
+var other_debts3 = $('#sgem_net-worth_other_debts').val().trim();
+var other_debts2 = other_debts3.replace(/\,/g, '');
+var other_debts = parseInt(other_debts2, 10);
+
+//calculations
+
+var total_assets = decimalTwoPoints(property_value + savings_accounts + checking_accounts + retirement_brokerage_acc + current_vehicle_value + other_assets);
+//console.log(total_assets);
+
+   if (isNaN(total_assets) || total_assets < 1) {
+
+        $('#sgem_net-worth_asset').text('0');
+
+    } else {
+
+        $('#sgem_net-worth_asset').text(numberWithCommas(total_assets));
+    }
+
+var total_liabilities = decimalTwoPoints(real_estate_loans + student_loan_balance + credit_card_debt + personal_loan_balance + auto_loan_balance + other_debts);
+//console.log(total_liabilities);
+
+   if (isNaN(total_liabilities) || total_liabilities < 1) {
+
+        $('#sgem_net-worth_liabilities').text('0');
+
+    } else {
+
+        $('#sgem_net-worth_liabilities').text(numberWithCommas(total_liabilities));
+    }
+
+var net_worth = decimalTwoPoints(total_assets - total_liabilities);
+//console.log(net_worth);
+
+   if (isNaN(net_worth) || net_worth < 1) {
+
+        $('#sgem_net-worth_payback_amount').text('0');
+
+    } else {
+
+        $('#sgem_net-worth_payback_amount').text(numberWithCommas(net_worth));
     }
 
 
-    //Monthly Payment
-    var monthly_payment1 = annual_intrest_rate / 12;
-    var monthly_payment2 = monthly_payment1 * loan_ammount;
-
-    var monthly_payment3 = annual_intrest_rate / 12;
-    var monthly_payment4 = monthly_payment3 + 1;
-
-    var monthly_payment5 = -loan_terms_years * 12;
-
-    let monthly_payment6 = Math.pow(monthly_payment4, monthly_payment5);
-    var monthly_payment7 = 1 - monthly_payment6;
-    var monthly_payment = monthly_payment2 / monthly_payment7;
-
-    if (isNaN(monthly_payment) || monthly_payment <= 0){
-
-      $('#sgem_plc_monthly_payment').text('0'); 
-
-    }else{
-
-    $('#sgem_plc_monthly_payment').text(numberWithCommas(decimalTwoPoints(monthly_payment))); 
-    }
-
-    //Total principal & intrest paid
-
-    var total_p_and_i = monthly_payment * 12 * loan_terms_years;
-
-    if (isNaN(total_p_and_i) || total_p_and_i <= 0){
-
-        $('#sgem_plc_payback_amount').text('0'); 
-        localStorage.setItem('sgem_pl_max1_array', JSON.stringify(100000));
-
-    }else{
-
-      $('#sgem_plc_payback_amount').text(numberWithCommas(decimalTwoPoints(total_p_and_i))); 
-      localStorage.setItem('sgem_pl_max1_array', JSON.stringify(total_p_and_i));
-    }
-
-    //Total intrest paid
-
-    var total_intrest_paid = total_p_and_i - loan_ammount;
-
-
-    //Chart values
-
-    //Year
-    var year_of_tax_filing = new Date().getFullYear();
-    var due_date2 = year_of_tax_filing;
-
-    var date = new Date();
-    date.setMonth(date.getMonth());
-
-    var last_year = due_date2 + loan_terms_years;
-
-    while (due_date2 < last_year) {
-
-        var newdate = due_date2++ + "-" + date.toLocaleString('default', {
-            month: 'short'
-        });
-        chart_years_array.push(newdate);
-
-    }
-
-    localStorage.setItem('sgem_pl_yearsx_array', JSON.stringify(chart_years_array));
-
-    //Starting balance
-
-    var starting_n = 1;
-
-    while (starting_n <= loan_terms_years) {
-
-        var starting_balance1 = annual_intrest_rate / 12;
-        var starting_balance2 = 1 + starting_balance1;
-
-        var starting_balance3 = loan_terms_years - starting_n++; //1 is n
-        var starting_balance4 = starting_balance3 + 1;
-        var starting_balance5 = starting_balance4 * 12;
-
-        let starting_balance6 = Math.pow(starting_balance2, -starting_balance5);
-        var starting_balance7 = 1 - starting_balance6;
-
-        var starting_balance8 = annual_intrest_rate / 12;
-
-        var starting_balance9 = starting_balance7 / starting_balance8;
-        var starting_balance = monthly_payment * starting_balance9;
-        chart_starting_balance_array.push(starting_balance);
-
-    }
-
-
-    //End balance
-
-    var end_balance_n = 1;
-
-    while (end_balance_n <= loan_terms_years) {
-
-        var end_balance1 = annual_intrest_rate / 12;
-        var end_balance2 = 1 + end_balance1;
-
-        var end_balance3 = loan_terms_years - end_balance_n++; //n
-        var end_balance4 = end_balance3 * 12;
-
-        let end_balance5 = Math.pow(end_balance2, -end_balance4);
-        var end_balance6 = 1 - end_balance5;
-
-        var end_balance7 = annual_intrest_rate / 12;
-
-        var end_balance8 = end_balance6 / end_balance7;
-        var end_balance = monthly_payment * end_balance8;
-        chart_end_balance_array.push(decimalTwoPoints(end_balance));
-
-    }
-
-    localStorage.setItem('sgem_pl_end_balance_array', JSON.stringify(chart_end_balance_array));
-
-
-    //Principal paid
-
-    var arrayLength = chart_end_balance_array.length;
-
-    for (var i = 0; i < arrayLength; i++) {
-
-        var principal_paid = parseFloat(chart_starting_balance_array[i]) - parseFloat(chart_end_balance_array[i]);
-        chart_principal_paid_array.push(decimalTwoPoints(principal_paid));
-
-    }
-
-    localStorage.setItem('sgem_pl_principal_p_array', JSON.stringify(chart_principal_paid_array));
-
-
-
-    //Intrest paid
-
-    var intrest_paid1 = monthly_payment * 12;
-
-    var arrayLength2 = chart_principal_paid_array.length;
-
-    for (var i = 0; i < arrayLength2; i++) {
-
-        var intrest_paid_paid = parseFloat(intrest_paid1) - parseFloat(chart_principal_paid_array[i]);
-        chart_intrest_paid_array.push(decimalTwoPoints(intrest_paid_paid));
-
-    }
-
-    localStorage.setItem('sgem_pl_intrest_p_array', JSON.stringify(chart_intrest_paid_array));
-    pl_update_chart();
 
 }
 
 $(document).ready(function() {
 
-    if( location.hostname == "calculatorstg.wpengine.com") {
-        $('.sgem-plc-logo-center').hide(); 
-    } else if(location.hostname == "retirementinvestments.com"){
-        $('.sgem-plc-logo-center').hide();  
-    } else if(location.hostname == "staging.retirementinvestments.com"){ 
-        $('.sgem-plc-logo-center').hide();  
-    } else {
-        $('.sgem-plc-logo-center').show();  
-    }
+    if ($('#sgem_net-worth_property_value_required,#sgem_net-worth_checking_acc_required,#sgem_net-worth_saving_accounts,#sgem_net-worth_retirement_bro,#sgem_net-worth_current_vehicle_value,#sgem_net-worth_other_assets,#sgem_net-worth_real_estate_loans,#sgem_net-worth_credit_card_debt,#sgem_net-worth_personal_loan_balance,#sgem_net-worth_student_loan_balance,#sgem_net-worth_auto_loan_balance,#sgem_net-worth_other_debts').length > 0) {
+        $('#sgem_net-worth_property_value_required,#sgem_net-worth_checking_acc_required,#sgem_net-worth_saving_accounts,#sgem_net-worth_retirement_bro,#sgem_net-worth_current_vehicle_value,#sgem_net-worth_other_assets,#sgem_net-worth_real_estate_loans,#sgem_net-worth_credit_card_debt,#sgem_net-worth_personal_loan_balance,#sgem_net-worth_student_loan_balance,#sgem_net-worth_auto_loan_balance,#sgem_net-worth_other_debts').on('keyup', function() {
 
-    if($('#sgem_plc_loan_amount_required,#sgem_plc_loan_term').length > 0) {
-        $('#sgem_plc_loan_amount_required,#sgem_plc_loan_term').on('keyup', function () {
-            sgem_pl_calculationm() ;
+            sgem_net_worth_calculationmin();
 
-          // Keep only digits and decimal points:
-        this.value=this.value.replace(/[^\d.]/g, "")
-        // Remove duplicated decimal point, if one exists:
-        this.value=this.value.replace(/^(\d*\.)(.*)\.(.*)$/, '$1$2$3')
-        // Keep only two digits past the decimal point:
-        this.value=this.value.replace(/\.(\d{0})\d+/, '')
-        // Add thousands separators:
-        this.value=this.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-          // Removing front zero
-          this.value=this.value.replace(/^0+/, '');
-
+            // Keep only digits and decimal points:
+            this.value = this.value.replace(/[^\d.]/g, "")
+            // Remove duplicated decimal point, if one exists:
+            this.value = this.value.replace(/^(\d*\.)(.*)\.(.*)$/, '$1$2$3')
+            // Keep only two digits past the decimal point:
+            this.value = this.value.replace(/\.(\d{0})\d+/, '')
+            // Add thousands separators:
+            this.value = this.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            // Removing front zero
+            //this.value=this.value.replace(/^0+/, '');
 
         });
     }
 
-    if($('#sgem_plc_annual_interest_rate').length > 0) {
-      $('#sgem_plc_annual_interest_rate').on('keyup', function () {
-          sgem_pl_calculationm() ;
+    sgem_net_worth_calculationmin(); 
 
-       
-        // Removing front zero
-        this.value=this.value.replace(/^0+/, '');
-       
+// Validations -----------------------------------------------------------
 
-      });
-    }
-
-
-    //---------------------------------------------------------------------------------------------------
-
-    // Loan ammount
-    $('#sgem_plc_loan_amount_required').on('keyup', function () {
+// Property values
+$('#sgem_net-worth_property_value_required').on('keyup', function () {
       var val = this.value;
-      var xcx = parseInt(val);
-      if (isNaN(xcx) || $(this).val().length>11){
+      var aa = parseInt(val);
+      if (isNaN(aa) || $(this).val().length>11){
          
          this.value ='';
-         $('#sgem_plc_err_loan_amount_required').html('This cannot be empty or more than $900,000,000').fadeIn();  
+         $('#sgem_net-worth_err_property_value_required').html('This cannot be empty or more than $900,000,000').fadeIn();  
           $(this).css({
         "border": "1px solid red",
         "background": "#FFCECE" });  
           
 
-    }else{
-     $('#sgem_plc_err_loan_amount_required').html('').fadeOut();  
-    $(this).css({
-        "border": "1px solid #707070",
-        "background": "#ffffff"
-      }); 
-    }    
+  }else{
+     $('#sgem_net-worth_err_property_value_required').html('').fadeOut();  
+        $(this).css({
+            "border": "1px solid #707070",
+            "background": "#ffffff"
+          }); 
+      }    
     });
 
-     //loan term
-     $('#sgem_plc_loan_term').on('keyup', function () {
-      var vrr     = $('#sgem_plc_loan_term').val().trim();
-
-      if (isNaN(vrr) || vrr>100){
+    // Checking accounts
+    $('#sgem_net-worth_checking_acc_required').on('keyup', function () {
+      var val = this.value;
+      var bb = parseInt(val);
+      if (isNaN(bb) || $(this).val().length>11){
          
          this.value ='';
-         $('#sgem_plc_err_loan_required').html('This cannot be empty or more than 100').fadeIn();  
+         $('#sgem_net-worth_err_checking_acc_required').html('This cannot be empty or more than $900,000,000').fadeIn();  
           $(this).css({
         "border": "1px solid red",
         "background": "#FFCECE" });  
           
 
-    }else{
-     $('#sgem_plc_err_loan_required').html('').fadeOut();  
-    $(this).css({
-        "border": "1px solid #707070",
-        "background": "#ffffff"
-      }); 
-    }    
+  }else{
+     $('#sgem_net-worth_err_checking_acc_required').html('').fadeOut();  
+        $(this).css({
+            "border": "1px solid #707070",
+            "background": "#ffffff"
+          }); 
+      }    
     });
 
-     //annual inerest rate
-     $('#sgem_plc_annual_interest_rate').on('keyup', function () {
-      var svrr2     = $('#sgem_plc_annual_interest_rate').val().trim();
-      var svrr = svrr2.replace('%', "");
-      if (isNaN(svrr) || svrr>100){
+      // saving accounts
+    $('#sgem_net-worth_saving_accounts').on('keyup', function () {
+      var val = this.value;
+      var cc = parseInt(val);
+      if (isNaN(cc) || $(this).val().length>11){
          
          this.value ='';
-         $('#sgem_plc_err_no_of_months').html('This cannot be empty or more than 100%').fadeIn();  
+         $('#sgem_net-worth_err_saving_accounts').html('This cannot be empty or more than $900,000,000').fadeIn();  
           $(this).css({
         "border": "1px solid red",
         "background": "#FFCECE" });  
           
 
-    }else{
-     $('#sgem_plc_err_no_of_months').html('').fadeOut();  
+  }else{
+     $('#sgem_net-worth_err_saving_accounts').html('').fadeOut();  
+        $(this).css({
+            "border": "1px solid #707070",
+            "background": "#ffffff"
+          }); 
+      }    
+    });
+
+       // retirement bro
+    $('#sgem_net-worth_retirement_bro').on('keyup', function () {
+      var val = this.value;
+      var dd = parseInt(val);
+      if (isNaN(dd) || $(this).val().length>11){
+         
+         this.value ='';
+         $('#sgem_net-worth_err_retirement_bro').html('This cannot be empty or more than $900,000,000').fadeIn();  
+          $(this).css({
+        "border": "1px solid red",
+        "background": "#FFCECE" });  
+          
+
+  }else{
+     $('#sgem_net-worth_err_retirement_bro').html('').fadeOut();  
+        $(this).css({
+            "border": "1px solid #707070",
+            "background": "#ffffff"
+          }); 
+      }    
+    });
+
+        // vehicle value
+    $('#sgem_net-worth_current_vehicle_value').on('keyup', function () {
+      var val = this.value;
+      var ee = parseInt(val);
+      if (isNaN(ee) || $(this).val().length>11){
+         
+         this.value ='';
+         $('#sgem_net-worth_err_current_vehicle_value').html('This cannot be empty or more than $900,000,000').fadeIn();  
+          $(this).css({
+        "border": "1px solid red",
+        "background": "#FFCECE" });  
+          
+
+  }else{
+     $('#sgem_net-worth_err_current_vehicle_value').html('').fadeOut();  
+        $(this).css({
+            "border": "1px solid #707070",
+            "background": "#ffffff"
+          }); 
+      }    
+    });
+
+        // other assets
+    $('#sgem_net-worth_other_assets').on('keyup', function () {
+      var val = this.value;
+      var ff = parseInt(val);
+      if (isNaN(ff) || $(this).val().length>11){
+         
+         this.value ='';
+         $('#sgem_net-worth_err_other_assets').html('This cannot be empty or more than $900,000,000').fadeIn();  
+          $(this).css({
+        "border": "1px solid red",
+        "background": "#FFCECE" });  
+          
+
+  }else{
+     $('#sgem_net-worth_err_other_assets').html('').fadeOut();  
+        $(this).css({
+            "border": "1px solid #707070",
+            "background": "#ffffff"
+          }); 
+      }    
+    });
+
+        // r e loans
+    $('#sgem_net-worth_real_estate_loans').on('keyup', function () {
+      var val = this.value;
+      var gg = parseInt(val);
+      if (isNaN(gg) || $(this).val().length>11){
+         
+         this.value ='';
+         $('#sgem_net-worth_err_real_estate_loans').html('This cannot be empty or more than $900,000,000').fadeIn();  
+          $(this).css({
+        "border": "1px solid red",
+        "background": "#FFCECE" });  
+          
+
+  }else{
+     $('#sgem_net-worth_err_real_estate_loans').html('').fadeOut();  
+        $(this).css({
+            "border": "1px solid #707070",
+            "background": "#ffffff"
+          }); 
+      }    
+    });
+
+
+        // debit card
+    $('#sgem_net-worth_credit_card_debt').on('keyup', function () {
+      var val = this.value;
+      var hh = parseInt(val);
+      if (isNaN(hh) || $(this).val().length>11){
+         
+         this.value ='';
+         $('#sgem_net-worth_err_credit_card_debt').html('This cannot be empty or more than $900,000,000').fadeIn();  
+          $(this).css({
+        "border": "1px solid red",
+        "background": "#FFCECE" });  
+          
+
+  }else{
+     $('#sgem_net-worth_err_credit_card_debt').html('').fadeOut();  
+        $(this).css({
+            "border": "1px solid #707070",
+            "background": "#ffffff"
+          }); 
+      }    
+    });
+
+       // personal loan
+    $('#sgem_net-worth_personal_loan_balance').on('keyup', function () {
+      var val = this.value;
+      var ii = parseInt(val);
+      if (isNaN(ii) || $(this).val().length>11){
+         
+         this.value ='';
+         $('#sgem_net-worth_err_personal_loan_balance').html('This cannot be empty or more than $900,000,000').fadeIn();  
+          $(this).css({
+        "border": "1px solid red",
+        "background": "#FFCECE" });  
+          
+
+  }else{
+     $('#sgem_net-worth_err_personal_loan_balance').html('').fadeOut();  
+        $(this).css({
+            "border": "1px solid #707070",
+            "background": "#ffffff"
+          }); 
+      }    
+    });
+
+      // student loan
+    $('#sgem_net-worth_student_loan_balance').on('keyup', function () {
+      var val = this.value;
+      var jj = parseInt(val);
+      if (isNaN(jj) || $(this).val().length>11){
+         
+         this.value ='';
+         $('#sgem_net-worth_err_student_loan_balance').html('This cannot be empty or more than $900,000,000').fadeIn();  
+          $(this).css({
+        "border": "1px solid red",
+        "background": "#FFCECE" });  
+          
+
+  }else{
+     $('#sgem_net-worth_err_student_loan_balance').html('').fadeOut();  
+        $(this).css({
+            "border": "1px solid #707070",
+            "background": "#ffffff"
+          }); 
+      }    
+    });
+
+      // auto loan
+    $('#sgem_net-worth_auto_loan_balance').on('keyup', function () {
+      var val = this.value;
+      var kk = parseInt(val);
+      if (isNaN(kk) || $(this).val().length>11){
+         
+         this.value ='';
+         $('#sgem_net-worth_err_auto_loan_balance').html('This cannot be empty or more than $900,000,000').fadeIn();  
+          $(this).css({
+        "border": "1px solid red",
+        "background": "#FFCECE" });  
+          
+
+      }else{
+         $('#sgem_net-worth_err_auto_loan_balance').html('').fadeOut();  
+        $(this).css({
+            "border": "1px solid #707070",
+            "background": "#ffffff"
+          }); 
+      }    
+    });
+
+     // other debts
+    $('#sgem_net-worth_other_debts').on('keyup', function () {
+      var val = this.value;
+      var mm = parseInt(val);
+      if (isNaN(mm) || $(this).val().length>11){
+         
+         this.value ='';
+         $('#sgem_net-worth_err_other_debts').html('This cannot be empty or more than $900,000,000').fadeIn();  
+          $(this).css({
+        "border": "1px solid red",
+        "background": "#FFCECE" });  
+          
+
+  }else{
+     $('#sgem_net-worth_err_other_debts').html('').fadeOut();  
     $(this).css({
         "border": "1px solid #707070",
         "background": "#ffffff"
       }); 
-    }    
+  }    
     });
 
-    $('#sgem_plc_loan_term').on('keyup', function() {
-      if ($(this).val()==''){
-      
-          $(this).css({
-            "border": "1px solid red",
-            "background": "#FFCECE" });
-             $('#sgem_plc_err_loan_required').html('This cannot be empty or more than 100').fadeIn(); 
-
-      }
-                
-        }); 
-
-      $('#sgem_plc_annual_interest_rate').on('keyup', function() {
-      if ($(this).val()==''){
-      
-          $(this).css({
-            "border": "1px solid red",
-            "background": "#FFCECE" });
-             $('#sgem_plc_err_no_of_months').html('This cannot be empty or more than 100%').fadeIn(); 
-
-      }
-                
-        }); 
-
-    sgem_pl_calculationm(); 
-
-    //---------------------------------------------------------------------------------------------------
 });
 
-
-  // chart 1 start 
-  var data_pl_chart_years_values =  JSON.parse(localStorage.getItem('sgem_pl_yearsx_array')),
-  data_pl_chart_end_blance_values =  JSON.parse(localStorage.getItem('sgem_pl_end_balance_array')),
-  data_pl_chart_max1_values =  JSON.parse(localStorage.getItem('total_p_and_i'));
-
-  var ctx = document.getElementById('myChart').getContext('2d');
-  var gradientBg = ctx.createLinearGradient(0, 0, 0, 500);
-  
-  gradientBg.addColorStop(0, '#A5E5C5');
-  gradientBg.addColorStop(0.5, '#A5E5C5');
-  gradientBg.addColorStop(1, '#fff');
-  gradientBg.addColorStop(1, '#fff');
-  
-  var myChart = new Chart(ctx, {
-      type: 'line',
-      data: {
-          labels: data_pl_chart_years_values,
-          datasets: [{
-              label: 'Amount ',
-              data: data_pl_chart_end_blance_values,
-              borderWidth: 2,
-              backgroundColor: gradientBg,
-              borderColor: "#4BCC8C",
-              fill: true,
-              tension: 0.5,
-              pointRadius: 0,
-              pointHitRadius: 50,
-          }]
-      },
-      options: {
-          scales: {
-            y: {
-              min:0,
-              max: 100000,
-              grid: {
-                borderDash: [1, 2],
-                color: "#9F9F9F"
-              },
-              beginAtZero: true,
-              ticks: {
-                callback: function(value, index, ticks) {
-                    // return '$' + value;
-                    return '$' + value / 1000 + "k";
-                },
-                font: {
-                    size: 14,
-                    family: "'DM Sans'",
-                }
-              }
-            },
-            x: {
-              grid: {
-                display: false,
-              },
-              ticks: {
-                autoSkip: false,
-                maxRotation: 90,
-                minRotation: 90,
-                // Include a dollar sign in the ticks
-                // callback: function(value, index, ticks) {
-                //     // return '$' + value;
-                //     return '$' + value / 1000 + "k";
-                // },
-                font: {
-                    size: 14,
-                    family: "'DM Sans'",
-                }
-              }
-            },
-          },
-  
-          legend: {
-              display: false
-          },
-  
-          plugins: {
-            legend: {
-              display: false    
-            },
-            tooltip: {
-              backgroundColor: 'white',
-              yAlign: 'bottom',
-              borderColor: 'hsl(210, 3%, 70%)',
-              borderWidth: 1,
-              usePointStyle: true,
-              bodyFont: {
-                size: 14,
-                family: "'DM Sans'",
-              },
-              titleFont: {
-                  size: 14,
-                  family: "'DM Sans'"
-              },
-              bodySpacing: 1,
-              titleColor: '#000',
-              labelColor: '#000',
-              boxWidth: 0,
-              boxHeight: 30,
-              callbacks: {
-                labelTextColor: function(context){
-                    return '#4BCC8C';
-                },
-                labelPointStyle: function(context) {
-                    return {
-                        pointStyle: 'triangle',
-                        rotation: 0
-                    };
-                }
-              } 
-            }
-          }
-      }
-  });
-  
-  document.getElementById('sgem_plc_principle').style.backgroundColor = myChart.data.datasets[0].borderColor;
-  
-  // chart 2 start 
-
-  var data_pl_chart_years_values2 =  JSON.parse(localStorage.getItem('sgem_pl_yearsx_array')),
-   data_pl_chart_principal_values =  JSON.parse(localStorage.getItem('sgem_pl_principal_p_array')),
-   data_pl_chart_intrest_values =  JSON.parse(localStorage.getItem('sgem_pl_intrest_p_array')),
-   data_pl_chart_max1_values2 =  JSON.parse(localStorage.getItem('total_p_and_i'));
-
-  var ctx = document.getElementById('myChart2').getContext('2d');
-  var myChart2 = new Chart(ctx, {
-      type: 'bar',
-      data: {
-          labels: data_pl_chart_years_values2,
-          datasets: [{
-              label: 'Principal ',
-              data: data_pl_chart_principal_values,
-              borderWidth: 2,
-              backgroundColor: "#4BCC8C",
-              borderColor: "#4BCC8C",
-              fill: true,
-              tension: 0.5,
-              pointRadius: 0,
-              pointHitRadius: 50,
-              order: 1,
-  //             barThickness: 70,
-          },
-          {
-              label: 'Interest ',
-              data: data_pl_chart_intrest_values,
-              borderWidth: 2,
-              backgroundColor: "#1569B0",
-              borderColor: "#1569B0",
-              fill: true,
-              tension: 0.5,
-              pointRadius: 0,
-              pointHitRadius: 50,
-              order: 2,
-  //             barThickness: 70,
-          }]
-      },
-      options: {
-          scales: {
-            y: {
-              min:0,
-              max: 700000,
-              grid: {
-                // display: false,
-                borderDash: [8, 4],
-                color: "#9F9F9F"
-              },
-              stacked: true,
-              beginAtZero: true,
-              ticks: {
-                callback: function(value, index, ticks) {
-                    // return '$' + value;
-                    return '$' + value / 1000 + "k";
-                },
-                font: {
-                    size: 14,
-                    family: "'DM Sans'",
-                }
-              }
-            },
-            x: {
-              grid: {
-                display: false,
-              },
-              stacked: true,
-              ticks: {
-                autoSkip: false,
-                maxRotation: 90,
-                minRotation: 90,
-                // Include a dollar sign in the ticks
-                // callback: function(value, index, ticks) {
-                //     // return '$' + value;
-                //     return '$' + value / 1000 + "k";
-                // },
-                font: {
-                    size: 14,
-                    family: "'DM Sans'",
-                }
-              }
-            },
-          },
-  
-          legend: {
-              display: false
-          },
-  
-          plugins: {
-            legend: {
-              display: false    
-            },
-            tooltip: {
-              backgroundColor: 'white',
-              yAlign: 'bottom',
-              borderColor: 'hsl(210, 3%, 70%)',
-              borderWidth: 1,
-              usePointStyle: true,
-              bodyFont: {
-                size: 14,
-                family: "'DM Sans'",
-              },
-              titleFont: {
-                  size: 14,
-                  family: "'DM Sans'"
-              },
-              bodySpacing: 1,
-              titleColor: '#000',
-              labelColor: '#000',
-              boxWidth: 0,
-              boxHeight: 30,
-              callbacks: {
-                labelTextColor: function(context){
-                    return context.dataset.backgroundColor[context.dataIndex];
-                },
-                labelPointStyle: function(context) {
-                    return {
-                        pointStyle: 'triangle',
-                        rotation: 0
-                    };
-                }
-              } 
-            }
-          }
-      }
-  });
-    
-  document.getElementById('sgem_plc_principle_l2').style.backgroundColor = myChart2.data.datasets[0].borderColor;
-  document.getElementById('sgem_plc_le_interest').style.backgroundColor = myChart2.data.datasets[1].borderColor;
-  
-  function toggleData(value){
-    const visibilityData = myChart2.isDatasetVisible(value);
-    if (visibilityData === true ){
-      myChart2.hide(value);
-    }
-     if (visibilityData === false ){
-      myChart2.show(value);
-    } 
-  }
-
-  function toggleDatachart(value){
-    const visibilityData = myChart.isDatasetVisible(value);
-    if (visibilityData === true ){
-      myChart.hide(value);
-    }
-     if (visibilityData === false ){
-      myChart.show(value);
-    } 
-  }
-
-  function pl_update_chart(){
- 
-    myChart.data.labels = JSON.parse(localStorage.getItem('sgem_pl_yearsx_array'));
-  
-    myChart.data.datasets[0].data = JSON.parse(localStorage.getItem('sgem_pl_end_balance_array'));  
-
-    myChart.options.scales.y.max = JSON.parse(localStorage.getItem('total_p_and_i'));
-
-    myChart2.data.labels = JSON.parse(localStorage.getItem('sgem_pl_yearsx_array'));
-
-    myChart2.data.datasets[0].data = JSON.parse(localStorage.getItem('sgem_pl_principal_p_array')); 
-
-    myChart2.data.datasets[1].data = JSON.parse(localStorage.getItem('sgem_pl_intrest_p_array')); 
-
-    myChart2.options.scales.y.max = JSON.parse(localStorage.getItem('total_p_and_i'));
-  
-    myChart.update();
-    
-    myChart2.update();
-  
-  }
- 
-  
-  $(document).ready(function() {
-      if ($('.sgem-plc-cal-wrapper').width() < 1024) {
-          $('.sgem-plc-cal-left').addClass('sgem-plc-cal-left-add-class');
-          $('.sgem-plc-cal-right').addClass('sgem-plc-cal-right-add-class');
-      } else {
-          $('.sgem-plc-cal-left').removeClass('sgem-plc-cal-left-add-class');
-          $('.sgem-plc-cal-right').removeClass('sgem-plc-cal-right-add-class');
-      }
-  
-      if ($('.sgem-plc-cal-main-id').width() < 650) {
-          $('.sgem-plc-cal-wrapper').addClass('sgem-plc-wrapper-add-mobile');
-      } else {
-          $('.sgem-plc-cal-wrapper').removeClass('sgem-plc-wrapper-add-mobile');
-      }
-  
-      $(window).on('resize', function() {
-          if ($('.sgem-plc-cal-wrapper').width() < 1024) {
-              $('.sgem-plc-cal-left').addClass('sgem-plc-cal-left-add-class');
-              $('.sgem-plc-cal-right').addClass('sgem-plc-cal-right-add-class');
-          } else {
-              $('.sgem-plc-cal-left').removeClass('sgem-plc-cal-left-add-class');
-              $('.sgem-plc-cal-right').removeClass('sgem-plc-cal-right-add-class');
-          }
-      }).trigger('resize');
-  
-      $(window).on('resize', function() {
-          if ($('.sgem-plc-cal-main-id').width() < 650) {
-              $('.sgem-plc-cal-wrapper').addClass('sgem-plc-wrapper-add-mobile');
-          } else {
-              $('.sgem-plc-cal-wrapper').removeClass('sgem-plc-wrapper-add-mobile');
-          }
-      }).trigger('resize');
-  });
-  
-
-  function isNumber(evt) {
+function isNumber(evt) {
     evt = (evt) ? evt : window.event;
     var charCode = (evt.which) ? evt.which : evt.keyCode;
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
@@ -856,19 +592,66 @@ $(document).ready(function() {
         return false;
     }
     return true;
-  }
-
+}
 
 /**
- * Tool Tip
- */
-
-tippy('[data-tippy-content]', {
-    arrow: true,
+ * Tool tip
+*/
+tippy('[data-tippy-content]', {  
+    arrow: true, 
     theme: 'light-border',
     trigger: 'click',
 });
 
+// for responsive
+$(document).ready(function() {
+    if ($('.sgem-net-worth-cal-wrapper').width() < 1100) {
+        $('.sgem-net-worth-top-fields-section').addClass('sgem-net-worth-top-fields-section-add-class');
+    } else {
+        $('.sgem-net-worth-top-fields-section').removeClass('sgem-net-worth-top-fields-section-add-class');
+    }
+    
+    if ($('.sgem-net-worth-cal-wrapper').width() < 1100) {
+        $('.sgem-net-worth-cal-bottom-section').addClass('sgem-net-worth-cal-bottom-section-add-class');
+    } else {
+        $('.sgem-net-worth-cal-bottom-section').removeClass('sgem-net-worth-cal-bottom-section-add-class');
+    }
+
+
+    if ($('.sgem-net-worth-cal-main-id').width() < 650) {
+        $('.sgem-net-worth-cal-wrapper').addClass('sgem-net-worth-cal-wrapper-add-mobile');
+    } else {
+        $('.sgem-net-worth-cal-wrapper').removeClass('sgem-net-worth-cal-wrapper-add-mobile');
+    }
+
+    $(window).on('resize', function() {
+        if ($('.sgem-net-worth-cal-wrapper').width() < 1100) {
+            $('.sgem-net-worth-top-fields-section').addClass('sgem-net-worth-top-fields-section-add-class');
+        } else {
+            $('.sgem-net-worth-top-fields-section').removeClass('sgem-net-worth-top-fields-section-add-class');
+        }
+        
+        if ($('.sgem-net-worth-cal-wrapper').width() < 1100) {
+            $('.sgem-net-worth-cal-bottom-section').addClass('sgem-net-worth-cal-bottom-section-add-class');
+        } else {
+            $('.sgem-net-worth-cal-bottom-section').removeClass('sgem-net-worth-cal-bottom-section-add-class');
+        }
+
+        if ($('.sgem-net-worth-cal-main-id').width() < 650) {
+            $('.sgem-net-worth-cal-wrapper').addClass('sgem-net-worth-cal-wrapper-add-mobile');
+        } else {
+            $('.sgem-net-worth-cal-wrapper').removeClass('sgem-net-worth-cal-wrapper-add-mobile');
+        }
+    }).trigger('resize');
+
+    $(window).on('resize', function() {
+        if ($('.sgem-net-worth-cal-main-id').width() < 650) {
+            $('.sgem-net-worth-cal-wrapper').addClass('sgem-net-worth-cal-wrapper-add-mobile');
+        } else {
+            $('.sgem-net-worth-cal-wrapper').removeClass('sgem-net-worth-cal-wrapper-add-mobile');
+        }
+    }).trigger('resize');
+});
 
 // copy script section
 localStorage.setItem('sgem-plc-cal', '<div id="sgem-plc-cal"></div><script>window.onload = function() {var sgemplccal = document.createElement("script");sgemplccal.type = "text/javascript";sgemplccal.src = "https://retirementinvestments.github.io/sgem-personal-loan-calculator/assets/js/cal-plc-scripts.min.js";document.body.appendChild(sgemplccal);} </script>'); 
