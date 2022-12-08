@@ -230,7 +230,7 @@
   background-repeat: no-repeat;
   background-position: center -5px;
   background-size: 25px;
-  background-image: url("/wp-content/plugins/sgem-net-worth-calculator/assets/images/drop-down-arrow-cpg.svg");
+  background-image: url("https://retirementinvestments.github.io/sgem-net-worth-calculator/assets/images/drop-down-arrow-net-worth.svg");
 }
 .sgem-net-worth-cal-1 details[open] > summary::after {
   -moz-transform: rotate(-180deg);
@@ -727,7 +727,7 @@ details.sgem-net-worth-details-disclaimer > summary::after {
     background-repeat: no-repeat;
     background-position: center -2px;
     background-size: 25px;
-    background-image: url(/wp-content/plugins/sgem-net-worth-calculator/assets/images/drop-down-arrow-net-worth.svg);
+    background-image: url(https://retirementinvestments.github.io/sgem-net-worth-calculator/assets/images/drop-down-arrow-net-worth.svg);
     margin-top: 5px;
 }
 details.sgem-net-worth-details-disclaimer[open] > summary::after {
