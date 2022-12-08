@@ -183,7 +183,7 @@ var sgem_net_worth_main_contents = '<div class="sgem-net-worth-cal-main-id">'+
 
 sgem_net_worth_main_contents += '</div>'
 
-document.getElementById('sgem-plc-cal').innerHTML = sgem_net_worth_main_contents;
+document.getElementById('sgem-net-worth-cal').innerHTML = sgem_net_worth_main_contents;
 
 
 // decimal points
@@ -654,12 +654,12 @@ $(document).ready(function() {
 });
 
 // copy script section
-localStorage.setItem('sgem-plc-cal', '<div id="sgem-plc-cal"></div><script>window.onload = function() {var sgemplccal = document.createElement("script");sgemplccal.type = "text/javascript";sgemplccal.src = "https://retirementinvestments.github.io/sgem-personal-loan-calculator/assets/js/cal-plc-scripts.min.js";document.body.appendChild(sgemplccal);} </script>'); 
+localStorage.setItem('sgem-net-worth-cal', '<div id="sgem-net-worth-cal"></div><script>window.onload = function() {var sgemnetworthcal = document.createElement("script");sgemnetworthcal.type = "text/javascript";sgemnetworthcal.src = "https://retirementinvestments.github.io/sgem-personal-loan-calculator/assets/js/cal-plc-scripts.min.js";document.body.appendChild(sgemnetworthcal);} </script>'); 
 
 function sgem_plc_copyText(ev){
   //console.log("hi");
   let div = document.getElementById('div');
-  let text = localStorage.getItem('sgem-plc-cal');
+  let text = localStorage.getItem('sgem-net-worth-cal');
   let textArea  = document.createElement('textarea');
   textArea.width  = "1px"; 
   textArea.height = "1px";
