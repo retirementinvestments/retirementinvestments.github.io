@@ -1,28 +1,31 @@
 /* Surge start  */
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap');
 .tooltipster-fall,.tooltipster-grow.tooltipster-show{-webkit-transition-timing-function:cubic-bezier(.175,.885,.32,1);-moz-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);-ms-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);-o-transition-timing-function:cubic-bezier(.175,.885,.32,1.15)}.tooltipster-base{display:flex;pointer-events:none;position:absolute}.tooltipster-box{flex:1 1 auto}.tooltipster-content{box-sizing:border-box;max-height:100%;max-width:100%;overflow:auto}.tooltipster-ruler{bottom:0;left:0;overflow:hidden;position:fixed;right:0;top:0;visibility:hidden}.tooltipster-fade{opacity:0;-webkit-transition-property:opacity;-moz-transition-property:opacity;-o-transition-property:opacity;-ms-transition-property:opacity;transition-property:opacity}.tooltipster-fade.tooltipster-show{opacity:1}.tooltipster-grow{-webkit-transform:scale(0,0);-moz-transform:scale(0,0);-o-transform:scale(0,0);-ms-transform:scale(0,0);transform:scale(0,0);-webkit-transition-property:-webkit-transform;-moz-transition-property:-moz-transform;-o-transition-property:-o-transform;-ms-transition-property:-ms-transform;transition-property:transform;-webkit-backface-visibility:hidden}.tooltipster-grow.tooltipster-show{-webkit-transform:scale(1,1);-moz-transform:scale(1,1);-o-transform:scale(1,1);-ms-transform:scale(1,1);transform:scale(1,1);-webkit-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);transition-timing-function:cubic-bezier(.175,.885,.32,1.15)}.tooltipster-swing{opacity:0;-webkit-transform:rotateZ(4deg);-moz-transform:rotateZ(4deg);-o-transform:rotateZ(4deg);-ms-transform:rotateZ(4deg);transform:rotateZ(4deg);-webkit-transition-property:-webkit-transform,opacity;-moz-transition-property:-moz-transform;-o-transition-property:-o-transform;-ms-transition-property:-ms-transform;transition-property:transform}.tooltipster-swing.tooltipster-show{opacity:1;-webkit-transform:rotateZ(0);-moz-transform:rotateZ(0);-o-transform:rotateZ(0);-ms-transform:rotateZ(0);transform:rotateZ(0);-webkit-transition-timing-function:cubic-bezier(.23,.635,.495,1);-webkit-transition-timing-function:cubic-bezier(.23,.635,.495,2.4);-moz-transition-timing-function:cubic-bezier(.23,.635,.495,2.4);-ms-transition-timing-function:cubic-bezier(.23,.635,.495,2.4);-o-transition-timing-function:cubic-bezier(.23,.635,.495,2.4);transition-timing-function:cubic-bezier(.23,.635,.495,2.4)}.tooltipster-fall{-webkit-transition-property:top;-moz-transition-property:top;-o-transition-property:top;-ms-transition-property:top;transition-property:top;-webkit-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);transition-timing-function:cubic-bezier(.175,.885,.32,1.15)}.tooltipster-fall.tooltipster-initial{top:0!important}.tooltipster-fall.tooltipster-dying{-webkit-transition-property:all;-moz-transition-property:all;-o-transition-property:all;-ms-transition-property:all;transition-property:all;top:0!important;opacity:0}.tooltipster-slide{-webkit-transition-property:left;-moz-transition-property:left;-o-transition-property:left;-ms-transition-property:left;transition-property:left;-webkit-transition-timing-function:cubic-bezier(.175,.885,.32,1);-webkit-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);-moz-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);-ms-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);-o-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);transition-timing-function:cubic-bezier(.175,.885,.32,1.15)}.tooltipster-slide.tooltipster-initial{left:-40px!important}.tooltipster-slide.tooltipster-dying{-webkit-transition-property:all;-moz-transition-property:all;-o-transition-property:all;-ms-transition-property:all;transition-property:all;left:0!important;opacity:0}@keyframes tooltipster-fading{0%{opacity:0}100%{opacity:1}}.tooltipster-update-fade{animation:tooltipster-fading .4s}@keyframes tooltipster-rotating{25%{transform:rotate(-2deg)}75%{transform:rotate(2deg)}100%{transform:rotate(0)}}.tooltipster-update-rotate{animation:tooltipster-rotating .6s}@keyframes tooltipster-scaling{50%{transform:scale(1.1)}100%{transform:scale(1)}}.tooltipster-update-scale{animation:tooltipster-scaling .6s}.tooltipster-sidetip .tooltipster-box{background:#565656;border:2px solid #000;border-radius:4px}.tooltipster-sidetip.tooltipster-bottom .tooltipster-box{margin-top:8px}.tooltipster-sidetip.tooltipster-left .tooltipster-box{margin-right:8px}.tooltipster-sidetip.tooltipster-right .tooltipster-box{margin-left:8px}.tooltipster-sidetip.tooltipster-top .tooltipster-box{margin-bottom:8px}.tooltipster-sidetip .tooltipster-content{color:#fff;line-height:18px;padding:6px 14px}.tooltipster-sidetip .tooltipster-arrow{overflow:hidden;position:absolute}.tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow{height:10px;margin-left:-10px;top:0;width:20px}.tooltipster-sidetip.tooltipster-left .tooltipster-arrow{height:20px;margin-top:-10px;right:0;top:0;width:10px}.tooltipster-sidetip.tooltipster-right .tooltipster-arrow{height:20px;margin-top:-10px;left:0;top:0;width:10px}.tooltipster-sidetip.tooltipster-top .tooltipster-arrow{bottom:0;height:10px;margin-left:-10px;width:20px}.tooltipster-sidetip .tooltipster-arrow-background,.tooltipster-sidetip .tooltipster-arrow-border{height:0;position:absolute;width:0}.tooltipster-sidetip .tooltipster-arrow-background{border:10px solid transparent}.tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow-background{border-bottom-color:#565656;left:0;top:3px}.tooltipster-sidetip.tooltipster-left .tooltipster-arrow-background{border-left-color:#565656;left:-3px;top:0}.tooltipster-sidetip.tooltipster-right .tooltipster-arrow-background{border-right-color:#565656;left:3px;top:0}.tooltipster-sidetip.tooltipster-top .tooltipster-arrow-background{border-top-color:#565656;left:0;top:-3px}.tooltipster-sidetip .tooltipster-arrow-border{border:10px solid transparent;left:0;top:0}.tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow-border{border-bottom-color:#000}.tooltipster-sidetip.tooltipster-left .tooltipster-arrow-border{border-left-color:#000}.tooltipster-sidetip.tooltipster-right .tooltipster-arrow-border{border-right-color:#000}.tooltipster-sidetip.tooltipster-top .tooltipster-arrow-border{border-top-color:#000}.tooltipster-sidetip .tooltipster-arrow-uncropped{position:relative}.tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow-uncropped{top:-10px}.tooltipster-sidetip.tooltipster-right .tooltipster-arrow-uncropped{left:-10px}
 
-.sgem-plc-cal-1 .sgem-plc-form-group label,
-.sgem-plc-cal-1 input[type="text"],
-.sgem-plc-cal-1-result .sgem-plc-result-panel-header,
-.sgem-plc-percentage-note,
+/* Surge start  */
+
+.sgem-net-worth-cal-1 .sgem-net-worth-form-group label,
+.sgem-net-worth-cal-1 input[type="text"],
+.sgem-net-worth-cal-1-result .sgem-net-worth-result-panel-header,
+.sgem-net-worth-percentage-note,
 [data-tippy-root],
-.sgem-plc-cal-1 summary {
+.sgem-net-worth-cal-1 summary {
   font-family: "DM Sans", sans-serif;
 }
 
-.sgem-plc-cal-main-id {
+.sgem-net-worth-cal-main-id {
   max-width: 1240px;
   margin: 0 auto;
   font-family: "DM SANS";
 }
 
-.sgem-plc-cal-wrapper * {
+.sgem-net-worth-cal-wrapper * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-.sgem-plc-cal-wrapper {
+.sgem-net-worth-cal-wrapper {
   position: relative;
   display: block;
   width: 100%;
@@ -31,7 +34,7 @@
   padding: 24px;
   background-color: #f3f3f3;
 }
-.sgem-plc-logo-center {
+.sgem-net-worth-logo-center {
   display: flex;
   align-content: center;
   justify-content: flex-end;
@@ -39,30 +42,55 @@
   font-size: 16px;
   padding-right: 5px;
 }
-.sgem-plc-cal-left {
+.sgem-net-worth-cal-left {
   width: 100%;
-  padding: 0px;
+  padding-right: 12px;
+  border-right: 1px solid #E3E3E3;
+  padding-bottom: 12px;
 }
-.sgem-plc-cal-right {
+.sgem-net-worth-cal-right {
   width: 100%;
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  padding-left: 12px;
+  padding-bottom: 12px;
 }
-.sgem-plc-cal-1-result-wrapper {
+.sgem-net-worth-container-title {
+  font-size: 20px;
+  color: #000;
+  margin-bottom: 24px;
+}
+.sgem-net-worth-container-title span.sgem-net-worth-tooltip {
+  margin-left: 8px;
+}
+.sgem-net-worth-cal-bottom-section {
+  background: #FFFFFF;
+}
+.sgem-net-worth-top-fields-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.sgem-net-worth-cal-1-result-wrapper {
   padding: 32px 40px;
   position: relative;
 }
-.sgem-plc-cal-1 .sgem-plc-flex-container {
+.sgem-net-worth-cal-1 .sgem-net-worth-flex-container {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   width: 100%;
   position: relative;
   justify-content: space-between;
+  align-items: flex-start;
 }
-.sgem-plc-cal-1 .sgem-plc-flex-container .sgem-plc-form-flex {
+.sgem_net_worth_err_style {
+  font-weight: 300;
+    font-size: 13px;
+    color: #ff5964;
+}
+.sgem-net-worth-flex-con-last {
+  padding-top: 24px;
+}
+.sgem-net-worth-cal-1 .sgem-net-worth-flex-container .sgem-net-worth-form-flex {
   display: flex;
   flex-direction: column;
   flex-basis: 100%;
@@ -70,32 +98,32 @@
   position: relative;
   padding-right: 24px;
 }
-.sgem-plc-cal-1 .sgem-plc-form-group {
+.sgem-net-worth-cal-1 .sgem-net-worth-form-group {
   margin: 0px !important;
   padding: 0px;
 }
-.sgem-plc-cal-1 .sgem-plc-form-group label {
+.sgem-net-worth-cal-1 .sgem-net-worth-form-group label {
   font-size: 15px;
   font-weight: normal;
   color: #000;
   font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
   margin-bottom: 8px;
 }
-.sgem-plc-cal-1 input[type="text"] {
+.sgem-net-worth-cal-1 input[type="text"] {
   font-size: 16px;
   height: 55px;
   padding: 17px 16px;
   width: 100%;
   color: #002340;
-  border: 1px solid #7F7F7F;
-  background: #fff;
+  border: 1px solid #bbb;
+  background: #ffffff;
 }
 
-.sgem-plc-cal-1 input[type="text"]:focus {
+.sgem-net-worth-cal-1 input[type="text"]:focus {
   outline: none !important;
   border: 1px solid #2d3940;
 }
-.sgem-plc-cal-1 input[type="date"] {
+.sgem-net-worth-cal-1 input[type="date"] {
   font-size: 16px;
   height: 55px;
   padding: 17px 16px;
@@ -103,17 +131,17 @@
   color: #002340;
   border: 1px solid #bbb;
 }
-.sgem-plc-cal-1 input[type="date"]:focus {
+.sgem-net-worth-cal-1 input[type="date"]:focus {
   outline: none !important;
   border: 1px solid #2d3940;
 }
-.sgem-plc-cal-1 .sgem-plc-group-option-l {
+.sgem-net-worth-cal-1 .sgem-net-worth-group-option-l {
   padding-left: 0px !important;
 }
-.sgem-plc-cal-1 .sgem-plc-group-option-r {
+.sgem-net-worth-cal-1 .sgem-net-worth-group-option-r {
   padding-right: 0px !important;
 }
-.sgem-plc-collapsible-summary-title {
+.sgem-net-worth-collapsible-summary-title {
   font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
   font-size: 20px;
   color: #000000;
@@ -121,8 +149,8 @@
   margin-block-start: 20px;
   margin-block-end: 20px;
 }
-.sgem-plc-cal-1 .sgem-plc-form-flex.sgem-plc-years-holder::before {
-  content: "years";
+.sgem-net-worth-cal-1 .sgem-net-worth-form-flex.sgem-net-worth-years-holder::before {
+  content: "Years";
   position: absolute;
   right: 36px;
   top: 48px;
@@ -131,17 +159,20 @@
   font-weight: 400;
   font-size: 16px;
 }
-.sgem-plc-cal-1 .sgem-plc-form-flex.sgem-plc-currency-holder::after {
+.sgem-net-worth-cal-1 .sgem-net-worth-form-flex.sgem-net-worth-currency-holder::after {
   content: "$";
   position: absolute;
   left: 16px;
-  top: 48px;
+  top: 49px;
   display: block;
   color: #a3a3a3;
   font-weight: 400;
   font-size: 16px;
 }
-.sgem-plc-cal-1 .sgem-plc-form-flex.sgem-plc-precentage-holder::after {
+.sgem-net-worth-cal-1 .sgem-net-worth-form-flex.sgem-net-worth-currency-holder-t::after {
+  top: 72px;
+}
+.sgem-net-worth-cal-1 .sgem-net-worth-form-flex.sgem-net-worth-precentage-holder::after {
   content: "%";
   position: absolute;
   right: 20px;
@@ -151,20 +182,20 @@
   font-weight: 400;
   font-size: 16px;
 }
-.sgem-plc-cal-1
-  .sgem-plc-form-flex.sgem-plc-currency-holder
+.sgem-net-worth-cal-1
+  .sgem-net-worth-form-flex.sgem-net-worth-currency-holder
   input[type="text"] {
   padding-left: 33px;
 }
-.sgem-plc-cal-1 .sgem-plc-flex-container .sgem-plc-form-flex.sgem-plc-right-field {
+.sgem-net-worth-cal-1 .sgem-net-worth-flex-container .sgem-net-worth-form-flex.sgem-net-worth-right-field {
   padding-right: 0;
 }
-.sgem-plc-cal-1 details.sgem-plc-input-more-details {
+.sgem-net-worth-cal-1 details.sgem-net-worth-input-more-details {
   border-top: 1px solid #bebebe;
   display: block;
   margin-top: 12px;
 }
-.sgem-plc-cal-1 summary {
+.sgem-net-worth-cal-1 summary {
   display: flex !important;
   flex-direction: row;
   justify-content: space-between;
@@ -173,25 +204,25 @@
   margin-bottom: 20px;
   cursor: pointer;
 }
-.sgem-plc-cal-1 h3.collapsible-summary-title {
+.sgem-net-worth-cal-1 h3.collapsible-summary-title {
   font-size: 20px;
   color: #000000;
   padding-bottom: 0;
 }
-.sgem-plc-cal-1 details.sgem-plc-input-more-details > summary::marker,
-.sgem-plc-cal-1
-  details.sgem-plc-input-more-details
+.sgem-net-worth-cal-1 details.sgem-net-worth-input-more-details > summary::marker,
+.sgem-net-worth-cal-1
+  details.sgem-net-worth-input-more-details
   > summary::-webkit-details-marker {
   display: none;
 }
-.sgem-plc-cal-1
-  details.sgem-plc-input-more-details
+.sgem-net-worth-cal-1
+  details.sgem-net-worth-input-more-details
   > summary::-moz-list-bullet {
   list-style-type: none;
   list-style: none;
   display: none;
 }
-.sgem-plc-cal-1 details.sgem-plc-input-more-details > summary::after {
+.sgem-net-worth-cal-1 details.sgem-net-worth-input-more-details > summary::after {
   content: " ";
   width: 25px;
   height: 24px;
@@ -199,15 +230,15 @@
   background-repeat: no-repeat;
   background-position: center -5px;
   background-size: 25px;
-  background-image: url("https://retirementinvestments.github.io/sgem-personal-loan-calculator/assets/images/drop-down-arrow-plc.svg");
+  background-image: url("/wp-content/plugins/sgem-net-worth-calculator/assets/images/drop-down-arrow-cpg.svg");
 }
-.sgem-plc-cal-1 details[open] > summary::after {
+.sgem-net-worth-cal-1 details[open] > summary::after {
   -moz-transform: rotate(-180deg);
   -webkit-transform: rotate(-180deg);
   transform: rotate(-180deg);
   background-position: center 5px;
 }
-.sgem-plc-cal-1-result-header {
+.sgem-net-worth-cal-1-result-header {
   font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
   font-size: 20px;
   color: #000000;
@@ -216,34 +247,34 @@
   justify-content: space-between;
   align-items: flex-start;
 }
-.sgem-plc-cal-1-result-wrapper .sgem-plc-column2 {
+.sgem-net-worth-cal-1-result-wrapper .sgem-net-worth-column2 {
   width: auto;
 }
-.sgem-plc-cal-1-result-wrapper .sgem-plc-flex-container .sgem-plc-form-flex {
-  width: 100%;
-  display: flex;
+.sgem-net-worth-cal-1-result-wrapper .sgem-net-worth-flex-container .sgem-net-worth-form-flex {
+  width: 50%;
+  display: inline-block;
   flex-direction: column;
   flex-basis: 100%;
   flex: 1;
   flex: 1 0 50%;
   padding-bottom: 40px;
 }
-.sgem-plc-cal-1-result-wrapper .sgem-plc-result-label {
-  text-align: left;
-  font-size: 32px;
-  font-family: "DM Serif Display", serif;
-  letter-spacing: 0px;
-  color: #002340;
-  line-height: 44px;
+.sgem-net-worth-form-right {
+    width: 50%;
+    display: inline-flex;
+    height: 133px;
+    align-items: flex-start;
+    background: #F1F9FF;
+    padding: 30px;
 }
-.sgem-plc-cal-1-result-wrapper .sgem-plc-column2 {
-  display: flex;
+.sgem-net-worth-cal-1-result-wrapper .sgem-net-worth-column2 {
+  display: inline-flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  width: 65%;
+  width: 100%;
 }
 
-.sgem-plc-cal-1-result-wrapper .sgem-plc-result-value {
+.sgem-net-worth-cal-1-result-wrapper .sgem-net-worth-result-value {
   font-size: 16px;
   text-align: left;
   line-height: 21px;
@@ -251,12 +282,12 @@
   color: #1a1a1a;
   font-weight: 300;
 }
-.sgem-plc-logo-wrapper {
+.sgem-net-worth-logo-wrapper {
   position: absolute;
   right: 5px;
   top: 5px;
 }
-.sgem-plc-cal-1-result .sgem-plc-result-panel {
+.sgem-net-worth-cal-1-result .sgem-net-worth-result-panel {
   background: #ffffff 0% 0% no-repeat padding-box;
   -moz-box-shadow: 0px 5px 20px #0000001a;
   -webkit-box-shadow: 0px 5px 20px #0000001a;
@@ -265,7 +296,7 @@
   opacity: 1;
   padding-top: 24px;
 }
-.sgem-plc-cal-1-result .sgem-plc-result-panel-header {
+.sgem-net-worth-cal-1-result .sgem-net-worth-result-panel-header {
   text-align: center;
   font-size: 20px;
   font-weight: 500;
@@ -274,7 +305,7 @@
   color: #000000;
   text-transform: uppercase;
 }
-.sgem-plc-cal-1-result .sgem-plc-result-panel-goal {
+.sgem-net-worth-cal-1-result .sgem-net-worth-result-panel-goal {
   text-align: center;
   font-size: 32px;
   font-weight: 400;
@@ -288,7 +319,7 @@
   min-height: 80px;
   width: 100%;
 }
-.sgem-plc-cal-1-result .sgem-plc-flex-container-2 {
+.sgem-net-worth-cal-1-result .sgem-net-worth-flex-container-2 {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
@@ -296,11 +327,11 @@
   position: relative;
   overflow: hidden;
 }
-.sgem-plc-cal-1-result .sgem-plc-flex-container-2 .sgem-plc-form-flex-2 {
+.sgem-net-worth-cal-1-result .sgem-net-worth-flex-container-2 .sgem-net-worth-form-flex-2 {
   display: flex;
   flex-direction: column;
 }
-.sgem-plc-cal-1-result .sgem-plc-result-score-label {
+.sgem-net-worth-cal-1-result .sgem-net-worth-result-score-label {
   border: 1px solid rgba(0, 1, 255, 0);
   font-size: 16px;
   color: #012341;
@@ -311,29 +342,29 @@
   align-items: center;
   justify-content: center;
 }
-.sgem-plc-cal-1-result .sgem-plc-needAtt {
+.sgem-net-worth-cal-1-result .sgem-net-worth-needAtt {
   background-color: #ff5964;
 }
-.sgem-plc-cal-1-result .sgem-plc-onWay {
+.sgem-net-worth-cal-1-result .sgem-net-worth-onWay {
   background-color: #ffc12e;
 }
-.sgem-plc-cal-1-result .sgem-plc-getClose {
+.sgem-net-worth-cal-1-result .sgem-net-worth-getClose {
   background-color: #1e96fc;
 }
-.sgem-plc-cal-1-result .sgem-plc-onTrack {
+.sgem-net-worth-cal-1-result .sgem-net-worth-onTrack {
   background-color: #4bcc8c;
 }
-.sgem-plc-cal-1-result-footer {
+.sgem-net-worth-cal-1-result-footer {
   font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
   font-size: 16px;
   color: #474747;
   font-weight: 300;
 }
-.sgem-plc-buttonGet {
+.sgem-net-worth-buttonGet {
   margin-top: 40px;
   display: flex;
 }
-.sgem-plc-cal-1-result-footer .sgem-plc-getStart {
+.sgem-net-worth-cal-1-result-footer .sgem-net-worth-getStart {
   text-align: center;
   font-size: 16px;
   font-weight: bold;
@@ -347,11 +378,11 @@
   text-decoration: none;
   cursor: pointer;
 }
-.sgem-plc-cal-1-result-footer .sgem-plc-getStart:hover {
+.sgem-net-worth-cal-1-result-footer .sgem-net-worth-getStart:hover {
   background-color: #ffd061;
 }
 
-.sgem-plc-cal-1 .sgem-plc-cal-btn {
+.sgem-net-worth-cal-1 .sgem-net-worth-cal-btn {
   text-align: center;
   font-size: 16px;
   font-weight: bold;
@@ -368,7 +399,7 @@
   margin-top: 50px;
   cursor: pointer;
 }
-.sgem-plc-result-goal-text {
+.sgem-net-worth-result-goal-text {
   position: relative;
   width: 100%;
   -webkit-transition: all 1s ease;
@@ -376,7 +407,7 @@
   -o-transition: all 1s ease;
   transition: all 1s ease;
 }
-.sgem-plc-err-msg {
+.sgem-net-worth-err-msg {
   color: #ff5964;
   font-weight: 300;
   font-size: 12px;
@@ -384,17 +415,17 @@
   line-height: 15px;
 }
 /* Chrome, Safari, Edge, Opera for input type numbers (if exist) to remove up down arrows */
-.sgem-plc-cal-wrapper input::-webkit-outer-spin-button,
-.sgem-plc-cal-wrapper input::-webkit-inner-spin-button {
+.sgem-net-worth-cal-wrapper input::-webkit-outer-spin-button,
+.sgem-net-worth-cal-wrapper input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 /* Firefox */
-.sgem-plc-cal-wrapper input[type="number"] {
+.sgem-net-worth-cal-wrapper input[type="number"] {
   -moz-appearance: textfield;
 }
 
-.sgem-plc-percentage-note {
+.sgem-net-worth-percentage-note {
   font-size: 13px;
   font-weight: 400;
   color: #000;
@@ -419,7 +450,7 @@
   font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
 }
 
-.sgem-plc-tooltip {
+.sgem-net-worth-tooltip {
   border: 1px solid #000;
   width: 18px;
   height: 18px;
@@ -436,7 +467,7 @@
   font-size: 11px;
   max-width: 250px;
 }
-.sgem-plc-precentage-arrow {
+.sgem-net-worth-precentage-arrow {
   position: absolute;
   border-top: solid 15px white;
   border-left: solid 15px transparent;
@@ -451,91 +482,91 @@
   -o-transition: all 1s ease;
   transition: all 1s ease;
 }
-.sgem-plc-err-msg-rmt {
+.sgem-net-worth-err-msg-rmt {
   color: #ff5964;
   font-weight: 300;
   font-size: 13px;
   display: none;
 }
 
-.sgem-plc-form-flex-needAtt {
+.sgem-net-worth-form-flex-needAtt {
   width: 38%;
   flex-basis: 38%;
 }
-.sgem-plc-form-flex-onWay {
+.sgem-net-worth-form-flex-onWay {
   width: 27%;
   flex-basis: 27%;
 }
-.sgem-plc-form-flex-getClose {
+.sgem-net-worth-form-flex-getClose {
   width: 20%;
   flex-basis: 20%;
 }
-.sgem-plc-form-flex-onTrack {
+.sgem-net-worth-form-flex-onTrack {
   width: 15%;
   flex-basis: 15%;
 }
 
-.sgem-plc-common-err-msg {
+.sgem-net-worth-common-err-msg {
   color: #ff5964;
   font-weight: 300;
   font-size: 13px;
   line-height: 17px;
 }
 
-.sgem-plc-err-msg-rmt {
+.sgem-net-worth-err-msg-rmt {
   color: #ff5964;
   font-weight: 300;
   font-size: 13px;
 }
-.sgem-plc-err-msg-age {
+.sgem-net-worth-err-msg-age {
   color: #ff5964;
   font-weight: 300;
   font-size: 13px;
   display: none;
 }
-.sgem-plc-err-msg-per {
+.sgem-net-worth-err-msg-per {
   color: #ff5964;
   font-weight: 300;
   font-size: 13px;
 }
-.sgem-plc-err-msg-death {
+.sgem-net-worth-err-msg-death {
   color: #ff5964;
   font-weight: 300;
   font-size: 13px;
 }
-.sgem-plc-err-msg-income {
+.sgem-net-worth-err-msg-income {
   color: #ff5964;
   font-weight: 300;
   font-size: 13px;
 }
-.sgem-plc-err-msg-current {
+.sgem-net-worth-err-msg-current {
   color: #ff5964;
   font-weight: 300;
   font-size: 13px;
 }
 
 /* Right Section */
-.sgem-plc-age-text {
+.sgem-net-worth-age-text {
   font-size: 42px;
 }
-.sgem-plc-chartCard {
+.sgem-net-worth-chartCard {
   padding-bottom: 40px;
 }
-.sgem-plc-contribution {
+.sgem-net-worth-contribution {
   border: 0px;
   padding: 0px;
   width: 18px;
   height: 18px;
   margin-right: 16px;
 }
-.sgem-plc-tax-savings {
+.sgem-net-worth-tax-savings {
   border: 0px;
   padding: 0px;
   width: 18px;
   height: 18px;
   margin-right: 16px;
 }
-.sgem-plc-investment {
+.sgem-net-worth-investment {
   border: 0px;
   padding: 0px;
   width: 18px;
@@ -564,7 +595,7 @@
 }
 
 /* Advance tab*/
-.sgem-plc-drop-selection {
+.sgem-net-worth-drop-selection {
   font-size: 15px;
   height: 55px;
   padding: 17px 16px;
@@ -576,17 +607,17 @@
   cursor: pointer;
 }
 
-.sgem-plc-drop-selection:focus {
+.sgem-net-worth-drop-selection:focus {
   outline: none !important;
   border: 1px solid #2d3940;
 }
 
-.sgem-plc-checkbox input[type="checkbox"] {
+.sgem-net-worth-checkbox input[type="checkbox"] {
   margin: 0px;
   width: 20px;
   height: 20px;
 }
-.sgem-plc-checkbox {
+.sgem-net-worth-checkbox {
   background-color: #fff;
   font-size: 16px;
   height: 55px;
@@ -597,7 +628,7 @@
   display: flex;
   justify-content: space-between;
 }
-.sgem-plc-plusminus {
+.sgem-net-worth-plusminus {
   width: 200px;
   display: flex;
   border: 1px solid #bbb;
@@ -606,7 +637,7 @@
   align-items: center;
   background-color: #fff;
 }
-.sgem-plc-inline .sgem-plc-plusminus .sgem-plc-midvalue {
+.sgem-net-worth-inline .sgem-net-worth-plusminus .sgem-net-worth-midvalue {
   width: 150px;
   border-right: 1px;
   border-left: 1px;
@@ -615,17 +646,17 @@
   border-bottom-width: 0px;
   border-top-width: 0px;
 }
-.sgem-plc-minus,
-.sgem-plc-plus {
+.sgem-net-worth-minus,
+.sgem-net-worth-plus {
   cursor: pointer;
 }
 
 /* tippytheme box*/
-.sgem-plc-goal-tooltip {
+.sgem-net-worth-goal-tooltip {
   text-align: center;
   cursor: pointer;
 }
-.tippy-box[data-theme~="sgem-plc-goal"] {
+.tippy-box[data-theme~="sgem-net-worth-goal"] {
   font-size: 20px;
   background-color: #fff;
   color: #000;
@@ -637,149 +668,58 @@
     0 8px 16px 0 rgb(100 102 106 / 33%);
 }
 
-.sgem-plc-goal-tooltip-range-to-NeedAtt {
+.sgem-net-worth-goal-tooltip-range-to-NeedAtt {
   color: #ff5964;
   font-size: 15px;
 }
-.sgem-plc-goal-tooltip-range-to-onWay {
+.sgem-net-worth-goal-tooltip-range-to-onWay {
   color: #ffc12e;
   font-size: 15px;
 }
-.sgem-plc-goal-tooltip-range-to-getClose {
+.sgem-net-worth-goal-tooltip-range-to-getClose {
   color: #1e96fc;
   font-size: 15px;
 }
-.sgem-plc-goal-tooltip-range-to-onTrack {
+.sgem-net-worth-goal-tooltip-range-to-onTrack {
   color: #4bcc8c;
   font-size: 15px;
 }
 
-.tippy-box[data-theme~="sgem-plc-goal"][data-placement^="top"]
+.tippy-box[data-theme~="sgem-net-worth-goal"][data-placement^="top"]
   > .tippy-arrow::before {
   border-top-color: #fff;
 }
-.tippy-box[data-theme~="sgem-plc-goal"][data-placement^="bottom"]
+.tippy-box[data-theme~="sgem-net-worth-goal"][data-placement^="bottom"]
   > .tippy-arrow::before {
   border-bottom-color: #fff;
 }
-.tippy-box[data-theme~="sgem-plc-goal"][data-placement^="left"]
+.tippy-box[data-theme~="sgem-net-worth-goal"][data-placement^="left"]
   > .tippy-arrow::before {
   border-left-color: #fff;
 }
-.tippy-box[data-theme~="sgem-plc-goal"][data-placement^="right"]
+.tippy-box[data-theme~="sgem-net-worth-goal"][data-placement^="right"]
   > .tippy-arrow::before {
   border-right-color: #fff;
 }
-.sgem-plc-result-headtext {
-  font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
-  font-size: 16px;
-  color: #1a1a1a;
-  font-weight: 500;
-}
-#sgem_plc_err_start_Date {
-  height: 10px;
-  margin-top: 4px;
-  font-size: 10px;
-  color: #dc3545;
-}
 
-/* tab section */
-.sgem-plc-cal-tab-wrapper-section .sgem-plc-tabset > input[type="radio"] {
-  position: absolute;
-  left: -200vw;
-}
-
-.sgem-plc-cal-tab-wrapper-section .sgem-plc-tabset .tab-panel {
-  display: none;
-}
-
-.sgem-plc-cal-tab-wrapper-section .sgem-plc-tabset > input:first-child:checked ~ .tab-panels >.tab-panel:first-child,
-.sgem-plc-cal-tab-wrapper-section .sgem-plc-tabset > input:nth-child(3):checked ~ .tab-panels > .tab-panel:nth-child(2),
-.sgem-plc-cal-tab-wrapper-section .sgem-plc-tabset > input:nth-child(5):checked ~ .tab-panels > .tab-panel:nth-child(3),
-.sgem-plc-cal-tab-wrapper-section .sgem-plc-tabset > input:nth-child(7):checked ~ .tab-panels > .tab-panel:nth-child(4),
-.sgem-plc-cal-tab-wrapper-section .sgem-plc-tabset > input:nth-child(9):checked ~ .tab-panels > .tab-panel:nth-child(5),
-.sgem-plc-cal-tab-wrapper-section .sgem-plc-tabset > input:nth-child(11):checked ~ .tab-panels > .tab-panel:nth-child(6) {
-  display: block;
-}
-.sgem-plc-cal-tab-wrapper-section .sgem-plc-tabset > label {
-    font-family: 'DM Sans', sans-serif;
-    position: relative;
-    display: inline-block;
-    padding: 10px 26px;
-    border: 1px solid transparent;
-    border-bottom: 0;
-    cursor: pointer;
-    font-weight: 500;
-    font-size: 20px;
-    color: #9F9F9F;
-}
-
-.sgem-plc-cal-tab-wrapper-section .sgem-plc-tabset > label::after {
-	content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0px;
-    width: 100%;
-    height: 2px;
-  	background: #fff0;
-  	z-index: 1;
-}
-
-.sgem-plc-cal-tab-wrapper-section .sgem-plc-tabset > label:hover,
-.sgem-plc-cal-tab-wrapper-section .sgem-plc-tabset > input:focus + label {
-  color: #9F9F9F;
-}
-
-.sgem-plc-cal-tab-wrapper-section .sgem-plc-tabset > label:hover::after,
-.sgem-plc-cal-tab-wrapper-section .sgem-plc-tabset > input:focus + label::after,
-.sgem-plc-cal-tab-wrapper-section .sgem-plc-tabset > input:checked + label::after {
-  background: #002340;
-}
-.sgem-plc-cal-tab-wrapper-section .sgem-plc-tabset > input:checked + label {
-	border: 0px solid #fff;
-    margin-bottom: 0px;
-    font-size: 20px;
-    color: #000000;
-    font-weight: 500;
-}
-.sgem-plc-cal-border-for-tabs {
-	border-bottom: 2px solid #EAEAEA;
-    display: block;
-    width: 100%;
-    padding-top: 0px;
-    position: relative;
-    top: -2px;
-    z-index: 0;
-}
-.tab-panel {
-  padding: 40px 0;
-  border-top: 0px solid #ccc;
-}
-/* tab section end */
-.sgem-plc-cal-1-result-wrapper span.sgem-plc-monthly-paym-years {
-    color: #1A1A1A;
-    font-size: 16px;
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 300;
-}
 
 /* Desclamer */
-.sgem-plc-section-disclaimer {
+.sgem-net-worth-section-disclaimer {
     margin-top: 40px;
 }
-.sgem-plc-details-disclaimer summary {
+.sgem-net-worth-details-disclaimer summary {
     display: flex !important;
     flex-direction: row;
     align-items: center;
     cursor: pointer;
 }
-.sgem-plc-collapsible-summary-disclaimer {
+.sgem-net-worth-collapsible-summary-disclaimer {
     font-weight: 500;
     font-size: 16px;
     cursor: pointer;
     color: #474747;
 }
-details.sgem-plc-details-disclaimer > summary::after {
+details.sgem-net-worth-details-disclaimer > summary::after {
     content: " ";
     width: 25px;
     height: 24px;
@@ -787,64 +727,57 @@ details.sgem-plc-details-disclaimer > summary::after {
     background-repeat: no-repeat;
     background-position: center -2px;
     background-size: 25px;
-    background-image: url(https://retirementinvestments.github.io/sgem-personal-loan-calculator/assets/images/drop-down-arrow-plc.svg);
+    background-image: url(/wp-content/plugins/sgem-net-worth-calculator/assets/images/drop-down-arrow-net-worth.svg);
     margin-top: 5px;
 }
-details.sgem-plc-details-disclaimer[open] > summary::after {
+details.sgem-net-worth-details-disclaimer[open] > summary::after {
     -moz-transform: rotate(-180deg);
     -webkit-transform: rotate(-180deg);
     transform: rotate(-180deg);
     background-position: center 1px;
 }
-.sgem-plc-collapsible-text-disclaimer {
-    font-weight: 400;
+.sgem-net-worth-collapsible-text-disclaimer {
+  font-weight: 400;
     line-height: 18px;
     font-size: 14px;
     padding: 10px 0;
     color: #474747;
 }
-/* field error */
-.sgem-plc-err-style {
-	font-weight: 300;
-    font-size: 13px;
-    color: #ff5964;
-}
-/* legend styles */
-.sgem-plc-legendbox {
+/* ledgent styles */
+.sgem-net-worth-legendbox {
     display: flex;
 }
-.sgem-plc-legend-item {
+.sgem-net-worth-legend-item {
     display: flex;
     align-items: center;
     margin-left: 40px;
     margin-top: 24px;
-	cursor: pointer;
+    cursor: pointer;
 }
-.sgem-plc-principle, .sgem-plc-le-interest, .sgem-plc-principle-l2 {
+.sgem-net-worth-principle, .sgem-net-worth-le-interest, .sgem-net-worth-principle-l2 {
     height: 18px;
     width: 18px;
     border: 0;
 }
-.sgem-plc-principle-te, .sgem-plc-principle-te-l2, .sgem-plc-le-interest-te {
+.sgem-net-worth-principle-te, .sgem-net-worth-principle-te-l2, .sgem-net-worth-le-interest-te {
     margin-left: 10px;
-	color: #1A1A1A;
 }
-/* footer section */
-.sgem-plc-cal-main-id .sgem-plc-logo-center {
-	display: flex;
+/* footer text and copy text */
+.sgem-net-worth-cal-main-id .sgem-net-worth-logo-center {
+    display: flex;
     align-content: center;
     justify-content: center;
     align-items: center;
     font-size: 13px;
 }
-.sgem-plc-cal-main-id .sgem-plc-logo-center a {
-	color: rgb(21, 105, 176);
+.sgem-net-worth-cal-main-id .sgem-net-worth-logo-center a {
+    color: rgb(21, 105, 176);
 }
-.sgem-plc-cal-main-id .sgem-plc-copy-option-panel {
+.sgem-net-worth-cal-main-id .sgem-net-worth-copy-option-panel {
     background: #fff;
     padding-top: 25px;
 }
-.sgem-plc-copy-option-panel h3 {
+.sgem-net-worth-copy-option-panel h3 {
     font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
     margin-bottom: 16px;
     font-size: 20px;
@@ -852,7 +785,7 @@ details.sgem-plc-details-disclaimer[open] > summary::after {
     padding-bottom: 5px;
     font-weight: 500;
 }
-.sgem-plc-copy-code {
+.sgem-net-worth-copy-code {
     background: #ffc12e;
     font-size: 16px;
     font-weight: 700;
@@ -869,207 +802,228 @@ details.sgem-plc-details-disclaimer[open] > summary::after {
     cursor: pointer;
     width: auto;
 }
+.sgem-net-worth-copy-code-wrap .sgem-net-worth-copy-code:hover {
+    background-color: #ffd061;
+}
+/* bottom section styles */
+.sgem-net-worth-result-headtext-left {
+    font-size: 20px;
+    color: #000;
+    line-height: 45px;
+}
+.sgem-net-worth-result-label {
+  font-family: "DM Serif Display", serif;
+  font-size: 60px;
+  color: #002340;
+  line-height: 85px;
+}
+.sgem-net-worth-result-flex {
+  display: inline-block;
+  width: 49%;
+}
+.sgem-net-worth-result-headtext {
+  font-size: 16px;
+  color: #1A1A1A;
+  padding-bottom: 8px;
+}
+.sgem-net-worth-asset-label {
+    font-family: "DM Serif Display", serif;
+    font-size: 32px;
+    color: #002340;
+    line-height: 44px;
+}
+.sgem-net-worth-liabilities-label {
+    font-family: "DM Serif Display", serif;
+    font-size: 32px;
+    color: #FF5964;
+    line-height: 44px;
+}
 
-/* add class js styles */ 
-.sgem-plc-cal-right-add-class .sgem-plc-cal-1-result-wrapper .sgem-plc-column2 {
-	width: 75%;
+/* add class styles */
+.sgem-net-worth-top-fields-section-add-class .sgem-net-worth-flex-con-last {
+    padding-top: 0;
 }
-.sgem-plc-cal-right-add-class .sgem-plc-cal-1-result-wrapper .sgem-plc-result-label {
-	font-size: 2em;
+.sgem-net-worth-top-fields-section-add-class .sgem-net-worth-cal-1 .sgem-net-worth-form-flex.sgem-net-worth-currency-holder-t::after {
+    top: 47px;
 }
-.sgem-plc-cal-right-add-class .sgem-plc-result-headtext {
-    font-size: 1em;
+.sgem-net-worth-top-fields-section.sgem-net-worth-top-fields-section-add-class {
+  display: block;
 }
-.sgem-plc-cal-right-add-class .sgem-plc-cal-tab-wrapper-section .sgem-plc-tabset > label {
-	font-size: 0.8em;
+.sgem-net-worth-top-fields-section-add-class .sgem-net-worth-cal-left {
+    width: 100%;
+    padding-right: 0;
+    border-right: 0px;
+    padding-bottom: 12px;
 }
-.sgem-plc-cal-right-add-class .sgem-plc-cal-tab-wrapper-section .sgem-plc-tabset > input:checked + label {
-	font-size: 0.8em;
+.sgem-net-worth-top-fields-section-add-class .sgem-net-worth-cal-right {
+    padding-left: 0;
 }
-.sgem-plc-cal-left-add-class .sgem-plc-cal-1 input[type="text"] {
-	font-size: 0.8em;
+.sgem-net-worth-top-fields-section-add-class .sgem-net-worth-cal-1 input[type="text"] {
+  font-size: 0.9em;
     height: 45px;
 }
-.sgem-plc-cal-left-add-class .sgem-plc-cal-1 .sgem-plc-form-group label {
-    font-size: 0.8em;
+.sgem-net-worth-top-fields-section-add-class .sgem-net-worth-tooltip {
+    width: 15px;
+    height: 15px;
+  line-height: 15px;
 }
-.sgem-plc-cal-left-add-class .sgem-plc-cal-1 .sgem-plc-form-flex.sgem-plc-currency-holder::after {
-	top: 43px;
-	font-size: 0.8em;
-}
-.sgem-plc-cal-left-add-class .sgem-plc-cal-1 .sgem-plc-form-flex.sgem-plc-years-holder::before {
-	top: 43px;
-	font-size: 0.8em;	
-}
-.sgem-plc-cal-left-add-class .sgem-plc-cal-1 .sgem-plc-form-flex.sgem-plc-precentage-holder::after {
-	top: 43px;
-	font-size: 0.8em;	
-}
-.sgem-plc-cal-right-add-class .sgem-plc-cal-1-result-wrapper {
+.sgem-net-worth-cal-bottom-section-add-class .sgem-net-worth-cal-1-result-wrapper {
     padding: 20px;
 }
-.sgem-plc-cal-left-add-class .sgem-plc-legend-item {
-    font-size: 0.8em;
+.sgem-net-worth-top-fields-section-add-class .sgem-net-worth-container-title {
+    font-size: 1.1em;
 }
-.sgem-plc-cal-right-add-class .sgem-plc-principle-te, 
-.sgem-plc-cal-right-add-class .sgem-plc-principle-te-l2, 
-.sgem-plc-cal-right-add-class .sgem-plc-le-interest-te {
-    font-size: 0.8em;
+.sgem-net-worth-top-fields-section-add-class .sgem-net-worth-cal-1 .sgem-net-worth-form-flex.sgem-net-worth-currency-holder::after {
+  font-size: 0.9em;
+  bottom: 38px;
+}
+.sgem-net-worth-top-fields-section-add-class .sgem-net-worth-cal-1 .sgem-net-worth-form-group label {
+  font-size: 0.9em;
+}
+.sgem-net-worth-cal-bottom-section-add-class .sgem-net-worth-result-headtext-left {
+    font-size: 1.1em;
+}
+.sgem-net-worth-cal-bottom-section-add-class .sgem-net-worth-result-label {
+    font-size: 4em;
+}
+.sgem-net-worth-cal-bottom-section-add-class .sgem-net-worth-result-headtext {
+    font-size: 1em;
+}
+.sgem-net-worth-cal-bottom-section-add-class .sgem-net-worth-asset-label,
+.sgem-net-worth-cal-bottom-section-add-class .sgem-net-worth-liabilities-label {
+    font-size: 2em;
 }
 
-/* add class mob */
-.sgem-plc-wrapper-add-mobile .sgem-plc-cal-1 .sgem-plc-flex-container .sgem-plc-form-flex {
-    padding-right: 0;
+.sgem-net-worth-cal-bottom-section-add-class .sgem-net-worth-form-right {
+  width: 100%;
+  display: block;
+  margin-bottom: 40px;
 }
-.sgem-plc-wrapper-add-mobile .sgem-plc-cal-right-add-class .sgem-plc-cal-1 .sgem-plc-flex-container .sgem-plc-form-flex {
-    padding-right: 0;
+.sgem-net-worth-cal-wrapper-add-mobile .sgem-net-worth-cal-1 .sgem-net-worth-flex-container {
+    display: block;
 }
-.sgem-plc-wrapper-add-mobile .sgem-plc-cal-1 .sgem-plc-flex-container {
-	display: block;
+.sgem-net-worth-cal-wrapper-add-mobile .sgem-net-worth-cal-1 .sgem-net-worth-flex-container .sgem-net-worth-form-flex {
+  padding-right: 0;
 }
-.sgem-plc-wrapper-add-mobile .sgem-plc-cal-1 .sgem-plc-form-group label {
-	font-size: 0.8em;
+.sgem-net-worth-cal-wrapper-add-mobile .sgem-net-worth-cal-1 .sgem-net-worth-form-flex.sgem-net-worth-currency-holder::after {
+    font-size: 0.9em;
+    top: 43px;
 }
-.sgem-plc-wrapper-add-mobile .sgem-plc-cal-1 input[type="text"] {
-    font-size: 0.8em;
+.sgem-net-worth-cal-wrapper.sgem-net-worth-cal-wrapper-add-mobile {
+  padding: 8px;
 }
-.sgem-plc-wrapper-add-mobile .sgem-plc-cal-1 .sgem-plc-form-flex.sgem-plc-currency-holder::after,
-.sgem-plc-wrapper-add-mobile .sgem-plc-cal-1 .sgem-plc-form-flex.sgem-plc-years-holder::before,
-.sgem-plc-wrapper-add-mobile .sgem-plc-cal-1 .sgem-plc-form-flex.sgem-plc-precentage-holder::after {
-	font-size: 0.8em;
-}
-.sgem-plc-wrapper-add-mobile .sgem-plc-cal-1 .sgem-plc-form-flex.sgem-plc-years-holder::before {
-	right: 18px;
-}
-.sgem-plc-wrapper-add-mobile .sgem-plc-legend-item {
-	margin-left: 0;
-}
-.sgem-plc-wrapper-add-mobile .sgem-plc-principle-te, 
-.sgem-plc-wrapper-add-mobile .sgem-plc-principle-te-l2, 
-.sgem-plc-wrapper-add-mobile .sgem-plc-le-interest-te {
-	margin-left: 10px;
-    margin-right: 10px;
-}
-.sgem-plc-wrapper-add-mobile .sgem-plc-cal-tab-wrapper-section .sgem-plc-tabset > label {
-	padding: 10px 15px;
-}
-.sgem-plc-cal-wrapper.sgem-plc-wrapper-add-mobile {
-	padding: 10px;
-}
-.sgem-plc-result-label #sgem_plc_monthly_payment {
-	margin-right: 10px;
-}
+/* end */
 
 /* ******** ipad ************ */
 @media (max-width: 1024px) {
-  .sgem-plc-logo-wrapper {
+  .sgem-net-worth-logo-wrapper {
     position: absolute;
     right: 5px;
     top: -7px;
   }
-  .sgem-plc-drop-selection {
+  .sgem-net-worth-drop-selection {
     width: 100%;
   }
-  .sgem-plc-plusminus {
+  .sgem-net-worth-plusminus {
     width: 100%;
   }
-  .sgem-plc-inline .sgem-plc-plusminus .sgem-plc-midvalue input[type="text"] {
+  .sgem-net-worth-inline .sgem-net-worth-plusminus .sgem-net-worth-midvalue input[type="text"] {
     width: 125px;
   }
-  .sgem-plc-checkbox {
+  .sgem-net-worth-checkbox {
     width: 100%;
     padding: 15px 18px;
   }
-  .sgem-plc-cal-wrapper {
-	padding: 10px;
+  .sgem-net-worth-cal-main-id .sgem-net-worth-copy-option-panel {
+  padding: 25px;
   }
 }
 
 @media (max-width: 1100px) {
-  .sgem-plc-cal-wrapper {
+  .sgem-net-worth-cal-wrapper {
     flex-direction: column;
     width: auto;
   }
-  .sgem-plc-cal-left {
+  .sgem-net-worth-cal-left {
     width: 100%;
   }
-  .sgem-plc-cal-right {
+  .sgem-net-worth-cal-right {
     width: 100%;
   }
-  .sgem-plc-cal-1 input[type="text"] {
+  .sgem-net-worth-cal-1 input[type="text"] {
     width: 100%;
   }
-  .sgem-plc-cal-1 input[type="date"] {
+  .sgem-net-worth-cal-1 input[type="date"] {
     width: 100%;
   }
-  .sgem-plc-cal-1 .sgem-plc-flex-container .sgem-plc-form-flex:last-child {
+  .sgem-net-worth-cal-1 .sgem-net-worth-flex-container .sgem-net-worth-form-flex:last-child {
     padding-right: 0;
   }
-  .sgem-plc-precentage-arrow {
+  .sgem-net-worth-precentage-arrow {
     border-top: solid 12px white;
     border-left: solid 12px transparent;
     border-right: solid 12px transparent;
   }
-  .sgem-plc-age-text {
+  .sgem-net-worth-age-text {
     font-size: 22px;
   }
 }
 
 /* ******** mobile ************ */
 @media (max-width: 480px) {
-  .sgem-plc-cal-left,
-  .sgem-plc-cal-right {
+  .sgem-net-worth-cal-left,
+  .sgem-net-worth-cal-right {
     width: 100%;
   }
-  .sgem-plc-cal-left .sgem-plc-cal-1 input[type="text"] {
+  .sgem-net-worth-cal-left .sgem-net-worth-cal-1 input[type="text"] {
     width: 100%;
   }
-  .sgem-plc-cal-1 input[type="date"] {
+  .sgem-net-worth-cal-1 input[type="date"] {
     width: 100%;
   }
-  .sgem-plc-cal-wrapper {
+  .sgem-net-worth-cal-wrapper {
     flex-direction: column;
   }
-  .sgem-plc-cal-1-result-wrapper .sgem-plc-column2 {
+  .sgem-net-worth-cal-1-result-wrapper .sgem-net-worth-column2 {
     width: 100%;
     flex-direction: column;
   }
-  .sgem-plc-cal-1-result-wrapper {
+  .sgem-net-worth-cal-1-result-wrapper {
     padding: 12px;
   }
-  .sgem-plc-cal-1-result-wrapper .sgem-plc-flex-container .sgem-plc-form-flex {
+  .sgem-net-worth-cal-1-result-wrapper .sgem-net-worth-flex-container .sgem-net-worth-form-flex {
     padding-bottom: 32px;
     font-size: 14px;
   }
-  .sgem-plc-cal-1 .sgem-plc-form-group label {
+  .sgem-net-worth-cal-1 .sgem-net-worth-form-group label {
     line-height: 15px;
     display: block;
     min-height: 30px;
     font-size: 14px;
     margin-bottom: 0;
   }
-  .sgem-plc-cal-1 .sgem-plc-flex-container .sgem-plc-form-flex:last-child {
+  .sgem-net-worth-cal-1 .sgem-net-worth-flex-container .sgem-net-worth-form-flex:last-child {
     padding-right: 0;
   }
-  .sgem-plc-cal-1-result-wrapper .sgem-plc-result-label {
+  .sgem-net-worth-cal-1-result-wrapper .sgem-net-worth-result-label {
     font-size: 32px;
     line-height: 44px;
   }
-  .sgem-plc-cal-1-result .sgem-plc-result-panel-header {
+  .sgem-net-worth-cal-1-result .sgem-net-worth-result-panel-header {
     font-size: 14px;
   }
-  .sgem-plc-cal-1-result-header {
+  .sgem-net-worth-cal-1-result-header {
     font-size: 15px;
     font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
   }
-  .sgem-plc-cal-1-result .sgem-plc-result-panel-goal {
+  .sgem-net-worth-cal-1-result .sgem-net-worth-result-panel-goal {
     font-size: 30px;
   }
-  .sgem-plc-cal-1 .sgem-plc-cal-btn {
+  .sgem-net-worth-cal-1 .sgem-net-worth-cal-btn {
     margin-bottom: 40px;
     margin-top: 10px;
   }
-  .sgem-plc-logo-wrapper {
+  .sgem-net-worth-logo-wrapper {
     position: relative;
     top: unset;
     right: unset;
@@ -1077,94 +1031,111 @@ details.sgem-plc-details-disclaimer[open] > summary::after {
     margin-top: -10px;
     margin-bottom: 16px;
   }
-  .sgem-plc-logo-wrapper img {
+  .sgem-net-worth-logo-wrapper img {
     height: 25px;
   }
-  .sgem-plc-cal-1 .sgem-plc-flex-container .sgem-plc-form-flex {
-    padding-right: 0;
+  .sgem-net-worth-cal-1 .sgem-net-worth-flex-container .sgem-net-worth-form-flex {
+    padding-right: 12px;
   }
-  .sgem-plc-tooltip {
+  .sgem-net-worth-tooltip {
     position: absolute;
     margin-left: 8px;
   }
-  .sgem-plc-cal-1 .sgem-plc-form-flex.sgem-plc-currency-holder::after {
+  .sgem-net-worth-cal-1 .sgem-net-worth-form-flex.sgem-net-worth-currency-holder::after {
     top: 54px;
   }
-  .sgem-plc-percentage-note {
+  .sgem-net-worth-percentage-note {
     line-height: 14px;
   }
-  .sgem-plc-cal-1-result .sgem-plc-flex-container-2 .sgem-plc-form-flex-2 {
+  .sgem-net-worth-cal-1-result .sgem-net-worth-flex-container-2 .sgem-net-worth-form-flex-2 {
     text-align: center;
   }
-  .sgem-plc-precentage-arrow {
+  .sgem-net-worth-precentage-arrow {
     border-top: solid 8px white;
     border-left: solid 8px transparent;
     border-right: solid 8px transparent;
   }
-  .sgem-plc-cal-1-result .sgem-plc-result-score-label {
+  .sgem-net-worth-cal-1-result .sgem-net-worth-result-score-label {
     font-size: 13px;
     line-height: 14px;
     padding: 0 10px;
   }
-  .sgem-plc-tooltip {
+  .sgem-net-worth-tooltip {
     width: 15px;
     height: 15px;
     line-height: 15px;
     font-size: 11px;
   }
-  .sgem-plc-inline .sgem-plc-plusminus input[type="text"] {
+  .sgem-net-worth-inline .sgem-net-worth-plusminus input[type="text"] {
     width: 125px;
   }
-  .sgem-plc-logo-center {
+  .sgem-net-worth-logo-center {
     font-size: 15px;
     flex-direction: column;
     padding-top: 20px;
   }
-  .sgem-plc-logo-image {
+  .sgem-net-worth-logo-image {
     padding: 0px;
   }
-  .sgem-plc-cal-1-result-footer {
+  .sgem-net-worth-cal-1-result-footer {
     font-size: 14px;
   }
-  .sgem-plc-cal-1-result-wrapper .sgem-plc-result-value {
+  .sgem-net-worth-cal-1-result-wrapper .sgem-net-worth-result-value {
     font-size: 14px;
   }
-  .sgem-plc-value-text {
+  .sgem-net-worth-value-text {
     font-size: 22px;
     padding-top: 0px;
   }
+  .sgem-net-worth-cal-wrapper-add-mobile .sgem-net-worth-cal-1 .sgem-net-worth-form-flex.sgem-net-worth-currency-holder::after {
+    font-size: 0.9em;
+    top: 41px;
+  }
+  .sgem-net-worth-form-right {
+  width: 100%;
+    display: block;
+    margin-bottom: 40px;
+  }
+  .sgem-net-worth-result-flex {
+    display: inline-block;
+    width: 100%;
+  margin-bottom: 20px;
+  }
+  .sgem-net-worth-form-right {
+  height: auto;
+  }
 }
 @media (max-width: 420px) {
-  .sgem-plc-cal-1 .sgem-plc-form-flex.sgem-plc-currency-holder::after {
+  .sgem-net-worth-cal-1 .sgem-net-worth-form-flex.sgem-net-worth-currency-holder::after {
     top: 46px;
   }
-  .sgem-plc-tooltip {
+  .sgem-net-worth-tooltip {
     position: absolute;
     margin-left: 4px;
   }
-  .sgem-plc-tooltip {
+  .sgem-net-worth-tooltip {
     width: 13px;
     height: 13px;
     line-height: 13px;
     font-size: 10px;
   }
-  .sgem-plc-inline .sgem-plc-plusminus input[type="text"] {
+  .sgem-net-worth-inline .sgem-net-worth-plusminus input[type="text"] {
     width: 125px;
   }
 }
 @media (max-width: 380px) {
-  .sgem-plc-inline .sgem-plc-plusminus input[type="text"] {
+  .sgem-net-worth-inline .sgem-net-worth-plusminus input[type="text"] {
     width: 100px;
   }
 }
 @media (max-width: 356px) {
-  .sgem-plc-inline .sgem-plc-plusminus input[type="text"] {
+  .sgem-net-worth-inline .sgem-net-worth-plusminus input[type="text"] {
     width: 90px;
   }
 }
 @media (max-width: 337px) {
-  .sgem-plc-inline .sgem-plc-plusminus input[type="text"] {
+  .sgem-net-worth-inline .sgem-net-worth-plusminus input[type="text"] {
     width: 80px;
   }
 }
-/* Surge end */
+/* Surge end - Dileepa */
