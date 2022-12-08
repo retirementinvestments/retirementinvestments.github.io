@@ -167,19 +167,19 @@ var sgem_net_worth_main_contents = '<div class="sgem-net-worth-cal-main-id">'+
       '</div>'+
    '</div>'+
 
-   '<div class="sgem-net-worth-logo-center">'+
-      '<a class="sgem-net-worth-logo-image" href="https://retirementinvestments.com/net-worth-calculator/" target="_blank" rel="noopener">Net Worth Calculator'+
-      '</a>  by Retirement Investments'+
-   '</div>'+
+if( (location.hostname != "calculatorstg.wpengine.com") || (location.hostname != "retirementinvestments.com") || (location.hostname != "staging.retirementinvestments.com") ){
+    sgem_net_worth_main_contents += '<div class="sgem-net-worth-logo-center">';
+    sgem_net_worth_main_contents += '<a class="sgem-net-worth-logo-image" href="https://retirementinvestments.com/net-worth-calculator/" target="_blank" rel="noopener">Net Worth Calculator';
+    sgem_net_worth_main_contents += '</a> by Retirement Investments</div>';
+}
 
-   '<div class="sgem-net-worth-copy-option-panel">'+
-      '<h3>Do you want to add this calculator into your website?</h3>'+
-      '<div class="sgem-net-worth-copy-code-wrap">'+
-         '<button class="sgem-net-worth-copy-code" id="sgem-net-worth-copy-code" onclick="sgem_plc_copyText(event)">Get Calculator</button>'+
-      '</div>'+
-   '</div>'+
-'</div>';
-
+if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com" || location.hostname == "staging.retirementinvestments.com"){
+    sgem_net_worth_main_contents += '<div class="sgem-net-worth-copy-option-panel">'+
+    sgem_net_worth_main_contents += '<h3>Do you want to add this calculator into your website?</h3>'+
+    sgem_net_worth_main_contents += '<div class="sgem-net-worth-copy-code-wrap">'+
+    sgem_net_worth_main_contents += '<button class="sgem-net-worth-copy-code" id="sgem-net-worth-copy-code" onclick="sgem_plc_copyText(event)">Get Calculator</button>'+
+    sgem_net_worth_main_contents += '</div></div></div>';
+}
 
 sgem_net_worth_main_contents += '</div>'
 
@@ -293,6 +293,16 @@ var net_worth = decimalTwoPoints(total_assets - total_liabilities);
 }
 
 $(document).ready(function() {
+
+    if( location.hostname == "calculatorstg.wpengine.com") {
+        $('.sgem-net-worth-logo-center').hide(); 
+    } else if(location.hostname == "retirementinvestments.com"){
+        $('.sgem-net-worth-logo-center').hide();  
+    } else if(location.hostname == "staging.retirementinvestments.com"){ 
+        $('.sgem-net-worth-logo-center').hide();  
+    } else {
+        $('.sgem-net-worth-logo-center').show();  
+    }
 
     if ($('#sgem_net-worth_property_value_required,#sgem_net-worth_checking_acc_required,#sgem_net-worth_saving_accounts,#sgem_net-worth_retirement_bro,#sgem_net-worth_current_vehicle_value,#sgem_net-worth_other_assets,#sgem_net-worth_real_estate_loans,#sgem_net-worth_credit_card_debt,#sgem_net-worth_personal_loan_balance,#sgem_net-worth_student_loan_balance,#sgem_net-worth_auto_loan_balance,#sgem_net-worth_other_debts').length > 0) {
         $('#sgem_net-worth_property_value_required,#sgem_net-worth_checking_acc_required,#sgem_net-worth_saving_accounts,#sgem_net-worth_retirement_bro,#sgem_net-worth_current_vehicle_value,#sgem_net-worth_other_assets,#sgem_net-worth_real_estate_loans,#sgem_net-worth_credit_card_debt,#sgem_net-worth_personal_loan_balance,#sgem_net-worth_student_loan_balance,#sgem_net-worth_auto_loan_balance,#sgem_net-worth_other_debts').on('keyup', function() {
