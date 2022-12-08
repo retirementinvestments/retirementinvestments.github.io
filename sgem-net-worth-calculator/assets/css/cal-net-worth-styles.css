@@ -876,6 +876,7 @@ details.sgem-net-worth-details-disclaimer[open] > summary::after {
 .sgem-net-worth-top-fields-section-add-class .sgem-net-worth-cal-1 .sgem-net-worth-form-flex.sgem-net-worth-currency-holder::after {
   font-size: 0.9em;
   bottom: 38px;
+  top: 44px;
 }
 .sgem-net-worth-top-fields-section-add-class .sgem-net-worth-cal-1 .sgem-net-worth-form-group label {
   font-size: 0.9em;
