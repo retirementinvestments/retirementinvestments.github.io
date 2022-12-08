@@ -174,10 +174,10 @@ if( (location.hostname != "calculatorstg.wpengine.com") || (location.hostname !=
 }
 
 if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com" || location.hostname == "staging.retirementinvestments.com"){
-    sgem_net_worth_main_contents += '<div class="sgem-net-worth-copy-option-panel">'+
-    sgem_net_worth_main_contents += '<h3>Do you want to add this calculator into your website?</h3>'+
-    sgem_net_worth_main_contents += '<div class="sgem-net-worth-copy-code-wrap">'+
-    sgem_net_worth_main_contents += '<button class="sgem-net-worth-copy-code" id="sgem-net-worth-copy-code" onclick="sgem_net_worth_copyText(event)">Get Calculator</button>'+
+    sgem_net_worth_main_contents += '<div class="sgem-net-worth-copy-option-panel">';
+    sgem_net_worth_main_contents += '<h3>Do you want to add this calculator into your website?</h3>';
+    sgem_net_worth_main_contents += '<div class="sgem-net-worth-copy-code-wrap">';
+    sgem_net_worth_main_contents += '<button class="sgem-net-worth-copy-code" id="sgem-net-worth-copy-code" onclick="sgem_net_worth_copyText(event)">Get Calculator</button>';
     sgem_net_worth_main_contents += '</div></div></div>';
 }
 
