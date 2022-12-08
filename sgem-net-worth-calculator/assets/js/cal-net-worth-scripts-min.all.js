@@ -654,7 +654,7 @@ $(document).ready(function() {
 });
 
 // copy script section
-localStorage.setItem('sgem-net-worth-cal', '<div id="sgem-net-worth-cal"></div><script>window.onload = function() {var sgemnetworthcal = document.createElement("script");sgemnetworthcal.type = "text/javascript";sgemnetworthcal.src = "https://retirementinvestments.github.io/sgem-personal-loan-calculator/assets/js/cal-plc-scripts.min.js";document.body.appendChild(sgemnetworthcal);} </script>'); 
+localStorage.setItem('sgem-net-worth-cal', '<div id="sgem-net-worth-cal"></div><script>window.onload = function() {var sgemnetworthcal = document.createElement("script");sgemnetworthcal.type = "text/javascript";sgemnetworthcal.src = "https://retirementinvestments.github.io/sgem-net-worth-calculator/assets/js/cal-net-worth-scripts.min.js";document.body.appendChild(sgemnetworthcal);} </script>'); 
 
 function sgem_plc_copyText(ev){
   //console.log("hi");
