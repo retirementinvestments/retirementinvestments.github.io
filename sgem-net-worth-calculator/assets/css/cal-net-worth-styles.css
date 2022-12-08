@@ -380,6 +380,7 @@
 }
 .sgem-net-worth-cal-1-result-footer .sgem-net-worth-getStart:hover {
   background-color: #ffd061;
+  color: #002340;
 }
 
 .sgem-net-worth-cal-1 .sgem-net-worth-cal-btn {
@@ -804,6 +805,7 @@ details.sgem-net-worth-details-disclaimer[open] > summary::after {
 }
 .sgem-net-worth-copy-code-wrap .sgem-net-worth-copy-code:hover {
     background-color: #ffd061;
+    color: #002340;
 }
 /* bottom section styles */
 .sgem-net-worth-result-headtext-left {
