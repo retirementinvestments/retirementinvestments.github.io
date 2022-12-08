@@ -165,7 +165,7 @@ var sgem_net_worth_main_contents = '<div class="sgem-net-worth-cal-main-id">'+
             '</div>'+
          '</div>'+
       '</div>'+
-   '</div>'+
+   '</div>';
 
 if( (location.hostname != "calculatorstg.wpengine.com") || (location.hostname != "retirementinvestments.com") || (location.hostname != "staging.retirementinvestments.com") ){
     sgem_net_worth_main_contents += '<div class="sgem-net-worth-logo-center">';
@@ -181,7 +181,7 @@ if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "re
     sgem_net_worth_main_contents += '</div></div></div>';
 }
 
-sgem_net_worth_main_contents += '</div>'
+sgem_net_worth_main_contents += '</div>';
 
 document.getElementById('sgem-net-worth-cal').innerHTML = sgem_net_worth_main_contents;
 
