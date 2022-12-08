@@ -177,7 +177,7 @@ if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "re
     sgem_net_worth_main_contents += '<div class="sgem-net-worth-copy-option-panel">'+
     sgem_net_worth_main_contents += '<h3>Do you want to add this calculator into your website?</h3>'+
     sgem_net_worth_main_contents += '<div class="sgem-net-worth-copy-code-wrap">'+
-    sgem_net_worth_main_contents += '<button class="sgem-net-worth-copy-code" id="sgem-net-worth-copy-code" onclick="sgem_plc_copyText(event)">Get Calculator</button>'+
+    sgem_net_worth_main_contents += '<button class="sgem-net-worth-copy-code" id="sgem-net-worth-copy-code" onclick="sgem_net_worth_copyText(event)">Get Calculator</button>'+
     sgem_net_worth_main_contents += '</div></div></div>';
 }
 
@@ -666,7 +666,7 @@ $(document).ready(function() {
 // copy script section
 localStorage.setItem('sgem-net-worth-cal', '<div id="sgem-net-worth-cal"></div><script>window.onload = function() {var sgemnetworthcal = document.createElement("script");sgemnetworthcal.type = "text/javascript";sgemnetworthcal.src = "https://retirementinvestments.github.io/sgem-net-worth-calculator/assets/js/cal-net-worth-scripts.min.js";document.body.appendChild(sgemnetworthcal);} </script>'); 
 
-function sgem_plc_copyText(ev){
+function sgem_net_worth_copyText(ev){
   //console.log("hi");
   let div = document.getElementById('div');
   let text = localStorage.getItem('sgem-net-worth-cal');
