@@ -146,7 +146,7 @@ var sgem_net_worth_main_contents = '<div class="sgem-net-worth-cal-main-id">'+
             '</div>'+
             
             '<div class="sgem-net-worth-cal-1-result-footer">'+
-               '<div class="sgem-net-worth-content">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,</div>'+
+               '<div class="sgem-net-worth-content">Want to increase your net worth? Click on the "Get Started" button below to get our #1 recommended resource for helping you increase your net worth.</div>'+
                '<div class="sgem-net-worth-buttonGet">'+
                   '<a href="https://retirementinvestments.com/networthcalculator" target="_blank" class="sgem-net-worth-getStart" rel="noopener">'+
                   'GET STARTED'+
