@@ -374,7 +374,7 @@
   background: #ffc12e;
   opacity: 1;
   border: 0px;
-  padding: 16px 42px;
+  padding: 15px 42px;
   text-decoration: none;
   cursor: pointer;
 }
@@ -979,6 +979,15 @@ details.sgem-net-worth-details-disclaimer[open] > summary::after {
   }
   .sgem-net-worth-container-title span.sgem-net-worth-tooltip {
     position: relative;
+  }
+}
+
+@media (min-width:800px) and (max-width:700px) {
+  .sgem-net-worth-top-fields-section-add-class .sgem-net-worth-cal-1 .sgem-net-worth-form-group label {
+      font-size: 13px;
+  }
+  .sgem-net-worth-top-fields-section-add-class .sgem-net-worth-cal-1 .sgem-net-worth-form-flex.sgem-net-worth-currency-holder::after {
+      top: 43px;
   }
 }
 
