@@ -863,7 +863,7 @@ details.sgem-net-worth-details-disclaimer[open] > summary::after {
     padding-left: 0;
 }
 .sgem-net-worth-top-fields-section-add-class .sgem-net-worth-cal-1 input[type="text"] {
-  font-size: 0.9em;
+  font-size: 14px;
     height: 45px;
 }
 .sgem-net-worth-top-fields-section-add-class .sgem-net-worth-tooltip {
@@ -875,15 +875,15 @@ details.sgem-net-worth-details-disclaimer[open] > summary::after {
     padding: 20px;
 }
 .sgem-net-worth-top-fields-section-add-class .sgem-net-worth-container-title {
-    font-size: 1.1em;
+    font-size: 17px;
 }
 .sgem-net-worth-top-fields-section-add-class .sgem-net-worth-cal-1 .sgem-net-worth-form-flex.sgem-net-worth-currency-holder::after {
-  font-size: 0.9em;
+  font-size: 14px;
   bottom: 38px;
   top: 44px;
 }
 .sgem-net-worth-top-fields-section-add-class .sgem-net-worth-cal-1 .sgem-net-worth-form-group label {
-  font-size: 1em;
+  font-size: 14px;
 }
 .sgem-net-worth-cal-bottom-section-add-class .sgem-net-worth-result-headtext-left {
     font-size: 1.1em;
