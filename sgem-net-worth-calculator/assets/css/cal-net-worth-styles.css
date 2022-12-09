@@ -976,6 +976,9 @@ details.sgem-net-worth-details-disclaimer[open] > summary::after {
   .sgem-net-worth-age-text {
     font-size: 22px;
   }
+  .sgem-net-worth-container-title span.sgem-net-worth-tooltip {
+    position: relative;
+  }
 }
 
 /* ******** mobile ************ */
