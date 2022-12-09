@@ -770,6 +770,7 @@ details.sgem-net-worth-details-disclaimer[open] > summary::after {
     justify-content: center;
     align-items: center;
     font-size: 13px;
+    padding-top: 15px;
 }
 .sgem-net-worth-cal-main-id .sgem-net-worth-logo-center a {
     color: rgb(21, 105, 176);
