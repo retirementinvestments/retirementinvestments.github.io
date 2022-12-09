@@ -982,7 +982,7 @@ details.sgem-net-worth-details-disclaimer[open] > summary::after {
   }
 }
 
-@media (min-width:700px) and (max-width:800px) {
+@media (min-width:600px) and (max-width:800px) {
   .sgem-net-worth-top-fields-section-add-class .sgem-net-worth-cal-1 .sgem-net-worth-form-group label {
       font-size: 13px;
   }
