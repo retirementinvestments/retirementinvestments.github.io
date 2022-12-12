@@ -279,12 +279,16 @@ var total_liabilities = decimalTwoPoints(real_estate_loans + student_loan_balanc
 var net_worth = decimalTwoPoints(total_assets - total_liabilities);
 //console.log(net_worth);
 
-   if (isNaN(net_worth) || net_worth < 1) {
+   // if (isNaN(net_worth) || net_worth < 1) {
 
-        $('#sgem_net-worth_payback_amount').text('0');
+   //      $('#sgem_net-worth_payback_amount').text('0');
 
-    } else {
+   //  } else {
 
+   //      $('#sgem_net-worth_payback_amount').text(numberWithCommas(net_worth));
+   //  }
+
+    if (isNaN(net_worth)) {
         $('#sgem_net-worth_payback_amount').text(numberWithCommas(net_worth));
     }
 
