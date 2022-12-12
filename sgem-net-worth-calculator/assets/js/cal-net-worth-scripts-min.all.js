@@ -297,9 +297,9 @@ var net_worth = decimalTwoPoints(total_assets - total_liabilities);
     if ( net_worth < 1 ){
 
         var net_worth_value = Math.abs(net_worth);
-        var net_worth_symb = "- $";
+        var net_worth_symb = "-$";
         $('#sgem_net_worth_your_tot').text(net_worth_symb + numberWithCommas(net_worth_value));
-        
+
     } else {
         $('#sgem_net_worth_your_tot').text('$' + numberWithCommas(net_worth));
     }
