@@ -288,9 +288,9 @@ var net_worth = decimalTwoPoints(total_assets - total_liabilities);
    //      $('#sgem_net-worth_payback_amount').text(numberWithCommas(net_worth));
    //  }
 
-    if (isNaN(net_worth)) {
+    // if (isNaN(net_worth)) {
         $('#sgem_net-worth_payback_amount').text(numberWithCommas(net_worth));
-    }
+    // }
 
 
 
