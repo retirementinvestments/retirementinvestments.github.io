@@ -294,7 +294,7 @@ var net_worth = decimalTwoPoints(total_assets - total_liabilities);
 
     
 
-    if ( net_worth_value < 1 ){
+    if ( net_worth < 1 ){
 
         var net_worth_value = Math.abs(net_worth);
         var net_worth_symb = "- $";
