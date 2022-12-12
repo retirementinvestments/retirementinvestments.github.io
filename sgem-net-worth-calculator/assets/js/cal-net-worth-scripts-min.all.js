@@ -288,11 +288,12 @@ var net_worth = decimalTwoPoints(total_assets - total_liabilities);
    //      $('#sgem_net-worth_payback_amount').text(numberWithCommas(net_worth));
    //  }
 
+    console.log(net_worth);
     var net_worth_value = Math.abs(net_worth);
     console.log(net_worth_value);
 
     if ( net_worth_value < 1 ){
-        $('#sgem_net_worth_your_tot').text('$ ' + numberWithCommas(net_worth));
+        $('#sgem_net_worth_your_tot').text('-$ ' + numberWithCommas(net_worth));
     } else {
         $('#sgem_net_worth_your_tot').text('$' + numberWithCommas(net_worth_value));
     }
