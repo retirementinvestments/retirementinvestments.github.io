@@ -292,7 +292,7 @@ var net_worth = decimalTwoPoints(total_assets - total_liabilities);
     console.log(net_worth_value);
 
     if ( net_worth_value < 1 ){
-        $('#sgem_net_worth_your_tot').html('$<span id="sgem_net-worth_payback_amount">'+ numberWithCommas(net_worth_value) +'</span>');
+        $('#sgem_net_worth_your_tot').text(numberWithCommas(net_worth_value));
     }
 
 
