@@ -288,16 +288,20 @@ var net_worth = decimalTwoPoints(total_assets - total_liabilities);
    //      $('#sgem_net-worth_payback_amount').text(numberWithCommas(net_worth));
    //  }
 
-    console.log(net_worth);
-    var net_worth_value = Math.abs(net_worth);
-    console.log(net_worth_value);
+    // console.log(net_worth);
+    
+    // console.log(net_worth_value);
 
-    var net_worth_symb = "- $";
+    
 
     if ( net_worth_value < 1 ){
-        $('#sgem_net_worth_your_tot').text(net_worth_symb + numberWithCommas(net_worth));
+
+        var net_worth_value = Math.abs(net_worth);
+        var net_worth_symb = "- $";
+        $('#sgem_net_worth_your_tot').text(net_worth_symb + numberWithCommas(net_worth_value));
+        
     } else {
-        $('#sgem_net_worth_your_tot').text('$' + numberWithCommas(net_worth_value));
+        $('#sgem_net_worth_your_tot').text('$' + numberWithCommas(net_worth));
     }
 
 
