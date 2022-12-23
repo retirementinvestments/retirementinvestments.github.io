@@ -170,7 +170,7 @@ var sgem_net_worth_main_contents = '<div class="sgem-net-worth-cal-main-id">'+
 if( (location.hostname != "calculatorstg.wpengine.com") || (location.hostname != "retirementinvestments.com") || (location.hostname != "staging.retirementinvestments.com") ){
     sgem_net_worth_main_contents += '<div class="sgem-net-worth-logo-center">';
     sgem_net_worth_main_contents += '<a class="sgem-net-worth-logo-image" href="https://retirementinvestments.com/net-worth-calculator/" target="_blank" rel="noopener">Net Worth Calculator ';
-    sgem_net_worth_main_contents += '</a> by Retirement Investments</div>';
+    sgem_net_worth_main_contents += '</a> &nbsp;by Retirement Investments</div>';
 }
 
 if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com" || location.hostname == "staging.retirementinvestments.com"){
