@@ -788,6 +788,7 @@ details.sgem-net-worth-details-disclaimer[open] > summary::after {
     font-weight: 500;
 }
 .sgem-net-worth-copy-code {
+    font-family: 'DM Sans', sans-serif;
     background: #ffc12e;
     font-size: 16px;
     font-weight: 700;
