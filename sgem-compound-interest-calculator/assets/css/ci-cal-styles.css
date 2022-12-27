@@ -2,67 +2,73 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
 .tooltipster-fall,.tooltipster-grow.tooltipster-show{-webkit-transition-timing-function:cubic-bezier(.175,.885,.32,1);-moz-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);-ms-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);-o-transition-timing-function:cubic-bezier(.175,.885,.32,1.15)}.tooltipster-base{display:flex;pointer-events:none;position:absolute}.tooltipster-box{flex:1 1 auto}.tooltipster-content{box-sizing:border-box;max-height:100%;max-width:100%;overflow:auto}.tooltipster-ruler{bottom:0;left:0;overflow:hidden;position:fixed;right:0;top:0;visibility:hidden}.tooltipster-fade{opacity:0;-webkit-transition-property:opacity;-moz-transition-property:opacity;-o-transition-property:opacity;-ms-transition-property:opacity;transition-property:opacity}.tooltipster-fade.tooltipster-show{opacity:1}.tooltipster-grow{-webkit-transform:scale(0,0);-moz-transform:scale(0,0);-o-transform:scale(0,0);-ms-transform:scale(0,0);transform:scale(0,0);-webkit-transition-property:-webkit-transform;-moz-transition-property:-moz-transform;-o-transition-property:-o-transform;-ms-transition-property:-ms-transform;transition-property:transform;-webkit-backface-visibility:hidden}.tooltipster-grow.tooltipster-show{-webkit-transform:scale(1,1);-moz-transform:scale(1,1);-o-transform:scale(1,1);-ms-transform:scale(1,1);transform:scale(1,1);-webkit-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);transition-timing-function:cubic-bezier(.175,.885,.32,1.15)}.tooltipster-swing{opacity:0;-webkit-transform:rotateZ(4deg);-moz-transform:rotateZ(4deg);-o-transform:rotateZ(4deg);-ms-transform:rotateZ(4deg);transform:rotateZ(4deg);-webkit-transition-property:-webkit-transform,opacity;-moz-transition-property:-moz-transform;-o-transition-property:-o-transform;-ms-transition-property:-ms-transform;transition-property:transform}.tooltipster-swing.tooltipster-show{opacity:1;-webkit-transform:rotateZ(0);-moz-transform:rotateZ(0);-o-transform:rotateZ(0);-ms-transform:rotateZ(0);transform:rotateZ(0);-webkit-transition-timing-function:cubic-bezier(.23,.635,.495,1);-webkit-transition-timing-function:cubic-bezier(.23,.635,.495,2.4);-moz-transition-timing-function:cubic-bezier(.23,.635,.495,2.4);-ms-transition-timing-function:cubic-bezier(.23,.635,.495,2.4);-o-transition-timing-function:cubic-bezier(.23,.635,.495,2.4);transition-timing-function:cubic-bezier(.23,.635,.495,2.4)}.tooltipster-fall{-webkit-transition-property:top;-moz-transition-property:top;-o-transition-property:top;-ms-transition-property:top;transition-property:top;-webkit-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);transition-timing-function:cubic-bezier(.175,.885,.32,1.15)}.tooltipster-fall.tooltipster-initial{top:0!important}.tooltipster-fall.tooltipster-dying{-webkit-transition-property:all;-moz-transition-property:all;-o-transition-property:all;-ms-transition-property:all;transition-property:all;top:0!important;opacity:0}.tooltipster-slide{-webkit-transition-property:left;-moz-transition-property:left;-o-transition-property:left;-ms-transition-property:left;transition-property:left;-webkit-transition-timing-function:cubic-bezier(.175,.885,.32,1);-webkit-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);-moz-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);-ms-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);-o-transition-timing-function:cubic-bezier(.175,.885,.32,1.15);transition-timing-function:cubic-bezier(.175,.885,.32,1.15)}.tooltipster-slide.tooltipster-initial{left:-40px!important}.tooltipster-slide.tooltipster-dying{-webkit-transition-property:all;-moz-transition-property:all;-o-transition-property:all;-ms-transition-property:all;transition-property:all;left:0!important;opacity:0}@keyframes tooltipster-fading{0%{opacity:0}100%{opacity:1}}.tooltipster-update-fade{animation:tooltipster-fading .4s}@keyframes tooltipster-rotating{25%{transform:rotate(-2deg)}75%{transform:rotate(2deg)}100%{transform:rotate(0)}}.tooltipster-update-rotate{animation:tooltipster-rotating .6s}@keyframes tooltipster-scaling{50%{transform:scale(1.1)}100%{transform:scale(1)}}.tooltipster-update-scale{animation:tooltipster-scaling .6s}.tooltipster-sidetip .tooltipster-box{background:#565656;border:2px solid #000;border-radius:4px}.tooltipster-sidetip.tooltipster-bottom .tooltipster-box{margin-top:8px}.tooltipster-sidetip.tooltipster-left .tooltipster-box{margin-right:8px}.tooltipster-sidetip.tooltipster-right .tooltipster-box{margin-left:8px}.tooltipster-sidetip.tooltipster-top .tooltipster-box{margin-bottom:8px}.tooltipster-sidetip .tooltipster-content{color:#fff;line-height:18px;padding:6px 14px}.tooltipster-sidetip .tooltipster-arrow{overflow:hidden;position:absolute}.tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow{height:10px;margin-left:-10px;top:0;width:20px}.tooltipster-sidetip.tooltipster-left .tooltipster-arrow{height:20px;margin-top:-10px;right:0;top:0;width:10px}.tooltipster-sidetip.tooltipster-right .tooltipster-arrow{height:20px;margin-top:-10px;left:0;top:0;width:10px}.tooltipster-sidetip.tooltipster-top .tooltipster-arrow{bottom:0;height:10px;margin-left:-10px;width:20px}.tooltipster-sidetip .tooltipster-arrow-background,.tooltipster-sidetip .tooltipster-arrow-border{height:0;position:absolute;width:0}.tooltipster-sidetip .tooltipster-arrow-background{border:10px solid transparent}.tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow-background{border-bottom-color:#565656;left:0;top:3px}.tooltipster-sidetip.tooltipster-left .tooltipster-arrow-background{border-left-color:#565656;left:-3px;top:0}.tooltipster-sidetip.tooltipster-right .tooltipster-arrow-background{border-right-color:#565656;left:3px;top:0}.tooltipster-sidetip.tooltipster-top .tooltipster-arrow-background{border-top-color:#565656;left:0;top:-3px}.tooltipster-sidetip .tooltipster-arrow-border{border:10px solid transparent;left:0;top:0}.tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow-border{border-bottom-color:#000}.tooltipster-sidetip.tooltipster-left .tooltipster-arrow-border{border-left-color:#000}.tooltipster-sidetip.tooltipster-right .tooltipster-arrow-border{border-right-color:#000}.tooltipster-sidetip.tooltipster-top .tooltipster-arrow-border{border-top-color:#000}.tooltipster-sidetip .tooltipster-arrow-uncropped{position:relative}.tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow-uncropped{top:-10px}.tooltipster-sidetip.tooltipster-right .tooltipster-arrow-uncropped{left:-10px}
 
-.sgem-plc-cal-1 .sgem-plc-form-group label,
-.sgem-plc-cal-1 input[type="text"],
-.sgem-plc-cal-1-result .sgem-plc-result-panel-header,
-.sgem-plc-percentage-note,
-[data-tippy-root],
-.sgem-plc-cal-1 summary {
-  font-family: "DM Sans", sans-serif;
+.sgem-compound-interest-cal-1 .sgem-compound-interest-form-group label, .sgem-compound-interest-cal-1 input[type="text"], .sgem-compound-interest-cal-1-result .sgem-compound-interest-result-panel-header, .sgem-compound-interest-percentage-note, [data-tippy-root], .sgem-compound-interest-cal-1 summary {
+    font-family: 'DM Sans', sans-serif;
 }
 
-.sgem-plc-cal-main-id {
+.sgem-compound-interest-total-label.sgem-compound-interest-for-desk {
+  font-size: 20px;
+}
+
+.sgem-compound-interest-cal-main-id {
   max-width: 1240px;
   margin: 0 auto;
-  font-family: "DM SANS";
+   font-family: 'DM SANS';
+  }
+
+
+.sgem-compound-interest-cal-wrapper * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-.sgem-plc-cal-wrapper * {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.sgem-plc-cal-wrapper {
+.sgem-compound-interest-cal-wrapper {
   position: relative;
-  display: block;
+  display: flex;
   width: 100%;
   flex-direction: row;
   flex-wrap: nowrap;
-  padding: 24px;
+  padding: 8px 8px;
   background-color: #f3f3f3;
 }
-.sgem-plc-logo-center {
-  display: flex;
-  align-content: center;
-  justify-content: flex-end;
-  align-items: center;
-  font-size: 16px;
+ .sgem-compound-interest-logo-center {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
   padding-right: 5px;
+  padding-top: 15px;
 }
-.sgem-plc-cal-left {
-  width: 100%;
-  padding: 0px;
+.sgem-compound-interest-logo-image {
+    color: rgb(21, 105, 176);
 }
-.sgem-plc-cal-right {
-  width: 100%;
-  background-color: #ffffff;
+
+.sgem-compound-interest-cal-left {
+  width: 470px;
+  padding: 20px;
+} 
+.sgem-compound-interest-cal-right {
+  width: 755px;
+  background-color: #FFFFFF;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+    flex-direction: column;
+    justify-content: space-between;
 }
-.sgem-plc-cal-1-result-wrapper {
+.sgem-compound-interest-cal-1-result-wrapper {
   padding: 32px 40px;
   position: relative;
 }
-.sgem-plc-cal-1 .sgem-plc-flex-container {
+.sgem-compound-interest-cal-1 .sgem-compound-interest-flex-container {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   width: 100%;
   position: relative;
   justify-content: space-between;
+  /*align-items: flex-end;*/
 }
-.sgem-plc-cal-1 .sgem-plc-flex-container .sgem-plc-form-flex {
+.sgem-compound-interest-cal-1 .sgem-compound-interest-flex-container .sgem-compound-interest-form-flex {
   display: flex;
   flex-direction: column;
   flex-basis: 100%;
@@ -70,215 +76,246 @@
   position: relative;
   padding-right: 24px;
 }
-.sgem-plc-cal-1 .sgem-plc-form-group {
-  margin: 0px !important;
-  padding: 0px;
+.sgem-compound-interest-cal-1 .sgem-compound-interest-form-group {
+    margin: 0px !important;
+    padding: 0px;
 }
-.sgem-plc-cal-1 .sgem-plc-form-group label {
-  font-size: 15px;
+.sgem-compound-interest-cal-1 .sgem-compound-interest-form-group label {
+  font-size: 16px;
   font-weight: normal;
   color: #000;
-  font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
-  margin-bottom: 8px;
+  font-family: 'DM Sans',Helvetica,Arial,Lucida,sans-serif;
+  margin-bottom: 8px; 
+  line-height: 21px;
 }
-.sgem-plc-cal-1 input[type="text"] {
-  font-size: 16px;
-  height: 55px;
-  padding: 17px 16px;
-  width: 100%;
-  color: #002340;
-  border: 1px solid #7F7F7F;
-  background: #fff;
-}
-
-.sgem-plc-cal-1 input[type="text"]:focus {
-  outline: none !important;
-  border: 1px solid #2d3940;
-}
-.sgem-plc-cal-1 input[type="date"] {
+.sgem-compound-interest-cal-1 input[type="text"] {
+  font-family: 'DM Sans',sans-serif;
   font-size: 16px;
   height: 55px;
   padding: 17px 16px;
   width: 200px;
   color: #002340;
-  border: 1px solid #bbb;
+  border:  1px solid #bbb;
+  background: #fff;
 }
-.sgem-plc-cal-1 input[type="date"]:focus {
+.sgem-compound-interest-cal-left .sgem-compound-interest-cal-1 .sgem-compound-interest-basic-full-width {
+  width: 424px;
+}
+.sgem-compound-interest-cal-1 input[type="text"]:focus{
   outline: none !important;
   border: 1px solid #2d3940;
 }
-.sgem-plc-cal-1 .sgem-plc-group-option-l {
-  padding-left: 0px !important;
+
+.sgem-compound-interest-cal-1 .sgem-compound-interest-group-option-l {
+    padding-left: 0px !important;
 }
-.sgem-plc-cal-1 .sgem-plc-group-option-r {
-  padding-right: 0px !important;
-}
-.sgem-plc-collapsible-summary-title {
-  font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
+.sgem-compound-interest-cal-1 .sgem-compound-interest-group-option-r {
+    padding-right: 0px !important;
+} 
+.sgem-compound-interest-collapsible-summary-title {
+  font-family: 'DM Sans',Helvetica,Arial,Lucida,sans-serif;
   font-size: 20px;
   color: #000000;
   font-weight: 500;
   margin-block-start: 20px;
   margin-block-end: 20px;
+  margin: 0;
+    padding: 0;
 }
-.sgem-plc-cal-1 .sgem-plc-form-flex.sgem-plc-years-holder::before {
-  content: "years";
+.sgem-compound-interest-cal-1 .sgem_compound_interest_err_style {
+  color: #FF5964;
+  font-size: 13px;
+}
+.sgem-compound-interest-cal-1 .sgem-compound-interest-form-flex.sgem-compound-interest-precentage-holder::before {
+  content: '%';
   position: absolute;
   right: 36px;
-  top: 48px;
+  top: 46px;
   display: block;
-  color: #a3a3a3;
+  color: #A3A3A3;
   font-weight: 400;
   font-size: 16px;
 }
-.sgem-plc-cal-1 .sgem-plc-form-flex.sgem-plc-currency-holder::after {
-  content: "$";
+.sgem-compound-interest-cal-1 .sgem-compound-interest-form-flex.sgem-compound-interest-years-holder::before {
+  content: 'Years';
+  position: absolute;
+  right: 36px;
+  top: 46px;
+  display: block;
+  color: #A3A3A3;
+  font-weight: 400;
+  font-size: 16px;
+}
+.sgem-compound-interest-cal-1 .sgem-compound-interest-form-flex.sgem-compound-interest-currency-holder::after {
+  content: '$';
   position: absolute;
   left: 16px;
-  top: 48px;
-  display: block;
-  color: #a3a3a3;
+  top: 46px;
+  display: block; 
+  color: #A3A3A3;
   font-weight: 400;
   font-size: 16px;
 }
-.sgem-plc-cal-1 .sgem-plc-form-flex.sgem-plc-precentage-holder::after {
-  content: "%";
-  position: absolute;
-  right: 20px;
-  top: 48px;
-  display: block;
-  color: #a3a3a3;
-  font-weight: 400;
-  font-size: 16px;
-}
-.sgem-plc-cal-1
-  .sgem-plc-form-flex.sgem-plc-currency-holder
-  input[type="text"] {
+.sgem-compound-interest-cal-1 .sgem-compound-interest-form-flex.sgem-compound-interest-currency-holder input[type="text"] {
   padding-left: 33px;
 }
-.sgem-plc-cal-1 .sgem-plc-flex-container .sgem-plc-form-flex.sgem-plc-right-field {
-  padding-right: 0;
-}
-.sgem-plc-cal-1 details.sgem-plc-input-more-details {
-  border-top: 1px solid #bebebe;
+ 
+.sgem-compound-interest-cal-1 details.sgem-compound-interest-input-more-details {
+  border-top: 1px solid #BEBEBE;
   display: block;
   margin-top: 12px;
 }
-.sgem-plc-cal-1 summary {
+.sgem-compound-interest-cal-1 summary {
   display: flex !important;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   margin-top: 25px;
   margin-bottom: 20px;
-  cursor: pointer;
+  cursor:pointer;
 }
-.sgem-plc-cal-1 h3.collapsible-summary-title {
+.sgem-compound-interest-cal-1 h3.collapsible-summary-title {
   font-size: 20px;
   color: #000000;
   padding-bottom: 0;
 }
-.sgem-plc-cal-1 details.sgem-plc-input-more-details > summary::marker,
-.sgem-plc-cal-1
-  details.sgem-plc-input-more-details
-  > summary::-webkit-details-marker {
-  display: none;
+.sgem-compound-interest-cal-1 details.sgem-compound-interest-input-more-details > summary::marker, 
+.sgem-compound-interest-cal-1 details.sgem-compound-interest-input-more-details > summary::-webkit-details-marker {
+   display: none;
 }
-.sgem-plc-cal-1
-  details.sgem-plc-input-more-details
-  > summary::-moz-list-bullet {
-  list-style-type: none;
-  list-style: none;
-  display: none;
+.sgem-compound-interest-cal-1 details.sgem-compound-interest-input-more-details > summary::-moz-list-bullet {
+    list-style-type: none;
+    list-style: none;
+    display: none;
 }
-.sgem-plc-cal-1 details.sgem-plc-input-more-details > summary::after {
-  content: " ";
+.sgem-compound-interest-cal-1 details.sgem-compound-interest-input-more-details > summary::after {
+  content: ' ';
   width: 25px;
   height: 24px;
-  display: inline-block;
+  display: inline-block; 
   background-repeat: no-repeat;
   background-position: center -5px;
   background-size: 25px;
-  background-image: url("https://retirementinvestments.github.io/sgem-personal-loan-calculator/assets/images/drop-down-arrow-plc.svg");
+  background-image: url('/wp-content/plugins/sgem-compound-interest-calculator/assets/images/drop-down-arrow-compound-interest.svg');
 }
-.sgem-plc-cal-1 details[open] > summary::after {
+.sgem-compound-interest-cal-1 details[open] > summary::after {
   -moz-transform: rotate(-180deg);
   -webkit-transform: rotate(-180deg);
   transform: rotate(-180deg);
-  background-position: center 5px;
+  background-position: center 5px; 
 }
-.sgem-plc-cal-1-result-header {
-  font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
+.sgem-compound-interest-cal-main-id details.sgem-compound-interest-details-disclaimer > summary::after {
+    content: " ";
+    width: 25px;
+    height: 24px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center -2px;
+    background-size: 25px;
+    background-image: url(../images/drop-down-arrow-compound-interest.svg);
+    margin-top: 5px;
+}
+.sgem-compound-interest-cal-main-id details.sgem-compound-interest-details-disclaimer[open] > summary::after {
+    -moz-transform: rotate(-180deg);
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+    background-position: center 1px;
+}
+.sgem-compound-interest-details-disclaimer summary {
+  display: inline-flex !important;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 32px;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+.sgem-compound-interest-details-disclaimer summary span.sgem-compound-interest-disclaimer {
+  font-family: 'DM Sans',sans-serif;
+  color: #002340;
+    font-size: 16px;
+    line-height: 21px;
+}
+.sgem-compound-interest-details-disclaimer .sgem-compound-interest-collapsible-text-disclaimer {
+  font-family: 'DM Sans',sans-serif;
+  font-size: 16px;
+    color: #474747;
+    font-weight: 300;
+}
+.sgem-compound-interest-cal-1-result-header {
+  font-family: 'DM Sans',Helvetica,Arial,Lucida,sans-serif;
   font-size: 20px;
   color: #000000;
-  margin-bottom: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  margin-bottom: 38px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
 }
-.sgem-plc-cal-1-result-wrapper .sgem-plc-column2 {
-  width: auto;
+.sgem-compound-interest-cal-1-result-wrapper .sgem-compound-interest-column2 {
+  width: 480px;
 }
-.sgem-plc-cal-1-result-wrapper .sgem-plc-flex-container .sgem-plc-form-flex {
+.sgem-compound-interest-column2 .sgem-result-value {
+  color: #1A1A1A;
+}
+.sgem-compound-interest-cal-1-result-wrapper .sgem-compound-interest-flex-container .sgem-compound-interest-form-flex {
   width: 100%;
   display: flex;
   flex-direction: column;
   flex-basis: 100%;
   flex: 1;
-  flex: 1 0 50%;
+  flex: 1 0 33%;
   padding-bottom: 40px;
-}
-.sgem-plc-cal-1-result-wrapper .sgem-plc-result-label {
+}  
+.sgem-compound-interest-cal-1-result-wrapper .sgem-compound-interest-result-label {
   text-align: left;
   font-size: 32px;
-  font-family: "DM Serif Display", serif;
+  font-family: 'DM Serif Display', serif;
   letter-spacing: 0px;
-  color: #002340;
-  line-height: 44px;
+  color: #002340; 
+  line-height: 58px; 
 }
-.sgem-plc-cal-1-result-wrapper .sgem-plc-column2 {
+.sgem-compound-interest-cal-1-result-wrapper .sgem-compound-interest-column2 { 
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  width: 65%;
 }
-
-.sgem-plc-cal-1-result-wrapper .sgem-plc-result-value {
+ 
+.sgem-compound-interest-cal-1-result-wrapper .sgem-compound-interest-result-value {
   font-size: 16px;
   text-align: left;
   line-height: 21px;
   letter-spacing: 0px;
-  color: #1a1a1a;
+  color: #1A1A1A; 
   font-weight: 300;
-}
-.sgem-plc-logo-wrapper {
+} 
+.sgem-compound-interest-logo-wrapper {
   position: absolute;
   right: 5px;
-  top: 5px;
+  top: 5px; 
 }
-.sgem-plc-cal-1-result .sgem-plc-result-panel {
-  background: #ffffff 0% 0% no-repeat padding-box;
-  -moz-box-shadow: 0px 5px 20px #0000001a;
-  -webkit-box-shadow: 0px 5px 20px #0000001a;
-  -o-box-shadow: 0px 5px 20px #0000001a;
-  box-shadow: 0px 5px 20px #0000001a;
+.sgem-compound-interest-cal-1-result .sgem-compound-interest-result-panel {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+  -moz-box-shadow: 0px 5px 20px #0000001A;
+  -webkit-box-shadow: 0px 5px 20px #0000001A;
+  -o-box-shadow: 0px 5px 20px #0000001A;
+  box-shadow: 0px 5px 20px #0000001A;
   opacity: 1;
-  padding-top: 24px;
+    padding-top:24px;
 }
-.sgem-plc-cal-1-result .sgem-plc-result-panel-header {
-  text-align: center;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 45px;
-  letter-spacing: 0px;
-  color: #000000;
-  text-transform: uppercase;
-}
-.sgem-plc-cal-1-result .sgem-plc-result-panel-goal {
+.sgem-compound-interest-cal-1-result .sgem-compound-interest-result-panel-header {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 45px;
+    letter-spacing: 0px;
+    color: #000000;
+    text-transform: uppercase; 
+ }
+.sgem-compound-interest-cal-1-result .sgem-compound-interest-result-panel-goal {
   text-align: center;
   font-size: 32px;
   font-weight: 400;
-  font-family: "DM Serif Display", serif;
+  font-family: 'DM Serif Display', serif;
   line-height: 36px;
   letter-spacing: 0px;
   color: #002340;
@@ -288,7 +325,7 @@
   min-height: 80px;
   width: 100%;
 }
-.sgem-plc-cal-1-result .sgem-plc-flex-container-2 {
+.sgem-compound-interest-cal-1-result .sgem-compound-interest-flex-container-2 {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
@@ -296,69 +333,71 @@
   position: relative;
   overflow: hidden;
 }
-.sgem-plc-cal-1-result .sgem-plc-flex-container-2 .sgem-plc-form-flex-2 {
-  display: flex;
-  flex-direction: column;
+.sgem-compound-interest-cal-1-result .sgem-compound-interest-flex-container-2 .sgem-compound-interest-form-flex-2 {
+    display: flex;
+    flex-direction: column;
 }
-.sgem-plc-cal-1-result .sgem-plc-result-score-label {
-  border: 1px solid rgba(0, 1, 255, 0);
+.sgem-compound-interest-cal-1-result .sgem-compound-interest-result-score-label {
+  border: 1px solid rgba(0,1,255,0);
   font-size: 16px;
-  color: #012341;
-  font-family: DM Sans;
-  font-weight: 400;
-  height: 55px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    color: #012341;
+    font-family: DM Sans;
+    font-weight: 400;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.sgem-plc-cal-1-result .sgem-plc-needAtt {
-  background-color: #ff5964;
+.sgem-compound-interest-cal-1-result .sgem-compound-interest-needAtt {    
+    background-color: #FF5964;    
 }
-.sgem-plc-cal-1-result .sgem-plc-onWay {
-  background-color: #ffc12e;
+.sgem-compound-interest-cal-1-result .sgem-compound-interest-onWay {
+    background-color: #FFC12E;
 }
-.sgem-plc-cal-1-result .sgem-plc-getClose {
-  background-color: #1e96fc;
+.sgem-compound-interest-cal-1-result .sgem-compound-interest-getClose {
+    background-color: #1E96FC;
 }
-.sgem-plc-cal-1-result .sgem-plc-onTrack {
-  background-color: #4bcc8c;
+.sgem-compound-interest-cal-1-result .sgem-compound-interest-onTrack {
+    background-color: #4BCC8C;
 }
-.sgem-plc-cal-1-result-footer {
-  font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
-  font-size: 16px;
+.sgem-compound-interest-cal-1-result-footer {
+  font-family: 'DM Sans',Helvetica,Arial,Lucida,sans-serif;
+  font-size: 16px ;
   color: #474747;
-  font-weight: 300;
+  font-weight: 300; 
 }
-.sgem-plc-buttonGet {
-  margin-top: 40px;
+.sgem-compound-interest-buttonGet{
+  margin-top: 32px;
   display: flex;
 }
-.sgem-plc-cal-1-result-footer .sgem-plc-getStart {
+.sgem-compound-interest-cal-1-result-footer .sgem-compound-interest-getStart {
+  font-family: 'DM Sans',sans-serif;
   text-align: center;
   font-size: 16px;
   font-weight: bold;
   letter-spacing: 0px;
   color: #002340;
   text-transform: uppercase;
-  background: #ffc12e;
+  background: #FFC12E;
   opacity: 1;
   border: 0px;
   padding: 16px 42px;
   text-decoration: none;
-  cursor: pointer;
+  cursor:pointer;
 }
-.sgem-plc-cal-1-result-footer .sgem-plc-getStart:hover {
-  background-color: #ffd061;
+.sgem-compound-interest-cal-1-result-footer .sgem-compound-interest-getStart:hover {
+        background-color: #ffd061;
 }
 
-.sgem-plc-cal-1 .sgem-plc-cal-btn {
+
+.sgem-compound-interest-cal-1 .sgem-compound-interest-cal-btn {
   text-align: center;
   font-size: 16px;
   font-weight: bold;
   letter-spacing: 0px;
   color: #002340;
   text-transform: uppercase;
-  background: #4bcc8c;
+  background: #4BCC8C;
   opacity: 1;
   border: 0px;
   padding: 16px 42px;
@@ -366,60 +405,83 @@
   width: 188px;
   height: 53px;
   margin-top: 50px;
-  cursor: pointer;
+  cursor:pointer;
 }
-.sgem-plc-result-goal-text {
-  position: relative;
+.sgem-compound-interest-result-goal-text {
+  position: relative; 
   width: 100%;
   -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease; 
 }
-.sgem-plc-err-msg {
+/*.sgem-compound-interest-result-goal-text::after {
+  position: absolute;
+  top: 60px;
+  left: 37%;
+  content: '';
+  width: 0;
+  height: 0;
+  border-top: solid 15px white;
+  border-left: solid 15px transparent;
+  border-right: solid 15px transparent;
+} 
+.sgem-compound-interest-result-goal-text.pos-1::after {
+  left: 10%;
+}
+.sgem-compound-interest-result-goal-text.pos-2::after {
+  left: 35%;
+}
+.sgem-compound-interest-result-goal-text.pos-3::after {
+  left: 59%;
+}
+.sgem-compound-interest-result-goal-text.pos-4::after {  
+  left: 84%;
+}*/ 
+.sgem-compound-interest-err-msg {
   color: #ff5964;
   font-weight: 300;
   font-size: 12px;
   display: none;
   line-height: 15px;
 }
+
 /* Chrome, Safari, Edge, Opera for input type numbers (if exist) to remove up down arrows */
-.sgem-plc-cal-wrapper input::-webkit-outer-spin-button,
-.sgem-plc-cal-wrapper input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.sgem-compound-interest-cal-wrapper input::-webkit-outer-spin-button,
+.sgem-compound-interest-cal-wrapper input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 /* Firefox */
-.sgem-plc-cal-wrapper input[type="number"] {
-  -moz-appearance: textfield;
+.sgem-compound-interest-cal-wrapper input[type=number] {
+   -moz-appearance: textfield;
 }
 
-.sgem-plc-percentage-note {
-  font-size: 13px;
-  font-weight: 400;
-  color: #000;
-  margin-top: 4px;
+.sgem-compound-interest-percentage-note {
+    font-size: 13px;
+    font-weight: 400;
+    color: #000; 
+    margin-top: 4px;
 }
 [data-tippy-root] {
   max-width: 250px;
-  -moz-box-shadow: 0 4px 8px 0 rgba(100, 102, 106, 0.15),
-    0 8px 16px 0 rgba(100, 102, 106, 0.33);
-  -webkit-box-shadow: 0 4px 8px 0 rgba(100, 102, 106, 0.15),
-    0 8px 16px 0 rgba(100, 102, 106, 0.33);
-  box-shadow: 0 4px 8px 0 rgba(100, 102, 106, 0.15),
-    0 8px 16px 0 rgba(100, 102, 106, 0.33);
+  -moz-box-shadow: 0 4px 8px 0 rgba(100,102,106,.15),0 8px 16px 0 rgba(100,102,106,.33);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(100,102,106,.15),0 8px 16px 0 rgba(100,102,106,.33);
+  box-shadow: 0 4px 8px 0 rgba(100,102,106,.15),0 8px 16px 0 rgba(100,102,106,.33);
 }
 
 [data-tippy-content] {
-  font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
+  font-family: 'DM Sans',Helvetica,Arial,Lucida,sans-serif;
   font-size: 14px;
+  
 }
 
 .tippy-popper {
-  font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
+  font-family: 'DM Sans',Helvetica,Arial,Lucida,sans-serif;
+  
 }
 
-.sgem-plc-tooltip {
+.sgem-compound-interest-tooltip {
   border: 1px solid #000;
   width: 18px;
   height: 18px;
@@ -429,422 +491,273 @@
   display: inline-block;
   text-align: center;
   cursor: pointer !important;
-  font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
+  font-family: 'DM Sans',Helvetica,Arial,Lucida,sans-serif;
 }
 .tippy-popper {
-  font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
+  font-family: 'DM Sans',Helvetica,Arial,Lucida,sans-serif;
   font-size: 11px;
   max-width: 250px;
 }
-.sgem-plc-precentage-arrow {
-  position: absolute;
+.sgem-compound-interest-precentage-arrow {
+  position: absolute; 
   border-top: solid 15px white;
   border-left: solid 15px transparent;
   border-right: solid 15px transparent;
-  content: "";
+  content: '';
   width: 0;
   height: 0;
   left: 29.8154%;
   margin-left: -15px;
   -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease; 
 }
-.sgem-plc-err-msg-rmt {
-  color: #ff5964;
-  font-weight: 300;
-  font-size: 13px;
-  display: none;
-}
+  .sgem-compound-interest-err-msg-rmt {
+    color: #ff5964;
+    font-weight: 300;
+    font-size: 13px;
+    display: none;
+} 
 
-.sgem-plc-form-flex-needAtt {
-  width: 38%;
-  flex-basis: 38%;
-}
-.sgem-plc-form-flex-onWay {
-  width: 27%;
-  flex-basis: 27%;
-}
-.sgem-plc-form-flex-getClose {
-  width: 20%;
-  flex-basis: 20%;
-}
-.sgem-plc-form-flex-onTrack {
-  width: 15%;
-  flex-basis: 15%;
-}
+ .sgem-compound-interest-form-flex-needAtt {
+    width:38%;
+    flex-basis: 38%;
+  }
+  .sgem-compound-interest-form-flex-onWay {
+    width:27%;
+    flex-basis: 27%;
+  }
+  .sgem-compound-interest-form-flex-getClose {
+    width:20%;
+    flex-basis: 20%;
+  }
+  .sgem-compound-interest-form-flex-onTrack {
+    width:15%;
+    flex-basis: 15%;
+  }
 
-.sgem-plc-common-err-msg {
+
+.sgem-compound-interest-common-err-msg {
   color: #ff5964;
   font-weight: 300;
   font-size: 13px;
   line-height: 17px;
 }
 
-.sgem-plc-err-msg-rmt {
-  color: #ff5964;
-  font-weight: 300;
-  font-size: 13px;
+  .sgem-compound-interest-err-msg-rmt {
+    color: #ff5964;
+    font-weight: 300;
+    font-size: 13px;
+ 
 }
-.sgem-plc-err-msg-age {
-  color: #ff5964;
-  font-weight: 300;
-  font-size: 13px;
-  display: none;
+.sgem-compound-interest-err-msg-age {
+    color: #ff5964;
+    font-weight: 300;
+    font-size: 13px;
+    display: none;
 }
-.sgem-plc-err-msg-per {
-  color: #ff5964;
-  font-weight: 300;
-  font-size: 13px;
+.sgem-compound-interest-err-msg-per{
+    color: #ff5964;
+    font-weight: 300;
+    font-size: 13px;  
 }
-.sgem-plc-err-msg-death {
-  color: #ff5964;
-  font-weight: 300;
-  font-size: 13px;
+.sgem-compound-interest-err-msg-death{
+    color: #ff5964;
+    font-weight: 300;
+    font-size: 13px;  
 }
-.sgem-plc-err-msg-income {
-  color: #ff5964;
-  font-weight: 300;
-  font-size: 13px;
+.sgem-compound-interest-err-msg-income{
+    color: #ff5964;
+    font-weight: 300;
+    font-size: 13px;  
 }
-.sgem-plc-err-msg-current {
-  color: #ff5964;
-  font-weight: 300;
-  font-size: 13px;
+.sgem-compound-interest-err-msg-current{
+    color: #ff5964;
+    font-weight: 300;
+    font-size: 13px;  
 }
+
 
 /* Right Section */
-.sgem-plc-age-text {
+.sgem-compound-interest-balance-text {
   font-size: 42px;
+  font-family: 'DM Serif Display', serif;
+    margin-right: 16px;
 }
-.sgem-plc-chartCard {
+.sgem-compound-interest-balance-text span {
+  font-size: 20px;
+    color: #002340;
+}
+.sgem-compound-interest-chartCard {
   padding-bottom: 40px;
 }
-.sgem-plc-contribution {
-  border: 0px;
-  padding: 0px;
-  width: 18px;
-  height: 18px;
-  margin-right: 16px;
-}
-.sgem-plc-tax-savings {
-  border: 0px;
-  padding: 0px;
-  width: 18px;
-  height: 18px;
-  margin-right: 16px;
-}
-.sgem-plc-investment {
-  border: 0px;
-  padding: 0px;
-  width: 18px;
-  height: 18px;
-  margin-right: 16px;
-}
+
+ .sgem-compound-interest-legendbox {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    font-size: 14px;
+  }
+  .sgem-compound-interest-legend-item {
+    display: flex;
+    cursor:pointer;
+    align-items: center;
+    height: 18px;
+  }
+  .sgem-compound-interest-legend-item:nth-child(1) {
+    margin-bottom: 8px;
+  }
+  .sgem-compound-principle {
+    border:0px;
+    padding: 0px;
+    width: 18px;
+    height: 18px;
+    margin-right:16px;
+  }
+  .sgem-compound-interest-interest {
+    border:0px;
+    padding: 0px;
+    width: 18px;
+    height: 18px;
+    margin-right:16px;
+  }
 
 /* Message Title*/
+  
+  #messagetitle{
+    font-size: 24px;
+    font-weight: 500;
+    color: #000;
+    font-family: 'DM Sans',Helvetica,Arial,Lucida,sans-serif;
+    margin-bottom: 16px;
+    display: inline-block;
+  }
 
-#messagetitle {
-  font-size: 24px;
-  font-weight: 500;
-  color: #000;
-  font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
-  margin-bottom: 16px;
-  display: inline-block;
-}
+  #mainmessage {
+    font-size: 24px;
+    font-weight: 500;
+    font-family: 'DM Sans',Helvetica,Arial,Lucida,sans-serif;
+    margin-bottom: 16px;
+    color:#FF5964;
+    display: inline-block;
+  }
 
-#mainmessage {
-  font-size: 24px;
-  font-weight: 500;
-  font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
-  margin-bottom: 16px;
-  color: #ff5964;
-  display: inline-block;
-}
 
-/* Advance tab*/
-.sgem-plc-drop-selection {
-  font-size: 15px;
-  height: 55px;
-  padding: 17px 16px;
-  width: 200px;
-  color: #002340;
-  border: 1px solid #bbb;
-  background-color: #fff;
-  font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
-  cursor: pointer;
-}
+/* Advance tab*/ 
+  .sgem-compound-interest-drop-selection {
+    font-size: 15px;
+    height: 55px;
+    padding: 16px 12px;
+    width: 200px;
+    color: #002340;
+    border:  1px solid #bbb;
+    background-color: #fff;
+    font-family: 'DM Sans',Helvetica,Arial,Lucida,sans-serif;
+  }
 
-.sgem-plc-drop-selection:focus {
-  outline: none !important;
-  border: 1px solid #2d3940;
-}
 
-.sgem-plc-checkbox input[type="checkbox"] {
-  margin: 0px;
-  width: 20px;
-  height: 20px;
-}
-.sgem-plc-checkbox {
-  background-color: #fff;
-  font-size: 16px;
-  height: 55px;
-  padding: 14px 10px;
-  width: 200px;
-  color: #002340;
-  border: 1px solid #bbb;
+
+
+.sgem-compound-interest-checkbox input[type=checkbox] {
+    margin: 0px;
+    width:20px;
+    height:20px;
+  }
+  .sgem-compound-interest-checkbox {
+    background-color: #fff;
+    font-size: 16px;
+    height: 55px;
+    padding: 14px 10px;
+    width: 200px;
+    color: #002340;
+    border: 1px solid #bbb;
+    display: flex;
+    justify-content: space-between;
+  }
+  .sgem-compound-interest-plusminus {
+    width: 200px;
   display: flex;
-  justify-content: space-between;
-}
-.sgem-plc-plusminus {
-  width: 200px;
-  display: flex;
-  border: 1px solid #bbb;
+    border: 1px solid #bbb;
   justify-content: space-evenly;
-  flex-wrap: nowrap;
-  align-items: center;
-  background-color: #fff;
-}
-.sgem-plc-inline .sgem-plc-plusminus .sgem-plc-midvalue {
-  width: 150px;
-  border-right: 1px;
-  border-left: 1px;
-  border-color: #bbb;
-  border-style: solid;
-  border-bottom-width: 0px;
-  border-top-width: 0px;
-}
-.sgem-plc-minus,
-.sgem-plc-plus {
-  cursor: pointer;
-}
+    flex-wrap: nowrap;
+    align-items: center;
+    background-color: #fff;
+  } 
+  .sgem-compound-interest-inline .sgem-compound-interest-plusminus .sgem-compound-interest-midvalue {
+    width:150px;
+    border-right: 1px;
+    border-left: 1px;
+    border-color: #bbb;
+    border-style: solid;
+    border-bottom-width: 0px;
+    border-top-width: 0px;
+  }
+  
+  .sgem-compound-interest-minus, .sgem-compound-interest-plus{
+      cursor:pointer;
+}     
+
+
 
 /* tippytheme box*/
-.sgem-plc-goal-tooltip {
-  text-align: center;
-  cursor: pointer;
+.sgem-compound-interest-goal-tooltip{
+  text-align:center;
+  cursor:pointer;
 }
-.tippy-box[data-theme~="sgem-plc-goal"] {
-  font-size: 20px;
-  background-color: #fff;
-  color: #000;
-  border: 1px solid #b1b3b5;
-  padding: 0.5rem 1rem;
-  -webkit-box-shadow: 0 4px 8px 0 rgb(100 102 106 / 15%),
-    0 8px 16px 0 rgb(100 102 106 / 33%);
-  box-shadow: 0 4px 8px 0 rgb(100 102 106 / 15%),
-    0 8px 16px 0 rgb(100 102 106 / 33%);
-}
+  .tippy-box[data-theme~="sgem-compound-interest-goal"] {
+    font-size: 20px;
+    background-color: #fff;
+    color:#000;
+    border: 1px solid #b1b3b5;
+    padding: 0.5rem 1rem;
+    -webkit-box-shadow: 0 4px 8px 0 rgb(100 102 106 / 15%), 0 8px 16px 0 rgb(100 102 106 / 33%);
+    box-shadow: 0 4px 8px 0 rgb(100 102 106 / 15%), 0 8px 16px 0 rgb(100 102 106 / 33%);
+  }
 
-.sgem-plc-goal-tooltip-range-to-NeedAtt {
-  color: #ff5964;
+.sgem-compound-interest-goal-tooltip-range-to-NeedAtt {
+  color:#FF5964;
   font-size: 15px;
 }
-.sgem-plc-goal-tooltip-range-to-onWay {
-  color: #ffc12e;
+.sgem-compound-interest-goal-tooltip-range-to-onWay {
+  color:#FFC12E;
   font-size: 15px;
 }
-.sgem-plc-goal-tooltip-range-to-getClose {
-  color: #1e96fc;
+.sgem-compound-interest-goal-tooltip-range-to-getClose {
+  color:#1E96FC;
   font-size: 15px;
 }
-.sgem-plc-goal-tooltip-range-to-onTrack {
-  color: #4bcc8c;
+.sgem-compound-interest-goal-tooltip-range-to-onTrack {
+  color:#4BCC8C;
   font-size: 15px;
 }
-
-.tippy-box[data-theme~="sgem-plc-goal"][data-placement^="top"]
-  > .tippy-arrow::before {
+  
+.tippy-box[data-theme~="sgem-compound-interest-goal"][data-placement^='top'] > .tippy-arrow::before {
   border-top-color: #fff;
 }
-.tippy-box[data-theme~="sgem-plc-goal"][data-placement^="bottom"]
-  > .tippy-arrow::before {
+.tippy-box[data-theme~="sgem-compound-interest-goal"][data-placement^='bottom'] > .tippy-arrow::before {
   border-bottom-color: #fff;
 }
-.tippy-box[data-theme~="sgem-plc-goal"][data-placement^="left"]
-  > .tippy-arrow::before {
+.tippy-box[data-theme~="sgem-compound-interest-goal"][data-placement^='left'] > .tippy-arrow::before {
   border-left-color: #fff;
 }
-.tippy-box[data-theme~="sgem-plc-goal"][data-placement^="right"]
-  > .tippy-arrow::before {
+.tippy-box[data-theme~="sgem-compound-interest-goal"][data-placement^='right'] > .tippy-arrow::before {
   border-right-color: #fff;
 }
-.sgem-plc-result-headtext {
-  font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
-  font-size: 16px;
-  color: #1a1a1a;
-  font-weight: 500;
-}
-#sgem_plc_err_start_Date {
-  height: 10px;
-  margin-top: 4px;
-  font-size: 10px;
-  color: #dc3545;
-}
+.img-class {
+    width:  215px;
+    height:  24px;
+  }  
 
-/* tab section */
-.sgem-plc-cal-tab-wrapper-section .sgem-plc-tabset > input[type="radio"] {
-  position: absolute;
-  left: -200vw;
-}
-
-.sgem-plc-cal-tab-wrapper-section .sgem-plc-tabset .tab-panel {
+/* desktop show / hide */
+.sgem-compound-interest-cal-main-id .sgem-compound-interest-for-mob {
   display: none;
 }
 
-.sgem-plc-cal-tab-wrapper-section .sgem-plc-tabset > input:first-child:checked ~ .tab-panels >.tab-panel:first-child,
-.sgem-plc-cal-tab-wrapper-section .sgem-plc-tabset > input:nth-child(3):checked ~ .tab-panels > .tab-panel:nth-child(2),
-.sgem-plc-cal-tab-wrapper-section .sgem-plc-tabset > input:nth-child(5):checked ~ .tab-panels > .tab-panel:nth-child(3),
-.sgem-plc-cal-tab-wrapper-section .sgem-plc-tabset > input:nth-child(7):checked ~ .tab-panels > .tab-panel:nth-child(4),
-.sgem-plc-cal-tab-wrapper-section .sgem-plc-tabset > input:nth-child(9):checked ~ .tab-panels > .tab-panel:nth-child(5),
-.sgem-plc-cal-tab-wrapper-section .sgem-plc-tabset > input:nth-child(11):checked ~ .tab-panels > .tab-panel:nth-child(6) {
-  display: block;
-}
-.sgem-plc-cal-tab-wrapper-section .sgem-plc-tabset > label {
-    font-family: 'DM Sans', sans-serif;
-    position: relative;
-    display: inline-block;
-    padding: 10px 26px;
-    border: 1px solid transparent;
-    border-bottom: 0;
-    cursor: pointer;
-    font-weight: 500;
-    font-size: 20px;
-    color: #9F9F9F;
-}
-
-.sgem-plc-cal-tab-wrapper-section .sgem-plc-tabset > label::after {
-	content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0px;
-    width: 100%;
-    height: 2px;
-  	background: #fff0;
-  	z-index: 1;
-}
-
-.sgem-plc-cal-tab-wrapper-section .sgem-plc-tabset > label:hover,
-.sgem-plc-cal-tab-wrapper-section .sgem-plc-tabset > input:focus + label {
-  color: #9F9F9F;
-}
-
-.sgem-plc-cal-tab-wrapper-section .sgem-plc-tabset > label:hover::after,
-.sgem-plc-cal-tab-wrapper-section .sgem-plc-tabset > input:focus + label::after,
-.sgem-plc-cal-tab-wrapper-section .sgem-plc-tabset > input:checked + label::after {
-  background: #002340;
-}
-.sgem-plc-cal-tab-wrapper-section .sgem-plc-tabset > input:checked + label {
-	border: 0px solid #fff;
-    margin-bottom: 0px;
-    font-size: 20px;
-    color: #000000;
-    font-weight: 500;
-}
-.sgem-plc-cal-border-for-tabs {
-	border-bottom: 2px solid #EAEAEA;
-    display: block;
-    width: 100%;
-    padding-top: 0px;
-    position: relative;
-    top: -2px;
-    z-index: 0;
-}
-.tab-panel {
-  padding: 40px 0;
-  border-top: 0px solid #ccc;
-}
-/* tab section end */
-.sgem-plc-cal-1-result-wrapper span.sgem-plc-monthly-paym-years {
-    color: #1A1A1A;
-    font-size: 16px;
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 300;
-}
-
-/* Desclamer */
-.sgem-plc-section-disclaimer {
-    margin-top: 40px;
-}
-.sgem-plc-details-disclaimer summary {
-    display: flex !important;
-    flex-direction: row;
-    align-items: center;
-    cursor: pointer;
-}
-.sgem-plc-collapsible-summary-disclaimer {
-    font-weight: 500;
-    font-size: 16px;
-    cursor: pointer;
-    color: #474747;
-}
-details.sgem-plc-details-disclaimer > summary::after {
-    content: " ";
-    width: 25px;
-    height: 24px;
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-position: center -2px;
-    background-size: 25px;
-    background-image: url(https://retirementinvestments.github.io/sgem-personal-loan-calculator/assets/images/drop-down-arrow-plc.svg);
-    margin-top: 5px;
-}
-details.sgem-plc-details-disclaimer[open] > summary::after {
-    -moz-transform: rotate(-180deg);
-    -webkit-transform: rotate(-180deg);
-    transform: rotate(-180deg);
-    background-position: center 1px;
-}
-.sgem-plc-collapsible-text-disclaimer {
-    font-weight: 400;
-    line-height: 18px;
-    font-size: 14px;
-    padding: 10px 0;
-    color: #474747;
-}
-/* field error */
-.sgem-plc-err-style {
-	font-weight: 300;
-    font-size: 13px;
-    color: #ff5964;
-}
-/* legend styles */
-.sgem-plc-legendbox {
-    display: flex;
-}
-.sgem-plc-legend-item {
-    display: flex;
-    align-items: center;
-    margin-left: 40px;
-    margin-top: 24px;
-	cursor: pointer;
-}
-.sgem-plc-principle, .sgem-plc-le-interest, .sgem-plc-principle-l2 {
-    height: 18px;
-    width: 18px;
-    border: 0;
-}
-.sgem-plc-principle-te, .sgem-plc-principle-te-l2, .sgem-plc-le-interest-te {
-    margin-left: 10px;
-	color: #1A1A1A;
-}
-/* footer section */
-.sgem-plc-cal-main-id .sgem-plc-logo-center {
-	display: flex;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    font-size: 13px;
-}
-.sgem-plc-cal-main-id .sgem-plc-logo-center a {
-	color: rgb(21, 105, 176);
-}
-.sgem-plc-cal-main-id .sgem-plc-copy-option-panel {
-    background: #fff;
-    padding-top: 25px;
-}
-.sgem-plc-copy-option-panel h3 {
+/* embed copy section */
+.sgem-compound-interest-copy-option-panel h3 {
     font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
     margin-bottom: 16px;
     font-size: 20px;
@@ -852,7 +765,8 @@ details.sgem-plc-details-disclaimer[open] > summary::after {
     padding-bottom: 5px;
     font-weight: 500;
 }
-.sgem-plc-copy-code {
+.sgem-compound-interest-copy-code {
+  font-family: 'DM Sans',sans-serif;
     background: #ffc12e;
     font-size: 16px;
     font-weight: 700;
@@ -869,207 +783,504 @@ details.sgem-plc-details-disclaimer[open] > summary::after {
     cursor: pointer;
     width: auto;
 }
+.sgem-compound-interest-copy-code:hover {
+  background-color: #ffd061;
+}
+.sgem-compound-interest-copy-option-panel {
+    margin-top: 25px;
+}
+.sgem-compound-interest-cal-main-id .sgem-compound-interest-header-title-box {
+  color: #002340;
+}
 
-/* add class js styles */ 
-.sgem-plc-cal-right-add-class .sgem-plc-cal-1-result-wrapper .sgem-plc-column2 {
-	width: 75%;
+/* radio button styles */
+
+input#sgem-compound-interest-cal-tab1, 
+input#sgem-compound-interest-cal-tab2,
+input#sgem-compound-interest-cal-tab3,
+input#sgem-compound-interest-cal-tab4,
+input#sgem-compound-interest-cal-tab5,
+input#sgem-compound-interest-cal-tab6 {
+    margin: 0;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 4px;
+    left: 0px;
 }
-.sgem-plc-cal-right-add-class .sgem-plc-cal-1-result-wrapper .sgem-plc-result-label {
-	font-size: 2em;
+input#sgem-compound-interest-cal-tab1:checked, 
+input#sgem-compound-interest-cal-tab2:checked,
+input#sgem-compound-interest-cal-tab3:checked,
+input#sgem-compound-interest-cal-tab4:checked,
+input#sgem-compound-interest-cal-tab5:checked,
+input#sgem-compound-interest-cal-tab6:checked {
+    margin: 0;
+    width: 15px;
+    height: 15px;
+    position: relative;
+  top: 2px;
+  left: 1px;
+  margin-right: 5px;
 }
-.sgem-plc-cal-right-add-class .sgem-plc-result-headtext {
+
+.sgem-compound-interest-form-checkbox-style-tic1, 
+.sgem-compound-interest-form-checkbox-style-tic2, 
+.sgem-compound-interest-form-checkbox-style-tic3, 
+.sgem-compound-interest-form-checkbox-style-tic4, 
+.sgem-compound-interest-form-checkbox-style-tic5,
+.sgem-compound-interest-form-checkbox-style-tic6, 
+#sgem-compound-interest-cal-tab2, 
+#sgem-compound-interest-cal-tab1,
+#sgem-compound-interest-cal-tab3,
+#sgem-compound-interest-cal-tab4,
+#sgem-compound-interest-cal-tab5,
+#sgem-compound-interest-cal-tab6 {
+    position: relative;
+    cursor: pointer;
+}
+.sgem-compound-interest-cal-tabs input#sgem-compound-interest-cal-tab1:checked ~ .sgem-compound-interest-form-checkbox-style-tic1:before {
+    content: url(/wp-content/plugins/sgem-compound-interest-calculator/assets/images/fill-green-tic.svg);
+    position: absolute;
+    right: 4px;
+    top: -1px;
+}
+.sgem-compound-interest-cal-tabs input#sgem-compound-interest-cal-tab2:checked ~ .sgem-compound-interest-form-checkbox-style-tic2:before {
+    content: url(/wp-content/plugins/sgem-compound-interest-calculator/assets/images/fill-green-tic.svg);
+    position: absolute;
+    right: 4px;
+    top: -1px;
+}
+.sgem-compound-interest-cal-tabs input#sgem-compound-interest-cal-tab3:checked ~ .sgem-compound-interest-form-checkbox-style-tic3:before {
+    content: url(/wp-content/plugins/sgem-compound-interest-calculator/assets/images/fill-green-tic.svg);
+    position: absolute;
+    right: 4px;
+    top: -1px;
+}
+.sgem-compound-interest-cal-tabs input#sgem-compound-interest-cal-tab4:checked ~ .sgem-compound-interest-form-checkbox-style-tic4:before {
+    content: url(/wp-content/plugins/sgem-compound-interest-calculator/assets/images/fill-green-tic.svg);
+    position: absolute;
+    right: 4px;
+    top: -1px;
+}
+.sgem-compound-interest-cal-tabs input#sgem-compound-interest-cal-tab5:checked ~ .sgem-compound-interest-form-checkbox-style-tic5:before {
+    content: url(/wp-content/plugins/sgem-compound-interest-calculator/assets/images/fill-green-tic.svg);
+    position: absolute;
+    right: 4px;
+    top: -1px;
+}
+.sgem-compound-interest-cal-tabs input#sgem-compound-interest-cal-tab6:checked ~ .sgem-compound-interest-form-checkbox-style-tic6:before {
+    content: url(/wp-content/plugins/sgem-compound-interest-calculator/assets/images/fill-green-tic.svg);
+    position: absolute;
+    right: 4px;
+    top: -1px;
+}
+.sgem-compound-interest-cal-tabs.sgem-compound-interest-cal-radio-btns {
+  display: block;
+    margin-bottom: 28px;
+}
+.sgem-compound-interest-label-tabs-check {
+  font-family: 'DM Sans',sans-serif;
+    margin-right: 32px;
+    margin-left: 2px;
+    color: #000000;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+}
+.sgem-compound-interest-cal-radio-btns-sec .sgem-compound-interest-label-tabs-check {
+    margin-right: 32px;
+}
+.sgem-compound-interest-cal-radio-btns form {
+  margin-top: 16px;
+}
+.sgem-compound-interest-cal-radio-btns > label {
+  font-family: 'DM Sans',sans-serif;
+    font-size: 16px;
+    color: #474747;
+    font-weight: 300;
+    line-height: 21px;
+}
+/* tabs end */
+
+/* max width css (add class js) */
+.sgem-compound-interest-cal-left.sgem-compound-interest-cal-left-add-class {
+  width: 33%;
+}
+.sgem-compound-interest-cal-right.sgem-compound-interest-cal-right-add-class {
+  width: 67%;
+}
+.sgem-compound-interest-cal-right-add-class .sgem-compound-interest-cal-1 .sgem-compound-interest-flex-container {
+  display: block;
+}
+.sgem-compound-interest-cal-wrapper .sgem-compound-interest-cal-left-add-class {
+  padding: 12px;
+    padding-right: 20px;
+}
+.sgem-compound-interest-cal-right-add-class .sgem-compound-interest-cal-1-result-wrapper {
+    padding: 20px 20px;
+    position: relative;
+}
+.sgem-compound-interest-cal-left-add-class .sgem-compound-interest-cal-1 .sgem-compound-interest-form-group label {
+  font-size: 1em;
+}
+.sgem-compound-interest-cal-left-add-class .sgem-compound-interest-cal-1 input[type="text"] {
+  font-size: 1em;
+  height: 45px;
+  width: 100%;
+}
+.sgem-compound-interest-cal-left-add-class .sgem-compound-interest-cal-1 .sgem-compound-interest-flex-container .sgem-compound-interest-form-flex {
+  padding-right: 0;
+}
+.sgem-compound-interest-cal-left-add-class .sgem-compound-interest-cal-1 .sgem-compound-interest-flex-container {
+    display: block;
+}
+.sgem-compound-interest-cal-left-add-class .sgem-compound-interest-cal-1 .sgem-compound-interest-form-flex.sgem-compound-interest-years-holder::before {
+  font-size: 1em;
+  top: 43px;
+}
+.sgem-compound-interest-cal-left-add-class .sgem-compound-interest-cal-1 .sgem-compound-interest-form-flex.sgem-compound-interest-years-holder::before {
+    font-size: 1em;
+    top: 39px;
+    right: 18px;
+}
+.sgem-compound-interest-cal-left-add-class .sgem-compound-interest-cal-1 .sgem-compound-interest-form-flex.sgem-compound-interest-precentage-holder::before {
+    right: 18px;
+    top: 41px;
     font-size: 1em;
 }
-.sgem-plc-cal-right-add-class .sgem-plc-cal-tab-wrapper-section .sgem-plc-tabset > label {
-	font-size: 0.8em;
+.sgem-compound-interest-cal-left-add-class .sgem-compound-interest-cal-1 .sgem-compound-interest-form-flex.sgem-compound-interest-currency-holder::after {
+    top: 42px;
+    font-size: 1em;
 }
-.sgem-plc-cal-right-add-class .sgem-plc-cal-tab-wrapper-section .sgem-plc-tabset > input:checked + label {
-	font-size: 0.8em;
+.sgem-compound-interest-cal-right-add-class .sgem-compound-interest-details-disclaimer .sgem-compound-interest-collapsible-text-disclaimer {
+    font-size: 14px;
 }
-.sgem-plc-cal-left-add-class .sgem-plc-cal-1 input[type="text"] {
-	font-size: 0.8em;
-    height: 45px;
+.sgem-compound-interest-cal-right-add-class .sgem-compound-interest-total-label.sgem-compound-interest-for-desk {
+    font-size: 1em;
+    display: block;
 }
-.sgem-plc-cal-left-add-class .sgem-plc-cal-1 .sgem-plc-form-group label {
-    font-size: 0.8em;
+.sgem-compound-interest-cal-left-add-class .sgem-compound-interest-drop-selection {
+  font-size: 1em;
+  height: 45px;
+  width: 100%;
+  padding: 14px 12px;
 }
-.sgem-plc-cal-left-add-class .sgem-plc-cal-1 .sgem-plc-form-flex.sgem-plc-currency-holder::after {
-	top: 43px;
-	font-size: 0.8em;
+.sgem-compound-interest-cal-left-add-class .sgem-compound-interest-cal-1 {
+  height: 785px;
+    overflow: hidden;
+    overflow-y: scroll;
 }
-.sgem-plc-cal-left-add-class .sgem-plc-cal-1 .sgem-plc-form-flex.sgem-plc-years-holder::before {
-	top: 43px;
-	font-size: 0.8em;	
+.sgem-compound-interest-cal-left-add-class .sgem-compound-interest-collapsible-summary-title {
+  font-size: 1em;
+  padding: 0;
 }
-.sgem-plc-cal-left-add-class .sgem-plc-cal-1 .sgem-plc-form-flex.sgem-plc-precentage-holder::after {
-	top: 43px;
-	font-size: 0.8em;	
+.sgem-compound-interest-cal-left-add-class .sgem-compound-interest-tooltip {
+    width: 15px;
+    height: 15px; 
+    line-height: 15px; 
 }
-.sgem-plc-cal-right-add-class .sgem-plc-cal-1-result-wrapper {
-    padding: 20px;
+.sgem-compound-interest-cal-1::-webkit-scrollbar {
+    width: 0px;
 }
-.sgem-plc-cal-left-add-class .sgem-plc-legend-item {
-    font-size: 0.8em;
+.sgem-compound-interest-cal-left-add-class .sgem-compound-interest-cal-radio-btns > label {
+  font-size: 1em;
 }
-.sgem-plc-cal-right-add-class .sgem-plc-principle-te, 
-.sgem-plc-cal-right-add-class .sgem-plc-principle-te-l2, 
-.sgem-plc-cal-right-add-class .sgem-plc-le-interest-te {
-    font-size: 0.8em;
+.sgem-compound-interest-cal-left-add-class .sgem-compound-interest-label-tabs-check {
+  font-size: 1em;
+}
+.sgem-compound-interest-cal-left-add-class .sgem-compound-interest-cal-radio-btns-sec .sgem-compound-interest-label-tabs-check {
+    margin-right: 7px;
+}
+.sgem-compound-interest-cal-right-add-class .sgem-compound-interest-legend-item:nth-child(1) {
+    margin-bottom: 8px;
+    margin-right: 16px;
+}
+.sgem-compound-interest-cal-left-add-class .sgem-compound-interest-label-tabs-check {
+  margin-right: 7px;
 }
 
-/* add class mob */
-.sgem-plc-wrapper-add-mobile .sgem-plc-cal-1 .sgem-plc-flex-container .sgem-plc-form-flex {
+/* add js mobile css */
+.sgem-compound-interest-wrapper-add-mobile .sgem-compound-interest-cal-left.sgem-compound-interest-cal-left-add-class {
+    width: 100%;
+}
+.sgem-compound-interest-wrapper-add-mobile .sgem-compound-interest-cal-right {
+    width: 100%;
+}
+.sgem-compound-interest-cal-wrapper.sgem-compound-interest-wrapper-add-mobile {
+  display: block;
+}
+.sgem-compound-interest-wrapper-add-mobile .sgem-compound-interest-cal-left-add-class .sgem-compound-interest-cal-1 {
+    height: auto;
+    overflow: hidden;
+    overflow-y: unset;
+}
+.sgem-compound-interest-wrapper-add-mobile .sgem-compound-interest-cal-left-add-class {
+    padding: 0;
     padding-right: 0;
 }
-.sgem-plc-wrapper-add-mobile .sgem-plc-cal-right-add-class .sgem-plc-cal-1 .sgem-plc-flex-container .sgem-plc-form-flex {
+.sgem-compound-interest-wrapper-add-mobile .sgem-compound-interest-balance-text {
+  font-size: 2em;
+}
+.sgem-compound-interest-wrapper-add-mobile .sgem-compound-interest-balance-retirement.sgem-compound-interest-for-desk {
+    font-size: 0.875em;
+}
+.sgem-compound-interest-wrapper-add-mobile .sgem-compound-interest-details-disclaimer .sgem-compound-interest-collapsible-text-disclaimer {
+  font-weight: 400;
+  line-height: 18px;
+  font-size: 14px;
+  padding: 0;
+  color: #474747;
+}
+.sgem-compound-interest-wrapper-add-mobile .sgem-compound-interest-collapsible-summary-disclaimer {
+  font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    color: #474747;
+}
+.sgem-compound-interest-wrapper-add-mobile.sgem-compound-interest-cal-wrapper {
+  padding: 15px;
+}
+.sgem-compound-interest-wrapper-add-mobile .sgem-compound-interest-cal-radio-btns form {
+    margin-top: 5px;
+}
+.sgem-compound-interest-cal-main-id .sgem-compound-interest-wrapper-add-mobile .sgem-compound-interest-cal-left .sgem-compound-interest-cal-1 .sgem-compound-interest-basic-full-width {
+  width: 100%;
+}
+
+.sgem-compound-interest-wrapper-add-mobile .sgem-compound-interest-cal-left-add-class .sgem-compound-interest-cal-1 .sgem-compound-interest-form-group label {
+  font-size: 1em;
+}
+.sgem-compound-interest-wrapper-add-mobile .sgem-compound-interest-cal-left-add-class .sgem-compound-interest-cal-1 input[type="text"] {
+  font-size: 1em;
+}
+.sgem-compound-interest-wrapper-add-mobile .sgem-compound-interest-cal-left-add-class .sgem-compound-interest-cal-1 .sgem-compound-interest-form-flex.sgem-compound-interest-years-holder::before {
+  font-size: 1em;
+}
+.sgem-compound-interest-wrapper-add-mobile .sgem-compound-interest-cal-left-add-class .sgem-compound-interest-cal-1 .sgem-compound-interest-form-flex.sgem-compound-interest-years-holder::before {
+    font-size: 1em;
+}
+.sgem-compound-interest-wrapper-add-mobile .sgem-compound-interest-cal-left-add-class .sgem-compound-interest-cal-1 .sgem-compound-interest-form-flex.sgem-compound-interest-precentage-holder::before {
+    font-size: 1em;
+}
+.sgem-compound-interest-wrapper-add-mobile .sgem-compound-interest-cal-left-add-class .sgem-compound-interest-cal-1 .sgem-compound-interest-form-flex.sgem-compound-interest-currency-holder::after {
+    font-size: 1em;
+}
+.sgem-compound-interest-wrapper-add-mobile .sgem-compound-interest-cal-left-add-class .sgem-compound-interest-cal-radio-btns > label {
+    font-size: 1em;
+}
+.sgem-compound-interest-wrapper-add-mobile .sgem-compound-interest-cal-left-add-class .sgem-compound-interest-label-tabs-check {
+    font-size: 1em;
+}
+/* end */
+
+@media (max-width:1200px) {
+  .sgem-compound-interest-cal-main-id .sgem-compound-interest-legendbox {
+    width: 285px;
+  }
+  .sgem-compound-interest-cal-main-id .sgem-compound-interest-cal-left .sgem-compound-interest-form {
+    height: 760px;
+      overflow: hidden;
+      overflow-y: scroll;
+  }
+  /* scrollbar width */
+  .sgem-compound-interest-cal-main-id .sgem-compound-interest-cal-left .sgem-compound-interest-form::-webkit-scrollbar {
+      width: 0px;
+  }
+  .sgem-compound-interest-cal-wrapper {
+    flex-direction: row;
+    width: auto;
+  }
+  .sgem-compound-interest-cal-left {
+    width: 30%;
+    padding-right: 30px;
+  }
+  .sgem-compound-interest-cal-right {
+    width: 70%;
+  } 
+  .sgem-compound-interest-cal-1 input[type="text"] {
+    width: 100%;
+  } 
+  .sgem-compound-interest-cal-1 .sgem-compound-interest-flex-container .sgem-compound-interest-form-flex:last-child {
     padding-right: 0;
-}
-.sgem-plc-wrapper-add-mobile .sgem-plc-cal-1 .sgem-plc-flex-container {
-	display: block;
-}
-.sgem-plc-wrapper-add-mobile .sgem-plc-cal-1 .sgem-plc-form-group label {
-	font-size: 0.8em;
-}
-.sgem-plc-wrapper-add-mobile .sgem-plc-cal-1 input[type="text"] {
-    font-size: 0.8em;
-}
-.sgem-plc-wrapper-add-mobile .sgem-plc-cal-1 .sgem-plc-form-flex.sgem-plc-currency-holder::after,
-.sgem-plc-wrapper-add-mobile .sgem-plc-cal-1 .sgem-plc-form-flex.sgem-plc-years-holder::before,
-.sgem-plc-wrapper-add-mobile .sgem-plc-cal-1 .sgem-plc-form-flex.sgem-plc-precentage-holder::after {
-	font-size: 0.8em;
-}
-.sgem-plc-wrapper-add-mobile .sgem-plc-cal-1 .sgem-plc-form-flex.sgem-plc-years-holder::before {
-	right: 18px;
-}
-.sgem-plc-wrapper-add-mobile .sgem-plc-legend-item {
-	margin-left: 0;
-}
-.sgem-plc-wrapper-add-mobile .sgem-plc-principle-te, 
-.sgem-plc-wrapper-add-mobile .sgem-plc-principle-te-l2, 
-.sgem-plc-wrapper-add-mobile .sgem-plc-le-interest-te {
-	margin-left: 10px;
-    margin-right: 10px;
-}
-.sgem-plc-wrapper-add-mobile .sgem-plc-cal-tab-wrapper-section .sgem-plc-tabset > label {
-	padding: 10px 15px;
-}
-.sgem-plc-cal-wrapper.sgem-plc-wrapper-add-mobile {
-	padding: 10px;
-}
-.sgem-plc-result-label #sgem_plc_monthly_payment {
-	margin-right: 10px;
+  }
+  .sgem-compound-interest-precentage-arrow {
+      border-top: solid 12px white;
+      border-left: solid 12px transparent;
+      border-right: solid 12px transparent;
+  }
+  .sgem-compound-interest-age-text {
+    font-size: 22px;
+  }
+  .sgem-compound-interest-cal-1 .sgem-compound-interest-basic-full-width {
+      width: 100% !important;
+  }
+  .sgem-compound-interest-cal-main-id .sgem-compound-interest-cal-1 .sgem-compound-interest-flex-container {
+    display: block;
+  }
+  .sgem-compound-interest-cal-main-id .sgem-compound-interest-cal-1 .sgem-compound-interest-flex-container .sgem-compound-interest-form-flex {
+    padding-right: 0;
+  }
+  .sgem-compound-interest-cal-main-id .sgem-compound-interest-drop-selection {
+    width: 100%;
+  }
+  .sgem-compound-interest-copy-option-panel {
+      margin-top: 25px;
+      padding: 15px;
+  }
 }
 
 /* ******** ipad ************ */
-@media (max-width: 1024px) {
-  .sgem-plc-logo-wrapper {
-    position: absolute;
-    right: 5px;
-    top: -7px;
+@media (max-width:1024px) {
+  .sgem-compound-interest-logo-wrapper {
+      position: absolute;
+      right: 5px;
+      top: -7px;
   }
-  .sgem-plc-drop-selection {
+  .sgem-compound-interest-drop-selection {
     width: 100%;
   }
-  .sgem-plc-plusminus {
-    width: 100%;
-  }
-  .sgem-plc-inline .sgem-plc-plusminus .sgem-plc-midvalue input[type="text"] {
-    width: 125px;
-  }
-  .sgem-plc-checkbox {
+  .sgem-compound-interest-plusminus {
+      width: 100%;
+    } 
+    .sgem-compound-interest-inline .sgem-compound-interest-plusminus .sgem-compound-interest-midvalue input[type="text"]{
+      width:125px;
+    }
+  .sgem-compound-interest-checkbox {
     width: 100%;
     padding: 15px 18px;
   }
-  .sgem-plc-cal-wrapper {
-	padding: 10px;
+  span.sgem-compound-interest-radio-btn-span {
+    display: block;
+      margin-bottom: 6px;
   }
 }
 
-@media (max-width: 1100px) {
-  .sgem-plc-cal-wrapper {
-    flex-direction: column;
-    width: auto;
+@media (max-width: 800px) {
+  .sgem-compound-interest-cal-left {
+    padding: 10px;
+    padding-right: 20px;
   }
-  .sgem-plc-cal-left {
-    width: 100%;
-  }
-  .sgem-plc-cal-right {
-    width: 100%;
-  }
-  .sgem-plc-cal-1 input[type="text"] {
-    width: 100%;
-  }
-  .sgem-plc-cal-1 input[type="date"] {
-    width: 100%;
-  }
-  .sgem-plc-cal-1 .sgem-plc-flex-container .sgem-plc-form-flex:last-child {
-    padding-right: 0;
-  }
-  .sgem-plc-precentage-arrow {
-    border-top: solid 12px white;
-    border-left: solid 12px transparent;
-    border-right: solid 12px transparent;
-  }
-  .sgem-plc-age-text {
-    font-size: 22px;
+  span.sgem-compound-interest-radio-btn-span {
+    display: block;
+      margin-bottom: 6px;
   }
 }
 
+/* break point */
+@media (max-width: 700px) {
+  /* styles fore below 700px */
+  .sgem-compound-interest-cal-main-id .sgem-compound-interest-cal-1 .sgem-compound-interest-flex-container {
+    display: block;
+  }
+  .sgem-compound-interest-cal-main-id .sgem-compound-interest-cal-1 .sgem-compound-interest-flex-container .sgem-compound-interest-form-flex {
+      padding-right: 0;
+  }
+  .sgem-compound-interest-cal-main-id .sgem-compound-interest-cal-wrapper {
+      flex-direction: column;
+  }
+  .sgem-compound-interest-cal-main-id .sgem-compound-interest-cal-left {
+      padding: 0;
+      width: 100%;
+  }
+  .sgem-compound-interest-cal-main-id .sgem-compound-interest-cal-right {
+      width: 100%;
+  }
+  .sgem-compound-interest-cal-main-id .sgem-compound-interest-for-mob {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .sgem-compound-interest-cal-main-id .sgem-compound-interest-for-desk {
+    display: none;
+  }
+  .sgem-compound-interest-cal-main-id .sgem-compound-interest-cal-1-result-wrapper .sgem-compound-interest-column2 {
+      display: block;
+  }
+  .sgem-compound-interest-cal-main-id .sgem-compound-interest-cal-1 .sgem-compound-interest-basic-full-width {
+      width: 100% !important;
+  }
+  .sgem-compound-interest-cal-1-result-wrapper {
+      padding: 16px;
+  }
+  .sgem-compound-interest-cal-main-id .sgem-compound-interest-cal-left .sgem-compound-interest-form {
+      height: auto;
+  }
+}
+ 
 /* ******** mobile ************ */
-@media (max-width: 480px) {
-  .sgem-plc-cal-left,
-  .sgem-plc-cal-right {
-    width: 100%;
+@media (max-width: 575px) {
+  /* chart css for mobile */
+  span.sgem-compound-interest-radio-btn-span {
+    display: unset;
+    margin-bottom: 6px;
   }
-  .sgem-plc-cal-left .sgem-plc-cal-1 input[type="text"] {
-    width: 100%;
+  .sgem-compound-interest-cal-main-id .sgem-compound-interest-balance-text {
+    font-size: 32px;
   }
-  .sgem-plc-cal-1 input[type="date"] {
-    width: 100%;
+  .sgem-compound-interest-cal-main-id .sgem-compound-interest-legendbox {
+    flex-direction: unset;
+    position: absolute;
+      top: 340px;
   }
-  .sgem-plc-cal-wrapper {
+  .sgem-compound-interest-cal-main-id .sgem-compound-interest-chartCard {
+      padding-bottom: 100px;
+  }
+  .sgem-compound-interest-cal-main-id .sgem-compound-interest-balance-retirement {
+    font-size: 14px;
+      margin-bottom: 8px;
+  }
+  /* end */
+
+  .sgem-compound-interest-cal-1 .sgem-compound-interest-basic-full-width {
+      width: 100% !important;
+  }
+  .sgem-compound-interest-cal-left, .sgem-compound-interest-cal-right {
+    width: 100%;
+  } 
+  .sgem-compound-interest-cal-left .sgem-compound-interest-cal-1 input[type="text"] {
+    width: 100%;
+  } 
+  .sgem-compound-interest-cal-wrapper {
     flex-direction: column;
   }
-  .sgem-plc-cal-1-result-wrapper .sgem-plc-column2 {
+  .sgem-compound-interest-cal-1-result-wrapper .sgem-compound-interest-column2 {
     width: 100%;
-    flex-direction: column;
   }
-  .sgem-plc-cal-1-result-wrapper {
+  .sgem-compound-interest-cal-1-result-wrapper {
     padding: 12px;
-  }
-  .sgem-plc-cal-1-result-wrapper .sgem-plc-flex-container .sgem-plc-form-flex {
+  } 
+  .sgem-compound-interest-cal-1-result-wrapper .sgem-compound-interest-flex-container .sgem-compound-interest-form-flex {
     padding-bottom: 32px;
     font-size: 14px;
-  }
-  .sgem-plc-cal-1 .sgem-plc-form-group label {
+  } 
+  .sgem-compound-interest-cal-1 .sgem-compound-interest-form-group label {
     line-height: 15px;
     display: block;
-    min-height: 30px;
-    font-size: 14px;
+    min-height: 30px; 
+    font-size: 14px; 
     margin-bottom: 0;
   }
-  .sgem-plc-cal-1 .sgem-plc-flex-container .sgem-plc-form-flex:last-child {
+  .sgem-compound-interest-cal-1 .sgem-compound-interest-flex-container .sgem-compound-interest-form-flex:last-child {
     padding-right: 0;
   }
-  .sgem-plc-cal-1-result-wrapper .sgem-plc-result-label {
-    font-size: 32px;
+  .sgem-compound-interest-cal-1-result-wrapper .sgem-compound-interest-result-label { 
+    font-size: 32px; 
     line-height: 44px;
   }
-  .sgem-plc-cal-1-result .sgem-plc-result-panel-header {
-    font-size: 14px;
+  .sgem-compound-interest-cal-1-result .sgem-compound-interest-result-panel-header { 
+    font-size: 14px; 
   }
-  .sgem-plc-cal-1-result-header {
+  .sgem-compound-interest-cal-1-result-header {
     font-size: 15px;
-    font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
+    font-family: 'DM Sans',Helvetica,Arial,Lucida,sans-serif;
   }
-  .sgem-plc-cal-1-result .sgem-plc-result-panel-goal {
+  .sgem-compound-interest-cal-1-result .sgem-compound-interest-result-panel-goal {
     font-size: 30px;
   }
-  .sgem-plc-cal-1 .sgem-plc-cal-btn {
+  .sgem-compound-interest-cal-1 .sgem-compound-interest-cal-btn {
     margin-bottom: 40px;
     margin-top: 10px;
-  }
-  .sgem-plc-logo-wrapper {
+  } 
+  .sgem-compound-interest-logo-wrapper {
     position: relative;
     top: unset;
     right: unset;
@@ -1077,94 +1288,104 @@ details.sgem-plc-details-disclaimer[open] > summary::after {
     margin-top: -10px;
     margin-bottom: 16px;
   }
-  .sgem-plc-logo-wrapper img {
+  .sgem-compound-interest-logo-wrapper img {
     height: 25px;
   }
-  .sgem-plc-cal-1 .sgem-plc-flex-container .sgem-plc-form-flex {
-    padding-right: 0;
+  .sgem-compound-interest-cal-1 .sgem-compound-interest-flex-container .sgem-compound-interest-form-flex { 
+    padding-right: 12px;
   }
-  .sgem-plc-tooltip {
+  .sgem-compound-interest-tooltip {
     position: absolute;
     margin-left: 8px;
   }
-  .sgem-plc-cal-1 .sgem-plc-form-flex.sgem-plc-currency-holder::after {
+  .sgem-compound-interest-cal-1 .sgem-compound-interest-form-flex.sgem-compound-interest-currency-holder::after { 
     top: 54px;
   }
-  .sgem-plc-percentage-note {
+  .sgem-compound-interest-percentage-note {
     line-height: 14px;
   }
-  .sgem-plc-cal-1-result .sgem-plc-flex-container-2 .sgem-plc-form-flex-2 {
+  .sgem-compound-interest-cal-1-result .sgem-compound-interest-flex-container-2 .sgem-compound-interest-form-flex-2 {
     text-align: center;
   }
-  .sgem-plc-precentage-arrow {
-    border-top: solid 8px white;
-    border-left: solid 8px transparent;
-    border-right: solid 8px transparent;
-  }
-  .sgem-plc-cal-1-result .sgem-plc-result-score-label {
-    font-size: 13px;
+  .sgem-compound-interest-precentage-arrow {
+      border-top: solid 8px white;
+      border-left: solid 8px transparent;
+      border-right: solid 8px transparent;
+    }
+  .sgem-compound-interest-cal-1-result .sgem-compound-interest-result-score-label { 
+    font-size: 13px; 
     line-height: 14px;
     padding: 0 10px;
   }
-  .sgem-plc-tooltip {
-    width: 15px;
+  .sgem-compound-interest-tooltip{
+  width: 15px;
     height: 15px;
-    line-height: 15px;
+  line-height: 15px;
     font-size: 11px;
   }
-  .sgem-plc-inline .sgem-plc-plusminus input[type="text"] {
-    width: 125px;
+  .sgem-compound-interest-inline .sgem-compound-interest-plusminus input[type="text"] {
+    width:125px;
   }
-  .sgem-plc-logo-center {
-    font-size: 15px;
+  .sgem-compound-interest-logo-center {
+    font-size: 14px;
     flex-direction: column;
     padding-top: 20px;
-  }
-  .sgem-plc-logo-image {
-    padding: 0px;
-  }
-  .sgem-plc-cal-1-result-footer {
+    }
+  .sgem-compound-interest-logo-image {
+      padding: 0px;
+    }
+  .sgem-compound-interest-cal-1-result-footer {
     font-size: 14px;
   }
-  .sgem-plc-cal-1-result-wrapper .sgem-plc-result-value {
-    font-size: 14px;
+  .sgem-compound-interest-cal-1-result-wrapper .sgem-compound-interest-result-value {
+  font-size: 14px;  
   }
-  .sgem-plc-value-text {
+  .sgem-compound-interest-value-text {
     font-size: 22px;
     padding-top: 0px;
   }
+  .sgem-compound-interest-buttonGet {
+    justify-content: left;
+    margin-top: 32px;
+  }
 }
-@media (max-width: 420px) {
-  .sgem-plc-cal-1 .sgem-plc-form-flex.sgem-plc-currency-holder::after {
+@media (max-width: 420px){
+  .sgem-compound-interest-cal-1 .sgem-compound-interest-form-flex.sgem-compound-interest-currency-holder::after {
     top: 46px;
   }
-  .sgem-plc-tooltip {
+  .sgem-compound-interest-tooltip {
     position: absolute;
     margin-left: 4px;
   }
-  .sgem-plc-tooltip {
-    width: 13px;
+  .sgem-compound-interest-tooltip{
+  width: 13px;
     height: 13px;
-    line-height: 13px;
+  line-height: 13px;
     font-size: 10px;
   }
-  .sgem-plc-inline .sgem-plc-plusminus input[type="text"] {
-    width: 125px;
+  .sgem-compound-interest-inline .sgem-compound-interest-plusminus input[type="text"] {
+      width:125px;
+  }
+    .sgem-compound-interest-cal-main-id .sgem-compound-interest-legendbox {
+      top: 305px;
   }
 }
 @media (max-width: 380px) {
-  .sgem-plc-inline .sgem-plc-plusminus input[type="text"] {
-    width: 100px;
+  .sgem-compound-interest-inline .sgem-compound-interest-plusminus input[type="text"] {
+    width:100px;
   }
 }
 @media (max-width: 356px) {
-  .sgem-plc-inline .sgem-plc-plusminus input[type="text"] {
-    width: 90px;
+  .sgem-compound-interest-inline .sgem-compound-interest-plusminus input[type="text"] {
+    width:90px;
   }
 }
 @media (max-width: 337px) {
-  .sgem-plc-inline .sgem-plc-plusminus input[type="text"] {
-    width: 80px;
+  .sgem-compound-interest-inline .sgem-compound-interest-plusminus input[type="text"] {
+    width:80px;
+  }
+  .sgem-compound-interest-cal-main-id .sgem-compound-interest-legendbox {
+    top: 280px;
   }
 }
-/* Surge end */
+/* Surge end - Dileepa
