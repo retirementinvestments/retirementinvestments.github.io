@@ -749,7 +749,7 @@ tippy('[data-tippy-content]', {
 
 
 // copy script section
-localStorage.setItem('sgem-plc-cal', '<div id="sgem-plc-cal"></div><script>window.onload = function() {var sgemplccal = document.createElement("script");sgemplccal.type = "text/javascript";sgemplccal.src = "https://retirementinvestments.github.io/sgem-personal-loan-calculator/assets/js/cal-plc-scripts.min.js";document.body.appendChild(sgemplccal);} </script>'); 
+localStorage.setItem('sgem-ci-cal', '<div id="sgem-ci-cal"></div><script>window.onload = function() {var sgemcical = document.createElement("script");sgemcical.type = "text/javascript";sgemcical.src = "https://retirementinvestments.github.io/sgem-compound-interest-calculator/assets/js/cal-ci-scripts.min.js";document.body.appendChild(sgemcical);} </script>'); 
 
 function sgem_plc_copyText(ev){
   //console.log("hi");
