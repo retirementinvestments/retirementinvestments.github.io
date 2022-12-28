@@ -146,7 +146,7 @@ var sgem_cical_main_contents = '<div class="sgem-compound-interest-cal-main-id">
 
 sgem_cical_main_contents += '</div>';  
 
-document.getElementById('sgem-plc-cal').innerHTML = sgem_cical_main_contents;
+document.getElementById('sgem-ci-cal').innerHTML = sgem_cical_main_contents;
 
 
 // decimal points
@@ -751,10 +751,10 @@ tippy('[data-tippy-content]', {
 // copy script section
 localStorage.setItem('sgem-ci-cal', '<div id="sgem-ci-cal"></div><script>window.onload = function() {var sgemcical = document.createElement("script");sgemcical.type = "text/javascript";sgemcical.src = "https://retirementinvestments.github.io/sgem-compound-interest-calculator/assets/js/cal-ci-scripts.min.js";document.body.appendChild(sgemcical);} </script>'); 
 
-function sgem_plc_copyText(ev){
+function sgem_compound_interest_copyText(ev){
   //console.log("hi");
   let div = document.getElementById('div');
-  let text = localStorage.getItem('sgem-plc-cal');
+  let text = localStorage.getItem('sgem-ci-cal');
   let textArea  = document.createElement('textarea');
   textArea.width  = "1px"; 
   textArea.height = "1px";
