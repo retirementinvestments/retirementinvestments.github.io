@@ -1064,28 +1064,28 @@ input#sgem-compound-interest-cal-tab6:checked {
 }
 
 .sgem-compound-interest-wrapper-add-mobile .sgem-compound-interest-cal-left-add-class .sgem-compound-interest-cal-1 .sgem-compound-interest-form-group label {
-  font-size: 1em;
+  font-size: 0.8em;
 }
 .sgem-compound-interest-wrapper-add-mobile .sgem-compound-interest-cal-left-add-class .sgem-compound-interest-cal-1 input[type="text"] {
-  font-size: 1em;
+  font-size: 0.8em;
 }
 .sgem-compound-interest-wrapper-add-mobile .sgem-compound-interest-cal-left-add-class .sgem-compound-interest-cal-1 .sgem-compound-interest-form-flex.sgem-compound-interest-years-holder::before {
-  font-size: 1em;
+  font-size: 0.8em;
 }
 .sgem-compound-interest-wrapper-add-mobile .sgem-compound-interest-cal-left-add-class .sgem-compound-interest-cal-1 .sgem-compound-interest-form-flex.sgem-compound-interest-years-holder::before {
-    font-size: 1em;
+    font-size: 0.8em;
 }
 .sgem-compound-interest-wrapper-add-mobile .sgem-compound-interest-cal-left-add-class .sgem-compound-interest-cal-1 .sgem-compound-interest-form-flex.sgem-compound-interest-precentage-holder::before {
-    font-size: 1em;
+    font-size: 0.8em;
 }
 .sgem-compound-interest-wrapper-add-mobile .sgem-compound-interest-cal-left-add-class .sgem-compound-interest-cal-1 .sgem-compound-interest-form-flex.sgem-compound-interest-currency-holder::after {
-    font-size: 1em;
+    font-size: 0.8em;
 }
 .sgem-compound-interest-wrapper-add-mobile .sgem-compound-interest-cal-left-add-class .sgem-compound-interest-cal-radio-btns > label {
-    font-size: 1em;
+    font-size: 0.8em;
 }
 .sgem-compound-interest-wrapper-add-mobile .sgem-compound-interest-cal-left-add-class .sgem-compound-interest-label-tabs-check {
-    font-size: 1em;
+    font-size: 0.8em;
 }
 /* end */
 
@@ -1364,6 +1364,33 @@ input#sgem-compound-interest-cal-tab6:checked {
     justify-content: left;
     margin-top: 32px;
   }
+
+  /* font sizes */
+  .sgem-compound-interest-wrapper-add-mobile .sgem-compound-interest-cal-left-add-class .sgem-compound-interest-cal-1 .sgem-compound-interest-form-group label {
+    font-size: 1em;
+  }
+  .sgem-compound-interest-wrapper-add-mobile .sgem-compound-interest-cal-left-add-class .sgem-compound-interest-cal-1 input[type="text"] {
+    font-size: 1em;
+  }
+  .sgem-compound-interest-wrapper-add-mobile .sgem-compound-interest-cal-left-add-class .sgem-compound-interest-cal-1 .sgem-compound-interest-form-flex.sgem-compound-interest-years-holder::before {
+    font-size: 1em;
+  }
+  .sgem-compound-interest-wrapper-add-mobile .sgem-compound-interest-cal-left-add-class .sgem-compound-interest-cal-1 .sgem-compound-interest-form-flex.sgem-compound-interest-years-holder::before {
+      font-size: 1em;
+  }
+  .sgem-compound-interest-wrapper-add-mobile .sgem-compound-interest-cal-left-add-class .sgem-compound-interest-cal-1 .sgem-compound-interest-form-flex.sgem-compound-interest-precentage-holder::before {
+      font-size: 1em;
+  }
+  .sgem-compound-interest-wrapper-add-mobile .sgem-compound-interest-cal-left-add-class .sgem-compound-interest-cal-1 .sgem-compound-interest-form-flex.sgem-compound-interest-currency-holder::after {
+      font-size: 1em;
+  }
+  .sgem-compound-interest-wrapper-add-mobile .sgem-compound-interest-cal-left-add-class .sgem-compound-interest-cal-radio-btns > label {
+      font-size: 1em;
+  }
+  .sgem-compound-interest-wrapper-add-mobile .sgem-compound-interest-cal-left-add-class .sgem-compound-interest-label-tabs-check {
+      font-size: 1em;
+  }
+
 }
 @media (max-width: 420px){
   .sgem-compound-interest-cal-1 .sgem-compound-interest-form-flex.sgem-compound-interest-currency-holder::after {
