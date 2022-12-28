@@ -1163,21 +1163,29 @@ input#sgem-compound-interest-cal-tab6:checked {
       top: -7px;
   }
   .sgem-compound-interest-drop-selection {
-    width: 100%;
+      width: 100%;
   }
   .sgem-compound-interest-plusminus {
       width: 100%;
-    } 
-    .sgem-compound-interest-inline .sgem-compound-interest-plusminus .sgem-compound-interest-midvalue input[type="text"]{
+  } 
+  .sgem-compound-interest-inline .sgem-compound-interest-plusminus .sgem-compound-interest-midvalue input[type="text"]{
       width:125px;
-    }
+  }
   .sgem-compound-interest-checkbox {
-    width: 100%;
-    padding: 15px 18px;
+      width: 100%;
+      padding: 15px 18px;
   }
   span.sgem-compound-interest-radio-btn-span {
-    display: block;
+      display: block;
       margin-bottom: 6px;
+  }
+  .sgem-compound-interest-cal-left-add-class .sgem-compound-interest-cal-tabs input#sgem-compound-interest-cal-tab2:checked ~ .sgem-compound-interest-form-checkbox-style-tic2:before, .sgem-compound-interest-cal-left-add-class .sgem-compound-interest-cal-tabs input#sgem-compound-interest-cal-tab5:checked ~ .sgem-compound-interest-form-checkbox-style-tic5:before, .sgem-compound-interest-cal-left-add-class .sgem-compound-interest-cal-tabs input#sgem-compound-interest-cal-tab3:checked ~ .sgem-compound-interest-form-checkbox-style-tic3:before {
+      right: 3px;
+      top: -1px;
+  }
+  .sgem-compound-interest-cal-left-add-class .sgem-compound-interest-cal-tabs input#sgem-compound-interest-cal-tab1:checked ~ .sgem-compound-interest-form-checkbox-style-tic1:before, .sgem-compound-interest-cal-left-add-class .sgem-compound-interest-cal-tabs input#sgem-compound-interest-cal-tab6:checked ~ .sgem-compound-interest-form-checkbox-style-tic6:before {
+      right: -2px;
+      top: -1px;
   }
 }
 
