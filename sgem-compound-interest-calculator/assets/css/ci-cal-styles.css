@@ -1026,6 +1026,12 @@ input#sgem-compound-interest-cal-tab6:checked {
 }
 
 /* add js mobile css */
+.sgem-compound-interest-wrapper-add-mobile .sgem-compound-interest-cal-left-add-class .sgem-compound-interest-cal-radio-btns-sec .sgem-compound-interest-label-tabs-check {
+    margin-right: 20px;
+}
+.sgem-compound-interest-wrapper-add-mobile .sgem-compound-interest-cal-left-add-class .sgem-compound-interest-label-tabs-check {
+    margin-right: 20px;
+}
 .sgem-compound-interest-wrapper-add-mobile .sgem-compound-interest-cal-left.sgem-compound-interest-cal-left-add-class {
     width: 100%;
 }
