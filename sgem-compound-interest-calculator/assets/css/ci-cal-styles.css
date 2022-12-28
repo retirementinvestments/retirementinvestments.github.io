@@ -841,13 +841,13 @@ input#sgem-compound-interest-cal-tab6:checked {
 .sgem-compound-interest-cal-tabs input#sgem-compound-interest-cal-tab1:checked ~ .sgem-compound-interest-form-checkbox-style-tic1:before {
     content: url(https://retirementinvestments.github.io/sgem-compound-interest-calculator/assets/images/fill-green-tic.svg);
     position: absolute;
-    right: 4px;
+    right: 0px;
     top: -1px;
 }
 .sgem-compound-interest-cal-tabs input#sgem-compound-interest-cal-tab2:checked ~ .sgem-compound-interest-form-checkbox-style-tic2:before {
     content: url(https://retirementinvestments.github.io/sgem-compound-interest-calculator/assets/images/fill-green-tic.svg);
     position: absolute;
-    right: 4px;
+    right: 3px;
     top: -1px;
 }
 .sgem-compound-interest-cal-tabs input#sgem-compound-interest-cal-tab3:checked ~ .sgem-compound-interest-form-checkbox-style-tic3:before {
@@ -871,7 +871,7 @@ input#sgem-compound-interest-cal-tab6:checked {
 .sgem-compound-interest-cal-tabs input#sgem-compound-interest-cal-tab6:checked ~ .sgem-compound-interest-form-checkbox-style-tic6:before {
     content: url(https://retirementinvestments.github.io/sgem-compound-interest-calculator/assets/images/fill-green-tic.svg);
     position: absolute;
-    right: 4px;
+    right: 0px;
     top: -1px;
 }
 .sgem-compound-interest-cal-tabs.sgem-compound-interest-cal-radio-btns {
