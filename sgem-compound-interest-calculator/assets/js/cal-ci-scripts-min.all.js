@@ -131,7 +131,7 @@ var sgem_cical_main_contents = '<div class="sgem-compound-interest-cal-main-id">
             '</details>'+
          '</div>'+
       '</div>'+
-   '</div>'+
+   '</div>';
 
     if( (location.hostname != "calculatorstg.wpengine.com") || (location.hostname != "retirementinvestments.com") || (location.hostname != "staging.retirementinvestments.com") ){
         sgem_cical_main_contents += '<div class="sgem-compound-interest-logo-center">';
