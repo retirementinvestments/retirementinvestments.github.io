@@ -134,7 +134,7 @@ var sgem_cical_main_contents = '<div class="sgem-compound-interest-cal-main-id">
    '</div>'+
 
    '<div class="sgem-compound-interest-logo-center">'+
-      '<a class="sgem-compound-interest-logo-image" href="https://retirementinvestments.com/banking/compund-interest-calculator/" target="_blank" rel="noopener">Compound Interest Calculator</a>  by Retirement Investments'+
+      '<a class="sgem-compound-interest-logo-image" href="https://retirementinvestments.com/banking/compund-interest-calculator/" target="_blank" rel="noopener">Compound Interest Calculator</a>&nbsp;by Retirement Investments'+
    '</div>'+
    '<div class="sgem-compound-interest-copy-option-panel">'+
       '<h3>Do you want to add this calculator into your website?</h3>'+
