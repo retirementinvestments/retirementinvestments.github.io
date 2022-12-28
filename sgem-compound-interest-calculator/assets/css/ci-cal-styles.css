@@ -853,7 +853,7 @@ input#sgem-compound-interest-cal-tab6:checked {
 .sgem-compound-interest-cal-tabs input#sgem-compound-interest-cal-tab3:checked ~ .sgem-compound-interest-form-checkbox-style-tic3:before {
     content: url(https://retirementinvestments.github.io/sgem-compound-interest-calculator/assets/images/fill-green-tic.svg);
     position: absolute;
-    right: 4px;
+    right: 0px;
     top: -1px;
 }
 .sgem-compound-interest-cal-tabs input#sgem-compound-interest-cal-tab4:checked ~ .sgem-compound-interest-form-checkbox-style-tic4:before {
