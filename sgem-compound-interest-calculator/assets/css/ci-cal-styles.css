@@ -225,7 +225,7 @@
   display: inline-flex !important;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: end;
     margin-top: 32px;
     margin-bottom: 8px;
     cursor: pointer;
