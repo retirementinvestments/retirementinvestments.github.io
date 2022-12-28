@@ -921,12 +921,12 @@ input#sgem-compound-interest-cal-tab6:checked {
 .sgem-compound-interest-cal-left-add-class .sgem-compound-interest-cal-tabs input#sgem-compound-interest-cal-tab5:checked ~ .sgem-compound-interest-form-checkbox-style-tic5:before,
 .sgem-compound-interest-cal-left-add-class .sgem-compound-interest-cal-tabs input#sgem-compound-interest-cal-tab3:checked ~ .sgem-compound-interest-form-checkbox-style-tic3:before {
     right: 3px;
-    top: 2px;
+    top: 0px;
 }
 .sgem-compound-interest-cal-left-add-class .sgem-compound-interest-cal-tabs input#sgem-compound-interest-cal-tab1:checked ~ .sgem-compound-interest-form-checkbox-style-tic1:before,
 .sgem-compound-interest-cal-left-add-class .sgem-compound-interest-cal-tabs input#sgem-compound-interest-cal-tab6:checked ~ .sgem-compound-interest-form-checkbox-style-tic6:before  {
     right: -2px;
-    top: 2px;
+    top: 0px;
 }
 
 .sgem-compound-interest-cal-left.sgem-compound-interest-cal-left-add-class {
