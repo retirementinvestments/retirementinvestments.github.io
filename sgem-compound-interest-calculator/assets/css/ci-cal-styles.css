@@ -196,7 +196,7 @@
   background-repeat: no-repeat;
   background-position: center -5px;
   background-size: 25px;
-  background-image: url('/wp-content/plugins/sgem-compound-interest-calculator/assets/images/drop-down-arrow-compound-interest.svg');
+  background-image: url('https://retirementinvestments.github.io/sgem-compound-interest-calculator/assets/images/drop-down-arrow-ci.svg');
 }
 .sgem-compound-interest-cal-1 details[open] > summary::after {
   -moz-transform: rotate(-180deg);
@@ -212,7 +212,7 @@
     background-repeat: no-repeat;
     background-position: center -2px;
     background-size: 25px;
-    background-image: url(../images/drop-down-arrow-compound-interest.svg);
+    background-image: url(https://retirementinvestments.github.io/sgem-compound-interest-calculator/assets/images/drop-down-arrow-ci.svg);
     margin-top: 5px;
 }
 .sgem-compound-interest-cal-main-id details.sgem-compound-interest-details-disclaimer[open] > summary::after {
