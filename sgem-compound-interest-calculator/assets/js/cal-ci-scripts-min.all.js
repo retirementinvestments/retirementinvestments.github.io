@@ -31,783 +31,703 @@ x();"bottom"===a.start?(c.css({top:b.outerHeight()-c.outerHeight()}),n(0,!0)):"t
 /*! rangeslider.js - v2.3.0 | (c) 2016 @andreruffert | MIT license | https://github.com/andreruffert/rangeslider.js */
 !function(a){"use strict";"function"==typeof define&&define.amd?define(["jquery"],a):"object"==typeof exports?module.exports=a(require("jquery")):a(jQuery)}(function(a){"use strict";function b(){var a=document.createElement("input");return a.setAttribute("type","range"),"text"!==a.type}function c(a,b){var c=Array.prototype.slice.call(arguments,2);return setTimeout(function(){return a.apply(null,c)},b)}function d(a,b){return b=b||100,function(){if(!a.debouncing){var c=Array.prototype.slice.apply(arguments);a.lastReturnVal=a.apply(window,c),a.debouncing=!0}return clearTimeout(a.debounceTimeout),a.debounceTimeout=setTimeout(function(){a.debouncing=!1},b),a.lastReturnVal}}function e(a){return a&&(0===a.offsetWidth||0===a.offsetHeight||a.open===!1)}function f(a){for(var b=[],c=a.parentNode;e(c);)b.push(c),c=c.parentNode;return b}function g(a,b){function c(a){"undefined"!=typeof a.open&&(a.open=!a.open)}var d=f(a),e=d.length,g=[],h=a[b];if(e){for(var i=0;i<e;i++)g[i]=d[i].style.cssText,d[i].style.setProperty?d[i].style.setProperty("display","block","important"):d[i].style.cssText+=";display: block !important",d[i].style.height="0",d[i].style.overflow="hidden",d[i].style.visibility="hidden",c(d[i]);h=a[b];for(var j=0;j<e;j++)d[j].style.cssText=g[j],c(d[j])}return h}function h(a,b){var c=parseFloat(a);return Number.isNaN(c)?b:c}function i(a){return a.charAt(0).toUpperCase()+a.substr(1)}function j(b,e){if(this.$window=a(window),this.$document=a(document),this.$element=a(b),this.options=a.extend({},n,e),this.polyfill=this.options.polyfill,this.orientation=this.$element[0].getAttribute("data-orientation")||this.options.orientation,this.onInit=this.options.onInit,this.onSlide=this.options.onSlide,this.onSlideEnd=this.options.onSlideEnd,this.DIMENSION=o.orientation[this.orientation].dimension,this.DIRECTION=o.orientation[this.orientation].direction,this.DIRECTION_STYLE=o.orientation[this.orientation].directionStyle,this.COORDINATE=o.orientation[this.orientation].coordinate,this.polyfill&&m)return!1;this.identifier="js-"+k+"-"+l++,this.startEvent=this.options.startEvent.join("."+this.identifier+" ")+"."+this.identifier,this.moveEvent=this.options.moveEvent.join("."+this.identifier+" ")+"."+this.identifier,this.endEvent=this.options.endEvent.join("."+this.identifier+" ")+"."+this.identifier,this.toFixed=(this.step+"").replace(".","").length-1,this.$fill=a('<div class="'+this.options.fillClass+'" />'),this.$handle=a('<div class="'+this.options.handleClass+'" />'),this.$range=a('<div class="'+this.options.rangeClass+" "+this.options[this.orientation+"Class"]+'" id="'+this.identifier+'" />').insertAfter(this.$element).prepend(this.$fill,this.$handle),this.$element.css({position:"absolute",width:"1px",height:"1px",overflow:"hidden",opacity:"0"}),this.handleDown=a.proxy(this.handleDown,this),this.handleMove=a.proxy(this.handleMove,this),this.handleEnd=a.proxy(this.handleEnd,this),this.init();var f=this;this.$window.on("resize."+this.identifier,d(function(){c(function(){f.update(!1,!1)},300)},20)),this.$document.on(this.startEvent,"#"+this.identifier+":not(."+this.options.disabledClass+")",this.handleDown),this.$element.on("change."+this.identifier,function(a,b){if(!b||b.origin!==f.identifier){var c=a.target.value,d=f.getPositionFromValue(c);f.setPosition(d)}})}Number.isNaN=Number.isNaN||function(a){return"number"==typeof a&&a!==a};var k="rangeslider",l=0,m=b(),n={polyfill:!0,orientation:"horizontal",rangeClass:"rangeslider",disabledClass:"rangeslider--disabled",activeClass:"rangeslider--active",horizontalClass:"rangeslider--horizontal",verticalClass:"rangeslider--vertical",fillClass:"rangeslider__fill",handleClass:"rangeslider__handle",startEvent:["mousedown","touchstart","pointerdown"],moveEvent:["mousemove","touchmove","pointermove"],endEvent:["mouseup","touchend","pointerup"]},o={orientation:{horizontal:{dimension:"width",direction:"left",directionStyle:"left",coordinate:"x"},vertical:{dimension:"height",direction:"top",directionStyle:"bottom",coordinate:"y"}}};return j.prototype.init=function(){this.update(!0,!1),this.onInit&&"function"==typeof this.onInit&&this.onInit()},j.prototype.update=function(a,b){a=a||!1,a&&(this.min=h(this.$element[0].getAttribute("min"),0),this.max=h(this.$element[0].getAttribute("max"),100),this.value=h(this.$element[0].value,Math.round(this.min+(this.max-this.min)/2)),this.step=h(this.$element[0].getAttribute("step"),1)),this.handleDimension=g(this.$handle[0],"offset"+i(this.DIMENSION)),this.rangeDimension=g(this.$range[0],"offset"+i(this.DIMENSION)),this.maxHandlePos=this.rangeDimension-this.handleDimension,this.grabPos=this.handleDimension/2,this.position=this.getPositionFromValue(this.value),this.$element[0].disabled?this.$range.addClass(this.options.disabledClass):this.$range.removeClass(this.options.disabledClass),this.setPosition(this.position,b)},j.prototype.handleDown=function(a){if(a.preventDefault(),this.$document.on(this.moveEvent,this.handleMove),this.$document.on(this.endEvent,this.handleEnd),this.$range.addClass(this.options.activeClass),!((" "+a.target.className+" ").replace(/[\n\t]/g," ").indexOf(this.options.handleClass)>-1)){var b=this.getRelativePosition(a),c=this.$range[0].getBoundingClientRect()[this.DIRECTION],d=this.getPositionFromNode(this.$handle[0])-c,e="vertical"===this.orientation?this.maxHandlePos-(b-this.grabPos):b-this.grabPos;this.setPosition(e),b>=d&&b<d+this.handleDimension&&(this.grabPos=b-d)}},j.prototype.handleMove=function(a){a.preventDefault();var b=this.getRelativePosition(a),c="vertical"===this.orientation?this.maxHandlePos-(b-this.grabPos):b-this.grabPos;this.setPosition(c)},j.prototype.handleEnd=function(a){a.preventDefault(),this.$document.off(this.moveEvent,this.handleMove),this.$document.off(this.endEvent,this.handleEnd),this.$range.removeClass(this.options.activeClass),this.$element.trigger("change",{origin:this.identifier}),this.onSlideEnd&&"function"==typeof this.onSlideEnd&&this.onSlideEnd(this.position,this.value)},j.prototype.cap=function(a,b,c){return a<b?b:a>c?c:a},j.prototype.setPosition=function(a,b){var c,d;void 0===b&&(b=!0),c=this.getValueFromPosition(this.cap(a,0,this.maxHandlePos)),d=this.getPositionFromValue(c),this.$fill[0].style[this.DIMENSION]=d+this.grabPos+"px",this.$handle[0].style[this.DIRECTION_STYLE]=d+"px",this.setValue(c),this.position=d,this.value=c,b&&this.onSlide&&"function"==typeof this.onSlide&&this.onSlide(d,c)},j.prototype.getPositionFromNode=function(a){for(var b=0;null!==a;)b+=a.offsetLeft,a=a.offsetParent;return b},j.prototype.getRelativePosition=function(a){var b=i(this.COORDINATE),c=this.$range[0].getBoundingClientRect()[this.DIRECTION],d=0;return"undefined"!=typeof a.originalEvent["client"+b]?d=a.originalEvent["client"+b]:a.originalEvent.touches&&a.originalEvent.touches[0]&&"undefined"!=typeof a.originalEvent.touches[0]["client"+b]?d=a.originalEvent.touches[0]["client"+b]:a.currentPoint&&"undefined"!=typeof a.currentPoint[this.COORDINATE]&&(d=a.currentPoint[this.COORDINATE]),d-c},j.prototype.getPositionFromValue=function(a){var b,c;return b=(a-this.min)/(this.max-this.min),c=Number.isNaN(b)?0:b*this.maxHandlePos},j.prototype.getValueFromPosition=function(a){var b,c;return b=a/(this.maxHandlePos||1),c=this.step*Math.round(b*(this.max-this.min)/this.step)+this.min,Number(c.toFixed(this.toFixed))},j.prototype.setValue=function(a){a===this.value&&""!==this.$element[0].value||this.$element.val(a).trigger("input",{origin:this.identifier})},j.prototype.destroy=function(){this.$document.off("."+this.identifier),this.$window.off("."+this.identifier),this.$element.off("."+this.identifier).removeAttr("style").removeData("plugin_"+k),this.$range&&this.$range.length&&this.$range[0].parentNode.removeChild(this.$range[0])},a.fn[k]=function(b){var c=Array.prototype.slice.call(arguments,1);return this.each(function(){var d=a(this),e=d.data("plugin_"+k);e||d.data("plugin_"+k,e=new j(this,b)),"string"==typeof b&&e[b].apply(e,c)})},"rangeslider.js is available in jQuery context e.g $(selector).rangeslider(options);"});
 
-var sgem_plc_main_contents = '<div class="sgem-plc-cal-main-id">'+
-   '<div class="sgem-plc-cal-wrapper">'+
-      '<div class="sgem-plc-cal-left">'+
-         '<div class="sgem-plc-form sgem-plc-cal-1">'+
-            '<div class="sgem-plc-flex-container">'+
-               '<div class="sgem-plc-form-group sgem-plc-form-flex sgem-plc-currency-holder">'+
-                  '<label>Loan amount <span class="sgem-plc-tooltip tooltip" data-tippy-content="The original value of your existing loan.">?</span></label> '+
-                  '<input type="text" class="inputmove inputnumber" id="sgem_plc_loan_amount_required" value="10,000" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
-                  '<span id="sgem_plc_err_loan_amount_required" class="sgem-plc-err-style"></span>'+
+var sgem_cical_main_contents = '<div class="sgem-compound-interest-cal-main-id">'+
+   '<div class="sgem-compound-interest-cal-wrapper">'+
+      '<div class="sgem-compound-interest-cal-left">'+
+         '<div class="sgem-compound-interest-form sgem-compound-interest-cal-1">'+
+            '<div class="sgem-compound-interest-flex-container">'+
+               '<div class="sgem-compound-interest-form-group sgem-compound-interest-form-flex sgem-compound-interest-currency-holder">'+
+                  '<label>Initial Deposit</label>'+
+                  '<input type="text" id="sgem_compound_interest_initial_value" value="5,000" min="0" max="150000" onkeypress="return isNumber(event)"/>'+
+                  '<span class="sgem_compound_interest_err_style sgem_compound_interest_err_stating_value" ></span>'+   
                '</div>'+
-               '<div class="sgem-plc-form-group sgem-plc-form-flex sgem-plc-years-holder">'+
-                  '<label>Loan term <span class="sgem-plc-tooltip tooltip" data-tippy-content="The amount of time the lender gives you to repay your mortgage.">?</span></label>'+ 
-                  '<input type="text" class="inputmove inputnumber" id="sgem_plc_loan_term" value="5" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
-                  '<span id="sgem_plc_err_loan_required" class="sgem-plc-err-style"></span>'+
+               '<div class="sgem-compound-interest-form-group sgem-compound-interest-form-flex sgem-compound-interest-currency-holder">'+
+                  '<label>Contributions</label>'+
+                  '<input type="text" id="sgem_compound_interest_retirement_contributions" value="100" min="0" max="150000" onkeypress="return isNumber(event)"/>'+      
+                  '<span class="sgem_compound_interest_err_style sgem_compound_interest_err_retirement_contributions"></span>'+
                '</div>'+
-               '<div class="sgem-plc-form-group sgem-plc-form-flex sgem-plc-precentage-holder sgem-plc-right-field">'+
-                  '<label>Annual interest rate <span class="sgem-plc-tooltip tooltip" data-tippy-content="The rate charged by the lender from the borrower.">?</span></label>'+ 
-                  '<input type="text" class="inputmove inputnumber" id="sgem_plc_annual_interest_rate" value="10.52" min="0" max="100" />'+
-                  '<span id="sgem_plc_err_no_of_months" class="sgem-plc-err-style"></span>'+
+            '</div>'+
+            '<div class="sgem-compound-interest-flex-container sgem-compound-interest-cal-tabs sgem-compound-interest-cal-radio-btns">'+
+               '<label>Contribution Frequency</label>'+
+               '<form> '+
+                  '<input id="sgem-compound-interest-cal-tab1" type="radio" name="sgem-compound-interest-calculate-by" class="sgem-compound-interest-calculate-by" value="annual" onclick="isChecked()">'+ 
+                  '<span class="sgem-compound-interest-form-checkbox-style-tic1"></span> '+
+                  '<label class="sgem-compound-interest-label-tabs-check" for="sgem-compound-interest-cal-tab1">Annual</label> '+
+                  '<input id="sgem-compound-interest-cal-tab2" type="radio" name="sgem-compound-interest-calculate-by" class="sgem-compound-interest-calculate-by" value="monthly" checked="" onclick="isChecked()"> '+
+                  '<span class="sgem-compound-interest-form-checkbox-style-tic2"></span> '+
+                  '<label class="sgem-compound-interest-label-tabs-check" for="sgem-compound-interest-cal-tab2">Monthly</label> '+
+               '</form>'+
+            '</div>'+
+            '<div class="sgem-compound-interest-flex-container">'+
+               '<div class="sgem-compound-interest-form-group sgem-compound-interest-form-flex sgem-compound-interest-years-holder">'+
+                  '<label>Time Span</label>'+
+                  '<input type="text" id="sgem_compound_interest_investment_time" value="5" min="0" max="100" onkeypress="return isNumber(event)"/>'+
+                  '<span class="sgem_compound_interest_err_style sgem_compound_interest_err_investment_time" ></span>'+   
                '</div>'+
+               '<div class="sgem-compound-interest-form-group sgem-compound-interest-form-flex sgem-compound-interest-precentage-holder">'+
+                  '<label>Estimated Rate Of Return</label>'+
+                  '<input type="text" id="sgem_compound_interest_retirement_estimated_rate" value="10" min="0" max="100" />'+      
+                  '<span class="sgem_compound_interest_err_style sgem_compound_interest_err_retirement_estimated_rate"></span>'+
+               '</div>'+
+            '</div>'+
+            '<div class="sgem-compound-interest-flex-container sgem-compound-interest-cal-tabs sgem-compound-interest-cal-radio-btns sgem-compound-interest-cal-radio-btns-sec">'+
+               '<label>Compounding Frequency</label>'+
+               '<form> '+
+                  '<span class="sgem-compound-interest-radio-btn-span">'+
+                  '<input id="sgem-compound-interest-cal-tab6" type="radio" name="sgem-compound-interest-calculate-by" class="sgem-compound-interest-calculate-by" value="daily2" onclick="isChecked()">'+ 
+                  '<span class="sgem-compound-interest-form-checkbox-style-tic6"></span>'+ 
+                  '<label class="sgem-compound-interest-label-tabs-check" for="sgem-compound-interest-cal-tab6">Daily</label> </span>'+
+                  '<span class="sgem-compound-interest-radio-btn-span">'+
+                  '<input id="sgem-compound-interest-cal-tab5" type="radio" name="sgem-compound-interest-calculate-by" class="sgem-compound-interest-calculate-by" value="monthly2" checked="" onclick="isChecked()"> '+
+                  '<span class="sgem-compound-interest-form-checkbox-style-tic5"></span> '+
+                  '<label class="sgem-compound-interest-label-tabs-check" for="sgem-compound-interest-cal-tab5">Monthly</label> </span>'+
+                  '<span class="sgem-compound-interest-radio-btn-span">'+
+                  '<input id="sgem-compound-interest-cal-tab3" type="radio" name="sgem-compound-interest-calculate-by" class="sgem-compound-interest-calculate-by" value="annual2" onclick="isChecked()">'+ 
+                  '<span class="sgem-compound-interest-form-checkbox-style-tic3"></span> '+
+                  '<label class="sgem-compound-interest-label-tabs-check" for="sgem-compound-interest-cal-tab3">Annual</label> </span>'+
+               '</form>'+
             '</div>'+
          '</div>'+
       '</div>'+
-      '<div class="sgem-plc-cal-right">'+
-         '<div class="sgem-plc-cal-1-result-wrapper">'+
-            '<div class="sgem-plc-flex-container sgem-plc-column2">'+
-               '<div class="sgem-plc-form-group sgem-plc-form-flex">'+
-                  '<span class="futuretext sgem-plc-result-headtext">PAYBACK AMOUNT</span> '+
-                  '<div id="futureV" class="sgem-plc-result-label">$<span id="sgem_plc_payback_amount">608,292</span>'+  
-                  '</div>'+
+      '<div class="sgem-compound-interest-cal-right">'+
+         '<div class="sgem-compound-interest-cal-1-result-wrapper">'+
+            '<div class="sgem-compound-interest-cal-1-result-header">'+
+               '<div class="sgem-compound-interest-header-title-box">'+
+                  '<span id="sgem_compound_interest_total_text" class="sgem-compound-interest-balance-text">$17,827</span> <span class="sgem-compound-interest-total-label sgem-compound-interest-for-desk">FUTURE BALANCE </span>'+
                '</div>'+
-               '<div class="sgem-plc-form-group sgem-plc-form-flex ">'+
-                  '<span class="futuretext2 sgem-plc-result-headtext">MONTHLY PAYMENT</span>'+
-                  '<div id="futureV2" class="sgem-plc-result-label">$<span id="sgem_plc_monthly_payment">10,138</span>'+
-                     '<span class="sgem-plc-monthly-paym-years" id="sgem_plc_monthly_paym_years">over 5 years</span>'+
+               '<div class="sgem-compound-interest-legendbox">'+
+                  '<div class="sgem-compound-interest-legend-item">'+
+                     '<button id="sgem_compound_principle" onClick="toggleData(0)" class="sgem-compound-principle"></button> '+
+                     '<div id="sgem_compound_interest_principle_te" onClick="toggleData(0)" class="sgem-compound-interest-principle-te"></div>'+
+                  '</div>'+
+                  '<div class="sgem-compound-interest-legend-item">'+
+                     '<button id="sgem_compound_interest_interest" onClick="toggleData(1)" class="sgem-compound-interest-interest"></button>'+
+                     '<div id="sgem_compound_interest_interest_te" onClick="toggleData(1)" class="sgem-compound-interest-interest-te"></div>'+
                   '</div>'+
                '</div>'+
             '</div>'+
-            '<div class="sgem-plc-cal-tab-wrapper-section">'+
-               '<div class="sgem-plc-tabset">'+
-                  '<!-- Tab 1 -->'+
-                  '<input type="radio" name="tabset" id="sgem-plc-cal-tab1" aria-controls="sgem-plc-cal-tab1" checked>'+
-                  '<label for="sgem-plc-cal-tab1">SCHEDULE</label>'+
-                  '<!-- Tab 2 -->'+
-                  '<input type="radio" name="tabset" id="sgem-plc-cal-tab2" aria-controls="sgem-plc-cal-tab2">'+
-                  '<label for="sgem-plc-cal-tab2">BREAKDOWN</label>'+
-                  '<div class="sgem-plc-cal-border-for-tabs"></div>'+
-                  '<div class="tab-panels">'+
-                     '<section id="sgem-plc-cal-tab1" class="tab-panel">'+
-                        '<div class="sgem-plc-cal-chartCard">'+
-                          '<div class="chartBox">'+
-                            '<canvas id="myChart"></canvas>'+
-                          '</div>'+
-                        '</div>'+
-                        '<div class="sgem-plc-legendbox">'+
-                           '<div class="sgem-plc-legend-item"> '+
-                              '<div id="sgem_plc_principle" onclick="toggleDatachart(0)" class="sgem-plc-principle"></div>'+
-                              '<div id="sgem_plc_principle_te" onclick="toggleDatachart(0)" class="sgem-plc-principle-te">Balance</div>'+
-                           '</div>'+
-                        '</div>'+
-                     '</section>'+
-                     '<section id="sgem-plc-cal-tab2" class="tab-panel">'+
-                        '<div class="sgem-plc-cal-chartCard">'+
-                          '<div class="chartBox">'+
-                            '<canvas id="myChart2"></canvas>'+
-                          '</div>'+
-                        '</div>'+
-                        '<div class="sgem-plc-legendbox">'+
-                           '<div class="sgem-plc-legend-item"> '+
-                              '<div id="sgem_plc_principle_l2" onclick="toggleData(0)" class="sgem-plc-principle-l2"></div>'+
-                              '<div id="sgem_plc_principle_te_l2" onclick="toggleData(0)" class="sgem-plc-principle-te-l2">Principle</div>'+
-                           '</div>'+
-                           '<div class="sgem-plc-legend-item"> '+
-                              '<div id="sgem_plc_le_interest" onclick="toggleData(1)" class="sgem-plc-le-interest"></div>'+
-                              '<div id="sgem_plc_le_interest_te" onclick="toggleData(1)" class="sgem-plc-le-interest-te">Interest</div>'+
-                           '</div>'+
-                        '</div>'+
-                     '</section>'+
-                  '</div>'+
+            '<div class="sgem-compound-interest-chartCard">'+
+               '<div class="chartBox">'+
+                  '<canvas id="myChart"></canvas>'+
                '</div>'+
-            '</div>';
+            '</div>'+
+            '<div class="sgem-compound-interest-cal-1-result-footer">'+
+               '<div class="sgem-compound-interest-content">Grow your savings with a high-yield cash account. Start saving more of your money today.</div>'+
+               '<div class="sgem-compound-interest-buttonGet">'+
+                  '<a href="https://retirementinvestments.com/cicalculator" target="_blank" class="sgem-compound-interest-getStart" rel="noopener">'+
+                  'GET STARTED'+
+                  '</a>'+
+               '</div>'+
+            '</div>'+
+            '<details class="sgem-compound-interest-details-disclaimer" >'+
+               '<summary>'+
+                  '<div class="sgem-compound-interest-collapsible-summary-disclaimer">'+
+                     '<span class="sgem-compound-interest-disclaimer">Disclaimer</span>'+
+                  '</div>'+
+               '</summary>'+
+               '<div class="sgem-compound-interest-collapsible-text-disclaimer">'+
+                  'This material is provided for general and educational purposes only; it is not intended to provide legal, tax or investment advice.'+
+               '</div>'+
+            '</details>'+
+         '</div>'+
+      '</div>'+
+   '</div>'+
 
-sgem_plc_main_contents += '<div class="sgem-plc-cal-1-result-footer">';
-sgem_plc_main_contents += '<div class="sgem-plc-content">Find the right personal loan rate for you. Shop and compare personal loan offers in minutes.</div>';
-sgem_plc_main_contents += '<div class="sgem-plc-buttonGet">';
-sgem_plc_main_contents += '<a href="https://retirementinvestments.com/loancalculator" target="_blank" class="sgem-plc-getStart" rel="noopener">';
-sgem_plc_main_contents += 'GET STARTED';
-sgem_plc_main_contents += '</a>';
-sgem_plc_main_contents += '</div>';
-sgem_plc_main_contents += '</div>';
-            
-sgem_plc_main_contents += '<div class="sgem-plc-section-disclaimer"><details class="sgem-plc-details-disclaimer">';
-sgem_plc_main_contents += '<summary><div class="sgem-plc-collapsible-summary-disclaimer">Disclaimer</div></summary><div class="sgem-plc-collapsible-text-disclaimer">';
-sgem_plc_main_contents += 'This material is provided for general and educational purposes only; it is not intended to provide legal, tax or investment advice.';
-sgem_plc_main_contents += '</div></details></div></div></div></div>';
+   '<div class="sgem-compound-interest-logo-center">'+
+      '<a class="sgem-compound-interest-logo-image" href="https://retirementinvestments.com/banking/compund-interest-calculator/" target="_blank" rel="noopener">Compound Interest Calculator</a>  by Retirement Investments'+
+   '</div>'+
+   '<div class="sgem-compound-interest-copy-option-panel">'+
+      '<h3>Do you want to add this calculator into your website?</h3>'+
+      '<div class="sgem-compound-interest-copy-code-wrap">'+
+         '<button class="sgem-compound-interest-copy-code" id="sgem-compound-interest-copy-code" onclick="sgem_compound_interest_copyText(event)">Get Calculator</button>'+
+      '</div>'+
+   '</div>'+
+'</div>';
 
+sgem_cical_main_contents += '</div>';  
 
-if( (location.hostname != "calculatorstg.wpengine.com") || (location.hostname != "retirementinvestments.com") || (location.hostname != "staging.retirementinvestments.com") ){
-    sgem_plc_main_contents += '<div class="sgem-plc-logo-center"><a class="sgem-plc-logo-image" href="https://retirementinvestments.com/loans/personal-loan-calculator/" target="_blank" rel="noopener">';
-    sgem_plc_main_contents += 'Personal Loan Calculator</a>&nbsp; by Retirement Investments</div>';
-}
-
-if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com" || location.hostname == "staging.retirementinvestments.com"){
-    sgem_plc_main_contents += '<div class="sgem-plc-copy-option-panel"><h3>Do you want to add this calculator into your website?</h3>';
-    sgem_plc_main_contents += '<div class="sgem-plc-copy-code-wrap">';
-    sgem_plc_main_contents += '<button class="sgem-plc-copy-code" id="sgem-plc-copy-code" onclick="sgem_plc_copyText(event)">Get Calculator</button>';
-    sgem_plc_main_contents += '</div></div></div>';
-}
-
-sgem_plc_main_contents += '</div>';  
-
-document.getElementById('sgem-plc-cal').innerHTML = sgem_plc_main_contents;
+document.getElementById('sgem-plc-cal').innerHTML = sgem_cical_main_contents;
 
 
 // decimal points
 function decimalTwoPoints(x) {
   return Number.parseFloat(x).toFixed(0);
 }
-// end
 
 function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
 window.onload = function() {
-    sgem_pl_calculationm(); 
+    sgem_ci_calculationmin(); 
 }
 
-function sgem_pl_calculationm() {
+function sgem_ci_calculationmin() {
 
-    var chart_years_array = [];
-    var chart_starting_balance_array = [];
-    var chart_end_balance_array = [];
-    var chart_principal_paid_array = [];
-    var chart_intrest_paid_array = [];
+    var balance_array = [];
+    var principal_array = [];
+    var intrest_array = [];
+    var chart_year_array = [];
+    var chart_max_value_array = [];
 
-    var loan_ammount1 = $('#sgem_plc_loan_amount_required').val().trim();
-    var loan_ammount2 = loan_ammount1.replace(/\,/g,'');
-    var loan_ammount = parseInt(loan_ammount2,10);
+    var initial_deosit1 = $('#sgem_compound_interest_initial_value').val().trim();
+    var initial_deosit2 = initial_deosit1.replace(/\,/g, '');
+    var initial_deosit = parseInt(initial_deosit2, 10);
 
-    var annual_intrest_rate1 = $('#sgem_plc_annual_interest_rate').val().trim();
-    var annual_intrest_rate2 = annual_intrest_rate1.replace('%', "");
-    var annual_intrest_rate = parseFloat(annual_intrest_rate2 / 100);
+    var contributions1 = $('#sgem_compound_interest_retirement_contributions').val().trim();
+    var contributions2 = contributions1.replace(/\,/g, '');
+    var contributions = parseInt(contributions2, 10);
 
-    var loan_terms_years1 = $('#sgem_plc_loan_term').val().trim();
-    var loan_terms_years = parseFloat(loan_terms_years1);
+    var time_span = $('#sgem_compound_interest_investment_time').val().trim();
 
-    //Years on card
+    var estimated_rate_of_return1 = $('#sgem_compound_interest_retirement_estimated_rate').val().trim();
+    var estimated_rate_of_return2 = estimated_rate_of_return1.replace('%', "");
+    var estimated_rate_of_return = parseFloat(estimated_rate_of_return2 / 100);
 
-    var years_on_the_card = loan_terms_years;
+    //Calculations
 
-    if (isNaN(years_on_the_card)){
+    if (document.getElementById('sgem-compound-interest-cal-tab6').checked) {
 
-      $('#sgem_plc_monthly_paym_years').text(''); 
+        var effective_n = 365;
 
-    }else{
 
-      $('#sgem_plc_monthly_paym_years').text("over "+ years_on_the_card +" years");
+    } else if (document.getElementById('sgem-compound-interest-cal-tab5').checked) {
+
+        var effective_n = 12;
+
+
+    } else {
+
+        var effective_n = 1;
 
     }
 
 
-    //Monthly Payment
-    var monthly_payment1 = annual_intrest_rate / 12;
-    var monthly_payment2 = monthly_payment1 * loan_ammount;
+    // Applicable intreat rate per compunding
 
-    var monthly_payment3 = annual_intrest_rate / 12;
-    var monthly_payment4 = monthly_payment3 + 1;
+    var a_i_r_p_c = estimated_rate_of_return / effective_n;
 
-    var monthly_payment5 = -loan_terms_years * 12;
 
-    let monthly_payment6 = Math.pow(monthly_payment4, monthly_payment5);
-    var monthly_payment7 = 1 - monthly_payment6;
-    var monthly_payment = monthly_payment2 / monthly_payment7;
+    // No of effective periods for compounding
 
-    if (isNaN(monthly_payment) || monthly_payment <= 0){
+    var n_o_e_p_f_c = time_span * effective_n;
 
-      $('#sgem_plc_monthly_payment').text('0'); 
 
-    }else{
+    //Payment per period
 
-    $('#sgem_plc_monthly_payment').text(numberWithCommas(decimalTwoPoints(monthly_payment))); 
+    if (document.getElementById('sgem-compound-interest-cal-tab2').checked) {
+
+        var payment_per_period1 = 12 / effective_n;
+        var payment_per_period = contributions * payment_per_period1;
+
+    } else {
+
+        var payment_per_period1 = 1 / effective_n;
+        var payment_per_period = contributions * payment_per_period1;
+
     }
 
-    //Total principal & intrest paid
 
-    var total_p_and_i = monthly_payment * 12 * loan_terms_years;
 
-    if (isNaN(total_p_and_i) || total_p_and_i <= 0){
+    //Future value: Initial deposit
 
-        $('#sgem_plc_payback_amount').text('0'); 
-        localStorage.setItem('sgem_pl_max1_array', JSON.stringify(100000));
+    var f_v_initial_deposite1 = estimated_rate_of_return / effective_n;
+    var f_v_initial_deposite2 = 1 + f_v_initial_deposite1;
 
-    }else{
+    var f_v_initial_deposite3 = time_span * effective_n;
 
-      $('#sgem_plc_payback_amount').text(numberWithCommas(decimalTwoPoints(total_p_and_i))); 
-      localStorage.setItem('sgem_pl_max1_array', JSON.stringify(total_p_and_i));
+    let f_v_initial_deposite4 = Math.pow(f_v_initial_deposite2, f_v_initial_deposite3);
+    var f_v_initial_deposite = initial_deosit * f_v_initial_deposite4;
+
+
+
+    //Future value contribution
+
+    var f_v_contribution1 = estimated_rate_of_return / effective_n;
+    var f_v_contribution2 = 1 + f_v_contribution1;
+
+    var f_v_contribution3 = effective_n * time_span;
+
+    let f_v_contribution4 = Math.pow(f_v_contribution2, f_v_contribution3);
+    var f_v_contribution5 = f_v_contribution4 - 1;
+
+    var f_v_contribution6 = estimated_rate_of_return / effective_n;
+    var f_v_contribution7 = 1 + a_i_r_p_c;
+
+    var f_v_contribution8 = f_v_contribution6 / f_v_contribution7;
+
+    var f_v_contribution9 = f_v_contribution5 / f_v_contribution8;
+
+    var f_v_contribution = payment_per_period * f_v_contribution9;
+
+
+
+    //Future balance
+
+    var future_balance = f_v_initial_deposite + f_v_contribution;
+
+    if (isNaN(future_balance) || future_balance < 0) {
+
+        $('#sgem_compound_interest_total_text').text("$0");
+
+    } else {
+
+        $('#sgem_compound_interest_total_text').text("$" + numberWithCommas(decimalTwoPoints(future_balance)));
     }
 
-    //Total intrest paid
-
-    var total_intrest_paid = total_p_and_i - loan_ammount;
 
 
     //Chart values
 
-    //Year
+    //year
+
     var year_of_tax_filing = new Date().getFullYear();
-    var due_date2 = year_of_tax_filing;
+    var due_date2 = year_of_tax_filing + 1;
 
     var date = new Date();
     date.setMonth(date.getMonth());
 
-    var last_year = due_date2 + loan_terms_years;
+    var last_year = due_date2 + parseFloat(time_span);
 
     while (due_date2 < last_year) {
 
         var newdate = due_date2++ + "-" + date.toLocaleString('default', {
             month: 'short'
         });
-        chart_years_array.push(newdate);
+        chart_year_array.push(newdate);
 
     }
 
-    localStorage.setItem('sgem_pl_yearsx_array', JSON.stringify(chart_years_array));
+    localStorage.setItem('ci_chart_years', JSON.stringify(chart_year_array));
 
-    //Starting balance
+    //Balance
 
-    var starting_n = 1;
+    var tnew = 1;
+    var tnew2 = 1;
 
-    while (starting_n <= loan_terms_years) {
+    while (tnew <= time_span, tnew2 <= time_span) {
 
-        var starting_balance1 = annual_intrest_rate / 12;
-        var starting_balance2 = 1 + starting_balance1;
+        var balance1 = 1 + a_i_r_p_c;
+        var balance2 = effective_n * tnew++; //this shud increase 
+        let balance3 = Math.pow(balance1, balance2);
+        var balance4 = initial_deosit * balance3;
 
-        var starting_balance3 = loan_terms_years - starting_n++; //1 is n
-        var starting_balance4 = starting_balance3 + 1;
-        var starting_balance5 = starting_balance4 * 12;
+        var balance5 = 1 + a_i_r_p_c;
+        var balance6 = effective_n * tnew2++;
+        let balance7 = Math.pow(balance5, balance6);
+        var balance8 = balance7 - 1;
 
-        let starting_balance6 = Math.pow(starting_balance2, -starting_balance5);
-        var starting_balance7 = 1 - starting_balance6;
+        var balance9 = balance8 / a_i_r_p_c;
+        var balance10 = payment_per_period * balance9;
 
-        var starting_balance8 = annual_intrest_rate / 12;
+        var balance11 = 1 + a_i_r_p_c;
 
-        var starting_balance9 = starting_balance7 / starting_balance8;
-        var starting_balance = monthly_payment * starting_balance9;
-        chart_starting_balance_array.push(starting_balance);
+        var balance12 = balance10 * balance11;
 
-    }
-
-
-    //End balance
-
-    var end_balance_n = 1;
-
-    while (end_balance_n <= loan_terms_years) {
-
-        var end_balance1 = annual_intrest_rate / 12;
-        var end_balance2 = 1 + end_balance1;
-
-        var end_balance3 = loan_terms_years - end_balance_n++; //n
-        var end_balance4 = end_balance3 * 12;
-
-        let end_balance5 = Math.pow(end_balance2, -end_balance4);
-        var end_balance6 = 1 - end_balance5;
-
-        var end_balance7 = annual_intrest_rate / 12;
-
-        var end_balance8 = end_balance6 / end_balance7;
-        var end_balance = monthly_payment * end_balance8;
-        chart_end_balance_array.push(decimalTwoPoints(end_balance));
+        var balance = balance4 + balance12;
+        balance_array.push(balance.toFixed(0));
 
     }
 
-    localStorage.setItem('sgem_pl_end_balance_array', JSON.stringify(chart_end_balance_array));
+    localStorage.setItem('ci_chart_balance', JSON.stringify(balance_array));
 
+    // Principal
 
-    //Principal paid
+    var t = 1;
 
-    var arrayLength = chart_end_balance_array.length;
+    while (t <= time_span) {
 
-    for (var i = 0; i < arrayLength; i++) {
-
-        var principal_paid = parseFloat(chart_starting_balance_array[i]) - parseFloat(chart_end_balance_array[i]);
-        chart_principal_paid_array.push(decimalTwoPoints(principal_paid));
-
-    }
-
-    localStorage.setItem('sgem_pl_principal_p_array', JSON.stringify(chart_principal_paid_array));
-
-
-
-    //Intrest paid
-
-    var intrest_paid1 = monthly_payment * 12;
-
-    var arrayLength2 = chart_principal_paid_array.length;
-
-    for (var i = 0; i < arrayLength2; i++) {
-
-        var intrest_paid_paid = parseFloat(intrest_paid1) - parseFloat(chart_principal_paid_array[i]);
-        chart_intrest_paid_array.push(decimalTwoPoints(intrest_paid_paid));
+        var principal1 = payment_per_period * effective_n * t++;
+        var principal = initial_deosit + principal1;
+        principal_array.push(principal.toFixed(0));
 
     }
 
-    localStorage.setItem('sgem_pl_intrest_p_array', JSON.stringify(chart_intrest_paid_array));
-    pl_update_chart();
+    localStorage.setItem('ci_chart_principal', JSON.stringify(principal_array));
+
+    //Intrest
+
+    var ciarrayLength = balance_array.length;
+
+    for (var i = 0; i < ciarrayLength; i++) {
+
+        var intrest = parseFloat(balance_array[i]) - parseFloat(principal_array[i]);
+        intrest_array.push(intrest);
+
+    }
+
+    localStorage.setItem('ci_chart_intrest', JSON.stringify(intrest_array));
+
+    //Max value for chart
+
+    var chart_max_value = balance_array[balance_array.length - 1];
+
+    if (isNaN(chart_max_value) || chart_max_value < 0) {
+
+        chart_max_value_array.push(100000);
+        localStorage.setItem('ci_chart_max', JSON.stringify(chart_max_value_array));
+
+    } else {
+
+        chart_max_value_array.push(chart_max_value);
+        localStorage.setItem('ci_chart_max', JSON.stringify(chart_max_value_array));
+    }
+
+
+    ci_update_chart();
+
+}
+
+function isChecked() {
+
+    sgem_ci_calculationmin();
 
 }
 
 $(document).ready(function() {
 
-    if( location.hostname == "calculatorstg.wpengine.com") {
-        $('.sgem-plc-logo-center').hide(); 
-    } else if(location.hostname == "retirementinvestments.com"){
-        $('.sgem-plc-logo-center').hide();  
-    } else if(location.hostname == "staging.retirementinvestments.com"){ 
-        $('.sgem-plc-logo-center').hide();  
-    } else {
-        $('.sgem-plc-logo-center').show();  
-    }
+    if ($('#sgem_compound_interest_initial_value,#sgem_compound_interest_retirement_contributions,#sgem_compound_interest_investment_time').length > 0) {
+        $('#sgem_compound_interest_initial_value,#sgem_compound_interest_retirement_contributions,#sgem_compound_interest_investment_time').on('keyup', function() {
+            sgem_ci_calculationmin();
 
-    if($('#sgem_plc_loan_amount_required,#sgem_plc_loan_term').length > 0) {
-        $('#sgem_plc_loan_amount_required,#sgem_plc_loan_term').on('keyup', function () {
-            sgem_pl_calculationm() ;
-
-          // Keep only digits and decimal points:
-        this.value=this.value.replace(/[^\d.]/g, "")
-        // Remove duplicated decimal point, if one exists:
-        this.value=this.value.replace(/^(\d*\.)(.*)\.(.*)$/, '$1$2$3')
-        // Keep only two digits past the decimal point:
-        this.value=this.value.replace(/\.(\d{0})\d+/, '')
-        // Add thousands separators:
-        this.value=this.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-          // Removing front zero
-          this.value=this.value.replace(/^0+/, '');
+            // Keep only digits and decimal points:
+            this.value = this.value.replace(/[^\d.]/g, "")
+            // Remove duplicated decimal point, if one exists:
+            this.value = this.value.replace(/^(\d*\.)(.*)\.(.*)$/, '$1$2$3')
+            // Keep only two digits past the decimal point:
+            this.value = this.value.replace(/\.(\d{0})\d+/, '')
+            // Add thousands separators:
+            this.value = this.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            // Removing front zero
+            this.value = this.value.replace(/^0+/, '');
 
 
         });
     }
 
-    if($('#sgem_plc_annual_interest_rate').length > 0) {
-      $('#sgem_plc_annual_interest_rate').on('keyup', function () {
-          sgem_pl_calculationm() ;
+    if ($('#sgem_compound_interest_retirement_estimated_rate').length > 0) {
+        $('#sgem_compound_interest_retirement_estimated_rate').on('keyup', function() {
+            sgem_ci_calculationmin();
 
-       
-        // Removing front zero
-        this.value=this.value.replace(/^0+/, '');
-       
 
-      });
+            // Removing front zero
+            this.value = this.value.replace(/^0+/, '');
+
+
+        });
     }
 
+    //Validations
 
-    //---------------------------------------------------------------------------------------------------
+    // Initial deposit
+    $('#sgem_compound_interest_initial_value').on('keyup', function() {
+        var val = this.value;
+        var xc = parseInt(val);
+        if (isNaN(xc) || $(this).val().length > 11) {
 
-    // Loan ammount
-    $('#sgem_plc_loan_amount_required').on('keyup', function () {
-      var val = this.value;
-      var xcx = parseInt(val);
-      if (isNaN(xcx) || $(this).val().length>11){
-         
-         this.value ='';
-         $('#sgem_plc_err_loan_amount_required').html('This cannot be empty or more than $900,000,000').fadeIn();  
-          $(this).css({
-        "border": "1px solid red",
-        "background": "#FFCECE" });  
-          
+            this.value = '';
+            $('.sgem_compound_interest_err_stating_value').html('This cannot be empty or more than $900,000,000').fadeIn();
+            $(this).css({
+                "border": "1px solid red",
+                "background": "#FFCECE"
+            });
 
-    }else{
-     $('#sgem_plc_err_loan_amount_required').html('').fadeOut();  
-    $(this).css({
-        "border": "1px solid #707070",
-        "background": "#ffffff"
-      }); 
-    }    
+
+        } else {
+            $('.sgem_compound_interest_err_stating_value').html('').fadeOut();
+            $(this).css({
+                "border": "1px solid #707070",
+                "background": "#ffffff"
+            });
+        }
     });
 
-     //loan term
-     $('#sgem_plc_loan_term').on('keyup', function () {
-      var vrr     = $('#sgem_plc_loan_term').val().trim();
+    // Contribution
+    $('#sgem_compound_interest_retirement_contributions').on('keyup', function() {
+        var val = this.value;
+        var fxc = parseInt(val);
+        if (isNaN(fxc) || $(this).val().length > 11) {
 
-      if (isNaN(vrr) || vrr>100){
-         
-         this.value ='';
-         $('#sgem_plc_err_loan_required').html('This cannot be empty or more than 100').fadeIn();  
-          $(this).css({
-        "border": "1px solid red",
-        "background": "#FFCECE" });  
-          
+            this.value = '';
+            $('.sgem_compound_interest_err_retirement_contributions').html('This cannot be empty or more than $900,000,000').fadeIn();
+            $(this).css({
+                "border": "1px solid red",
+                "background": "#FFCECE"
+            });
 
-    }else{
-     $('#sgem_plc_err_loan_required').html('').fadeOut();  
-    $(this).css({
-        "border": "1px solid #707070",
-        "background": "#ffffff"
-      }); 
-    }    
+
+        } else {
+            $('.sgem_compound_interest_err_retirement_contributions').html('').fadeOut();
+            $(this).css({
+                "border": "1px solid #707070",
+                "background": "#ffffff"
+            });
+        }
     });
 
-     //annual inerest rate
-     $('#sgem_plc_annual_interest_rate').on('keyup', function () {
-      var svrr2     = $('#sgem_plc_annual_interest_rate').val().trim();
-      var svrr = svrr2.replace('%', "");
-      if (isNaN(svrr) || svrr>100){
-         
-         this.value ='';
-         $('#sgem_plc_err_no_of_months').html('This cannot be empty or more than 100%').fadeIn();  
-          $(this).css({
-        "border": "1px solid red",
-        "background": "#FFCECE" });  
-          
+    // Contribution
+    $('#sgem_compound_interest_investment_time').on('keyup', function() {
+        var val = this.value;
+        var fxc = parseInt(val);
+        if (isNaN(fxc) || $(this).val().length > 2) {
 
-    }else{
-     $('#sgem_plc_err_no_of_months').html('').fadeOut();  
-    $(this).css({
-        "border": "1px solid #707070",
-        "background": "#ffffff"
-      }); 
-    }    
+            this.value = '';
+            $('.sgem_compound_interest_err_investment_time').html('This cannot be empty or more than 99').fadeIn();
+            $(this).css({
+                "border": "1px solid red",
+                "background": "#FFCECE"
+            });
+
+
+        } else {
+            $('.sgem_compound_interest_err_investment_time').html('').fadeOut();
+            $(this).css({
+                "border": "1px solid #707070",
+                "background": "#ffffff"
+            });
+        }
     });
 
-    $('#sgem_plc_loan_term').on('keyup', function() {
-      if ($(this).val()==''){
-      
-          $(this).css({
-            "border": "1px solid red",
-            "background": "#FFCECE" });
-             $('#sgem_plc_err_loan_required').html('This cannot be empty or more than 100').fadeIn(); 
 
-      }
-                
-        }); 
+    //estimated rate of return
+    $('#sgem_compound_interest_retirement_estimated_rate').on('keyup', function() {
+        var svrr2 = $('#sgem_compound_interest_retirement_estimated_rate').val().trim();
+        var svrr = svrr2.replace('%', "");
+        if (isNaN(svrr) || svrr > 100) {
 
-      $('#sgem_plc_annual_interest_rate').on('keyup', function() {
-      if ($(this).val()==''){
-      
-          $(this).css({
-            "border": "1px solid red",
-            "background": "#FFCECE" });
-             $('#sgem_plc_err_no_of_months').html('This cannot be empty or more than 100%').fadeIn(); 
+            this.value = '';
+            $('.sgem_compound_interest_err_retirement_estimated_rate').html('This cannot be empty or more than 100%').fadeIn();
+            $(this).css({
+                "border": "1px solid red",
+                "background": "#FFCECE"
+            });
 
-      }
-                
-        }); 
 
-    sgem_pl_calculationm(); 
+        } else {
+            $('.sgem_compound_interest_err_retirement_estimated_rate').html('').fadeOut();
+            $(this).css({
+                "border": "1px solid #707070",
+                "background": "#ffffff"
+            });
+        }
+    });
+
+    $('#sgem_compound_interest_retirement_estimated_rate').on('keyup', function() {
+        if ($(this).val() == '') {
+
+            $(this).css({
+                "border": "1px solid red",
+                "background": "#FFCECE"
+            });
+            $('.sgem_compound_interest_err_retirement_estimated_rate').html('This cannot be empty or more than 100%').fadeIn();
+
+        }
+
+    });
+
+    sgem_ci_calculationmin(); 
 
     //---------------------------------------------------------------------------------------------------
 });
 
 
-  // chart 1 start 
-  var data_pl_chart_years_values =  JSON.parse(localStorage.getItem('sgem_pl_yearsx_array')),
-  data_pl_chart_end_blance_values =  JSON.parse(localStorage.getItem('sgem_pl_end_balance_array')),
-  data_pl_chart_max1_values =  JSON.parse(localStorage.getItem('total_p_and_i'));
+// setup 
 
-  var ctx = document.getElementById('myChart').getContext('2d');
-  var gradientBg = ctx.createLinearGradient(0, 0, 0, 500);
-  
-  gradientBg.addColorStop(0, '#A5E5C5');
-  gradientBg.addColorStop(0.5, '#A5E5C5');
-  gradientBg.addColorStop(1, '#fff');
-  gradientBg.addColorStop(1, '#fff');
-  
-  var myChart = new Chart(ctx, {
-      type: 'line',
-      data: {
-          labels: data_pl_chart_years_values,
-          datasets: [{
-              label: 'Amount ',
-              data: data_pl_chart_end_blance_values,
-              borderWidth: 2,
-              backgroundColor: gradientBg,
-              borderColor: "#4BCC8C",
-              fill: true,
-              tension: 0.5,
-              pointRadius: 0,
-              pointHitRadius: 50,
-          }]
-      },
-      options: {
-          scales: {
-            y: {
-              min:0,
-              max: 100000,
-              grid: {
-                borderDash: [1, 2],
-                color: "#9F9F9F"
-              },
-              beginAtZero: true,
-              ticks: {
-                callback: function(value, index, ticks) {
-                    // return '$' + value;
-                    return '$' + value / 1000 + "k";
-                },
-                font: {
-                    size: 14,
-                    family: "'DM Sans'",
-                }
-              }
-            },
+var data_ci_years = JSON.parse(localStorage.getItem('ci_chart_years')),
+    data_ci_balance = JSON.parse(localStorage.getItem('ci_chart_balance')),
+    data_ci_principal = JSON.parse(localStorage.getItem('ci_chart_principal')),
+    data_ci_max = JSON.parse(localStorage.getItem('ci_chart_max')),
+    data_ci_intrest = JSON.parse(localStorage.getItem('ci_chart_intrest'));
+
+const data = {
+    labels: data_ci_years,
+    datasets: [{ //[0]
+        label: 'Principle',
+        backgroundColor: "#1569B0",
+        labels: ['IRA Contribution'],
+        data: data_ci_principal,
+        fill: true,
+        tension: 0.5,
+        borderWidth: 1,
+        pointRadius: 0,
+    }, { // [1]
+        label: 'Interest',
+        backgroundColor: "#42C581",
+        labels: ['ROTH IRA Balance'],
+        data: data_ci_intrest,
+        fill: true,
+        tension: 0.5,
+        borderWidth: 1,
+        pointRadius: 0,
+    }, ],
+};
+
+// config 
+const config = {
+    type: 'bar',
+    data,
+    options: {
+
+        local: 'en-US',
+        responsive: true,
+        interaction: {
+            mode: 'index'
+        },
+        scales: {
             x: {
-              grid: {
-                display: false,
-              },
-              ticks: {
-                autoSkip: false,
-                maxRotation: 90,
-                minRotation: 90,
-                // Include a dollar sign in the ticks
-                // callback: function(value, index, ticks) {
-                //     // return '$' + value;
-                //     return '$' + value / 1000 + "k";
-                // },
-                font: {
-                    size: 14,
-                    family: "'DM Sans'",
-                }
-              }
+                ticks: {
+                    color: '#000',
+                    maxTicksLimit: 3,
+                    maxRotation: 0,
+                    lineWidth: 2,
+                    font: {
+                        size: 14
+                    },
+                },
+                grid: {
+                    display: false
+                },
+                stacked: true,
             },
-          },
-  
-          legend: {
-              display: false
-          },
-  
-          plugins: {
+
+            y: {
+                min: 0,
+                max: data_ci_max,
+                grid: {
+                    borderDash: [4],
+                    color: "#A3A3A3"
+                },
+                stacked: true,
+                ticks: {
+                    color: '#000',
+                    callback: (value, index, values) => {
+                        return '$' + value / 1000 + 'K';
+                        return new Intl.NumberFormat('en-US', {
+                            style: 'currency',
+                            currency: 'USD',
+                            maximumSignificantDigits: 3
+                        }).format(value);
+                    },
+                    font: {
+                        size: 13,
+                        family: "'DM Sans'",
+                    }
+                },
+                beginAtZero: false
+            }
+        },
+        plugins: {
             legend: {
-              display: false    
+                display: false
             },
             tooltip: {
-              backgroundColor: 'white',
-              yAlign: 'bottom',
-              borderColor: 'hsl(210, 3%, 70%)',
-              borderWidth: 1,
-              usePointStyle: true,
-              bodyFont: {
-                size: 14,
-                family: "'DM Sans'",
-              },
-              titleFont: {
-                  size: 14,
-                  family: "'DM Sans'"
-              },
-              bodySpacing: 1,
-              titleColor: '#000',
-              labelColor: '#000',
-              boxWidth: 0,
-              boxHeight: 30,
-              callbacks: {
-                labelTextColor: function(context){
-                    return '#4BCC8C';
-                },
-                labelPointStyle: function(context) {
-                    return {
-                        pointStyle: 'triangle',
-                        rotation: 0
-                    };
-                }
-              } 
-            }
-          }
-      }
-  });
-  
-  document.getElementById('sgem_plc_principle').style.backgroundColor = myChart.data.datasets[0].borderColor;
-  
-  // chart 2 start 
-
-  var data_pl_chart_years_values2 =  JSON.parse(localStorage.getItem('sgem_pl_yearsx_array')),
-   data_pl_chart_principal_values =  JSON.parse(localStorage.getItem('sgem_pl_principal_p_array')),
-   data_pl_chart_intrest_values =  JSON.parse(localStorage.getItem('sgem_pl_intrest_p_array')),
-   data_pl_chart_max1_values2 =  JSON.parse(localStorage.getItem('total_p_and_i'));
-
-  var ctx = document.getElementById('myChart2').getContext('2d');
-  var myChart2 = new Chart(ctx, {
-      type: 'bar',
-      data: {
-          labels: data_pl_chart_years_values2,
-          datasets: [{
-              label: 'Principal ',
-              data: data_pl_chart_principal_values,
-              borderWidth: 2,
-              backgroundColor: "#4BCC8C",
-              borderColor: "#4BCC8C",
-              fill: true,
-              tension: 0.5,
-              pointRadius: 0,
-              pointHitRadius: 50,
-              order: 1,
-  //             barThickness: 70,
-          },
-          {
-              label: 'Interest ',
-              data: data_pl_chart_intrest_values,
-              borderWidth: 2,
-              backgroundColor: "#1569B0",
-              borderColor: "#1569B0",
-              fill: true,
-              tension: 0.5,
-              pointRadius: 0,
-              pointHitRadius: 50,
-              order: 2,
-  //             barThickness: 70,
-          }]
-      },
-      options: {
-          scales: {
-            y: {
-              min:0,
-              max: 700000,
-              grid: {
-                // display: false,
-                borderDash: [8, 4],
-                color: "#9F9F9F"
-              },
-              stacked: true,
-              beginAtZero: true,
-              ticks: {
-                callback: function(value, index, ticks) {
-                    // return '$' + value;
-                    return '$' + value / 1000 + "k";
-                },
-                font: {
+                backgroundColor: 'white',
+                yAlign: 'bottom',
+                borderColor: 'hsl(210, 3%, 70%)',
+                borderWidth: 1,
+                usePointStyle: true,
+                bodyFont: {
                     size: 14,
                     family: "'DM Sans'",
-                }
-              }
-            },
-            x: {
-              grid: {
-                display: false,
-              },
-              stacked: true,
-              ticks: {
-                autoSkip: false,
-                maxRotation: 90,
-                minRotation: 90,
-                // Include a dollar sign in the ticks
-                // callback: function(value, index, ticks) {
-                //     // return '$' + value;
-                //     return '$' + value / 1000 + "k";
-                // },
-                font: {
-                    size: 14,
-                    family: "'DM Sans'",
-                }
-              }
-            },
-          },
-  
-          legend: {
-              display: false
-          },
-  
-          plugins: {
-            legend: {
-              display: false    
-            },
-            tooltip: {
-              backgroundColor: 'white',
-              yAlign: 'bottom',
-              borderColor: 'hsl(210, 3%, 70%)',
-              borderWidth: 1,
-              usePointStyle: true,
-              bodyFont: {
-                size: 14,
-                family: "'DM Sans'",
-              },
-              titleFont: {
-                  size: 14,
-                  family: "'DM Sans'"
-              },
-              bodySpacing: 1,
-              titleColor: '#000',
-              labelColor: '#000',
-              boxWidth: 0,
-              boxHeight: 30,
-              callbacks: {
-                labelTextColor: function(context){
-                    return context.dataset.backgroundColor[context.dataIndex];
                 },
-                labelPointStyle: function(context) {
-                    return {
-                        pointStyle: 'triangle',
-                        rotation: 0
-                    };
+                titleFont: {
+                    size: 14,
+                    family: "'DM Sans'"
+                },
+                bodySpacing: 1,
+                titleColor: '#757575',
+                boxWidth: 0,
+                boxHeight: 30,
+                callbacks: {
+                    labelTextColor: function(context) {
+                        return context.dataset.backgroundColor[context.dataIndex];
+                    },
+                    labelPointStyle: function(context) {
+                        return {
+                            pointStyle: 'triangle',
+                            rotation: 0
+                        };
+                    }
                 }
-              } 
             }
-          }
-      }
-  });
-    
-  document.getElementById('sgem_plc_principle_l2').style.backgroundColor = myChart2.data.datasets[0].borderColor;
-  document.getElementById('sgem_plc_le_interest').style.backgroundColor = myChart2.data.datasets[1].borderColor;
-  
-  function toggleData(value){
-    const visibilityData = myChart2.isDatasetVisible(value);
-    if (visibilityData === true ){
-      myChart2.hide(value);
+        }
     }
-     if (visibilityData === false ){
-      myChart2.show(value);
-    } 
-  }
+};
 
-  function toggleDatachart(value){
+// render init block
+const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+);
+
+document.getElementById('sgem_compound_principle').style.backgroundColor = myChart.data.datasets[0].backgroundColor;
+document.getElementById('sgem_compound_interest_interest').style.backgroundColor = myChart.data.datasets[1].backgroundColor;
+
+document.getElementById('sgem_compound_interest_principle_te').innerText = myChart.data.datasets[0].label;
+document.getElementById('sgem_compound_interest_interest_te').innerText = myChart.data.datasets[1].label;
+
+function toggleData(value) {
     const visibilityData = myChart.isDatasetVisible(value);
-    if (visibilityData === true ){
-      myChart.hide(value);
+    if (visibilityData === true) {
+        myChart.hide(value);
     }
-     if (visibilityData === false ){
-      myChart.show(value);
-    } 
-  }
+    if (visibilityData === false) {
+        myChart.show(value);
+    }
+}
 
-  function pl_update_chart(){
- 
-    myChart.data.labels = JSON.parse(localStorage.getItem('sgem_pl_yearsx_array'));
-  
-    myChart.data.datasets[0].data = JSON.parse(localStorage.getItem('sgem_pl_end_balance_array'));  
+function ci_update_chart() {
 
-    myChart.options.scales.y.max = JSON.parse(localStorage.getItem('total_p_and_i'));
+    myChart.data.labels = JSON.parse(localStorage.getItem('ci_chart_years'));
 
-    myChart2.data.labels = JSON.parse(localStorage.getItem('sgem_pl_yearsx_array'));
+    myChart.options.scales.y.max = JSON.parse(localStorage.getItem('data_ci_max'));
 
-    myChart2.data.datasets[0].data = JSON.parse(localStorage.getItem('sgem_pl_principal_p_array')); 
+    myChart.data.datasets[0].data = JSON.parse(localStorage.getItem('ci_chart_principal'));
 
-    myChart2.data.datasets[1].data = JSON.parse(localStorage.getItem('sgem_pl_intrest_p_array')); 
+    myChart.data.datasets[1].data = JSON.parse(localStorage.getItem('ci_chart_intrest'));
 
-    myChart2.options.scales.y.max = JSON.parse(localStorage.getItem('total_p_and_i'));
-  
     myChart.update();
-    
-    myChart2.update();
-  
-  }
- 
-  
-  $(document).ready(function() {
-      if ($('.sgem-plc-cal-wrapper').width() < 1024) {
-          $('.sgem-plc-cal-left').addClass('sgem-plc-cal-left-add-class');
-          $('.sgem-plc-cal-right').addClass('sgem-plc-cal-right-add-class');
-      } else {
-          $('.sgem-plc-cal-left').removeClass('sgem-plc-cal-left-add-class');
-          $('.sgem-plc-cal-right').removeClass('sgem-plc-cal-right-add-class');
-      }
-  
-      if ($('.sgem-plc-cal-main-id').width() < 650) {
-          $('.sgem-plc-cal-wrapper').addClass('sgem-plc-wrapper-add-mobile');
-      } else {
-          $('.sgem-plc-cal-wrapper').removeClass('sgem-plc-wrapper-add-mobile');
-      }
-  
-      $(window).on('resize', function() {
-          if ($('.sgem-plc-cal-wrapper').width() < 1024) {
-              $('.sgem-plc-cal-left').addClass('sgem-plc-cal-left-add-class');
-              $('.sgem-plc-cal-right').addClass('sgem-plc-cal-right-add-class');
-          } else {
-              $('.sgem-plc-cal-left').removeClass('sgem-plc-cal-left-add-class');
-              $('.sgem-plc-cal-right').removeClass('sgem-plc-cal-right-add-class');
-          }
-      }).trigger('resize');
-  
-      $(window).on('resize', function() {
-          if ($('.sgem-plc-cal-main-id').width() < 650) {
-              $('.sgem-plc-cal-wrapper').addClass('sgem-plc-wrapper-add-mobile');
-          } else {
-              $('.sgem-plc-cal-wrapper').removeClass('sgem-plc-wrapper-add-mobile');
-          }
-      }).trigger('resize');
-  });
-  
 
-  function isNumber(evt) {
+}
+
+/**
+ * Responsive Add Js
+ */
+jQuery(document).ready(function($) {
+    if ($('.sgem-compound-interest-cal-wrapper').width() < 1100) {
+        $('.sgem-compound-interest-cal-left').addClass('sgem-compound-interest-cal-left-add-class');
+        $('.sgem-compound-interest-cal-right').addClass('sgem-compound-interest-cal-right-add-class');
+    } else {
+        $('.sgem-compound-interest-cal-left').removeClass('sgem-compound-interest-cal-left-add-class');
+        $('.sgem-compound-interest-cal-right').removeClass('sgem-compound-interest-cal-right-add-class');
+    }
+
+    if ($('.sgem-compound-interest-cal-main-id').width() < 650) {
+        $('.sgem-compound-interest-cal-wrapper').addClass('sgem-compound-interest-wrapper-add-mobile');
+    } else {
+        $('.sgem-compound-interest-cal-wrapper').removeClass('sgem-compound-interest-wrapper-add-mobile');
+    }
+
+    $(window).on('resize', function() {
+        if ($('.sgem-compound-interest-cal-wrapper').width() < 1100) {
+            $('.sgem-compound-interest-cal-left').addClass('sgem-compound-interest-cal-left-add-class');
+            $('.sgem-compound-interest-cal-right').addClass('sgem-compound-interest-cal-right-add-class');
+        } else {
+            $('.sgem-compound-interest-cal-left').removeClass('sgem-compound-interest-cal-left-add-class');
+            $('.sgem-compound-interest-cal-right').removeClass('sgem-compound-interest-cal-right-add-class');
+        }
+    }).trigger('resize');
+
+    $(window).on('resize', function() {
+        if ($('.sgem-compound-interest-cal-main-id').width() < 650) {
+            $('.sgem-compound-interest-cal-wrapper').addClass('sgem-compound-interest-wrapper-add-mobile');
+        } else {
+            $('.sgem-compound-interest-cal-wrapper').removeClass('sgem-compound-interest-wrapper-add-mobile');
+        }
+    }).trigger('resize');
+});
+
+function isNumber(evt) {
     evt = (evt) ? evt : window.event;
     var charCode = (evt.which) ? evt.which : evt.keyCode;
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
@@ -815,8 +735,7 @@ $(document).ready(function() {
         return false;
     }
     return true;
-  }
-
+}
 
 /**
  * Tool Tip
