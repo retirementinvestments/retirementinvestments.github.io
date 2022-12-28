@@ -388,6 +388,16 @@ function isChecked() {
 
 $(document).ready(function() {
 
+    if( location.hostname == "calculatorstg.wpengine.com") {
+        $('.sgem-compound-interest-logo-center').hide(); 
+    } else if(location.hostname == "retirementinvestments.com"){
+        $('.sgem-compound-interest-logo-center').hide();  
+    } else if(location.hostname == "staging.retirementinvestments.com"){ 
+        $('.sgem-compound-interest-logo-center').hide();  
+    } else {
+        $('.sgem-compound-interest-logo-center').show();  
+    }
+
     if ($('#sgem_compound_interest_initial_value,#sgem_compound_interest_retirement_contributions,#sgem_compound_interest_investment_time').length > 0) {
         $('#sgem_compound_interest_initial_value,#sgem_compound_interest_retirement_contributions,#sgem_compound_interest_investment_time').on('keyup', function() {
             sgem_ci_calculationmin();
