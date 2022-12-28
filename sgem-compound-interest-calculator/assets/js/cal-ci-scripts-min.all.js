@@ -133,16 +133,18 @@ var sgem_cical_main_contents = '<div class="sgem-compound-interest-cal-main-id">
       '</div>'+
    '</div>'+
 
-   '<div class="sgem-compound-interest-logo-center">'+
-      '<a class="sgem-compound-interest-logo-image" href="https://retirementinvestments.com/banking/compund-interest-calculator/" target="_blank" rel="noopener">Compound Interest Calculator</a>&nbsp;by Retirement Investments'+
-   '</div>'+
-   '<div class="sgem-compound-interest-copy-option-panel">'+
-      '<h3>Do you want to add this calculator into your website?</h3>'+
-      '<div class="sgem-compound-interest-copy-code-wrap">'+
-         '<button class="sgem-compound-interest-copy-code" id="sgem-compound-interest-copy-code" onclick="sgem_compound_interest_copyText(event)">Get Calculator</button>'+
-      '</div>'+
-   '</div>'+
-'</div>';
+    if( (location.hostname != "calculatorstg.wpengine.com") || (location.hostname != "retirementinvestments.com") || (location.hostname != "staging.retirementinvestments.com") ){
+        sgem_cical_main_contents += '<div class="sgem-compound-interest-logo-center">';
+        sgem_cical_main_contents += '<a class="sgem-compound-interest-logo-image" href="https://retirementinvestments.com/banking/compund-interest-calculator/" target="_blank" rel="noopener">Compound Interest Calculator</a>&nbsp;by Retirement Investments</div>';
+    }
+
+    if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com" || location.hostname == "staging.retirementinvestments.com"){
+        sgem_cical_main_contents += '<div class="sgem-compound-interest-copy-option-panel">';
+        sgem_cical_main_contents += '<h3>Do you want to add this calculator into your website?</h3>';
+        sgem_cical_main_contents += '<div class="sgem-compound-interest-copy-code-wrap">';
+        sgem_cical_main_contents += '<button class="sgem-compound-interest-copy-code" id="sgem-compound-interest-copy-code" onclick="sgem_compound_interest_copyText(event)">Get Calculator</button>';
+        sgem_cical_main_contents += '</div></div></div>';
+    }
 
 sgem_cical_main_contents += '</div>';  
 
