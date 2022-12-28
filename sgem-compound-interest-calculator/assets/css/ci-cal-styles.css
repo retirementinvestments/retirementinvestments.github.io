@@ -386,7 +386,8 @@
   cursor:pointer;
 }
 .sgem-compound-interest-cal-1-result-footer .sgem-compound-interest-getStart:hover {
-        background-color: #ffd061;
+    background-color: #ffd061;
+    color: #002340;
 }
 
 
@@ -785,6 +786,7 @@
 }
 .sgem-compound-interest-copy-code:hover {
   background-color: #ffd061;
+  color: #002340;
 }
 .sgem-compound-interest-copy-option-panel {
     margin-top: 25px;
