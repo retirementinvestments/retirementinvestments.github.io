@@ -346,10 +346,10 @@ function sgem_capital_gain_calculationmin() {
 
     //Holding period If more than one year
 
-    if ((holding_period == "1" && filing_status == "single" && year_of_tax_filing == 2022 && taxable_income <= single_0_to_2) ||
-        (holding_period == "1" && filing_status == "mfs" && year_of_tax_filing == 2022 && taxable_income <= mfs_0_to_2) ||
-        (holding_period == "1" && filing_status == "mfj" && year_of_tax_filing == 2022 && taxable_income <= mfj_0_to_2) ||
-        (holding_period == "1" && filing_status == "hoh" && year_of_tax_filing == 2022 && taxable_income <= hoh_0_to_2)) {
+    if ((holding_period == "1" && filing_status == "single" && taxable_income <= single_0_to_2) ||
+        (holding_period == "1" && filing_status == "mfs" && taxable_income <= mfs_0_to_2) ||
+        (holding_period == "1" && filing_status == "mfj" && taxable_income <= mfj_0_to_2) ||
+        (holding_period == "1" && filing_status == "hoh" && taxable_income <= hoh_0_to_2)) {
 
         var percentage_balance_ammount_20 = your_total_taxable_income_incld_capital_gain - single_15_to_2;
         var percentage_balance_ammount_20_mfs = your_total_taxable_income_incld_capital_gain - mfs_15_to_2;
@@ -564,10 +564,10 @@ function sgem_capital_gain_calculationmin() {
         }
 
 
-    } else if ((holding_period == "1" && filing_status == "single" && year_of_tax_filing == 2022 && taxable_income <= single_15_to_2) ||
-        (holding_period == "1" && filing_status == "mfs" && year_of_tax_filing == 2022 && taxable_income <= mfs_15_to_2) ||
-        (holding_period == "1" && filing_status == "mfj" && year_of_tax_filing == 2022 && taxable_income <= mfj_15_to_2) ||
-        (holding_period == "1" && filing_status == "hoh" && year_of_tax_filing == 2022 && taxable_income <= hoh_15_to_2)) {
+    } else if ((holding_period == "1" && filing_status == "single" && taxable_income <= single_15_to_2) ||
+        (holding_period == "1" && filing_status == "mfs" && taxable_income <= mfs_15_to_2) ||
+        (holding_period == "1" && filing_status == "mfj" && taxable_income <= mfj_15_to_2) ||
+        (holding_period == "1" && filing_status == "hoh" && taxable_income <= hoh_15_to_2)) {
 
         switch (filing_status) {
             case "single":
@@ -675,10 +675,10 @@ function sgem_capital_gain_calculationmin() {
         }
 
 
-    } else if ((holding_period == "1" && filing_status == "single" && year_of_tax_filing == 2022 && taxable_income > single_20_above_2) ||
-        (holding_period == "1" && filing_status == "mfs" && year_of_tax_filing == 2022 && taxable_income > mfs_20_above_2) ||
-        (holding_period == "1" && filing_status == "mfj" && year_of_tax_filing == 2022 && taxable_income > mfj_20_above_2) ||
-        (holding_period == "1" && filing_status == "hoh" && year_of_tax_filing == 2022 && taxable_income > hoh_20_above_2)) {
+    } else if ((holding_period == "1" && filing_status == "single" && taxable_income > single_20_above_2) ||
+        (holding_period == "1" && filing_status == "mfs" && taxable_income > mfs_20_above_2) ||
+        (holding_period == "1" && filing_status == "mfj" && taxable_income > mfj_20_above_2) ||
+        (holding_period == "1" && filing_status == "hoh" && taxable_income > hoh_20_above_2)) {
 
         var rates = table_rates_22_bracket3;
 
@@ -690,10 +690,10 @@ function sgem_capital_gain_calculationmin() {
 
     //Holding period If one year or less
 
-    if ((holding_period == "2" && filing_status == "single" && year_of_tax_filing == 2022 && taxable_income <= single_10_to1) ||
-        (holding_period == "2" && filing_status == "mfs" && year_of_tax_filing == 2022 && taxable_income <= mfs_10_to1) ||
-        (holding_period == "2" && filing_status == "mfj" && year_of_tax_filing == 2022 && taxable_income <= mfj_10_to1) ||
-        (holding_period == "2" && filing_status == "hoh" && year_of_tax_filing == 2022 && taxable_income <= hoh_10_to1)) {
+    if ((holding_period == "2" && filing_status == "single" && taxable_income <= single_10_to1) ||
+        (holding_period == "2" && filing_status == "mfs" && taxable_income <= mfs_10_to1) ||
+        (holding_period == "2" && filing_status == "mfj" && taxable_income <= mfj_10_to1) ||
+        (holding_period == "2" && filing_status == "hoh" && taxable_income <= hoh_10_to1)) {
 
 
         switch (filing_status) {
@@ -1265,10 +1265,10 @@ function sgem_capital_gain_calculationmin() {
         }
 
 
-    } else if ((holding_period == "2" && filing_status == "single" && year_of_tax_filing == 2022 && taxable_income <= single_12_to1) ||
-        (holding_period == "2" && filing_status == "mfs" && year_of_tax_filing == 2022 && taxable_income <= mfs_12_to1) ||
-        (holding_period == "2" && filing_status == "mfj" && year_of_tax_filing == 2022 && taxable_income <= mfj_12_to1) ||
-        (holding_period == "2" && filing_status == "hoh" && year_of_tax_filing == 2022 && taxable_income <= hoh_12_to1)) {
+    } else if ((holding_period == "2" && filing_status == "single" && taxable_income <= single_12_to1) ||
+        (holding_period == "2" && filing_status == "mfs" && taxable_income <= mfs_12_to1) ||
+        (holding_period == "2" && filing_status == "mfj" && taxable_income <= mfj_12_to1) ||
+        (holding_period == "2" && filing_status == "hoh" && taxable_income <= hoh_12_to1)) {
 
 
         switch (filing_status) {
@@ -1727,10 +1727,10 @@ function sgem_capital_gain_calculationmin() {
         }
 
 
-    } else if ((holding_period == "2" && filing_status == "single" && year_of_tax_filing == 2022 && taxable_income <= single_22_to1) ||
-        (holding_period == "2" && filing_status == "mfs" && year_of_tax_filing == 2022 && taxable_income <= mfs_22_to1) ||
-        (holding_period == "2" && filing_status == "mfj" && year_of_tax_filing == 2022 && taxable_income <= mfj_22_to1) ||
-        (holding_period == "2" && filing_status == "hoh" && year_of_tax_filing == 2022 && taxable_income <= hoh_22_to1)) {
+    } else if ((holding_period == "2" && filing_status == "single" && taxable_income <= single_22_to1) ||
+        (holding_period == "2" && filing_status == "mfs" && taxable_income <= mfs_22_to1) ||
+        (holding_period == "2" && filing_status == "mfj" && taxable_income <= mfj_22_to1) ||
+        (holding_period == "2" && filing_status == "hoh" && taxable_income <= hoh_22_to1)) {
 
 
         switch (filing_status) {
@@ -2084,10 +2084,10 @@ function sgem_capital_gain_calculationmin() {
 
         }
 
-    } else if ((holding_period == "2" && filing_status == "single" && year_of_tax_filing == 2022 && taxable_income <= single_24_to1) ||
-        (holding_period == "2" && filing_status == "mfs" && year_of_tax_filing == 2022 && taxable_income <= mfs_24_to1) ||
-        (holding_period == "2" && filing_status == "mfj" && year_of_tax_filing == 2022 && taxable_income <= mfj_24_to1) ||
-        (holding_period == "2" && filing_status == "hoh" && year_of_tax_filing == 2022 && taxable_income <= hoh_24_to1)) {
+    } else if ((holding_period == "2" && filing_status == "single" && taxable_income <= single_24_to1) ||
+        (holding_period == "2" && filing_status == "mfs" && taxable_income <= mfs_24_to1) ||
+        (holding_period == "2" && filing_status == "mfj" && taxable_income <= mfj_24_to1) ||
+        (holding_period == "2" && filing_status == "hoh" && taxable_income <= hoh_24_to1)) {
 
         var rates = table_rates_22_bracket7;
 
@@ -2351,10 +2351,10 @@ function sgem_capital_gain_calculationmin() {
         }
 
 
-    } else if ((holding_period == "2" && filing_status == "single" && year_of_tax_filing == 2022 && taxable_income <= single_32_to1) ||
-        (holding_period == "2" && filing_status == "mfs" && year_of_tax_filing == 2022 && taxable_income <= mfs_32_to1) ||
-        (holding_period == "2" && filing_status == "mfj" && year_of_tax_filing == 2022 && taxable_income <= mfj_32_to1) ||
-        (holding_period == "2" && filing_status == "hoh" && year_of_tax_filing == 2022 && taxable_income <= hoh_32_to1)) {
+    } else if ((holding_period == "2" && filing_status == "single" && taxable_income <= single_32_to1) ||
+        (holding_period == "2" && filing_status == "mfs" && taxable_income <= mfs_32_to1) ||
+        (holding_period == "2" && filing_status == "mfj" && taxable_income <= mfj_32_to1) ||
+        (holding_period == "2" && filing_status == "hoh" && taxable_income <= hoh_32_to1)) {
 
 
         switch (filing_status) {
@@ -2537,10 +2537,10 @@ function sgem_capital_gain_calculationmin() {
         }
 
 
-    } else if ((holding_period == "2" && filing_status == "single" && year_of_tax_filing == 2022 && taxable_income <= single_35_to1) ||
-        (holding_period == "2" && filing_status == "mfs" && year_of_tax_filing == 2022 && taxable_income <= mfs_35_to1) ||
-        (holding_period == "2" && filing_status == "mfj" && year_of_tax_filing == 2022 && taxable_income <= mfj_35_to1) ||
-        (holding_period == "2" && filing_status == "hoh" && year_of_tax_filing == 2022 && taxable_income <= hoh_35_to1)) {
+    } else if ((holding_period == "2" && filing_status == "single" && taxable_income <= single_35_to1) ||
+        (holding_period == "2" && filing_status == "mfs" && taxable_income <= mfs_35_to1) ||
+        (holding_period == "2" && filing_status == "mfj" && taxable_income <= mfj_35_to1) ||
+        (holding_period == "2" && filing_status == "hoh" && taxable_income <= hoh_35_to1)) {
 
 
         switch (filing_status) {
@@ -2656,10 +2656,10 @@ function sgem_capital_gain_calculationmin() {
         }
 
 
-    } else if ((holding_period == "2" && filing_status == "single" && year_of_tax_filing == 2022 && taxable_income > single_37_above1) ||
-        (holding_period == "2" && filing_status == "mfs" && year_of_tax_filing == 2022 && taxable_income > mfs_37_above1) ||
-        (holding_period == "2" && filing_status == "mfj" && year_of_tax_filing == 2022 && taxable_income > mfj_37_above1) ||
-        (holding_period == "2" && filing_status == "hoh" && year_of_tax_filing == 2022 && taxable_income > hoh_37_above1)) {
+    } else if ((holding_period == "2" && filing_status == "single" && taxable_income > single_37_above1) ||
+        (holding_period == "2" && filing_status == "mfs" && taxable_income > mfs_37_above1) ||
+        (holding_period == "2" && filing_status == "mfj" && taxable_income > mfj_37_above1) ||
+        (holding_period == "2" && filing_status == "hoh" && taxable_income > hoh_37_above1)) {
 
         var rates = table_rates_22_bracket10;
 
