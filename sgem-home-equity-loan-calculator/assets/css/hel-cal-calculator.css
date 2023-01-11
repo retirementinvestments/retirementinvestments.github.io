@@ -601,9 +601,12 @@
     background-repeat: no-repeat;
     background-position-x: 97%;
     background-position-y: 50%;
+	cursor: pointer;
 }
 
-
+.sgem-hel-drop-selection:focus {
+	background-color: #fff;
+}
 
 
 .sgem-hel-checkbox input[type=checkbox] {
