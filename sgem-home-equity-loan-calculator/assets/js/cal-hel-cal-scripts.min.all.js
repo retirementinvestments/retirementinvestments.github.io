@@ -90,7 +90,7 @@ var sgem_hel_main_contents =
 			'</div>'+
 		'</div>';
 	
-    console.log(location.hostname);
+    //console.log(location.hostname);
 	
 if( (location.hostname != "calculatorstg.wpengine.com") || (location.hostname != "retirementinvestments.com") || (location.hostname != "staging.retirementinvestments.com") ){
     sgem_hel_main_contents += '<div class="sgem-hel-logo-center">';
