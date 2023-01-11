@@ -772,7 +772,7 @@ details.sgem-hel-details-disclaimer[open] > summary::after {
     display: inline-block;
     text-align: center;
     cursor: pointer;
-	margin-left: 3px;
+	margin-left: 5px;
 }
 .sgem-hel-cal-main-id .sgem-hel-copy-option-panel {
     background: #fff;
