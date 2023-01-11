@@ -1,101 +1,68 @@
-<div class="sgem-cpg-cal-main-id">
-   <div class="sgem-cpg-cal-wrapper">
-      <div class="sgem-cpg-cal-left">
-         <div class="sgem-cpg-form sgem-cpg-cal-1">
-            <div class="sgem-cpg-flex-container">
-               <div class="sgem-cpg-form-group sgem-cpg-form-flex sgem-cpg-currency-holder">
-                  <label>Purchase price</label> 
-                  <input type="text"class="inputmove inputnumber" id="sgem_cpg_purchased_price" value="10000" min="0" max="1000000" onkeypress="return isNumber(event)"/>
-                  <span class="sgem_cpg_err_msg" id="sgem_cpg_err_purchase_the_item"></span>
-               </div>
-               <div class="sgem-cpg-form-group sgem-cpg-form-flex sgem_cpg_right_field_row sgem-cpg-currency-holder">
-                  <label>Sales price</label> 
-                  <input type="text"class="inputmove inputnumber" id="sgem_cpg_sales_price" value="60000" min="0" max="1000000" onkeypress="return isNumber(event)"/>
-                  <span class="sgem_cpg_err_msg" id="sgem_cpg_err_sold_the_item"></span>
-               </div>
-            </div>
-            <div class="sgem-cpg-flex-container">
-               <div class="sgem-cpg-form-group sgem-cpg-form-flex sgem-cpg-currency-holder">
-                  <label>2021 taxable income
-                  <span class="sgem-cpg-info-tooltip tooltip" data-tippy-content="Please enter your taxable income without the inclusion of any capital gains. Your taxable income is inclusive of all income that is not tax-exempt such as interest, dividends, salary, wages, pensions, minus deductions such as itemized or standard deductions.">?</span>
-                  </label> 
-                  <input type="text"class="inputmove inputnumber" id="sgem_cpg_my_taxable_income" value="10000" min="0" max="100000" onkeypress="return isNumber(event)"/>
-                  <span class="sgem_cpg_err_msg" id="sgem_cpg_err_taxable_income"></span>
-               </div>
-               <div class="sgem-cpg-form-group sgem-cpg-form-flex sgem_cpg_right_field_row">
-                  <label for="yearscount">Holding period</label>  
-                  <select id="sgem_cpg_year_status" class="sgem-cpg-drop-selection" name="yearscount" onkeypress="return isNumber(event)">
-                     <option value="One year or less">One year or less</option>
-                     <option value="More than a year">More than a year</option>
-                  </select>
-               </div>
-            </div>
-            <div class="sgem-cpg-flex-container">
-               <div class="sgem-cpg-form-group sgem-cpg-form-flex">
-                  <label for="marital">Tax filing status
-                  </label>  
-                  <select id="sgem_cpg_marital_status" class="sgem-cpg-drop-selection" name="marital" onkeypress="return isNumber(event)">
-                     <option value="single">Single</option>
-                     <option value="married, filing jointly">Married, filing jointly</option>
-                     <option value="married, filing separately">Married, filing separately</option>
-                     <option value="head of household">Head of household</option>
-                  </select>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="sgem-cpg-cal-right">
-         <div class="sgem-cpg-cal-1-result-wrapper">
-            <div class="sgem-cpg-flex-container sgem-cpg-column2">
-               <div class="sgem-cpg-form-group sgem-cpg-form-flex">
-                  <span class="futuretext sgem-result-value">YOUR ESTIMATED PRE-TAX GAIN IS</span> 
-                  <div id="futureV" class="sgem-cpg-result-label">$<span id="sgem_cpg_pre_cap_tax">145,000</span>
-                  </div>
-               </div>
-               <div class="sgem-cpg-form-group sgem-cpg-form-flex ">
-                  <span class="futuretext2 sgem-result-value">YOUR TOTAL TAXABLE INCOME</span>
-                  <div id="futureV2" class="sgem-cpg-result-label">$<span id="sgem_cpg_tax_income">160,000</span>
-                  </div>
-                  <span class="futuretext2 sgem-cpg-result-value">including your capital gain</span>
-               </div>
-            </div>
-            <div class="sgem-cpg-flex-container sgem-cpg-column2">
-               <div class="sgem-cpg-form-group sgem-cpg-form-flex">
-                  <span class="futuretext3 sgem-result-value">ESTIMATED 2021 TAX</span> 
-                  <div id="futureV3" class="sgem-cpg-result-label">$<span id="sgem_cpg_estimated_tax">30,820.00</span>
-                  </div>
-                  <span class="futuretext3 sgem-cpg-result-value">on Short-Term Capital Gain</span>
-               </div>
-               <div class="sgem-cpg-form-group sgem-cpg-form-flex ">
-                  <span class="futuretext4 sgem-result-value">YOUR MARGINAL FEDERAL TAX RATE</span>
-                  <div id="futureV4" class="sgem-cpg-result-label"><span id="sgem_cpg_you_marginal_tax_rate">24%</span>
-                  </div>
-                  <span class="futuretext4 sgem-cpg-result-value">on short-term capital gains</span>
-               </div>
-            </div>
-            <div class="sgem-cpg-cal-1-result-footer">
-               <div class="sgem-cpg-content">Do it yourself, get expert help, or hand it off start to finish—let’s get your taxes done right.</div>
-               <div class="sgem-cpg-buttonGet">
-                  <a href="https://www.irs.gov/faqs/capital-gains-losses-and-sale-of-home" target="_blank" class="sgem-cpg-getStart" rel="noopener">
-                  GET STARTED
-                  </a>
-               </div>
-            </div>
-            <div class="sgem-cpg-section-disclaimer">
-               <details class="sgem-cpg-details-disclaimer">
-                  <summary>
-                     <div class="sgem-cpg-collapsible-summary-disclaimer">Disclaimer</div>
-                  </summary>
-                  <div class="sgem-cpg-collapsible-text-disclaimer">Calculations are estimates based on the tax law as of September 2021. These rates are subject to change. Check the IRS website for the latest information about capital gains</div>
-               </details>
-            </div>
-         </div>
-      </div>
-   </div>
-   <div class="sgem-cpg-copy-option-panel">
-      <h3>Do you want to add this calculator into your website?</h3>
-      <div class="sgem-cpg-copy-code-wrap">
-         <button class="sgem-cpg-copy-code" id="sgem-cpg-copy-code" onclick="sgem_cpg_copyText(event)">Get Calculator</button>
-      </div>
-   </div>
+<div class="sgem-hel-cal-main-id">
+	<div class="sgem-hel-cal-wrapper">
+		<div class="sgem-hel-cal-left">
+			<div class="sgem-hel-form sgem-hel-cal-1">
+				<div class="sgem-hel-block-container">
+					<div class="sgem-hel-form-group sgem-hel-form-flex sgem-hel-currency-holder">
+						<label>Appraised value of home
+							<span class="sgem-hel-info-tooltip tooltip" data-tippy-content=" A formal assessment of the value of property prepared by a qualified appraiser. Mortgage lenders almost always require a property appraisal before approving a home loan.">?</span>
+						</label>
+						<input type="text" class="inputmove inputnumber" id="sgem_hel_appraised_value" value="160,000" min="0" max="1000000" onkeypress="return isNumber(event)"/>
+						<span class="sgem_hel_err_msg" id="sgem_hel_err_purchase_the_item"></span>
+					</div>
+				</div>
+				<div class="sgem-hel-block-container">
+					<div class="sgem-hel-form-group sgem-hel-form-flex sgem-hel-currency-holder">
+						<label>How much do you owe on home
+							<span class="sgem-hel-info-tooltip tooltip" data-tippy-content="Your current balance is the amount you currently still owe on the loan according to the date of your statement. This does not include interest that would be charged to the balance if you were to continue with your monthly payments. You can find this number on your monthly statement or online account.">?</span>
+						</label>
+						<input type="text"class="inputmove inputnumber" id="sgem_hel_owe_on_home" value="50,000" min="0" max="100000" onkeypress="return isNumber(event)"/>
+						<span class="sgem_hel_err_msg" id="sgem_hel_err_taxable_income"></span>
+					</div>
+					<div class="sgem-hel-form-group sgem-hel-form-flex sgem_hel_right_field_row">
+						<label for="">Current credit score</label>
+						<select id="sgem_hel_credit_score" class="sgem-hel-drop-selection" name="yearscount" onkeypress="return isNumber(event)">
+							<option value="Excellent">Excellent (740+)</option>
+							<option value="Good">Good (680-739)</option>
+							<option value="Fair" selected>Fair (621-679)</option>
+							<option value="Poor">Poor (< 620)</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="sgem-hel-cal-right">
+			<div class="sgem-hel-cal-1-result-wrapper">
+				<div class="sgem-hel-flex-container sgem-hel-column2">
+					<div class="sgem-hel-form-group sgem-hel-form-flex">
+						<span class="futuretext sgem-result-value">YOU CAN GET A HOME EQUITY LOAN OR HELOC FOR</span>
+						<div id="sgem_hel_loan_value" class="sgem-hel-result-label">$<span id="sgem_hel_cal_val_raw">26,250</span></div>
+					</div>
+				</div>
+				<div class="sgem-hel-cal-1-result-footer">
+					<div class="sgem-hel-content">Good news! Since your LTV is 73%, you may be eligible for a home equity loan or line of credit from one of our lending partners.</div>
+					<div class="sgem-hel-buttonGet">
+						<a href="https://retirementinvestments.com/homeequitycalculator/" target="_blank" class="sgem-hel-getStart" rel="noopener">Find my rate</a>
+					</div>
+				</div>
+				<div class="sgem-hel-section-disclaimer">
+					<details class="sgem-hel-details-disclaimer">
+						<summary>
+							<div class="sgem-hel-collapsible-summary-disclaimer">Disclaimer</div>
+						</summary>
+						<div class="sgem-hel-collapsible-text-disclaimer">Calculations are estimates based on the tax law as of September 2021. These rates are subject to change. Check the IRS website for the latest information about capital gains</div>
+					</details>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="sgem-hel-copy-option-panel">
+		<h3>Do you want to add this calculator into your website?</h3>
+		<div class="sgem-hel-copy-code-wrap">
+			<button class="sgem-hel-copy-code" id="sgem-hel-copy-code" onclick="sgem_hel_copyText(event)">Get Calculator</button>
+		</div>
+	</div>
 </div>
