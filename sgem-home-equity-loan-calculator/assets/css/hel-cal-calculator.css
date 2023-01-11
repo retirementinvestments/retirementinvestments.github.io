@@ -1071,6 +1071,10 @@ details.sgem-hel-details-disclaimer[open] > summary::after {
     .sgem-hel-cal-1-result-wrapper {
         padding: 12px;
     }
+	.sgem-hel-cal-right-add-class .sgem-hel-cal-1-result-wrapper .sgem-hel-result-label {
+		font-size: 32px;
+	}
+
     .sgem-hel-cal-1-result-wrapper .sgem-hel-flex-container .sgem-hel-form-flex {
         padding-bottom: 32px;
         font-size: 14px;
