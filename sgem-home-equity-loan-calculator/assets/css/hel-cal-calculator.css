@@ -74,7 +74,7 @@
     flex-basis: 100%;
     padding-bottom: 28px;
     position: relative;
-    padding-right: 0px;
+    padding-right: 10px;
 }
 .sgem-hel-cal-1 .sgem-hel-form-group {
     margin: 0px !important;
@@ -1000,6 +1000,9 @@ details.sgem-hel-details-disclaimer[open] > summary::after {
 
 @media (max-width: 650px) {
 
+	.sgem-hel-cal-1 .sgem-hel-block-container .sgem-hel-form-flex {
+		padding-right: 0px;
+	}
     .sgem-hel-cal-main-id {
         max-width: 100%;        
     }
