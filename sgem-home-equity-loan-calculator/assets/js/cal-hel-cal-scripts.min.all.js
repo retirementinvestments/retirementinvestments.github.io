@@ -305,6 +305,7 @@ tippy('[data-tippy-content]', {
     arrow: true,
     theme: 'light-border',
     trigger: 'click',
+	size: 'small'
 });
 
 localStorage.setItem('sgem-hel-cal-copy', '<div id="sgem-hel-cal"></div><script>window.onload = function() {var sgemhelcal = document.createElement("script");sgemhelcal.type = "text/javascript";sgemhelcal.src = "https://retirementinvestments.github.io/sgem-home-equity-loan-calculator/assets/js/cal-hel-cal-scripts.min.js";document.body.appendChild(sgemhelcal);} </script>'); 
