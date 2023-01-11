@@ -1045,7 +1045,7 @@ details.sgem-hel-details-disclaimer[open] > summary::after {
     }
     .sgem-hel-cal-wrapper {
         display: block;
-        padding: 7px;
+        padding: 0px 10px;
     }
     .sgem-hel-cal-left {
         width: 100%;
