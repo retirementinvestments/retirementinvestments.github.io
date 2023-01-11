@@ -37,7 +37,7 @@ var sgem_hel_main_contents =
 					'<div class="sgem-hel-block-container">'+
 						'<div class="sgem-hel-form-group sgem-hel-form-flex sgem-hel-currency-holder">'+
 							'<label>Appraised value of home '+
-								'<span class="sgem-hel-info-tooltip tooltip" data-tippy-content=" A formal assessment of the value of property prepared by a qualified appraiser. Mortgage lenders almost always require a property appraisal before approving a home loan.">?</span>'+
+								'<span class="sgem-hel-info-tooltip tooltip" data-tippy-size="small" data-tippy-content=" A formal assessment of the value of property prepared by a qualified appraiser. Mortgage lenders almost always require a property appraisal before approving a home loan.">?</span>'+
 							'</label>'+
 							'<input type="text" class="inputmove inputnumber" id="sgem_hel_appraised_value" value="160,000" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
 							'<span class="sgem_hel_err_msg" id="sgem_hel_err_purchase_the_item"></span>'+
@@ -46,7 +46,7 @@ var sgem_hel_main_contents =
 					'<div class="sgem-hel-block-container">'+
 						'<div class="sgem-hel-form-group sgem-hel-form-flex sgem-hel-currency-holder">'+
 							'<label>How much do you owe on home '+
-								'<span class="sgem-hel-info-tooltip tooltip" data-tippy-content="Your current balance is the amount you currently still owe on the loan according to the date of your statement. This does not include interest that would be charged to the balance if you were to continue with your monthly payments. You can find this number on your monthly statement or online account.">?</span>'+
+								'<span class="sgem-hel-info-tooltip tooltip" data-tippy-size="small" data-tippy-content="Your current balance is the amount you currently still owe on the loan according to the date of your statement. This does not include interest that would be charged to the balance if you were to continue with your monthly payments. You can find this number on your monthly statement or online account.">?</span>'+
 							'</label>'+
 							'<input type="text"class="inputmove inputnumber" id="sgem_hel_owe_on_home" value="50,000" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
 							'<span class="sgem_hel_err_msg" id="sgem_hel_err_taxable_income"></span>'+
