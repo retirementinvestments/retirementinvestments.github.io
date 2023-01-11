@@ -135,7 +135,7 @@ var sgem_cical_main_contents = '<div class="sgem-compound-interest-cal-main-id">
 
     if( (location.hostname != "calculatorstg.wpengine.com") || (location.hostname != "retirementinvestments.com") || (location.hostname != "staging.retirementinvestments.com") ){
         sgem_cical_main_contents += '<div class="sgem-compound-interest-logo-center">';
-        sgem_cical_main_contents += '<a class="sgem-compound-interest-logo-image" href="https://retirementinvestments.com/banking/compund-interest-calculator/" target="_blank" rel="noopener">Compound Interest Calculator</a>&nbsp;by Retirement Investments</div>';
+        sgem_cical_main_contents += '<a class="sgem-compound-interest-logo-image" href="https://retirementinvestments.com/banking/compound-interest-calculator/" target="_blank" rel="noopener">Compound Interest Calculator</a>&nbsp;by Retirement Investments</div>';
     }
 
     if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com" || location.hostname == "staging.retirementinvestments.com"){
