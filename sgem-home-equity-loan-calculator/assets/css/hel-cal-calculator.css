@@ -969,7 +969,7 @@ details.sgem-hel-details-disclaimer[open] > summary::after {
 
     .sgem-hel-cal-main-id {
         max-width: 380px;
-        min-width: 290px;
+        min-width: 300px;
     }
     .sgem-hel-cal-left-add-class .sgem-hel-drop-selection {
         font-size: 1em;
