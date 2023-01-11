@@ -1159,11 +1159,17 @@ details.sgem-hel-details-disclaimer[open] > summary::after {
     .sgem-hel-inline .sgem-hel-plusminus input[type="text"] {
         width:125px;
     }
+	.sgem-hel-cal-left-add-class .sgem-hel-cal-1 .sgem-hel-form-flex.sgem-hel-currency-holder::after{
+		top : 33px;
+	}
 }
 @media (max-width: 380px) {
     .sgem-hel-inline .sgem-hel-plusminus input[type="text"] {
         width:100px;
     }
+	.sgem-hel-cal-left-add-class .sgem-hel-cal-1 .sgem-hel-form-flex.sgem-hel-currency-holder::after{
+		top : 33px;
+	}
 }
 @media (max-width: 356px) {
     .sgem-hel-inline .sgem-hel-plusminus input[type="text"] {
