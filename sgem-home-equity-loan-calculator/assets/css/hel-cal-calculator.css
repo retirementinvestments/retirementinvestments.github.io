@@ -976,7 +976,7 @@ details.sgem-hel-details-disclaimer[open] > summary::after {
 
 @media (max-width: 981px) {
 	.sgem-hel-cal-left.sgem-hel-cal-left-add-class {
-		width: 42%;		
+		width: 44%;		
 	}
 	.sgem-hel-cal-left-add-class .sgem-hel-cal-1 .sgem-hel-form-group label {
 		font-size: 0.8em;
@@ -987,7 +987,7 @@ details.sgem-hel-details-disclaimer[open] > summary::after {
 }
 @media (max-width: 810px) {	
 	.sgem-hel-cal-left-add-class .sgem-hel-cal-1 .sgem-hel-form-group label {
-		font-size: 0.75em;
+		font-size: 0.8em;
 	}
 	.sgem-hel-cal-right-add-class .sgem-hel-cal-1-result-footer .sgem-hel-content {
 		font-size: 0.8em;
