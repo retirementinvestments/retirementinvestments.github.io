@@ -895,6 +895,15 @@ details.sgem-hel-details-disclaimer[open] > summary::after {
     padding: 20px 20px;
 }
 
+/* ************ Tooltip ************ */
+.tooltip{
+	width:300px;
+	font-size: 12px;
+}
+
+
+
+
 /* ******** ipad ************ */
 @media (max-width:1024px) {
     .sgem-hel-logo-wrapper {
