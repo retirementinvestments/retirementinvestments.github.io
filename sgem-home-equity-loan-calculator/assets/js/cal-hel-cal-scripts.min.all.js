@@ -180,7 +180,7 @@ $(document).ready(function() {
 		sgem_he_calculation();
 	});
 
-    /*if( location.hostname == "calculatorstg.wpengine.com") {
+    if( location.hostname == "calculatorstg.wpengine.com") {
         $('.sgem-cpg-logo-center').hide(); 
     } else if(location.hostname == "retirementinvestments.com"){
         $('.sgem-cpg-logo-center').hide();  
@@ -188,7 +188,7 @@ $(document).ready(function() {
         $('.sgem-hmhcia-logo-center').hide();  
     } else {
         $('.sgem-cpg-logo-center').show();  
-    }*/
+    }
 
     
 	if ($('#sgem_hel_appraised_value,#sgem_hel_owe_on_home').length > 0) {
