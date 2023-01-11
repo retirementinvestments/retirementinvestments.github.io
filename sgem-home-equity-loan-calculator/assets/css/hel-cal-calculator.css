@@ -967,7 +967,6 @@ details.sgem-hel-details-disclaimer[open] > summary::after {
 
 @media (max-width: 650px) {
 
-
     .sgem-hel-cal-main-id {
         max-width: 380px;
         min-width: 290px;
@@ -1139,7 +1138,7 @@ details.sgem-hel-details-disclaimer[open] > summary::after {
     .sgem-hel-buttonGet {
         justify-content: left;
     }
-	..sgem-hel-cal-left-add-class .sgem-hel-cal-1 .sgem-hel-form-flex.sgem-hel-currency-holder::after{
+	.sgem-hel-cal-left-add-class .sgem-hel-cal-1 .sgem-hel-form-flex.sgem-hel-currency-holder::after{
 		top : 33px;
 	}
 }
