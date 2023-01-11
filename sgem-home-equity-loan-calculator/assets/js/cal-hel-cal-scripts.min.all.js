@@ -270,7 +270,7 @@ $(document).ready(function() {
         $('.sgem-hel-cal-right').removeClass('sgem-hel-cal-right-add-class');
     }
 
-    if ($('.sgem-hel-cal-main-id').width() < 677) {
+    if ($('.sgem-hel-cal-main-id').width() < 680) {
         $('.sgem-hel-cal-wrapper').addClass('sgem-hel-wrapper-add-mobile');
     } else {
         $('.sgem-hel-cal-wrapper').removeClass('sgem-hel-wrapper-add-mobile');
@@ -287,7 +287,7 @@ $(document).ready(function() {
     }).trigger('resize');
 
     $(window).on('resize', function() {
-        if ($('.sgem-hel-cal-main-id').width() < 677) {
+        if ($('.sgem-hel-cal-main-id').width() < 680) {
             $('.sgem-hel-cal-wrapper').addClass('sgem-hel-wrapper-add-mobile');
         } else {
             $('.sgem-hel-cal-wrapper').removeClass('sgem-hel-wrapper-add-mobile');
