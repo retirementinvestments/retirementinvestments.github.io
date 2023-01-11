@@ -806,20 +806,20 @@ details.sgem-hel-details-disclaimer[open] > summary::after {
 
 /* add class js styles */
 .sgem-hel-cal-left-add-class .sgem-hel-cal-1 .sgem-hel-form-group label {
-    font-size: 0.8em;
+    font-size: 0.9em;
 }
 .sgem-hel-cal-left-add-class .sgem-hel-cal-1 input[type="text"] {
     font-size: 0.8em;
-    height: 45px;
+    height: 40px;
     width: 100%;
 }
 .sgem-hel-cal-left-add-class .sgem-hel-cal-1 .sgem-hel-form-flex.sgem-hel-currency-holder::after {
-    font-size: 0.8em;
-    top: 37px;
+    font-size: 0.9em;
+    top: 40px;
 }
 .sgem-hel-cal-left-add-class .sgem-hel-drop-selection {
-    font-size: 0.8em;
-    height: 45px;
+    font-size: 0.9em;
+    height: 40px;
     width: 100%;
 }
 .sgem-hel-cal-left-add-class .sgem-hel-tooltip {
@@ -915,6 +915,12 @@ details.sgem-hel-details-disclaimer[open] > summary::after {
         width: 100%;
         padding: 15px 18px;
     }
+}
+
+@media (max-width:1305px) {
+	.sgem-hel-cal-1-result-wrapper .sgem-hel-flex-container .sgem-hel-form-flex{
+		padding-bottom: 20px;
+	}
 }
 
 @media (max-width:1200px) {
