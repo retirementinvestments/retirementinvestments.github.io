@@ -896,9 +896,11 @@ details.sgem-hel-details-disclaimer[open] > summary::after {
     padding: 20px 20px;
 }
 
-/* ************ Tooltip ************ */
+/* ************ ************ */
 
-
+.sgem-hel-wrapper-add-mobile .sgem-hel-cal-1 .sgem-hel-block-container .sgem-hel-form-flex{
+	padding-right: 0px;
+}
 
 
 
