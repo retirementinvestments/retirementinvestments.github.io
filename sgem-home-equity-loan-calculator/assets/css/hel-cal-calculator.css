@@ -6,7 +6,7 @@
     font-family: 'DM Sans', sans-serif;
 }
 .sgem-hel-cal-main-id {
-    max-width: 1238px;
+    max-width: 1240px;
     margin: 0 auto;
     font-family: 'DM SANS';
 }
@@ -29,6 +29,7 @@
     align-items: center;
     font-size: 13px;
     padding-right: 5px;
+	padding-top: 10px;
 }
 .sgem-hel-logo-center a.sgem-hel-url-text {
     color: rgb(21, 105, 176);
@@ -400,7 +401,7 @@
     margin-top: 4px;
 }
 [data-tippy-root] {
-    max-width: 250px;
+    max-width: 300px;
     -moz-box-shadow: 0 4px 8px 0 rgba(100,102,106,.15),0 8px 16px 0 rgba(100,102,106,.33);
     -webkit-box-shadow: 0 4px 8px 0 rgba(100,102,106,.15),0 8px 16px 0 rgba(100,102,106,.33);
     box-shadow: 0 4px 8px 0 rgba(100,102,106,.15),0 8px 16px 0 rgba(100,102,106,.33);
@@ -432,7 +433,7 @@
 .tippy-popper {
     font-family: 'DM Sans',Helvetica,Arial,Lucida,sans-serif;
     font-size: 11px;
-    max-width: 250px;
+    max-width: 300px;
 }
 .sgem-hel-precentage-arrow {
     position: absolute;
@@ -1000,8 +1001,7 @@ details.sgem-hel-details-disclaimer[open] > summary::after {
 @media (max-width: 650px) {
 
     .sgem-hel-cal-main-id {
-        max-width: 380px;
-        min-width: 300px;
+        max-width: 100%;        
     }
     .sgem-hel-cal-left-add-class .sgem-hel-drop-selection {
         font-size: 1em;
