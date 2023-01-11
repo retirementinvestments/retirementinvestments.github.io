@@ -90,7 +90,8 @@ var sgem_hel_main_contents =
 			'</div>'+
 		'</div>';
 	
-    
+    console.log(location.hostname);
+	
 if( (location.hostname != "calculatorstg.wpengine.com") || (location.hostname != "retirementinvestments.com") || (location.hostname != "staging.retirementinvestments.com") ){
     sgem_hel_main_contents += '<div class="sgem-hel-logo-center">';
     sgem_hel_main_contents += '<a class="sgem-hel-url-text" href="https://retirementinvestments.com/real-estate/home-equity-loan-calculator/" target="_blank" rel="noopener">Home Equity Loan Calculator&nbsp;</a>by&nbsp;Retirement Investments</div>';
@@ -306,7 +307,7 @@ tippy('[data-tippy-content]', {
     trigger: 'click',
 });
 
-localStorage.setItem('sgem-hel-cal-copy', '<div id="sgem-hel-cal"></div><script>window.onload = function() {var sgemcpgcal = document.createElement("script");sgemcpgcal.type = "text/javascript";sgemcpgcal.src = "https://retirementinvestments.github.io/sgem-capital-gains-calculator/assets/js/cal-hel-cal-scripts.min.js";document.body.appendChild(sgemcpgcal);} </script>'); 
+localStorage.setItem('sgem-hel-cal-copy', '<div id="sgem-hel-cal"></div><script>window.onload = function() {var sgemhelcal = document.createElement("script");sgemhelcal.type = "text/javascript";sgemhelcal.src = "https://retirementinvestments.github.io/sgem-home-equity-loan-calculator/assets/js/cal-hel-cal-scripts.min.js";document.body.appendChild(sgemhelcal);} </script>'); 
  
 function sgem_hel_copyText(ev){
   //console.log("hi");
