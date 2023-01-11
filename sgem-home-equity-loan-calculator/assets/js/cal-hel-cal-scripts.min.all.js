@@ -181,13 +181,13 @@ $(document).ready(function() {
 	});
 
     if( location.hostname == "calculatorstg.wpengine.com") {
-        $('.sgem-cpg-logo-center').hide(); 
+        $('.sgem-hel-logo-center').hide(); 
     } else if(location.hostname == "retirementinvestments.com"){
-        $('.sgem-cpg-logo-center').hide();  
+        $('.sgem-hel-logo-center').hide();  
     } else if(location.hostname == "staging.retirementinvestments.com"){
         $('.sgem-hmhcia-logo-center').hide();  
     } else {
-        $('.sgem-cpg-logo-center').show();  
+        $('.sgem-hel-logo-center').show();  
     }
 
     
