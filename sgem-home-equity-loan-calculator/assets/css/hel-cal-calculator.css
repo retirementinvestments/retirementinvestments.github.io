@@ -976,6 +976,17 @@ details.sgem-hel-details-disclaimer[open] > summary::after {
 		font-size: 0.8em;
 	}
 }
+@media (max-width: 810px) {	
+	.sgem-hel-cal-left-add-class .sgem-hel-cal-1 .sgem-hel-form-group label {
+		font-size: 0.9em;
+	}
+	.sgem-hel-cal-right-add-class .sgem-hel-cal-1-result-footer .sgem-hel-content {
+		font-size: 0.9em;
+	}
+	.sgem-hel-cal-right-add-class .sgem-hel-form-flex .sgem-result-value{
+		font-size: 1em;
+	}
+}
 
 @media (max-width: 650px) {
 
