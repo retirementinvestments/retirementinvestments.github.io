@@ -986,6 +986,9 @@ details.sgem-hel-details-disclaimer[open] > summary::after {
 	.sgem-hel-cal-right-add-class .sgem-hel-form-flex .sgem-result-value{
 		font-size: 1em;
 	}
+	.sgem-hel-cal-1 .sgem-hel-block-container .sgem-hel-form-flex{
+		padding-right: 0px;
+	}
 }
 
 @media (max-width: 650px) {
