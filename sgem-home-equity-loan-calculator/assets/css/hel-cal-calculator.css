@@ -1023,12 +1023,6 @@ details summary::-webkit-details-marker {
 
 @media (max-width: 650px) {
 
-
-	.sgem-hel-collapsible-summary-disclaimer {
-
-	   width: 72px !important;
-	}
-
 	.sgem-hel-cal-left.sgem-hel-cal-left-add-class {
 		width: 33%;
 		padding-top: 0px;
