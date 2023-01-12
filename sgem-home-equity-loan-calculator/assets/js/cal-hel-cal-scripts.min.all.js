@@ -176,6 +176,9 @@ function sgem_he_calculation() {
 
 $(document).ready(function() {
 	
+	$(".sgem-hel-collapsible-summary-disclaimer-arrow").click(function () {
+        $(this).toggleClass("down");
+    })
 	
 	$('#sgem_hel_credit_score').on('change' , function () {
 		sgem_he_calculation();
