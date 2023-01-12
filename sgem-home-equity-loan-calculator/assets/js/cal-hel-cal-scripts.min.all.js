@@ -80,7 +80,7 @@ var sgem_hel_main_contents =
 					'</div>'+
 					'<div class="sgem-hel-section-disclaimer">'+
 						'<details class="sgem-hel-details-disclaimer">'+
-							'<summary class="sgem-hel-details-disclaimer-flex">'+
+							'<summary>'+
 								'<div class="sgem-hel-collapsible-summary-disclaimer">Disclaimer</div>'+								
 							'</summary>'+
 							'<div class="sgem-hel-collapsible-text-disclaimer">This material is provided for general and educational purposes only; it is not intended to provide legal, tax or investment advice.</div>'+
@@ -88,9 +88,8 @@ var sgem_hel_main_contents =
 					'</div>'+
 				'</div>'+
 			'</div>'+
-		'</div>';
-	
-    //console.log(location.hostname);
+		'</div>';	
+
 	
 if( (location.hostname != "calculatorstg.wpengine.com") || (location.hostname != "retirementinvestments.com") || (location.hostname != "staging.retirementinvestments.com") ){
     sgem_hel_main_contents += '<div class="sgem-hel-logo-center">';
