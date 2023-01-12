@@ -83,7 +83,7 @@ var sgem_hel_main_contents =
 							'<summary>'+
 								'<div class="sgem-hel-collapsible-summary-disclaimer">Disclaimer</div>'+
 							'</summary>'+
-							'<div class="sgem-hel-collapsible-text-disclaimer">Calculations are estimates based on the tax law as of September 2021. These rates are subject to change. Check the IRS website for the latest information about capital gains</div>'+
+							'<div class="sgem-hel-collapsible-text-disclaimer">This material is provided for general and educational purposes only; it is not intended to provide legal, tax or investment advice.</div>'+
 						'</details>'+
 					'</div>'+
 				'</div>'+
