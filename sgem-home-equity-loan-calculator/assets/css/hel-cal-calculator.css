@@ -722,41 +722,6 @@
 }
 
 
-.sgem-hel-collapsible-summary-disclaimer {
-    font-weight: 500;
-    font-size: 16px;
-    cursor: pointer;
-    color: #002340;
-    line-height: 21px;
-    font-family: 'DM Sans',Helvetica,Arial,Lucida,sans-serif;
-}
-
-.sgem-hel-details-disclaimer-flex{
-    display: flex  !important;
-    width: 120px;
-    flex-direction: row;
-    justify-content: flex-start;
-    cursor: pointer;
-}
-.sgem-hel-collapsible-summary-disclaimer-arrow{
-    width: 25px;
-    height: 25px;
-    /*
-    background-repeat: no-repeat;
-    background-size: 25px;
-    margin-left: 2px;
-    background-image: url(../images/drop-down-arrow-hel.svg);
-    */
-    transition: transform 0.3s;
-}
-.sgem-hel-collapsible-summary-disclaimer-arrow.down {
-    -moz-transform: rotate(-180deg);
-    -webkit-transform: rotate(-180deg);
-    transform: rotate(-180deg);
-    transition: transform 0.3s;
-}
-
-/*
 .sgem-hel-details-disclaimer summary {
    display: flex !important;
    flex-direction: row;
@@ -795,78 +760,7 @@ details.sgem-hel-details-disclaimer[open] > summary::after {
    padding: 10px 0;
    color: #474747;
 }
-*/
-/*
-.sgem-hel-details-disclaimer summary {
-    display: flex !important;
-    flex-direction: row;
-    align-items: center;
-    cursor: pointer;
-}
-.sgem-hel-collapsible-summary-disclaimer {
-    font-weight: 500;
-    font-size: 16px;
-    cursor: pointer;
-    color: #002340;
-    line-height: 21px;
-    font-family: 'DM Sans',Helvetica,Arial,Lucida,sans-serif;
-}
 
-.sgem-hel-details-disclaimer-flex{
-    display: flex !important;
-	flex-direction: row;
-	align-items: center;
-	cursor: pointer;
-}
-*/
-/*
-.sgem-hel-collapsible-summary-disclaimer-arrow{
-    width: 25px;
-    height: 25px;
-    background-repeat: no-repeat;
-    background-size: 25px;
-    margin-left: 2px;
-    background-image: url(../images/drop-down-arrow-hel.svg);
-    transition: transform 0.3s;
-}
-.sgem-hel-collapsible-summary-disclaimer-arrow.down {
-    -moz-transform: rotate(-180deg);
-    -webkit-transform: rotate(-180deg);
-    transform: rotate(-180deg);
-    transition: transform 0.3s;
-}*/
-
-
-/*
-details.sgem-hel-details-disclaimer > summary::after {
-    content: " ";
-    width: 25px;
-    height: 24px;
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-position: center 0px;
-    background-size: 25px;
-    background-image: url(../images/drop-down-arrow-hel.svg);  
-    margin-left: 3px;
-    transition: transform 0.3s;
-    transition: transform 0.3s;
-}
-details.sgem-hel-details-disclaimer[open] > summary::after {
-    -moz-transform: rotate(-180deg);
-    -webkit-transform: rotate(-180deg);
-    transform: rotate(-180deg);
-    transition: transform 0.3s;
-    background-position: center 0px;   
-
-}
-.sgem-hel-cal-wrapper .sgem-hel-collapsible-text-disclaimer {
-    font-weight: 400;
-    line-height: 18px;
-    font-size: 14px;
-    padding: 10px 0;
-    color: #474747;
-}
-*/
 .sgem-hel-cal-wrapper .sgem-hel-collapsible-text-disclaimer a {
     color: rgb(21, 105, 176);
 }

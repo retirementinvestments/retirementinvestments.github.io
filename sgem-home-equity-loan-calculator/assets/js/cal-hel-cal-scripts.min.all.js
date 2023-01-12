@@ -80,9 +80,8 @@ var sgem_hel_main_contents =
 					'</div>'+
 					'<div class="sgem-hel-section-disclaimer">'+
 						'<details class="sgem-hel-details-disclaimer">'+
-							'<summary class="sgem-hel-details-disclaimer-flex">'+
-								'<div class="sgem-hel-collapsible-summary-disclaimer">Disclaimer</div>'+
-								'<div class="sgem-hel-collapsible-summary-disclaimer-arrow"><img src="assets/images/drop-down-arrow-hel.svg"/></div>'+								
+							'<summary>'+
+								'<div class="sgem-hel-collapsible-summary-disclaimer">Disclaimer</div>'+															
 							'</summary>'+
 							'<div class="sgem-hel-collapsible-text-disclaimer">This material is provided for general and educational purposes only; it is not intended to provide legal, tax or investment advice.</div>'+
 						'</details>'+
@@ -175,9 +174,6 @@ function sgem_he_calculation() {
 
 $(document).ready(function() {
 	
-	$(".sgem-hel-collapsible-summary-disclaimer-arrow").click(function () {
-        $(this).toggleClass("down");
-    })
 	
 	$('#sgem_hel_credit_score').on('change' , function () {
 		sgem_he_calculation();
