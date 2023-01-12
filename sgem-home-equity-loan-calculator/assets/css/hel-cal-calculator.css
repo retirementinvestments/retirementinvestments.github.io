@@ -723,11 +723,13 @@
 
 
 .sgem-hel-details-disclaimer summary {
-   display: flex !important;
-   flex-direction: row;
-   align-items: center;
+   display: inline;   
    cursor: pointer;
+   /*
+   display: flex !important;
    flex-wrap: nowrap;
+   flex-direction: row;
+   align-items: center;*/
 }
 
 .sgem-hel-collapsible-summary-disclaimer {
