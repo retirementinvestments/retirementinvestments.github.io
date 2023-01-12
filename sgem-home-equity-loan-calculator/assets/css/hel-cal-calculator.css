@@ -739,9 +739,11 @@ details.sgem-hel-details-disclaimer > summary::after {
    width: 25px;
    height: 24px;
    display: inline-block;
+   background-size: auto;
+	background-attachment: fixed;
    background-repeat: no-repeat;
    background-position: center -2px;
-   background-size: 25px;
+  
    background-image: url(../images/drop-down-arrow-hel.svg);
    margin-top: 5px;
 }
