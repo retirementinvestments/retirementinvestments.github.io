@@ -81,8 +81,7 @@ var sgem_hel_main_contents =
 					'<div class="sgem-hel-section-disclaimer">'+
 						'<details class="sgem-hel-details-disclaimer">'+
 							'<summary class="sgem-hel-details-disclaimer-flex">'+
-								'<div class="sgem-hel-collapsible-summary-disclaimer">Disclaimer</div>'+
-								'<div class="sgem-hel-collapsible-summary-disclaimer-arrow"></div>'+
+								'<div class="sgem-hel-collapsible-summary-disclaimer">Disclaimer</div>'+								
 							'</summary>'+
 							'<div class="sgem-hel-collapsible-text-disclaimer">This material is provided for general and educational purposes only; it is not intended to provide legal, tax or investment advice.</div>'+
 						'</details>'+
