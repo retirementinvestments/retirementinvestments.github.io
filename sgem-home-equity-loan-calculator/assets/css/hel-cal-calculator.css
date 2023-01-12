@@ -751,7 +751,7 @@ details.sgem-hel-details-disclaimer > summary::after {
    background-repeat: no-repeat;
    background-position: center -2px;   
    background-image: url(../images/drop-down-arrow-hel.svg);
-   margin-top: 3px;
+   margin-top: 2px;
    transition: transform 0.3s;
 }
 details.sgem-hel-details-disclaimer[open] > summary::after {
