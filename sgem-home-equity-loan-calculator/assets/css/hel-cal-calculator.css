@@ -727,6 +727,7 @@
    flex-direction: row;
    align-items: center;
    cursor: pointer;
+   flex-wrap: nowrap;
 }
 
 .sgem-hel-collapsible-summary-disclaimer {
@@ -741,13 +742,13 @@
 details.sgem-hel-details-disclaimer > summary::after {
    content: " ";
    width: 25px;
-   height: 24px;
+   height: 25px;
    display: inline-block;
    background-size: 25px;	
    background-repeat: no-repeat;
    background-position: center 0px;
    background-image: url(../images/drop-down-arrow-hel.svg);
-   margin-top: 5px;
+   margin-top: 3px;
    transition: transform 0.3s;
 }
 details.sgem-hel-details-disclaimer[open] > summary::after {
