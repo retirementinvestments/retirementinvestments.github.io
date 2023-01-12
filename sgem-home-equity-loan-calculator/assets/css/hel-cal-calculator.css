@@ -723,13 +723,13 @@
 
 
 .sgem-hel-details-disclaimer summary {
-   display: inline;   
+    
    cursor: pointer;
-   /*
+   
    display: flex !important;
    flex-wrap: nowrap;
    flex-direction: row;
-   align-items: center;*/
+   align-items: flex-start;
 }
 
 .sgem-hel-collapsible-summary-disclaimer {
@@ -744,11 +744,11 @@
 details.sgem-hel-details-disclaimer > summary::after {
    content: " ";
    width: 25px;
-   height: 25px;
+   height: 24px;
    display: inline-block;
    background-size: 25px;	
    background-repeat: no-repeat;
-   background-position: center 0px;
+   background-position: center -2px;   
    background-image: url(../images/drop-down-arrow-hel.svg);
    margin-top: 3px;
    transition: transform 0.3s;
@@ -757,7 +757,7 @@ details.sgem-hel-details-disclaimer[open] > summary::after {
    -moz-transform: rotate(-180deg);
    -webkit-transform: rotate(-180deg);
    transform: rotate(-180deg);
-   background-position: center 0px;
+   background-position: center 1px;
    transition: transform 0.3s;
 }
 
