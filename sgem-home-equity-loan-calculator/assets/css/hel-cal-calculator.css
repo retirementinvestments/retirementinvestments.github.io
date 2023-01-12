@@ -721,6 +721,42 @@
     margin-top: 40px;
 }
 
+
+.sgem-hel-collapsible-summary-disclaimer {
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    color: #002340;
+    line-height: 21px;
+    font-family: 'DM Sans',Helvetica,Arial,Lucida,sans-serif;
+}
+
+.sgem-hel-details-disclaimer-flex{
+    display: flex  !important;
+    width: 120px;
+    flex-direction: row;
+    justify-content: flex-start;
+    cursor: pointer;
+}
+.sgem-hel-collapsible-summary-disclaimer-arrow{
+    width: 25px;
+    height: 25px;
+    /*
+    background-repeat: no-repeat;
+    background-size: 25px;
+    margin-left: 2px;
+    background-image: url(../images/drop-down-arrow-hel.svg);
+    */
+    transition: transform 0.3s;
+}
+.sgem-hel-collapsible-summary-disclaimer-arrow.down {
+    -moz-transform: rotate(-180deg);
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+    transition: transform 0.3s;
+}
+
+/*
 .sgem-hel-details-disclaimer summary {
    display: flex !important;
    flex-direction: row;
@@ -742,8 +778,7 @@ details.sgem-hel-details-disclaimer > summary::after {
    background-size: auto;
 	background-attachment: fixed;
    background-repeat: no-repeat;
-   background-position: center -2px;
-  
+   background-position: center -2px;  
    background-image: url(../images/drop-down-arrow-hel.svg);
    margin-top: 5px;
 }
@@ -760,7 +795,7 @@ details.sgem-hel-details-disclaimer[open] > summary::after {
    padding: 10px 0;
    color: #474747;
 }
-
+*/
 /*
 .sgem-hel-details-disclaimer summary {
     display: flex !important;
