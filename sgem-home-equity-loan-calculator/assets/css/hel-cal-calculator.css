@@ -737,19 +737,17 @@
 
 .sgem-hel-details-disclaimer-flex{
     display: flex;
-    width: 200px;
+    width: 150px;
     flex-direction: row;
     justify-content: flex-start;
 }
 .sgem-hel-collapsible-summary-disclaimer-arrow{
     width: 25px;
     height: 25px;
-    display: inline-block;
     background-repeat: no-repeat;
-    background-position: center 0px;
     background-size: 25px;
     margin-left: 2px;
-    background-image: url(../images/drop-down-arrow-hel.svg);  
+    background-image: url(../images/drop-down-arrow-hel.svg);
     transition: transform 0.3s;
 }
 .sgem-hel-collapsible-summary-disclaimer-arrow.down {
