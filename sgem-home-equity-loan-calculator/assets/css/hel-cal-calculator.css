@@ -729,17 +729,14 @@
    display: flex !important;
    flex-wrap: nowrap !important;
    flex-direction: row;
-   align-items: flex-start;
-   padding-right: 25px;
+   align-items: flex-start;   
 }
 
 .sgem-hel-collapsible-summary-disclaimer {
    font-weight: 500;
    font-size: 16px;
    cursor: pointer;
-   color: #474747;
-	width: 105px;
-    padding-right: 25px;
+   color: #474747;    
 	display: inline-block;
 }
 
@@ -755,7 +752,7 @@ details.sgem-hel-details-disclaimer > summary::after {
    background-position: center -2px;   
    background-image: url(../images/drop-down-arrow-hel.svg);
    margin-top: 2px;
-   margin-left: -25px;
+   margin-left: 2px;
    transition: transform 0.3s;
 }
 details.sgem-hel-details-disclaimer[open] > summary::after {
