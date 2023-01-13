@@ -241,6 +241,11 @@
     list-style: none;
     display: none;
 }
+
+details summary::-webkit-details-marker {
+  display:none !important;
+}
+
 .sgem-hmhcia-cal-1 details.sgem-hmhcia-input-more-details > summary::after {
 	content: ' ';
 	width: 25px;
