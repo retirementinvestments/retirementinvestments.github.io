@@ -725,7 +725,7 @@
 .sgem-hel-details-disclaimer summary {
     
    cursor: pointer;
-   width: 150px;
+   width: 100%;
    display: flex !important;
    flex-wrap: nowrap !important;
    flex-direction: row;
