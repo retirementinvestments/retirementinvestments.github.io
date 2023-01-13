@@ -737,7 +737,7 @@
    font-size: 16px;
    cursor: pointer;
    color: #474747;
-   width: 80px;
+   width: 78px;
 }
 
 
@@ -752,6 +752,7 @@ details.sgem-hel-details-disclaimer > summary::after {
    background-position: center -2px;   
    background-image: url(../images/drop-down-arrow-hel.svg);
    margin-top: 2px;
+   margin-left: 2px;
    transition: transform 0.3s;
 }
 details.sgem-hel-details-disclaimer[open] > summary::after {
