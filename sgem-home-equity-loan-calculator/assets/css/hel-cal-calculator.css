@@ -726,10 +726,8 @@
     
    cursor: pointer;
    width: 100%;
-   display: flex !important;
-   flex-wrap: nowrap !important;
-   flex-direction: row;
-   align-items: flex-start;
+   display: block !important;
+   
 }
 
 .sgem-hel-collapsible-summary-disclaimer {
