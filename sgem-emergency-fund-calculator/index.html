@@ -1,0 +1,68 @@
+<div class="sgem-hel-cal-main-id">
+	<div class="sgem-hel-cal-wrapper">
+		<div class="sgem-hel-cal-left">
+			<div class="sgem-hel-form sgem-hel-cal-1">
+				<div class="sgem-hel-block-container">
+					<div class="sgem-hel-form-group sgem-hel-form-flex sgem-hel-currency-holder">
+						<label>Appraised value of home
+							<span class="sgem-hel-info-tooltip tooltip" data-tippy-content=" A formal assessment of the value of property prepared by a qualified appraiser. Mortgage lenders almost always require a property appraisal before approving a home loan.">?</span>
+						</label>
+						<input type="text" class="inputmove inputnumber" id="sgem_hel_appraised_value" value="160,000" min="0" max="1000000" onkeypress="return isNumber(event)"/>
+						<span class="sgem_hel_err_msg" id="sgem_hel_err_purchase_the_item"></span>
+					</div>
+				</div>
+				<div class="sgem-hel-block-container">
+					<div class="sgem-hel-form-group sgem-hel-form-flex sgem-hel-currency-holder">
+						<label>How much do you owe on home
+							<span class="sgem-hel-info-tooltip tooltip" data-tippy-content="Your current balance is the amount you currently still owe on the loan according to the date of your statement. This does not include interest that would be charged to the balance if you were to continue with your monthly payments. You can find this number on your monthly statement or online account.">?</span>
+						</label>
+						<input type="text"class="inputmove inputnumber" id="sgem_hel_owe_on_home" value="50,000" min="0" max="100000" onkeypress="return isNumber(event)"/>
+						<span class="sgem_hel_err_msg" id="sgem_hel_err_taxable_income"></span>
+					</div>
+					<div class="sgem-hel-form-group sgem-hel-form-flex sgem_hel_right_field_row">
+						<label for="">Current credit score</label>
+						<select id="sgem_hel_credit_score" class="sgem-hel-drop-selection" name="yearscount" onkeypress="return isNumber(event)">
+							<option value="Excellent">Excellent (740+)</option>
+							<option value="Good">Good (680-739)</option>
+							<option value="Fair" selected>Fair (621-679)</option>
+							<option value="Poor">Poor (< 620)</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="sgem-hel-cal-right">
+			<div class="sgem-hel-cal-1-result-wrapper">
+				<div class="sgem-hel-flex-container sgem-hel-column2">
+					<div class="sgem-hel-form-group sgem-hel-form-flex">
+						<span class="futuretext sgem-result-value">YOU CAN GET A HOME EQUITY LOAN OR HELOC FOR</span>
+						<div id="sgem_hel_loan_value" class="sgem-hel-result-label">$<span id="sgem_hel_cal_val_raw">26,250</span></div>
+					</div>
+				</div>
+				<div class="sgem-hel-cal-1-result-footer">
+					<div class="sgem-hel-content">Good news! Since your LTV is 73%, you may be eligible for a home equity loan or line of credit from one of our lending partners.</div>
+					<div class="sgem-hel-buttonGet">
+						<a href="https://retirementinvestments.com/homeequitycalculator/" target="_blank" class="sgem-hel-getStart" rel="noopener">Find my rate</a>
+					</div>
+				</div>
+				<div class="sgem-hel-section-disclaimer">
+					<details class="sgem-hel-details-disclaimer">
+						<summary>
+							<div class="sgem-hel-collapsible-summary-disclaimer">Disclaimer</div>
+						</summary>
+						<div class="sgem-hel-collapsible-text-disclaimer">Calculations are estimates based on the tax law as of September 2021. These rates are subject to change. Check the IRS website for the latest information about capital gains</div>
+					</details>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="sgem-hel-copy-option-panel">
+		<h3>Do you want to add this calculator into your website?</h3>
+		<div class="sgem-hel-copy-code-wrap">
+			<button class="sgem-hel-copy-code" id="sgem-hel-copy-code" onclick="sgem_hel_copyText(event)">Get Calculator</button>
+		</div>
+	</div>
+</div>
