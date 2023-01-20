@@ -76,7 +76,7 @@
     display: flex;
     flex-direction: column;
     flex-basis: 100%;
-    padding-bottom: 28px;
+    padding-bottom: 24px;
     position: relative;
     padding-right: 10px;
 }
@@ -90,6 +90,7 @@
     color: #000;
     font-family: 'DM Sans',efcvetica,Arial,Lucida,sans-serif;
     margin-bottom: 0px;
+	line-height: 21px;
 }
 .sgem-efc-cal-1 input[type="text"] {
     font-size: 16px;
