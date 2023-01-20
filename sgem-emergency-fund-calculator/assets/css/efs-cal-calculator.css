@@ -1013,7 +1013,7 @@ details summary::-webkit-details-marker {
 	display: inline;
 }
 .padding-override{
-	padding-bottom: 16px !important;
+	padding-bottom: 14px !important;
 }
 .dollar-sign::after{
 	content: '$';
