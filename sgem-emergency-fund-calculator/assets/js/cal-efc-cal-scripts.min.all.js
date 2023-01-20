@@ -444,7 +444,15 @@ $(document).ready(function() {
 
 
 
-	// Chart script--------------------------------------------------------------------------------------
+	
+
+
+
+});
+
+
+
+// Chart script--------------------------------------------------------------------------------------
 
 	var data_ef_cvalues =  JSON.parse(localStorage.getItem('sgem_ef_chart_array'));
 
@@ -631,10 +639,6 @@ $(document).ready(function() {
             }
         }
     });
-
-
-
-});
 
 
 function ef_update_chart(){
