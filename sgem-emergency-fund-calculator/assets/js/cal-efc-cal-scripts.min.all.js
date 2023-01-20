@@ -116,7 +116,7 @@ var sgem_efc_main_contents = ''+
 	
 if( (location.hostname != "calculatorstg.wpengine.com") || (location.hostname != "retirementinvestments.com") || (location.hostname != "staging.retirementinvestments.com") ){
     sgem_efc_main_contents += '<div class="sgem-efc-logo-center">';
-    sgem_efc_main_contents += '<a class="sgem-efc-url-text" href="https://retirementinvestments.com/real-estate/home-equity-loan-calculator/" target="_blank" rel="noopener">Home Equity Loan Calculator&nbsp;</a>by&nbsp;Retirement Investments</div>';
+    sgem_efc_main_contents += '<a class="sgem-efc-url-text" href="https://retirementinvestments.com/money/emergency-fund-calculator/" target="_blank" rel="noopener">Home Equity Loan Calculator&nbsp;</a>by&nbsp;Retirement Investments</div>';
    
 }
     
