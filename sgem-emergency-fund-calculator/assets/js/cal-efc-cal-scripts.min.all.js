@@ -525,6 +525,9 @@ $(document).ready(function() {
 			},
 			indexAxis: 'y',
 			plugins: {
+				tooltip: {
+					enabled: false 
+				},
 				legend : false,
 				datalabels: {
 					anchor: 'end',
@@ -617,6 +620,9 @@ $(document).ready(function() {
             },
             indexAxis: 'x',
             plugins: {
+				tooltip: {
+					enabled: false 
+				},
                 legend : false,
                 datalabels: {
                     anchor: 'end',
