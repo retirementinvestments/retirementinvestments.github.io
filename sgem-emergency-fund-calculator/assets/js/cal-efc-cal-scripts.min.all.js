@@ -441,7 +441,7 @@ $(document).ready(function() {
 
     // responsive add js
 	
-	if ($('.sgem-efc-cal-wrapper').width() < 1100) {
+	if ($('.sgem-efc-cal-wrapper').width() < 1024) {
         $('.sgem-efc-cal-left').addClass('sgem-efc-cal-left-add-class');
         $('.sgem-efc-cal-right').addClass('sgem-efc-cal-right-add-class');
     } else {
@@ -456,7 +456,7 @@ $(document).ready(function() {
     }
 
     $(window).on('resize', function() {
-        if ($('.sgem-efc-cal-wrapper').width() < 1100) {
+        if ($('.sgem-efc-cal-wrapper').width() < 1024) {
             $('.sgem-efc-cal-left').addClass('sgem-efc-cal-left-add-class');
             $('.sgem-efc-cal-right').addClass('sgem-efc-cal-right-add-class');
         } else {
