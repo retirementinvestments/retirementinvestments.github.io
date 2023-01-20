@@ -874,7 +874,7 @@ details summary::-webkit-details-marker {
 
 /* add class js styles */
 .sgem-efc-cal-left-add-class .sgem-efc-cal-1 .sgem-efc-form-group label {
-    font-size: 0.9em;
+    font-size: 0.75em;
 }
 .sgem-efc-cal-left-add-class .sgem-efc-cal-1 input[type="text"] {
     font-size: 0.9em;
@@ -883,8 +883,13 @@ details summary::-webkit-details-marker {
 }
 .sgem-efc-cal-left-add-class .sgem-efc-cal-1 .sgem-efc-form-flex.sgem-efc-currency-holder::after {
     font-size: 0.9em;
-    top: 40px;
+    top: 36px;
 }
+
+.top-adjust{
+	top: 58px;
+}
+
 .sgem-efc-cal-left-add-class .sgem-efc-drop-selection {
     font-size: 0.9em;
     height: 40px;

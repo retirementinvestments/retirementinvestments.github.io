@@ -444,7 +444,7 @@ $(document).ready(function() {
 	if ($('.sgem-efc-cal-wrapper').width() < 1024) {
         $('.sgem-efc-cal-left').addClass('sgem-efc-cal-left-add-class');
         $('.sgem-efc-cal-right').addClass('sgem-efc-cal-right-add-class');
-		//$('.sgem-efc-label-responsive-hide').addClass('hide-text');
+		//$('.first-holder').addClass('hide-text');
 		//$('.sgem-efc-label-responsive-show').addClass('show-text');
 		//$('.sgem-efc-block-container').addClass('grid-change');
 		//$('.sgem-efc-form-group').addClass('padding-override');
@@ -463,10 +463,12 @@ $(document).ready(function() {
 		$('.em_fund_chart_main').addClass('hide-chart');	
 		$('.em_fund_chart_sub').addClass('show-chart');		
         $('.sgem-efc-cal-wrapper').addClass('sgem-efc-wrapper-add-mobile');
+		$('.sgem-efc-block-container').addClass('grid-change');
     } else {
 		$('.em_fund_chart_main').addClass('show-chart');
 		$('.em_fund_chart_sub').addClass('hide-chart');		
         $('.sgem-efc-cal-wrapper').removeClass('sgem-efc-wrapper-add-mobile');
+		$('.sgem-efc-block-container').removeClass('grid-change');
     }
 
     $(window).on('resize', function() {
@@ -492,10 +494,12 @@ $(document).ready(function() {
 			$('.em_fund_chart_main').addClass('hide-chart');	
 			$('.em_fund_chart_sub').addClass('show-chart');	
             $('.sgem-efc-cal-wrapper').addClass('sgem-efc-wrapper-add-mobile');
+			$('.sgem-efc-block-container').addClass('grid-change');
         } else {
 			$('.em_fund_chart_main').addClass('show-chart');
 			$('.em_fund_chart_sub').addClass('hide-chart');		
             $('.sgem-efc-cal-wrapper').removeClass('sgem-efc-wrapper-add-mobile');
+			$('.sgem-efc-block-container').removeClass('grid-change');
         }
     }).trigger('resize');
 
