@@ -72,7 +72,7 @@ var sgem_efc_main_contents = ''+
                             '<span class="sgem-efc-info-tooltip tooltip" data-tippy-content="Includes mortgage or rent payments, property taxes, home or renter’s insurance, HOA fees, and household repairs.">?</span>'+
                         '</label>'+
                         '<label class="sgem-efc-label-responsive-hide">payments</label>'+
-                        '<input type="text" class="inputmove inputnumber" id="sgem_efc_mortgae_or_rent__value" value="1,000" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
+                        '<div class="dollar-sign"><input type="text" class="inputmove inputnumber" id="sgem_efc_mortgae_or_rent__value" value="1,000" min="0" max="1000000" onkeypress="return isNumber(event)"/></div>'+
                         '<span class="sgem_efc_err_msg" id="sgem_efc_err_mortgage"></span>'+
                     '</div>'+
                     '<div class="sgem-efc-form-group sgem-efc-form-flex sgem-efc-currency-holder first-holder">'+
@@ -80,35 +80,35 @@ var sgem_efc_main_contents = ''+
                             '<span class="sgem-efc-info-tooltip tooltip" data-tippy-content="Includes any monthly premium payments for your car, health, life, and home insurances">?</span>'+
                         '</label>'+
                         '<label class="sgem-efc-label-responsive-hide">payments</label>'+
-                        '<input type="text" class="inputmove inputnumber" id="sgem_efc_insurance_value" value="200" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
+                        '<div class="dollar-sign"><input type="text" class="inputmove inputnumber" id="sgem_efc_insurance_value" value="200" min="0" max="1000000" onkeypress="return isNumber(event)"/></div>'+
                         '<span class="sgem_efc_err_msg" id="sgem_efc_err_insurance"></span>'+
                     '</div>'+
                     '<div class="sgem-efc-form-group sgem-efc-form-flex sgem-efc-currency-holder">'+
                         '<label>Monthly debt payments'+
                             '<span class="sgem-efc-info-tooltip tooltip" data-tippy-content="Includes any debt repayments done for any car loans, personal loans, student loans, credit card debt. Please exclude any mortgage payment expenses from this.">?</span>'+
                         '</label>'+
-                        '<input type="text" class="inputmove inputnumber" id="sgem_efc_debt_value" value="200" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
+                        '<div class="dollar-sign"><input type="text" class="inputmove inputnumber" id="sgem_efc_debt_value" value="200" min="0" max="1000000" onkeypress="return isNumber(event)"/></div>'+
                         '<span class="sgem_efc_err_msg" id="sgem_efc_err_debt"></span>'+
                     '</div>'+
                     '<div class="sgem-efc-form-group sgem-efc-form-flex sgem-efc-currency-holder">'+
                         '<label>Monthly grocery expenses'+
                             '<span class="sgem-efc-info-tooltip tooltip" data-tippy-content="Includes the approximate amount spent on monthly groceries">?</span>'+
                         '</label>'+
-                        '<input type="text" class="inputmove inputnumber" id="sgem_efc_grocery_value" value="500" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
+                        '<div class="dollar-sign"><input type="text" class="inputmove inputnumber" id="sgem_efc_grocery_value" value="500" min="0" max="1000000" onkeypress="return isNumber(event)"/></div>'+
                         '<span class="sgem_efc_err_msg" id="sgem_efc_err_grocery"></span>'+
                     '</div>'+
                     '<div class="sgem-efc-form-group sgem-efc-form-flex sgem-efc-currency-holder">'+
                         '<label>Monthly utility payments'+
                             '<span class="sgem-efc-info-tooltip tooltip" data-tippy-content="Includes any monthly payments spent on utilities such as gas, electricity, water, phone, cable, internet, garbage/recycling, parking and etc.">?</span>'+
                         '</label>'+
-                        '<input type="text" class="inputmove inputnumber" id="sgem_efc_utility_value" value="300" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
+                        '<div class="dollar-sign"><input type="text" class="inputmove inputnumber" id="sgem_efc_utility_value" value="300" min="0" max="1000000" onkeypress="return isNumber(event)"/></div>'+
                         '<span class="sgem_efc_err_msg" id="sgem_efc_err_utility"></span>'+
                     '</div>'+
                     '<div class="sgem-efc-form-group sgem-efc-form-flex sgem-efc-currency-holder">'+
                         '<label>Other monthly expenses'+
                             '<span class="sgem-efc-info-tooltip tooltip" data-tippy-content="Includes any other monthly expenses such as transportation costs, medical expenses, educational expenses, personal care, childcare, taxes, and etc.">?</span>'+
                         '</label>'+
-                        '<input type="text" class="inputmove inputnumber" id="sgem_efc_monthly_value" value="300" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
+                        '<div class="dollar-sign"><input type="text" class="inputmove inputnumber" id="sgem_efc_monthly_value" value="300" min="0" max="1000000" onkeypress="return isNumber(event)"/></div>'+
                         '<span class="sgem_efc_err_msg" id="sgem_efc_err_monthly"></span>'+
                     '</div>'+
                 '</div>'+
@@ -468,6 +468,7 @@ $(document).ready(function() {
 		$('.sgem-efc-block-container').addClass('grid-change');
 		$('.sgem-efc-label-responsive-show').addClass('show-text');
 		$('.sgem-efc-label-responsive-hide').addClass('hide-text');
+		$('.sgem-efc-form-group').addClass('padding-override');
 		
 		
     } else {
@@ -477,6 +478,7 @@ $(document).ready(function() {
 		$('.em_fund_chart_sub').addClass('hide-chart');		
         $('.sgem-efc-cal-wrapper').removeClass('sgem-efc-wrapper-add-mobile');
 		$('.sgem-efc-block-container').removeClass('grid-change');
+		$('.sgem-efc-form-group').removeClass('padding-override');
     }
 
     $(window).on('resize', function() {
@@ -505,11 +507,13 @@ $(document).ready(function() {
 			$('.em_fund_chart_sub').addClass('show-chart');	
             $('.sgem-efc-cal-wrapper').addClass('sgem-efc-wrapper-add-mobile');
 			$('.sgem-efc-block-container').addClass('grid-change');
+			$('.sgem-efc-form-group').addClass('padding-override');
         } else {
 			$('.em_fund_chart_main').addClass('show-chart');
 			$('.em_fund_chart_sub').addClass('hide-chart');		
             $('.sgem-efc-cal-wrapper').removeClass('sgem-efc-wrapper-add-mobile');
 			$('.sgem-efc-block-container').removeClass('grid-change');
+			$('.sgem-efc-form-group').removeClass('padding-override');
         }
     }).trigger('resize');
 
