@@ -89,7 +89,7 @@
     font-weight: normal;
     color: #000;
     font-family: 'DM Sans',efcvetica,Arial,Lucida,sans-serif;
-    margin-bottom: 8px;
+    margin-bottom: 0px;
 }
 .sgem-efc-cal-1 input[type="text"] {
     font-size: 16px;
@@ -99,6 +99,7 @@
     color: #002340;
     border:  1px solid #bbb;
     background: #fff;
+	    margin-top: 8px;
 }
 
 .sgem-efc-cal-1 input[type="text"]:focus{
