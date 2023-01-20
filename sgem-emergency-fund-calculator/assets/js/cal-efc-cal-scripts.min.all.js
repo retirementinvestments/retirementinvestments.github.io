@@ -29,85 +29,108 @@ function(a){a.stopPropagation();a.preventDefault();return!1});m.hover(function()
 x();"bottom"===a.start?(c.css({top:b.outerHeight()-c.outerHeight()}),n(0,!0)):"top"!==a.start&&(n(e(a.start).position().top,null,!0),a.alwaysVisible||c.hide());window.addEventListener?(this.addEventListener("DOMMouseScroll",v,!1),this.addEventListener("mousewheel",v,!1)):document.attachEvent("onmousewheel",v)}});return this}});e.fn.extend({slimscroll:e.fn.slimScroll})})(jQuery);
 
 
-var sgem_hel_main_contents =
-	'<div class="sgem-hel-cal-main-id">'+
-		'<div class="sgem-hel-cal-wrapper">'+
-			'<div class="sgem-hel-cal-left">'+
-				'<div class="sgem-hel-form sgem-hel-cal-1">'+
-					'<div class="sgem-hel-block-container">'+
-						'<div class="sgem-hel-form-group sgem-hel-form-flex sgem-hel-currency-holder">'+
-							'<label>Appraised value of home '+
-								'<span class="sgem-hel-info-tooltip tooltip" data-tippy-size="small" data-tippy-content=" A formal assessment of the value of property prepared by a qualified appraiser. Mortgage lenders almost always require a property appraisal before approving a home loan.">?</span>'+
-							'</label>'+
-							'<input type="text" class="inputmove inputnumber" id="sgem_hel_appraised_value" value="160,000" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
-							'<span class="sgem_hel_err_msg" id="sgem_hel_err_purchase_the_item"></span>'+
-						'</div>'+
-					'</div>'+
-					'<div class="sgem-hel-block-container">'+
-						'<div class="sgem-hel-form-group sgem-hel-form-flex sgem-hel-currency-holder">'+
-							'<label>How much do you owe on home '+
-								'<span class="sgem-hel-info-tooltip tooltip" data-tippy-size="small" data-tippy-content="Your current balance is the amount you currently still owe on the loan according to the date of your statement. This does not include interest that would be charged to the balance if you were to continue with your monthly payments. You can find this number on your monthly statement or online account.">?</span>'+
-							'</label>'+
-							'<input type="text"class="inputmove inputnumber" id="sgem_hel_owe_on_home" value="50,000" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
-							'<span class="sgem_hel_err_msg" id="sgem_hel_err_taxable_income"></span>'+
-						'</div>'+
-						'<div class="sgem-hel-form-group sgem-hel-form-flex sgem_hel_right_field_row">'+
-							'<label for="">Current credit score</label>'+
-							'<select id="sgem_hel_credit_score" class="sgem-hel-drop-selection" name="yearscount" onkeypress="return isNumber(event)">'+
-								'<option value="Excellent">Excellent (740+)</option>'+
-								'<option value="Good">Good (680-739)</option>'+
-								'<option value="Fair" selected>Fair (621-679)</option>'+
-								'<option value="Poor">Poor (< 620)</option>'+
-							'</select>'+
-						'</div>'+
-					'</div>'+
-				'</div>'+
-			'</div>'+
-			
-			'<div class="sgem-hel-cal-right">'+
-				'<div class="sgem-hel-cal-1-result-wrapper">'+
-					'<div class="sgem-hel-flex-container sgem-hel-column2">'+
-						'<div class="sgem-hel-form-group sgem-hel-form-flex">'+
-							'<span class="futuretext sgem-result-value">YOU CAN GET A HOME EQUITY LOAN OR HELOC FOR</span>'+
-							'<div id="sgem_hel_loan_value" class="sgem-hel-result-label">$<span id="sgem_hel_cal_val_raw">26,250</span></div>'+
-						'</div>'+
-					'</div>'+
-					'<div class="sgem-hel-cal-1-result-footer">'+
-						'<div class="sgem-hel-content">Good news! Since your LTV is 73%, you may be eligible for a home equity loan or line of credit from one of our lending partners.</div>'+
-						'<div class="sgem-hel-buttonGet">'+
-							'<a href="https://retirementinvestments.com/homeequitycalculator/" target="_blank" class="sgem-hel-getStart" rel="noopener">Find my rate</a>'+
-						'</div>'+
-					'</div>'+
-					'<div class="sgem-hel-section-disclaimer">'+
-						'<details class="sgem-hel-details-disclaimer">'+
-							'<summary>'+
-								'<div class="sgem-hel-collapsible-summary-disclaimer">Disclaimer</div>'+															
-							'</summary>'+
-							'<div class="sgem-hel-collapsible-text-disclaimer">This material is provided for general and educational purposes only; it is not intended to provide legal, tax or investment advice.</div>'+
-						'</details>'+
-					'</div>'+
-				'</div>'+
-			'</div>'+
-		'</div>';	
+var sgem_efc_main_contents = ''+
+'<div class="sgem-efc-cal-main-id">'+
+    '<div class="sgem-efc-cal-wrapper">'+
+        '<div class="sgem-efc-cal-left">'+
+            '<div class="sgem-efc-form sgem-efc-cal-1">'+
+                '<div class="sgem-efc-block-container">'+
+                    '<div class="sgem-efc-form-group sgem-efc-form-flex sgem-efc-currency-holder first-holder">'+
+                        '<label class="sgem-efc-first-label">Monthly mortgage or rent<span class="sgem-efc-label-responsive-show"> payments</span>'+
+                            '<span class="sgem-efc-info-tooltip tooltip" data-tippy-content="Includes mortgage or rent payments, property taxes, home or renter’s insurance, HOA fees, and household repairs.">?</span>'+
+                        '</label>'+
+                        '<label class="sgem-efc-label-responsive-hide">payments</label>'+
+                        '<input type="text" class="inputmove inputnumber" id="sgem_efc_mortgae_or_rent__value" value="1,000" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
+                        '<span class="sgem_efc_err_msg" id="sgem_efc_err_mortgage"></span>'+
+                    '</div>'+
+                    '<div class="sgem-efc-form-group sgem-efc-form-flex sgem-efc-currency-holder first-holder">'+
+                        '<label class="sgem-efc-first-label">Monthly insurance<span class="sgem-efc-label-responsive-show"> payments</span>'+
+                            '<span class="sgem-efc-info-tooltip tooltip" data-tippy-content="Includes any monthly premium payments for your car, health, life, and home insurances">?</span>'+
+                        '</label>'+
+                        '<label class="sgem-efc-label-responsive-hide">payments</label>'+
+                        '<input type="text" class="inputmove inputnumber" id="sgem_efc_insurance_value" value="200" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
+                        '<span class="sgem_efc_err_msg" id="sgem_efc_err_insurance"></span>'+
+                    '</div>'+
+                    '<div class="sgem-efc-form-group sgem-efc-form-flex sgem-efc-currency-holder">'+
+                        '<label>Monthly debt payments'+
+                            '<span class="sgem-efc-info-tooltip tooltip" data-tippy-content="Includes any debt repayments done for any car loans, personal loans, student loans, credit card debt. Please exclude any mortgage payment expenses from this.">?</span>'+
+                        '</label>'+
+                        '<input type="text" class="inputmove inputnumber" id="sgem_efc_debt_value" value="200" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
+                        '<span class="sgem_efc_err_msg" id="sgem_efc_err_debt"></span>'+
+                    '</div>'+
+                    '<div class="sgem-efc-form-group sgem-efc-form-flex sgem-efc-currency-holder">'+
+                        '<label>Monthly grocery expenses'+
+                            '<span class="sgem-efc-info-tooltip tooltip" data-tippy-content="Includes the approximate amount spent on monthly groceries">?</span>'+
+                        '</label>'+
+                        '<input type="text" class="inputmove inputnumber" id="sgem_efc_grocery_value" value="500" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
+                        '<span class="sgem_efc_err_msg" id="sgem_efc_err_grocery"></span>'+
+                    '</div>'+
+                    '<div class="sgem-efc-form-group sgem-efc-form-flex sgem-efc-currency-holder">'+
+                        '<label>Monthly utility payments'+
+                            '<span class="sgem-efc-info-tooltip tooltip" data-tippy-content="Includes any monthly payments spent on utilities such as gas, electricity, water, phone, cable, internet, garbage/recycling, parking and etc.">?</span>'+
+                        '</label>'+
+                        '<input type="text" class="inputmove inputnumber" id="sgem_efc_utility_value" value="300" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
+                        '<span class="sgem_efc_err_msg" id="sgem_efc_err_utility"></span>'+
+                    '</div>'+
+                    '<div class="sgem-efc-form-group sgem-efc-form-flex sgem-efc-currency-holder">'+
+                        '<label>Other monthly expenses'+
+                            '<span class="sgem-efc-info-tooltip tooltip" data-tippy-content="Includes any other monthly expenses such as transportation costs, medical expenses, educational expenses, personal care, childcare, taxes, and etc.">?</span>'+
+                        '</label>'+
+                        '<input type="text" class="inputmove inputnumber" id="sgem_efc_monthly_value" value="300" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
+                        '<span class="sgem_efc_err_msg" id="sgem_efc_err_monthly"></span>'+
+                    '</div>'+
+                '</div>'+
+            '</div>'+
+        '</div>'+
+        '<div class="sgem-efc-cal-right">'+
+            '<div class="sgem-efc-cal-1-result-wrapper">'+
+                '<div class="sgem-efc-flex-container sgem-efc-column2">'+
+                    '<div class="sgem-result-value-text">You should aim to save between</div>'+
+                    '<div class="sgem-result-value"><span id="firstnum">$5,398</span> - <span id="secondnum">$10,796</span></div>'+
+                    '<div class="sgem-result-value-text">for your emergency fund.</div>'+
+                    '<div class="sgem-efc-chart-area">'+
+                        '<canvas id="em_fund_chart"></canvas>'+                
+                    '</div>'+
+                   '<div class="sgem-efc-chart-area-mob">'+                        
+                      '<canvas id="em_fund_chart_mob"></canvas>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="sgem-efc-cal-1-result-footer">'+
+                    '<div class="sgem-efc-content">Start investing your spare change, invest while you bank, and earn bonus investments.</div>'+
+                    '<div class="sgem-efc-buttonGet">'+
+                        '<a href="https://retirementinvestments.com/emergencyfundcalculator/" target="_blank" class="sgem-efc-getStart" rel="noopener">START SAVING</a>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="sgem-efc-section-disclaimer">'+
+                    '<details class="sgem-efc-details-disclaimer">'+
+                        '<summary class="sgem-efc-details-disclaimer-flex">'+
+                            '<div class="sgem-efc-collapsible-summary-disclaimer">Disclaimer</div>'+                            
+                        '</summary>'+
+                        '<div class="sgem-efc-collapsible-text-disclaimer">This material is provided for general and educational purpose only; it is not intended to provide legal, tax or investment advice.</div>'+
+                    '</details>'+
+                '</div>'+
+            '</div>'+
+        '</div>'+
+    '</div>';	
 
 	
 if( (location.hostname != "calculatorstg.wpengine.com") || (location.hostname != "retirementinvestments.com") || (location.hostname != "staging.retirementinvestments.com") ){
-    sgem_hel_main_contents += '<div class="sgem-hel-logo-center">';
-    sgem_hel_main_contents += '<a class="sgem-hel-url-text" href="https://retirementinvestments.com/real-estate/home-equity-loan-calculator/" target="_blank" rel="noopener">Home Equity Loan Calculator&nbsp;</a>by&nbsp;Retirement Investments</div>';
+    sgem_efc_main_contents += '<div class="sgem-efc-logo-center">';
+    sgem_efc_main_contents += '<a class="sgem-efc-url-text" href="https://retirementinvestments.com/real-estate/home-equity-loan-calculator/" target="_blank" rel="noopener">Home Equity Loan Calculator&nbsp;</a>by&nbsp;Retirement Investments</div>';
    
 }
     
 if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com" || location.hostname == "staging.retirementinvestments.com"){
-    sgem_hel_main_contents += '<div class="sgem-hel-copy-option-panel">';
-    sgem_hel_main_contents += '<h3>Do you want to add this calculator into your website?</h3>';
-    sgem_hel_main_contents += '<div class="sgem-hel-copy-code-wrap">';
-    sgem_hel_main_contents += '<button class="sgem-hel-copy-code" id="sgem-hel-copy-code" onclick="sgem_hel_copyText(event)">Get Calculator</button>';
-    sgem_hel_main_contents += '</div></div></div>';
+    sgem_efc_main_contents += '<div class="sgem-efc-copy-option-panel">';
+    sgem_efc_main_contents += '<h3>Do you want to add this calculator into your website?</h3>';
+    sgem_efc_main_contents += '<div class="sgem-efc-copy-code-wrap">';
+    sgem_efc_main_contents += '<button class="sgem-efc-copy-code" id="sgem-efc-copy-code" onclick="sgem_efc_copyText(event)">Get Calculator</button>';
+    sgem_efc_main_contents += '</div></div></div>';
 }
 
-sgem_hel_main_contents += '</div>';  
+sgem_efc_main_contents += '</div>';  
 
-document.getElementById('sgem-hel-cal').innerHTML = sgem_hel_main_contents;
+document.getElementById('sgem-efc-cal').innerHTML = sgem_efc_main_contents;
  
 function isNumber(evt) {
     evt = (evt) ? evt : window.event;
@@ -130,45 +153,73 @@ function numberWithCommas(x) {
 }
 
 window.onload = function() {
-    sgem_he_calculation();
+    sgem_ef_calculationmin();
 }
 
 
-function sgem_he_calculation() {
+function sgem_ef_calculationmin() {
+	var ef_chart_value_array = [];	
 
-	var a_v_of_home3 = $('#sgem_hel_appraised_value').val().trim();
-	var a_v_of_home2 = a_v_of_home3.replace(/\,/g,'');
-	var a_v_of_home = parseInt(a_v_of_home2,10);
+	var monthly_mortage3 = $('#sgem_efc_mortgae_or_rent__value').val().trim();
+	var monthly_mortage2 = monthly_mortage3.replace(/\,/g,'');
+	var monthly_mortage = parseInt(monthly_mortage2,10);
 
-	var how_much_d_y_o_h3 = $('#sgem_hel_owe_on_home').val().trim();
-	var how_much_d_y_o_h2 = how_much_d_y_o_h3.replace(/\,/g,'');
-	var how_much_d_y_o_h = parseInt(how_much_d_y_o_h2,10);
+	var monthly_insurance3 = $('#sgem_efc_insurance_value').val().trim();
+	var monthly_insurance2 = monthly_insurance3.replace(/\,/g,'');
+	var monthly_insurance = parseInt(monthly_insurance2,10);
 
-	var current_credit_score = $('#sgem_hel_credit_score').val();
+	var monthly_debt3 = $('#sgem_efc_debt_value').val().trim();
+	var monthly_debt2 = monthly_debt3.replace(/\,/g,'');
+	var monthly_debt = parseInt(monthly_debt2,10);
 
-	//Calculation
+	var monthly_grocery3 = $('#sgem_efc_grocery_value').val().trim();
+	var monthly_grocery2 = monthly_grocery3.replace(/\,/g,'');
+	var monthly_grocery = parseInt(monthly_grocery2,10);
 
-	var home_equity_value = a_v_of_home - how_much_d_y_o_h;
-	var loan_to_value = how_much_d_y_o_h / a_v_of_home;
+	var monthly_utility3 = $('#sgem_efc_utility_value').val().trim();
+	var monthly_utility2 = monthly_utility3.replace(/\,/g,'');
+	var monthly_utility = parseInt(monthly_utility2,10);
 
-	if (current_credit_score == "Poor"){
-		var h_e_l = 0;
-	}else{
-		var h_e_l1 = 0.85 * a_v_of_home;
-		var h_e_l = h_e_l1 - how_much_d_y_o_h;
-	}
+	var monthly_other3 = $('#sgem_efc_monthly_value').val().trim();
+	var monthly_other2 = monthly_other3.replace(/\,/g,'');
+	var monthly_other = parseInt(monthly_other2,10);  
 
-	if (isNaN(h_e_l) || h_e_l < 1){
-		$('#sgem_hel_cal_val_raw').text('0'); 
-	}else{
-		$('#sgem_hel_cal_val_raw').text(numberWithCommas(decimalTwoPoints(h_e_l))); 
-	}
 
-	if (decimalTwoPoints(loan_to_value * 100) <= 80) {
-		$('.sgem-hel-content').text('Good news! Since your LTV is '+ decimalTwoPoints(loan_to_value*100) +'%, you may be eligible for a home equity loan or line of credit from one of our lending partners.'); 
-	} else {
-		$('.sgem-hel-content').text('Most home equity lenders look for a loan-to-value (LTV) ratio under 80%. Since your LTV is '+ decimalTwoPoints(loan_to_value*100) +'%, a personal loan could be a better choice for you.'); 
-	}
+	//calculation
+
+	var three_month_ef2 = monthly_mortage + monthly_insurance + monthly_debt + monthly_grocery + monthly_utility + monthly_other;
+	var three_month_ef = three_month_ef2 * 3;
+
+		  if (isNaN(three_month_ef) || three_month_ef < 1){
+
+			  $('#firstnum').text('$0');
+			  ef_chart_value_array[0] = 0;   
+
+		  }else{
+
+			$('#firstnum').text('$' + numberWithCommas(three_month_ef));
+			ef_chart_value_array[0] = three_month_ef; 
+		  }
+
+	var six_month_ef2 = monthly_mortage + monthly_insurance + monthly_debt + monthly_grocery + monthly_utility + monthly_other;
+	var six_month_ef = six_month_ef2 * 6;
+
+
+		  if (isNaN(six_month_ef) || six_month_ef < 1){
+
+			  $('#secondnum').text('$0');
+			  ef_chart_value_array[1] = 0;  
+
+		  }else{
+
+			$('#secondnum').text('$' + numberWithCommas(six_month_ef));
+			ef_chart_value_array[1] = six_month_ef;  
+		  }
+
+	 localStorage.setItem('sgem_ef_chart_array', JSON.stringify(ef_chart_value_array));
+
+	 ef_update_chart();
+	
 }
 
 
@@ -190,34 +241,35 @@ $(document).ready(function() {
     }
 
     
-	if ($('#sgem_hel_appraised_value,#sgem_hel_owe_on_home').length > 0) {
-		$('#sgem_hel_appraised_value,#sgem_hel_owe_on_home').on('keyup', function() {
-			sgem_he_calculation();
+	if($('#sgem_efc_mortgae_or_rent__value,#sgem_efc_insurance_value,#sgem_efc_debt_value,#sgem_efc_grocery_value,#sgem_efc_utility_value,#sgem_efc_monthly_value').length > 0) {
+		  $('#sgem_efc_mortgae_or_rent__value,#sgem_efc_insurance_value,#sgem_efc_debt_value,#sgem_efc_grocery_value,#sgem_efc_utility_value,#sgem_efc_monthly_value').on('keyup', function () {
+			sgem_ef_calculationmin(); 
+
+		   // Removing front zero
+		  //this.value=this.value.replace(/^0+/, '');
 			// Keep only digits and decimal points:
-			this.value = this.value.replace(/[^\d.]/g, "")
-			// Remove duplicated decimal point, if one exists:
-			this.value = this.value.replace(/^(\d*\.)(.*)\.(.*)$/, '$1$2$3')
-			// Keep only two digits past the decimal point:
-			this.value = this.value.replace(/\.(\d{0})\d+/, '')
-			// Add thousands separators:
-			this.value = this.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-			// Removing front zero
-			this.value = this.value.replace(/^0+/, '');
-		});
+		  this.value=this.value.replace(/[^\d.]/g, "")
+		  // Remove duplicated decimal point, if one exists:
+		  this.value=this.value.replace(/^(\d*\.)(.*)\.(.*)$/, '$1$2$3')
+		  // Keep only two digits past the decimal point:
+		  this.value=this.value.replace(/\.(\d{0})\d+/, '')
+		  // Add thousands separators:
+		  this.value=this.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+		  });
 	}
 
 
     //Validations-------------------------------------------------------------------
 	
-	
-	// Appraised value of home
-	$('#sgem_hel_appraised_value').on('keyup', function() {
-		var cval = this.value;
-		var cxc = parseInt(cval);
-		if (isNaN(cxc) || $(this).val().length > 11) {
+	// Mortage
+	$('#sgem_efc_mortgae_or_rent__value').on('keyup', function() {
+		var val = this.value;
+		var xc = parseInt(val);
+		if (isNaN(xc) || $(this).val().length > 11) {
 
 			this.value = '';
-			$('#sgem_hel_err_purchase_the_item').html('This cannot be empty or more than $900,000,000').fadeIn();
+			$('#sgem_efc_err_mortgage').html('This cannot be empty or more than $900,000,000').fadeIn();
 			$(this).css({
 				"border": "1px solid red",
 				"background": "#FFCECE"
@@ -225,22 +277,22 @@ $(document).ready(function() {
 
 
 		} else {
-			$('#sgem_hel_err_purchase_the_item').html('').fadeOut();
+			$('#sgem_efc_err_mortgage').html('').fadeOut();
 			$(this).css({
 				"border": "1px solid #707070",
 				"background": "#ffffff"
 			});
 		}
 	});
-	
-	// purchase price
-	$('#sgem_hel_owe_on_home').on('keyup', function() {
+
+	// Insurance
+	$('#sgem_efc_insurance_value').on('keyup', function() {
 		var val = this.value;
-		var xc = parseInt(val);
-		if (isNaN(xc) || $(this).val().length > 11) {
+		var xcc = parseInt(val);
+		if (isNaN(xcc) || $(this).val().length > 7) {
 
 			this.value = '';
-			$('#sgem_hel_err_taxable_income').html('This cannot be empty or more than $900,000,000').fadeIn();
+			$('#sgem_efc_err_insurance').html('This cannot be empty or more than $999,999').fadeIn();
 			$(this).css({
 				"border": "1px solid red",
 				"background": "#FFCECE"
@@ -248,53 +300,354 @@ $(document).ready(function() {
 
 
 		} else {
-			$('#sgem_hel_err_taxable_income').html('').fadeOut();
+			$('#sgem_efc_err_insurance').html('').fadeOut();
 			$(this).css({
 				"border": "1px solid #707070",
 				"background": "#ffffff"
 			});
 		}
-	});		
+	});
+
+	// Debt
+	$('#sgem_efc_debt_value').on('keyup', function() {
+		var val = this.value;
+		var xcxc = parseInt(val);
+		if (isNaN(xcxc) || $(this).val().length > 7) {
+
+			this.value = '';
+			$('#sgem_efc_err_debt').html('This cannot be empty or more than $999,999').fadeIn();
+			$(this).css({
+				"border": "1px solid red",
+				"background": "#FFCECE"
+			});
+
+
+		} else {
+			$('#sgem_efc_err_debt').html('').fadeOut();
+			$(this).css({
+				"border": "1px solid #707070",
+				"background": "#ffffff"
+			});
+		}
+	});
+
+	// Grocery
+	$('#sgem_efc_grocery_value').on('keyup', function() {
+		var val = this.value;
+		var jk = parseInt(val);
+		if (isNaN(jk) || $(this).val().length > 7) {
+
+			this.value = '';
+			$('#sgem_efc_err_grocery').html('This cannot be empty or more than $999,999').fadeIn();
+			$(this).css({
+				"border": "1px solid red",
+				"background": "#FFCECE"
+			});
+
+
+		} else {
+			$('#sgem_efc_err_grocery').html('').fadeOut();
+			$(this).css({
+				"border": "1px solid #707070",
+				"background": "#ffffff"
+			});
+		}
+	});
+
+	// Utility
+	$('#sgem_efc_utility_value').on('keyup', function() {
+		var val = this.value;
+		var jks = parseInt(val);
+		if (isNaN(jks) || $(this).val().length > 7) {
+
+			this.value = '';
+			$('#sgem_efc_err_utility').html('This cannot be empty or more than $999,999').fadeIn();
+			$(this).css({
+				"border": "1px solid red",
+				"background": "#FFCECE"
+			});
+
+
+		} else {
+			$('#sgem_efc_err_utility').html('').fadeOut();
+			$(this).css({
+				"border": "1px solid #707070",
+				"background": "#ffffff"
+			});
+		}
+	});
+
+	// Other
+	$('#sgem_efc_monthly_value').on('keyup', function() {
+		var val = this.value;
+		var jkds = parseInt(val);
+		if (isNaN(jkds) || $(this).val().length > 7) {
+
+			this.value = '';
+			$('#sgem_efc_err_monthly').html('This cannot be empty or more than $999,999').fadeIn();
+			$(this).css({
+				"border": "1px solid red",
+				"background": "#FFCECE"
+			});
+
+
+		} else {
+			$('#sgem_efc_err_monthly').html('').fadeOut();
+			$(this).css({
+				"border": "1px solid #707070",
+				"background": "#ffffff"
+			});
+		}
+	});
+		
+	
+		
 
     //------------------------------------------------------------------------------
 
-    sgem_he_calculation();
+    sgem_ef_calculationmin();
 	
 
-    if ($('.sgem-hel-cal-wrapper').width() < 1024) {
-        $('.sgem-hel-cal-left').addClass('sgem-hel-cal-left-add-class');
-        $('.sgem-hel-cal-right').addClass('sgem-hel-cal-right-add-class');
+    // responsive add js
+	
+	if ($('.sgem-efc-cal-wrapper').width() < 1100) {
+        $('.sgem-efc-cal-left').addClass('sgem-efc-cal-left-add-class');
+        $('.sgem-efc-cal-right').addClass('sgem-efc-cal-right-add-class');
     } else {
-        $('.sgem-hel-cal-left').removeClass('sgem-hel-cal-left-add-class');
-        $('.sgem-hel-cal-right').removeClass('sgem-hel-cal-right-add-class');
+        $('.sgem-efc-cal-left').removeClass('sgem-efc-cal-left-add-class');
+        $('.sgem-efc-cal-right').removeClass('sgem-efc-cal-right-add-class');
     }
 
-    if ($('.sgem-hel-cal-main-id').width() < 650) {
-        $('.sgem-hel-cal-wrapper').addClass('sgem-hel-wrapper-add-mobile');
+    if ($('.sgem-efc-cal-main-id').width() < 650) {
+        $('.sgem-efc-cal-wrapper').addClass('sgem-efc-wrapper-add-mobile');
     } else {
-        $('.sgem-hel-cal-wrapper').removeClass('sgem-hel-wrapper-add-mobile');
+        $('.sgem-efc-cal-wrapper').removeClass('sgem-efc-wrapper-add-mobile');
     }
 
     $(window).on('resize', function() {
-        if ($('.sgem-hel-cal-wrapper').width() < 1024) {
-            $('.sgem-hel-cal-left').addClass('sgem-hel-cal-left-add-class');
-            $('.sgem-hel-cal-right').addClass('sgem-hel-cal-right-add-class');
+        if ($('.sgem-efc-cal-wrapper').width() < 1100) {
+            $('.sgem-efc-cal-left').addClass('sgem-efc-cal-left-add-class');
+            $('.sgem-efc-cal-right').addClass('sgem-efc-cal-right-add-class');
         } else {
-            $('.sgem-hel-cal-left').removeClass('sgem-hel-cal-left-add-class');
-            $('.sgem-hel-cal-right').removeClass('sgem-hel-cal-right-add-class');
+            $('.sgem-efc-cal-left').removeClass('sgem-efc-cal-left-add-class');
+            $('.sgem-efc-cal-right').removeClass('sgem-efc-cal-right-add-class');
         }
     }).trigger('resize');
 
     $(window).on('resize', function() {
-        if ($('.sgem-hel-cal-main-id').width() < 650) {
-            $('.sgem-hel-cal-wrapper').addClass('sgem-hel-wrapper-add-mobile');
+        if ($('.sgem-efc-cal-main-id').width() < 650) {
+            $('.sgem-efc-cal-wrapper').addClass('sgem-efc-wrapper-add-mobile');
         } else {
-            $('.sgem-hel-cal-wrapper').removeClass('sgem-hel-wrapper-add-mobile');
+            $('.sgem-efc-cal-wrapper').removeClass('sgem-efc-wrapper-add-mobile');
         }
     }).trigger('resize');
+
+
+
+	// Chart script--------------------------------------------------------------------------------------
+
+	var data_ef_cvalues =  JSON.parse(localStorage.getItem('sgem_ef_chart_array'));
+
+	//Chart Data
+	var chartData = {
+		data:data_ef_cvalues
+	};
+
+	//Dekstop Chart Area resize
+	var ctxs = document.getElementById("em_fund_chart").getContext("2d");
+	ctxs.canvas.width = 480;
+	ctxs.canvas.height = 220;
+
+	//Desktop Chart Config
+	const ctx = document.getElementById('em_fund_chart');
+	const efChart = new Chart(ctx, {
+		plugins: [ChartDataLabels],
+		type: 'bar',
+		data: {
+			labels: ['   3 Months', '   6 Months'],
+			datasets: [{
+				barPercentage: 0.5,
+				categoryPercentage: 1,
+				data: chartData['data'],
+				backgroundColor: ['#4BCC8C', '#258B58'],
+				borderWidth: 0
+			}]
+
+		},
+		options: {
+			responsive: false,
+			maintainAspectRatio: true,
+			layout: {
+				padding: {
+					right: 100
+				}
+			},
+			title: {
+				display: true,
+				text: ' '
+			},
+			indexAxis: 'y',
+			plugins: {
+				legend : false,
+				datalabels: {
+					anchor: 'end',
+					align: 'end',
+					offset: 10,
+					formatter: function(value) {
+						return '$' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");					
+					},
+					font: {
+						size: 18,
+						family: "DM Serif Display"
+					},
+					color: ((context,args) => {
+						if(context.dataIndex === 0){
+							return '#4BCC8C';
+						}else{
+							return '#258B58';
+						}
+					})
+				}
+			},
+			scales: {
+				y: {
+					beginAtZero: true,
+					grid: {
+						color: '#ffffff',
+						display: false,
+						borderColor: '#ffffff'
+					},
+					display: true,
+					ticks: {
+						display: true,
+						mirror:true,
+						padding:-5,
+						z:10,
+						labelOffset:-50,
+						align:'start',
+						font: {
+							size: 16,
+							family : "DM Sans"
+						}
+					}
+				},
+				x: {
+					grid: {
+						display: false,
+						borderColor: '#ffffff'
+					},
+					display: false
+				}
+			}
+		}
+	});
+
+
+	//Mobile Chart Area resize
+
+	var ctxms = document.getElementById("em_fund_chart_mob").getContext("2d");
+	ctxms.canvas.width = 240;
+	ctxms.canvas.height = 320;
+
+	//Mobile Chart Config
+
+	const ctxmm = document.getElementById('em_fund_chart_mob');
+	const efmChart = new Chart(ctxmm, {
+        plugins: [ChartDataLabels],
+        type: 'bar',
+        data: {
+            labels: ['3 Months', '6 Months'],
+            datasets: [{
+                barPercentage: 0.7,
+                categoryPercentage: 1,
+                data: chartData['data'],
+                backgroundColor: ['#4BCC8C', '#258B58'],
+                borderWidth: 0
+            }]
+
+        },
+        options: {
+			responsive: false,
+        	maintainAspectRatio: true,
+            layout: {
+                padding: {
+                    top: 50
+                }
+            },
+            title: {
+                display: true,
+                text: ' '
+            },
+            indexAxis: 'x',
+            plugins: {
+                legend : false,
+                datalabels: {
+                    anchor: 'end',
+                    align: 'end',
+                    offset: 10,
+                    formatter: function(value) {
+                        return '$' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");                       
+                    },
+                    font: {
+                        size: 18,
+						family: "DM Serif Display"
+                    },
+                    color: ((context,args) => {
+                        if(context.dataIndex === 0){
+                            return '#4BCC8C';
+                        }else{
+                            return '#258B58';
+                        }
+                    })
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    grid: {
+                        color: '#ffffff',
+                        display: false,
+                        borderColor: '#ffffff'
+                    },
+                    display: false,
+                    ticks: {
+                        display: false
+                    }
+                },
+                x: {
+                    grid: {
+                        display: false,
+                        borderColor: '#ffffff'
+                    },
+                    display: true,
+                    ticks: {
+                        display: true,
+                         font: {
+                            size: 16,
+							family : "DM Sans"							 
+                         }
+                    }
+                }
+            }
+        }
+    });
+
 
 
 });
+
+
+function ef_update_chart(){
+  
+ 	efChart.data.datasets[0].data = JSON.parse(localStorage.getItem('sgem_ef_chart_array')); 
+  
+ 	efChart.update();  
+	
+	efmChart.data.datasets[0].data = JSON.parse(localStorage.getItem('sgem_ef_chart_array')); 
+  
+	efmChart.update();  	
+
+}
 
 // DOCUMENT.READY END
 
@@ -307,12 +660,12 @@ tippy('[data-tippy-content]', {
 	size: 'small'
 });
 
-localStorage.setItem('sgem-hel-cal-copy', '<div id="sgem-hel-cal"></div><script>window.onload = function() {var sgemhelcal = document.createElement("script");sgemhelcal.type = "text/javascript";sgemhelcal.src = "https://retirementinvestments.github.io/sgem-home-equity-loan-calculator/assets/js/cal-hel-cal-scripts.min.js";document.body.appendChild(sgemhelcal);} </script>'); 
+localStorage.setItem('sgem-efc-cal-copy', '<div id="sgem-efc-cal"></div><script>window.onload = function() {var sgemefccal = document.createElement("script"); sgemefccal.type = "text/javascript"; sgemefccal.src = "https://retirementinvestments.github.io/sgem-emergency-fund-calculator/assets/js/cal-efc-cal-scripts.min.js";document.body.appendChild(sgemefccal);} </script>'); 
  
 function sgem_hel_copyText(ev){
   //console.log("hi");
   let div = document.getElementById('div');
-  let text = localStorage.getItem('sgem-hel-cal-copy');
+  let text = localStorage.getItem('sgem-efc-cal-copy');
   let textArea  = document.createElement('textarea');
   textArea.width  = "1px"; 
   textArea.height = "1px";

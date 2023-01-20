@@ -1,68 +1,104 @@
-<div class="sgem-hel-cal-main-id">
-	<div class="sgem-hel-cal-wrapper">
-		<div class="sgem-hel-cal-left">
-			<div class="sgem-hel-form sgem-hel-cal-1">
-				<div class="sgem-hel-block-container">
-					<div class="sgem-hel-form-group sgem-hel-form-flex sgem-hel-currency-holder">
-						<label>Appraised value of home
-							<span class="sgem-hel-info-tooltip tooltip" data-tippy-content=" A formal assessment of the value of property prepared by a qualified appraiser. Mortgage lenders almost always require a property appraisal before approving a home loan.">?</span>
-						</label>
-						<input type="text" class="inputmove inputnumber" id="sgem_hel_appraised_value" value="160,000" min="0" max="1000000" onkeypress="return isNumber(event)"/>
-						<span class="sgem_hel_err_msg" id="sgem_hel_err_purchase_the_item"></span>
-					</div>
-				</div>
-				<div class="sgem-hel-block-container">
-					<div class="sgem-hel-form-group sgem-hel-form-flex sgem-hel-currency-holder">
-						<label>How much do you owe on home
-							<span class="sgem-hel-info-tooltip tooltip" data-tippy-content="Your current balance is the amount you currently still owe on the loan according to the date of your statement. This does not include interest that would be charged to the balance if you were to continue with your monthly payments. You can find this number on your monthly statement or online account.">?</span>
-						</label>
-						<input type="text"class="inputmove inputnumber" id="sgem_hel_owe_on_home" value="50,000" min="0" max="100000" onkeypress="return isNumber(event)"/>
-						<span class="sgem_hel_err_msg" id="sgem_hel_err_taxable_income"></span>
-					</div>
-					<div class="sgem-hel-form-group sgem-hel-form-flex sgem_hel_right_field_row">
-						<label for="">Current credit score</label>
-						<select id="sgem_hel_credit_score" class="sgem-hel-drop-selection" name="yearscount" onkeypress="return isNumber(event)">
-							<option value="Excellent">Excellent (740+)</option>
-							<option value="Good">Good (680-739)</option>
-							<option value="Fair" selected>Fair (621-679)</option>
-							<option value="Poor">Poor (< 620)</option>
-						</select>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		<div class="sgem-hel-cal-right">
-			<div class="sgem-hel-cal-1-result-wrapper">
-				<div class="sgem-hel-flex-container sgem-hel-column2">
-					<div class="sgem-hel-form-group sgem-hel-form-flex">
-						<span class="futuretext sgem-result-value">YOU CAN GET A HOME EQUITY LOAN OR HELOC FOR</span>
-						<div id="sgem_hel_loan_value" class="sgem-hel-result-label">$<span id="sgem_hel_cal_val_raw">26,250</span></div>
-					</div>
-				</div>
-				<div class="sgem-hel-cal-1-result-footer">
-					<div class="sgem-hel-content">Good news! Since your LTV is 73%, you may be eligible for a home equity loan or line of credit from one of our lending partners.</div>
-					<div class="sgem-hel-buttonGet">
-						<a href="https://retirementinvestments.com/homeequitycalculator/" target="_blank" class="sgem-hel-getStart" rel="noopener">Find my rate</a>
-					</div>
-				</div>
-				<div class="sgem-hel-section-disclaimer">
-					<details class="sgem-hel-details-disclaimer">
-						<summary>
-							<div class="sgem-hel-collapsible-summary-disclaimer">Disclaimer</div>
-						</summary>
-						<div class="sgem-hel-collapsible-text-disclaimer">Calculations are estimates based on the tax law as of September 2021. These rates are subject to change. Check the IRS website for the latest information about capital gains</div>
-					</details>
-				</div>
-			</div>
-		</div>
-	</div>
+
+<div class="sgem-efc-cal-main-id">
+    <div class="sgem-efc-cal-wrapper">
+        <div class="sgem-efc-cal-left">
+            <div class="sgem-efc-form sgem-efc-cal-1">
+                <div class="sgem-efc-block-container">
+                    <div class="sgem-efc-form-group sgem-efc-form-flex sgem-efc-currency-holder first-holder">
+                        <label class="sgem-efc-first-label">Monthly mortgage or rent<span class="sgem-efc-label-responsive-show"> payments</span>
+                            <span class="sgem-efc-info-tooltip tooltip" data-tippy-content="Includes mortgage or rent payments, property taxes, home or renter’s insurance, HOA fees, and household repairs.">?</span>
+                        </label>
+                        <label class="sgem-efc-label-responsive-hide">payments</label>
+                        <input type="text" class="inputmove inputnumber" id="sgem_efc_mortgae_or_rent__value" value="1,000" min="0" max="1000000" onkeypress="return isNumber(event)"/>
+                        <span class="sgem_efc_err_msg" id="sgem_efc_err_mortgage"></span>
+                    </div>
+                    <div class="sgem-efc-form-group sgem-efc-form-flex sgem-efc-currency-holder first-holder">
+                        <label class="sgem-efc-first-label">Monthly insurance<span class="sgem-efc-label-responsive-show"> payments</span>
+                            <span class="sgem-efc-info-tooltip tooltip" data-tippy-content="Includes any monthly premium payments for your car, health, life, and home insurances">?</span>
+                        </label>
+                        <label class="sgem-efc-label-responsive-hide">payments</label>
+                        <input type="text" class="inputmove inputnumber" id="sgem_efc_insurance_value" value="200" min="0" max="1000000" onkeypress="return isNumber(event)"/>
+                        <span class="sgem_efc_err_msg" id="sgem_efc_err_insurance"></span>
+                    </div>
+                    <div class="sgem-efc-form-group sgem-efc-form-flex sgem-efc-currency-holder">
+                        <label>Monthly debt payments
+                            <span class="sgem-efc-info-tooltip tooltip" data-tippy-content="Includes any debt repayments done for any car loans, personal loans, student loans, credit card debt. Please exclude any mortgage payment expenses from this.">?</span>
+                        </label>
+                        <input type="text" class="inputmove inputnumber" id="sgem_efc_debt_value" value="200" min="0" max="1000000" onkeypress="return isNumber(event)"/>
+                        <span class="sgem_efc_err_msg" id="sgem_efc_err_debt"></span>
+                    </div>
+                    <div class="sgem-efc-form-group sgem-efc-form-flex sgem-efc-currency-holder">
+                        <label>Monthly grocery expenses
+                            <span class="sgem-efc-info-tooltip tooltip" data-tippy-content="Includes the approximate amount spent on monthly groceries">?</span>
+                        </label>
+                        <input type="text" class="inputmove inputnumber" id="sgem_efc_grocery_value" value="500" min="0" max="1000000" onkeypress="return isNumber(event)"/>
+                        <span class="sgem_efc_err_msg" id="sgem_efc_err_grocery"></span>
+                    </div>
+                    <div class="sgem-efc-form-group sgem-efc-form-flex sgem-efc-currency-holder">
+                        <label>Monthly utility payments
+                            <span class="sgem-efc-info-tooltip tooltip" data-tippy-content="Includes any monthly payments spent on utilities such as gas, electricity, water, phone, cable, internet, garbage/recycling, parking and etc.">?</span>
+                        </label>
+                        <input type="text" class="inputmove inputnumber" id="sgem_efc_utility_value" value="300" min="0" max="1000000" onkeypress="return isNumber(event)"/>
+                        <span class="sgem_efc_err_msg" id="sgem_efc_err_utility"></span>
+                    </div>
+                    <div class="sgem-efc-form-group sgem-efc-form-flex sgem-efc-currency-holder">
+                        <label>Other monthly expenses
+                            <span class="sgem-efc-info-tooltip tooltip" data-tippy-content="Includes any other monthly expenses such as transportation costs, medical expenses, educational expenses, personal care, childcare, taxes, and etc.">?</span>
+                        </label>
+                        <input type="text" class="inputmove inputnumber" id="sgem_efc_monthly_value" value="300" min="0" max="1000000" onkeypress="return isNumber(event)"/>
+                        <span class="sgem_efc_err_msg" id="sgem_efc_err_monthly"></span>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="sgem-efc-cal-right">
+            <div class="sgem-efc-cal-1-result-wrapper">
+                <div class="sgem-efc-flex-container sgem-efc-column2">
 
 
-	<div class="sgem-hel-copy-option-panel">
-		<h3>Do you want to add this calculator into your website?</h3>
-		<div class="sgem-hel-copy-code-wrap">
-			<button class="sgem-hel-copy-code" id="sgem-hel-copy-code" onclick="sgem_hel_copyText(event)">Get Calculator</button>
-		</div>
-	</div>
+                    <div class="sgem-result-value-text">You should aim to save between</div>
+
+                    <div class="sgem-result-value"><span id="firstnum">$5,398</span> - <span id="secondnum">$10,796</span></div>
+
+                    <div class="sgem-result-value-text">for your emergency fund.</div>
+
+
+                    <div class="sgem-efc-chart-area">
+                        <canvas id="em_fund_chart"></canvas>
+                     
+                    </div>
+                   <div class="sgem-efc-chart-area-mob">
+                        
+                      <canvas id="em_fund_chart_mob"></canvas>
+                    </div>
+
+                </div>
+                <div class="sgem-efc-cal-1-result-footer">
+                    <div class="sgem-efc-content">Start investing your spare change, invest while you bank, and earn bonus investments.</div>
+                    <div class="sgem-efc-buttonGet">
+                        <a href="https://retirementinvestments.com/emergencyfundcalculator/" target="_blank" class="sgem-efc-getStart" rel="noopener">
+                            START SAVING
+                        </a>
+                    </div>
+                </div>
+                <div class="sgem-efc-section-disclaimer">
+                    <details class="sgem-efc-details-disclaimer">
+                        <summary class="sgem-efc-details-disclaimer-flex">
+                            <div class="sgem-efc-collapsible-summary-disclaimer">Disclaimer</div>
+                            
+                        </summary>
+                        <div class="sgem-efc-collapsible-text-disclaimer">This material is provided for general and educational purpose only; it is not intended to provide legal, tax or investment advice.</div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sgem-efc-copy-option-panel">
+        <h3>Do you want to add this calculator into your website?</h3>
+        <div class="sgem-efc-copy-code-wrap">
+            <button class="sgem-efc-copy-code" id="sgem-efc-copy-code" onclick="sgem_efc_copyText(event)">Get Calculator</button>
+        </div>
+    </div>
 </div>
