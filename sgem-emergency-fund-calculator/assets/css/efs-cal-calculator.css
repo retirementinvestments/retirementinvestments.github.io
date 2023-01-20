@@ -999,7 +999,12 @@ details summary::-webkit-details-marker {
 .grid-change{
 	grid-template-columns: 1fr !important;
 }
-
+.hide-text{
+	display: none;
+}
+.show-text{
+	display: block;
+}
 
 @media (max-width:1400px) {
     .sgem-efc-cal-1-result-wrapper .sgem-efc-flex-container .sgem-efc-form-flex{
