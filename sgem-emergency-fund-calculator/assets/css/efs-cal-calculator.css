@@ -1185,7 +1185,9 @@ details summary::-webkit-details-marker {
     .sgem-efc-cal-left {
         padding: 6px 6px;
     }
-
+	.em_fund_chart_sub{
+		display: none !important;
+	}
 
 }
 @media (max-width: 810px) {
