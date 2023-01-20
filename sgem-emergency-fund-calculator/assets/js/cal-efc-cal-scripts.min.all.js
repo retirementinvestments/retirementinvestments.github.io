@@ -444,9 +444,13 @@ $(document).ready(function() {
 	if ($('.sgem-efc-cal-wrapper').width() < 1024) {
         $('.sgem-efc-cal-left').addClass('sgem-efc-cal-left-add-class');
         $('.sgem-efc-cal-right').addClass('sgem-efc-cal-right-add-class');
+		
+		$('.sgem-efc-block-container').addClass('grid-change');
+		
     } else {
         $('.sgem-efc-cal-left').removeClass('sgem-efc-cal-left-add-class');
         $('.sgem-efc-cal-right').removeClass('sgem-efc-cal-right-add-class');
+		$('.sgem-efc-block-container').removeClass('grid-change');
     }
 
     if ($('.sgem-efc-cal-main-id').width() < 650) {
