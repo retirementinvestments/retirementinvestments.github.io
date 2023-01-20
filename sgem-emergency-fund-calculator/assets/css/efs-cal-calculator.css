@@ -1018,7 +1018,7 @@ details summary::-webkit-details-marker {
 	content: '$';
     position: absolute;
     left: 16px;
-    bottom: 20px;
+    bottom: 50%;
     display: block;
     color: #A3A3A3;
     font-weight: 400;
