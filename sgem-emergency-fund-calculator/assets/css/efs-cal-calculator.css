@@ -1026,10 +1026,10 @@ details summary::-webkit-details-marker {
         line-height: 60px;
     }
 	.sgem-efc-cal-left-add-class .sgem-efc-cal-1 .sgem-efc-form-flex.sgem-efc-currency-holder.first-holder::after {		
-		bottom: 22px;
+		bottom: 35px;
 	}	
 	.sgem-efc-cal-left-add-class .sgem-efc-cal-1 .sgem-efc-form-flex.sgem-efc-currency-holder::after {		
-		bottom: 22px;
+		bottom: 35px;
 	}	
 }
 
