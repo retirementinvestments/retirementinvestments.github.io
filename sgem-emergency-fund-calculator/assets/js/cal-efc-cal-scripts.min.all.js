@@ -490,6 +490,11 @@ $(document).ready(function() {
 		data:data_ef_cvalues
 	};
 
+
+
+	Chart.defaults.plugins.tooltip.enabled = false;
+	
+	
 	//Dekstop Chart Area resize
 	var ctxs = document.getElementById("em_fund_chart").getContext("2d");
 	ctxs.canvas.width = 480;
