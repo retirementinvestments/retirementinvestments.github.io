@@ -454,6 +454,20 @@ $(document).ready(function() {
 
 // Chart script--------------------------------------------------------------------------------------
 
+function ef_update_chart(){
+  
+ 	efChart.data.datasets[0].data = JSON.parse(localStorage.getItem('sgem_ef_chart_array')); 
+  
+ 	efChart.update();  
+	
+	efmChart.data.datasets[0].data = JSON.parse(localStorage.getItem('sgem_ef_chart_array')); 
+  
+	efmChart.update();  	
+
+}
+
+
+
 	var data_ef_cvalues =  JSON.parse(localStorage.getItem('sgem_ef_chart_array'));
 
 	//Chart Data
@@ -641,17 +655,6 @@ $(document).ready(function() {
     });
 
 
-function ef_update_chart(){
-  
- 	efChart.data.datasets[0].data = JSON.parse(localStorage.getItem('sgem_ef_chart_array')); 
-  
- 	efChart.update();  
-	
-	efmChart.data.datasets[0].data = JSON.parse(localStorage.getItem('sgem_ef_chart_array')); 
-  
-	efmChart.update();  	
-
-}
 
 // DOCUMENT.READY END
 
