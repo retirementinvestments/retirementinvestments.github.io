@@ -1026,7 +1026,7 @@ details summary::-webkit-details-marker {
         line-height: 60px;
     }
 	.sgem-efc-cal-left-add-class .sgem-efc-cal-1 .sgem-efc-form-flex.sgem-efc-currency-holder.first-holder::after {		
-		bottom: 35px;
+		bottom: 22px;
 	}	
 	.sgem-efc-cal-left-add-class .sgem-efc-cal-1 .sgem-efc-form-flex.sgem-efc-currency-holder::after {		
 		bottom: 22px;
@@ -1058,7 +1058,7 @@ details summary::-webkit-details-marker {
     }
 	
     .sgem-efc-cal-1 .sgem-efc-form-flex.sgem-efc-currency-holder.first-holder::after {
-         bottom: 35px;
+         bottom: 22px;
     }
     .sgem-efc-cal-left {
         padding: 2px 2px !important;
@@ -1122,7 +1122,7 @@ details summary::-webkit-details-marker {
         display: none;
     }
     .sgem-efc-cal-1 .sgem-efc-form-flex.sgem-efc-currency-holder.first-holder::after {
-         bottom: 35px;
+         bottom: 22px;
     }
     .sgem-efc-cal-left {
         padding: 18px 18px;
@@ -1177,7 +1177,7 @@ details summary::-webkit-details-marker {
         font-size: 0.8em;
     }
     .sgem-efc-cal-left-add-class .sgem-efc-cal-1 .sgem-efc-form-flex.sgem-efc-currency-holder::after {
-        bottom: 35px;
+        bottom: 22px;
     }
     .sgem-efc-cal-1 .sgem-efc-form-group label {
         font-size: 0.9em;
@@ -1235,10 +1235,10 @@ details summary::-webkit-details-marker {
         font-size: 0.8em;
     }
     .sgem-efc-cal-1 .sgem-efc-form-flex.sgem-efc-currency-holder.first-holder::after {
-        bottom: 35px;
+        bottom: 22px;
     }
 	 .sgem-efc-cal-1 .sgem-efc-form-flex.sgem-efc-currency-holder::after {
-        bottom: 35px;
+        bottom: 22px;
     }
 }
 
@@ -1258,10 +1258,10 @@ details summary::-webkit-details-marker {
         padding-top: 0px;
     }
 	.sgem-efc-cal-left-add-class .sgem-efc-cal-1 .sgem-efc-form-flex.sgem-efc-currency-holder.first-holder::after {
-        bottom: 35px;
+        bottom: 22px;
     }
     .sgem-efc-cal-left-add-class .sgem-efc-cal-1 .sgem-efc-form-flex.sgem-efc-currency-holder::after {
-        bottom: 35px;
+        bottom: 22px;
     }
     .sgem-efc-cal-1 .sgem-efc-block-container .sgem-efc-form-flex {
         padding-right: 0px;
@@ -1408,10 +1408,10 @@ details summary::-webkit-details-marker {
         margin-left: 8px;
     }
     .sgem-efc-cal-left-add-class .sgem-efc-cal-1 .sgem-efc-form-flex.sgem-efc-currency-holder.first-holder::after {
-        bottom: 35px;
+        bottom: 22px;
     }
     .sgem-efc-cal-left-add-class .sgem-efc-cal-1 .sgem-efc-form-flex.sgem-efc-currency-holder::after {
-        bottom: 35px;
+        bottom: 22px;
     }
     .sgem-efc-percentage-note {
         line-height: 14px;
@@ -1460,7 +1460,7 @@ details summary::-webkit-details-marker {
         justify-content: left;
     }
     .sgem-efc-cal-left-add-class .sgem-efc-cal-1 .sgem-efc-form-flex.sgem-efc-currency-holder::after{
-        top : 33px;
+        bottom : 22px;
     }
     .sgem-efc-label-responsive-show{
         display: inline;
@@ -1471,10 +1471,10 @@ details summary::-webkit-details-marker {
 }
 @media (max-width: 420px){
     .sgem-efc-cal-left-add-class .sgem-efc-cal-1 .sgem-efc-form-flex.sgem-efc-currency-holder.first-holder::after {
-        bottom: 35px;
+        bottom: 22px;
     }
     .sgem-efc-cal-left-add-class .sgem-efc-cal-1 .sgem-efc-form-flex.sgem-efc-currency-holder::after {
-        bottom: 35px;
+        bottom: 22px;
     }
     .sgem-efc-tooltip {
         position: absolute;
@@ -1502,10 +1502,10 @@ details summary::-webkit-details-marker {
         width:100px;
     }
     .sgem-efc-cal-left-add-class .sgem-efc-cal-1 .sgem-efc-form-flex.sgem-efc-currency-holder.first-holder::after {
-        bottom: 35px;
+        bottom: 22px;
     }
     .sgem-efc-cal-left-add-class .sgem-efc-cal-1 .sgem-efc-form-flex.sgem-efc-currency-holder::after {
-       bottom: 35px;
+       bottom: 22px;
     }
     .sgem-efc-label-responsive-show{
         display: inline;
