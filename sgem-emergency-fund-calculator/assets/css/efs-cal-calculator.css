@@ -1028,7 +1028,7 @@ details summary::-webkit-details-marker {
 		bottom: 35px;
 	}	
 	.sgem-efc-cal-left-add-class .sgem-efc-cal-1 .sgem-efc-form-flex.sgem-efc-currency-holder::after {		
-		bottom: 35px;
+		bottom: 22px;
 	}	
 }
 
@@ -1234,10 +1234,10 @@ details summary::-webkit-details-marker {
         font-size: 0.8em;
     }
     .sgem-efc-cal-1 .sgem-efc-form-flex.sgem-efc-currency-holder.first-holder::after {
-        top: 59px !important;
+        bottom: 35px;
     }
 	 .sgem-efc-cal-1 .sgem-efc-form-flex.sgem-efc-currency-holder::after {
-        top: 42px !important;
+        bottom: 35px;
     }
 }
 
