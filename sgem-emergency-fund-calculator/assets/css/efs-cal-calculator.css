@@ -880,7 +880,7 @@ details summary::-webkit-details-marker {
 }
 .sgem-efc-cal-left-add-class .sgem-efc-cal-1 input[type="text"] {
     font-size: 0.9em;
-    height: 40px;
+    
     width: 100%;
 }
 .sgem-efc-cal-left-add-class .sgem-efc-cal-1 .sgem-efc-form-flex.sgem-efc-currency-holder::after {
@@ -1019,14 +1019,16 @@ details summary::-webkit-details-marker {
 	content: '$';
     position: absolute;
     left: 16px;
-    bottom: 23px;
+    bottom: 32px;
     display: block;
     color: #A3A3A3;
     font-weight: 400;
     font-size: 16px;
 }
 
-
+.font-size-mod{
+	font-size: 0.9em;
+}
 
 @media (max-width:1400px) {
     .sgem-efc-cal-1-result-wrapper .sgem-efc-flex-container .sgem-efc-form-flex{
