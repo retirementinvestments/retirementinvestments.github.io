@@ -108,7 +108,7 @@ var sgem_efc_main_contents = ''+
                         '<label>Other monthly expenses'+
                             '<span class="sgem-efc-info-tooltip tooltip" data-tippy-content="Includes any other monthly expenses such as transportation costs, medical expenses, educational expenses, personal care, childcare, taxes, and etc.">?</span>'+
                         '</label>'+
-                        '<input type="text" class="inputmove inputnumber" id="sgem_efc_monthly_value" value="300" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
+                        '<div class="dollar-sign"><input type="text" class="inputmove inputnumber" id="sgem_efc_monthly_value" value="300" min="0" max="1000000" onkeypress="return isNumber(event)"/></div>'+
                         '<span class="sgem_efc_err_msg" id="sgem_efc_err_monthly"></span>'+
                     '</div>'+
                 '</div>'+
