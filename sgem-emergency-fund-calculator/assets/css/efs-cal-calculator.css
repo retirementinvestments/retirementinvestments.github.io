@@ -134,7 +134,7 @@
     content: '$';
     position: absolute;
     left: 16px;
-    top: 48px;
+    bottom: 35px;
     display: block;
     color: #A3A3A3;
     font-weight: 400;
@@ -145,7 +145,7 @@
     content: '$';
     position: absolute;
     left: 16px;
-    top: 70px;
+    bottom: 35px;
     display: block;
     color: #A3A3A3;
     font-weight: 400;
