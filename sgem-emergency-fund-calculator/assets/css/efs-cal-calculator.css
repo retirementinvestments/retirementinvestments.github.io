@@ -1003,7 +1003,10 @@ details summary::-webkit-details-marker {
 	display: none;
 }
 .show-text{
-	display: block;
+	display: inline;
+}
+.padding-override{
+	padding-bottom: 16px;
 }
 
 @media (max-width:1400px) {
