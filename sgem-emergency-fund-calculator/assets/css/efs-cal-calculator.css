@@ -905,8 +905,8 @@ details summary::-webkit-details-marker {
     font-size: 0.8em;
 }
 .sgem-efc-cal-left.sgem-efc-cal-left-add-class {
-    width: 40%;
-    padding: 12px;
+    width: 50%;
+    padding: 4px;
 }
 .sgem-efc-cal-left-add-class .sgem-efc-cal-1 .sgem-efc-flex-container {
     display: block;
