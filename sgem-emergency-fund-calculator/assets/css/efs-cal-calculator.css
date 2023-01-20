@@ -1026,7 +1026,7 @@ details summary::-webkit-details-marker {
     font-size: 16px;
 }
 .dollar-sign{
-	height: 63px;
+	height: 58px;
 }
 
 
@@ -1097,6 +1097,9 @@ details summary::-webkit-details-marker {
 	.em_fund_chart_sub{
 		display: none !important;
 	}
+	.dollar-sign{
+		height: 63px;
+	}
 }
 
 @media (max-width:1200px) {
@@ -1158,6 +1161,9 @@ details summary::-webkit-details-marker {
 	.em_fund_chart_sub{
 		display: none !important;
 	}
+	.dollar-sign{
+		height: 63px;
+	}
 }
 
 
@@ -1187,6 +1193,9 @@ details summary::-webkit-details-marker {
     }
 	.em_fund_chart_sub{
 		display: none !important;
+	}
+	.dollar-sign{
+		height: 63px;
 	}
 }
 
@@ -1219,7 +1228,9 @@ details summary::-webkit-details-marker {
 	.em_fund_chart_sub{
 		display: none !important;
 	}
-
+	.dollar-sign{
+		height: 63px;
+	}
 }
 @media (max-width: 810px) {
 	
@@ -1273,6 +1284,9 @@ details summary::-webkit-details-marker {
 	 .sgem-efc-cal-1 .sgem-efc-form-flex.sgem-efc-currency-holder::after {
         bottom: 22px;
     }
+	.dollar-sign{
+		height: 63px;
+	}
 }
 
 @media (max-width: 650px) {
@@ -1360,7 +1374,10 @@ details summary::-webkit-details-marker {
     }
     .sgem-efc-label-responsive-hide{
         display: none;
-    }	
+    }
+	.dollar-sign{
+		height: 63px;
+	}	
 }
 
 /* ******** mobile ************ */
@@ -1500,6 +1517,9 @@ details summary::-webkit-details-marker {
     .sgem-efc-label-responsive-hide{
         display: none !important;
     }
+	.dollar-sign{
+		height: 63px;
+	}
 }
 @media (max-width: 420px){
 	.em_fund_chart_main{
@@ -1534,6 +1554,9 @@ details summary::-webkit-details-marker {
     .sgem-efc-label-responsive-hide{
         display: none;
     }
+	.dollar-sign{
+		height: 63px;
+	}
 }
 @media (max-width: 380px) {
 	.em_fund_chart_main{
@@ -1557,6 +1580,9 @@ details summary::-webkit-details-marker {
     .sgem-efc-label-responsive-hide{
         display: none;
     }
+	.dollar-sign{
+		height: 63px;
+	}
 }
 @media (max-width: 356px) {
     .sgem-efc-inline .sgem-efc-plusminus input[type="text"] {
