@@ -1006,7 +1006,7 @@ details summary::-webkit-details-marker {
 	display: inline;
 }
 .padding-override{
-	padding-bottom: 16px;
+	padding-bottom: 16px !important;
 }
 
 @media (max-width:1400px) {
