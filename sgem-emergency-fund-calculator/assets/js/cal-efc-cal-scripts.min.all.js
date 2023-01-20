@@ -152,9 +152,7 @@ function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-window.onload = function() {
-    sgem_ef_calculationmin();
-}
+
 
 
 function sgem_ef_calculationmin() {
@@ -222,22 +220,23 @@ function sgem_ef_calculationmin() {
 	
 }
 
+window.onload = function() {
+    sgem_ef_calculationmin();
+}
+
 
 $(document).ready(function() {
 	
 	
-	$('#sgem_hel_credit_score').on('change' , function () {
-		sgem_he_calculation();
-	});
 
     if( location.hostname == "calculatorstg.wpengine.com") {
-        $('.sgem-hel-logo-center').hide(); 
+        $('.sgem-efc-logo-center').hide(); 
     } else if(location.hostname == "retirementinvestments.com"){
-        $('.sgem-hel-logo-center').hide();  
+        $('.sgem-efc-logo-center').hide();  
     } else if(location.hostname == "staging.retirementinvestments.com"){
-        $('.sgem-hmhcia-logo-center').hide();  
+        $('.sgem-efc-logo-center').hide();  
     } else {
-        $('.sgem-hel-logo-center').show();  
+        $('.sgem-efc-logo-center').show();  
     }
 
     
@@ -443,28 +442,12 @@ $(document).ready(function() {
     }).trigger('resize');
 
 
-
-	
-
-
-
 });
 
 
 
 // Chart script--------------------------------------------------------------------------------------
 
-function ef_update_chart(){
-  
- 	efChart.data.datasets[0].data = JSON.parse(localStorage.getItem('sgem_ef_chart_array')); 
-  
- 	efChart.update();  
-	
-	efmChart.data.datasets[0].data = JSON.parse(localStorage.getItem('sgem_ef_chart_array')); 
-  
-	efmChart.update();  	
-
-}
 
 
 
@@ -653,6 +636,20 @@ function ef_update_chart(){
             }
         }
     });
+
+
+
+function ef_update_chart(){
+  
+ 	efChart.data.datasets[0].data = JSON.parse(localStorage.getItem('sgem_ef_chart_array')); 
+  
+ 	efChart.update();  
+	
+	efmChart.data.datasets[0].data = JSON.parse(localStorage.getItem('sgem_ef_chart_array')); 
+  
+	efmChart.update();  	
+
+}
 
 
 
