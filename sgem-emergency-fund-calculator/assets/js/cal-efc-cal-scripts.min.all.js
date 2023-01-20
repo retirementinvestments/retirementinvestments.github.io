@@ -466,7 +466,13 @@ $(document).ready(function() {
 		$('.em_fund_chart_sub').addClass('show-chart');		
         $('.sgem-efc-cal-wrapper').addClass('sgem-efc-wrapper-add-mobile');
 		$('.sgem-efc-block-container').addClass('grid-change');
+		$('.sgem-efc-label-responsive-show').addClass('show-text');
+		$('.sgem-efc-label-responsive-hide').addClass('hide-text');
+		
+		
     } else {
+		$('.sgem-efc-label-responsive-hide').removeClass('hide-text');
+		$('.sgem-efc-label-responsive-show').removeClass('show-text');
 		$('.em_fund_chart_main').addClass('show-chart');
 		$('.em_fund_chart_sub').addClass('hide-chart');		
         $('.sgem-efc-cal-wrapper').removeClass('sgem-efc-wrapper-add-mobile');
