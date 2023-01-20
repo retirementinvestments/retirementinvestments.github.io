@@ -121,10 +121,10 @@ var sgem_efc_main_contents = ''+
                     '<div class="sgem-result-value"><span id="firstnum">$5,398</span> - <span id="secondnum">$10,796</span></div>'+
                     '<div class="sgem-result-value-text">for your emergency fund.</div>'+
                     '<div class="sgem-efc-chart-area">'+
-                        '<canvas id="em_fund_chart"></canvas>'+                
+                        '<canvas id="em_fund_chart" class="em_fund_chart_main"></canvas>'+                
                     '</div>'+
                    '<div class="sgem-efc-chart-area-mob">'+                        
-                      '<canvas id="em_fund_chart_mob"></canvas>'+
+                      '<canvas id="em_fund_chart_mob" class="em_fund_chart_sub"></canvas>'+
                     '</div>'+
                 '</div>'+
                 '<div class="sgem-efc-cal-1-result-footer">'+
@@ -450,8 +450,12 @@ $(document).ready(function() {
     }
 
     if ($('.sgem-efc-cal-main-id').width() < 650) {
+		$('.em_fund_chart_main').addClass('hide-chart');	
+		$('.em_fund_chart_sub').addClass('show-chart');		
         $('.sgem-efc-cal-wrapper').addClass('sgem-efc-wrapper-add-mobile');
     } else {
+		$('.em_fund_chart_main').addClass('show-chart');
+		$('.em_fund_chart_sub').addClass('hide-chart');		
         $('.sgem-efc-cal-wrapper').removeClass('sgem-efc-wrapper-add-mobile');
     }
 
@@ -467,8 +471,12 @@ $(document).ready(function() {
 
     $(window).on('resize', function() {
         if ($('.sgem-efc-cal-main-id').width() < 650) {
+			$('.em_fund_chart_main').addClass('hide-chart');	
+			$('.em_fund_chart_sub').addClass('show-chart');	
             $('.sgem-efc-cal-wrapper').addClass('sgem-efc-wrapper-add-mobile');
         } else {
+			$('.em_fund_chart_main').addClass('show-chart');
+			$('.em_fund_chart_sub').addClass('hide-chart');		
             $('.sgem-efc-cal-wrapper').removeClass('sgem-efc-wrapper-add-mobile');
         }
     }).trigger('resize');
