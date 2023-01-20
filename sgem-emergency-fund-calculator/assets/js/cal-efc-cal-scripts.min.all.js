@@ -662,7 +662,7 @@ tippy('[data-tippy-content]', {
 
 localStorage.setItem('sgem-efc-cal-copy', '<div id="sgem-efc-cal"></div><script>window.onload = function() {var sgemefccal = document.createElement("script"); sgemefccal.type = "text/javascript"; sgemefccal.src = "https://retirementinvestments.github.io/sgem-emergency-fund-calculator/assets/js/cal-efc-cal-scripts.min.js";document.body.appendChild(sgemefccal);} </script>'); 
  
-function sgem_hel_copyText(ev){
+function sgem_efc_copyText(ev){
   //console.log("hi");
   let div = document.getElementById('div');
   let text = localStorage.getItem('sgem-efc-cal-copy');
