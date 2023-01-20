@@ -1025,6 +1025,10 @@ details summary::-webkit-details-marker {
     font-weight: 400;
     font-size: 16px;
 }
+.dollar-sign{
+	height: 63px;
+}
+
 
 .font-size-mod{
 	font-size: 0.9em !important;
@@ -1392,8 +1396,7 @@ details summary::-webkit-details-marker {
     }
     .sgem-efc-cal-1 .sgem-efc-form-group label {
         line-height: 15px;
-        display: block;
-        min-height: 25px;
+        display: block;        
         font-size: 14px;
         margin-bottom: 0;
     }
