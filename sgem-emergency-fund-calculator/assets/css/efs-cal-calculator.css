@@ -1027,7 +1027,7 @@ details summary::-webkit-details-marker {
 }
 
 .font-size-mod{
-	font-size: 0.9em;
+	font-size: 0.9em !important;
 }
 
 @media (max-width:1400px) {
