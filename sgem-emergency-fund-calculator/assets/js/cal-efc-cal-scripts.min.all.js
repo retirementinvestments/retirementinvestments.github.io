@@ -464,7 +464,7 @@ $(document).ready(function() {
 	ctxs.canvas.height = 220;
 
 	//Desktop Chart Config
-	const ctxDChart = document.getElementById('em_fund_chart');
+	var ctxDChart = document.getElementById('em_fund_chart');
 	const efChart = new Chart(ctxDChart, {
 		plugins: [ChartDataLabels],
 		type: 'bar',
@@ -556,7 +556,7 @@ $(document).ready(function() {
 
 	//Mobile Chart Config
 
-	const ctxmm = document.getElementById('em_fund_chart_mob');
+	var ctxmm = document.getElementById('em_fund_chart_mob');
 	const efmChart = new Chart(ctxmm, {
         plugins: [ChartDataLabels],
         type: 'bar',
