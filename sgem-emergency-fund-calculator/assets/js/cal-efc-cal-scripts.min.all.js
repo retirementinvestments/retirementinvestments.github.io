@@ -464,8 +464,8 @@ $(document).ready(function() {
 	ctxs.canvas.height = 220;
 
 	//Desktop Chart Config
-	const ctxD = document.getElementById('em_fund_chart');
-	const efChart = new Chart(ctxD, {
+	const ctxDChart = document.getElementById('em_fund_chart');
+	const efChart = new Chart(ctxDChart, {
 		plugins: [ChartDataLabels],
 		type: 'bar',
 		data: {
