@@ -522,15 +522,27 @@ $(document).ready(function() {
 
     $(window).on('resize', function() {
         if ($('.sgem-efc-cal-main-id').width() < 650) {
+			
 			$('.em_fund_chart_main').addClass('hide-chart');	
+			$('.em_fund_chart_main').removeClass('show-chart');
+		
+		
 			$('.em_fund_chart_sub').addClass('show-chart');	
+			$('.em_fund_chart_sub').removeClass('hide-chart');
+			
             $('.sgem-efc-cal-wrapper').addClass('sgem-efc-wrapper-add-mobile');
 			$('.sgem-efc-block-container').addClass('grid-change');
 			$('.sgem-efc-form-group').addClass('padding-override');
 			$('.support-label').addClass('font-size-mod');
         } else {
+			
+			$('.em_fund_chart_main').removeClass('hide-chart');
 			$('.em_fund_chart_main').addClass('show-chart');
-			$('.em_fund_chart_sub').addClass('hide-chart');		
+		
+		
+			$('.em_fund_chart_sub').addClass('hide-chart');	
+			$('.em_fund_chart_sub').removeClass('show-chart');	
+			
             $('.sgem-efc-cal-wrapper').removeClass('sgem-efc-wrapper-add-mobile');
 			$('.sgem-efc-block-container').removeClass('grid-change');
 			$('.sgem-efc-form-group').removeClass('padding-override');
