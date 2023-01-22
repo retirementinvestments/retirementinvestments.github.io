@@ -1163,6 +1163,9 @@ details summary::-webkit-details-marker {
 	.dollar-sign{
 		height: 63px;
 	}
+	.dollar-sign::after {		
+		bottom: 30px;
+	}
 }
 
 
