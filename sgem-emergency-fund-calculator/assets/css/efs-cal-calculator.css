@@ -933,6 +933,7 @@ details summary::-webkit-details-marker {
     padding: 20px 20px;
 }
 .sgem-efc-cal-right-add-class .sgem-efc-cal-1-result-footer .sgem-efc-content {
+	margin-top: 30px;
     font-size: 1em;
 }
 .sgem-efc-cal-right-add-class .sgem-efc-collapsible-text-disclaimer {
