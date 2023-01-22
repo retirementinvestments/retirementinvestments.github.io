@@ -1027,6 +1027,9 @@ details summary::-webkit-details-marker {
 .dollar-sign{
 	height: 57px;
 }
+.dollar-sign-height {
+    height: 65px;
+}
 
 
 .font-size-mod{

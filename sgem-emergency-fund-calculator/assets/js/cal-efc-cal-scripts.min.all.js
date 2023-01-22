@@ -470,6 +470,8 @@ $(document).ready(function() {
 		$('.em_fund_chart_sub').addClass('show-chart');	
 		$('.em_fund_chart_sub').removeClass('hide-chart');
 
+		$('.dollar-sign').addClass('dollar-sign-height');
+	
 
 		
         $('.sgem-efc-cal-wrapper').addClass('sgem-efc-wrapper-add-mobile');
@@ -491,6 +493,9 @@ $(document).ready(function() {
 		
 		$('.em_fund_chart_sub').addClass('hide-chart');	
 		$('.em_fund_chart_sub').removeClass('show-chart');				
+		
+		
+		$('.dollar-sign').removeClass('dollar-sign-height');
 		
 		
 		
