@@ -1222,7 +1222,8 @@ details summary::-webkit-details-marker {
         font-size: 0.9em;
     }
     .sgem-efc-cal-right-add-class .sgem-efc-cal-1-result-footer .sgem-efc-content {
-        font-size: 0.8em;
+		margin-top:30px;
+        font-size: 1em;
     }
     .sgem-efc-cal-left-add-class .sgem-efc-cal-1 .sgem-efc-form-flex.sgem-efc-currency-holder::after {
         bottom: 22px;
