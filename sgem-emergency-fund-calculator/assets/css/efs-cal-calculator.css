@@ -1049,9 +1049,9 @@ details summary::-webkit-details-marker {
 	.sgem-efc-cal-left-add-class .sgem-efc-cal-1 .sgem-efc-form-flex.sgem-efc-currency-holder::after {		
 		bottom: 35px;
 	}	
-	.em_fund_chart_sub{
+	/*.em_fund_chart_sub{
 		display: none !important;
-	}
+	}*/
 }
 
 @media (max-width:1305px) {
@@ -1093,9 +1093,9 @@ details summary::-webkit-details-marker {
     .sgem-efc-cal-right {
         width: 67% !important;
     }
-	.em_fund_chart_sub{
+	/*.em_fund_chart_sub{
 		display: none !important;
-	}
+	}*/
 	.dollar-sign{
 		height: 63px;
 	}
@@ -1157,9 +1157,9 @@ details summary::-webkit-details-marker {
     .sgem-efc-cal-1 .sgem-efc-block-container .sgem-efc-form-flex{
         padding-bottom: 15px;
     }
-	.em_fund_chart_sub{
+	/*.em_fund_chart_sub{
 		display: none !important;
-	}
+	}*/
 	.dollar-sign{
 		height: 63px;
 	}
@@ -1190,9 +1190,9 @@ details summary::-webkit-details-marker {
     .sgem-efc-cal-left {
         padding: 12px 12px;
     }
-	.em_fund_chart_sub{
+	/*.em_fund_chart_sub{
 		display: none !important;
-	}
+	}*/
 	.dollar-sign{
 		height: 63px;
 	}
@@ -1224,9 +1224,9 @@ details summary::-webkit-details-marker {
     .sgem-efc-cal-left {
         padding: 6px 6px;
     }
-	.em_fund_chart_sub{
+	/*.em_fund_chart_sub{
 		display: none !important;
-	}
+	}*/
 	.dollar-sign{
 		height: 63px;
 	}
@@ -1293,12 +1293,12 @@ details summary::-webkit-details-marker {
 	.sgem-result-value-text{
 		font-size: 14px !important;
 	}
-    .em_fund_chart_main{
+    /*.em_fund_chart_main{
         display : none !important;
     }
 	.em_fund_chart_sub{
     	display : block !important;
-	}   
+	}   */
     .sgem-efc-cal-left.sgem-efc-cal-left-add-class {
         width: 33%;
         padding-top: 0px;
@@ -1381,12 +1381,12 @@ details summary::-webkit-details-marker {
 
 /* ******** mobile ************ */
 @media (max-width: 480px) {
-	.em_fund_chart_main{
+	/*.em_fund_chart_main{
         display : none !important;
     }
 	.em_fund_chart_sub{
     	display : block !important;
-	}  
+	}  */
     .sgem-efc-cal-left, .sgem-efc-cal-right {
         width: 100%;
     }
@@ -1521,12 +1521,12 @@ details summary::-webkit-details-marker {
 	}
 }
 @media (max-width: 420px){
-	.em_fund_chart_main{
+	/*.em_fund_chart_main{
         display : none !important;
     }
 	.em_fund_chart_sub{
     	display : block !important;
-	}  
+	}*/  
     .sgem-efc-cal-left-add-class .sgem-efc-cal-1 .sgem-efc-form-flex.sgem-efc-currency-holder.first-holder::after {
         bottom: 22px;
     }
@@ -1558,12 +1558,12 @@ details summary::-webkit-details-marker {
 	}
 }
 @media (max-width: 380px) {
-	.em_fund_chart_main{
+	/*.em_fund_chart_main{
         display : none !important;
     }
 	.em_fund_chart_sub{
     	display : block !important;
-	}  
+	}  */
     .sgem-efc-inline .sgem-efc-plusminus input[type="text"] {
         width:100px;
     }
