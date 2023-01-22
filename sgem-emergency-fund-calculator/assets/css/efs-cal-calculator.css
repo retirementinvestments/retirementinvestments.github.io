@@ -1277,12 +1277,12 @@ details summary::-webkit-details-marker {
     .sgem-efc-cal-left {
         padding: 6px 6px;
     }
-    .sgem-efc-label-responsive-show{
+    /*.sgem-efc-label-responsive-show{
         display: none;
     }
     .sgem-efc-label-responsive-hide{
         display: inline;
-    }
+    }*/
     .sgem-efc-cal-1 .sgem-efc-form-group label {
         font-size: 0.8em;
     }
