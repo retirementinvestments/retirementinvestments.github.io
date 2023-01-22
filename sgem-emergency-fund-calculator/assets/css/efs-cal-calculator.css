@@ -932,8 +932,7 @@ details summary::-webkit-details-marker {
 .sgem-efc-cal-right-add-class .sgem-efc-cal-1-result-wrapper {
     padding: 20px 20px;
 }
-.sgem-efc-cal-right-add-class .sgem-efc-cal-1-result-footer .sgem-efc-content {
-	margin-top: 30px;
+.sgem-efc-cal-right-add-class .sgem-efc-cal-1-result-footer .sgem-efc-content {	
     font-size: 1em;
 }
 .sgem-efc-cal-right-add-class .sgem-efc-collapsible-text-disclaimer {
@@ -1260,7 +1259,7 @@ details summary::-webkit-details-marker {
         font-size: 0.9em;
     }
     .sgem-efc-cal-right-add-class .sgem-efc-cal-1-result-footer .sgem-efc-content {
-        font-size: 0.8em;
+        font-size: 1em;
 		margin-top : 30px;
     }
     .sgem-efc-cal-right-add-class .sgem-efc-form-flex .sgem-result-value{
