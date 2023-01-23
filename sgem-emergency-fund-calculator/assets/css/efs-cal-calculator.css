@@ -1031,6 +1031,9 @@ details summary::-webkit-details-marker {
     height: 65px;
 }
 
+.add-top-margin{
+	margin-top: 30px;
+}
 
 .font-size-mod{
 	font-size: 0.9em !important;

@@ -472,7 +472,7 @@ $(document).ready(function() {
 
 		$('.dollar-sign').addClass('dollar-sign-height');
 	
-
+		$('.sgem-efc-content').addClass('add-top-margin');
 		
         $('.sgem-efc-cal-wrapper').addClass('sgem-efc-wrapper-add-mobile');
 		$('.sgem-efc-block-container').addClass('grid-change');
@@ -496,7 +496,7 @@ $(document).ready(function() {
 		
 		
 		$('.dollar-sign').removeClass('dollar-sign-height');
-		
+		$('.sgem-efc-content').removeClass('add-top-margin');
 		
 		
         $('.sgem-efc-cal-wrapper').removeClass('sgem-efc-wrapper-add-mobile');
