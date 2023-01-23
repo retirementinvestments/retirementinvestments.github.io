@@ -73,7 +73,7 @@ var sgem_efc_main_contents = ''+
                         '</label>'+
                         '<label class="sgem-efc-label-responsive-hide support-label">payments</label>'+
                         '<div class="dollar-sign"><input type="text" class="inputmove inputnumber" id="sgem_efc_mortgae_or_rent__value" value="1,000" min="0" max="1000000" onkeypress="return isNumber(event)"/></div>'+
-                        '<span class="sgem_efc_err_msg" id="sgem_efc_err_mortgage"></span>'+
+                        '<div class="error-msg-section"><span class="sgem_efc_err_msg" id="sgem_efc_err_mortgage"></span></div>'+
                     '</div>'+
                     '<div class="sgem-efc-form-group sgem-efc-form-flex sgem-efc-currency-holder first-holder">'+
                         '<label class="sgem-efc-first-label support-label">Monthly insurance<span class="sgem-efc-label-responsive-show"> payments</span>'+
