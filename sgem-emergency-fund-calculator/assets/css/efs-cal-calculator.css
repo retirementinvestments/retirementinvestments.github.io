@@ -732,7 +732,9 @@
     font-weight: 300;
     font-size: 13px;
     color: #ff5964;
-	line-height: 21px;
+	line-height: 14px;
+	display: inherit;
+	margin-top: 5px
 }
 
 /* new styles */
