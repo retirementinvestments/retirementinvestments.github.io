@@ -95,7 +95,7 @@ var sgem_efc_main_contents = ''+
                             '<span class="sgem-efc-info-tooltip tooltip" data-tippy-content="Includes the approximate amount spent on monthly groceries">?</span>'+
                         '</label>'+
                         '<div class="dollar-sign"><input type="text" class="inputmove inputnumber" id="sgem_efc_grocery_value" value="500" min="0" max="1000000" onkeypress="return isNumber(event)"/></div>'+
-                        '<div class="error-msg-section"><span class="sgem_efc_err_msg" id="sgem_efc_err_grocery"></span><div>'+
+                        '<div class="error-msg-section"><span class="sgem_efc_err_msg" id="sgem_efc_err_grocery"></span></div>'+
                     '</div>'+
                     '<div class="sgem-efc-form-group sgem-efc-form-flex sgem-efc-currency-holder">'+
                         '<label class="support-label">Monthly utility payments'+
