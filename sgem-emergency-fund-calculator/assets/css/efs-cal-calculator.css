@@ -1039,6 +1039,12 @@ details summary::-webkit-details-marker {
 	font-size: 0.9em !important;
 }
 
+.error-msg-section{
+	margin-top: 5px;
+}
+
+
+
 @media (max-width:1400px) {
     .sgem-efc-cal-1-result-wrapper .sgem-efc-flex-container .sgem-efc-form-flex{
         padding-bottom: 20px;
