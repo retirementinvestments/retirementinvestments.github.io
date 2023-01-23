@@ -132,27 +132,7 @@
     font-weight: 400;
     font-size: 16px;
 }
-.sgem-efc-cal-1 .sgem-efc-form-flex.sgem-efc-currency-holder::after {
-    content: '';
-    position: absolute;
-    left: 16px;
-    bottom: 42px;
-    display: block;
-    color: #A3A3A3;
-    font-weight: 400;
-    font-size: 16px;
-}
 
-.sgem-efc-cal-1 .sgem-efc-form-flex.sgem-efc-currency-holder.first-holder::after {
-    content: '';
-    position: absolute;
-    left: 16px;
-    bottom: 42px;
-    display: block;
-    color: #A3A3A3;
-    font-weight: 400;
-    font-size: 16px;
-}
 
 .sgem-efc-cal-1 .sgem-efc-form-flex.sgem-efc-currency-holder input[type="text"] {
     padding-left: 33px;
