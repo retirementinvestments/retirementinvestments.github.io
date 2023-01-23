@@ -81,35 +81,35 @@ var sgem_efc_main_contents = ''+
                         '</label>'+
                         '<label class="sgem-efc-label-responsive-hide support-label">payments</label>'+
                         '<div class="dollar-sign"><input type="text" class="inputmove inputnumber" id="sgem_efc_insurance_value" value="200" min="0" max="1000000" onkeypress="return isNumber(event)"/></div>'+
-                        '<span class="sgem_efc_err_msg" id="sgem_efc_err_insurance"></span>'+
+                        '<div class="error-msg-section"><span class="sgem_efc_err_msg" id="sgem_efc_err_insurance"></span></div>'+
                     '</div>'+
                     '<div class="sgem-efc-form-group sgem-efc-form-flex sgem-efc-currency-holder">'+
                         '<label class="support-label">Monthly debt payments'+
                             '<span class="sgem-efc-info-tooltip tooltip" data-tippy-content="Includes any debt repayments done for any car loans, personal loans, student loans, credit card debt. Please exclude any mortgage payment expenses from this.">?</span>'+
                         '</label>'+
                         '<div class="dollar-sign"><input type="text" class="inputmove inputnumber" id="sgem_efc_debt_value" value="200" min="0" max="1000000" onkeypress="return isNumber(event)"/></div>'+
-                        '<span class="sgem_efc_err_msg" id="sgem_efc_err_debt"></span>'+
+                        '<div class="error-msg-section"><span class="sgem_efc_err_msg" id="sgem_efc_err_debt"></span></div>'+
                     '</div>'+
                     '<div class="sgem-efc-form-group sgem-efc-form-flex sgem-efc-currency-holder">'+
                         '<label class="support-label">Monthly grocery expenses'+
                             '<span class="sgem-efc-info-tooltip tooltip" data-tippy-content="Includes the approximate amount spent on monthly groceries">?</span>'+
                         '</label>'+
                         '<div class="dollar-sign"><input type="text" class="inputmove inputnumber" id="sgem_efc_grocery_value" value="500" min="0" max="1000000" onkeypress="return isNumber(event)"/></div>'+
-                        '<span class="sgem_efc_err_msg" id="sgem_efc_err_grocery"></span>'+
+                        '<div class="error-msg-section"><span class="sgem_efc_err_msg" id="sgem_efc_err_grocery"></span><div>'+
                     '</div>'+
                     '<div class="sgem-efc-form-group sgem-efc-form-flex sgem-efc-currency-holder">'+
                         '<label class="support-label">Monthly utility payments'+
                             '<span class="sgem-efc-info-tooltip tooltip" data-tippy-content="Includes any monthly payments spent on utilities such as gas, electricity, water, phone, cable, internet, garbage/recycling, parking and etc.">?</span>'+
                         '</label>'+
                         '<div class="dollar-sign"><input type="text" class="inputmove inputnumber" id="sgem_efc_utility_value" value="300" min="0" max="1000000" onkeypress="return isNumber(event)"/></div>'+
-                        '<span class="sgem_efc_err_msg" id="sgem_efc_err_utility"></span>'+
+                        '<div class="error-msg-section"><span class="sgem_efc_err_msg" id="sgem_efc_err_utility"></span></div>'+
                     '</div>'+
                     '<div class="sgem-efc-form-group sgem-efc-form-flex sgem-efc-currency-holder">'+
                         '<label class="support-label">Other monthly expenses'+
                             '<span class="sgem-efc-info-tooltip tooltip" data-tippy-content="Includes any other monthly expenses such as transportation costs, medical expenses, educational expenses, personal care, childcare, taxes, and etc.">?</span>'+
                         '</label>'+
                         '<div class="dollar-sign"><input type="text" class="inputmove inputnumber" id="sgem_efc_monthly_value" value="300" min="0" max="1000000" onkeypress="return isNumber(event)"/></div>'+
-                        '<span class="sgem_efc_err_msg" id="sgem_efc_err_monthly"></span>'+
+                        '<div class="error-msg-section"><span class="sgem_efc_err_msg" id="sgem_efc_err_monthly"></span></div>'+
                     '</div>'+
                 '</div>'+
             '</div>'+
