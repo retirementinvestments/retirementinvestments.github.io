@@ -606,7 +606,7 @@ $(document).ready(function() {
 				barPercentage: 0.5,
 				categoryPercentage: 1,
 				data: chartData['data'],
-				backgroundColor: ['#4BCC8C', '#258B58'],
+				backgroundColor: ['#4BCC8C', '#002749'],
 				borderWidth: 0
 			}]
 
@@ -644,7 +644,7 @@ $(document).ready(function() {
 						if(context.dataIndex === 0){
 							return '#4BCC8C';
 						}else{
-							return '#258B58';
+							return '#002749';
 						}
 					})
 				}
@@ -701,7 +701,7 @@ $(document).ready(function() {
                 barPercentage: 0.7,
                 categoryPercentage: 1,
                 data: chartData['data'],
-                backgroundColor: ['#4BCC8C', '#258B58'],
+                backgroundColor: ['#4BCC8C', '#002749'],
                 borderWidth: 0
             }]
 
@@ -739,7 +739,7 @@ $(document).ready(function() {
                         if(context.dataIndex === 0){
                             return '#4BCC8C';
                         }else{
-                            return '#258B58';
+                            return '#002749';
                         }
                     })
                 }
