@@ -1027,6 +1027,9 @@ details summary::-webkit-details-marker {
     height: 20px;
 }
 
+.sgem-showing-error{
+	row-gap: 20px;
+}
 
 
 @media (max-width:1400px) {

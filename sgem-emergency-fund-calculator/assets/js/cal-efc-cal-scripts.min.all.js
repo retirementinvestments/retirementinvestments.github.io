@@ -301,6 +301,8 @@ $(document).ready(function() {
 
 			this.value = '';
 			$('#sgem_efc_err_mortgage').html('This cannot be empty or more than $900,000,000').fadeIn();
+			$('.sgem-efc-block-container').addClass('sgem-showing-error');
+			
 			$(this).css({
 				"border": "1px solid red",
 				"background": "#FFCECE"
@@ -309,6 +311,7 @@ $(document).ready(function() {
 
 		} else {
 			$('#sgem_efc_err_mortgage').html('').fadeOut();
+			$('.sgem-efc-block-container').removeClass('sgem-showing-error');
 			$(this).css({
 				"border": "1px solid #707070",
 				"background": "#ffffff"
@@ -324,6 +327,7 @@ $(document).ready(function() {
 
 			this.value = '';
 			$('#sgem_efc_err_insurance').html('This cannot be empty or more than $999,999').fadeIn();
+			$('.sgem-efc-block-container').addClass('sgem-showing-error');
 			$(this).css({
 				"border": "1px solid red",
 				"background": "#FFCECE"
@@ -332,6 +336,7 @@ $(document).ready(function() {
 
 		} else {
 			$('#sgem_efc_err_insurance').html('').fadeOut();
+			$('.sgem-efc-block-container').removeClass('sgem-showing-error');
 			$(this).css({
 				"border": "1px solid #707070",
 				"background": "#ffffff"
@@ -347,6 +352,7 @@ $(document).ready(function() {
 
 			this.value = '';
 			$('#sgem_efc_err_debt').html('This cannot be empty or more than $999,999').fadeIn();
+			$('.sgem-efc-block-container').addClass('sgem-showing-error');
 			$(this).css({
 				"border": "1px solid red",
 				"background": "#FFCECE"
@@ -355,6 +361,7 @@ $(document).ready(function() {
 
 		} else {
 			$('#sgem_efc_err_debt').html('').fadeOut();
+			$('.sgem-efc-block-container').removeClass('sgem-showing-error');
 			$(this).css({
 				"border": "1px solid #707070",
 				"background": "#ffffff"
@@ -370,6 +377,7 @@ $(document).ready(function() {
 
 			this.value = '';
 			$('#sgem_efc_err_grocery').html('This cannot be empty or more than $999,999').fadeIn();
+			$('.sgem-efc-block-container').addClass('sgem-showing-error');
 			$(this).css({
 				"border": "1px solid red",
 				"background": "#FFCECE"
@@ -378,6 +386,7 @@ $(document).ready(function() {
 
 		} else {
 			$('#sgem_efc_err_grocery').html('').fadeOut();
+			$('.sgem-efc-block-container').removeClass('sgem-showing-error');
 			$(this).css({
 				"border": "1px solid #707070",
 				"background": "#ffffff"
@@ -393,6 +402,7 @@ $(document).ready(function() {
 
 			this.value = '';
 			$('#sgem_efc_err_utility').html('This cannot be empty or more than $999,999').fadeIn();
+			$('.sgem-efc-block-container').addClass('sgem-showing-error');
 			$(this).css({
 				"border": "1px solid red",
 				"background": "#FFCECE"
@@ -401,6 +411,7 @@ $(document).ready(function() {
 
 		} else {
 			$('#sgem_efc_err_utility').html('').fadeOut();
+			$('.sgem-efc-block-container').removeClass('sgem-showing-error');
 			$(this).css({
 				"border": "1px solid #707070",
 				"background": "#ffffff"
@@ -416,6 +427,7 @@ $(document).ready(function() {
 
 			this.value = '';
 			$('#sgem_efc_err_monthly').html('This cannot be empty or more than $999,999').fadeIn();
+			$('.sgem-efc-block-container').addClass('sgem-showing-error');
 			$(this).css({
 				"border": "1px solid red",
 				"background": "#FFCECE"
@@ -424,6 +436,7 @@ $(document).ready(function() {
 
 		} else {
 			$('#sgem_efc_err_monthly').html('').fadeOut();
+			$('.sgem-efc-block-container').removeClass('sgem-showing-error');
 			$(this).css({
 				"border": "1px solid #707070",
 				"background": "#ffffff"
