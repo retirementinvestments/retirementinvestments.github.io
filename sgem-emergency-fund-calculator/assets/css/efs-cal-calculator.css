@@ -732,7 +732,7 @@
     font-weight: 300;
     font-size: 13px;
     color: #ff5964;
-	line-height: 14px;
+	line-height: 15px;
 	display: inherit;
 	margin-top: 5px
 }
@@ -1028,7 +1028,7 @@ details summary::-webkit-details-marker {
 }
 
 .sgem-showing-error{
-	row-gap: 20px;
+	row-gap: 20px !important;
 }
 
 
