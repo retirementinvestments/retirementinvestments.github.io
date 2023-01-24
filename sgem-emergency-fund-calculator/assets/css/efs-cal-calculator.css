@@ -730,9 +730,9 @@
 
 .sgem-efc-cal-wrapper .sgem-efc-cal-left .sgem_efc_err_msg {
     font-weight: 300;
-    font-size: 13px;
+    font-size: 12px;
     color: #ff5964;
-	line-height: 15px;
+	line-height: 14px;
 	display: inherit;
 	margin-top: 5px
 }
