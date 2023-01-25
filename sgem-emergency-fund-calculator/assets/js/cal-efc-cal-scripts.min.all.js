@@ -457,21 +457,12 @@ $(document).ready(function() {
 	if ($('.sgem-efc-cal-wrapper').width() < 1024) {
         $('.sgem-efc-cal-left').addClass('sgem-efc-cal-left-add-class');
         $('.sgem-efc-cal-right').addClass('sgem-efc-cal-right-add-class');
-		//$('.first-holder').addClass('hide-text');
-		//$('.sgem-efc-label-responsive-show').addClass('show-text');
-		//$('.sgem-efc-block-container').addClass('grid-change');
-		//$('.sgem-efc-form-group').addClass('padding-override');
-		//$('.first-holder').after().addClass('top-adjust');
 		
 		
     } else {
         $('.sgem-efc-cal-left').removeClass('sgem-efc-cal-left-add-class');
         $('.sgem-efc-cal-right').removeClass('sgem-efc-cal-right-add-class');
-		//$('.sgem-efc-block-container').removeClass('grid-change');
-		//$('.sgem-efc-label-responsive-hide').removeClass('hide-text');
-		//$('.sgem-efc-label-responsive-show').removeClass('show-text');
-		//$('.sgem-efc-form-group').removeClass('padding-override');
-		//$('.first-holder').after().removeClass('top-adjust');
+
     }
 
     if ($('.sgem-efc-cal-main-id').width() < 650) {
@@ -522,19 +513,11 @@ $(document).ready(function() {
         if ($('.sgem-efc-cal-wrapper').width() < 1024) {
             $('.sgem-efc-cal-left').addClass('sgem-efc-cal-left-add-class');
             $('.sgem-efc-cal-right').addClass('sgem-efc-cal-right-add-class');
-			//$('.sgem-efc-label-responsive-hide').addClass('hide-text');
-			//$('.sgem-efc-label-responsive-show').addClass('show-text');
-			//$('.sgem-efc-block-container').addClass('grid-change');
-			//$('.sgem-efc-form-group').addClass('padding-override');
-			//$('.first-holder').after().addClass('top-adjust');
+
         } else {
             $('.sgem-efc-cal-left').removeClass('sgem-efc-cal-left-add-class');
             $('.sgem-efc-cal-right').removeClass('sgem-efc-cal-right-add-class');
-			//$('.sgem-efc-block-container').removeClass('grid-change');
-			//$('.sgem-efc-label-responsive-hide').removeClass('hide-text');
-			//$('.sgem-efc-label-responsive-show').removeClass('show-text');
-			//$('.sgem-efc-form-group').removeClass('padding-override');
-			//$('.first-holder').after().removeClass('top-adjust');
+
         }
     }).trigger('resize');
 
