@@ -143,11 +143,11 @@
     font-size: 16px;
 }
 .sgem-spc-cal-1 .sgem-spc-block-container .sgem-spc-block-inner-container .sgem-spc-form-flex.sgem-first-flex{
-    margin-right: 12px !important;
+    margin-right: 12px;
     max-width: calc(50% - 12px);
 }
 .sgem-spc-cal-1 .sgem-spc-block-container .sgem-spc-block-inner-container .sgem-spc-form-flex.sgem-second-flex{
-    margin-left: 12px !important;
+    margin-left: 12px;
     max-width: calc(50% - 12px);
 }
 
