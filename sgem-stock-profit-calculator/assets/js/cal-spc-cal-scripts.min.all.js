@@ -226,13 +226,13 @@ $(document).ready(function() {
 	
 
     if( location.hostname == "calculatorstg.wpengine.com") {
-        $('.sgem-hel-logo-center').hide(); 
+        $('.sgem-spc-logo-center').hide(); 
     } else if(location.hostname == "retirementinvestments.com"){
-        $('.sgem-hel-logo-center').hide();  
+        $('.sgem-spc-logo-center').hide();  
     } else if(location.hostname == "staging.retirementinvestments.com"){
-        $('.sgem-hmhcia-logo-center').hide();  
+        $('.sgem-spc-logo-center').hide();  
     } else {
-        $('.sgem-hel-logo-center').show();  
+        $('.sgem-spc-logo-center').show();  
     }
 
     
