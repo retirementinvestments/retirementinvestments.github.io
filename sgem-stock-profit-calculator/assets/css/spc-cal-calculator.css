@@ -1113,6 +1113,19 @@ details.sgem-spc-details-disclaimer[open] > summary::after {
 }
 
 @media (max-width: 650px) {
+	
+	.sgem-spc-cal-left {
+		width: auto;
+	}
+	.sgem-spc-cal-wrapper {    
+		flex-direction: column;
+	}
+	.sgem-spc-cal-right {
+		width: auto;
+	}
+	.sgem-spc-cal-1-result-footer .sgem-spc-content {    
+		flex-direction: column;
+	}
 
 	.sgem-spc-cal-left-add-class .sgem-spc-cal-1 .sgem-spc-form-flex.sgem-spc-currency-holder::after {	
 		/*top: 40px;*/
