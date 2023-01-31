@@ -894,7 +894,7 @@ details.sgem-spc-details-disclaimer[open] > summary::after {
     font-size: 0.8em;*/
 }
 .sgem-spc-cal-left.sgem-spc-cal-left-add-class {
-    width: 33%;
+    /*width: 33%;*/
     padding: 12px;
 }
 .sgem-spc-cal-left-add-class .sgem-spc-cal-1 .sgem-spc-flex-container {
@@ -915,7 +915,7 @@ details.sgem-spc-details-disclaimer[open] > summary::after {
     width: 67%;
 }
 .sgem-spc-cal-right-add-class .sgem-spc-cal-1-result-wrapper .sgem-spc-result-label {
-    font-size: 1em;
+    /*font-size: 1em;*/
 }
 .sgem-spc-cal-right-add-class .sgem-spc-cal-1-result-wrapper {
     padding: 20px 20px;
