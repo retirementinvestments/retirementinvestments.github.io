@@ -971,7 +971,7 @@ details.sgem-spc-details-disclaimer[open] > summary::after {
 /* ************ ************ */
 
 .sgem-switch-flex{
-	flex-direction: column;
+	flex-direction: column !important;
 }
 
 
