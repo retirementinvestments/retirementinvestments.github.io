@@ -202,9 +202,12 @@ var profit_loss = sold_for - bought_for;
         $('#sgem_spc_cal_loss_profit_val').text('$0');
 
     } else {
-
 		if(profit_loss<0){
-			$('#sgem_spc_cal_loss_profit_val').text(numberWithCommas(profit_loss));
+			var profit_loss_val = numberWithCommas(profit_loss);
+			if(profit_loss_val.charAt(0)==='-'){
+				profit_loss_val = profit_loss_val.slice(1);
+			}
+			$('#sgem_spc_cal_loss_profit_val').text('- $'+profit_loss_val);
 		}else{
 			$('#sgem_spc_cal_loss_profit_val').text('$'+numberWithCommas(profit_loss));
 		}        
