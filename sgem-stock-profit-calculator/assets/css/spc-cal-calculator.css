@@ -746,7 +746,7 @@
     width: fit-content;
     display: flex;
     flex-direction: row;
-	width: 484px;
+	min-width: 484px;
 }
 .sgem-spc-cal-1-result-footer .sgem-spc-content .sgem-spc-content-block{
     display: flex;
