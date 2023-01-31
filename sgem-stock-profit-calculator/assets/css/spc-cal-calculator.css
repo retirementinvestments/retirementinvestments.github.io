@@ -972,8 +972,12 @@ details.sgem-spc-details-disclaimer[open] > summary::after {
 
 .sgem-switch-flex{
 	flex-direction: column !important;
+	width: auto;
 }
-
+.sgem-switch-font{
+	font-size: 32px !important;
+    line-height: 44px !important;
+}
 
 /* ************ ************ */
 
