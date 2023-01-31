@@ -244,7 +244,7 @@ jQuery(document).ready(function($){
     }
 
     
-	alert("1");
+	
 	
 	if ($('#sgem_spc_shares_value,#sgem_spc_purchase_price,#sgem_spc_sell_price,#sgem_spc_buy_commission,#sgem_spc_sell_commission').length > 0) {
 		$('#sgem_spc_shares_value,#sgem_spc_purchase_price,#sgem_spc_sell_price,#sgem_spc_buy_commission,#sgem_spc_sell_commission').on('keyup', function() {
@@ -267,7 +267,7 @@ jQuery(document).ready(function($){
 
     //Validations-------------------------------------------------------------------
 	
-	alert("2");
+
 	
 	// No of shares
     $('#sgem_spc_shares_value').on('keyup', function () {
@@ -289,7 +289,7 @@ jQuery(document).ready(function($){
     });
 
 
-	alert("val 1");
+	
 	
     // purchase price
     $('#sgem_spc_purchase_price').on('keyup', function () {
@@ -369,12 +369,12 @@ jQuery(document).ready(function($){
 
     //------------------------------------------------------------------------------
 
-	alert("3");
+	
 	
     sgem_spc_calculation();
 	
 	
-	alert("4");
+
 
     if ($('.sgem-spc-cal-wrapper').width() < 1024) {
         $('.sgem-spc-cal-left').addClass('sgem-spc-cal-left-add-class');
@@ -385,14 +385,14 @@ jQuery(document).ready(function($){
     }
 
     if ($('.sgem-spc-cal-main-id').width() < 650) {
-		alert("in");
+		
         $('.sgem-spc-cal-wrapper').addClass('sgem-spc-wrapper-add-mobile');
-		$('.sgem-spc-content').addClass('sgem-switch-flex');
+		
 		$('.sgem-spc-cal-wrapper').addClass('sgem-switch-flex');
 		
     } else {
         $('.sgem-spc-cal-wrapper').removeClass('sgem-spc-wrapper-add-mobile');
-		$('.sgem-spc-content').removeClass('sgem-switch-flex');
+		
 		$('.sgem-spc-cal-wrapper').removeClass('sgem-switch-flex');
     }
 
