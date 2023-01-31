@@ -391,7 +391,7 @@ jQuery(document).ready(function($){
 		$('.sgem-spc-result-label').addClass('sgem-switch-font');
 		$('.sgem-spc-content-block').addClass('sgem-switch-padding');
 		
-		$('.sgem-spc-form-flex.sgem-first-flex').addClass('sgem-switch-margin-first');
+		$('.sgem-spc-cal-1 .sgem-spc-block-container .sgem-spc-block-inner-container .sgem-spc-form-flex.sgem-first-flex').addClass('sgem-switch-margin-first');
 		$('.sgem-spc-form-flex.sgem-second-flex').addClass('sgem-switch-margin-second');
 		
 		
@@ -402,7 +402,7 @@ jQuery(document).ready(function($){
 		$('.sgem-spc-result-label').removeClass('sgem-switch-font');
 		$('.sgem-spc-content-block').removeClass('sgem-switch-padding');
 		
-		$('.sgem-spc-form-flex.sgem-first-flex').removeClass('sgem-switch-margin');
+		$('.sgem-spc-cal-1 .sgem-spc-block-container .sgem-spc-block-inner-container .sgem-spc-form-flex.sgem-first-flex').removeClass('sgem-switch-margin');
 		$('.sgem-spc-form-flex.sgem-second-flex').removeClass('sgem-switch-margin-second');
     }
 

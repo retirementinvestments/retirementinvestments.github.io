@@ -985,12 +985,12 @@ details.sgem-spc-details-disclaimer[open] > summary::after {
 
 .sgem-switch-margin-first{
 	margin-right: 6px !important;
-    max-width: calc(50% - 6px);
+    max-width: calc(50% - 6px) !important;
 }
 
 .sgem-switch-margin-second{
 	margin-left: 6px !important;
-    max-width: calc(50% - 6px);
+    max-width: calc(50% - 6px) !important;
 }
 /* ************ ************ */
 
