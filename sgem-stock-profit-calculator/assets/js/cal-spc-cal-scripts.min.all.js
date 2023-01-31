@@ -90,6 +90,7 @@ var sgem_spc_main_contents =
 								'<div class="sgem-spc-content-block-value" id="sgem_spc_cal_sell_for_val">$24,750.00</div>'+
 							'</div>'+
 						'</div>'+
+						'<div class="sgem-spc-button-narration">Start investing in your favorite stocks and grow your stock portfolio commission-free.</div>'
 						'<div class="sgem-spc-buttonGet">'+
 							'<a href="https://retirementinvestments.com/stockcalculator/" target="_blank" class="sgem-spc-getStart" rel="noopener">Get Started</a>'+
 						'</div>'+
