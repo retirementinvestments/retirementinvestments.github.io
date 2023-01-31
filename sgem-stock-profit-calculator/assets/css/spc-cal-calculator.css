@@ -999,7 +999,7 @@ details summary::-webkit-details-marker {
 }
 
 .sgem-switch-min-width{
-	min-width: 0px;
+	min-width: 0px !important;
 }
 
 
