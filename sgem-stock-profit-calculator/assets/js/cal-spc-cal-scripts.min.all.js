@@ -288,6 +288,9 @@ $(document).ready(function() {
 	  }    
     });
 
+
+	alert("val 1");
+	
     // purchase price
     $('#sgem_spc_purchase_price').on('keyup', function () {
       var val = this.value;
@@ -366,8 +369,12 @@ $(document).ready(function() {
 
     //------------------------------------------------------------------------------
 
+	alert("3");
+	
     sgem_spc_calculation();
 	
+	
+	alert("4");
 
     if ($('.sgem-spc-cal-wrapper').width() < 1024) {
         $('.sgem-spc-cal-left').addClass('sgem-spc-cal-left-add-class');
