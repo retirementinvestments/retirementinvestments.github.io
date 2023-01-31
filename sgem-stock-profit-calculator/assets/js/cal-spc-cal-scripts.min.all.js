@@ -29,86 +29,103 @@ function(a){a.stopPropagation();a.preventDefault();return!1});m.hover(function()
 x();"bottom"===a.start?(c.css({top:b.outerHeight()-c.outerHeight()}),n(0,!0)):"top"!==a.start&&(n(e(a.start).position().top,null,!0),a.alwaysVisible||c.hide());window.addEventListener?(this.addEventListener("DOMMouseScroll",v,!1),this.addEventListener("mousewheel",v,!1)):document.attachEvent("onmousewheel",v)}});return this}});e.fn.extend({slimscroll:e.fn.slimScroll})})(jQuery);
 
 
-var sgem_hel_main_contents =
-	'<div class="sgem-hel-cal-main-id">'+
-		'<div class="sgem-hel-cal-wrapper">'+
-			'<div class="sgem-hel-cal-left">'+
-				'<div class="sgem-hel-form sgem-hel-cal-1">'+
-					'<div class="sgem-hel-block-container">'+
-						'<div class="sgem-hel-form-group sgem-hel-form-flex sgem-hel-currency-holder">'+
-							'<label>Appraised value of home '+
-								'<span class="sgem-hel-info-tooltip tooltip" data-tippy-size="small" data-tippy-content=" A formal assessment of the value of property prepared by a qualified appraiser. Mortgage lenders almost always require a property appraisal before approving a home loan.">?</span>'+
-							'</label>'+
-							'<input type="text" class="inputmove inputnumber" id="sgem_hel_appraised_value" value="160,000" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
-							'<span class="sgem_hel_err_msg" id="sgem_hel_err_purchase_the_item"></span>'+
+var sgem_spc_main_contents =
+	'<div class="sgem-spc-cal-main-id">'+
+		'<div class="sgem-spc-cal-wrapper">'+
+		
+			'<div class="sgem-spc-cal-left">'+
+				'<div class="sgem-spc-form sgem-spc-cal-1">'+
+					'<div class="sgem-spc-block-container">'+
+						'<div class="sgem-spc-form-group sgem-spc-form-flex sgem-spc-none-currency-holder">'+
+							'<label>Number of shares</label>'+
+							'<input type="text" class="inputmove inputnumber" id="sgem_spc_shares_value" value="1,000" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
+							'<span class="sgem_spc_err_msg" id="sgem_spc_err_shares_value"></span>'+
 						'</div>'+
 					'</div>'+
-					'<div class="sgem-hel-block-container">'+
-						'<div class="sgem-hel-form-group sgem-hel-form-flex sgem-hel-currency-holder">'+
-							'<label>How much do you owe on home '+
-								'<span class="sgem-hel-info-tooltip tooltip" data-tippy-size="small" data-tippy-content="Your current balance is the amount you currently still owe on the loan according to the date of your statement. This does not include interest that would be charged to the balance if you were to continue with your monthly payments. You can find this number on your monthly statement or online account.">?</span>'+
-							'</label>'+
-							'<input type="text"class="inputmove inputnumber" id="sgem_hel_owe_on_home" value="50,000" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
-							'<span class="sgem_hel_err_msg" id="sgem_hel_err_taxable_income"></span>'+
+					'<div class="sgem-spc-block-container">'+
+						'<div class="sgem-spc-block-inner-container">'+
+							'<div class="sgem-spc-form-group sgem-spc-form-flex sgem-spc-currency-holder sgem-first-flex">'+
+								'<label>Purchase price</label>'+
+								'<input type="text" class="inputmove inputnumber" id="sgem_spc_purchase_price" value="20" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
+								'<span class="sgem_spc_err_msg" id="sgem_spc_err_purchase_price"></span>'+
+							'</div>'+
+							'<div class="sgem-spc-form-group sgem-spc-form-flex sgem-spc-currency-holder sgem-second-flex">'+
+								'<label>Sell price</label>'+
+								'<input type="text" class="inputmove inputnumber" id="sgem_spc_sell_price" value="25" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
+								'<span class="sgem_spc_err_msg" id="sgem_spc_err_sell_price"></span>'+
+							'</div>'+
 						'</div>'+
-						'<div class="sgem-hel-form-group sgem-hel-form-flex sgem_hel_right_field_row">'+
-							'<label for="">Current credit score</label>'+
-							'<select id="sgem_hel_credit_score" class="sgem-hel-drop-selection" name="yearscount" onkeypress="return isNumber(event)">'+
-								'<option value="Excellent">Excellent (740+)</option>'+
-								'<option value="Good">Good (680-739)</option>'+
-								'<option value="Fair" selected>Fair (621-679)</option>'+
-								'<option value="Poor">Poor (< 620)</option>'+
-							'</select>'+
+						'<div class="sgem-spc-block-inner-container">'+
+							'<div class="sgem-spc-form-group sgem-spc-form-flex sgem-spc-currency-holder  sgem-first-flex">'+
+								'<label>Buy commission</label>'+
+								'<input type="text" class="inputmove inputnumber" id="sgem_spc_buy_commission" value="5" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
+								'<span class="sgem_spc_err_msg" id="sgem_spc_err_buy_commission"></span>'+
+							'</div>'+
+							'<div class="sgem-spc-form-group sgem-spc-form-flex sgem-spc-currency-holder sgem-second-flex">'+
+								'<label>Sell commission</label>'+
+								'<input type="text" class="inputmove inputnumber" id="sgem_spc_sell_commission" value="5" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
+								'<span class="sgem_spc_err_msg" id="sgem_spc_err_sell_commission"></span>'+
+							'</div>'+
 						'</div>'+
 					'</div>'+
 				'</div>'+
 			'</div>'+
 			
-			'<div class="sgem-hel-cal-right">'+
-				'<div class="sgem-hel-cal-1-result-wrapper">'+
-					'<div class="sgem-hel-flex-container sgem-hel-column2">'+
-						'<div class="sgem-hel-form-group sgem-hel-form-flex">'+
-							'<span class="futuretext sgem-result-value">YOU CAN GET A HOME EQUITY LOAN OR HELOC FOR</span>'+
-							'<div id="sgem_hel_loan_value" class="sgem-hel-result-label">$<span id="sgem_hel_cal_val_raw">26,250</span></div>'+
+			'<div class="sgem-spc-cal-right">'+
+				'<div class="sgem-spc-cal-1-result-wrapper">'+
+					'<div class="sgem-spc-flex-container sgem-spc-column2">'+
+						'<div class="sgem-spc-form-group sgem-spc-form-flex">'+
+							'<span class="futuretext sgem-result-value">YOUR PROFIT/LOSS</span>'+
+							'<div id="sgem_spc_loss_profit_result_value" class="sgem-spc-result-label"><span id="sgem_spc_cal_loss_profit_val">$4,550.00</span> (<span id="sgem_spc_cal_loss_profit_percantage">22.52</span>%)</div>'+
 						'</div>'+
 					'</div>'+
-					'<div class="sgem-hel-cal-1-result-footer">'+
-						'<div class="sgem-hel-content">Good news! Since your LTV is 73%, you may be eligible for a home equity loan or line of credit from one of our lending partners.</div>'+
-						'<div class="sgem-hel-buttonGet">'+
-							'<a href="https://retirementinvestments.com/homeequitycalculator/" target="_blank" class="sgem-hel-getStart" rel="noopener">Find my rate</a>'+
+					'<div class="sgem-spc-cal-1-result-footer">'+
+						'<div class="sgem-spc-content">'+
+							'<div class="sgem-spc-content-block sgem-spc-content-mobile-top">'+
+								'<div class="sgem-spc-content-block-name">BOUGHT FOR</div>'+
+								'<div class="sgem-spc-content-block-value" id="sgem_spc_cal_bought_for_val">$20,200.00</div>'+
+							'</div>'+
+							'<div class="sgem-spc-content-block sgem-spc-content-mobile-bottom">'+
+								'<div class="sgem-spc-content-block-name">SOLD FOR</div>'+
+								'<div class="sgem-spc-content-block-value" id="sgem_spc_cal_sell_for_val">$24,750.00</div>'+
+							'</div>'+
+						'</div>'+
+						'<div class="sgem-spc-buttonGet">'+
+							'<a href="https://retirementinvestments.com/stockcalculator/" target="_blank" class="sgem-spc-getStart" rel="noopener">Get Started</a>'+
 						'</div>'+
 					'</div>'+
-					'<div class="sgem-hel-section-disclaimer">'+
-						'<details class="sgem-hel-details-disclaimer">'+
+					'<div class="sgem-spc-section-disclaimer">'+
+						'<details class="sgem-spc-details-disclaimer">'+
 							'<summary>'+
-								'<div class="sgem-hel-collapsible-summary-disclaimer">Disclaimer</div>'+															
+								'<div class="sgem-spc-collapsible-summary-disclaimer">Disclaimer</div>'+
 							'</summary>'+
-							'<div class="sgem-hel-collapsible-text-disclaimer">This material is provided for general and educational purposes only; it is not intended to provide legal, tax or investment advice.</div>'+
+							'<div class="sgem-spc-collapsible-text-disclaimer">This material is provided for general and educational purpose only; it is not intended to provide legal, tax or investment advice.</div>'+
 						'</details>'+
 					'</div>'+
 				'</div>'+
-			'</div>'+
+			'</div>'+	
 		'</div>';	
 
 	
 if( (location.hostname != "calculatorstg.wpengine.com") || (location.hostname != "retirementinvestments.com") || (location.hostname != "staging.retirementinvestments.com") ){
-    sgem_hel_main_contents += '<div class="sgem-hel-logo-center">';
-    sgem_hel_main_contents += '<a class="sgem-hel-url-text" href="https://retirementinvestments.com/real-estate/home-equity-loan-calculator/" target="_blank" rel="noopener">Home Equity Loan Calculator&nbsp;</a>by&nbsp;Retirement Investments</div>';
+    sgem_spc_main_contents += '<div class="sgem-spc-logo-center">';
+    sgem_spc_main_contents += '<a class="sgem-spc-url-text" href="https://retirementinvestments.com/investing/stock-calculator/" target="_blank" rel="noopener">Stock Profit Calculator&nbsp;</a>by&nbsp;Retirement Investments</div>';
    
 }
     
 if(location.hostname == "calculatorstg.wpengine.com" || location.hostname == "retirementinvestments.com" || location.hostname == "staging.retirementinvestments.com"){
-    sgem_hel_main_contents += '<div class="sgem-hel-copy-option-panel">';
-    sgem_hel_main_contents += '<h3>Do you want to add this calculator into your website?</h3>';
-    sgem_hel_main_contents += '<div class="sgem-hel-copy-code-wrap">';
-    sgem_hel_main_contents += '<button class="sgem-hel-copy-code" id="sgem-hel-copy-code" onclick="sgem_hel_copyText(event)">Get Calculator</button>';
-    sgem_hel_main_contents += '</div></div></div>';
+    sgem_spc_main_contents += '<div class="sgem-spc-copy-option-panel">';
+    sgem_spc_main_contents += '<h3>Do you want to add this calculator into your website?</h3>';
+    sgem_spc_main_contents += '<div class="sgem-spc-copy-code-wrap">';
+    sgem_spc_main_contents += '<button class="sgem-spc-copy-code" id="sgem-spc-copy-code" onclick="sgem_spc_copyText(event)">Get Calculator</button>';
+    sgem_spc_main_contents += '</div></div></div>';
 }
 
-sgem_hel_main_contents += '</div>';  
+sgem_spc_main_contents += '</div>';  
 
-document.getElementById('sgem-hel-cal').innerHTML = sgem_hel_main_contents;
+document.getElementById('sgem-spc-cal').innerHTML = sgem_spc_main_contents;
  
+
 function isNumber(evt) {
     evt = (evt) ? evt : window.event;
     var charCode = (evt.which) ? evt.which : evt.keyCode;
@@ -119,65 +136,94 @@ function isNumber(evt) {
     return true;
 }
 
-// decimal points
-function decimalTwoPoints(x) {
-    return Number.parseFloat(x).toFixed(0);
-}
-// end
 
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
+
 window.onload = function() {
-    sgem_he_calculation();
+    sgem_spc_calculation();
 }
 
 
-function sgem_he_calculation() {
+function sgem_spc_calculation() {
 
-	var a_v_of_home3 = $('#sgem_hel_appraised_value').val().trim();
-	var a_v_of_home2 = a_v_of_home3.replace(/\,/g,'');
-	var a_v_of_home = parseInt(a_v_of_home2,10);
+var number_of_shares1 = $('#sgem_spc_shares_value').val().trim();
+var number_of_shares2 = number_of_shares1.replace(/\,/g, '');
+var number_of_shares = parseInt(number_of_shares2, 10);
 
-	var how_much_d_y_o_h3 = $('#sgem_hel_owe_on_home').val().trim();
-	var how_much_d_y_o_h2 = how_much_d_y_o_h3.replace(/\,/g,'');
-	var how_much_d_y_o_h = parseInt(how_much_d_y_o_h2,10);
+var purchase_price1 = $('#sgem_spc_purchase_price').val().trim();
+var purchase_price2 = purchase_price1.replace(/\,/g, '');
+var purchase_price = parseInt(purchase_price2, 10);
 
-	var current_credit_score = $('#sgem_hel_credit_score').val();
+var sell_price1 = $('#sgem_spc_sell_price').val().trim();
+var sell_price2 = sell_price1.replace(/\,/g, '');
+var sell_price = parseInt(sell_price2, 10);
 
-	//Calculation
+var buy_com1 = $('#sgem_spc_buy_commission').val().trim();
+var buy_com2 = buy_com1.replace(/\,/g, '');
+var buy_com = parseInt(buy_com2, 10);
 
-	var home_equity_value = a_v_of_home - how_much_d_y_o_h;
-	var loan_to_value = how_much_d_y_o_h / a_v_of_home;
+var sell_com1 = $('#sgem_spc_sell_commission').val().trim();
+var sell_com2 = sell_com1.replace(/\,/g, '');
+var sell_com = parseInt(sell_com2, 10);
 
-	if (current_credit_score == "Poor"){
-		var h_e_l = 0;
-	}else{
-		var h_e_l1 = 0.85 * a_v_of_home;
-		var h_e_l = h_e_l1 - how_much_d_y_o_h;
-	}
+//Calculations
 
-	if (isNaN(h_e_l) || h_e_l < 1){
-		$('#sgem_hel_cal_val_raw').text('0'); 
-	}else{
-		$('#sgem_hel_cal_val_raw').text(numberWithCommas(decimalTwoPoints(h_e_l))); 
-	}
+var bought_for = (number_of_shares * purchase_price) + buy_com;
 
-	if (decimalTwoPoints(loan_to_value * 100) <= 80) {
-		$('.sgem-hel-content').text('Good news! Since your LTV is '+ decimalTwoPoints(loan_to_value*100) +'%, you may be eligible for a home equity loan or line of credit from one of our lending partners.'); 
-	} else {
-		$('.sgem-hel-content').text('Most home equity lenders look for a loan-to-value (LTV) ratio under 80%. Since your LTV is '+ decimalTwoPoints(loan_to_value*100) +'%, a personal loan could be a better choice for you.'); 
-	}
+    if (isNaN(bought_for)) {
+
+        $('#sgem_spc_cal_bought_for_val').text('0');
+
+    } else {
+
+        $('#sgem_spc_cal_bought_for_val').text('$'+numberWithCommas(bought_for));
+    }
+    
+
+var sold_for = (number_of_shares * sell_price) - sell_com;
+
+   if (isNaN(sold_for)) {
+
+        $('#sgem_spc_cal_sell_for_val').text('0');
+
+    } else {
+
+        $('#sgem_spc_cal_sell_for_val').text('$'+numberWithCommas(sold_for));
+    }
+
+var profit_loss = sold_for - bought_for;
+
+    if (isNaN(profit_loss)) {
+
+        $('#sgem_spc_cal_loss_profit_val').text('$0');
+
+    } else {
+
+        $('#sgem_spc_cal_loss_profit_val').text('$'+numberWithCommas(profit_loss));
+    }
+
+var profit_percentage = ((profit_loss / bought_for) * 100).toFixed(2);
+
+    if (isNaN(profit_percentage)) {
+
+        $('#sgem_spc_cal_loss_profit_percantage').text('0');
+
+    } else {
+
+        $('#sgem_spc_cal_loss_profit_percantage').text(profit_percentage);
+    }
+
+
 }
 
 
 $(document).ready(function() {
 	
 	
-	$('#sgem_hel_credit_score').on('change' , function () {
-		sgem_he_calculation();
-	});
+	
 
     if( location.hostname == "calculatorstg.wpengine.com") {
         $('.sgem-hel-logo-center').hide(); 
@@ -190,110 +236,173 @@ $(document).ready(function() {
     }
 
     
-	if ($('#sgem_hel_appraised_value,#sgem_hel_owe_on_home').length > 0) {
-		$('#sgem_hel_appraised_value,#sgem_hel_owe_on_home').on('keyup', function() {
-			sgem_he_calculation();
+	if ($('#sgem_spc_shares_value,#sgem_spc_purchase_price,#sgem_spc_sell_price,#sgem_spc_buy_commission,#sgem_spc_sell_commission').length > 0) {
+		$('#sgem_spc_shares_value,#sgem_spc_purchase_price,#sgem_spc_sell_price,#sgem_spc_buy_commission,#sgem_spc_sell_commission').on('keyup', function() {
+
+			sgem_spc_calculation();
+
 			// Keep only digits and decimal points:
-			this.value = this.value.replace(/[^\d.]/g, "")
+			this.value=this.value.replace(/[^\d.]/g, "")
 			// Remove duplicated decimal point, if one exists:
-			this.value = this.value.replace(/^(\d*\.)(.*)\.(.*)$/, '$1$2$3')
+			this.value=this.value.replace(/^(\d*\.)(.*)\.(.*)$/, '$1$2$3')
 			// Keep only two digits past the decimal point:
-			this.value = this.value.replace(/\.(\d{0})\d+/, '')
+			this.value=this.value.replace(/\.(\d{0})\d+/, '')
 			// Add thousands separators:
-			this.value = this.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+			this.value=this.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 			// Removing front zero
-			this.value = this.value.replace(/^0+/, '');
+			this.value=this.value.replace(/^0+/, '');
+
 		});
 	}
-
 
     //Validations-------------------------------------------------------------------
 	
 	
-	// Appraised value of home
-	$('#sgem_hel_appraised_value').on('keyup', function() {
-		var cval = this.value;
-		var cxc = parseInt(cval);
-		if (isNaN(cxc) || $(this).val().length > 11) {
+	// No of shares
+    $('#sgem_spc_shares_value').on('keyup', function () {
+      var val = this.value;
+      var xcx = parseInt(val);
+      if (isNaN(xcx) || $(this).val().length>10){
+         
+        this.value ='';
+        $('#sgem_spc_err_shares_value').html('This cannot be empty or more than 900,000,000').fadeIn();  
+        $(this).css({"border": "1px solid red","background": "#FFCECE" });           
 
-			this.value = '';
-			$('#sgem_hel_err_purchase_the_item').html('This cannot be empty or more than $900,000,000').fadeIn();
-			$(this).css({
-				"border": "1px solid red",
-				"background": "#FFCECE"
-			});
+	  }else{
+		$('#sgem_spc_err_shares_value').html('').fadeOut();  
+		$(this).css({
+			"border": "1px solid #707070",
+			"background": "#ffffff"
+		}); 
+	  }    
+    });
 
+    // purchase price
+    $('#sgem_spc_purchase_price').on('keyup', function () {
+      var val = this.value;
+      var xcxx = parseInt(val);
+      if (isNaN(xcxx) || $(this).val().length>11){
+         
+        this.value ='';
+        $('#sgem_spc_err_purchase_price').html('This cannot be empty or more than $900,000,000').fadeIn();  
+        $(this).css({"border": "1px solid red","background": "#FFCECE" });            
 
-		} else {
-			$('#sgem_hel_err_purchase_the_item').html('').fadeOut();
-			$(this).css({
-				"border": "1px solid #707070",
-				"background": "#ffffff"
-			});
-		}
-	});
-	
-	// purchase price
-	$('#sgem_hel_owe_on_home').on('keyup', function() {
-		var val = this.value;
-		var xc = parseInt(val);
-		if (isNaN(xc) || $(this).val().length > 11) {
+	  }else{
+		$('#sgem_spc_err_purchase_price').html('').fadeOut();  
+		$(this).css({
+			"border": "1px solid #707070",
+			"background": "#ffffff"
+		}); 
+	  }    
+    });
 
-			this.value = '';
-			$('#sgem_hel_err_taxable_income').html('This cannot be empty or more than $900,000,000').fadeIn();
-			$(this).css({
-				"border": "1px solid red",
-				"background": "#FFCECE"
-			});
+ // sell price
+    $('#sgem_spc_sell_price').on('keyup', function () {
+      var val = this.value;
+      var xcz = parseInt(val);
+      if (isNaN(xcz) || $(this).val().length>11){
+         
+        this.value ='';
+        $('#sgem_spc_err_sell_price').html('This cannot be empty or more than $900,000,000').fadeIn();  
+        $(this).css({"border": "1px solid red","background": "#FFCECE" });           
 
+	  }else{
+		$('#sgem_spc_err_sell_price').html('').fadeOut();  
+		$(this).css({
+			"border": "1px solid #707070",
+			"background": "#ffffff"
+		}); 
+	  }    
+    });
 
-		} else {
-			$('#sgem_hel_err_taxable_income').html('').fadeOut();
-			$(this).css({
-				"border": "1px solid #707070",
-				"background": "#ffffff"
-			});
-		}
-	});		
+     // buy com
+    $('#sgem_spc_buy_commission').on('keyup', function () {
+      var val = this.value;
+      var xs = parseInt(val);
+      if (isNaN(xs) || $(this).val().length>11){
+         
+         this.value ='';
+         $('#sgem_spc_err_buy_commission').html('This cannot be empty or more than $900,000,000').fadeIn();  
+         $(this).css({"border": "1px solid red","background": "#FFCECE" });
+
+	  }else{
+		$('#sgem_spc_err_buy_commission').html('').fadeOut();  
+		$(this).css({
+			"border": "1px solid #707070",
+			"background": "#ffffff"
+		}); 
+	  }    
+    });
+
+  // sell com
+    $('#sgem_spc_sell_commission').on('keyup', function () {
+      var val = this.value;
+      var xsa = parseInt(val);
+      if (isNaN(xsa) || $(this).val().length>11){
+         
+        this.value ='';
+        $('#sgem_spc_err_sell_commission').html('This cannot be empty or more than $900,000,000').fadeIn();  
+        $(this).css({"border": "1px solid red","background": "#FFCECE" });
+
+	  }else{
+		$('#sgem_spc_err_sell_commission').html('').fadeOut();  
+		$(this).css({
+			"border": "1px solid #707070",
+			"background": "#ffffff"
+		}); 
+	  }    
+    });	
 
     //------------------------------------------------------------------------------
 
-    sgem_he_calculation();
+    sgem_spc_calculation();
 	
 
-    if ($('.sgem-hel-cal-wrapper').width() < 1024) {
-        $('.sgem-hel-cal-left').addClass('sgem-hel-cal-left-add-class');
-        $('.sgem-hel-cal-right').addClass('sgem-hel-cal-right-add-class');
+    if ($('.sgem-spc-cal-wrapper').width() < 1024) {
+        $('.sgem-spc-cal-left').addClass('sgem-spc-cal-left-add-class');
+        $('.sgem-spc-cal-right').addClass('sgem-spc-cal-right-add-class');
     } else {
-        $('.sgem-hel-cal-left').removeClass('sgem-hel-cal-left-add-class');
-        $('.sgem-hel-cal-right').removeClass('sgem-hel-cal-right-add-class');
+        $('.sgem-spc-cal-left').removeClass('sgem-spc-cal-left-add-class');
+        $('.sgem-spc-cal-right').removeClass('sgem-spc-cal-right-add-class');
     }
 
-    if ($('.sgem-hel-cal-main-id').width() < 650) {
-        $('.sgem-hel-cal-wrapper').addClass('sgem-hel-wrapper-add-mobile');
+    if ($('.sgem-spc-cal-main-id').width() < 650) {
+        $('.sgem-spc-cal-wrapper').addClass('sgem-spc-wrapper-add-mobile');
     } else {
-        $('.sgem-hel-cal-wrapper').removeClass('sgem-hel-wrapper-add-mobile');
+        $('.sgem-spc-cal-wrapper').removeClass('sgem-spc-wrapper-add-mobile');
     }
 
     $(window).on('resize', function() {
-        if ($('.sgem-hel-cal-wrapper').width() < 1024) {
-            $('.sgem-hel-cal-left').addClass('sgem-hel-cal-left-add-class');
-            $('.sgem-hel-cal-right').addClass('sgem-hel-cal-right-add-class');
+        if ($('.sgem-spc-cal-wrapper').width() < 1024) {
+            $('.sgem-spc-cal-left').addClass('sgem-spc-cal-left-add-class');
+            $('.sgem-spc-cal-right').addClass('sgem-spc-cal-right-add-class');
         } else {
-            $('.sgem-hel-cal-left').removeClass('sgem-hel-cal-left-add-class');
-            $('.sgem-hel-cal-right').removeClass('sgem-hel-cal-right-add-class');
+            $('.sgem-spc-cal-left').removeClass('sgem-spc-cal-left-add-class');
+            $('.sgem-spc-cal-right').removeClass('sgem-spc-cal-right-add-class');
         }
     }).trigger('resize');
 
     $(window).on('resize', function() {
-        if ($('.sgem-hel-cal-main-id').width() < 650) {
-            $('.sgem-hel-cal-wrapper').addClass('sgem-hel-wrapper-add-mobile');
+        if ($('.sgem-spc-cal-main-id').width() < 650) {
+            $('.sgem-spc-cal-wrapper').addClass('sgem-spc-wrapper-add-mobile');
         } else {
-            $('.sgem-hel-cal-wrapper').removeClass('sgem-hel-wrapper-add-mobile');
+            $('.sgem-spc-cal-wrapper').removeClass('sgem-spc-wrapper-add-mobile');
         }
     }).trigger('resize');
 
 
+	//Minus Color change
+	$("body").on('DOMSubtreeModified', "#sgem_spc_cal_loss_profit_val", function() {
+        var minusFigure = $("#sgem_spc_cal_loss_profit_val").html();
+        if(minusFigure.startsWith("-")){
+            $("#sgem_spc_loss_profit_result_value").addClass("sgem-spc-result-minus-figure");
+        }else{
+            if($("#sgem_spc_loss_profit_result_value").hasClass("sgem-spc-result-minus-figure")){
+                $("#sgem_spc_loss_profit_result_value").removeClass("sgem-spc-result-minus-figure");
+            }
+        }
+    });
+	
 });
 
 // DOCUMENT.READY END
@@ -307,12 +416,12 @@ tippy('[data-tippy-content]', {
 	size: 'small'
 });
 
-localStorage.setItem('sgem-hel-cal-copy', '<div id="sgem-hel-cal"></div><script>window.onload = function() {var sgemhelcal = document.createElement("script");sgemhelcal.type = "text/javascript";sgemhelcal.src = "https://retirementinvestments.github.io/sgem-home-equity-loan-calculator/assets/js/cal-hel-cal-scripts.min.js";document.body.appendChild(sgemhelcal);} </script>'); 
- 
-function sgem_hel_copyText(ev){
+localStorage.setItem('sgem-spc-cal-copy', '<div id="sgem-spc-cal"></div><script>window.onload = function() {var sgemspccal = document.createElement("script");sgemspccal.type = "text/javascript";sgemspccal.src = "https://retirementinvestments.github.io/sgem-stock-profit-calculator/assets/js/cal-spc-cal-scripts.min.js";document.body.appendChild(sgemspccal);} </script>'); 
+
+function sgem_spc_copyText(ev){
   //console.log("hi");
   let div = document.getElementById('div');
-  let text = localStorage.getItem('sgem-hel-cal-copy');
+  let text = localStorage.getItem('sgem-spc-cal-copy');
   let textArea  = document.createElement('textarea');
   textArea.width  = "1px"; 
   textArea.height = "1px";
