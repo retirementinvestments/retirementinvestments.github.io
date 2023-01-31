@@ -962,13 +962,21 @@ details.sgem-spc-details-disclaimer[open] > summary::after {
 .sgem-spc-wrapper-add-mobile .sgem-spc-cal-1 .sgem-spc-block-container .sgem-spc-form-flex{
 	padding-right: 0px;
 }
-.sgem-spc-content-mobile{
-}
+
 .sgem-spc-content-mobile-top{
 }
 .sgem-spc-button-narration{
 	padding-top : 25px;
 }
+/* ************ ************ */
+
+.sgem-switch-flex{
+	flex-direction: column;
+}
+
+
+/* ************ ************ */
+
 
 /* ******** ipad ************ */
 @media (max-width:1024px) {
