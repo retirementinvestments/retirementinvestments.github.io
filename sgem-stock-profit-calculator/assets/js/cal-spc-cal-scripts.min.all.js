@@ -203,7 +203,11 @@ var profit_loss = sold_for - bought_for;
 
     } else {
 
-        $('#sgem_spc_cal_loss_profit_val').text('$'+numberWithCommas(profit_loss));
+		if(profit_loss<0){
+			$('#sgem_spc_cal_loss_profit_val').text(numberWithCommas(profit_loss));
+		}else{
+			$('#sgem_spc_cal_loss_profit_val').text('$'+numberWithCommas(profit_loss));
+		}        
     }
 
 var profit_percentage = ((profit_loss / bought_for) * 100).toFixed(2);
