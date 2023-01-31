@@ -745,13 +745,13 @@
     background-color: #F1F9FF;
     width: fit-content;
     display: flex;
-    flex-direction: row;
-	min-width: 484px;
+    flex-direction: row;	
 }
 .sgem-spc-cal-1-result-footer .sgem-spc-content .sgem-spc-content-block{
     display: flex;
     flex-direction: column;
     padding: 30px 40px;
+	min-width: 151px;
 }
 .sgem-spc-cal-1-result-footer .sgem-spc-content .sgem-spc-content-block .sgem-spc-content-block-name{
     font-size: 16px;
