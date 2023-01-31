@@ -230,7 +230,7 @@ window.onload = function() {
 
 
 
-$(document).ready(function() {
+jQuery(document).ready(function($){
 	
 
     if( location.hostname == "calculatorstg.wpengine.com") {
