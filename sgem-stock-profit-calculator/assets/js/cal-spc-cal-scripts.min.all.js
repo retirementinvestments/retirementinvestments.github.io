@@ -379,9 +379,11 @@ jQuery(document).ready(function($){
     if ($('.sgem-spc-cal-wrapper').width() < 1024) {
         $('.sgem-spc-cal-left').addClass('sgem-spc-cal-left-add-class');
         $('.sgem-spc-cal-right').addClass('sgem-spc-cal-right-add-class');
+		$('.sgem-spc-content-block-value').addClass('sgem-switch-min-width');
     } else {
         $('.sgem-spc-cal-left').removeClass('sgem-spc-cal-left-add-class');
         $('.sgem-spc-cal-right').removeClass('sgem-spc-cal-right-add-class');
+		$('.sgem-spc-content-block-value').removeClass('sgem-switch-min-width');
     }
 
     if ($('.sgem-spc-cal-main-id').width() < 650) {		
@@ -394,8 +396,6 @@ jQuery(document).ready(function($){
 		$('.sgem-spc-cal-1 .sgem-spc-block-container .sgem-spc-block-inner-container .sgem-spc-form-flex.sgem-first-flex').addClass('sgem-switch-margin-first');
 		$('.sgem-spc-form-flex.sgem-second-flex').addClass('sgem-switch-margin-second');
 		
-		$('.sgem-spc-content-block-value').addClass('sgem-switch-min-width');
-		
 		
     } else {
         $('.sgem-spc-cal-wrapper').removeClass('sgem-spc-wrapper-add-mobile');
@@ -407,16 +407,18 @@ jQuery(document).ready(function($){
 		$('.sgem-spc-cal-1 .sgem-spc-block-container .sgem-spc-block-inner-container .sgem-spc-form-flex.sgem-first-flex').removeClass('sgem-switch-margin');
 		$('.sgem-spc-form-flex.sgem-second-flex').removeClass('sgem-switch-margin-second');
 		
-		$('.sgem-spc-content-block-value').removeClass('sgem-switch-min-width');
+		
     }
 
     $(window).on('resize', function() {
         if ($('.sgem-spc-cal-wrapper').width() < 1024) {
             $('.sgem-spc-cal-left').addClass('sgem-spc-cal-left-add-class');
             $('.sgem-spc-cal-right').addClass('sgem-spc-cal-right-add-class');
+			$('.sgem-spc-content-block-value').addClass('sgem-switch-min-width');
         } else {
             $('.sgem-spc-cal-left').removeClass('sgem-spc-cal-left-add-class');
             $('.sgem-spc-cal-right').removeClass('sgem-spc-cal-right-add-class');
+			$('.sgem-spc-content-block-value').removeClass('sgem-switch-min-width');
         }
     }).trigger('resize');
 
@@ -430,9 +432,6 @@ jQuery(document).ready(function($){
 			
 			$('.sgem-spc-form-flex.sgem-first-flex').addClass('sgem-switch-margin-first');
 			$('.sgem-spc-form-flex.sgem-second-flex').addClass('sgem-switch-margin-second');
-			
-			$('.sgem-spc-content-block-value').addClass('sgem-switch-min-width');
-		
 		
         } else {
             $('.sgem-spc-cal-wrapper').removeClass('sgem-spc-wrapper-add-mobile');
@@ -444,7 +443,6 @@ jQuery(document).ready(function($){
 			$('.sgem-spc-form-flex.sgem-first-flex').removeClass('sgem-switch-margin');
 			$('.sgem-spc-form-flex.sgem-second-flex').removeClass('sgem-switch-margin-second');
 			
-			$('.sgem-spc-content-block-value').removeClass('sgem-switch-min-width');
         }
     }).trigger('resize');
 
