@@ -335,7 +335,7 @@
     font-weight: 300;
 }
 .sgem-spc-buttonGet{
-    margin-top: 39px;
+    margin-top: 25px;
     display: flex;
 }
 .sgem-spc-cal-1-result-footer .sgem-spc-getStart {
@@ -967,7 +967,7 @@ details.sgem-spc-details-disclaimer[open] > summary::after {
 .sgem-spc-content-mobile-top{
 }
 .sgem-spc-button-narration{
-	padding-top : 15px;
+	padding-top : 25px;
 }
 
 /* ******** ipad ************ */
