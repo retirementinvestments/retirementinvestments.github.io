@@ -276,7 +276,7 @@ jQuery(document).ready(function($){
       if (isNaN(xcx) || $(this).val().length>11){
          
         this.value ='';
-        $('#sgem_spc_err_shares_value').html('This cannot be empty or more than 900,000,000').fadeIn();  
+        $('#sgem_spc_err_shares_value').html('This cannot be empty or more than 999,999,999').fadeIn();  
         $(this).css({"border": "1px solid red","background": "#FFCECE" });           
 
 	  }else{
@@ -298,7 +298,7 @@ jQuery(document).ready(function($){
       if (isNaN(xcxx) || $(this).val().length>11){
          
         this.value ='';
-        $('#sgem_spc_err_purchase_price').html('This cannot be empty or more than $900,000,000').fadeIn();  
+        $('#sgem_spc_err_purchase_price').html('This cannot be empty or more than $999,999,999').fadeIn();  
         $(this).css({"border": "1px solid red","background": "#FFCECE" });            
 
 	  }else{
@@ -317,7 +317,7 @@ jQuery(document).ready(function($){
       if (isNaN(xcz) || $(this).val().length>11){
          
         this.value ='';
-        $('#sgem_spc_err_sell_price').html('This cannot be empty or more than $900,000,000').fadeIn();  
+        $('#sgem_spc_err_sell_price').html('This cannot be empty or more than $999,999,999').fadeIn();  
         $(this).css({"border": "1px solid red","background": "#FFCECE" });           
 
 	  }else{
@@ -336,7 +336,7 @@ jQuery(document).ready(function($){
       if (isNaN(xs) || $(this).val().length>11){
          
          this.value ='';
-         $('#sgem_spc_err_buy_commission').html('This cannot be empty or more than $900,000,000').fadeIn();  
+         $('#sgem_spc_err_buy_commission').html('This cannot be empty or more than $999,999,999').fadeIn();  
          $(this).css({"border": "1px solid red","background": "#FFCECE" });
 
 	  }else{
@@ -355,7 +355,7 @@ jQuery(document).ready(function($){
       if (isNaN(xsa) || $(this).val().length>11){
          
         this.value ='';
-        $('#sgem_spc_err_sell_commission').html('This cannot be empty or more than $900,000,000').fadeIn();  
+        $('#sgem_spc_err_sell_commission').html('This cannot be empty or more than $999,999,999').fadeIn();  
         $(this).css({"border": "1px solid red","background": "#FFCECE" });
 
 	  }else{
