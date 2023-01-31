@@ -1080,16 +1080,20 @@ details.sgem-spc-details-disclaimer[open] > summary::after {
         padding-bottom: 20px;
     }
 }
-@media (max-width: 810px) {	
+@media (max-width: 821px) {	
 	.sgem-spc-cal-left-add-class .sgem-spc-cal-1 .sgem-spc-form-group label {
 		/*font-size: 0.75em;*/
 	}
 	.sgem-spc-cal-right-add-class .sgem-spc-cal-1-result-footer .sgem-spc-content {
-		/*font-size: 0.8em;*/
+		flex-direction: column;
+		width: auto;
 	}
 	.sgem-spc-cal-right-add-class .sgem-spc-form-flex .sgem-result-value{
 		/*font-size: 1em;*/
 	}
+	
+	
+	
 	.sgem-spc-cal-1 .sgem-spc-block-container .sgem-spc-form-flex{
 		padding-right: 0px;
 	}
