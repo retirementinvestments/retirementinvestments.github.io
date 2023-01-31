@@ -384,15 +384,14 @@ jQuery(document).ready(function($){
         $('.sgem-spc-cal-right').removeClass('sgem-spc-cal-right-add-class');
     }
 
-    if ($('.sgem-spc-cal-main-id').width() < 650) {
-		
+    if ($('.sgem-spc-cal-main-id').width() < 650) {		
         $('.sgem-spc-cal-wrapper').addClass('sgem-spc-wrapper-add-mobile');
-		
+		$('.sgem-spc-content').addClass('sgem-switch-flex');
 		$('.sgem-spc-cal-wrapper').addClass('sgem-switch-flex');
 		
     } else {
         $('.sgem-spc-cal-wrapper').removeClass('sgem-spc-wrapper-add-mobile');
-		
+		$('.sgem-spc-content').removeClass('sgem-switch-flex');
 		$('.sgem-spc-cal-wrapper').removeClass('sgem-switch-flex');
     }
 
@@ -409,11 +408,11 @@ jQuery(document).ready(function($){
     $(window).on('resize', function() {
         if ($('.sgem-spc-cal-main-id').width() < 650) {
             $('.sgem-spc-cal-wrapper').addClass('sgem-spc-wrapper-add-mobile');
-			
+			$('.sgem-spc-content').addClass('sgem-switch-flex');
 			$('.sgem-spc-cal-wrapper').addClass('sgem-switch-flex');
         } else {
             $('.sgem-spc-cal-wrapper').removeClass('sgem-spc-wrapper-add-mobile');
-			
+			$('.sgem-spc-content').removeClass('sgem-switch-flex');
 			$('.sgem-spc-cal-wrapper').removeClass('sgem-switch-flex');
         }
     }).trigger('resize');
