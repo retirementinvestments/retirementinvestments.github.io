@@ -997,6 +997,13 @@ details summary::-webkit-details-marker {
 	margin-left: 6px !important;
     max-width: calc(50% - 6px) !important;
 }
+
+.sgem-switch-min-width{
+	min-width: 0px;
+}
+
+
+
 /* ************ ************ */
 
 
