@@ -983,6 +983,15 @@ details.sgem-spc-details-disclaimer[open] > summary::after {
 	padding: 20px 30px !important;
 }
 
+.sgem-switch-margin-first{
+	margin-right: 6px !important;
+    max-width: calc(50% - 6px);
+}
+
+.sgem-switch-margin-second{
+	margin-left: 6px !important;
+    max-width: calc(50% - 6px);
+}
 /* ************ ************ */
 
 
