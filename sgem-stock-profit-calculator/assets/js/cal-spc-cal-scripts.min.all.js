@@ -395,7 +395,7 @@ $(document).ready(function() {
 	//Minus Color change
 	$("body").on('DOMSubtreeModified', "#sgem_spc_cal_loss_profit_val", function() {
         var minusFigure = $("#sgem_spc_cal_loss_profit_val").html();
-        if(minusFigure.startsWith("-")){
+        if(minusFigure.includes("-")){
             $("#sgem_spc_loss_profit_result_value").addClass("sgem-spc-result-minus-figure");
         }else{
             if($("#sgem_spc_loss_profit_result_value").hasClass("sgem-spc-result-minus-figure")){
