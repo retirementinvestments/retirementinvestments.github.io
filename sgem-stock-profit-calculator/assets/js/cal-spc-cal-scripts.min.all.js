@@ -273,7 +273,7 @@ jQuery(document).ready(function($){
     $('#sgem_spc_shares_value').on('keyup', function () {
       var val = this.value;
       var xcx = parseInt(val);
-      if (isNaN(xcx) || $(this).val().length>10){
+      if (isNaN(xcx) || $(this).val().length>11){
          
         this.value ='';
         $('#sgem_spc_err_shares_value').html('This cannot be empty or more than 900,000,000').fadeIn();  
