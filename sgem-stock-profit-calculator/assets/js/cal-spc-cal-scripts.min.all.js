@@ -143,9 +143,6 @@ function numberWithCommas(x) {
 }
 
 
-window.onload = function() {
-    sgem_spc_calculation();
-}
 
 
 function sgem_spc_calculation() {
@@ -227,6 +224,11 @@ var profit_percentage = ((profit_loss / bought_for) * 100).toFixed(2);
 
 }
 
+window.onload = function() {
+    sgem_spc_calculation();
+}
+
+
 
 $(document).ready(function() {
 	
@@ -242,6 +244,8 @@ $(document).ready(function() {
     }
 
     
+	alert("1");
+	
 	if ($('#sgem_spc_shares_value,#sgem_spc_purchase_price,#sgem_spc_sell_price,#sgem_spc_buy_commission,#sgem_spc_sell_commission').length > 0) {
 		$('#sgem_spc_shares_value,#sgem_spc_purchase_price,#sgem_spc_sell_price,#sgem_spc_buy_commission,#sgem_spc_sell_commission').on('keyup', function() {
 
@@ -263,6 +267,7 @@ $(document).ready(function() {
 
     //Validations-------------------------------------------------------------------
 	
+	alert("2");
 	
 	// No of shares
     $('#sgem_spc_shares_value').on('keyup', function () {
