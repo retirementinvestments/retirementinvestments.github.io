@@ -750,8 +750,7 @@
 .sgem-spc-cal-1-result-footer .sgem-spc-content .sgem-spc-content-block{
     display: flex;
     flex-direction: column;
-    padding: 30px 40px;
-	min-width: 151px;
+    padding: 30px 40px;	
 }
 .sgem-spc-cal-1-result-footer .sgem-spc-content .sgem-spc-content-block .sgem-spc-content-block-name{
     font-size: 16px;
@@ -771,6 +770,7 @@
     font-family: 'DM Serif Display', serif;
     letter-spacing: 0px;
     margin-top: 7px;
+	min-width: 151px;
 }
 
 /* disclaimer styles */
