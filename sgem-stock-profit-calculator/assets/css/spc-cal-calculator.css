@@ -966,7 +966,9 @@ details.sgem-spc-details-disclaimer[open] > summary::after {
 }
 .sgem-spc-content-mobile-top{
 }
-
+.sgem-spc-button-narration{
+	padding-top : 15px;
+}
 
 /* ******** ipad ************ */
 @media (max-width:1024px) {
