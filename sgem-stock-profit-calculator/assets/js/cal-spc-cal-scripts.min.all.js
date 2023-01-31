@@ -230,8 +230,6 @@ var profit_percentage = ((profit_loss / bought_for) * 100).toFixed(2);
 
 $(document).ready(function() {
 	
-	
-	
 
     if( location.hostname == "calculatorstg.wpengine.com") {
         $('.sgem-spc-logo-center').hide(); 
@@ -375,6 +373,7 @@ $(document).ready(function() {
     }
 
     if ($('.sgem-spc-cal-main-id').width() < 650) {
+		alert("in");
         $('.sgem-spc-cal-wrapper').addClass('sgem-spc-wrapper-add-mobile');
 		$('.sgem-spc-content').addClass('sgem-switch-flex');
 		$('.sgem-spc-cal-wrapper').addClass('sgem-switch-flex');
