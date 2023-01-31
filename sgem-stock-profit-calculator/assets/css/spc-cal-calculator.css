@@ -865,6 +865,11 @@ details.sgem-spc-details-disclaimer[open] > summary::after {
     font-weight: 500;
 }
 
+details summary::-webkit-details-marker {
+  display:none !important;
+}
+
+
 /* add class js styles */
 .sgem-spc-cal-left-add-class .sgem-spc-cal-1 .sgem-spc-form-group label {
     /*font-size: 0.9em;*/
