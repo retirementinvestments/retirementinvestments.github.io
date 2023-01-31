@@ -1030,7 +1030,7 @@ details summary::-webkit-details-marker {
 		line-height: 69px;
 	}
 	.sgem-spc-cal-1-result-footer .sgem-spc-content .sgem-spc-content-block .sgem-spc-content-block-value{    
-		min-width: 151px;
+		min-width: 0px;
 	}
 }
 
