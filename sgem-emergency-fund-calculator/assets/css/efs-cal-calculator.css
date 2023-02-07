@@ -40,11 +40,11 @@
 }
 
 .sgem-efc-cal-left {
-    /* width: 545px;*/
-    padding: 15px 15px; 
+    width: 545px;
+    padding: 20px 20px; 
 }
 .sgem-efc-cal-right {
-    /*width: 781px;*/
+    width: 705px;
     /*height: 450px;*/
     background-color: #FFFFFF;
     display: flex;
