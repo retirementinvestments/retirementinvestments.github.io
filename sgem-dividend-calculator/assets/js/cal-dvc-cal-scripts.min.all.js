@@ -37,12 +37,12 @@ var sgem_dvc_main_contents = '<div class="sgem-dvc-cal-main-id">'+
                     '<div class="sgem-dvc-block-inner-container">'+
                         '<div class="sgem-dvc-form-group sgem-dvc-form-flex sgem-dvc-currency-holder sgem-first-flex">'+
                             '<label><div class="sgem-dvc-form-label-container"><span>Stock price</span><span class="sgem-dvc-info-tooltip tooltip" data-tippy-content="Stock Price per Share">?</span></div></label>'+
-                            '<input type="text" class="inputmove inputnumber" id="sgem_dvc_stock_price" value="100" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
+                            '<input type="text" class="inputmove inputnumber" id="sgem_dvc_stock_price" value="133" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
                             '<span class="sgem_dvc_err_msg" id="sgem_dvc_err_stock_price"></span>'+
                         '</div>'+
                         '<div class="sgem-dvc-form-group sgem-dvc-form-flex sgem-dvc-none-currency-holder sgem-second-flex">'+
                             '<label><div class="sgem-dvc-form-label-container"><span>Number of shares</span><span class="sgem-dvc-info-tooltip tooltip" data-tippy-content="Purchased number of shares">?</span></div></label>'+
-                            '<input type="text" class="inputmove inputnumber" id="sgem_dvc_no_of_shares" value="100" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
+                            '<input type="text" class="inputmove inputnumber" id="sgem_dvc_no_of_shares" value="412" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
                             '<span class="sgem_dvc_err_msg" id="sgem_dvc_err_no_of_shares"></span>'+
                         '</div>'+
                     '</div>'+
@@ -56,36 +56,36 @@ var sgem_dvc_main_contents = '<div class="sgem-dvc-cal-main-id">'+
                     '<div class="sgem-dvc-block-inner-container">'+
                         '<div class="sgem-dvc-form-group sgem-dvc-form-flex sgem-dvc-years-holder sgem-first-flex">'+
                             '<label><div class="sgem-dvc-form-label-container"><span>Holding period</span><span class="sgem-dvc-info-tooltip tooltip" data-tippy-content="How long you intend to hold your shares">?</span></div></label>'+
-                            '<input type="text" class="inputmove inputnumber" id="sgem_dvc_holding_period" value="10" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
+                            '<input type="text" class="inputmove inputnumber" id="sgem_dvc_holding_period" value="15" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
                             '<span class="sgem_dvc_err_msg" id="sgem_dvc_err_holding_period"></span>'+
                         '</div>'+
                         '<div class="sgem-dvc-form-group sgem-dvc-form-flex sgem-dvc-interest-precentage-holder sgem-second-flex">'+
                             '<label><div class="sgem-dvc-form-label-container"><span>Annual dividend yield</span><span class="sgem-dvc-info-tooltip tooltip" data-tippy-content="Current Dividend yield">?</span></div></label>'+
-                            '<input type="text" class="inputmove inputnumber" id="sgem_dvc_annual_dividend_yield" value="10,000" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
+                            '<input type="text" class="inputmove inputnumber" id="sgem_dvc_annual_dividend_yield" value="4.153" min="0" max="100000"/>'+
                             '<span class="sgem_dvc_err_msg" id="sgem_dvc_err_annual_dividend_yield"></span>'+
                         '</div>'+
                     '</div>'+
                     '<div class="sgem-dvc-block-inner-container">'+
                         '<div class="sgem-dvc-form-group sgem-dvc-form-flex sgem-dvc-currency-holder  sgem-first-flex">'+
                             '<label><div class="sgem-dvc-form-label-container"><span>Annual contribution</span><span class="sgem-dvc-info-tooltip tooltip" data-tippy-content="How much you will invest per year">?</span></div></label>'+
-                            '<input type="text" class="inputmove inputnumber" id="sgem_dvc_annual_contribution" value="10" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
+                            '<input type="text" class="inputmove inputnumber" id="sgem_dvc_annual_contribution" value="963" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
                             '<span class="sgem_dvc_err_msg" id="sgem_dvc_err_annual_contribution"></span>'+
                         '</div>'+
                         '<div class="sgem-dvc-form-group sgem-dvc-form-flex sgem-dvc-interest-precentage-holder sgem-second-flex">'+
                             '<label><div class="sgem-dvc-form-label-container"><span>Dividend tax rate</span><span class="sgem-dvc-info-tooltip tooltip" data-tippy-content="Anticipated dividend tax rate">?</span></div></label>'+
-                            '<input type="text" class="inputmove inputnumber" id="sgem_dvc_dividend_tax_rate" value="15" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
+                            '<input type="text" class="inputmove inputnumber" id="sgem_dvc_dividend_tax_rate" value="8.33" min="0" max="100000" />'+
                             '<span class="sgem_dvc_err_msg" id="sgem_dvc_err_dividend_tax_rate"></span>'+
                         '</div>'+
                     '</div>'+
                     '<div class="sgem-dvc-block-inner-container">'+
                         '<div class="sgem-dvc-form-group sgem-dvc-form-flex sgem-dvc-interest-precentage-holder  sgem-first-flex">'+
                             '<label><div class="sgem-dvc-form-label-container"><span class="sgem-dvc-form-label-block">Expected rise in dividend payout</span><span class="sgem-dvc-info-tooltip tooltip" data-tippy-content="How much will the dividend rise per year">?</span></div></label>'+
-                            '<input type="text" class="inputmove inputnumber" id="sgem_dvc_exp_dividend_payout_rise" value="10" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
+                            '<input type="text" class="inputmove inputnumber" id="sgem_dvc_exp_dividend_payout_rise" value="6.33" min="0" max="100000"/>'+
                             '<span class="sgem_dvc_err_msg" id="sgem_dvc_err_exp_dividend_payout_rise"></span>'+
                         '</div>'+
                         '<div class="sgem-dvc-form-group sgem-dvc-form-flex sgem-dvc-interest-precentage-holder sgem-second-flex">'+
                             '<label><div class="sgem-dvc-form-label-container"><span class="sgem-dvc-form-label-block">Expected rise in stock price P.A</span><span class="sgem-dvc-info-tooltip tooltip" data-tippy-content="How much will the shares gain per year">?</span></div></label>'+
-                            '<input type="text" class="inputmove inputnumber" id="sgem_dvc_ext_stock_price_rise" value="10" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
+                            '<input type="text" class="inputmove inputnumber" id="sgem_dvc_ext_stock_price_rise" value="4.321" min="0" max="100000"/>'+
                             '<span class="sgem_dvc_err_msg" id="sgem_dvc_err_ext_stock_price_rise"></span>'+
                         '</div>'+
                     '</div>'+
