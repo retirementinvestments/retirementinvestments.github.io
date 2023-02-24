@@ -1141,14 +1141,14 @@ details summary::-webkit-details-marker {
 .sgem-dvc-block-container input#sgem-dvc-cal-radio-yes:checked ~ .sgem-dvc-form-checkbox-style-tic1:before {
 
 
-    content: url(/wp-content/plugins/sgem-dividend-calculator/assets/images/fill-green-tic.svg);
+    content: url(../images/fill-green-tic.svg);
     /*content: url(/surge/sgem-devidend-calculator/assets/images/fill-green-tic.svg);*/
     position: absolute;
     right: 4px;
     top: 0px;
 }
 .sgem-dvc-block-container input#sgem-dvc-cal-radio-no:checked ~ .sgem-dvc-form-checkbox-style-tic2:before {
-    content: url(/wp-content/plugins/sgem-dividend-calculator/assets/images/fill-green-tic.svg);
+    content: url(../images/fill-green-tic.svg);
     /*content: url(/surge/sgem-devidend-calculator/assets/images/fill-green-tic.svg);*/
     position: absolute;
     right: 4px;
