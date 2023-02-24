@@ -29,88 +29,152 @@ function(a){a.stopPropagation();a.preventDefault();return!1});m.hover(function()
 x();"bottom"===a.start?(c.css({top:b.outerHeight()-c.outerHeight()}),n(0,!0)):"top"!==a.start&&(n(e(a.start).position().top,null,!0),a.alwaysVisible||c.hide());window.addEventListener?(this.addEventListener("DOMMouseScroll",v,!1),this.addEventListener("mousewheel",v,!1)):document.attachEvent("onmousewheel",v)}});return this}});e.fn.extend({slimscroll:e.fn.slimScroll})})(jQuery);
 
 
-var sgem_dvc_main_contents =
-	'<div class="sgem-spc-cal-main-id">'+
-		'<div class="sgem-spc-cal-wrapper">'+
-		
-			'<div class="sgem-spc-cal-left">'+
-				'<div class="sgem-spc-form sgem-spc-cal-1">'+
-					'<div class="sgem-spc-block-container">'+
-						'<div class="sgem-spc-form-group sgem-spc-form-flex sgem-spc-none-currency-holder">'+
-							'<label>Number of shares</label>'+
-							'<input type="text" class="inputmove inputnumber" id="sgem_spc_shares_value" value="1,000" min="0" max="1000000" onkeypress="return isNumber(event)"/>'+
-							'<span class="sgem_spc_err_msg" id="sgem_spc_err_shares_value"></span>'+
-						'</div>'+
-					'</div>'+
-					'<div class="sgem-spc-block-container">'+
-						'<div class="sgem-spc-block-inner-container">'+
-							'<div class="sgem-spc-form-group sgem-spc-form-flex sgem-spc-currency-holder sgem-first-flex">'+
-								'<label>Purchase price</label>'+
-								'<input type="text" class="inputmove inputnumber" id="sgem_spc_purchase_price" value="20" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
-								'<span class="sgem_spc_err_msg" id="sgem_spc_err_purchase_price"></span>'+
-							'</div>'+
-							'<div class="sgem-spc-form-group sgem-spc-form-flex sgem-spc-currency-holder sgem-second-flex">'+
-								'<label>Sell price</label>'+
-								'<input type="text" class="inputmove inputnumber" id="sgem_spc_sell_price" value="25" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
-								'<span class="sgem_spc_err_msg" id="sgem_spc_err_sell_price"></span>'+
-							'</div>'+
-						'</div>'+
-						'<div class="sgem-spc-block-inner-container">'+
-							'<div class="sgem-spc-form-group sgem-spc-form-flex sgem-spc-currency-holder  sgem-first-flex">'+
-								'<label>Buy commission</label>'+
-								'<input type="text" class="inputmove inputnumber" id="sgem_spc_buy_commission" value="5" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
-								'<span class="sgem_spc_err_msg" id="sgem_spc_err_buy_commission"></span>'+
-							'</div>'+
-							'<div class="sgem-spc-form-group sgem-spc-form-flex sgem-spc-currency-holder sgem-second-flex">'+
-								'<label>Sell commission</label>'+
-								'<input type="text" class="inputmove inputnumber" id="sgem_spc_sell_commission" value="5" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
-								'<span class="sgem_spc_err_msg" id="sgem_spc_err_sell_commission"></span>'+
-							'</div>'+
-						'</div>'+
-					'</div>'+
-				'</div>'+
-			'</div>'+
-			
-			'<div class="sgem-spc-cal-right">'+
-				'<div class="sgem-spc-cal-1-result-wrapper">'+
-					'<div class="sgem-spc-flex-container sgem-spc-column2">'+
-						'<div class="sgem-spc-form-group sgem-spc-form-flex">'+
-							'<span class="futuretext sgem-result-value">YOUR PROFIT/LOSS</span>'+
-							'<div id="sgem_spc_loss_profit_result_value" class="sgem-spc-result-label"><span id="sgem_spc_cal_loss_profit_val">$4,550.00</span> (<span id="sgem_spc_cal_loss_profit_percantage">22.52</span>%)</div>'+
-						'</div>'+
-					'</div>'+
-					'<div class="sgem-spc-cal-1-result-footer">'+
-						'<div class="sgem-spc-content">'+
-							'<div class="sgem-spc-content-block sgem-spc-content-mobile-top">'+
-								'<div class="sgem-spc-content-block-name">BOUGHT FOR</div>'+
-								'<div class="sgem-spc-content-block-value" id="sgem_spc_cal_bought_for_val">$20,200.00</div>'+
-							'</div>'+
-							'<div class="sgem-spc-content-block sgem-spc-content-mobile-bottom">'+
-								'<div class="sgem-spc-content-block-name">SOLD FOR</div>'+
-								'<div class="sgem-spc-content-block-value" id="sgem_spc_cal_sell_for_val">$24,750.00</div>'+
-							'</div>'+
-						'</div>'+
-						'<div class="sgem-spc-button-narration">Start investing in your favorite stocks and grow your stock portfolio commission-free.</div>'+
-						'<div class="sgem-spc-buttonGet">'+
-							'<a href="https://retirementinvestments.com/stockcalculator/" target="_blank" class="sgem-spc-getStart" rel="noopener">Get Started</a>'+
-						'</div>'+
-					'</div>'+
-					'<div class="sgem-spc-section-disclaimer">'+
-						'<details class="sgem-spc-details-disclaimer">'+
-							'<summary>'+
-								'<div class="sgem-spc-collapsible-summary-disclaimer">Disclaimer</div>'+
-							'</summary>'+
-							'<div class="sgem-spc-collapsible-text-disclaimer">This material is provided for general and educational purpose only; it is not intended to provide legal, tax or investment advice.</div>'+
-						'</details>'+
-					'</div>'+
-				'</div>'+
-			'</div>'+	
-		'</div>';	
+var sgem_dvc_main_contents = '<div class="sgem-dvc-cal-main-id">'+
+    '<div class="sgem-dvc-cal-wrapper">'+
+        '<div class="sgem-dvc-cal-left">'+
+            '<div class="sgem-dvc-form sgem-dvc-cal-1">'+
+                '<div class="sgem-dvc-block-container">'+
+                    '<div class="sgem-dvc-block-inner-container">'+
+                        '<div class="sgem-dvc-form-group sgem-dvc-form-flex sgem-dvc-currency-holder sgem-first-flex">'+
+                            '<label><div class="sgem-dvc-form-label-container"><span>Stock price</span><span class="sgem-dvc-info-tooltip tooltip" data-tippy-content="Stock Price per Share">?</span></div></label>'+
+                            '<input type="text" class="inputmove inputnumber" id="sgem_dvc_stock_price" value="100" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
+                            '<span class="sgem_dvc_err_msg" id="sgem_dvc_err_stock_price"></span>'+
+                        '</div>'+
+                        '<div class="sgem-dvc-form-group sgem-dvc-form-flex sgem-dvc-none-currency-holder sgem-second-flex">'+
+                            '<label><div class="sgem-dvc-form-label-container"><span>Number of shares</span><span class="sgem-dvc-info-tooltip tooltip" data-tippy-content="Purchased number of shares">?</span></div></label>'+
+                            '<input type="text" class="inputmove inputnumber" id="sgem_dvc_no_of_shares" value="100" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
+                            '<span class="sgem_dvc_err_msg" id="sgem_dvc_err_no_of_shares"></span>'+
+                        '</div>'+
+                    '</div>'+
+                    '<div class="sgem-dvc-block-container">'+
+                        '<div class="sgem-dvc-form-group sgem-dvc-form-flex sgem-dvc-currency-holder  sgem-first-flex">'+
+                            '<label><div class="sgem-dvc-form-label-container"><span>Investment amount</span><span class="sgem-dvc-info-tooltip tooltip" data-tippy-content="Your total investment">?</span></div></label>'+
+                            '<input type="text" class="inputmove inputnumber input-disable" id="sgem_dvc_invest_amount" value="10,000" min="0" max="100000" onkeypress="return isNumber(event)" disabled />'+
+                            '<span class="sgem_dvc_err_msg" id="sgem_dvc_err_invest_amount"></span>'+
+                        '</div>'+
+                    '</div>'+
+                    '<div class="sgem-dvc-block-inner-container">'+
+                        '<div class="sgem-dvc-form-group sgem-dvc-form-flex sgem-dvc-years-holder sgem-first-flex">'+
+                            '<label><div class="sgem-dvc-form-label-container"><span>Holding period</span><span class="sgem-dvc-info-tooltip tooltip" data-tippy-content="How long you intend to hold your shares">?</span></div></label>'+
+                            '<input type="text" class="inputmove inputnumber" id="sgem_dvc_holding_period" value="10" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
+                            '<span class="sgem_dvc_err_msg" id="sgem_dvc_err_holding_period"></span>'+
+                        '</div>'+
+                        '<div class="sgem-dvc-form-group sgem-dvc-form-flex sgem-dvc-interest-precentage-holder sgem-second-flex">'+
+                            '<label><div class="sgem-dvc-form-label-container"><span>Annual dividend yield</span><span class="sgem-dvc-info-tooltip tooltip" data-tippy-content="Current Dividend yield">?</span></div></label>'+
+                            '<input type="text" class="inputmove inputnumber" id="sgem_dvc_annual_dividend_yield" value="10,000" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
+                            '<span class="sgem_dvc_err_msg" id="sgem_dvc_err_annual_dividend_yield"></span>'+
+                        '</div>'+
+                    '</div>'+
+                    '<div class="sgem-dvc-block-inner-container">'+
+                        '<div class="sgem-dvc-form-group sgem-dvc-form-flex sgem-dvc-currency-holder  sgem-first-flex">'+
+                            '<label><div class="sgem-dvc-form-label-container"><span>Annual contribution</span><span class="sgem-dvc-info-tooltip tooltip" data-tippy-content="How much you will invest per year">?</span></div></label>'+
+                            '<input type="text" class="inputmove inputnumber" id="sgem_dvc_annual_contribution" value="10" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
+                            '<span class="sgem_dvc_err_msg" id="sgem_dvc_err_annual_contribution"></span>'+
+                        '</div>'+
+                        '<div class="sgem-dvc-form-group sgem-dvc-form-flex sgem-dvc-interest-precentage-holder sgem-second-flex">'+
+                            '<label><div class="sgem-dvc-form-label-container"><span>Dividend tax rate</span><span class="sgem-dvc-info-tooltip tooltip" data-tippy-content="Anticipated dividend tax rate">?</span></div></label>'+
+                            '<input type="text" class="inputmove inputnumber" id="sgem_dvc_dividend_tax_rate" value="15" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
+                            '<span class="sgem_dvc_err_msg" id="sgem_dvc_err_dividend_tax_rate"></span>'+
+                        '</div>'+
+                    '</div>'+
+                    '<div class="sgem-dvc-block-inner-container">'+
+                        '<div class="sgem-dvc-form-group sgem-dvc-form-flex sgem-dvc-interest-precentage-holder  sgem-first-flex">'+
+                            '<label><div class="sgem-dvc-form-label-container"><span class="sgem-dvc-form-label-block">Expected rise in dividend payout</span><span class="sgem-dvc-info-tooltip tooltip" data-tippy-content="How much will the dividend rise per year">?</span></div></label>'+
+                            '<input type="text" class="inputmove inputnumber" id="sgem_dvc_exp_dividend_payout_rise" value="10" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
+                            '<span class="sgem_dvc_err_msg" id="sgem_dvc_err_exp_dividend_payout_rise"></span>'+
+                        '</div>'+
+                        '<div class="sgem-dvc-form-group sgem-dvc-form-flex sgem-dvc-interest-precentage-holder sgem-second-flex">'+
+                            '<label><div class="sgem-dvc-form-label-container"><span class="sgem-dvc-form-label-block">Expected rise in stock price P.A</span><span class="sgem-dvc-info-tooltip tooltip" data-tippy-content="How much will the shares gain per year">?</span></div></label>'+
+                            '<input type="text" class="inputmove inputnumber" id="sgem_dvc_ext_stock_price_rise" value="10" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
+                            '<span class="sgem_dvc_err_msg" id="sgem_dvc_err_ext_stock_price_rise"></span>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="sgem-dvc-block-container">'+
+                    '<div class="sgem-dvc-form-group sgem-dvc-form-flex sgem-dvc-none-currency-holder">'+
+                        '<label>Dividend reinvestment plan<span class="sgem-dvc-info-tooltip tooltip" data-tippy-content="Is there a dividend reinvestment plan">?</span></label>'+
+                        '<form>'+
+                            '<input id="sgem-dvc-cal-radio-yes" type="radio" name="sgem-dvc-yes-no-radio" class="sgem-dvc-yes-radio" value="annual" onclick="isChecked()">'+
+                            '<span class="sgem-dvc-form-checkbox-style-tic1"></span>'+
+                            '<label class="sgem-dvc-label-tabs-check" for="sgem-dvc-cal-radio-yes">Yes</label>'+
+                            '<input id="sgem-dvc-cal-radio-no" type="radio" name="sgem-dvc-yes-no-radio" class="sgem-dvc-no-radio" value="monthly" checked="" onclick="isChecked()">'+
+                            '<span class="sgem-dvc-form-checkbox-style-tic2"></span>'+
+                            '<label class="sgem-dvc-label-tabs-check" for="sgem-dvc-cal-radio-no">No</label>'+
+                        '</form>'+
+                        '<span class="sgem_dvc_err_msg" id="sgem_dvc_err_shares_value"></span>'+
+                    '</div>'+
+                '</div>'+
+            '</div>'+
+        '</div>'+
+        '<div class="sgem-dvc-cal-right">'+
+            '<div class="sgem-dvc-cal-1-result-wrapper">'+
+                '<div class="sgem-dvc-flex-container sgem-dvc-column2">'+
+                    '<div class="sgem-dvc-form-group sgem-dvc-form-flex">'+
+                        '<span class="futuretext sgem-result-value">DIVIDEND AFTER 10 YEARS</span>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="sgem-dvc-cal-1-result-footer">'+
+                    '<div class="sgem-dvc-content">'+
+                        '<div class="sgem-dvc-content-block sgem-dvc-content-mobile-top">'+
+                            '<div class="sgem-dvc-content-block-name">ENDING BALANCE</div>'+
+                            '<div class="sgem-dvc-content-block-value" id="sgem_dvc_ending_balance_val">$41,874.84</div>'+
+                        '</div>'+
+                        '<div class="sgem-dvc-content-block sgem-dvc-content-mobile-bottom">'+
+                            '<div class="sgem-dvc-content-block-name">CUMULATIVE RETURN %</div>'+
+                            '<div class="sgem-dvc-content-block-value" id="sgem_dvc_cumulative_return_val">109.37%</div>'+
+                        '</div>'+
+                        '<div class="sgem-dvc-content-block sgem-dvc-content-mobile-top">'+
+                            '<div class="sgem-dvc-content-block-name">TOTAL DIVIDEND INCOME</div>'+
+                            '<div class="sgem-dvc-content-block-value" id="sgem_dvc_cal_tot_dividend_income_val">$12,741.36</div>'+
+                        '</div>'+
+                        '<div class="sgem-dvc-content-block sgem-dvc-content-mobile-top">'+
+                            '<div class="sgem-dvc-content-block-name">YIELD ON COST</div>'+
+                            '<div class="sgem-dvc-content-block-value" id="sgem_dvc_yield_on_cost_val">10.10%</div>'+
+                        '</div>'+
+                    '</div>'+
+                    '<div class="sgem-dvc-section-table-result">'+
+                        '<details class="sgem-dvc-details-table-result" open>'+
+                            '<summary>'+
+                                '<div class="sgem-dvc-collapsible-summary-table-result">PAYMENT SCHEDULE</div>'+
+                            '</summary>'+
+                            '<div class="sgem-dvc-collapsible-table-result" id="sgem-dvc-collapsible-table-result">'+
+                                '<table id="sgem_dvc_result_table" class="sgem_dvc_result_table">'+
+                                    '<thead>'+
+                                    '<tr>'+
+                                        '<th scope="col" style="width:10%;">Year</th>'+
+                                        '<th scope="col" style="width:16%;">Shared owned initially</th>'+
+                                        '<th scope="col" style="width:18%;">Starting stock price</th>'+
+                                        '<th scope="col" style="width:18%;">Annual contribution</th>'+
+                                        '<th scope="col" style="width:20%;">Year end dividend after tax</th>'+
+                                        '<th scope="col" style="width:18%;">Final balance after tax</th>'+
+                                    '</tr>'+
+                                    '</thead>'+
+                                    '<tbody id="sgem_dvc_result_table_body">'+
+                                    '</tbody>'+
+                                '</table>'+
+                            '</div>'+
+                        '</details>'+
+                    '</div>'+
+                    '<div class="sgem-dvc-buttonGet">'+
+                        '<a href="https://retirementinvestments.com/dividendcalculator/" target="_blank" class="sgem-dvc-getStart" rel="noopener">Get Started</a>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="sgem-dvc-section-disclaimer">'+
+                    '<details class="sgem-dvc-details-disclaimer">'+
+                        '<summary>'+
+                            '<div class="sgem-dvc-collapsible-summary-disclaimer">Disclaimer</div>'+
+                        '</summary>'+
+                        '<div class="sgem-dvc-collapsible-text-disclaimer">This material is provided for general and educational purpose only; it is not intended to provide legal, tax or investment advice.</div>'+
+                    '</details>'+
+                '</div>'+
+            '</div>'+
+        '</div>'+
+    '</div>';	
 
 	
 if( (location.hostname != "calculatorstg.wpengine.com") || (location.hostname != "retirementinvestments.com") || (location.hostname != "staging.retirementinvestments.com") ){
     sgem_dvc_main_contents += '<div class="sgem-dvc-logo-center">';
-    sgem_dvc_main_contents += '<a class="sgem-dvc-url-text" href="https://retirementinvestments.com/investing/stock-calculator/" target="_blank" rel="noopener">Stock Profit Calculator&nbsp;</a>by&nbsp;Retirement Investments</div>';
+    sgem_dvc_main_contents += '<a class="sgem-dvc-url-text" href="https://retirementinvestments.com/investing/dividend-calculator/" target="_blank" rel="noopener">Stock Profit Calculator&nbsp;</a>by&nbsp;Retirement Investments</div>';
    
 }
     
@@ -142,91 +206,553 @@ function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
+// decimal points
+function decimalTwoPoints(x) {
+    return Number.parseFloat(x).toFixed(0);
+}
+// end
 
 
+function sgem_dividend_calculationmin() {
+	
+	var holding_period = $('#sgem_dvc_holding_period').val().trim();
 
-function sgem_dvc_calculation() {
+    var stock_price3 = $('#sgem_dvc_stock_price').val().trim();
+    var stock_price2 = stock_price3.replace(/\,/g, '');
+    var stock_price = parseInt(stock_price2, 10);
 
-var number_of_shares1 = $('#sgem_spc_shares_value').val().trim();
-var number_of_shares2 = number_of_shares1.replace(/\,/g, '');
-var number_of_shares = parseInt(number_of_shares2, 10);
+    var number_of_shares3 = $('#sgem_dvc_no_of_shares').val().trim(); //issue
+    var number_of_shares2 = number_of_shares3.replace(/\,/g, '');
+    var number_of_shares = parseInt(number_of_shares2, 10);
 
-var purchase_price1 = $('#sgem_spc_purchase_price').val().trim();
-var purchase_price2 = purchase_price1.replace(/\,/g, '');
-var purchase_price = parseInt(purchase_price2, 10);
+    var annual_con3 = $('#sgem_dvc_annual_contribution').val().trim();
+    var annual_con2 = annual_con3.replace(/\,/g, '');
+    var annual_con = parseInt(annual_con2, 10);
 
-var sell_price1 = $('#sgem_spc_sell_price').val().trim();
-var sell_price2 = sell_price1.replace(/\,/g, '');
-var sell_price = parseInt(sell_price2, 10);
+    var annual_yeild2 = $('#sgem_dvc_annual_dividend_yield').val().trim();
+    var annual_yeild = parseFloat(annual_yeild2 / 100);
 
-var buy_com1 = $('#sgem_spc_buy_commission').val().trim();
-var buy_com2 = buy_com1.replace(/\,/g, '');
-var buy_com = parseInt(buy_com2, 10);
+    var dividend_tax2 = $('#sgem_dvc_dividend_tax_rate').val().trim();
+    var dividend_tax = parseFloat(dividend_tax2 / 100);
 
-var sell_com1 = $('#sgem_spc_sell_commission').val().trim();
-var sell_com2 = sell_com1.replace(/\,/g, '');
-var sell_com = parseInt(sell_com2, 10);
+    var expected_rise_dividend_perc2 = $('#sgem_dvc_exp_dividend_payout_rise').val().trim();
+    var expected_rise_dividend_perc = parseFloat(expected_rise_dividend_perc2 / 100);
 
-//Calculations
+    var expected_rise_stock_perc2 = $('#sgem_dvc_ext_stock_price_rise').val().trim();
+    var expected_rise_stock_perc = parseFloat(expected_rise_stock_perc2 / 100);
 
-var bought_for = (number_of_shares * purchase_price) + buy_com;
 
-    if (isNaN(bought_for)) {
+    var stock_price_array = [];
+    var year_end_stock_price_array = [];
+    var annual_con_array = [];
+    var number_of_years_array = [];
+    var no_of_stock_array = [];
+    var year_beg_investment_array = [];
+    var year_end_investment_array = [];
+    var annual_div_yeild_array = [];
+    var year_end_div_yeild_array = [];
+    var dividend_array = [];
+    var dividend_tax_array = [];
+    var dividend_ex_tax_array = [];
+    var final_balance_after_tax_array = [];
 
-        $('#sgem_spc_cal_bought_for_val').text('0');
+    var y_stock_price_array = [];
+    var y_number_of_years_array = [];
+    var y_year_end_stock_price_array = [];
+    var y_annual_con_array = [];
+    var y_annual_div_yeild_array = [];
+    var y_year_end_div_yeild_array = [];
+    var y_year_beg_investment_array = [];
+    var y_dividend_array = [];
+    var y_div_ex_tax_array = [];
+    var y_no_of_stock_array = [];
+    var y_last_year_div_array = [];
+    var y_ending_fund_array = [];
+    var y_forbes_adjustment_array = [];
+    var y_ending_balance_array = [];
+
+    if (isNaN(stock_price * number_of_shares)) {
+
+        $('#sgem_dvc_invest_amount').val(0);
+
+    }else{
+        
+        $('#sgem_dvc_invest_amount').val(numberWithCommas(stock_price * number_of_shares));
+
+    }
+
+    //calculation
+    //--if yes---
+    //-number of years-----------------------------------------
+
+    var y_first_year_loop = 1;
+
+    while (y_first_year_loop <= holding_period) {
+
+        var y_number_of_years = y_first_year_loop++;
+        y_number_of_years_array.push(y_number_of_years);
+
+    }
+
+    //Year end & stock price------------------------------------
+
+    //---Add first item for array
+    y_stock_price_array.push(stock_price);
+
+    let y_stock_price_for_loop = stock_price;
+
+    for (let i = 1; i <= holding_period; i++) {
+
+        y_stock_price_for_loop *= 1 + expected_rise_stock_perc;
+        y_stock_price_array.push(y_stock_price_for_loop);
+
+        //year end stock price
+        y_year_end_stock_price_array.push(y_stock_price_for_loop);
+
+    }
+
+    //---Remove last item NaN from array
+    y_stock_price_array.splice(-1);
+
+    //Annual contribution---------------------------------------
+
+    let y_annual_con_loop = "";
+
+    for (let i = 1; i <= holding_period; i++) {
+
+        y_annual_con_loop = annual_con;
+        y_annual_con_array.push(y_annual_con_loop);
+
+    }
+
+    //----------------------------------------------------------
+
+    let y_last_year_div = "0";
+    y_last_year_div_array.push(y_last_year_div);
+
+    let y_no_of_stock = number_of_shares;
+    let y_div_ex_tax = "";
+    let y_dividend = "";
+    let y_year_beg_investment = ""; //e and i array multiply
+    let y_year_end_div_yeild = "";
+    let y_annual_div_yeild = annual_yeild;
+
+    //Annual div yeild---------------------
+
+    //adding first annual div yeild to array
+    y_annual_div_yeild_array.push(annual_yeild);
+
+    for (let i = 1; i < holding_period; i++) {
+
+        y_annual_div_yeild *= 1 + expected_rise_dividend_perc;
+        //adding rest of the value for annual div yeild array
+        y_annual_div_yeild_array.push(y_annual_div_yeild);
+
+
+    }
+
+    //Year end div yeild---------------------
+
+    for (let i = 0; i < holding_period; i++) {
+
+        y_year_end_div_yeild = 1 + expected_rise_dividend_perc;
+        y_year_end_div_yeild *= y_annual_div_yeild_array[i];
+        y_year_end_div_yeild_array.push(y_year_end_div_yeild);
+
+    }
+
+    //Last year dividend, No of stocks,year beg investment, Dividend & Div ex-tax--------------------
+
+    y_no_of_stock_array.push(y_no_of_stock);
+
+    var one_start = 1,
+        one_start_2 = 1;
+
+    var zero_start = 0,
+        zero_start_2 = 0,
+        zero_start_3 = 0,
+        zero_start_4 = 0,
+        zero_start_5 = 0,
+        zero_start_6 = 0;
+
+    while (one_start < holding_period, one_start_2 < holding_period, zero_start < holding_period, zero_start_2 < holding_period,
+        zero_start_3 < holding_period, zero_start_4 < holding_period, zero_start_5 < holding_period, zero_start_6 < holding_period) {
+
+        y_year_beg_investment = y_stock_price_array[zero_start++] * y_no_of_stock_array[zero_start_2++]; //j
+        y_year_beg_investment_array.push(y_year_beg_investment);
+
+        y_dividend = y_year_beg_investment_array[zero_start_3++] * y_year_end_div_yeild_array[zero_start_4++]; //o
+        y_dividend_array.push(y_dividend);
+
+        y_div_ex_tax = 1 - dividend_tax;
+        y_div_ex_tax *= y_dividend_array[zero_start_5++];
+
+        y_div_ex_tax_array.push(y_div_ex_tax);
+        y_last_year_div_array.push(y_div_ex_tax);
+
+        //---------------------------------------
+
+        y_no_of_stock = annual_con + y_last_year_div_array[one_start++];
+        y_no_of_stock /= y_stock_price_array[one_start_2++];
+        y_no_of_stock += y_no_of_stock_array[zero_start_6++];
+
+        y_no_of_stock_array.push(y_no_of_stock);
+
+    }
+
+    //---Remove last item from no of stock array
+    y_no_of_stock_array.splice(-1);
+
+    //---Remove last item from last year div array
+    y_last_year_div_array.splice(-1);
+
+    //Ending fund------------------------------------------------
+
+    let ending_fund = "";
+
+    for (let i = 0; i < holding_period; i++) {
+
+        ending_fund = y_year_end_stock_price_array[i] * y_no_of_stock_array[i];
+        ending_fund += y_div_ex_tax_array[i];
+        ending_fund += y_annual_con_array[i];
+
+        y_ending_fund_array.push(ending_fund);
+
+    }
+
+    //forbes adjustment------------------------------------------
+
+    let y_forbes_adjustment = "";
+
+    for (let i = 0; i < holding_period; i++) {
+
+        y_forbes_adjustment = 1 - dividend_tax;
+        y_forbes_adjustment *= y_year_end_div_yeild_array[i] - y_annual_div_yeild_array[i];
+        y_forbes_adjustment *= y_year_beg_investment_array[i];
+        y_forbes_adjustment_array.push(y_forbes_adjustment);
+
+    }
+
+    //Ending_balance----------------------------------------------
+
+    let y_ending_balance = "";
+
+    for (let i = 0; i < holding_period; i++) {
+
+        y_ending_balance = y_ending_fund_array[i] - y_forbes_adjustment_array[i];
+        y_ending_balance_array.push(y_ending_balance);
+
+    }
+
+    //card values-------------------------------
+
+    var y_card_ending_balance = y_ending_balance_array[y_ending_balance_array.length - 1];
+
+    var y_total_contribution1 = stock_price * number_of_shares;
+    var y_total_contribution2 = annual_con * holding_period;
+    var y_total_contribution = y_total_contribution1 + y_total_contribution2;
+
+    var y_cumulative_return2 = (y_card_ending_balance / y_total_contribution) - 1;
+    var y_cumulative_return1 = 100 * y_cumulative_return2;
+
+    var y_total_dividend_income = y_dividend_array.reduce((sum, num) => sum + num, 0);
+
+
+    //reinvestment no--------------------------------------------------------------------
+    //Number of years--
+
+    var first_year_loop = 1;
+
+    while (first_year_loop <= holding_period) {
+
+        var number_of_years = first_year_loop++;
+        number_of_years_array.push(number_of_years);
+
+    }
+
+    //Year end & stock price------------------------------------
+
+    //---Add first item for array
+    stock_price_array.push(stock_price);
+
+    let stock_price_for_loop = stock_price;
+
+    for (let i = 1; i <= holding_period; i++) {
+
+        stock_price_for_loop *= 1 + expected_rise_stock_perc;
+        stock_price_array.push(stock_price_for_loop);
+
+        //year end stock price
+        year_end_stock_price_array.push(stock_price_for_loop);
+
+    }
+
+    //---Remove last item NaN from array
+    stock_price_array.splice(-1);
+
+    //Annual contribution---------------------------------------
+
+    let annual_con_loop = "";
+
+    for (let i = 1; i <= holding_period; i++) {
+
+        annual_con_loop = annual_con;
+        annual_con_array.push(annual_con_loop);
+
+    }
+
+    //shares owned initially no of stock------------------------
+
+    //---Add first item for array
+    no_of_stock_array.push(number_of_shares);
+
+    let shares_owned_in = number_of_shares;
+
+    for (let i = 1; i <= holding_period; i++) {
+
+        var shares_owned_in2 = annual_con / stock_price_array[i];
+        shares_owned_in += shares_owned_in2;
+        no_of_stock_array.push(shares_owned_in)
+
+    }
+
+    //---Remove last item NaN from array
+    no_of_stock_array.splice(-1);
+
+    //Year beggining investment---------------------------------------------- 
+
+    let year_beg_investment = "";
+
+    for (var i = 0; i <= holding_period; i++) {
+
+        year_beg_investment = stock_price_array[i] * no_of_stock_array[i];
+        year_beg_investment_array.push(year_beg_investment);
+
+    }
+
+    //---Remove last item NaN from array
+    year_beg_investment_array.splice(-1);
+
+    //Year end investment---------------------------------------------------
+
+    let year_end_investment = "";
+
+    for (var i = 0; i <= holding_period; i++) {
+
+        year_end_investment = no_of_stock_array[i] * year_end_stock_price_array[i];
+        year_end_investment_array.push(year_end_investment);
+
+    }
+
+    //---Remove last item NaN from array
+    year_end_investment_array.splice(-1);
+
+    //Annualdiv yeild-------------------------------------------------------
+
+    //---Add first item for array
+    annual_div_yeild_array.push(annual_yeild);
+
+    let annual_div_yeild = annual_yeild;
+
+    for (var i = 1; i <= holding_period; i++) {
+
+        annual_div_yeild *= 1 + expected_rise_dividend_perc;
+        annual_div_yeild_array.push(annual_div_yeild);
+    }
+
+    //---Remove last item from array
+    annual_div_yeild_array.splice(-1);
+
+    //Year end div yeild---------------------------------------------------------
+
+    let year_end_div_yeild = "";
+
+    for (var i = 0; i <= holding_period; i++) {
+
+        year_end_div_yeild = 1 + expected_rise_dividend_perc;
+        year_end_div_yeild *= annual_div_yeild_array[i]
+
+        year_end_div_yeild_array.push(year_end_div_yeild);
+
+    }
+
+    //---Remove last item from array
+    year_end_div_yeild_array.splice(-1);
+
+    //Dividend---------------------------------------------------------------------
+
+    let dividend = "";
+
+    for (var i = 0; i <= holding_period; i++) {
+
+        dividend = year_beg_investment_array[i] * year_end_div_yeild_array[i];
+        dividend_array.push(dividend);
+    }
+
+    //---Remove last item NaN from array
+    dividend_array.splice(-1);
+
+    //Dividend tax----------------------------------------------------------------
+
+    let t_dividend_tax = "";
+
+    for (var i = 0; i <= holding_period; i++) {
+
+        t_dividend_tax = dividend_array[i] * dividend_tax;
+        dividend_tax_array.push(t_dividend_tax);
+
+    }
+
+    //---Remove last item NaN from array
+    dividend_tax_array.splice(-1);
+
+    //Div Ex - tax------------------------------------------------------------
+
+    let div_ex_tax = "";
+
+    for (var i = 0; i <= holding_period; i++) {
+
+        div_ex_tax = 1 - dividend_tax;
+        div_ex_tax *= dividend_array[i];
+        dividend_ex_tax_array.push(div_ex_tax);
+
+    }
+
+    //---Remove last item NaN from array
+    dividend_ex_tax_array.splice(-1);
+
+    //Final balance after tax---------------------------------------------------
+
+    let final_balance_after_tax = "";
+
+    for (var i = 0; i < holding_period; i++) {
+
+        final_balance_after_tax = year_end_stock_price_array[i] * no_of_stock_array[i];
+        final_balance_after_tax += parseFloat(annual_con_array);
+        final_balance_after_tax_array.push(final_balance_after_tax);
+
+    }
+
+    //Card values---------------------------------
+
+    var ending_balance = final_balance_after_tax_array[final_balance_after_tax_array.length - 1];
+
+    var total_contribution1 = stock_price * number_of_shares;
+    var total_contribution2 = annual_con * holding_period;
+    var total_contribution = total_contribution1 + total_contribution2;
+
+    var cumulative_return2 = (ending_balance / total_contribution) - 1;
+    var cumulative_return1 = cumulative_return2 * 100;
+
+    var total_dividend_income = dividend_array.reduce((sum, num) => sum + num, 0);
+
+
+    //-------------------------------------------------------------------------
+    //Dividend reinvestment plan yes no
+
+    if (document.getElementById('sgem-dvc-cal-radio-yes').checked) {
+
+
+        if (isNaN(y_card_ending_balance) || y_card_ending_balance < 1) {
+
+            $('#sgem_dvc_ending_balance_val').text('$0');
+
+        } else {
+
+            $('#sgem_dvc_ending_balance_val').text(numberWithCommas(y_card_ending_balance.toFixed(2)));
+        }
+
+        //----------
+
+
+        if (isNaN(y_total_dividend_income) || y_total_dividend_income < 1) {
+
+            $('#sgem_dvc_cal_tot_dividend_income_val').text('$0');
+
+        } else {
+
+            $('#sgem_dvc_cal_tot_dividend_income_val').text(numberWithCommas(y_total_dividend_income.toFixed(2)));
+        }
+
+        //--------
+
+        if (isNaN(y_cumulative_return1) || (y_cumulative_return1) < 1) {
+
+            $('#sgem_dvc_cumulative_return_val').text('0%');
+
+        } else {
+
+            $('#sgem_dvc_cumulative_return_val').text((y_cumulative_return1).toFixed(2) + '%');
+        }
+
+        //--------
+        //Array to table function     
+        buildTable(holding_period, y_number_of_years_array, y_no_of_stock_array, y_stock_price_array, y_annual_con_array, y_div_ex_tax_array, y_ending_balance_array);
+
+
+        //yeild on cost yet to come
+
+
 
     } else {
 
-        $('#sgem_spc_cal_bought_for_val').text('$'+numberWithCommas(bought_for));
+        if (isNaN(ending_balance) || ending_balance < 1) {
+
+            $('#sgem_dvc_ending_balance_val').text('$0');
+
+        } else {
+
+            $('#sgem_dvc_ending_balance_val').text(numberWithCommas(ending_balance.toFixed(2)));
+        }
+
+        //----------
+
+
+        if (isNaN(total_dividend_income) || total_dividend_income < 1) {
+
+            $('#sgem_dvc_cal_tot_dividend_income_val').text('$0');
+
+        } else {
+
+            $('#sgem_dvc_cal_tot_dividend_income_val').text(numberWithCommas(total_dividend_income.toFixed(2)));
+        }
+
+        //--------
+
+        if (isNaN(cumulative_return1) || cumulative_return1 < 1) {
+
+            $('#sgem_dvc_cumulative_return_val').text('0%');
+
+        } else {
+
+            $('#sgem_dvc_cumulative_return_val').text((cumulative_return1).toFixed(2) + '%');
+        }
+
+        //--------
+        //Array to table function
+        buildTable(holding_period, number_of_years_array, no_of_stock_array, stock_price_array, annual_con_array, dividend_ex_tax_array, final_balance_after_tax_array);
+
+        //yeild on cost yet to come
+
+
+
     }
-    
 
-var sold_for = (number_of_shares * sell_price) - sell_com;
-
-   if (isNaN(sold_for)) {
-
-        $('#sgem_spc_cal_sell_for_val').text('0');
-
-    } else {
-
-        $('#sgem_spc_cal_sell_for_val').text('$'+numberWithCommas(sold_for));
-    }
-
-var profit_loss = sold_for - bought_for;
-
-    if (isNaN(profit_loss)) {
-
-        $('#sgem_spc_cal_loss_profit_val').text('$0');
-
-    } else {
-		if(profit_loss<0){
-			var profit_loss_val = numberWithCommas(profit_loss);
-			if(profit_loss_val.charAt(0)==='-'){
-				profit_loss_val = profit_loss_val.slice(1);
-			}
-			$('#sgem_spc_cal_loss_profit_val').text('- $'+profit_loss_val);
-		}else{
-			$('#sgem_spc_cal_loss_profit_val').text('$'+numberWithCommas(profit_loss));
-		}        
-    }
-
-var profit_percentage = ((profit_loss / bought_for) * 100).toFixed(2);
-
-    if (isNaN(profit_percentage)) {
-
-        $('#sgem_spc_cal_loss_profit_percantage').text('0');
-
-    } else {
-
-        $('#sgem_spc_cal_loss_profit_percantage').text(profit_percentage);
-    }
 
 
 }
 
 window.onload = function() {
-    sgem_spc_calculation();
+    sgem_dividend_calculationmin();
 }
+
+
+function isChecked() {
+
+    sgem_dividend_calculationmin();
+
+}
+
 
 
 
@@ -246,233 +772,329 @@ jQuery(document).ready(function($){
     
 	
 	
-	if ($('#sgem_spc_shares_value,#sgem_spc_purchase_price,#sgem_spc_sell_price,#sgem_spc_buy_commission,#sgem_spc_sell_commission').length > 0) {
-		$('#sgem_spc_shares_value,#sgem_spc_purchase_price,#sgem_spc_sell_price,#sgem_spc_buy_commission,#sgem_spc_sell_commission').on('keyup', function() {
-
-			sgem_spc_calculation();
-
-			// Keep only digits and decimal points:
-			this.value=this.value.replace(/[^\d.]/g, "")
+	if ($('#sgem_dvc_stock_price,#sgem_dvc_no_of_shares,#sgem_dvc_holding_period,#sgem_dvc_annual_contribution').length > 0) {
+		$('#sgem_dvc_stock_price,#sgem_dvc_no_of_shares,#sgem_dvc_holding_period,#sgem_dvc_annual_contribution').on('keyup', function() {
+			sgem_dividend_calculationmin();
+			
+			  // Keep only digits and decimal points:
+			this.value = this.value.replace(/[^\d.]/g, "")
 			// Remove duplicated decimal point, if one exists:
-			this.value=this.value.replace(/^(\d*\.)(.*)\.(.*)$/, '$1$2$3')
+			this.value = this.value.replace(/^(\d*\.)(.*)\.(.*)$/, '$1$2$3')
 			// Keep only two digits past the decimal point:
-			this.value=this.value.replace(/\.(\d{0})\d+/, '')
+			this.value = this.value.replace(/\.(\d{0})\d+/, '')
 			// Add thousands separators:
-			this.value=this.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+			this.value = this.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 			// Removing front zero
-			this.value=this.value.replace(/^0+/, '');
+			//this.value = this.value.replace(/^0+/, '');
+
 
 		});
 	}
+
+	if ($('#sgem_dvc_annual_dividend_yield,#sgem_dvc_dividend_tax_rate,#sgem_dvc_exp_dividend_payout_rise,#sgem_dvc_ext_stock_price_rise').length > 0) {
+		$('#sgem_dvc_annual_dividend_yield,#sgem_dvc_dividend_tax_rate,#sgem_dvc_exp_dividend_payout_rise,#sgem_dvc_ext_stock_price_rise').on('keyup', function() {
+
+        sgem_dividend_calculationmin();
+
+        // Removing front zero
+        this.value=this.value.replace(/^0+/, '');
+        // Keep only digits and decimal points:
+        this.value = this.value.replace(/[^\d.]/g, "")
+
+    });
+}
 
     //Validations-------------------------------------------------------------------
 	
 
 	
-	// No of shares
-    $('#sgem_spc_shares_value').on('keyup', function () {
-      var val = this.value;
-      var xcx = parseInt(val);
-      if (isNaN(xcx) || $(this).val().length>11){
-         
-        this.value ='';
-        $('#sgem_spc_err_shares_value').html('This cannot be empty or more than 999,999,999').fadeIn();  
-        $(this).css({"border": "1px solid red","background": "#FFCECE" });           
 
-	  }else{
-		$('#sgem_spc_err_shares_value').html('').fadeOut();  
-		$(this).css({
-			"border": "1px solid #707070",
-			"background": "#ffffff"
-		}); 
-	  }    
-    });
-
-
-	
-	
-    // purchase price
-    $('#sgem_spc_purchase_price').on('keyup', function () {
-      var val = this.value;
-      var xcxx = parseInt(val);
-      if (isNaN(xcxx) || $(this).val().length>11){
-         
-        this.value ='';
-        $('#sgem_spc_err_purchase_price').html('This cannot be empty or more than $999,999,999').fadeIn();  
-        $(this).css({"border": "1px solid red","background": "#FFCECE" });            
-
-	  }else{
-		$('#sgem_spc_err_purchase_price').html('').fadeOut();  
-		$(this).css({
-			"border": "1px solid #707070",
-			"background": "#ffffff"
-		}); 
-	  }    
-    });
-
- // sell price
-    $('#sgem_spc_sell_price').on('keyup', function () {
-      var val = this.value;
-      var xcz = parseInt(val);
-      if (isNaN(xcz) || $(this).val().length>11){
-         
-        this.value ='';
-        $('#sgem_spc_err_sell_price').html('This cannot be empty or more than $999,999,999').fadeIn();  
-        $(this).css({"border": "1px solid red","background": "#FFCECE" });           
-
-	  }else{
-		$('#sgem_spc_err_sell_price').html('').fadeOut();  
-		$(this).css({
-			"border": "1px solid #707070",
-			"background": "#ffffff"
-		}); 
-	  }    
-    });
-
-     // buy com
-    $('#sgem_spc_buy_commission').on('keyup', function () {
-      var val = this.value;
-      var xs = parseInt(val);
-      if (isNaN(xs) || $(this).val().length>11){
+ //stock price
+    $('#sgem_dvc_stock_price').on('keyup', function () {
+      var sp = this.value;
+      var spp = parseInt(sp);
+      if (isNaN(spp) || $(this).val().length>13){
          
          this.value ='';
-         $('#sgem_spc_err_buy_commission').html('This cannot be empty or more than $999,999,999').fadeIn();  
-         $(this).css({"border": "1px solid red","background": "#FFCECE" });
+         $('#sgem_dvc_err_stock_price').html('This cannot be empty or more than $9,999,999,999').fadeIn();  
+          $(this).css({
+        "border": "1px solid red",
+        "background": "#FFCECE" });  
+          
 
-	  }else{
-		$('#sgem_spc_err_buy_commission').html('').fadeOut();  
-		$(this).css({
-			"border": "1px solid #707070",
-			"background": "#ffffff"
-		}); 
-	  }    
+  }else{
+     $('#sgem_dvc_err_stock_price').html('').fadeOut();  
+    $(this).css({
+        "border": "1px solid #707070",
+        "background": "#ffffff"
+      }); 
+  }    
     });
 
-  // sell com
-    $('#sgem_spc_sell_commission').on('keyup', function () {
-      var val = this.value;
-      var xsa = parseInt(val);
-      if (isNaN(xsa) || $(this).val().length>11){
+
+	
+
+//no of shares
+    $('#sgem_dvc_no_of_shares').on('keyup', function () {
+      var nos = this.value;
+      var noss = parseInt(nos);
+      if (isNaN(noss) || $(this).val().length>10){
          
-        this.value ='';
-        $('#sgem_spc_err_sell_commission').html('This cannot be empty or more than $999,999,999').fadeIn();  
-        $(this).css({"border": "1px solid red","background": "#FFCECE" });
+         this.value ='';
+         $('#sgem_dvc_err_no_of_shares').html('This cannot be empty or more than 9,999,999,999').fadeIn();  
+          $(this).css({
+        "border": "1px solid red",
+        "background": "#FFCECE" });  
+          
 
-	  }else{
-		$('#sgem_spc_err_sell_commission').html('').fadeOut();  
-		$(this).css({
-			"border": "1px solid #707070",
-			"background": "#ffffff"
-		}); 
-	  }    
-    });	
+  }else{
+     $('#sgem_dvc_err_no_of_shares').html('').fadeOut();  
+    $(this).css({
+        "border": "1px solid #707070",
+        "background": "#ffffff"
+      }); 
+  }    
+    });
+	
+	
 
+//holding period
+    $('#sgem_dvc_holding_period').on('keyup', function () {
+      var hp2 = this.value;
+      var hp = parseInt(hp2);
+      if (isNaN(hp) || hp>50){
+         
+         this.value ='';
+         $('#sgem_dvc_err_holding_period').html('This cannot be empty or more than 50').fadeIn();  
+          $(this).css({
+        "border": "1px solid red",
+        "background": "#FFCECE" });  
+          
+  }else{
+     $('#sgem_dvc_err_holding_period').html('').fadeOut();  
+    $(this).css({
+        "border": "1px solid #707070",
+        "background": "#ffffff"
+      }); 
+  }    
+    });
+	
+	
+
+//annual dividend yeild
+    $('#sgem_dvc_annual_dividend_yield').on('keyup', function () {
+      var ady2 = this.value;
+      var ady = parseInt(ady2);
+      if (isNaN(ady) || ady>1000){
+         
+         this.value ='';
+         $('#sgem_dvc_err_annual_dividend_yield').html('This cannot be empty or more than 1000%').fadeIn();  
+          $(this).css({
+        "border": "1px solid red",
+        "background": "#FFCECE" });           
+
+  }else{
+     $('#sgem_dvc_err_annual_dividend_yield').html('').fadeOut();  
+    $(this).css({
+        "border": "1px solid #707070",
+        "background": "#ffffff"
+      }); 
+  }    
+    });
+	
+	
+ //annual contribution
+    $('#sgem_dvc_annual_contribution').on('keyup', function () {
+      var ac2 = this.value;
+      var ac = parseInt(ac2);
+      if (isNaN(ac) || $(this).val().length>14){
+         
+         this.value ='';
+         $('#sgem_dvc_err_annual_contribution').html('This cannot be empty or more than $99,999,999,999').fadeIn();  
+          $(this).css({
+        "border": "1px solid red",
+        "background": "#FFCECE" });           
+
+  }else{
+     $('#sgem_dvc_err_annual_contribution').html('').fadeOut();  
+    $(this).css({
+        "border": "1px solid #707070",
+        "background": "#ffffff"
+      }); 
+  }    
+    });
+	
+	
+//dividend tax
+    $('#sgem_dvc_dividend_tax_rate').on('keyup', function () {
+      var dt2 = this.value;
+      var dt = parseInt(dt2);
+      if (isNaN(dt) || dt>1000){
+         
+         this.value ='';
+         $('#sgem_dvc_err_dividend_tax_rate').html('This cannot be empty or more than 1000%').fadeIn();  
+          $(this).css({
+        "border": "1px solid red",
+        "background": "#FFCECE" });           
+
+  }else{
+     $('#sgem_dvc_err_dividend_tax_rate').html('').fadeOut();  
+    $(this).css({
+        "border": "1px solid #707070",
+        "background": "#ffffff"
+      }); 
+  }    
+    });
+
+    //dividend rise
+    $('#sgem_dvc_exp_dividend_payout_rise').on('keyup', function () {
+      var dr2 = this.value;
+      var dr = parseInt(dr2);
+      if (isNaN(dr) || dr>1000){
+         
+         this.value ='';
+         $('#sgem_dvc_err_exp_dividend_payout_rise').html('This cannot be empty or more than 1000%').fadeIn();  
+          $(this).css({
+        "border": "1px solid red",
+        "background": "#FFCECE" });           
+
+  }else{
+     $('#sgem_dvc_err_exp_dividend_payout_rise').html('').fadeOut();  
+    $(this).css({
+        "border": "1px solid #707070",
+        "background": "#ffffff"
+      }); 
+  }    
+    });
+
+     //dividend stock p
+    $('#sgem_dvc_ext_stock_price_rise').on('keyup', function () {
+      var dsp2 = this.value;
+      var dsp = parseInt(dsp2);
+      if (isNaN(dsp) || dsp>1000){
+         
+         this.value ='';
+         $('#sgem_dvc_err_ext_stock_price_rise').html('This cannot be empty or more than 1000%').fadeIn();  
+          $(this).css({
+        "border": "1px solid red",
+        "background": "#FFCECE" });           
+
+  }else{
+     $('#sgem_dvc_err_ext_stock_price_rise').html('').fadeOut();  
+    $(this).css({
+        "border": "1px solid #707070",
+        "background": "#ffffff"
+      }); 
+  }    
+    });
+	
     //------------------------------------------------------------------------------
 
 	
 	
-    sgem_dvc_calculation();
+    sgem_dividend_calculationmin();
 	
 	
 
-	if ($('.sgem-spc-cal-wrapper').width() < 1048) {
-		$('.sgem-spc-content-block-value').addClass('sgem-switch-min-width');
-	} else {
-		$('.sgem-spc-content-block-value').removeClass('sgem-switch-min-width');
-	}
-
-    if ($('.sgem-spc-cal-wrapper').width() < 1024) {
-        $('.sgem-spc-cal-left').addClass('sgem-spc-cal-left-add-class');
-        $('.sgem-spc-cal-right').addClass('sgem-spc-cal-right-add-class');
-		
+	if ($('.sgem-dvc-cal-wrapper').width() < 1024) {
+        $('.sgem-dvc-cal-left').addClass('sgem-dvc-cal-left-add-class');
+        $('.sgem-dvc-cal-right').addClass('sgem-dvc-cal-right-add-class');
     } else {
-        $('.sgem-spc-cal-left').removeClass('sgem-spc-cal-left-add-class');
-        $('.sgem-spc-cal-right').removeClass('sgem-spc-cal-right-add-class');
-		
+        $('.sgem-dvc-cal-left').removeClass('sgem-dvc-cal-left-add-class');
+        $('.sgem-dvc-cal-right').removeClass('sgem-dvc-cal-right-add-class');
     }
 
-    if ($('.sgem-spc-cal-main-id').width() < 650) {		
-        $('.sgem-spc-cal-wrapper').addClass('sgem-spc-wrapper-add-mobile');
-		$('.sgem-spc-content').addClass('sgem-switch-flex');
-		$('.sgem-spc-cal-wrapper').addClass('sgem-switch-flex');
-		$('.sgem-spc-result-label').addClass('sgem-switch-font');
-		$('.sgem-spc-content-block').addClass('sgem-switch-padding');
-		
-		$('.sgem-spc-cal-1 .sgem-spc-block-container .sgem-spc-block-inner-container .sgem-spc-form-flex.sgem-first-flex').addClass('sgem-switch-margin-first');
-		$('.sgem-spc-form-flex.sgem-second-flex').addClass('sgem-switch-margin-second');
-		
-		
+    if ($('.sgem-dvc-cal-main-id').width() < 650) {
+        $('.sgem-dvccal-wrapper').addClass('sgem-dvc-wrapper-add-mobile');
     } else {
-        $('.sgem-spc-cal-wrapper').removeClass('sgem-spc-wrapper-add-mobile');
-		$('.sgem-spc-content').removeClass('sgem-switch-flex');
-		$('.sgem-spc-cal-wrapper').removeClass('sgem-switch-flex');
-		$('.sgem-spc-result-label').removeClass('sgem-switch-font');
-		$('.sgem-spc-content-block').removeClass('sgem-switch-padding');
-		
-		$('.sgem-spc-cal-1 .sgem-spc-block-container .sgem-spc-block-inner-container .sgem-spc-form-flex.sgem-first-flex').removeClass('sgem-switch-margin');
-		$('.sgem-spc-form-flex.sgem-second-flex').removeClass('sgem-switch-margin-second');
-		
-		
+        $('.sgem-dvc-cal-wrapper').removeClass('sgem-dvc-wrapper-add-mobile');
     }
 
     $(window).on('resize', function() {
-        if ($('.sgem-spc-cal-wrapper').width() < 1024) {
-            $('.sgem-spc-cal-left').addClass('sgem-spc-cal-left-add-class');
-            $('.sgem-spc-cal-right').addClass('sgem-spc-cal-right-add-class');
-			
+        if ($('.sgem-dvc-cal-wrapper').width() < 1024) {
+            $('.sgem-dvc-cal-left').addClass('sgem-dvc-cal-left-add-class');
+            $('.sgem-dvc-cal-right').addClass('sgem-dvc-cal-right-add-class');
         } else {
-            $('.sgem-spc-cal-left').removeClass('sgem-spc-cal-left-add-class');
-            $('.sgem-spc-cal-right').removeClass('sgem-spc-cal-right-add-class');
-			
-        }
-    }).trigger('resize');
-	
-	$(window).on('resize', function() {
-        if ($('.sgem-spc-cal-wrapper').width() < 1048) {
-            $('.sgem-spc-content-block-value').addClass('sgem-switch-min-width');
-        } else {
-            $('.sgem-spc-content-block-value').removeClass('sgem-switch-min-width');
+            $('.sgem-dvc-cal-left').removeClass('sgem-dvc-cal-left-add-class');
+            $('.sgem-dvc-cal-right').removeClass('sgem-dvc-cal-right-add-class');
         }
     }).trigger('resize');
 
     $(window).on('resize', function() {
-        if ($('.sgem-spc-cal-main-id').width() < 650) {
-            $('.sgem-spc-cal-wrapper').addClass('sgem-spc-wrapper-add-mobile');
-			$('.sgem-spc-content').addClass('sgem-switch-flex');
-			$('.sgem-spc-cal-wrapper').addClass('sgem-switch-flex');
-			$('.sgem-spc-result-label').addClass('sgem-switch-font');
-			$('.sgem-spc-content-block').addClass('sgem-switch-padding');
-			
-			$('.sgem-spc-form-flex.sgem-first-flex').addClass('sgem-switch-margin-first');
-			$('.sgem-spc-form-flex.sgem-second-flex').addClass('sgem-switch-margin-second');
-		
+        if ($('.sgem-dvc-cal-main-id').width() < 650) {
+            $('.sgem-dvc-cal-wrapper').addClass('sgem-dvc-wrapper-add-mobile');
         } else {
-            $('.sgem-spc-cal-wrapper').removeClass('sgem-spc-wrapper-add-mobile');
-			$('.sgem-spc-content').removeClass('sgem-switch-flex');
-			$('.sgem-spc-cal-wrapper').removeClass('sgem-switch-flex');
-			$('.sgem-spc-result-label').removeClass('sgem-switch-font');
-			$('.sgem-spc-content-block').removeClass('sgem-switch-padding');
-			
-			$('.sgem-spc-form-flex.sgem-first-flex').removeClass('sgem-switch-margin');
-			$('.sgem-spc-form-flex.sgem-second-flex').removeClass('sgem-switch-margin-second');
-			
+            $('.sgem-dvc-cal-wrapper').removeClass('sgem-dvc-wrapper-add-mobile');
         }
     }).trigger('resize');
 
 
-	//Minus Color change
-	$("body").on('DOMSubtreeModified', "#sgem_spc_cal_loss_profit_val", function() {
-        var minusFigure = $("#sgem_spc_cal_loss_profit_val").html();
-        if(minusFigure.includes("-")){
-            $("#sgem_spc_loss_profit_result_value").addClass("sgem-spc-result-minus-figure");
-        }else{
-            if($("#sgem_spc_loss_profit_result_value").hasClass("sgem-spc-result-minus-figure")){
-                $("#sgem_spc_loss_profit_result_value").removeClass("sgem-spc-result-minus-figure");
-            }
-        }
-    });
+	
 	
 });
+
+
+//function to clean table body
+function cleanTable() {
+    var node = document.getElementById("sgem_dvc_result_table_body");
+    while (node.hasChildNodes()) {
+        node.removeChild(node.lastChild);
+    }
+}
+
+//function to set the table body
+function setTableBody(noOfYears, bodyHTML) {
+    cleanTable();
+    var node = document.getElementById("sgem_dvc_result_table_body");
+    node.innerHTML = bodyHTML;
+
+}
+
+//function to add another row to table
+function addRow(bodyHTML, tableDividendRowData) {
+    var rowHTML = '<tr><td scope="row" data-label="Year" style="width:10.2%;">' + tableDividendRowData[0] + '</td><td data-label="Shared owned initially" style="width:16.2%;">' + numberWithCommas(parseFloat(tableDividendRowData[1]).toFixed(2)) + '</td><td data-label="Starting stock price" style="width:18.2%;">$' + numberWithCommas(parseFloat(tableDividendRowData[2]).toFixed(2)) + '</td><td data-label="Annual contribution" style="width:18.2%;">$' + numberWithCommas(parseFloat(tableDividendRowData[3]).toFixed(2)) + '</td><td data-label="Year end dividend after tax" style="width:20.2%;">$' + numberWithCommas(parseFloat(tableDividendRowData[4]).toFixed(2)) + '</td><td data-label="Final balance after tax" style="width:17%;">$' + numberWithCommas(parseFloat(tableDividendRowData[5]).toFixed(2)) + '</td></tr>';
+    bodyHTML = bodyHTML + rowHTML;
+    return bodyHTML;
+}
+
+//function to add another row to table
+function buildTable(noOfYears, col_1_Array, col_2_Array, col_3_Array, col_4_Array, col_5_Array, col_6_Array) {
+
+    //No of years
+    var noOfYears = parseInt(noOfYears);
+
+    //body variable
+    var tableBodyHTML = "";
+
+    //check if array length is equals to no of years
+    // if(col_1_Array.length==noOfYears && col_2_Array.length==noOfYears && col_3_Array.length==noOfYears && col_4_Array.length==noOfYears && col_5_Array.length==noOfYears && col_6_Array.length==noOfYears){
+    //array of data
+    const tableDividendRowData = [];
+
+    //loop to create table rows with array data
+    for (var i = 0; i < noOfYears; i++) {
+        tableDividendRowData[0] = col_1_Array[i];
+        tableDividendRowData[1] = col_2_Array[i];
+        tableDividendRowData[2] = col_3_Array[i];
+        tableDividendRowData[3] = col_4_Array[i];
+        tableDividendRowData[4] = col_5_Array[i];
+        tableDividendRowData[5] = col_6_Array[i];
+        tableBodyHTML = addRow(tableBodyHTML, tableDividendRowData);
+    }
+    //   }else{
+    //  console.log("Column data array length/s mismatch with No of Years");
+    //  }
+
+    if (noOfYears < 1) {
+        var rowHTML = '<tr><td scope="row" data-label="Year" style="width:10%;"></td><td data-label="Shared owned initially" style="width:16%;"></td><td data-label="Starting stock price" style="width:18%;"></td><td data-label="Annual contribution" style="width:18%;"></td><td data-label="Year end dividend after tax" style="width:20%;"></td><td data-label="Final balance after tax" style="width:18%;"></td></tr>';
+        tableBodyHTML = rowHTML;
+    }
+
+    //set body of table after all the calculation rows
+    setTableBody(noOfYears, tableBodyHTML);
+
+}
+
 
 // DOCUMENT.READY END
 

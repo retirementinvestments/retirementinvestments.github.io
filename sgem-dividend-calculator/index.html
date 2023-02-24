@@ -1,81 +1,215 @@
-<div class="sgem-spc-cal-main-id">
-    <div class="sgem-spc-cal-wrapper">
-        <div class="sgem-spc-cal-left">
-            <div class="sgem-spc-form sgem-spc-cal-1">
-                <div class="sgem-spc-block-container">
-                    <div class="sgem-spc-form-group sgem-spc-form-flex sgem-spc-none-currency-holder">
-                        <label>Number of shares</label>
-                        <input type="text" class="inputmove inputnumber" id="sgem_spc_shares_value" value="1,000" min="0" max="1000000" onkeypress="return isNumber(event)"/>
-                        <span class="sgem_spc_err_msg" id="sgem_spc_err_shares_value"></span>
+<div class="sgem-dvc-cal-main-id">
+    <div class="sgem-dvc-cal-wrapper">
+        <div class="sgem-dvc-cal-left">
+            <div class="sgem-dvc-form sgem-dvc-cal-1">
+
+                <div class="sgem-dvc-block-container">
+                    <div class="sgem-dvc-block-inner-container">
+
+                        <div class="sgem-dvc-form-group sgem-dvc-form-flex sgem-dvc-currency-holder sgem-first-flex">
+                            <label><div class="sgem-dvc-form-label-container"><span>Stock price</span><span class="sgem-dvc-info-tooltip tooltip" data-tippy-content="Stock Price per Share">?</span></div></label>
+                            <input type="text" class="inputmove inputnumber" id="sgem_dvc_stock_price" value="100" min="0" max="100000" onkeypress="return isNumber(event)"/>
+                            <span class="sgem_dvc_err_msg" id="sgem_dvc_err_stock_price"></span>
+                        </div>
+                        <div class="sgem-dvc-form-group sgem-dvc-form-flex sgem-dvc-none-currency-holder sgem-second-flex">
+                            <label><div class="sgem-dvc-form-label-container"><span>Number of shares</span><span class="sgem-dvc-info-tooltip tooltip" data-tippy-content="Purchased number of shares">?</span></div></label>
+                            <input type="text" class="inputmove inputnumber" id="sgem_dvc_no_of_shares" value="100" min="0" max="100000" onkeypress="return isNumber(event)"/>
+                            <span class="sgem_dvc_err_msg" id="sgem_dvc_err_no_of_shares"></span>
+                        </div>
+
+                    </div>
+                    <div class="sgem-dvc-block-container">
+                        <div class="sgem-dvc-form-group sgem-dvc-form-flex sgem-dvc-currency-holder  sgem-first-flex">
+                            <label><div class="sgem-dvc-form-label-container"><span>Investment amount</span><span class="sgem-dvc-info-tooltip tooltip" data-tippy-content="Your total investment">?</span></div></label>
+                            <input type="text" class="inputmove inputnumber input-disable" id="sgem_dvc_invest_amount" value="10,000" min="0" max="100000" onkeypress="return isNumber(event)" disabled />
+                            <span class="sgem_dvc_err_msg" id="sgem_dvc_err_invest_amount"></span>
+                        </div>
+                    </div>
+
+                    <div class="sgem-dvc-block-inner-container">
+                        <div class="sgem-dvc-form-group sgem-dvc-form-flex sgem-dvc-years-holder sgem-first-flex">
+                            <label><div class="sgem-dvc-form-label-container"><span>Holding period</span><span class="sgem-dvc-info-tooltip tooltip" data-tippy-content="How long you intend to hold your shares">?</span></div></label>
+                            <input type="text" class="inputmove inputnumber" id="sgem_dvc_holding_period" value="10" min="0" max="100000" onkeypress="return isNumber(event)"/>
+                            <span class="sgem_dvc_err_msg" id="sgem_dvc_err_holding_period"></span>
+                        </div>
+                        <div class="sgem-dvc-form-group sgem-dvc-form-flex sgem-dvc-interest-precentage-holder sgem-second-flex">
+                            <label><div class="sgem-dvc-form-label-container"><span>Annual dividend yield</span><span class="sgem-dvc-info-tooltip tooltip" data-tippy-content="Current Dividend yield">?</span></div></label>
+                            <input type="text" class="inputmove inputnumber" id="sgem_dvc_annual_dividend_yield" value="10,000" min="0" max="100000" onkeypress="return isNumber(event)"/>
+                            <span class="sgem_dvc_err_msg" id="sgem_dvc_err_annual_dividend_yield"></span>
+                        </div>
+                    </div>
+
+
+                    <div class="sgem-dvc-block-inner-container">
+                        <div class="sgem-dvc-form-group sgem-dvc-form-flex sgem-dvc-currency-holder  sgem-first-flex">
+                            <label><div class="sgem-dvc-form-label-container"><span>Annual contribution</span><span class="sgem-dvc-info-tooltip tooltip" data-tippy-content="How much you will invest per year">?</span></div></label>
+                            <input type="text" class="inputmove inputnumber" id="sgem_dvc_annual_contribution" value="10" min="0" max="100000" onkeypress="return isNumber(event)"/>
+                            <span class="sgem_dvc_err_msg" id="sgem_dvc_err_annual_contribution"></span>
+                        </div>
+                        <div class="sgem-dvc-form-group sgem-dvc-form-flex sgem-dvc-interest-precentage-holder sgem-second-flex">
+                            <label><div class="sgem-dvc-form-label-container"><span>Dividend tax rate</span><span class="sgem-dvc-info-tooltip tooltip" data-tippy-content="Anticipated dividend tax rate">?</span></div></label>
+                            <input type="text" class="inputmove inputnumber" id="sgem_dvc_dividend_tax_rate" value="15" min="0" max="100000" onkeypress="return isNumber(event)"/>
+                            <span class="sgem_dvc_err_msg" id="sgem_dvc_err_dividend_tax_rate"></span>
+                        </div>
+                    </div>
+
+                    <div class="sgem-dvc-block-inner-container">
+                        <div class="sgem-dvc-form-group sgem-dvc-form-flex sgem-dvc-interest-precentage-holder  sgem-first-flex">
+                            <label><div class="sgem-dvc-form-label-container"><span class="sgem-dvc-form-label-block">Expected rise in dividend payout</span><span class="sgem-dvc-info-tooltip tooltip" data-tippy-content="How much will the dividend rise per year">?</span></div></label>
+                            <input type="text" class="inputmove inputnumber" id="sgem_dvc_exp_dividend_payout_rise" value="10" min="0" max="100000" onkeypress="return isNumber(event)"/>
+                            <span class="sgem_dvc_err_msg" id="sgem_dvc_err_exp_dividend_payout_rise"></span>
+                        </div>
+                        <div class="sgem-dvc-form-group sgem-dvc-form-flex sgem-dvc-interest-precentage-holder sgem-second-flex">
+                            <label><div class="sgem-dvc-form-label-container"><span class="sgem-dvc-form-label-block">Expected rise in stock price P.A</span><span class="sgem-dvc-info-tooltip tooltip" data-tippy-content="How much will the shares gain per year">?</span></div></label>
+                            <input type="text" class="inputmove inputnumber" id="sgem_dvc_ext_stock_price_rise" value="10" min="0" max="100000" onkeypress="return isNumber(event)"/>
+                            <span class="sgem_dvc_err_msg" id="sgem_dvc_err_ext_stock_price_rise"></span>
+                        </div>
                     </div>
                 </div>
-                <div class="sgem-spc-block-container">
-                    <div class="sgem-spc-block-inner-container">
-                        <div class="sgem-spc-form-group sgem-spc-form-flex sgem-spc-currency-holder sgem-first-flex">
-                            <label>Purchase price</label>
-                            <input type="text" class="inputmove inputnumber" id="sgem_spc_purchase_price" value="20" min="0" max="100000" onkeypress="return isNumber(event)"/>
-                            <span class="sgem_spc_err_msg" id="sgem_spc_err_purchase_price"></span>
-                        </div>
-                        <div class="sgem-spc-form-group sgem-spc-form-flex sgem-spc-currency-holder sgem-second-flex">
-                            <label>Sell price</label>
-                            <input type="text" class="inputmove inputnumber" id="sgem_spc_sell_price" value="25" min="0" max="100000" onkeypress="return isNumber(event)"/>
-                            <span class="sgem_spc_err_msg" id="sgem_spc_err_sell_price"></span>
-                        </div>
-                    </div>
-                    <div class="sgem-spc-block-inner-container">
-                        <div class="sgem-spc-form-group sgem-spc-form-flex sgem-spc-currency-holder  sgem-first-flex">
-                            <label>Buy commission</label>
-                            <input type="text" class="inputmove inputnumber" id="sgem_spc_buy_commission" value="5" min="0" max="100000" onkeypress="return isNumber(event)"/>
-                            <span class="sgem_spc_err_msg" id="sgem_spc_err_buy_commission"></span>
-                        </div>
-                        <div class="sgem-spc-form-group sgem-spc-form-flex sgem-spc-currency-holder sgem-second-flex">
-                            <label>Sell commission</label>
-                            <input type="text" class="inputmove inputnumber" id="sgem_spc_sell_commission" value="5" min="0" max="100000" onkeypress="return isNumber(event)"/>
-                            <span class="sgem_spc_err_msg" id="sgem_spc_err_sell_commission"></span>
-                        </div>
+
+                <div class="sgem-dvc-block-container">
+                    <div class="sgem-dvc-form-group sgem-dvc-form-flex sgem-dvc-none-currency-holder">
+                        <label>Dividend reinvestment plan<span class="sgem-dvc-info-tooltip tooltip" data-tippy-content="Is there a dividend reinvestment plan">?</span></label>
+
+                        <form>
+                            <input id="sgem-dvc-cal-radio-yes" type="radio" name="sgem-dvc-yes-no-radio" class="sgem-dvc-yes-radio" value="annual" onclick="isChecked()">
+                            <span class="sgem-dvc-form-checkbox-style-tic1"></span>
+                            <label class="sgem-dvc-label-tabs-check" for="sgem-dvc-cal-radio-yes">Yes</label>
+                            <input id="sgem-dvc-cal-radio-no" type="radio" name="sgem-dvc-yes-no-radio" class="sgem-dvc-no-radio" value="monthly" checked="" onclick="isChecked()">
+                            <span class="sgem-dvc-form-checkbox-style-tic2"></span>
+                            <label class="sgem-dvc-label-tabs-check" for="sgem-dvc-cal-radio-no">No</label>
+                        </form>
+                        <span class="sgem_dvc_err_msg" id="sgem_dvc_err_shares_value"></span>
                     </div>
                 </div>
+
             </div>
         </div>
 
-        <div class="sgem-spc-cal-right">
-            <div class="sgem-spc-cal-1-result-wrapper">
-                <div class="sgem-spc-flex-container sgem-spc-column2">
-                    <div class="sgem-spc-form-group sgem-spc-form-flex">
-                        <span class="futuretext sgem-result-value">YOUR PROFIT/LOSS</span>
-                        <div id="sgem_spc_loss_profit_result_value" class="sgem-spc-result-label"><span id="sgem_spc_cal_loss_profit_val">$4,550.00</span> (<span id="sgem_spc_cal_loss_profit_percantage">22.52</span>%)</div>
+        <div class="sgem-dvc-cal-right">
+            <div class="sgem-dvc-cal-1-result-wrapper">
+                <div class="sgem-dvc-flex-container sgem-dvc-column2">
+                    <div class="sgem-dvc-form-group sgem-dvc-form-flex">
+                        <span class="futuretext sgem-result-value">DIVIDEND AFTER 10 YEARS</span>
                     </div>
                 </div>
-                <div class="sgem-spc-cal-1-result-footer">
-                    <div class="sgem-spc-content">
-                        <div class="sgem-spc-content-block sgem-spc-content-mobile-top">
-                            <div class="sgem-spc-content-block-name">
-                                BOUGHT FOR
+                <div class="sgem-dvc-cal-1-result-footer">
+                    <div class="sgem-dvc-content">
+                        <div class="sgem-dvc-content-block sgem-dvc-content-mobile-top">
+                            <div class="sgem-dvc-content-block-name">
+                                ENDING BALANCE
                             </div>
-                            <div class="sgem-spc-content-block-value" id="sgem_spc_cal_bought_for_val">
-                                $20,200.00
+                            <div class="sgem-dvc-content-block-value" id="sgem_dvc_ending_balance_val">
+                                $41,874.84
                             </div>
                         </div>
-                        <div class="sgem-spc-content-block sgem-spc-content-mobile-bottom">
-                            <div class="sgem-spc-content-block-name">
-                                SOLD FOR
+                        <div class="sgem-dvc-content-block sgem-dvc-content-mobile-bottom">
+                            <div class="sgem-dvc-content-block-name">
+                                CUMULATIVE RETURN %
                             </div>
-                            <div class="sgem-spc-content-block-value" id="sgem_spc_cal_sell_for_val">
-                                $24,750.00
+                            <div class="sgem-dvc-content-block-value" id="sgem_dvc_cumulative_return_val">
+                                109.37%
+                            </div>
+                        </div>
+                        <div class="sgem-dvc-content-block sgem-dvc-content-mobile-top">
+                            <div class="sgem-dvc-content-block-name">
+                                TOTAL DIVIDEND INCOME
+                            </div>
+                            <div class="sgem-dvc-content-block-value" id="sgem_dvc_cal_tot_dividend_income_val">
+                                $12,741.36
+                            </div>
+                        </div>
+                        <div class="sgem-dvc-content-block sgem-dvc-content-mobile-top">
+                            <div class="sgem-dvc-content-block-name">
+                                YIELD ON COST
+                            </div>
+                            <div class="sgem-dvc-content-block-value" id="sgem_dvc_yield_on_cost_val">
+                                10.10%
                             </div>
                         </div>
                     </div>
-					<div class="sgem-spc-button-narration">Start investing in your favorite stocks and grow your stock portfolio commission-free.</div>
-                    <div class="sgem-spc-buttonGet">
-                        <a href="https://retirementinvestments.com/homeequitycalculator/" target="_blank" class="sgem-spc-getStart" rel="noopener">Get Started</a>
-                    </div> 
+
+                    <div class="sgem-dvc-section-table-result">
+                        <details class="sgem-dvc-details-table-result" open>
+                            <summary>
+                                <div class="sgem-dvc-collapsible-summary-table-result">PAYMENT SCHEDULE</div>
+                            </summary>
+                            <div class="sgem-dvc-collapsible-table-result" id="sgem-dvc-collapsible-table-result">
+                                <table id="sgem_dvc_result_table" class="sgem_dvc_result_table">
+
+                                    <thead>
+                                    <tr>
+                                        <th scope="col" style="width:10%;">Year</th>
+                                        <th scope="col" style="width:16%;">Shared owned initially</th>
+                                        <th scope="col" style="width:18%;">Starting stock price</th>
+                                        <th scope="col" style="width:18%;">Annual contribution</th>
+                                        <th scope="col" style="width:20%;">Year end dividend after tax</th>
+                                        <th scope="col" style="width:18%;">Final balance after tax</th>
+                                    </tr>
+                                    </thead>
+
+                                    <tbody id="sgem_dvc_result_table_body">
+
+                                        <tr>
+                                            <td scope="row" data-label="Year">1</td>
+                                            <td data-label="Shared owned initially">100.00</td>
+                                            <td data-label="Starting stock price">$100.00</td>
+                                            <td data-label="Annual contribution">$1,000.00</td>
+                                            <td data-label="Year end dividend after tax">$280.50</td>
+                                            <td data-label="Final balance after tax">$12,000.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td  scope="row" data-label="Year">2</td>
+                                            <td  data-label="Shared owned initially">100.00</td>
+                                            <td data-label="Starting stock price">$100.00</td>
+                                            <td data-label="Annual contribution">$1,000.00</td>
+                                            <td data-label="Year end dividend after tax">$280.50</td>
+                                            <td data-label="Final balance after tax">$12,000.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td  scope="row" data-label="Year">3</td>
+                                            <td data-label="Shared owned initially">100.00</td>
+                                            <td data-label="Starting stock price">$100.00</td>
+                                            <td data-label="Annual contribution">$1,000.00</td>
+                                            <td data-label="Year end dividend after tax">$280.50</td>
+                                            <td data-label="Final balance after tax">$12,000.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td  scope="row" data-label="Year">4</td>
+                                            <td data-label="Shared owned initially">100.00</td>
+                                            <td data-label="Starting stock price">$100.00</td>
+                                            <td data-label="Annual contribution">$1,000.00</td>
+                                            <td data-label="Year end dividend after tax">$280.50</td>
+                                            <td data-label="Final balance after tax">$12,000.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td  scope="row" data-label="Year">5</td>
+                                            <td data-label="Shared owned initially">100.00</td>
+                                            <td data-label="Starting stock price">$100.00</td>
+                                            <td data-label="Annual contribution">$1,000.00</td>
+                                            <td data-label="Year end dividend after tax">$280.50</td>
+                                            <td data-label="Final balance after tax">$12,000.00</td>
+                                        </tr>
+
+                                    </tbody>
+
+                                </table>
+
+
+                            </div>
+                        </details>
+                    </div>
+
+                    <div class="sgem-dvc-buttonGet">
+                        <a href="https://retirementinvestments.com/dividendcalculator/" target="_blank" class="sgem-dvc-getStart" rel="noopener">Get Started</a>
+                    </div>
                 </div>
-                <div class="sgem-spc-section-disclaimer">
-                    <details class="sgem-spc-details-disclaimer">
+                <div class="sgem-dvc-section-disclaimer">
+                    <details class="sgem-dvc-details-disclaimer">
                         <summary>
-                            <div class="sgem-spc-collapsible-summary-disclaimer">Disclaimer</div>
+                            <div class="sgem-dvc-collapsible-summary-disclaimer">Disclaimer</div>
                         </summary>
-                        <div class="sgem-spc-collapsible-text-disclaimer">This material is provided for general and educational purpose only; it is not intended to provide legal, tax or investment advice.</div>
+                        <div class="sgem-dvc-collapsible-text-disclaimer">This material is provided for general and educational purpose only; it is not intended to provide legal, tax or investment advice.</div>
                     </details>
                 </div>
             </div>
@@ -83,10 +217,10 @@
     </div>
 
 
-    <div class="sgem-spc-copy-option-panel">
+    <div class="sgem-dvc-copy-option-panel">
         <h3>Do you want to add this calculator into your website?</h3>
-        <div class="sgem-spc-copy-code-wrap">
-            <button class="sgem-spc-copy-code" id="sgem-spc-copy-code" onclick="sgem_spc_copyText(event)">Get Calculator</button>
+        <div class="sgem-dvc-copy-code-wrap">
+            <button class="sgem-dvc-copy-code" id="sgem-dvc-copy-code" onclick="sgem_dvc_copyText(event)">Get Calculator</button>
         </div>
     </div>
 
