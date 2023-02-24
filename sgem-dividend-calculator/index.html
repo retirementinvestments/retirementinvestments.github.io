@@ -1,0 +1,93 @@
+<div class="sgem-spc-cal-main-id">
+    <div class="sgem-spc-cal-wrapper">
+        <div class="sgem-spc-cal-left">
+            <div class="sgem-spc-form sgem-spc-cal-1">
+                <div class="sgem-spc-block-container">
+                    <div class="sgem-spc-form-group sgem-spc-form-flex sgem-spc-none-currency-holder">
+                        <label>Number of shares</label>
+                        <input type="text" class="inputmove inputnumber" id="sgem_spc_shares_value" value="1,000" min="0" max="1000000" onkeypress="return isNumber(event)"/>
+                        <span class="sgem_spc_err_msg" id="sgem_spc_err_shares_value"></span>
+                    </div>
+                </div>
+                <div class="sgem-spc-block-container">
+                    <div class="sgem-spc-block-inner-container">
+                        <div class="sgem-spc-form-group sgem-spc-form-flex sgem-spc-currency-holder sgem-first-flex">
+                            <label>Purchase price</label>
+                            <input type="text" class="inputmove inputnumber" id="sgem_spc_purchase_price" value="20" min="0" max="100000" onkeypress="return isNumber(event)"/>
+                            <span class="sgem_spc_err_msg" id="sgem_spc_err_purchase_price"></span>
+                        </div>
+                        <div class="sgem-spc-form-group sgem-spc-form-flex sgem-spc-currency-holder sgem-second-flex">
+                            <label>Sell price</label>
+                            <input type="text" class="inputmove inputnumber" id="sgem_spc_sell_price" value="25" min="0" max="100000" onkeypress="return isNumber(event)"/>
+                            <span class="sgem_spc_err_msg" id="sgem_spc_err_sell_price"></span>
+                        </div>
+                    </div>
+                    <div class="sgem-spc-block-inner-container">
+                        <div class="sgem-spc-form-group sgem-spc-form-flex sgem-spc-currency-holder  sgem-first-flex">
+                            <label>Buy commission</label>
+                            <input type="text" class="inputmove inputnumber" id="sgem_spc_buy_commission" value="5" min="0" max="100000" onkeypress="return isNumber(event)"/>
+                            <span class="sgem_spc_err_msg" id="sgem_spc_err_buy_commission"></span>
+                        </div>
+                        <div class="sgem-spc-form-group sgem-spc-form-flex sgem-spc-currency-holder sgem-second-flex">
+                            <label>Sell commission</label>
+                            <input type="text" class="inputmove inputnumber" id="sgem_spc_sell_commission" value="5" min="0" max="100000" onkeypress="return isNumber(event)"/>
+                            <span class="sgem_spc_err_msg" id="sgem_spc_err_sell_commission"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sgem-spc-cal-right">
+            <div class="sgem-spc-cal-1-result-wrapper">
+                <div class="sgem-spc-flex-container sgem-spc-column2">
+                    <div class="sgem-spc-form-group sgem-spc-form-flex">
+                        <span class="futuretext sgem-result-value">YOUR PROFIT/LOSS</span>
+                        <div id="sgem_spc_loss_profit_result_value" class="sgem-spc-result-label"><span id="sgem_spc_cal_loss_profit_val">$4,550.00</span> (<span id="sgem_spc_cal_loss_profit_percantage">22.52</span>%)</div>
+                    </div>
+                </div>
+                <div class="sgem-spc-cal-1-result-footer">
+                    <div class="sgem-spc-content">
+                        <div class="sgem-spc-content-block sgem-spc-content-mobile-top">
+                            <div class="sgem-spc-content-block-name">
+                                BOUGHT FOR
+                            </div>
+                            <div class="sgem-spc-content-block-value" id="sgem_spc_cal_bought_for_val">
+                                $20,200.00
+                            </div>
+                        </div>
+                        <div class="sgem-spc-content-block sgem-spc-content-mobile-bottom">
+                            <div class="sgem-spc-content-block-name">
+                                SOLD FOR
+                            </div>
+                            <div class="sgem-spc-content-block-value" id="sgem_spc_cal_sell_for_val">
+                                $24,750.00
+                            </div>
+                        </div>
+                    </div>
+					<div class="sgem-spc-button-narration">Start investing in your favorite stocks and grow your stock portfolio commission-free.</div>
+                    <div class="sgem-spc-buttonGet">
+                        <a href="https://retirementinvestments.com/homeequitycalculator/" target="_blank" class="sgem-spc-getStart" rel="noopener">Get Started</a>
+                    </div> 
+                </div>
+                <div class="sgem-spc-section-disclaimer">
+                    <details class="sgem-spc-details-disclaimer">
+                        <summary>
+                            <div class="sgem-spc-collapsible-summary-disclaimer">Disclaimer</div>
+                        </summary>
+                        <div class="sgem-spc-collapsible-text-disclaimer">This material is provided for general and educational purpose only; it is not intended to provide legal, tax or investment advice.</div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="sgem-spc-copy-option-panel">
+        <h3>Do you want to add this calculator into your website?</h3>
+        <div class="sgem-spc-copy-code-wrap">
+            <button class="sgem-spc-copy-code" id="sgem-spc-copy-code" onclick="sgem_spc_copyText(event)">Get Calculator</button>
+        </div>
+    </div>
+
+</div>
