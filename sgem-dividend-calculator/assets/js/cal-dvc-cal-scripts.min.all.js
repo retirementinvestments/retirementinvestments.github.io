@@ -202,20 +202,22 @@ function isNumber(evt) {
 }
 
 
-function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-
 // decimal points
 function decimalTwoPoints(x) {
     return Number.parseFloat(x).toFixed(0);
 }
 // end
 
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+
+
 
 function sgem_dividend_calculationmin() {
-	
-	var holding_period = $('#sgem_dvc_holding_period').val().trim();
+
+    var holding_period = $('#sgem_dvc_holding_period').val().trim();
 
     var stock_price3 = $('#sgem_dvc_stock_price').val().trim();
     var stock_price2 = stock_price3.replace(/\,/g, '');
@@ -756,8 +758,7 @@ function isChecked() {
 
 
 
-jQuery(document).ready(function($){
-	
+jQuery(document).ready(function($){	
 
     if( location.hostname == "calculatorstg.wpengine.com") {
         $('.sgem-dvc-logo-center').hide(); 
@@ -768,31 +769,30 @@ jQuery(document).ready(function($){
     } else {
         $('.sgem-dvc-logo-center').show();  
     }
-
-    
 	
 	
-	if ($('#sgem_dvc_stock_price,#sgem_dvc_no_of_shares,#sgem_dvc_holding_period,#sgem_dvc_annual_contribution').length > 0) {
-		$('#sgem_dvc_stock_price,#sgem_dvc_no_of_shares,#sgem_dvc_holding_period,#sgem_dvc_annual_contribution').on('keyup', function() {
-			sgem_dividend_calculationmin();
-			
-			  // Keep only digits and decimal points:
-			this.value = this.value.replace(/[^\d.]/g, "")
-			// Remove duplicated decimal point, if one exists:
-			this.value = this.value.replace(/^(\d*\.)(.*)\.(.*)$/, '$1$2$3')
-			// Keep only two digits past the decimal point:
-			this.value = this.value.replace(/\.(\d{0})\d+/, '')
-			// Add thousands separators:
-			this.value = this.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-			// Removing front zero
-			//this.value = this.value.replace(/^0+/, '');
+
+if ($('#sgem_dvc_stock_price,#sgem_dvc_no_of_shares,#sgem_dvc_holding_period,#sgem_dvc_annual_contribution').length > 0) {
+    $('#sgem_dvc_stock_price,#sgem_dvc_no_of_shares,#sgem_dvc_holding_period,#sgem_dvc_annual_contribution').on('keyup', function() {
+        sgem_dividend_calculationmin();
+        
+          // Keep only digits and decimal points:
+        this.value = this.value.replace(/[^\d.]/g, "")
+        // Remove duplicated decimal point, if one exists:
+        this.value = this.value.replace(/^(\d*\.)(.*)\.(.*)$/, '$1$2$3')
+        // Keep only two digits past the decimal point:
+        this.value = this.value.replace(/\.(\d{0})\d+/, '')
+        // Add thousands separators:
+        this.value = this.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        // Removing front zero
+        //this.value = this.value.replace(/^0+/, '');
 
 
-		});
-	}
+    });
+}
 
-	if ($('#sgem_dvc_annual_dividend_yield,#sgem_dvc_dividend_tax_rate,#sgem_dvc_exp_dividend_payout_rise,#sgem_dvc_ext_stock_price_rise').length > 0) {
-		$('#sgem_dvc_annual_dividend_yield,#sgem_dvc_dividend_tax_rate,#sgem_dvc_exp_dividend_payout_rise,#sgem_dvc_ext_stock_price_rise').on('keyup', function() {
+if ($('#sgem_dvc_annual_dividend_yield,#sgem_dvc_dividend_tax_rate,#sgem_dvc_exp_dividend_payout_rise,#sgem_dvc_ext_stock_price_rise').length > 0) {
+    $('#sgem_dvc_annual_dividend_yield,#sgem_dvc_dividend_tax_rate,#sgem_dvc_exp_dividend_payout_rise,#sgem_dvc_ext_stock_price_rise').on('keyup', function() {
 
         sgem_dividend_calculationmin();
 
@@ -992,7 +992,7 @@ jQuery(document).ready(function($){
 
 	
 	
-    sgem_dividend_calculationmin();
+    
 	
 	
 
@@ -1030,6 +1030,7 @@ jQuery(document).ready(function($){
 
 
 	
+	sgem_dividend_calculationmin();
 	
 });
 
