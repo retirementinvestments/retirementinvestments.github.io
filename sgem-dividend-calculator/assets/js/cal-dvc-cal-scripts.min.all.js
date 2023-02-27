@@ -96,10 +96,10 @@ var sgem_dvc_main_contents = '<div class="sgem-dvc-cal-main-id">'+
                         '<form>'+
                             '<input id="sgem-dvc-cal-radio-yes" type="radio" name="sgem-dvc-yes-no-radio" class="sgem-dvc-yes-radio" value="annual" onclick="isChecked()">'+
                             '<span class="sgem-dvc-form-checkbox-style-tic1"></span>'+
-                            '<label class="sgem-dvc-label-tabs-check" for="sgem-dvc-cal-radio-yes">&nbsp;Yes</label>'+
+                            '<label class="sgem-dvc-label-tabs-check" for="sgem-dvc-cal-radio-yes">&nbsp;&nbsp;Yes</label>'+
                             '<input id="sgem-dvc-cal-radio-no" type="radio" name="sgem-dvc-yes-no-radio" class="sgem-dvc-no-radio" value="monthly" checked="" onclick="isChecked()">'+
                             '<span class="sgem-dvc-form-checkbox-style-tic2"></span>'+
-                            '<label class="sgem-dvc-label-tabs-check" for="sgem-dvc-cal-radio-no">&nbsp;No</label>'+
+                            '<label class="sgem-dvc-label-tabs-check" for="sgem-dvc-cal-radio-no">&nbsp;&nbsp;No</label>'+
                         '</form>'+
                         '<span class="sgem_dvc_err_msg" id="sgem_dvc_err_shares_value"></span>'+
                     '</div>'+
