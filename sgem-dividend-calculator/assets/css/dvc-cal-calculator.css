@@ -1201,6 +1201,7 @@ details summary::-webkit-details-marker {
 .input-disable{
     background-color: #E2E2E2 !important;
     border:  1px solid #BEBEBE !important;
+	cursor : no-drop;
 }
 
 
