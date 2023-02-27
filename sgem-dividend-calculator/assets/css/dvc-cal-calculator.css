@@ -1772,10 +1772,10 @@ details summary::-webkit-details-marker {
     }
 	
 	.sgem-dvc-cal-1 .sgem-dvc-form-flex.sgem-dvc-interest-precentage-holder::before {
-		top: 42px;
+		top: 42px !important;
 	}
 	.sgem-dvc-cal-1 .sgem-dvc-form-flex.sgem-dvc-years-holder::before {
-		top: 42px;
+		top: 42px !important;
 	}
 
 }
