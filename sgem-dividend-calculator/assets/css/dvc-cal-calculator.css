@@ -1204,6 +1204,11 @@ details summary::-webkit-details-marker {
 }
 
 
+.sgem-dvc-form-group.sgem-dvc-form-flex form{
+	margin-left:3px;
+}
+
+
 
 /************* Table ***************/
 
