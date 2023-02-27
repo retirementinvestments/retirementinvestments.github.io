@@ -960,7 +960,7 @@ if ($('#sgem_dvc_stock_price,#sgem_dvc_no_of_shares,#sgem_dvc_holding_period,#sg
         // Add thousands separators:
         this.value = this.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         // Removing front zero
-        //this.value = this.value.replace(/^0+/, '');
+        this.value = this.value.replace(/^0+/, '');
 
 
     });
