@@ -1251,6 +1251,8 @@ input#sgem-dvc-cal-radio-no:checked, input#sgem-dvc-cal-radio-yes:checked {
     border:  1px solid #BEBEBE !important;
 	cursor : no-drop;
 	color : #002340 !important;
+	-webkit-text-fill-color: #002340; 
+	-webkit-opacity: 1; 
 }
 
 
