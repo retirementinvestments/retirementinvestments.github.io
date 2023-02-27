@@ -1142,6 +1142,17 @@ details summary::-webkit-details-marker {
     font-size: 16px;
 }
 
+.sgem-dvc-cal-1 .sgem-dvc-form-flex.sgem-sp-flex-deactive.sgem-dvc-interest-precentage-holder::before {
+    content: '%';
+    position: absolute;
+    right: 20px;
+    top: 48px;
+    display: block;
+    color: #A3A3A3;
+    font-weight: 400;
+    font-size: 16px;
+}
+
 
 /* ************ ************ */
 
