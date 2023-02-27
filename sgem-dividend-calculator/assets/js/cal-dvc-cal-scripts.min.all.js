@@ -824,8 +824,8 @@ function sgem_dividend_calculationmin() {
 
          if (isNaN(stock_price) || isNaN(number_of_shares) || isNaN(annual_con)) {
 
-           buildTable(holding_period, table_nan_validation_array, table_nan_validation_array, table_nan_validation_array, table_nan_validation_array, table_nan_validation_array, table_nan_validation_array);
-
+           //buildTable(holding_period, table_nan_validation_array, table_nan_validation_array, table_nan_validation_array, table_nan_validation_array, table_nan_validation_array, table_nan_validation_array);
+			cleanTable();
 
         } else {
 
@@ -886,8 +886,8 @@ function sgem_dividend_calculationmin() {
 
         if (isNaN(stock_price) || isNaN(number_of_shares) || isNaN(annual_con)) {
 
-           buildTable(holding_period, table_nan_validation_array, table_nan_validation_array, table_nan_validation_array, table_nan_validation_array, table_nan_validation_array, table_nan_validation_array);
-
+           //buildTable(holding_period, table_nan_validation_array, table_nan_validation_array, table_nan_validation_array, table_nan_validation_array, table_nan_validation_array, table_nan_validation_array);
+			cleanTable();
 
         } else {
 
