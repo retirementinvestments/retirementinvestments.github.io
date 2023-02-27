@@ -1164,9 +1164,16 @@ details summary::-webkit-details-marker {
     cursor: pointer;
 	width: 18px;
     height: 18px;
-    vertical-align: middle;
-	border-color:#33cc33;
+    vertical-align: middle;	
 }
+
+.sgem-dvc-yes-radio, .sgem-dvc-no-radio {
+    -webkit-appearance: none;	
+	border-radius: 50%;
+    outline: none;
+    border: 2px solid #33cc33;
+}
+
 .sgem-dvc-block-container input#sgem-dvc-cal-radio-yes:checked ~ .sgem-dvc-form-checkbox-style-tic1:before {
 
 
