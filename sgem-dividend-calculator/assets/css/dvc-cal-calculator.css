@@ -1171,13 +1171,13 @@ details summary::-webkit-details-marker {
 
     content: url(../images/fill-green-tic.svg);   
     position: absolute;
-    right: 2px;
+    right: 0px;
     top: 2px;
 }
 .sgem-dvc-block-container input#sgem-dvc-cal-radio-no:checked ~ .sgem-dvc-form-checkbox-style-tic2:before {
     content: url(../images/fill-green-tic.svg);    
     position: absolute;
-    right: 2px;
+    right: 0px;
     top: 2px;
 }
 .sgem-dvc-label-tabs-check {
