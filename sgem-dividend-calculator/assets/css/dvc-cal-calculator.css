@@ -1250,14 +1250,12 @@ details summary::-webkit-details-marker {
 }
 
 .sgem-dvc-section-table-result table {
-    border: 0px solid #ddd !important;
-    /* border-radius: 10px 10px 0px 0px;*/
+    border: 0px solid #ddd !important;    
     border-collapse: separate  !important;
     border-left: 0  !important;
     border-spacing: 0px  !important;
     width: 100%;
-    min-width: 720px;
-    /* min-width: 722px;*/
+    min-width: 720px;    
     margin : 0 !important;
 
 
@@ -1280,8 +1278,7 @@ details summary::-webkit-details-marker {
 }
 
 
-.sgem-dvc-section-table-result tr {
-    /*display: table-row  !important;*/
+.sgem-dvc-section-table-result tr {   
     vertical-align: inherit  !important;
     border-color: inherit  !important;
 
@@ -1294,7 +1291,7 @@ details summary::-webkit-details-marker {
     text-align: left  !important;
     vertical-align: top  !important;
     border-left: 1px solid #E5E5E5  !important;
-    /*width: 16.66%;*/
+    
 
 }
 .sgem-dvc-section-table-result th{
