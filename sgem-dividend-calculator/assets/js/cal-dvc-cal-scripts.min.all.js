@@ -78,12 +78,12 @@ var sgem_dvc_main_contents = '<div class="sgem-dvc-cal-main-id">'+
                         '</div>'+
                     '</div>'+
                     '<div class="sgem-dvc-block-inner-container">'+
-                        '<div class="sgem-dvc-form-group sgem-dvc-form-flex sgem-dvc-interest-precentage-holder  sgem-first-flex">'+
+                        '<div class="sgem-dvc-form-group sgem-sp-flex-active sgem-dvc-form-flex sgem-dvc-interest-precentage-holder  sgem-first-flex">'+
                             '<label><div class="sgem-dvc-form-label-container"><span class="sgem-dvc-form-label-block">Expected rise in dividend payout</span><span class="sgem-dvc-info-tooltip tooltip" data-tippy-content="How much will the dividend rise per year">?</span></div></label>'+
                             '<input type="text" class="inputmove inputnumber" id="sgem_dvc_exp_dividend_payout_rise" value="6.33" min="0" max="100000"/>'+
                             '<span class="sgem_dvc_err_msg" id="sgem_dvc_err_exp_dividend_payout_rise"></span>'+
                         '</div>'+
-                        '<div class="sgem-dvc-form-group sgem-dvc-form-flex sgem-dvc-interest-precentage-holder sgem-second-flex">'+
+                        '<div class="sgem-dvc-form-group sgem-sp-flex-active sgem-dvc-form-flex sgem-dvc-interest-precentage-holder sgem-second-flex">'+
                             '<label><div class="sgem-dvc-form-label-container"><span class="sgem-dvc-form-label-block">Expected rise in stock price P.A</span><span class="sgem-dvc-info-tooltip tooltip" data-tippy-content="How much will the shares gain per year">?</span></div></label>'+
                             '<input type="text" class="inputmove inputnumber" id="sgem_dvc_ext_stock_price_rise" value="4.321" min="0" max="100000"/>'+
                             '<span class="sgem_dvc_err_msg" id="sgem_dvc_err_ext_stock_price_rise"></span>'+
