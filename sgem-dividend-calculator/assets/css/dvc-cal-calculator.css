@@ -1247,6 +1247,7 @@ input#sgem-dvc-cal-radio-no:checked, input#sgem-dvc-cal-radio-yes:checked {
     background-color: #E2E2E2 !important;
     border:  1px solid #BEBEBE !important;
 	cursor : no-drop;
+	color : #002340 !important;
 }
 
 
