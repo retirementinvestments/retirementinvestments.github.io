@@ -995,6 +995,7 @@ if ($('#sgem_dvc_annual_dividend_yield,#sgem_dvc_dividend_tax_rate,#sgem_dvc_exp
           $(this).css({
         "border": "1px solid red",
         "background": "#FFCECE" });  
+		cleanTable();
           
 
   }else{
