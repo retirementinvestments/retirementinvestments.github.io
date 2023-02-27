@@ -1177,7 +1177,6 @@ input#sgem-dvc-cal-radio-no:checked, input#sgem-dvc-cal-radio-yes:checked {
 
 .sgem-dvc-block-container input#sgem-dvc-cal-radio-yes:checked ~ .sgem-dvc-form-checkbox-style-tic1:before {
 
-
     content: url(../images/fill-green-tic.svg);   
     position: absolute;
     right: 0px;
@@ -1190,6 +1189,38 @@ input#sgem-dvc-cal-radio-no:checked, input#sgem-dvc-cal-radio-yes:checked {
     right: 0px;
     top: 1px;
 }
+
+
+
+@-moz-document url-prefix() {
+    .sgem-dvc-form-checkbox-style-tic1,
+	.sgem-dvc-form-checkbox-style-tic2, #sgem-dvc-cal-radio-no, #sgem-dvc-cal-radio-yes {
+		position: relative;
+		cursor: pointer;
+		width: 21px;
+		height: 21px;
+		vertical-align: middle;	
+		vertical-align: vertical-align: middle;	
+		padding: 0;		
+		margin-top: 2px;
+		margin-left: 0px;
+		margin-right: 0px;
+		margin-bottom: 0px;
+	}
+
+	.sgem-dvc-block-container input#sgem-dvc-cal-radio-yes:checked ~ .sgem-dvc-form-checkbox-style-tic1:before {
+
+		right: 0px;
+		top: 1px;
+		
+	}
+	.sgem-dvc-block-container input#sgem-dvc-cal-radio-no:checked ~ .sgem-dvc-form-checkbox-style-tic2:before {
+
+		right: 0px;
+		top: 1px;
+	}
+}
+
 .sgem-dvc-label-tabs-check {
     font-size: 16px;
     color: #000000;
