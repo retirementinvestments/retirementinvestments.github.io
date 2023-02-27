@@ -1167,6 +1167,10 @@ details summary::-webkit-details-marker {
     vertical-align: middle;	
 }
 
+input#sgem-dvc-cal-radio-no:checked, input#sgem-dvc-cal-radio-yes:checked {
+    -webkit-appearance: none !important;		
+    outline: none !important;   
+}
 
 .sgem-dvc-block-container input#sgem-dvc-cal-radio-yes:checked ~ .sgem-dvc-form-checkbox-style-tic1:before {
 
@@ -1175,8 +1179,6 @@ details summary::-webkit-details-marker {
     position: absolute;
     right: 0px;
     top: 2px;
-	-webkit-appearance: none;
-	outline: none;
 	
 }
 .sgem-dvc-block-container input#sgem-dvc-cal-radio-no:checked ~ .sgem-dvc-form-checkbox-style-tic2:before {
@@ -1184,8 +1186,6 @@ details summary::-webkit-details-marker {
     position: absolute;
     right: 0px;
     top: 2px;
-	-webkit-appearance: none;
-	outline: none;
 }
 .sgem-dvc-label-tabs-check {
     font-size: 16px;
