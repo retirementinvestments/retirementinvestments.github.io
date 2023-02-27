@@ -1165,6 +1165,7 @@ details summary::-webkit-details-marker {
 	width: 18px;
     height: 18px;
     vertical-align: middle;
+	border-color:#33cc33;
 }
 .sgem-dvc-block-container input#sgem-dvc-cal-radio-yes:checked ~ .sgem-dvc-form-checkbox-style-tic1:before {
 
