@@ -137,7 +137,7 @@
     content: 'Years';
     position: absolute;
     right: 20px;
-    bottom: 40px;
+    top: 48px;
     display: block;
     color: #A3A3A3;
     font-weight: 400;
@@ -1124,7 +1124,7 @@ details summary::-webkit-details-marker {
     content: '%';
     position: absolute;
     right: 20px;
-    bottom: 42px;
+    top: 48px;
     display: block;
     color: #A3A3A3;
     font-weight: 400;
