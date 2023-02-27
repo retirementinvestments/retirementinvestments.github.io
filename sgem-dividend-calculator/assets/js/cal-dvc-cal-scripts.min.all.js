@@ -257,6 +257,10 @@ function sgem_dividend_calculationmin() {
     var dividend_tax_array = [];
     var dividend_ex_tax_array = [];
     var final_balance_after_tax_array = [];
+    var no_of_shares_invest_int_array = [];
+    var div_per_share_array = [];
+    var average_cost_array = [];
+    var table_nan_validation_array = [];
 
     var y_stock_price_array = [];
     var y_number_of_years_array = [];
@@ -272,6 +276,9 @@ function sgem_dividend_calculationmin() {
     var y_ending_fund_array = [];
     var y_forbes_adjustment_array = [];
     var y_ending_balance_array = [];
+    var y_no_of_shares_invest_int_array = [];
+    var y_div_per_share_array = [];
+    var y_average_cost_array = [];
 
     if (isNaN(stock_price * number_of_shares)) {
 
@@ -292,24 +299,39 @@ function sgem_dividend_calculationmin() {
     while (y_first_year_loop <= holding_period) {
 
         var y_number_of_years = y_first_year_loop++;
-        y_number_of_years_array.push(y_number_of_years);
 
+        y_number_of_years_array.push(y_number_of_years);
+        
+    
     }
 
     //Year end & stock price------------------------------------
 
     //---Add first item for array
+
     y_stock_price_array.push(stock_price);
+        
+    
 
     let y_stock_price_for_loop = stock_price;
+    let table_nan_validation = "";
+  
 
     for (let i = 1; i <= holding_period; i++) {
 
+
         y_stock_price_for_loop *= 1 + expected_rise_stock_perc;
+
         y_stock_price_array.push(y_stock_price_for_loop);
+        
+        
 
         //year end stock price
         y_year_end_stock_price_array.push(y_stock_price_for_loop);
+
+        table_nan_validation = 0;
+        table_nan_validation_array.push(table_nan_validation);
+
 
     }
 
@@ -446,6 +468,58 @@ function sgem_dividend_calculationmin() {
 
     }
 
+    //No of shares invest int v-----------------------------------
+
+     //pulling first item of array
+     y_no_of_shares_invest_int_array.push(y_no_of_stock_array[0]);
+
+     let y_no_of_shares_invest_int = "";
+     var y_zero_index = 0;
+     var y_one_index = 1;
+
+     while (y_zero_index < holding_period, y_one_index < holding_period) {
+
+         y_no_of_shares_invest_int = y_no_of_stock_array[y_one_index++] - y_no_of_stock_array[y_zero_index++];
+         y_no_of_shares_invest_int_array.push(y_no_of_shares_invest_int);
+         
+     }
+
+     //console.log(y_no_of_shares_invest_int_array); 
+
+     //div per share----------------------------------------------
+
+     let y_div_per_share = "";
+
+     for(let i = 0; i < holding_period; i++){
+
+        y_div_per_share = y_div_ex_tax_array[i] / y_no_of_stock_array[i];
+        y_div_per_share_array.push(y_div_per_share);
+
+
+     }
+     
+     //console.log(y_div_per_share_array);
+
+     //average cost----------------------------------------------
+
+   
+    for (let i = 0; i < y_no_of_shares_invest_int_array.length; i++) {
+      let y_average_cost = 0;
+      for (let j = 0; j <= i; j++) {
+        y_average_cost += y_no_of_shares_invest_int_array[j] * y_stock_price_array[j];
+      }
+      y_average_cost /= y_no_of_stock_array[i];
+      y_average_cost_array.push(y_average_cost);
+    }
+    
+    //console.log(y_average_cost_array);
+    
+    //yeild on cost
+
+    var y_yeild_on_cost = y_div_per_share_array[y_div_per_share_array.length - 1] / y_average_cost_array[y_average_cost_array.length - 1];
+
+     
+
     //card values-------------------------------
 
     var y_card_ending_balance = y_ending_balance_array[y_ending_balance_array.length - 1];
@@ -458,7 +532,6 @@ function sgem_dividend_calculationmin() {
     var y_cumulative_return1 = 100 * y_cumulative_return2;
 
     var y_total_dividend_income = y_dividend_array.reduce((sum, num) => sum + num, 0);
-
 
     //reinvestment no--------------------------------------------------------------------
     //Number of years--
@@ -635,6 +708,65 @@ function sgem_dividend_calculationmin() {
 
     }
 
+
+
+     //No of shares invest int v-----------------------------------
+
+     //pulling first item of array
+     no_of_shares_invest_int_array.push(no_of_stock_array[0]);
+
+     let no_of_shares_invest_int = "";
+     var zero_index = 0;
+     var one_index = 1;
+
+     while (zero_index < holding_period, one_index < holding_period) {
+
+         no_of_shares_invest_int = no_of_stock_array[one_index++] - no_of_stock_array[zero_index++];
+         no_of_shares_invest_int_array.push(no_of_shares_invest_int);
+         
+     }
+
+     //console.log(no_of_shares_invest_int_array); 
+
+     //div per share----------------------------------------------
+
+     let div_per_share = "";
+
+     for(let i = 0; i < holding_period; i++){
+
+        div_per_share = dividend_ex_tax_array[i] / no_of_stock_array[i];
+        div_per_share_array.push(div_per_share);
+
+
+     }
+     
+     //console.log(div_per_share_array);
+
+     //average cost----------------------------------------------
+
+   
+    for (let i = 0; i < no_of_shares_invest_int_array.length; i++) {
+      let average_cost = 0;
+      for (let j = 0; j <= i; j++) {
+        average_cost += no_of_shares_invest_int_array[j] * stock_price_array[j];
+      }
+      average_cost /= no_of_stock_array[i];
+      average_cost_array.push(average_cost);
+    }
+    
+    //console.log(average_cost_array);
+    
+    //yeild on cost
+
+    var yeild_on_cost = div_per_share_array[div_per_share_array.length - 1] / average_cost_array[average_cost_array.length - 1];
+
+   
+
+
+
+
+
+
     //Card values---------------------------------
 
     var ending_balance = final_balance_after_tax_array[final_balance_after_tax_array.length - 1];
@@ -689,10 +821,29 @@ function sgem_dividend_calculationmin() {
 
         //--------
         //Array to table function     
-        buildTable(holding_period, y_number_of_years_array, y_no_of_stock_array, y_stock_price_array, y_annual_con_array, y_div_ex_tax_array, y_ending_balance_array);
+
+         if (isNaN(stock_price) || isNaN(number_of_shares) || isNaN(annual_con)) {
+
+           buildTable(holding_period, table_nan_validation_array, table_nan_validation_array, table_nan_validation_array, table_nan_validation_array, table_nan_validation_array, table_nan_validation_array);
 
 
-        //yeild on cost yet to come
+        } else {
+
+           buildTable(holding_period, y_number_of_years_array, y_no_of_stock_array, y_stock_price_array, y_annual_con_array, y_div_ex_tax_array, y_ending_balance_array);
+
+        }
+        
+
+        //yeild on cost
+
+        if (isNaN(y_yeild_on_cost)) {
+
+            $('#sgem_dvc_yield_on_cost_val').text('0%');
+
+        } else {
+
+            $('#sgem_dvc_yield_on_cost_val').text((y_yeild_on_cost*100).toFixed(2) + '%');
+        }
 
 
 
@@ -732,9 +883,33 @@ function sgem_dividend_calculationmin() {
 
         //--------
         //Array to table function
-        buildTable(holding_period, number_of_years_array, no_of_stock_array, stock_price_array, annual_con_array, dividend_ex_tax_array, final_balance_after_tax_array);
 
-        //yeild on cost yet to come
+        if (isNaN(stock_price) || isNaN(number_of_shares) || isNaN(annual_con)) {
+
+           buildTable(holding_period, table_nan_validation_array, table_nan_validation_array, table_nan_validation_array, table_nan_validation_array, table_nan_validation_array, table_nan_validation_array);
+
+
+        } else {
+
+            buildTable(holding_period, number_of_years_array, no_of_stock_array, stock_price_array, annual_con_array, dividend_ex_tax_array, final_balance_after_tax_array);
+
+        }
+
+        
+    
+
+
+        //yeild on cost
+
+         if (isNaN(yeild_on_cost)) {
+
+            $('#sgem_dvc_yield_on_cost_val').text('0%');
+
+        } else {
+
+            $('#sgem_dvc_yield_on_cost_val').text((yeild_on_cost*100).toFixed(2) + '%');
+        }
+
 
 
 
