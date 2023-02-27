@@ -1766,7 +1766,7 @@ details summary::-webkit-details-marker {
         /*top : 33px;*/
     }
 	
-	.sgem-dvc-cal-1 .sgem-dvc-form-flex.sgem-dvc-interest-precentage-holder::before {{
+	.sgem-dvc-cal-1 .sgem-dvc-form-flex.sgem-dvc-interest-precentage-holder::before {
 		top: 42px;
 	}
 	.sgem-dvc-cal-1 .sgem-dvc-form-flex.sgem-dvc-years-holder::before {
