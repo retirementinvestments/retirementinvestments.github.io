@@ -855,7 +855,7 @@ function sgem_dividend_calculationmin() {
 
         } else {
 
-            $('#sgem_dvc_ending_balance_val').text(numberWithCommas(ending_balance.toFixed(2)));
+            $('#sgem_dvc_ending_balance_val').text('$'+numberWithCommas(ending_balance.toFixed(2)));
         }
 
         //----------
@@ -867,7 +867,7 @@ function sgem_dividend_calculationmin() {
 
         } else {
 
-            $('#sgem_dvc_cal_tot_dividend_income_val').text(numberWithCommas(total_dividend_income.toFixed(2)));
+            $('#sgem_dvc_cal_tot_dividend_income_val').text('$'+numberWithCommas(total_dividend_income.toFixed(2)));
         }
 
         //--------
