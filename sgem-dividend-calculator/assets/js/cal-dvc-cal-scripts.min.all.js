@@ -1180,7 +1180,7 @@ if ($('#sgem_dvc_annual_dividend_yield,#sgem_dvc_dividend_tax_rate,#sgem_dvc_exp
         $('.sgem-dvc-cal-right').removeClass('sgem-dvc-cal-right-add-class');
     }
 	
-	if ($('#sgem-dvc-cal').width() < 822) {
+	if (window.innerWidth < 822) {
         $('.sgem-dvc-form-group.sgem-sp-flex-active.sgem-dvc-form-flex.sgem-dvc-interest-precentage-holder.sgem-first-flex').addClass('sgem-sp-flex-deactive');
 		$('.sgem-dvc-form-group.sgem-sp-flex-active.sgem-dvc-form-flex.sgem-dvc-interest-precentage-holder.sgem-first-flex').removeClass('sgem-sp-flex-active');
 		
@@ -1217,7 +1217,7 @@ if ($('#sgem_dvc_annual_dividend_yield,#sgem_dvc_dividend_tax_rate,#sgem_dvc_exp
             $('.sgem-dvc-cal-wrapper').removeClass('sgem-dvc-wrapper-add-mobile');
         }
 		
-		if ($('#sgem-dvc-cal').width() < 822) {
+		if (window.innerWidth < 822) {
 			$('.sgem-dvc-form-group.sgem-sp-flex-active.sgem-dvc-form-flex.sgem-dvc-interest-precentage-holder.sgem-first-flex').addClass('sgem-sp-flex-deactive');
 			$('.sgem-dvc-form-group.sgem-sp-flex-active.sgem-dvc-form-flex.sgem-dvc-interest-precentage-holder.sgem-first-flex').removeClass('sgem-sp-flex-active');
 			
