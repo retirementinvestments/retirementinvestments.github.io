@@ -155,6 +155,7 @@ var sgem_dvc_main_contents = '<div class="sgem-dvc-cal-main-id">'+
                             '</div>'+
                         '</details>'+
                     '</div>'+
+					'<div class="sgem-dvc-button-narration">Start investing in your favorite stocks and grow your stock portfolio commission-free.</div>'+                   
                     '<div class="sgem-dvc-buttonGet">'+
                         '<a href="https://retirementinvestments.com/dividendcalculator/" target="_blank" class="sgem-dvc-getStart" rel="noopener">Get Started</a>'+
                     '</div>'+
