@@ -37,7 +37,7 @@ var sgem_dvc_main_contents = '<div class="sgem-dvc-cal-main-id">'+
                     '<div class="sgem-dvc-block-inner-container">'+
                         '<div class="sgem-dvc-form-group sgem-dvc-form-flex sgem-dvc-currency-holder sgem-first-flex">'+
                             '<label><div class="sgem-dvc-form-label-container"><span>Stock price</span><span class="sgem-dvc-info-tooltip tooltip" data-tippy-content="Stock Price per Share">?</span></div></label>'+
-                            '<input type="text" class="inputmove inputnumber" id="sgem_dvc_stock_price" value="100.00" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
+                            '<input type="text" class="inputmove inputnumber" id="sgem_dvc_stock_price" value="100" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
                             '<span class="sgem_dvc_err_msg" id="sgem_dvc_err_stock_price"></span>'+
                         '</div>'+
                         '<div class="sgem-dvc-form-group sgem-dvc-form-flex sgem-dvc-none-currency-holder sgem-second-flex">'+
@@ -68,7 +68,7 @@ var sgem_dvc_main_contents = '<div class="sgem-dvc-cal-main-id">'+
                     '<div class="sgem-dvc-block-inner-container">'+
                         '<div class="sgem-dvc-form-group sgem-dvc-form-flex sgem-dvc-currency-holder  sgem-first-flex">'+
                             '<label><div class="sgem-dvc-form-label-container"><span>Annual contribution</span><span class="sgem-dvc-info-tooltip tooltip" data-tippy-content="How much you will invest per year">?</span></div></label>'+
-                            '<input type="text" class="inputmove inputnumber" id="sgem_dvc_annual_contribution" value="1,000.00" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
+                            '<input type="text" class="inputmove inputnumber" id="sgem_dvc_annual_contribution" value="1,000" min="0" max="100000" onkeypress="return isNumber(event)"/>'+
                             '<span class="sgem_dvc_err_msg" id="sgem_dvc_err_annual_contribution"></span>'+
                         '</div>'+
                         '<div class="sgem-dvc-form-group sgem-dvc-form-flex sgem-dvc-interest-precentage-holder sgem-second-flex">'+
