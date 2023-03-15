@@ -1,0 +1,95 @@
+
+<div class="sgem-efc-cal-main-id">
+    <div class="sgem-efc-cal-wrapper">
+        <div class="sgem-efc-cal-left">
+            <div class="sgem-efc-form sgem-efc-cal-1">
+                <div class="sgem-efc-block-container">
+                    <div class="sgem-efc-form-group sgem-efc-form-flex sgem-efc-currency-holder first-holder">
+                        <label class="sgem-efc-first-label support-label">Monthly mortgage or rent<span class="sgem-efc-label-responsive-show"> payments</span>
+                            <span class="sgem-efc-info-tooltip tooltip" data-tippy-content="Includes mortgage or rent payments, property taxes, home or renter’s insurance, HOA fees, and household repairs.">?</span>
+                        </label>
+                        <label class="sgem-efc-label-responsive-hide support-label">payments</label>
+                        <div class="dollar-sign"><input type="text" class="inputmove inputnumber" id="sgem_efc_mortgae_or_rent__value" value="1,000" min="0" max="1000000" onkeypress="return isNumber(event)"/></div>
+                        <div class="error-msg-section"><span class="sgem_efc_err_msg" id="sgem_efc_err_mortgage"></span></div>
+                    </div>
+                    <div class="sgem-efc-form-group sgem-efc-form-flex sgem-efc-currency-holder first-holder">
+                        <label class="sgem-efc-first-label support-label">Monthly insurance<span class="sgem-efc-label-responsive-show"> payments</span>
+                            <span class="sgem-efc-info-tooltip tooltip" data-tippy-content="Includes any monthly premium payments for your car, health, life, and home insurances">?</span>
+                        </label>
+                        <label class="sgem-efc-label-responsive-hide support-label">payments</label>
+                        <div class="dollar-sign"><input type="text" class="inputmove inputnumber" id="sgem_efc_insurance_value" value="200" min="0" max="1000000" onkeypress="return isNumber(event)"/></div>
+                        <div class="error-msg-section"><span class="sgem_efc_err_msg" id="sgem_efc_err_insurance"></span></div>
+                    </div>
+                    <div class="sgem-efc-form-group sgem-efc-form-flex sgem-efc-currency-holder">
+                        <label class="support-label">Monthly debt payments
+                            <span class="sgem-efc-info-tooltip tooltip" data-tippy-content="Includes any debt repayments done for any car loans, personal loans, student loans, credit card debt. Please exclude any mortgage payment expenses from this.">?</span>
+                        </label>
+                        <div class="dollar-sign"><input type="text" class="inputmove inputnumber" id="sgem_efc_debt_value" value="200" min="0" max="1000000" onkeypress="return isNumber(event)"/></div>
+                        <div class="error-msg-section"><span class="sgem_efc_err_msg" id="sgem_efc_err_debt"></span></div>
+                    </div>
+                    <div class="sgem-efc-form-group sgem-efc-form-flex sgem-efc-currency-holder">
+                        <label class="support-label">Monthly grocery expenses
+                            <span class="sgem-efc-info-tooltip tooltip" data-tippy-content="Includes the approximate amount spent on monthly groceries">?</span>
+                        </label>
+                        <div class="dollar-sign"><input type="text" class="inputmove inputnumber" id="sgem_efc_grocery_value" value="500" min="0" max="1000000" onkeypress="return isNumber(event)"/></div>
+                        <div class="error-msg-section"><span class="sgem_efc_err_msg" id="sgem_efc_err_grocery"></span></div>
+                    </div>
+                    <div class="sgem-efc-form-group sgem-efc-form-flex sgem-efc-currency-holder">
+                        <label class="support-label">Monthly utility payments
+                            <span class="sgem-efc-info-tooltip tooltip" data-tippy-content="Includes any monthly payments spent on utilities such as gas, electricity, water, phone, cable, internet, garbage/recycling, parking and etc.">?</span>
+                        </label>
+                        <div class="dollar-sign"><input type="text" class="inputmove inputnumber" id="sgem_efc_utility_value" value="300" min="0" max="1000000" onkeypress="return isNumber(event)"/></div>
+                        <div class="error-msg-section"><span class="sgem_efc_err_msg" id="sgem_efc_err_utility"></span></div>
+                    </div>
+                    <div class="sgem-efc-form-group sgem-efc-form-flex sgem-efc-currency-holder">
+                        <label class="support-label">Other monthly expenses
+                            <span class="sgem-efc-info-tooltip tooltip" data-tippy-content="Includes any other monthly expenses such as transportation costs, medical expenses, educational expenses, personal care, childcare, taxes, and etc.">?</span>
+                        </label>
+                        <div class="dollar-sign"><input type="text" class="inputmove inputnumber" id="sgem_efc_monthly_value" value="300" min="0" max="1000000" onkeypress="return isNumber(event)"/></div>
+                        <div class="error-msg-section"><span class="sgem_efc_err_msg" id="sgem_efc_err_monthly"></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sgem-efc-cal-right">
+            <div class="sgem-efc-cal-1-result-wrapper">
+                <div class="sgem-efc-flex-container sgem-efc-column2">
+                    <div class="sgem-result-value-text">You should aim to save between</div>
+                    <div class="sgem-result-value"><span id="firstnum">$5,398</span> - <span id="secondnum">$10,796</span></div>
+                    <div class="sgem-result-value-text">for your emergency fund.</div>
+                    <div class="sgem-efc-chart-area">
+                        <canvas id="em_fund_chart" class="em_fund_chart_main"></canvas>              
+                    </div>
+					<div class="sgem-efc-chart-area-mob">                      
+                      <canvas id="em_fund_chart_mob" class="em_fund_chart_sub"></canvas>
+                    </div>
+                </div>
+                <div class="sgem-efc-cal-1-result-footer">
+                    <div class="sgem-efc-content">Start investing your spare change, invest while you bank, and earn bonus investments.</div>
+                    <div class="sgem-efc-buttonGet">
+                        <a href="https://retirementinvestments.com/emergencyfundcalculator/" target="_blank" class="sgem-efc-getStart" rel="noopener">START SAVING</a>
+                    </div>
+                </div>
+                <div class="sgem-efc-section-disclaimer">
+                    <details class="sgem-efc-details-disclaimer">
+                        <summary class="sgem-efc-details-disclaimer-flex">
+                            <div class="sgem-efc-collapsible-summary-disclaimer">Disclaimer</div>                            
+                        </summary>
+                        <div class="sgem-efc-collapsible-text-disclaimer">This material is provided for general and educational purpose only; it is not intended to provide legal, tax or investment advice.</div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </div>	
+	<div class="sgem-efc-logo-center">
+		<a class="sgem-efc-url-text" href="https://retirementinvestments.com/banking/emergency-fund-calculator/" target="_blank" rel="noopener">Emergency Fund Calculator&nbsp;</a>by&nbsp;Retirement Investments
+	</div>
+   
+    <div class="sgem-efc-copy-option-panel">
+		<h3>Do you want to add this calculator into your website?</h3>
+		<div class="sgem-efc-copy-code-wrap">
+			<button class="sgem-efc-copy-code" id="sgem-efc-copy-code" onclick="sgem_efc_copyText(event)">Get Calculator</button>
+		</div>
+	</div>
+	
+</div>
