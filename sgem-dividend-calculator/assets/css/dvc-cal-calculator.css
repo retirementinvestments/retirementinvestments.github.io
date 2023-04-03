@@ -44,7 +44,7 @@
     padding: 14px 24px 14px 14px;
 }
 .sgem-dvc-cal-right {
-    width: calc( 100% - 424px );
+    width: calc( 100% - 420px );
     /*height: 450px;*/
     background-color: #FFFFFF;
     display: flex;
